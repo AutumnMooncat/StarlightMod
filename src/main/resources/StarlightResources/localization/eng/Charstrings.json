@@ -2,7 +2,9 @@
   "${ModID}:Starfarers": {
     "NAMES": [
       "The Starfarers",
-      "the Starfarers"
+      "the Starfarers",
+      "Asphodene",
+      "Eridani"
     ],
     "TEXT": [
       "Twin Starferers that have come to challenge any foe the Spire has to offer. NL Masters of the Umbral and Astral.",
