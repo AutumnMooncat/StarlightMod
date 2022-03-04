@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0" name="images">
+        <file id="0" name="images/Asphodene.png" width="400" height="650" pivot_x="0.5" pivot_y="0"/>
+        <file id="1" name="images/Eridani.png" width="400" height="650" pivot_x="0.5" pivot_y="0"/>
+    </folder>
+    <entity id="0" name="main">
+        <animation id="0" name="idleAsphodene" length="4000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="2000">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="Asphodene">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" angle="0" scale_x="0.5" scale_y="0.5"/>
+                </key>
+                <key id="1" time="2000" spin="0">
+                    <object folder="0" file="0" angle="0" scale_x="0.495" scale_y="0.505"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="idleEridani" length="4000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="2000">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="Eridani">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" angle="0" scale_x="-0.5" scale_y="0.5"/>
+                </key>
+                <key id="1" time="2000" spin="0">
+                    <object folder="0" file="1" angle="0" scale_x="-0.495" scale_y="0.505"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="AtoE" length="500" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="0" z_index="1"/>
+                </key>
+                <key id="1" time="500">
+                    <object_ref id="0" timeline="1" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="1" z_index="1"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="Asphodene_000">
+                <key id="0">
+                    <object folder="0" file="0" scale_x="0.5" scale_y="0.5"/>
+                </key>
+                <key id="1" time="500">
+                    <object folder="0" file="0" angle="0" scale_x="-0.5" scale_y="0.5" a="0"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="Eridani_000">
+                <key id="0">
+                    <object folder="0" file="1" scale_x="0.5" scale_y="0.5" a="0"/>
+                </key>
+                <key id="1" time="500">
+                    <object folder="0" file="1" angle="0" scale_x="-0.5" scale_y="0.5"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="3" name="EtoA" length="500" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="1" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="0" z_index="1"/>
+                </key>
+                <key id="1" time="500">
+                    <object_ref id="0" timeline="1" key="1" z_index="0"/>
+                    <object_ref id="1" timeline="0" key="1" z_index="1"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="Eridani_001">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" angle="0" scale_x="-0.5" scale_y="0.5"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="1" angle="0" scale_x="0.5" scale_y="0.5" a="0"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="Asphodene_001">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" angle="0" scale_x="-0.5" scale_y="0.5" a="0"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="0" angle="0" scale_x="0.5" scale_y="0.5"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>

@@ -1,0 +1,9 @@
+{
+  "${ModID}:Constellation": {
+    "NAME": "Constellation",
+    "FLAVOR": "It watches over you.",
+    "DESCRIPTIONS": [
+      "You can now remove cards from your deck at Rest Sites up to #b3 times. Start each combat with buffs based on the type and rarity of the cards offered."
+    ]
+  }
+}

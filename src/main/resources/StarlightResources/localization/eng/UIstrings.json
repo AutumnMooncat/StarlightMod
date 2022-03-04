@@ -1,0 +1,9 @@
+{
+  "${ModID}:ConstellationOption": {
+  "TEXT": [
+    "Sacrifice",
+    "Remove a card from your deck up to 3 times. Start battles with buffs based on the cards offered.",
+    ""
+  ]
+}
+}

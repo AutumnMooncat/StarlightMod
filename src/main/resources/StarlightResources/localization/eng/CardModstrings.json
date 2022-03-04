@@ -1,0 +1,11 @@
+{
+  "${ModID}:EtherealMod": {
+    "EXTENDED_DESCRIPTION": ["Ethereal. NL "]
+  },
+  "${ModID}:ExhaustMod": {
+    "EXTENDED_DESCRIPTION": [" NL Exhaust."]
+  },
+  "${ModID}:RetainMod": {
+    "EXTENDED_DESCRIPTION": ["Retain. NL "]
+  }
+}

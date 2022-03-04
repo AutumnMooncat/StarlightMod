@@ -1,0 +1,20 @@
+{
+  "${ModID}:LouseMetal": {
+    "MOVES": [
+      "Grow"
+    ],
+    "NAME": "Silver Louse",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "${ModID}:LouseGold": {
+    "MOVES": [
+      "Grow"
+    ],
+    "NAME": "Gold Louse",
+    "DIALOG": [
+      ""
+    ]
+  }
+}

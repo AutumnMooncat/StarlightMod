@@ -1,0 +1,7 @@
+{
+  "${ModID}:RangedDamage": {
+    "NAME": "Ranged",
+    "DESCRIPTION": "Ranged [RangedIcon]",
+    "EXTENDED_DESCRIPTION": ["Requires #yAmmo to play. NL Applies #yBleeding and bypasses #yThorns."]
+  }
+}

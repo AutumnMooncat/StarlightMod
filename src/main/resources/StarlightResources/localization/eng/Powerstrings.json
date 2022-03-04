@@ -1,0 +1,28 @@
+{
+  "${ModID}:AmmoPower": {
+    "NAME": "Ammo",
+    "DESCRIPTIONS": ["Used to perform #yRanged attacks."]
+  },
+  "${ModID}:BleedPower": {
+    "NAME": "Bleeding",
+    "DESCRIPTIONS": ["At the start of its turn, loses #b"," HP.",
+      "At the start of your turn, lose #b"]
+  },
+  "${ModID}:DualCharacterPower": {
+    "NAME": "Starfarer",
+    "DESCRIPTIONS": ["#yAsphodene: Increases attack damage by #b1. NL Swap to #yEridani when playing a #ySkill.",
+                    "#yEridani: Increases #yBlock gained from cards by #b1. NL Swap to #yAsphodene when playing an #yAttack."]
+  },
+  "${ModID}:EmbeddedAmmoPower": {
+    "NAME": "Embedded Ammo",
+    "DESCRIPTIONS": ["When this creature dies, gain #b"," #yAmmo."]
+  },
+  "${ModID}:LosePowerPower": {
+    "NAME": "Lose ",
+    "DESCRIPTIONS": ["At the end of your turn, lose #b"," ","."]
+  },
+  "${ModID}:NextTurnPowerPower": {
+    "NAME": "Next Turn ",
+    "DESCRIPTIONS": ["Next turn, gain #b"," ","."]
+  }
+}
