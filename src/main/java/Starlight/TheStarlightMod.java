@@ -1,9 +1,7 @@
 package Starlight;
 
 import Starlight.cards.cardvars.Info;
-import Starlight.characters.Asphodene;
-import Starlight.characters.Eridani;
-import Starlight.characters.Starfarers;
+import Starlight.characters.StarlightSisters;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
@@ -24,7 +22,7 @@ import java.nio.charset.StandardCharsets;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
-public class TheStarsAboveMod implements
+public class TheStarlightMod implements
         EditCardsSubscriber,
         EditRelicsSubscriber,
         EditStringsSubscriber,
@@ -53,7 +51,7 @@ public class TheStarsAboveMod implements
     private static final String TEXT_ENERGY = modID + "Resources/images/512/text_energy.png";
     private static final String CARD_ENERGY_L = modID + "Resources/images/1024/energy.png";
     private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
-    private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/BG.png";
+    private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
 
     public static final String ENABLE_CARD_BATTLE_TALK_SETTING = "enableCardBattleTalk";
     public static boolean enableCardBattleTalkEffect = false;
@@ -73,10 +71,10 @@ public class TheStarsAboveMod implements
     public static final String PRE_BATTLE_TALK_PROBABILITY_SETTING = "preTalkProbability";
     public static int preTalkProbability = 50; //Out of 100
 
-    public TheStarsAboveMod() {
+    public TheStarlightMod() {
         BaseMod.subscribe(this);
 
-        BaseMod.addColor(Starfarers.Enums.METEORITE_PURPLE_COLOR, METEORITE_PURPLE, METEORITE_PURPLE, METEORITE_PURPLE,
+        BaseMod.addColor(StarlightSisters.Enums.METEORITE_PURPLE_COLOR, METEORITE_PURPLE, METEORITE_PURPLE, METEORITE_PURPLE,
                 METEORITE_PURPLE, METEORITE_PURPLE, METEORITE_PURPLE, METEORITE_PURPLE,
                 ATTACK_S_ART, SKILL_S_ART, POWER_S_ART, CARD_ENERGY_S,
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
@@ -104,13 +102,13 @@ public class TheStarsAboveMod implements
     }
 
     public static void initialize() {
-        TheStarsAboveMod thismod = new TheStarsAboveMod();
+        TheStarlightMod thismod = new TheStarlightMod();
     }
 
     @Override
     public void receiveEditCharacters() {
-        BaseMod.addCharacter(new Asphodene(Starfarers.characterStrings.NAMES[1], Starfarers.Enums.THE_STARFARERS, new Eridani(Starfarers.characterStrings.NAMES[1], Starfarers.Enums.THE_STARFARERS)),
-                CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, Starfarers.Enums.THE_STARFARERS);
+        BaseMod.addCharacter(new StarlightSisters(StarlightSisters.characterStrings.NAMES[1], StarlightSisters.Enums.THE_STARFARERS),
+                CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, StarlightSisters.Enums.THE_STARFARERS);
     }
 
     @Override

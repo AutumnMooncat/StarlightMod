@@ -1,4 +1,4 @@
-package Starlight.cards.democards.complex;
+package Starlight.cutContent.democards.complex;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,7 +8,7 @@ import Starlight.actions.EasyXCostAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 
 import static Starlight.util.Wiz.*;
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 
 public class EasyXCostDemo extends AbstractEasyCard {
     public final static String ID = makeID("EasyXCostDemo");

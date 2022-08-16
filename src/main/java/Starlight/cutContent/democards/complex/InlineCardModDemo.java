@@ -1,4 +1,4 @@
-package Starlight.cards.democards.complex;
+package Starlight.cutContent.democards.complex;
 
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.beyond.Spiker;
 import Starlight.cardmods.LambdaMod;
 import Starlight.cards.abstracts.AbstractEasyCard;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 import static Starlight.util.Wiz.makeInHand;
 import static Starlight.util.Wiz.returnTrulyRandomPrediCardInCombat;
 

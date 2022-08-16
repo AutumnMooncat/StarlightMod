@@ -1,4 +1,4 @@
-package Starlight.cards.democards.complex;
+package Starlight.cutContent.democards.complex;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.optionCards.BecomeAlmighty;
@@ -12,7 +12,7 @@ import Starlight.cards.abstracts.AbstractEasyCard;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 import static Starlight.util.Wiz.getRandomItem;
 import static Starlight.util.Wiz.makeInHand;
 

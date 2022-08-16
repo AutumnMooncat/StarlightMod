@@ -1,4 +1,4 @@
-package Starlight.cards.democards.complex;
+package Starlight.cutContent.democards.complex;
 
 import basemod.AutoAdd;
 import basemod.helpers.CardModifierManager;
@@ -14,7 +14,7 @@ import Starlight.cards.abstracts.AbstractEasyCard;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 import static Starlight.util.Wiz.*;
 
 @AutoAdd.Ignore

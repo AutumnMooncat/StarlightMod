@@ -1,6 +1,6 @@
 package Starlight.relics;
 
-import Starlight.characters.Starfarers;
+import Starlight.characters.StarlightSisters;
 import Starlight.relics.Campfire.ConstellationOption;
 import Starlight.util.Wiz;
 import basemod.abstracts.CustomSavable;
@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 
 import java.util.ArrayList;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 
 public class Constellation extends AbstractEasyRelic implements CustomSavable<Integer> {
     public static final String ID = makeID("Constellation");
@@ -24,7 +24,7 @@ public class Constellation extends AbstractEasyRelic implements CustomSavable<In
     private int art;
 
     public Constellation() {
-        super(ID, RelicTier.STARTER, LandingSound.MAGICAL, Starfarers.Enums.METEORITE_PURPLE_COLOR);
+        super(ID, RelicTier.STARTER, LandingSound.MAGICAL, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
         this.counter = 0;
     }
 

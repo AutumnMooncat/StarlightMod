@@ -8,31 +8,31 @@ import com.megacrit.cardcrawl.vfx.SpeechBubble;
 
 public class RandomChatterHelper {
 
-    private static final CardStrings AttackTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("AttackTextContainer"));
+    private static final CardStrings AttackTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("AttackTextContainer"));
 
-    private static final CardStrings SkillTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("SkillTextContainer"));
+    private static final CardStrings SkillTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("SkillTextContainer"));
 
-    private static final CardStrings PowerTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("PowerTextContainer"));
+    private static final CardStrings PowerTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("PowerTextContainer"));
 
-    private static final CardStrings BattleStartTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("BattleStartTextContainer"));
+    private static final CardStrings BattleStartTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("BattleStartTextContainer"));
 
-    private static final CardStrings LowHPBattleStartTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("LowHPBattleStartTextContainer"));
+    private static final CardStrings LowHPBattleStartTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("LowHPBattleStartTextContainer"));
 
-    private static final CardStrings BattleEndTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("BattleEndTextContainer"));
+    private static final CardStrings BattleEndTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("BattleEndTextContainer"));
 
-    private static final CardStrings BossFightTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("BossFightTextContainer"));
+    private static final CardStrings BossFightTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("BossFightTextContainer"));
 
-    private static final CardStrings HealingTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("HealingTextContainer"));
+    private static final CardStrings HealingTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("HealingTextContainer"));
 
-    private static final CardStrings FieldDamageTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("FieldDamageTextContainer"));
+    private static final CardStrings FieldDamageTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("FieldDamageTextContainer"));
 
-    private static final CardStrings LightDamageTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("LightDamageTextContainer"));
+    private static final CardStrings LightDamageTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("LightDamageTextContainer"));
 
-    private static final CardStrings HeavyDamageTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("HeavyDamageTextContainer"));
+    private static final CardStrings HeavyDamageTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("HeavyDamageTextContainer"));
 
-    private static final CardStrings BlockedDamageTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("BlockedDamageTextContainer"));
+    private static final CardStrings BlockedDamageTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("BlockedDamageTextContainer"));
 
-    private static final CardStrings KOTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarsAboveMod.makeID("KOTextContainer"));
+    private static final CardStrings KOTextContainer = CardCrawlGame.languagePack.getCardStrings(TheStarlightMod.makeID("KOTextContainer"));
 
     public static String getAttackText() {
         return AttackTextContainer.EXTENDED_DESCRIPTION[MathUtils.random(0, AttackTextContainer.EXTENDED_DESCRIPTION.length-1)];

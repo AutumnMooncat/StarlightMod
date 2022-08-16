@@ -1,4 +1,4 @@
-package Starlight.cards.democards.complex;
+package Starlight.cutContent.democards.complex;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.powers.LambdaPower;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 import static Starlight.util.Wiz.applyToSelf;
 import static Starlight.util.Wiz.atb;
 

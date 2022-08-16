@@ -1,13 +1,13 @@
 package Starlight.powers;
 
-import Starlight.TheStarsAboveMod;
+import Starlight.TheStarlightMod;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import Starlight.util.TexLoader;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 
 public abstract class AbstractEasyPower extends AbstractPower {
     public AbstractEasyPower(String NAME, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount) {
@@ -20,8 +20,8 @@ public abstract class AbstractEasyPower extends AbstractPower {
         this.amount = amount;
         this.type = powerType;
 
-        Texture normalTexture = TexLoader.getTexture(TheStarsAboveMod.modID + "Resources/images/powers/" + NAME.replaceAll("([ ])", "") + "32.png");
-        Texture hiDefImage = TexLoader.getTexture(TheStarsAboveMod.modID + "Resources/images/powers/" + NAME.replaceAll("([ ])", "") + "84.png");
+        Texture normalTexture = TexLoader.getTexture(TheStarlightMod.modID + "Resources/images/powers/" + NAME.replaceAll("([ ])", "") + "32.png");
+        Texture hiDefImage = TexLoader.getTexture(TheStarlightMod.modID + "Resources/images/powers/" + NAME.replaceAll("([ ])", "") + "84.png");
         if (hiDefImage != null) {
             region128 = new TextureAtlas.AtlasRegion(hiDefImage, 0, 0, hiDefImage.getWidth(), hiDefImage.getHeight());
             if (normalTexture != null)

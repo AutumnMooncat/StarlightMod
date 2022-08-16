@@ -1,11 +1,11 @@
-package Starlight.cards.democards.complex;
+package Starlight.cutContent.democards.complex;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.NirvanaPower;
 import Starlight.cards.abstracts.AbstractEasyCard;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 import static Starlight.util.Wiz.applyToSelfTemp;
 
 public class TemporaryPowerDemo extends AbstractEasyCard {

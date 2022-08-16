@@ -1,6 +1,6 @@
 package Starlight.relics.Campfire;
 
-import Starlight.TheStarsAboveMod;
+import Starlight.TheStarlightMod;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
 
 public class ConstellationOption extends AbstractCampfireOption {
-    private static final String ID = TheStarsAboveMod.makeID("ConstellationOption");
+    private static final String ID = TheStarlightMod.makeID("ConstellationOption");
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
 

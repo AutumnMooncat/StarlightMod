@@ -3,19 +3,13 @@ package Starlight.characters;
 import Starlight.CustomAnimationListener;
 import Starlight.CustomSpriterAnimation;
 import Starlight.RandomChatterHelper;
-import Starlight.actions.DualCharacterSwapAction;
-import Starlight.cards.DeathInFourActs;
-import Starlight.cards.DerFreischutz;
-import Starlight.powers.DualCharacterPower;
-import Starlight.util.Wiz;
-import basemod.abstracts.CustomPlayer;
+import Starlight.cards.interfaces.SkillAnimationAttack;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.brashmonkey.spriter.Player;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -35,10 +29,10 @@ import Starlight.relics.Constellation;
 
 import java.util.ArrayList;
 
-import static Starlight.characters.Starfarers.Enums.METEORITE_PURPLE_COLOR;
-import static Starlight.TheStarsAboveMod.*;
+import static Starlight.characters.StarlightSisters.Enums.METEORITE_PURPLE_COLOR;
+import static Starlight.TheStarlightMod.*;
 
-public class Starfarers extends AbstractDoubleCharacter {
+public class StarlightSisters extends AbstractCustomAnimCharacter {
     private static final String[] orbTextures = {
             modID + "Resources/images/char/mainChar/orb/layer1.png",
             modID + "Resources/images/char/mainChar/orb/layer2.png",
@@ -51,27 +45,21 @@ public class Starfarers extends AbstractDoubleCharacter {
             modID + "Resources/images/char/mainChar/orb/layer3d.png",
             modID + "Resources/images/char/mainChar/orb/layer4d.png",
             modID + "Resources/images/char/mainChar/orb/layer5d.png",};
-    public static final String ID = makeID("Starfarers");
+    public static final String ID = makeID("StarlightSisters");
     public static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
     public static final String[] NAMES = characterStrings.NAMES;
     public static final String[] TEXT = characterStrings.TEXT;
 
-    public static boolean takeExtraTurn = true;
-    public byte form;
-    public static final byte ASPHODENE = 0;
-    public static final byte ERIDANI = 1;
-
-
-    public Starfarers(String name, PlayerClass setClass) {
+    public StarlightSisters(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures, modID + "Resources/images/char/mainChar/orb/vfx.png", null, new CustomSpriterAnimation(
-                modID + "Resources/images/char/mainChar/StarSisters.scml"));
+                modID + "Resources/images/char/mainChar/OJCharacter.scml"));
         Player.PlayerListener listener = new CustomAnimationListener(this);
         ((CustomSpriterAnimation)this.animation).myPlayer.addListener(listener);
         initializeClass(null,
                 SHOULDER1,
                 SHOULDER2,
                 CORPSE,
-                getLoadout(), 20.0F, -10.0F, 166.0F, 327.0F, new EnergyManager(3));
+                getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
 
 
         dialogX = (drawX + 0.0F * Settings.scale);
@@ -94,16 +82,10 @@ public class Starfarers extends AbstractDoubleCharacter {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
-        retVal.add(DeathInFourActs.ID);
-        retVal.add(DerFreischutz.ID);
-//        retVal.add(BasicShot.ID);
-//        retVal.add(BasicShot.ID);
-//        retVal.add(BasicShot.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-//        retVal.add(Reclaim.ID);
         return retVal;
     }
 
@@ -152,7 +134,7 @@ public class Starfarers extends AbstractDoubleCharacter {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new DeathInFourActs();
+        return new Strike();
     }
 
     @Override
@@ -162,7 +144,7 @@ public class Starfarers extends AbstractDoubleCharacter {
 
     @Override
     public AbstractPlayer newInstance() {
-        return new Starfarers(name, chosenClass);
+        return new StarlightSisters(name, chosenClass);
     }
 
     @Override
@@ -214,20 +196,24 @@ public class Starfarers extends AbstractDoubleCharacter {
         super.useCard(c, monster, energyOnUse);
         switch (c.type) {
             case ATTACK:
-                //Wiz.atb(new DualCharacterSwapAction(this, DualCharacterPower.ASPHODENE));
+                if (c instanceof SkillAnimationAttack) {
+                    playAnimation("skill");
+                } else {
+                    playAnimation("attack");
+                }
                 RandomChatterHelper.showChatter(RandomChatterHelper.getAttackText(), cardTalkProbability, enableCardBattleTalkEffect);
                 break;
             case POWER:
                 RandomChatterHelper.showChatter(RandomChatterHelper.getPowerText(), cardTalkProbability, enableCardBattleTalkEffect);
-                //playAnimation("happy");
+                playAnimation("happy");
                 break;
             case SKILL:
-                //Wiz.atb(new DualCharacterSwapAction(this, DualCharacterPower.ERIDANI));
+                playAnimation("skill");
                 RandomChatterHelper.showChatter(RandomChatterHelper.getSkillText(), cardTalkProbability, enableCardBattleTalkEffect);
                 break;
             default:
                 RandomChatterHelper.showChatter(RandomChatterHelper.getSkillText(), cardTalkProbability, enableCardBattleTalkEffect);
-                //playAnimation("skill");
+                playAnimation("skill");
                 break;
         }
     }
@@ -239,7 +225,7 @@ public class Starfarers extends AbstractDoubleCharacter {
         boolean tookNoDamage = this.lastDamageTaken == 0;
         if (hadBlockBeforeSuper && (hasBlockAfterSuper || tookNoDamage)) {
             RandomChatterHelper.showChatter(RandomChatterHelper.getBlockedDamageText(), damagedTalkProbability, enableDamagedBattleTalkEffect);
-            //playAnimation("happy");
+            playAnimation("happy");
         } else {
             if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > 0) {
                 if (info.output >= 15) {
@@ -250,21 +236,21 @@ public class Starfarers extends AbstractDoubleCharacter {
             } else if (info.type == DamageInfo.DamageType.THORNS && info.output > 0) {
                 RandomChatterHelper.showChatter(RandomChatterHelper.getFieldDamageText(), damagedTalkProbability, enableDamagedBattleTalkEffect);
             }
-            //playAnimation("hurt");
+            playAnimation("hurt");
         }
     }
 
     @Override
     public void playDeathAnimation() {
         RandomChatterHelper.showChatter(RandomChatterHelper.getKOText(), preTalkProbability, enablePreBattleTalkEffect); // I don't think this works
-        //playAnimation("ko");
+        playAnimation("ko");
     }
 
     @Override
     public void heal(int healAmount) {
         if (healAmount > 0) {
             if (RandomChatterHelper.showChatter(RandomChatterHelper.getHealingText(), damagedTalkProbability, enableDamagedBattleTalkEffect)){ //Technically changes your hp, lol
-                //playAnimation("happy");
+                playAnimation("happy");
             }
         }
         super.heal(healAmount);
@@ -272,7 +258,7 @@ public class Starfarers extends AbstractDoubleCharacter {
 
     @Override
     public void preBattlePrep() {
-        //playAnimation("idle");
+        playAnimation("idle");
         super.preBattlePrep();
         boolean bossFight = false;
         for (AbstractMonster mons : AbstractDungeon.getMonsters().monsters) {

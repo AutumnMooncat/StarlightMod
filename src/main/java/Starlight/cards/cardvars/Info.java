@@ -2,9 +2,11 @@ package Starlight.cards.cardvars;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
 import basemod.abstracts.DynamicVariable;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 
 public class Info extends DynamicVariable {
 
@@ -49,5 +51,25 @@ public class Info extends DynamicVariable {
             return ((AbstractEasyCard) card).upgradedInfo;
         }
         return false;
+    }
+
+    @Override
+    public Color getNormalColor() {
+        return Settings.CREAM_COLOR;
+    }
+
+    @Override
+    public Color getUpgradedColor() {
+        return Settings.CREAM_COLOR;
+    }
+
+    @Override
+    public Color getIncreasedValueColor() {
+        return Settings.CREAM_COLOR;
+    }
+
+    @Override
+    public Color getDecreasedValueColor() {
+        return Settings.CREAM_COLOR;
     }
 }

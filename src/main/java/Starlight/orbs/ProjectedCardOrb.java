@@ -1,6 +1,6 @@
 package Starlight.orbs;
 
-import Starlight.TheStarsAboveMod;
+import Starlight.TheStarlightMod;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 
 public class ProjectedCardOrb extends AbstractOrb {
     // Standard ID/Description
-    public static final String ORB_ID = TheStarsAboveMod.makeID("ProjectedCard");
+    public static final String ORB_ID = TheStarlightMod.makeID("ProjectedCard");
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESC = orbString.DESCRIPTION;
 

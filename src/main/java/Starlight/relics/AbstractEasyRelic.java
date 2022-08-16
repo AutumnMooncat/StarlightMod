@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import Starlight.util.TexLoader;
 
-import static Starlight.TheStarsAboveMod.makeRelicPath;
-import static Starlight.TheStarsAboveMod.modID;
+import static Starlight.TheStarlightMod.makeRelicPath;
+import static Starlight.TheStarlightMod.modID;
 
 public abstract class AbstractEasyRelic extends CustomRelic {
     public AbstractCard.CardColor color;

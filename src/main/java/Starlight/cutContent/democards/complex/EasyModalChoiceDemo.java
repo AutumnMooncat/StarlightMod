@@ -1,4 +1,4 @@
-package Starlight.cards.democards.complex;
+package Starlight.cutContent.democards.complex;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -7,11 +7,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import Starlight.actions.EasyModalChoiceAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.democards.EasyModalChoiceCard;
+import Starlight.cutContent.democards.EasyModalChoiceCard;
 
 import java.util.ArrayList;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 import static Starlight.util.Wiz.*;
 
 public class EasyModalChoiceDemo extends AbstractEasyCard {

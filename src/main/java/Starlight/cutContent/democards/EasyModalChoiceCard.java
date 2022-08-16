@@ -1,4 +1,4 @@
-package Starlight.cards.democards;
+package Starlight.cutContent.democards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
 import basemod.AutoAdd;
@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 
 @AutoAdd.Ignore
 public class EasyModalChoiceCard extends AbstractEasyCard {

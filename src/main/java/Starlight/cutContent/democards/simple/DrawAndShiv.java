@@ -1,4 +1,4 @@
-package Starlight.cards.democards.simple;
+package Starlight.cutContent.democards.simple;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import Starlight.cards.abstracts.AbstractEasyCard;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 import static Starlight.util.Wiz.*;
 
 public class DrawAndShiv extends AbstractEasyCard {

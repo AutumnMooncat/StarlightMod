@@ -9,7 +9,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 
 import java.util.HashMap;
 
-import static Starlight.TheStarsAboveMod.makeImagePath;
+import static Starlight.TheStarlightMod.makeImagePath;
 
 public class TexLoader {
     private static HashMap<String, Texture> textures = new HashMap<>();

@@ -14,10 +14,10 @@ public class CustomAnimationListener implements Player.PlayerListener {
     }
 
     public void animationFinished(Animation animation) {
-        if (animation.name.equals("idleAsphodene") || animation.name.equals("EtoA")) {
-            character.playAnimation("idleAsphodene");
-        } else {
-            character.playAnimation("idleEridani");
+        if (animation.name.equals("ko")) {
+            character.playAnimation("ko");
+        } else if (!animation.name.equals("idle")) {
+            character.resetToIdleAnimation();
         }
     }
 

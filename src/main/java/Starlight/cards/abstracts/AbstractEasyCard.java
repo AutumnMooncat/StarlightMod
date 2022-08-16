@@ -10,17 +10,18 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import Starlight.characters.Starfarers;
+import Starlight.characters.StarlightSisters;
 import Starlight.util.CardArtRoller;
 
 import java.util.ArrayList;
 
-import static Starlight.TheStarsAboveMod.*;
+import static Starlight.TheStarlightMod.*;
 import static Starlight.util.Wiz.atb;
 import static Starlight.util.Wiz.att;
 
@@ -50,7 +51,7 @@ public abstract class AbstractEasyCard extends CustomCard {
     private boolean needsArtRefresh = false;
 
     public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target) {
-        this(cardID, cost, type, rarity, target, Starfarers.Enums.METEORITE_PURPLE_COLOR);
+        this(cardID, cost, type, rarity, target, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
     }
 
     public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
@@ -71,7 +72,6 @@ public abstract class AbstractEasyCard extends CustomCard {
                 needsArtRefresh = true;
         }
     }
-
 
 
     @Override
@@ -232,12 +232,12 @@ public abstract class AbstractEasyCard extends CustomCard {
     }
 
     // These shortcuts are specifically for cards. All other shortcuts that aren't specifically for cards can go in Wiz.
-    protected void dmg(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
-        atb(new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
+    protected void dmg(AbstractCreature t, AbstractGameAction.AttackEffect fx) {
+        atb(new DamageAction(t, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
     }
 
-    protected void dmgTop(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
-        att(new DamageAction(m, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
+    protected void dmgTop(AbstractCreature t, AbstractGameAction.AttackEffect fx) {
+        att(new DamageAction(t, new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn), fx));
     }
 
     protected void allDmg(AbstractGameAction.AttackEffect fx) {

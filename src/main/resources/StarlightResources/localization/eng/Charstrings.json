@@ -1,13 +1,11 @@
 {
-  "${ModID}:Starfarers": {
+  "${ModID}:StarlightSisters": {
     "NAMES": [
-      "The Starfarers",
-      "the Starfarers",
-      "Asphodene",
-      "Eridani"
+      "The Sisters",
+      "the Sisters"
     ],
     "TEXT": [
-      "Twin Starferers that have come to challenge any foe the Spire has to offer. NL Masters of the Umbral and Astral.",
+      "Twin magi that have come to challenge any foe the Spire has to offer. NL Masters of lost astral magicks.",
       "You smite the heart.",
       "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~bright~ ~ones,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~"
     ]

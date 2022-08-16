@@ -4,7 +4,7 @@ import Starlight.cards.abstracts.AbstractEasyCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static Starlight.TheStarsAboveMod.makeID;
+import static Starlight.TheStarlightMod.makeID;
 
 public class Defend extends AbstractEasyCard {
     public final static String ID = makeID("Defend");

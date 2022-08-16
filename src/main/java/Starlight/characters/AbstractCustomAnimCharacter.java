@@ -46,5 +46,7 @@ public abstract class AbstractCustomAnimCharacter extends CustomPlayer {
         anim.myPlayer.speed = 0;
     }
 
-    public void resetToIdleAnimation() {}
+    public void resetToIdleAnimation() {
+        playAnimation("idle");
+    }
 }
