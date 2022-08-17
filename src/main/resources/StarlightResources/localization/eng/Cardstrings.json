@@ -11,6 +11,6 @@
   },
   "${ModID}:Strike": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Gain 1 Vigor."
   }
 }

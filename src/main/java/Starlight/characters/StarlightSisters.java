@@ -51,7 +51,7 @@ public class StarlightSisters extends CustomPlayer {
     public static final String[] NAMES = characterStrings.NAMES;
     public static final String[] TEXT = characterStrings.TEXT;
 
-    private boolean attackerInFront = true;
+    public boolean attackerInFront = true;
 
     public StarlightSisters(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures, modID + "Resources/images/char/mainChar/orb/vfx.png", null, new CustomSpriterAnimation(

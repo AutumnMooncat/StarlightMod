@@ -1,9 +1,11 @@
 package Starlight;
 
 import Starlight.cards.cardvars.Info;
+import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.helpers.CardBorderGlowManager;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -11,6 +13,9 @@ import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -175,6 +180,38 @@ public class TheStarlightMod implements
 
     @Override
     public void receivePostInitialize() {
+        CardBorderGlowManager.addGlowInfo(new CardBorderGlowManager.GlowInfo() {
+            private Color c = Settings.GOLD_COLOR.cpy();
+            @Override
+            public boolean test(AbstractCard abstractCard) {
+                return tagTest(abstractCard);
+            }
+
+            @Override
+            public Color getColor(AbstractCard abstractCard) {
+                return c;
+            }
+
+            @Override
+            public String glowID() {
+                return makeID("TagTeamGlow");
+            }
+        });
+    }
+
+    public static boolean tagTest(AbstractCard c) {
+        if (c instanceof TagTeamCard) {
+            if (AbstractDungeon.player instanceof StarlightSisters) {
+                if (((StarlightSisters) AbstractDungeon.player).attackerInFront) {
+                    return c.type == AbstractCard.CardType.SKILL;
+                } else {
+                    return c.type == AbstractCard.CardType.ATTACK;
+                }
+            } else {
+                return (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1) instanceof TagTeamCard);
+            }
+        }
+        return false;
 
     }
 }

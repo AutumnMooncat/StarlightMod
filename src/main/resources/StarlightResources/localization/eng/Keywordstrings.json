@@ -7,26 +7,12 @@
     "DESCRIPTION": "Required for #yRanged attacks."
   },
   {
-    "PROPER_NAME": "Bleeding",
+    "PROPER_NAME": "Tag Team",
     "NAMES": [
-      "bleeding",
-      "bleed"
+      "tag team",
+      "tag_team"
     ],
-    "DESCRIPTION": "Bleeding creatures lose HP at the start of their turn."
-  },
-  {
-    "PROPER_NAME": "Ranged",
-    "NAMES": [
-      "ranged"
-    ],
-    "DESCRIPTION": "Requires #yAmmo to play."
-  },
-  {
-    "PROPER_NAME": "Temporary",
-    "NAMES": [
-      "temporary"
-    ],
-    "DESCRIPTION": "Effect is lost at the end of this turn."
+    "DESCRIPTION": "Effect triggers if playing the card triggers a character switch."
   },
   {
     "PROPER_NAME": "Projected",
