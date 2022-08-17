@@ -5,6 +5,8 @@ import Starlight.CustomSpriterAnimation;
 import Starlight.RandomChatterHelper;
 import Starlight.cards.*;
 import Starlight.cards.interfaces.SkillAnimationAttack;
+import Starlight.powers.TagTeamPower;
+import Starlight.util.Wiz;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -320,6 +322,7 @@ public class StarlightSisters extends CustomPlayer {
         attackerInFront = true;
         resetToIdleAnimation();
         super.preBattlePrep();
+        Wiz.applyToSelfTop(new TagTeamPower(this));
         boolean bossFight = false;
         for (AbstractMonster mons : AbstractDungeon.getMonsters().monsters) {
             if (mons.type == AbstractMonster.EnemyType.BOSS) {

@@ -2,7 +2,9 @@
   "${ModID}:StarlightSisters": {
     "NAMES": [
       "The Sisters",
-      "the Sisters"
+      "the Sisters",
+      "Primrose",
+      "Luna"
     ],
     "TEXT": [
       "Twin magi that have come to challenge any foe the Spire has to offer. NL Masters of lost astral magicks.",

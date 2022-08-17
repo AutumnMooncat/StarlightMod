@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
-    <folder id="0" name="A">
-        <file id="0" name="A/Idle.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="1" name="A/Attack.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="2" name="A/Attack2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="3" name="A/Happy.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="4" name="A/Hurt.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="5" name="A/Idle2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="6" name="A/KO.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="7" name="A/KO2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="8" name="A/Throw.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="9" name="A/Throw2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+    <folder id="0" name="Primrose">
+        <file id="0" name="Primrose/Idle.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="1" name="Primrose/Attack.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="2" name="Primrose/Attack2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="3" name="Primrose/Happy.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="4" name="Primrose/Hurt.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="5" name="Primrose/Idle2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="6" name="Primrose/KO.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="7" name="Primrose/KO2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="8" name="Primrose/Throw.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="9" name="Primrose/Throw2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
     </folder>
-    <folder id="1" name="B">
-        <file id="0" name="B/Attack.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="1" name="B/Attack2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="2" name="B/Happy.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="3" name="B/Hurt.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="4" name="B/Idle.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="5" name="B/Idle2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="6" name="B/KO.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="7" name="B/KO2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="8" name="B/Throw.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
-        <file id="9" name="B/Throw2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+    <folder id="1" name="Luna">
+        <file id="0" name="Luna/Attack.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="1" name="Luna/Attack2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="2" name="Luna/Happy.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="3" name="Luna/Hurt.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="4" name="Luna/Idle.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="5" name="Luna/Idle2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="6" name="Luna/KO.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="7" name="Luna/KO2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="8" name="Luna/Throw.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
+        <file id="9" name="Luna/Throw2.png" width="256" height="256" pivot_x="0.5" pivot_y="0"/>
     </folder>
     <entity id="0" name="Sisters">
         <animation id="0" name="IdleA" length="4000" interval="100">

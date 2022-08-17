@@ -18,7 +18,7 @@ public class EasyXCostAction extends AbstractGameAction {
 
     /**
      * @param card          The card played. Usually should simply be "this".
-     * @param xActionUpdate A BiFunction that receives an integer for the energy amount (includes Chem X) and any number of integer parameters in the form of an array. The return value of this function is isDone.
+     * @param xActionUpdate Luna BiFunction that receives an integer for the energy amount (includes Chem X) and any number of integer parameters in the form of an array. The return value of this function is isDone.
      * @param params        Any number of integer parameters. These will be passed to the update function to avoid possible value changes between the creation of this action and when it is updated.
      */
     public EasyXCostAction(AbstractCard card, BiFunction<Integer, int[], Boolean> xActionUpdate, int... params) {
