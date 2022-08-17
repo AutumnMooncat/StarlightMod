@@ -195,7 +195,7 @@
                     <object folder="1" file="8" x="-50" y="-30" angle="0" scale_x="-1"/>
                 </key>
                 <key id="1" time="200" spin="0">
-                    <object folder="1" file="8" y="-30" angle="0" scale_x="-0.98" scale_y="1.02"/>
+                    <object folder="1" file="8" x="50" y="-30" angle="0" scale_x="-0.98" scale_y="1.02"/>
                 </key>
                 <key id="2" time="400" spin="0">
                     <object folder="1" file="8" x="50" y="-30" angle="0" scale_x="-1"/>
@@ -206,7 +206,7 @@
                     <object folder="0" file="5" x="50" y="-30" angle="0"/>
                 </key>
                 <key id="1" time="200" spin="0">
-                    <object folder="0" file="5" y="-30" angle="0" scale_x="0.98" scale_y="1.02" a="0.7"/>
+                    <object folder="0" file="5" x="-50" y="-30" angle="0" scale_x="0.98" scale_y="1.02" a="0.7"/>
                 </key>
                 <key id="2" time="400" spin="0">
                     <object folder="0" file="5" x="-50" y="-30" angle="0"/>
