@@ -1,9 +1,25 @@
 {
+  "${ModID}:ModConfigs": {
+    "TEXT": [
+      "If we decide to make any mod settings",
+      "The strings should go in here"
+    ],
+    "EXTRA_TEXT": [
+      "",
+      ""
+    ]
+  },
   "${ModID}:ConstellationOption": {
-  "TEXT": [
-    "Sacrifice",
-    "Remove a card from your deck up to 3 times. Start battles with buffs based on the cards offered.",
-    ""
-  ]
-}
+    "TEXT": [
+      "Sacrifice",
+      "Remove a card from your deck up to 3 times. Start battles with buffs based on the cards offered.",
+      ""
+    ]
+  },
+  "${ModID}:Magicks": {
+    "TEXT": [
+      "Magicks",
+      "Magicks will eventually do something."
+    ]
+  }
 }

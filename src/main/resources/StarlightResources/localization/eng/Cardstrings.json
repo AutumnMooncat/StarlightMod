@@ -5,12 +5,25 @@
     "UPGRADE_DESCRIPTION": "Upgrade description",
     "EXTENDED_DESCRIPTION": ["Extra Stuff"]
   },
+  "${ModID}:Ambush": {
+    "NAME": "Ambush",
+    "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Gain [E]."
+  },
   "${ModID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
+  "${ModID}:Fire": {
+    "NAME": "Fire",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Vigor.",
+    "EXTENDED_DESCRIPTION": ["Fira"]
+  },
+  "${ModID}:Prepare": {
+    "NAME": "Prepare",
+    "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Gain !M! Vigor."
+  },
   "${ModID}:Strike": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Gain 1 Vigor."
+    "DESCRIPTION": "Deal !D! damage."
   }
 }

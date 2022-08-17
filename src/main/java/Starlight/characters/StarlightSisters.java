@@ -3,6 +3,7 @@ package Starlight.characters;
 import Starlight.CustomAnimationListener;
 import Starlight.CustomSpriterAnimation;
 import Starlight.RandomChatterHelper;
+import Starlight.cards.*;
 import Starlight.cards.interfaces.SkillAnimationAttack;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
@@ -24,8 +25,6 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import Starlight.cards.Defend;
-import Starlight.cards.Strike;
 import Starlight.relics.Constellation;
 
 import java.util.ArrayList;
@@ -85,10 +84,14 @@ public class StarlightSisters extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Ambush.ID);
+        retVal.add(Fire.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
+        retVal.add(Prepare.ID);
         return retVal;
     }
 
