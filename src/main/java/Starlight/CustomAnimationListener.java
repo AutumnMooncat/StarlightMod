@@ -1,22 +1,22 @@
 package Starlight;
 
-import Starlight.characters.AbstractCustomAnimCharacter;
+import Starlight.characters.StarlightSisters;
 import com.brashmonkey.spriter.Animation;
 import com.brashmonkey.spriter.Mainline;
 import com.brashmonkey.spriter.Player;
 
 public class CustomAnimationListener implements Player.PlayerListener {
 
-    private final AbstractCustomAnimCharacter character;
+    private final StarlightSisters character;
 
-    public CustomAnimationListener(AbstractCustomAnimCharacter character) {
+    public CustomAnimationListener(StarlightSisters character) {
         this.character = character;
     }
 
     public void animationFinished(Animation animation) {
-        if (animation.name.equals("ko")) {
-            character.playAnimation("ko");
-        } else if (!animation.name.equals("idle")) {
+        if (animation.name.equals("KO")) {
+            character.playAnimation("KO");
+        } else if (!animation.name.equals("IdleA") && !animation.name.equals("IdleB")) {
             character.resetToIdleAnimation();
         }
     }

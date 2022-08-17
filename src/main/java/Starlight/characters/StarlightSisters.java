@@ -4,6 +4,7 @@ import Starlight.CustomAnimationListener;
 import Starlight.CustomSpriterAnimation;
 import Starlight.RandomChatterHelper;
 import Starlight.cards.interfaces.SkillAnimationAttack;
+import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -32,7 +33,7 @@ import java.util.ArrayList;
 import static Starlight.characters.StarlightSisters.Enums.METEORITE_PURPLE_COLOR;
 import static Starlight.TheStarlightMod.*;
 
-public class StarlightSisters extends AbstractCustomAnimCharacter {
+public class StarlightSisters extends CustomPlayer {
     private static final String[] orbTextures = {
             modID + "Resources/images/char/mainChar/orb/layer1.png",
             modID + "Resources/images/char/mainChar/orb/layer2.png",
@@ -50,9 +51,11 @@ public class StarlightSisters extends AbstractCustomAnimCharacter {
     public static final String[] NAMES = characterStrings.NAMES;
     public static final String[] TEXT = characterStrings.TEXT;
 
+    private boolean attackerInFront = true;
+
     public StarlightSisters(String name, PlayerClass setClass) {
         super(name, setClass, orbTextures, modID + "Resources/images/char/mainChar/orb/vfx.png", null, new CustomSpriterAnimation(
-                modID + "Resources/images/char/mainChar/OJCharacter.scml"));
+                modID + "Resources/images/char/mainChar/StarlightSisters.scml"));
         Player.PlayerListener listener = new CustomAnimationListener(this);
         ((CustomSpriterAnimation)this.animation).myPlayer.addListener(listener);
         initializeClass(null,
@@ -185,10 +188,37 @@ public class StarlightSisters extends AbstractCustomAnimCharacter {
         public static CardLibrary.LibraryType LIBRARY_COLOR;
     }
 
+    public CustomSpriterAnimation getAnimation() {
+        return (CustomSpriterAnimation) this.animation;
+    }
+
+    public void playAnimation(String name) {
+        ((CustomSpriterAnimation)this.animation).myPlayer.setAnimation(name);
+    }
+
+    public void stopAnimation() {
+        CustomSpriterAnimation anim = (CustomSpriterAnimation) this.animation;
+        int time = anim.myPlayer.getAnimation().length;
+        anim.myPlayer.setTime(time);
+        anim.myPlayer.speed = 0;
+    }
+
+    public void resetToIdleAnimation() {
+        if (attackerInFront) {
+            playAnimation("IdleA");
+        } else {
+            playAnimation("IdleB");
+        }
+    }
+
     @Override
     public void onVictory() {
         super.onVictory();
-        //playAnimation("happy");
+        if (attackerInFront) {
+            playAnimation("HappyA");
+        } else {
+            playAnimation("HappyB");
+        }
     }
 
     @Override
@@ -196,24 +226,38 @@ public class StarlightSisters extends AbstractCustomAnimCharacter {
         super.useCard(c, monster, energyOnUse);
         switch (c.type) {
             case ATTACK:
-                if (c instanceof SkillAnimationAttack) {
-                    playAnimation("skill");
+                if (attackerInFront) {
+                    playAnimation("Attack");
                 } else {
-                    playAnimation("attack");
+                    playAnimation("AttackSwap");
+                    attackerInFront = true;
                 }
                 RandomChatterHelper.showChatter(RandomChatterHelper.getAttackText(), cardTalkProbability, enableCardBattleTalkEffect);
                 break;
             case POWER:
                 RandomChatterHelper.showChatter(RandomChatterHelper.getPowerText(), cardTalkProbability, enableCardBattleTalkEffect);
-                playAnimation("happy");
+                if (attackerInFront) {
+                    playAnimation("HappyA");
+                } else {
+                    playAnimation("HappyB");
+                }
                 break;
             case SKILL:
-                playAnimation("skill");
+                if (attackerInFront) {
+                    playAnimation("SkillSwap");
+                    attackerInFront = false;
+                } else {
+                    playAnimation("Skill");
+                }
                 RandomChatterHelper.showChatter(RandomChatterHelper.getSkillText(), cardTalkProbability, enableCardBattleTalkEffect);
                 break;
             default:
                 RandomChatterHelper.showChatter(RandomChatterHelper.getSkillText(), cardTalkProbability, enableCardBattleTalkEffect);
-                playAnimation("skill");
+                if (attackerInFront) {
+                    playAnimation("CastA");
+                } else {
+                    playAnimation("CastB");
+                }
                 break;
         }
     }
@@ -225,7 +269,11 @@ public class StarlightSisters extends AbstractCustomAnimCharacter {
         boolean tookNoDamage = this.lastDamageTaken == 0;
         if (hadBlockBeforeSuper && (hasBlockAfterSuper || tookNoDamage)) {
             RandomChatterHelper.showChatter(RandomChatterHelper.getBlockedDamageText(), damagedTalkProbability, enableDamagedBattleTalkEffect);
-            playAnimation("happy");
+            if (attackerInFront) {
+                playAnimation("BraceA");
+            } else {
+                playAnimation("BraceB");
+            }
         } else {
             if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > 0) {
                 if (info.output >= 15) {
@@ -236,21 +284,29 @@ public class StarlightSisters extends AbstractCustomAnimCharacter {
             } else if (info.type == DamageInfo.DamageType.THORNS && info.output > 0) {
                 RandomChatterHelper.showChatter(RandomChatterHelper.getFieldDamageText(), damagedTalkProbability, enableDamagedBattleTalkEffect);
             }
-            playAnimation("hurt");
+            if (attackerInFront) {
+                playAnimation("HurtA");
+            } else {
+                playAnimation("HurtB");
+            }
         }
     }
 
     @Override
     public void playDeathAnimation() {
         RandomChatterHelper.showChatter(RandomChatterHelper.getKOText(), preTalkProbability, enablePreBattleTalkEffect); // I don't think this works
-        playAnimation("ko");
+        playAnimation("KO");
     }
 
     @Override
     public void heal(int healAmount) {
         if (healAmount > 0) {
             if (RandomChatterHelper.showChatter(RandomChatterHelper.getHealingText(), damagedTalkProbability, enableDamagedBattleTalkEffect)){ //Technically changes your hp, lol
-                playAnimation("happy");
+                if (attackerInFront) {
+                    playAnimation("HappyA");
+                } else {
+                    playAnimation("HappyB");
+                }
             }
         }
         super.heal(healAmount);
@@ -258,7 +314,8 @@ public class StarlightSisters extends AbstractCustomAnimCharacter {
 
     @Override
     public void preBattlePrep() {
-        playAnimation("idle");
+        attackerInFront = true;
+        resetToIdleAnimation();
         super.preBattlePrep();
         boolean bossFight = false;
         for (AbstractMonster mons : AbstractDungeon.getMonsters().monsters) {
