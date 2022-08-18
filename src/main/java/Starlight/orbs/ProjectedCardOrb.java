@@ -1,9 +1,11 @@
 package Starlight.orbs;
 
 import Starlight.TheStarlightMod;
+import Starlight.util.Wiz;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.evacipated.cardcrawl.mod.stslib.actions.defect.EvokeSpecificOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,11 +24,11 @@ public class ProjectedCardOrb extends AbstractOrb {
 
     AbstractCard card;
     private static final float IDLE_SCALE = 0.10f;
-    private static final float HOVER_SCALE = 1.0f;
+    private static final float HOVER_SCALE = 0.8f;
 
     public ProjectedCardOrb(AbstractCard card) {
         this.ID = ORB_ID;
-        this.card = card;
+        this.card = card.makeSameInstanceOf();
         this.card.current_x = AbstractDungeon.player.drawX + AbstractDungeon.player.hb_x;
         this.card.current_y = AbstractDungeon.player.drawY + AbstractDungeon.player.hb_y + AbstractDungeon.player.hb_h / 2.0F;
         this.angle = MathUtils.random(360.0F);
@@ -40,22 +42,22 @@ public class ProjectedCardOrb extends AbstractOrb {
 
     @Override
     public void onStartOfTurn() {
+        Wiz.atb(new EvokeSpecificOrbAction(this));
+    }
+
+    @Override
+    public void onEvoke() {
         AbstractMonster m = AbstractDungeon.getRandomMonster();
         if (card != null && m != null) {
             AbstractCard tmp = card.makeSameInstanceOf();
-            AbstractDungeon.player.limbo.addToBottom(tmp);
             tmp.current_x = card.current_x;
             tmp.current_y = card.current_y;
             tmp.target_x = card.current_x;
             tmp.target_y = card.current_y;
             tmp.calculateCardDamage(m);
-            tmp.purgeOnUse = true;
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
         }
     }
-
-    @Override
-    public void onEvoke() {}
 
     @Override
     public AbstractOrb makeCopy() {

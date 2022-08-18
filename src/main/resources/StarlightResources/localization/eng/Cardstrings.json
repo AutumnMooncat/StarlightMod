@@ -20,7 +20,7 @@
   },
   "${ModID}:Prepare": {
     "NAME": "Prepare",
-    "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Gain !M! Vigor."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Project !M! card{!M!|>1=s}."
   },
   "${ModID}:Strike": {
     "NAME": "Strike",
