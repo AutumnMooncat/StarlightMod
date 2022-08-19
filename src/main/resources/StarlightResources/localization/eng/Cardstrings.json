@@ -14,6 +14,11 @@
     "NAME": "Ambush",
     "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Gain [E]."
   },
+  "${ModID}:Blizzard": {
+    "NAME": "Blizzard",
+    "DESCRIPTION": "Deal !D! damage twice. Apply !M! Weak.",
+    "EXTENDED_DESCRIPTION": ["Blizzara"]
+  },
   "${ModID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
@@ -23,9 +28,28 @@
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Vigor.",
     "EXTENDED_DESCRIPTION": ["Fira"]
   },
+  "${ModID}:Fortify": {
+    "NAME": "Fortify",
+    "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Draw !M! cards."
+  },
+  "${ModID}:Haste": {
+    "NAME": "Haste",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Next turn, NL gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! additional card{!M!|>1=s}.",
+    "EXTENDED_DESCRIPTION": ["Hastera"]
+  },
   "${ModID}:Prepare": {
     "NAME": "Prepare",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:SP."
+    "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Gain !M! starlight:SP."
+  },
+  "${ModID}:Protect": {
+    "NAME": "Protect",
+    "DESCRIPTION": "Gain !B! Block. NL Put the next card you play this turn on top of your draw pile.",
+    "EXTENDED_DESCRIPTION": ["Protectra"]
+  },
+  "${ModID}:Quake": {
+    "NAME": "Quake",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Reduce this card's cost by !M! this combat.",
+    "EXTENDED_DESCRIPTION": ["Quakra"]
   },
   "${ModID}:Star": {
     "NAME": "Star",
@@ -40,5 +64,10 @@
     "NAME": "Thunder",
     "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies.",
     "EXTENDED_DESCRIPTION": ["Thundara"]
+  },
+  "${ModID}:Water": {
+    "NAME": "Water",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": ["Watera"]
   }
 }
