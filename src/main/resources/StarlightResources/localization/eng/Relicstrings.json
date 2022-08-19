@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "You can now remove cards from your deck at Rest Sites up to #b3 times. Start each combat with buffs based on the type and rarity of the cards offered."
     ]
+  },
+  "${ModID}:MagicWand": {
+    "NAME": "Magic Wand",
+    "FLAVOR": "Isn't this just a stick?",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b"," #ystarlight:SP."
+    ]
   }
 }

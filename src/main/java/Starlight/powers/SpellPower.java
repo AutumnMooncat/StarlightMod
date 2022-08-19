@@ -43,7 +43,7 @@ public class SpellPower extends AbstractPower {
         if (card instanceof AbstractMagickCard) {
             return blockAmount + amount;
         }
-        return amount;
+        return blockAmount;
     }
 
     @Override

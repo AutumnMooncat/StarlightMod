@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import static Starlight.TheStarlightMod.makeID;
 
 public class Constellation extends AbstractEasyRelic implements CustomSavable<Integer> {
-    public static final String ID = makeID("Constellation");
+    public static final String ID = makeID(Constellation.class.getSimpleName());
     private static final int OFFSET = 100;
     private int str;
     private int dex;

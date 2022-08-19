@@ -6,6 +6,7 @@ import Starlight.RandomChatterHelper;
 import Starlight.cards.*;
 import Starlight.cards.interfaces.SkillAnimationAttack;
 import Starlight.powers.TagTeamPower;
+import Starlight.relics.MagicWand;
 import Starlight.util.Wiz;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
@@ -99,7 +100,7 @@ public class StarlightSisters extends CustomPlayer {
 
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Constellation.ID);
+        retVal.add(MagicWand.ID);
         return retVal;
     }
 
