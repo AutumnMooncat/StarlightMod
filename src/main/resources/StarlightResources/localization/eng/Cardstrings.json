@@ -64,6 +64,10 @@
     "NAME": "Shuffle Strike",
     "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Tag_Team: Draw !M! card{!M!|>1=s}."
   },
+  "${ModID}:SpellWeaver": {
+    "NAME": "Spell Weaver",
+    "DESCRIPTION": "Draw 1 card. NL If you draw a starlight:Magick card, gain !M! starlight:SP."
+  },
   "${ModID}:Star": {
     "NAME": "Star",
     "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|1>s}.",

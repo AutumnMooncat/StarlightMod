@@ -12,7 +12,7 @@ public abstract class AbstractMagickCard extends AbstractEasyCard {
     private static String tipID = TheStarlightMod.makeID("Magicks");
     private static String[] TEXT = CardCrawlGame.languagePack.getUIString(tipID).TEXT;
     private static List<String> descriptors = new ArrayList<>(Collections.singletonList(TEXT[0]));
-    private static List<TooltipInfo> tip = new ArrayList<>(Collections.singletonList(new TooltipInfo(TEXT[0], TEXT[1])));
+    private static List<TooltipInfo> tip = new ArrayList<>(Collections.singletonList(new TooltipInfo(TEXT[1], TEXT[2])));
 
     public AbstractMagickCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target) {
         super(cardID, cost, type, rarity, target);

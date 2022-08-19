@@ -18,6 +18,7 @@
   },
   "${ModID}:Magicks": {
     "TEXT": [
+      "Magick",
       "Magicks",
       "Magick cards additionally scale their damage and #yBlock with #ySpell #yPower."
     ]

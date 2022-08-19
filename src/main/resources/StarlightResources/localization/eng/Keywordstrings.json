@@ -30,5 +30,13 @@
       "sp"
     ],
     "DESCRIPTION": "Improves the potency of #yMagick cards."
+  },
+  {
+    "PROPER_NAME": "Magicks",
+    "NAMES": [
+      "magick",
+      "magicks"
+    ],
+    "DESCRIPTION": "Magick cards additionally scale their damage and #yBlock with #ySpell #yPower."
   }
 ]
