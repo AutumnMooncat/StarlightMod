@@ -1,17 +1,19 @@
 package Starlight.actions;
 
-import Starlight.orbs.ProjectedCardOrb;
+import Starlight.TheStarlightMod;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 
 public class ProjectCardAction extends AbstractGameAction {
+    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("Project")).TEXT;
 
     public ProjectCardAction(int amount) {
         this.amount = amount;
@@ -23,11 +25,9 @@ public class ProjectCardAction extends AbstractGameAction {
             this.isDone = true;
             return;
         }
-        if (amount > Wiz.adp().hand.size()) {
-            amount = Wiz.adp().hand.size();
-        }
-        if (amount == Wiz.adp().hand.size()) {
-            for (AbstractCard c : Wiz.adp().hand.group) {
+        ArrayList<AbstractCard> validCards = Wiz.adp().hand.group.stream().filter(c -> c.cost != -2).collect(Collectors.toCollection(ArrayList::new));
+        if (amount >= validCards.size()) {
+            for (AbstractCard c : validCards) {
                 if (AbstractDungeon.player.hoveredCard == c) {
                     AbstractDungeon.player.releaseCard();
                 }
@@ -35,19 +35,19 @@ public class ProjectCardAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.removeFromQueue(c);
                 c.unhover();
                 c.untip();
-                c.stopGlowing();
+                //c.stopGlowing();
                 ProjectedCardManager.addCard(c);
+                Wiz.adp().hand.removeCard(c);
             }
-            Wiz.adp().hand.clear();
         } else {
             HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
             ArrayList<AbstractCard> selection = new ArrayList<>();
-            for (AbstractCard c : Wiz.adp().hand.group) {
+            for (AbstractCard c : validCards) {
                 AbstractCard copy = c.makeStatEquivalentCopy();
                 copyMap.put(copy, c);
                 selection.add(copy);
             }
-            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, "Blah Blah", cards -> {
+            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], cards -> {
                 for (AbstractCard copy : cards) {
                     AbstractCard c = copyMap.get(copy);
                     if (AbstractDungeon.player.hoveredCard == c) {
@@ -57,7 +57,7 @@ public class ProjectCardAction extends AbstractGameAction {
                     AbstractDungeon.actionManager.removeFromQueue(c);
                     c.unhover();
                     c.untip();
-                    c.stopGlowing();
+                    //c.stopGlowing();
                     Wiz.adp().hand.group.remove(c);
                     ProjectedCardManager.addCard(c);
                 }

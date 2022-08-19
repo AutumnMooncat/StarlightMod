@@ -88,7 +88,7 @@ public class StarlightSisters extends CustomPlayer {
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Ambush.ID);
-        retVal.add(Fire.ID);
+        retVal.add(Star.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);

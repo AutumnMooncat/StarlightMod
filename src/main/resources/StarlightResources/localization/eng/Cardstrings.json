@@ -25,7 +25,12 @@
   },
   "${ModID}:Prepare": {
     "NAME": "Prepare",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Project !M! card{!M!|>1=s}."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:SP."
+  },
+  "${ModID}:Star": {
+    "NAME": "Star",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|1>s}.",
+    "EXTENDED_DESCRIPTION": ["Stara"]
   },
   "${ModID}:Strike": {
     "NAME": "Strike",
