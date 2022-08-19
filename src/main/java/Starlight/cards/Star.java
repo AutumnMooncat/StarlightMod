@@ -1,14 +1,11 @@
 package Starlight.cards;
 
-import Starlight.actions.ProjectCardAction;
+import Starlight.actions.ProjectCardsInHandAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -34,7 +31,7 @@ public class Star extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.atb(new ProjectCardAction(magicNumber));
+        Wiz.atb(new ProjectCardsInHandAction(magicNumber));
     }
 
     @Override

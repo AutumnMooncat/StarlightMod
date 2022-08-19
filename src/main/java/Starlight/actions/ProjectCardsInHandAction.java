@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.stream.Collectors;
 
-public class ProjectCardAction extends AbstractGameAction {
+public class ProjectCardsInHandAction extends AbstractGameAction {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("Project")).TEXT;
 
-    public ProjectCardAction(int amount) {
+    public ProjectCardsInHandAction(int amount) {
         this.amount = amount;
     }
 

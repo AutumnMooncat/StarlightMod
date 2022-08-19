@@ -32,6 +32,10 @@
     "NAME": "Fortify",
     "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Draw !M! cards."
   },
+  "${ModID}:FutureSight": {
+    "NAME": "Future Sight",
+    "DESCRIPTION": "Scry !M!. NL starlight:Project the top card of your draw pile."
+  },
   "${ModID}:Haste": {
     "NAME": "Haste",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Next turn, NL gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! additional card{!M!|>1=s}.",
@@ -51,6 +55,15 @@
     "DESCRIPTION": "Deal !D! damage to ALL enemies. Reduce this card's cost by !M! this combat.",
     "EXTENDED_DESCRIPTION": ["Quakra"]
   },
+  "${ModID}:Shell": {
+    "NAME": "Shell",
+    "DESCRIPTION": "Gain !B! Block. NL Block is not removed at the start of your next turn.",
+    "EXTENDED_DESCRIPTION": ["Shellra"]
+  },
+  "${ModID}:ShuffleStrike": {
+    "NAME": "Shuffle Strike",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Tag_Team: Draw !M! card{!M!|>1=s}."
+  },
   "${ModID}:Star": {
     "NAME": "Star",
     "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|1>s}.",
@@ -64,6 +77,10 @@
     "NAME": "Thunder",
     "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies.",
     "EXTENDED_DESCRIPTION": ["Thundara"]
+  },
+  "${ModID}:WandWhack": {
+    "NAME": "Wand Whack",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! starlight:SP."
   },
   "${ModID}:Water": {
     "NAME": "Water",

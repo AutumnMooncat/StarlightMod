@@ -1,6 +1,5 @@
 package Starlight.cards;
 
-import Starlight.actions.ProjectCardAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.powers.SpellPower;
@@ -41,6 +40,5 @@ public class Prepare extends AbstractEasyCard implements TagTeamCard {
     @Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new SpellPower(p, magicNumber));
-        //Wiz.atb(new ProjectCardAction(magicNumber));
     }
 }
