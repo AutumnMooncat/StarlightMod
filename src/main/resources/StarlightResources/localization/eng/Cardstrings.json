@@ -5,6 +5,11 @@
     "UPGRADE_DESCRIPTION": "Upgrade description",
     "EXTENDED_DESCRIPTION": ["Extra Stuff"]
   },
+  "${ModID}:Aero": {
+    "NAME": "Aero",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards.",
+    "EXTENDED_DESCRIPTION": ["Aerora"]
+  },
   "${ModID}:Ambush": {
     "NAME": "Ambush",
     "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Gain [E]."
@@ -25,5 +30,10 @@
   "${ModID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
+  },
+  "${ModID}:Thunder": {
+    "NAME": "Thunder",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies.",
+    "EXTENDED_DESCRIPTION": ["Thundara"]
   }
 }
