@@ -21,5 +21,14 @@
       "projected"
     ],
     "DESCRIPTION": "A projected card is played at the start of your next turn at no cost."
+  },
+  {
+    "PROPER_NAME": "Spell Power",
+    "NAMES": [
+      "spell power",
+      "spell_power",
+      "sp"
+    ],
+    "DESCRIPTION": "Improves the potency of #yMagick cards."
   }
 ]

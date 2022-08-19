@@ -19,7 +19,14 @@
   "${ModID}:Magicks": {
     "TEXT": [
       "Magicks",
-      "Magicks will eventually do something."
+      "Magick cards additionally scale their damage and #yBlock with #ySpell #yPower."
+    ]
+  },
+  "${ModID}:Project": {
+    "TEXT": [
+      "Project",
+      "Choose a card to Project.",
+      "Choose "," cards to Project."
     ]
   }
 }

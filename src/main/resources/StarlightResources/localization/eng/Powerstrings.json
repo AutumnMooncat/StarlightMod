@@ -15,5 +15,9 @@
     "NAME": "Twin Sisters",
     "DESCRIPTIONS": ["#yAttacks deal #b1 additional damage while #y"," is in front. Swap to #y"," by playing a #ySkill.",
                     "Cards give #b1 additional #yBlock while #y"," is in front. Swap to #y"," by playing an #yAttack."]
+  },
+  "${ModID}:SpellPower": {
+    "NAME": "Spell Power",
+    "DESCRIPTIONS": ["Your next #yMagick card has increased potency."]
   }
 }
