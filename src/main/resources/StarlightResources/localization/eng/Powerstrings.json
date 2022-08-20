@@ -19,5 +19,9 @@
   "${ModID}:SpellPower": {
     "NAME": "Spell Power",
     "DESCRIPTIONS": ["Your next #yMagick card has increased potency."]
+  },
+  "${ModID}:TeamEffortPower": {
+    "NAME": "Team Effort",
+    "DESCRIPTIONS": ["Whenever you trigger a #yTag #yTeam effect, gain #b"," #yBlock."]
   }
 }

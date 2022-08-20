@@ -14,10 +14,26 @@
     "NAME": "Ambush",
     "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Gain [E]."
   },
+  "${ModID}:Balance": {
+    "NAME": "Balance",
+    "DESCRIPTION": "{@@}Remove all Block from the enemy. NL Deal that much damage.{!Location!|0= NL (Deals !D! damage)}",
+    "UPGRADE_DESCRIPTION": "{@@}Remove all Block from the enemy. NL Deal that much damage to ALL enemies.{!Location!|0= NL (Deals !D! damage)}",
+    "EXTENDED_DESCRIPTION": ["Lifebreak"]
+  },
+  "${ModID}:Bio": {
+    "NAME": "Bio",
+    "DESCRIPTION": "Deal !D! damage. NL Apply Poison equal to unblocked damage dealt.",
+    "EXTENDED_DESCRIPTION": ["Biora"]
+  },
   "${ModID}:Blizzard": {
     "NAME": "Blizzard",
     "DESCRIPTION": "Deal !D! damage twice. Apply !M! Weak.",
     "EXTENDED_DESCRIPTION": ["Blizzara"]
+  },
+  "${ModID}:Dark": {
+    "NAME": "Dark",
+    "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain [E] [E].",
+    "EXTENDED_DESCRIPTION": ["Darkra"]
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
@@ -40,6 +56,16 @@
     "NAME": "Haste",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Next turn, NL gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! additional card{!M!|>1=s}.",
     "EXTENDED_DESCRIPTION": ["Hastera"]
+  },
+  "${ModID}:Holy": {
+    "NAME": "Holy",
+    "DESCRIPTION": "Deal !D! damage. NL Deals double damage to Elite and Boss enemies.",
+    "EXTENDED_DESCRIPTION": ["Holyra"]
+  },
+  "${ModID}:Imperil": {
+    "NAME": "Imperil",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable.",
+    "EXTENDED_DESCRIPTION": ["Imperilra"]
   },
   "${ModID}:Prepare": {
     "NAME": "Prepare",
@@ -76,6 +102,10 @@
   "${ModID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
+  },
+  "${ModID}:TeamEffort": {
+    "NAME": "Team Effort",
+    "DESCRIPTION": "Whenever you trigger a starlight:Tag_Team effect, gain !M! Block."
   },
   "${ModID}:Thunder": {
     "NAME": "Thunder",
