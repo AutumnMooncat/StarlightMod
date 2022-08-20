@@ -54,6 +54,7 @@ public class ProjectedCardManager {
             } else {
                 card.targetDrawScale = 0.2f;
             }
+            card.applyPowers();
             i++;
         }
     }

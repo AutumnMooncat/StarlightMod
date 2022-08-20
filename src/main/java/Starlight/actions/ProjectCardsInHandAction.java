@@ -14,14 +14,25 @@ import java.util.stream.Collectors;
 
 public class ProjectCardsInHandAction extends AbstractGameAction {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("Project")).TEXT;
+    public static final ArrayList<AbstractCard> projectedCards = new ArrayList<>();
+    private AbstractGameAction followUpAction;
 
     public ProjectCardsInHandAction(int amount) {
+        this(amount, null);
+    }
+
+    public ProjectCardsInHandAction(int amount, AbstractGameAction followUpAction) {
         this.amount = amount;
+        this.followUpAction = followUpAction;
     }
 
     @Override
     public void update() {
+        projectedCards.clear();
         if (Wiz.adp().hand.isEmpty()) {
+            if (this.followUpAction != null) {
+                this.addToTop(this.followUpAction);
+            }
             this.isDone = true;
             return;
         }
@@ -38,6 +49,10 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
                 //c.stopGlowing();
                 ProjectedCardManager.addCard(c);
                 Wiz.adp().hand.removeCard(c);
+                projectedCards.add(c);
+            }
+            if (this.followUpAction != null) {
+                this.addToTop(this.followUpAction);
             }
         } else {
             HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
@@ -60,6 +75,10 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
                     //c.stopGlowing();
                     Wiz.adp().hand.group.remove(c);
                     ProjectedCardManager.addCard(c);
+                    projectedCards.add(c);
+                }
+                if (this.followUpAction != null) {
+                    this.addToTop(this.followUpAction);
                 }
             }));
         }
