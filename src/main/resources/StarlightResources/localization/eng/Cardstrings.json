@@ -14,6 +14,11 @@
     "NAME": "Ambush",
     "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Gain [E]."
   },
+  "${ModID}:Astra": {
+    "NAME": "Astra",
+    "DESCRIPTION": "starlight:Project !M! cards. NL Gain !B! Block for each starlight:Projected [#efc851]Magick[] card.",
+    "EXTENDED_DESCRIPTION": ["Astraga"]
+  },
   "${ModID}:Balance": {
     "NAME": "Balance",
     "DESCRIPTION": "{@@}Remove all Block from the enemy. NL Deal that much damage.{!Location!|0= NL (Deals !D! damage)}",
