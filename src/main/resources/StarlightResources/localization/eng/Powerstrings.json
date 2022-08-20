@@ -23,5 +23,13 @@
   "${ModID}:TeamEffortPower": {
     "NAME": "Team Effort",
     "DESCRIPTIONS": ["Whenever you trigger a #yTag #yTeam effect, gain #b"," #yBlock."]
+  },
+  "${ModID}:ThoughtbloomPower": {
+    "NAME": "Thoughtbloom",
+    "DESCRIPTIONS": ["Whenever you draw a #yMagick card gain #b"," #ySpell #yPower."]
+  },
+  "${ModID}:ReflectPower": {
+    "NAME": "Reflect",
+    "DESCRIPTIONS": ["When attacked, deals #b"," damage back."]
   }
 }

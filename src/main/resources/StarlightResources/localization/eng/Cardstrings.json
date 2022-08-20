@@ -81,6 +81,11 @@
     "DESCRIPTION": "Deal !D! damage to ALL enemies. Reduce this card's cost by !M! this combat.",
     "EXTENDED_DESCRIPTION": ["Quakra"]
   },
+  "${ModID}:Reflect": {
+    "NAME": "Reflect",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage back.",
+    "EXTENDED_DESCRIPTION": ["Reflectra"]
+  },
   "${ModID}:Shell": {
     "NAME": "Shell",
     "DESCRIPTION": "Gain !B! Block. NL Block is not removed at the start of your next turn.",
@@ -106,6 +111,10 @@
   "${ModID}:TeamEffort": {
     "NAME": "Team Effort",
     "DESCRIPTION": "Whenever you trigger a starlight:Tag_Team effect, gain !M! Block."
+  },
+  "${ModID}:Thoughtbloom": {
+    "NAME": "Thoughtbloom",
+    "DESCRIPTION": "Whenever you draw a starlight:Magick card, gain !M! starlight:SP."
   },
   "${ModID}:Thunder": {
     "NAME": "Thunder",
