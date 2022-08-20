@@ -40,9 +40,17 @@
     "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain [E] [E].",
     "EXTENDED_DESCRIPTION": ["Darkra"]
   },
+  "${ModID}:Deduce": {
+    "NAME": "Deduce",
+    "DESCRIPTION": "Gain !B! Block. NL Scry !M!. NL Draw 1 card."
+  },
   "${ModID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "${ModID}:Enlighten": {
+    "NAME": "Enlighten",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL If starlight:Projected, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}."
   },
   "${ModID}:Fire": {
     "NAME": "Fire",
@@ -71,6 +79,11 @@
     "NAME": "Imperil",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable.",
     "EXTENDED_DESCRIPTION": ["Imperilra"]
+  },
+  "${ModID}:Meteor": {
+    "NAME": "Meteor",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Deals double damage if starlight:Projected.",
+    "EXTENDED_DESCRIPTION": ["Meteorga"]
   },
   "${ModID}:Prepare": {
     "NAME": "Prepare",

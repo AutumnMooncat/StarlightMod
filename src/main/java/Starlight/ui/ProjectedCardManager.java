@@ -1,5 +1,6 @@
 package Starlight.ui;
 
+import Starlight.cards.interfaces.OnProjectCard;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -81,6 +82,9 @@ public class ProjectedCardManager {
         card.targetAngle = 0f;
         card.beginGlowing();
         cards.addToTop(card);
+        if (card instanceof OnProjectCard) {
+            ((OnProjectCard) card).onProject();
+        }
     }
 
     @SpirePatch2(clz = AbstractPlayer.class, method = "applyStartOfTurnCards")
