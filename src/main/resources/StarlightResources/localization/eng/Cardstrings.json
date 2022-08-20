@@ -52,10 +52,20 @@
     "NAME": "Enlighten",
     "DESCRIPTION": "{@@}Gain !B! Block. NL If starlight:Projected, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}."
   },
+  "${ModID}:Esuna": {
+    "NAME": "Esuna",
+    "DESCRIPTION": "Gain !B! Block. NL Remove all your debuffs. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Esunaga"]
+  },
   "${ModID}:Fire": {
     "NAME": "Fire",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Vigor.",
     "EXTENDED_DESCRIPTION": ["Fira"]
+  },
+  "${ModID}:Float": {
+    "NAME": "Float",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:SP.",
+    "EXTENDED_DESCRIPTION": ["Floatga"]
   },
   "${ModID}:Fortify": {
     "NAME": "Fortify",
@@ -68,7 +78,7 @@
   "${ModID}:Haste": {
     "NAME": "Haste",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Next turn, NL gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! additional card{!M!|>1=s}.",
-    "EXTENDED_DESCRIPTION": ["Hastera"]
+    "EXTENDED_DESCRIPTION": ["Hastega"]
   },
   "${ModID}:Holy": {
     "NAME": "Holy",
@@ -78,7 +88,7 @@
   "${ModID}:Imperil": {
     "NAME": "Imperil",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable.",
-    "EXTENDED_DESCRIPTION": ["Imperilra"]
+    "EXTENDED_DESCRIPTION": ["Imperilga"]
   },
   "${ModID}:Meteor": {
     "NAME": "Meteor",
@@ -92,7 +102,7 @@
   "${ModID}:Protect": {
     "NAME": "Protect",
     "DESCRIPTION": "Gain !B! Block. NL Put the next card you play this turn on top of your draw pile.",
-    "EXTENDED_DESCRIPTION": ["Protectra"]
+    "EXTENDED_DESCRIPTION": ["Protectga"]
   },
   "${ModID}:Quake": {
     "NAME": "Quake",
@@ -102,12 +112,12 @@
   "${ModID}:Reflect": {
     "NAME": "Reflect",
     "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage back.",
-    "EXTENDED_DESCRIPTION": ["Reflectra"]
+    "EXTENDED_DESCRIPTION": ["Reflectga"]
   },
   "${ModID}:Shell": {
     "NAME": "Shell",
     "DESCRIPTION": "Gain !B! Block. NL Block is not removed at the start of your next turn.",
-    "EXTENDED_DESCRIPTION": ["Shellra"]
+    "EXTENDED_DESCRIPTION": ["Shellga"]
   },
   "${ModID}:ShuffleStrike": {
     "NAME": "Shuffle Strike",
@@ -138,6 +148,11 @@
     "NAME": "Thunder",
     "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies.",
     "EXTENDED_DESCRIPTION": ["Thundara"]
+  },
+  "${ModID}:Vanish": {
+    "NAME": "Vanish",
+    "DESCRIPTION": "Gain 1 Intangible. NL Next turn, gain !B! Block. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Vanishga"]
   },
   "${ModID}:WandWhack": {
     "NAME": "Wand Whack",

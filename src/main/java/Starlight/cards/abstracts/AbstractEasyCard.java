@@ -64,7 +64,7 @@ public abstract class AbstractEasyCard extends CustomCard {
         initializeTitle();
         initializeDescription();
 
-        CommonKeywordIconsField.useIcons.set(this, true);
+        //CommonKeywordIconsField.useIcons.set(this, true);
 
         //ArtlessField.isArtless.set(this, true);
 
