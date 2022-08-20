@@ -75,6 +75,10 @@
     "NAME": "Future Sight",
     "DESCRIPTION": "Scry !M!. NL starlight:Project the top card of your draw pile."
   },
+  "${ModID}:Gank": {
+    "NAME": "Gank",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you trigger starlight:Tag_Team, return this from the discard pile to your hand."
+  },
   "${ModID}:Haste": {
     "NAME": "Haste",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Next turn, NL gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! additional card{!M!|>1=s}.",
@@ -138,16 +142,25 @@
   },
   "${ModID}:TeamEffort": {
     "NAME": "Team Effort",
-    "DESCRIPTION": "Whenever you trigger a starlight:Tag_Team effect, gain !M! Block."
+    "DESCRIPTION": "Whenever you trigger starlight:Tag_Team, gain !M! Block."
   },
   "${ModID}:Thoughtbloom": {
     "NAME": "Thoughtbloom",
     "DESCRIPTION": "Whenever you draw a starlight:Magick card, gain !M! starlight:SP."
   },
+  "${ModID}:Thrash": {
+    "NAME": "Thrash",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you trigger starlight:Tag_Team, increase this card's damage by !M! this combat."
+  },
   "${ModID}:Thunder": {
     "NAME": "Thunder",
     "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies.",
     "EXTENDED_DESCRIPTION": ["Thundara"]
+  },
+  "${ModID}:TwinForm": {
+    "NAME": "Twin Form",
+    "DESCRIPTION": "Ethereal. NL starlight:Project a copy of the first card you play each turn.",
+    "UPGRADE_DESCRIPTION": "starlight:Project a copy of the first card you play each turn."
   },
   "${ModID}:Vanish": {
     "NAME": "Vanish",

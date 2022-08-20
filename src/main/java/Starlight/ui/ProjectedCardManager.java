@@ -5,12 +5,13 @@ import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.OverlayMenu;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -23,7 +24,7 @@ import javassist.CtBehavior;
 public class ProjectedCardManager {
     public static final float Y_OFFSET = 70f * Settings.scale;
     public static final float X_OFFSET = 100f * Settings.scale;
-    private static final CardGroup cards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+    public static final CardGroup cards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
     private static final BobEffect bob = new BobEffect(3.0f * Settings.scale, 3.0f);
     public static AbstractCard hovered;
 
@@ -68,6 +69,7 @@ public class ProjectedCardManager {
                     Wiz.adp().limbo.group.add(card);
                     card.targetDrawScale = 0.75F;
                     card.applyPowers();
+                    ProjectedCardField.projectedField.set(card, true);
                     AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(card, true, EnergyPanel.getCurrentEnergy(), false, true), false);
                     //Wiz.att(new NewQueueCardAction(card, true, false, true));
                     Wiz.atb(new UnlimboAction(card));
@@ -84,6 +86,27 @@ public class ProjectedCardManager {
         cards.addToTop(card);
         if (card instanceof OnProjectCard) {
             ((OnProjectCard) card).onProject();
+        }
+    }
+
+    @SpirePatch2(clz = AbstractCard.class, method = SpirePatch.CLASS)
+    public static class ProjectedCardField {
+        public static SpireField<Boolean> projectedField = new SpireField<>(() -> false);
+    }
+
+    @SpirePatch2(clz = UseCardAction.class, method = SpirePatch.CLASS)
+    public static class ProjectedActionField {
+        public static SpireField<Boolean> projectedField = new SpireField<>(() -> false);
+    }
+
+    @SpirePatch2(clz = UseCardAction.class, method = SpirePatch.CONSTRUCTOR, paramtypez = {AbstractCard.class, AbstractCreature.class})
+    public static class InheritProjectedField {
+        @SpirePrefixPatch
+        public static void pushProjected(UseCardAction __instance, AbstractCard card) {
+            if (ProjectedCardField.projectedField.get(card)) {
+                ProjectedActionField.projectedField.set(__instance, true);
+                ProjectedCardField.projectedField.set(card, false);
+            }
         }
     }
 

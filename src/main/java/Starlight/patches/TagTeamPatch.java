@@ -1,8 +1,10 @@
 package Starlight.patches;
 
 import Starlight.TheStarlightMod;
+import Starlight.cards.interfaces.OnTagTeamTriggeredCard;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.powers.interfaces.OnTagTeamPower;
+import Starlight.ui.ProjectedCardManager;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +12,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import javassist.CtBehavior;
+
+import java.util.ArrayList;
 
 public class TagTeamPatch {
     @SpirePatch2(clz = AbstractPlayer.class, method = "useCard")
@@ -23,6 +27,7 @@ public class TagTeamPatch {
                         ((OnTagTeamPower) p).onTagTeam(c);
                     }
                 }
+                triggerOnTagTeamCards(c, __instance, monster);
             }
         }
 
@@ -31,6 +36,22 @@ public class TagTeamPatch {
             public int[] Locate(CtBehavior ctBehavior) throws Exception {
                 Matcher m = new Matcher.MethodCallMatcher(GameActionManager.class, "addToBottom");
                 return LineFinder.findInOrder(ctBehavior, m);
+            }
+        }
+    }
+
+    public static void triggerOnTagTeamCards(AbstractCard card, AbstractPlayer p, AbstractMonster m) {
+        ArrayList<AbstractCard> cards = new ArrayList<>();
+        cards.addAll(p.hand.group);
+        cards.addAll(p.drawPile.group);
+        cards.addAll(p.discardPile.group);
+        cards.addAll(p.exhaustPile.group);
+        cards.addAll(p.limbo.group);
+        cards.addAll(ProjectedCardManager.cards.group);
+
+        for (AbstractCard c : cards) {
+            if (c instanceof OnTagTeamTriggeredCard) {
+                ((OnTagTeamTriggeredCard) c).onTagTriggered(card, p, m);
             }
         }
     }

@@ -31,5 +31,10 @@
   "${ModID}:ReflectPower": {
     "NAME": "Reflect",
     "DESCRIPTIONS": ["When attacked, deals #b"," damage back."]
+  },
+  "${ModID}:TwinFormPower": {
+    "NAME": "Twin Form",
+    "DESCRIPTIONS": ["#yProject a copy of the first card you play each turn.",
+                    "#yProject a copy of the first #b"," cards you play each turn."]
   }
 }
