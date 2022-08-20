@@ -29,7 +29,7 @@ public class Bio extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        dmg(m, AbstractGameAction.AttackEffect.POISON);
     }
 
     @Override

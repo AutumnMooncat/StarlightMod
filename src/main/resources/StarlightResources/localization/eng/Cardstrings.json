@@ -94,6 +94,11 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable.",
     "EXTENDED_DESCRIPTION": ["Imperilga"]
   },
+  "${ModID}:Incantation": {
+    "NAME": "Incantation",
+    "DESCRIPTION": "Whenever you Scry, gain !M! starlight:SP.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Scry, gain !M! starlight:SP."
+  },
   "${ModID}:Meteor": {
     "NAME": "Meteor",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Deals double damage if starlight:Projected.",
@@ -139,6 +144,10 @@
   "${ModID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
+  },
+  "${ModID}:Swindle": {
+    "NAME": "Swindle",
+    "DESCRIPTION": "Gain !M! starlight:SP. NL Put 2 random starlight:Magicks from your draw pile into your hand."
   },
   "${ModID}:TeamEffort": {
     "NAME": "Team Effort",
