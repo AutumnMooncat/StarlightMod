@@ -32,9 +32,9 @@ public class Thunder extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.forAllMonstersLiving(mon -> new VFXAction(new LightningEffect(mon.drawX, mon.drawY), 0.05F));
+        Wiz.forAllMonstersLiving(mon -> Wiz.atb(new VFXAction(new LightningEffect(mon.drawX, mon.drawY), 0.05F)));
         allDmg(AbstractGameAction.AttackEffect.NONE);
-        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(m, new VulnerablePower(mon, magicNumber, false)));
+        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new VulnerablePower(mon, magicNumber, false)));
     }
 
     @Override

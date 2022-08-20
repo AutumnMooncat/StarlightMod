@@ -144,7 +144,7 @@ public class ProjectedCardManager {
 
     @SpirePatch2(clz = AbstractPlayer.class, method = "preBattlePrep")
     @SpirePatch2(clz = AbstractPlayer.class, method = "onVictory")
-    public static class emptyCards {
+    public static class EmptyCards {
         @SpirePostfixPatch
         public static void yeet() {
             cards.clear();

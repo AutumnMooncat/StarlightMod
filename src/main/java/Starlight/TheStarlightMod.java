@@ -3,6 +3,7 @@ package Starlight;
 import Starlight.cards.cardvars.Info;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
+import Starlight.ui.ProjectedCardManager;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.helpers.CardBorderGlowManager;
@@ -33,7 +34,8 @@ public class TheStarlightMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber {
+        PostInitializeSubscriber,
+        StartGameSubscriber {
 
     public static final String modID = "Starlight";
 
@@ -213,5 +215,10 @@ public class TheStarlightMod implements
         }
         return false;
 
+    }
+
+    @Override
+    public void receiveStartGame() {
+        ProjectedCardManager.EmptyCards.yeet();
     }
 }
