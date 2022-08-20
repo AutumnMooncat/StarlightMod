@@ -2,6 +2,9 @@ package Starlight.powers;
 
 import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
+import Starlight.util.TexLoader;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -19,6 +22,12 @@ public class TagTeamPower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String[] NAMES = CardCrawlGame.languagePack.getCharacterString(TheStarlightMod.makeID("StarlightSisters")).NAMES;
 
+    public TextureAtlas.AtlasRegion P48, P128, L48, L128;
+    Texture pTex = TexLoader.getTexture(TheStarlightMod.modID + "Resources/images/powers/TagTeamPower48.png");
+    Texture pTexLarge = TexLoader.getTexture(TheStarlightMod.modID + "Resources/images/powers/TagTeamPower128.png");
+    Texture lTex = TexLoader.getTexture(TheStarlightMod.modID + "Resources/images/powers/TagTeamPowerF48.png");
+    Texture lTexLarge = TexLoader.getTexture(TheStarlightMod.modID + "Resources/images/powers/TagTeamPowerF128.png");
+
     boolean lastState;
 
     public TagTeamPower(AbstractCreature owner) {
@@ -28,9 +37,12 @@ public class TagTeamPower extends AbstractPower {
         this.amount = -1;
         this.priority = Short.MIN_VALUE;
         this.type = NeutralPowertypePatch.NEUTRAL;
-        this.loadRegion("controlled_change");
-        this.region48.flip(true, false);
-        this.region128.flip(true, false);
+        P48 = new TextureAtlas.AtlasRegion(pTex, 0, 0, pTex.getWidth(), pTex.getHeight());
+        P128 = new TextureAtlas.AtlasRegion(pTexLarge, 0, 0, pTexLarge.getWidth(), pTexLarge.getHeight());
+        L48 = new TextureAtlas.AtlasRegion(lTex, 0, 0, lTex.getWidth(), lTex.getHeight());
+        L128 = new TextureAtlas.AtlasRegion(lTexLarge, 0, 0, lTexLarge.getWidth(), lTexLarge.getHeight());
+        this.region48 = P48;
+        this.region128 = P128;
         this.lastState = owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront;
         updateDescription();
     }
@@ -60,9 +72,9 @@ public class TagTeamPower extends AbstractPower {
     @Override
     public void updateDescription() {
         if (owner instanceof StarlightSisters) {
+            this.region48 = ((StarlightSisters) owner).attackerInFront ? P48 : L48;
+            this.region128 = ((StarlightSisters) owner).attackerInFront ? P128 : L128;
             if (lastState != ((StarlightSisters) owner).attackerInFront) {
-                this.region48.flip(true, true);
-                this.region128.flip(true, true);
                 flashWithoutSound();
                 lastState = ((StarlightSisters) owner).attackerInFront;
             }
