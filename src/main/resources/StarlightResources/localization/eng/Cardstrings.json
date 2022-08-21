@@ -14,6 +14,10 @@
     "NAME": "Ambush",
     "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Gain [E]."
   },
+  "${ModID}:Anticipate": {
+    "NAME": "Anticipate",
+    "DESCRIPTION": "starlight:Foretell a card in your discard pile. If you starlight:Foretell a starlight:Magick card, gain !M! starlight:SP."
+  },
   "${ModID}:Ascend": {
     "NAME": "Ascend",
     "DESCRIPTION": "starlight:Project 1 card. NL Gain [E] equal to its cost."
@@ -22,6 +26,10 @@
     "NAME": "Astra",
     "DESCRIPTION": "starlight:Project !M! cards. NL Gain !B! Block for each starlight:Projected [#efc851]Magick[] card.",
     "EXTENDED_DESCRIPTION": ["Astraga"]
+  },
+  "${ModID}:Augury": {
+    "NAME": "Augury",
+    "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: starlight:Foretell a card in your hand."
   },
   "${ModID}:Balance": {
     "NAME": "Balance",
@@ -51,6 +59,14 @@
   "${ModID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "${ModID}:DivineSense": {
+    "NAME": "Divine Sense",
+    "DESCRIPTION": "starlight:Foretell !M! cards in your discard pile. They cost 0 until played. NL Exhaust."
+  },
+  "${ModID}:DizzyStrike": {
+    "NAME": "Dizzy Strike",
+    "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Deal !D! damage again."
   },
   "${ModID}:Doomsday": {
     "NAME": "Doomsday",

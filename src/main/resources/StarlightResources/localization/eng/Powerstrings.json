@@ -40,5 +40,10 @@
   "${ModID}:IncantationPower": {
     "NAME": "Incantation",
     "DESCRIPTIONS": ["Whenever you #yScry, gain #b"," #ySpell #yPower."]
+  },
+  "${ModID}:ForetellNextCardPower": {
+    "NAME": "Foretelling",
+    "DESCRIPTIONS": ["#yForetell the next card you play this turn.",
+      "#yForetell the next #b"," cards you play this turn."]
   }
 }

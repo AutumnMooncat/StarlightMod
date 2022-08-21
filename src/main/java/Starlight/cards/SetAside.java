@@ -22,7 +22,7 @@ public class SetAside extends AbstractEasyCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 7;
+    private static final int DMG = 8;
     private static final int UP_DMG = 2;
     private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
