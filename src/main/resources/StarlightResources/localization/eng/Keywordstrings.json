@@ -38,5 +38,13 @@
       "magicks"
     ],
     "DESCRIPTION": "Magick cards additionally scale their damage and #yBlock with #ySpell #yPower."
+  },
+  {
+    "PROPER_NAME": "Foretell",
+    "NAMES": [
+      "foretell",
+      "foretold"
+    ],
+    "DESCRIPTION": "Place a card on top of your draw pile."
   }
 ]

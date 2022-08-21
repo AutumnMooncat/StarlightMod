@@ -1,6 +1,7 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.powers.ForetellNextCardPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.red.Entrench;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -27,7 +28,7 @@ public class Protect extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        Wiz.applyToSelf(new ReboundPower(p));
+        Wiz.applyToSelf(new ForetellNextCardPower(p, 1));
     }
 
     @Override

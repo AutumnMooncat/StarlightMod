@@ -29,5 +29,19 @@
       "Choose a card to Project.",
       "Choose "," cards to Project."
     ]
+  },
+  "${ModID}:Foretell": {
+    "TEXT": [
+      "Foretell",
+      "Choose a card to Foretell.",
+      "Choose "," cards to Foretell."
+    ]
+  },
+  "${ModID}:Cleanse": {
+    "TEXT": [
+      "Cleanse",
+      "Choose a power to Cleanse.",
+      "Choose "," powers to Cleanse."
+    ]
   }
 }

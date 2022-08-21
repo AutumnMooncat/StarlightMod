@@ -52,6 +52,10 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
+  "${ModID}:Doomsday": {
+    "NAME": "Doomsday",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL If starlight:Foretold, increase this card's damage by !M! this combat."
+  },
   "${ModID}:Echo": {
     "NAME": "Echo",
     "DESCRIPTION": "starlight:Project a copy of the last Attack you played this combat.",
@@ -123,7 +127,7 @@
   },
   "${ModID}:Protect": {
     "NAME": "Protect",
-    "DESCRIPTION": "Gain !B! Block. NL Put the next card you play this turn on top of your draw pile.",
+    "DESCRIPTION": "Gain !B! Block. NL starlight:Foretell the next card you play this turn.",
     "EXTENDED_DESCRIPTION": ["Protectga"]
   },
   "${ModID}:Quake": {
@@ -139,6 +143,10 @@
   "${ModID}:RejectFate": {
     "NAME": "Reject Fate",
     "DESCRIPTION": "Scry !M!. NL Deal !D! damage to ALL enemies for each card discarded this way."
+  },
+  "${ModID}:SetAside": {
+    "NAME": "Set Aside",
+    "DESCRIPTION": "Deal !D! damage. NL Scry !M!. NL Cards discarded this way are Upgraded this combat."
   },
   "${ModID}:Shell": {
     "NAME": "Shell",
@@ -168,7 +176,7 @@
   },
   "${ModID}:Swindle": {
     "NAME": "Swindle",
-    "DESCRIPTION": "Gain !M! starlight:SP. NL Put 2 random starlight:Magicks from your draw pile into your hand."
+    "DESCRIPTION": "Gain !M! starlight:SP. NL Put 2 random starlight:Magick cards from your draw pile into your hand."
   },
   "${ModID}:TeamEffort": {
     "NAME": "Team Effort",

@@ -1,12 +1,10 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.SpellPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.cards.purple.Pray;
-import com.megacrit.cardcrawl.cards.purple.Sanctity;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.SanctityEffect;
