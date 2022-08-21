@@ -99,6 +99,10 @@
     "DESCRIPTION": "Whenever you Scry, gain !M! starlight:SP.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Scry, gain !M! starlight:SP."
   },
+  "${ModID}:MagickConduit": {
+    "NAME": "Magic Conduit",
+    "DESCRIPTION": "Gain [E] for each starlight:Magick card in your hand. starlight:Tag_Team: starlight:Project a copy of this card."
+  },
   "${ModID}:Meteor": {
     "NAME": "Meteor",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Deals double damage if starlight:Projected.",
@@ -131,6 +135,10 @@
   "${ModID}:ShuffleStrike": {
     "NAME": "Shuffle Strike",
     "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Tag_Team: Draw !M! card{!M!|>1=s}."
+  },
+  "${ModID}:SpellOptimizer": {
+    "NAME": "Spell Optimizer",
+    "DESCRIPTION": "Draw !M! cards. NL starlight:Magick cards drawn this way cost 1 less this turn."
   },
   "${ModID}:SpellWeaver": {
     "NAME": "Spell Weaver",
