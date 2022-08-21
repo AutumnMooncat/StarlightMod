@@ -136,6 +136,10 @@
     "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage back.",
     "EXTENDED_DESCRIPTION": ["Reflectga"]
   },
+  "${ModID}:RejectFate": {
+    "NAME": "Reject Fate",
+    "DESCRIPTION": "Scry !M!. NL Deal !D! damage to ALL enemies for each card discarded this way."
+  },
   "${ModID}:Shell": {
     "NAME": "Shell",
     "DESCRIPTION": "Gain !B! Block. NL Block is not removed at the start of your next turn.",
