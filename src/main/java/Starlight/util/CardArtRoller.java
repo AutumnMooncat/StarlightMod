@@ -158,8 +158,12 @@ public class CardArtRoller {
                     }
                     q = possSkills.remove(0);
                 }
-                Random rng = new Random((long) c.cardID.hashCode());
-                return new ReskinInfo(q, rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.randomBoolean());
+                if (c.reskinInfo(q) != null) {
+                    return c.reskinInfo(q);
+                } else {
+                    Random rng = new Random((long) c.cardID.hashCode());
+                    return new ReskinInfo(q, rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.random(0.35f, 0.65f), rng.randomBoolean());
+                }
             });
             Color HSLC = new Color(r.H, r.S, r.L, r.C);
             TextureAtlas.AtlasRegion t = CardLibrary.getCard(r.origCardID).portrait;

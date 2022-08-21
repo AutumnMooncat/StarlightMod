@@ -254,4 +254,8 @@ public abstract class AbstractEasyCard extends CustomCard {
     public String cardArtCopy() {
         return null;
     }
+
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return null;
+    }
 }
