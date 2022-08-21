@@ -4,6 +4,7 @@ import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.SpellPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.cards.purple.Vault;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
@@ -45,5 +46,10 @@ public class Vanish extends AbstractMagickCard {
 
     public void upp() {
         upgradeBlock(UP_BLK);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Vault.ID;
     }
 }

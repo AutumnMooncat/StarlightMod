@@ -4,6 +4,8 @@ import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
+import com.megacrit.cardcrawl.cards.blue.Sunder;
+import com.megacrit.cardcrawl.cards.red.IronWave;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -52,5 +54,10 @@ public class Quake extends AbstractMagickCard {
 
     public void upp() {
         upgradeDamage(UP_DMG);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Sunder.ID;
     }
 }

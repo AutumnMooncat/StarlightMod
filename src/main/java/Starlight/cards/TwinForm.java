@@ -5,6 +5,7 @@ import Starlight.powers.ThoughtbloomPower;
 import Starlight.powers.TwinFormPower;
 import Starlight.util.Wiz;
 import basemod.helpers.BaseModCardTags;
+import com.megacrit.cardcrawl.cards.blue.EchoForm;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -35,5 +36,10 @@ public class TwinForm extends AbstractEasyCard {
     public void upp() {
         isEthereal = false;
         uDesc();
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return EchoForm.ID;
     }
 }

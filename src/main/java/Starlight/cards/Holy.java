@@ -5,6 +5,7 @@ import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
+import com.megacrit.cardcrawl.cards.blue.Melter;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.SanctityEffect;
@@ -51,5 +52,10 @@ public class Holy extends AbstractMagickCard {
 
     public void upp() {
         upgradeDamage(UP_DMG);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Melter.ID;
     }
 }

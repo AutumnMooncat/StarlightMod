@@ -4,6 +4,7 @@ import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.powers.SpellPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.purple.Wallop;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -36,5 +37,10 @@ public class WandWhack extends AbstractEasyCard {
     public void upp() {
         upgradeDamage(UP_DMG);
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Wallop.ID;
     }
 }

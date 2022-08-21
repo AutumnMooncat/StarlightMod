@@ -4,6 +4,7 @@ import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.powers.IncantationPower;
 import Starlight.powers.TeamEffortPower;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.purple.Nirvana;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -32,5 +33,10 @@ public class Incantation extends AbstractEasyCard {
     public void upp() {
         this.isInnate = true;
         uDesc();
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Nirvana.ID;
     }
 }

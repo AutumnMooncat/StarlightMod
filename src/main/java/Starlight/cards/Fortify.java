@@ -4,6 +4,8 @@ import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.blue.Stack;
+import com.megacrit.cardcrawl.cards.colorless.Chrysalis;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -40,5 +42,10 @@ public class Fortify extends AbstractEasyCard implements TagTeamCard {
     @Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new DrawCardAction(magicNumber));
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Stack.ID;
     }
 }

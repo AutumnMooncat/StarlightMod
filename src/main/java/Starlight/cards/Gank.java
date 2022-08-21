@@ -5,6 +5,8 @@ import Starlight.cards.interfaces.OnTagTeamTriggeredCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.purple.FlurryOfBlows;
+import com.megacrit.cardcrawl.cards.red.Pummel;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -39,5 +41,10 @@ public class Gank extends AbstractEasyCard implements OnTagTeamTriggeredCard {
         if (p.discardPile.contains(this)) {
             this.addToBot(new DiscardToHandAction(this));
         }
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Pummel.ID;
     }
 }

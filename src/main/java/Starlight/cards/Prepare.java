@@ -3,7 +3,9 @@ package Starlight.cards;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.powers.SpellPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.red.Warcry;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -40,5 +42,15 @@ public class Prepare extends AbstractEasyCard implements TagTeamCard {
     @Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new SpellPower(p, magicNumber));
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Warcry.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.2f, 0.5f, 0.65f, 1, false);
     }
 }

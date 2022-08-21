@@ -7,6 +7,7 @@ import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.powers.SpellPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.cards.purple.Blasphemy;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -37,5 +38,10 @@ public class MagickConduit extends AbstractEasyCard implements TagTeamCard {
     @Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new ProjectSpecificCardAction(this.makeStatEquivalentCopy()));
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Blasphemy.ID;
     }
 }

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.colorless.Enlightenment;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -44,5 +45,10 @@ public class Enlighten extends AbstractEasyCard implements OnProjectCard {
     @Override
     public void onProject() {
         Wiz.atb(new GainEnergyAction(magicNumber));
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Enlightenment.ID;
     }
 }

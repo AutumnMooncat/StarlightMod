@@ -6,6 +6,7 @@ import Starlight.util.Wiz;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.purple.Wish;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BlurPower;
@@ -56,5 +57,10 @@ public class Astra extends AbstractMagickCard {
 
     public void upp() {
         upgradeBlock(UP_BLK);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Wish.ID;
     }
 }

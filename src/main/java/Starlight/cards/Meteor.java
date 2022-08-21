@@ -6,6 +6,7 @@ import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.blue.MeteorStrike;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -76,5 +77,10 @@ public class Meteor extends AbstractMagickCard implements OnProjectCard {
     @Override
     public void onProject() {
         projected = true;
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return MeteorStrike.ID;
     }
 }

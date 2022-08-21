@@ -5,6 +5,7 @@ import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
+import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
@@ -55,5 +56,10 @@ public class Balance extends AbstractMagickCard {
     public void upp() {
         isMultiDamage = true;
         uDesc();
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Neutralize.ID;
     }
 }

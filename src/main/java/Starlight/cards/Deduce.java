@@ -5,6 +5,7 @@ import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
+import com.megacrit.cardcrawl.cards.purple.Evaluate;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ReboundPower;
@@ -39,5 +40,10 @@ public class Deduce extends AbstractEasyCard {
     public void upp() {
         upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_SCRY);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Evaluate.ID;
     }
 }

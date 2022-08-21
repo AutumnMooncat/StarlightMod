@@ -3,6 +3,7 @@ package Starlight.cards;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.ReflectPower;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.blue.AutoShields;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BlurPower;
@@ -44,5 +45,10 @@ public class Reflect extends AbstractMagickCard {
     public void upp() {
         upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return AutoShields.ID;
     }
 }

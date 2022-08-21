@@ -3,6 +3,7 @@ package Starlight.cards;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.powers.ThoughtbloomPower;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.purple.Study;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -32,5 +33,10 @@ public class Thoughtbloom extends AbstractEasyCard {
     public void upp() {
         //upgradeMagicNumber(UP_EFFECT);
         upgradeBaseCost(UP_COST);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Study.ID;
     }
 }

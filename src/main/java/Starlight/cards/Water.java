@@ -2,6 +2,7 @@ package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.purple.Brilliance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -42,5 +43,10 @@ public class Water extends AbstractMagickCard {
     public void upp() {
         upgradeDamage(UP_DMG);
         upgradeBlock(UP_BLK);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Brilliance.ID;
     }
 }

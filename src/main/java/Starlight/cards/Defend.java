@@ -2,6 +2,7 @@ package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.red.Defend_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -30,5 +31,10 @@ public class Defend extends AbstractEasyCard {
 
     public void upp() {
         upgradeBlock(UP_BLK);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Defend_Red.ID;
     }
 }

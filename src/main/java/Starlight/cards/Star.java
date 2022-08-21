@@ -4,6 +4,7 @@ import Starlight.actions.ProjectCardsInHandAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.purple.CarveReality;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -44,7 +45,10 @@ public class Star extends AbstractMagickCard {
 
     public void upp() {
         upgradeBaseCost(UP_COST);
-        //upgradeDamage(UP_DMG);
-        //upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return CarveReality.ID;
     }
 }

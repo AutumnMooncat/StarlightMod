@@ -2,6 +2,7 @@ package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.red.Entrench;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ReboundPower;
@@ -39,5 +40,10 @@ public class Protect extends AbstractMagickCard {
 
     public void upp() {
         upgradeBlock(UP_BLK);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Entrench.ID;
     }
 }

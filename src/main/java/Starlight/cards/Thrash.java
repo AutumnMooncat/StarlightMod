@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.purple.FollowUp;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
@@ -46,5 +47,10 @@ public class Thrash extends AbstractEasyCard implements OnTagTeamTriggeredCard {
     @Override
     public void onTagTriggered(AbstractCard card, AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return FollowUp.ID;
     }
 }

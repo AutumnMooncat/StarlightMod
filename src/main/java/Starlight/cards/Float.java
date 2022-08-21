@@ -4,6 +4,7 @@ import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.SpellPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.green.Expertise;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
@@ -45,5 +46,10 @@ public class Float extends AbstractMagickCard {
     public void upp() {
         upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_SP);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Expertise.ID;
     }
 }

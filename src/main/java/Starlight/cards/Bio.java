@@ -5,6 +5,7 @@ import Starlight.damageMods.PoisonDamage;
 import Starlight.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.DamageModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.green.PoisonedStab;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
@@ -42,5 +43,10 @@ public class Bio extends AbstractMagickCard {
 
     public void upp() {
         upgradeDamage(UP_DMG);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return PoisonedStab.ID;
     }
 }

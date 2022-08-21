@@ -2,6 +2,7 @@ package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.colorless.Chrysalis;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BlurPower;
@@ -40,5 +41,10 @@ public class Shell extends AbstractMagickCard {
 
     public void upp() {
         upgradeBlock(UP_BLK);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Chrysalis.ID;
     }
 }

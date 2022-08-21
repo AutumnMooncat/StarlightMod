@@ -5,6 +5,7 @@ import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.TeamEffortPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.green.AfterImage;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -34,5 +35,10 @@ public class TeamEffort extends AbstractEasyCard {
 
     public void upp() {
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return AfterImage.ID;
     }
 }
