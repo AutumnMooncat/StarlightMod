@@ -5,6 +5,7 @@ import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.purple.Wish;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.cards.red.LimitBreak;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -42,6 +44,7 @@ public class Ascend extends AbstractEasyCard {
                     }
                 }
                 if (e > 0) {
+                    this.addToBot(new VFXAction(p, new InflameEffect(p), 0.3F));
                     Wiz.atb(new GainEnergyAction(e));
                 }
                 this.isDone = true;
