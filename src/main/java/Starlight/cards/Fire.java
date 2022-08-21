@@ -3,6 +3,7 @@ package Starlight.cards;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.purple.Eruption;
 import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -49,6 +50,6 @@ public class Fire extends AbstractMagickCard {
 
     @Override
     public String cardArtCopy() {
-        return SearingBlow.ID;
+        return Eruption.ID;
     }
 }

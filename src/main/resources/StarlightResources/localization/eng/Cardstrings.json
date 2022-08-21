@@ -14,6 +14,10 @@
     "NAME": "Ambush",
     "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Gain [E]."
   },
+  "${ModID}:Ascend": {
+    "NAME": "Ascend",
+    "DESCRIPTION": "starlight:Project 1 card. NL Gain [E] equal to its cost."
+  },
   "${ModID}:Astra": {
     "NAME": "Astra",
     "DESCRIPTION": "starlight:Project !M! cards. NL Gain !B! Block for each starlight:Projected [#efc851]Magick[] card.",
@@ -47,6 +51,10 @@
   "${ModID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "${ModID}:Echo": {
+    "NAME": "Echo",
+    "DESCRIPTION": "Add a copy of the last Attack you played this combat to the top of your draw pile."
   },
   "${ModID}:Enlighten": {
     "NAME": "Enlighten",
