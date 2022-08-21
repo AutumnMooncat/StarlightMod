@@ -54,7 +54,8 @@
   },
   "${ModID}:Echo": {
     "NAME": "Echo",
-    "DESCRIPTION": "Add a copy of the last Attack you played this combat to the top of your draw pile."
+    "DESCRIPTION": "starlight:Project a copy of the last Attack you played this combat.",
+    "EXTENDED_DESCRIPTION": [" NL (",")"]
   },
   "${ModID}:Enlighten": {
     "NAME": "Enlighten",
