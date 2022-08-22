@@ -1,9 +1,9 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.green.Blur;
-import com.megacrit.cardcrawl.cards.green.Expertise;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
@@ -51,5 +51,10 @@ public class Haste extends AbstractMagickCard {
     @Override
     public String cardArtCopy() {
         return Blur.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.58f, 0.57f, 0.57f, 0.60f, false);
     }
 }
