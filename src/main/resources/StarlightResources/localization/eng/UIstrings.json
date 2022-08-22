@@ -20,7 +20,7 @@
     "TEXT": [
       "Magick",
       "Magicks",
-      "Magick cards additionally scale their damage and #yBlock with #ySpell #yPower."
+      "Magick cards additionally scale their damage and Block with #ySpell #yPower."
     ]
   },
   "${ModID}:Project": {

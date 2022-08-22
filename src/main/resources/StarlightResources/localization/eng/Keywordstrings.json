@@ -37,7 +37,7 @@
       "magick",
       "magicks"
     ],
-    "DESCRIPTION": "Magick cards additionally scale their damage and #yBlock with #ySpell #yPower."
+    "DESCRIPTION": "Magick cards additionally scale their damage and Block with #ySpell #yPower."
   },
   {
     "PROPER_NAME": "Foretell",

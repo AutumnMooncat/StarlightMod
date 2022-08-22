@@ -24,7 +24,7 @@ public class IncantationPower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("modeShift");
+        this.loadRegion("curiosity");
         updateDescription();
     }
 

@@ -210,7 +210,14 @@ public class TheStarlightMod implements
                     return c.type == AbstractCard.CardType.ATTACK;
                 }
             } else {
-                return (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty() && AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1) instanceof TagTeamCard);
+                if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()) {
+                    switch (AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).type) {
+                        case ATTACK:
+                            return c.type == AbstractCard.CardType.SKILL;
+                        case SKILL:
+                            return c.type == AbstractCard.CardType.ATTACK;
+                    }
+                }
             }
         }
         return false;

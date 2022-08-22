@@ -36,7 +36,6 @@ public class SpellOptimizer extends AbstractEasyCard {
                 for (AbstractCard c : DrawCardAction.drawnCards) {
                     if (c instanceof AbstractMagickCard) {
                         c.setCostForTurn(c.costForTurn-1);
-                        break;
                     }
                 }
                 this.isDone = true;
