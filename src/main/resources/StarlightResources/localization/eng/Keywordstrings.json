@@ -46,5 +46,26 @@
       "foretold"
     ],
     "DESCRIPTION": "Place a card on top of your draw pile."
+  },
+  {
+    "PROPER_NAME": "Providence",
+    "NAMES": [
+      "providence"
+    ],
+    "DESCRIPTION": "When you obtain #b10 #yProvidence, draw #b1 card and #yAscend it."
+  },
+  {
+    "PROPER_NAME": "Ascend",
+    "NAMES": [
+      "ascend"
+    ],
+    "DESCRIPTION": "#yAscending cards upgrades them and makes them more powerful for this combat."
+  },
+  {
+    "PROPER_NAME": "Echo",
+    "NAMES": [
+      "echo"
+    ],
+    "DESCRIPTION": "When you play this card, #yProject a copy of it."
   }
 ]

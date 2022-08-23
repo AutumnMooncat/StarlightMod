@@ -45,5 +45,9 @@
     "NAME": "Foretelling",
     "DESCRIPTIONS": ["#yForetell the next card you play this turn.",
       "#yForetell the next #b"," cards you play this turn."]
+  },
+  "${ModID}:ProvidencePower": {
+    "NAME": "Providence",
+    "DESCRIPTIONS": ["When you obtain #b10 #yProvidence, #yAscend the top card of your draw pile."]
   }
 }

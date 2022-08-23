@@ -7,5 +7,9 @@
   },
   "${ModID}:RetainMod": {
     "EXTENDED_DESCRIPTION": ["Retain. NL "]
+  },
+  "${ModID}:AscendedMod": {
+    "EXTENDED_DESCRIPTION": ["Ascended ","",
+                            " NL starlight:Echo."]
   }
 }

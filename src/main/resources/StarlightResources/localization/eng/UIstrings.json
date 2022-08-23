@@ -43,5 +43,12 @@
       "Choose a power to Cleanse.",
       "Choose "," powers to Cleanse."
     ]
+  },
+  "${ModID}:Exhaust": {
+    "TEXT": [
+      "Exhaust",
+      "Choose a card to Exhaust.",
+      "Choose "," cards to Exhaust."
+    ]
   }
 }

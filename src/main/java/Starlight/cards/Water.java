@@ -1,6 +1,7 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CardArtRoller;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.purple.Brilliance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,7 +13,7 @@ public class Water extends AbstractMagickCard {
     public final static String ID = makeID(Water.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
@@ -48,5 +49,10 @@ public class Water extends AbstractMagickCard {
     @Override
     public String cardArtCopy() {
         return Brilliance.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.61f, 0.63f, 0.54f, 0.54f, false);
     }
 }

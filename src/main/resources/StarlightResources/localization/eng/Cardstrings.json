@@ -33,14 +33,18 @@
   },
   "${ModID}:Balance": {
     "NAME": "Balance",
-    "DESCRIPTION": "{@@}Remove all Block from the enemy. NL Deal that much damage.{!Location!|0= NL (Deals !D! damage)}",
-    "UPGRADE_DESCRIPTION": "{@@}Remove all Block from the enemy. NL Deal that much damage to ALL enemies.{!Location!|0= NL (Deals !D! damage)}",
+    "DESCRIPTION": "Remove all Block from the enemy. NL Deal that much damage.{!Location!|0= NL (Deals !D! damage)}{@@}",
+    "UPGRADE_DESCRIPTION": "Remove all Block from the enemy. NL Deal that much damage to ALL enemies.{!Location!|0= NL (Deals !D! damage)}{@@}",
     "EXTENDED_DESCRIPTION": ["Lifebreak"]
   },
   "${ModID}:Bio": {
     "NAME": "Bio",
     "DESCRIPTION": "Deal !D! damage. NL Apply Poison equal to unblocked damage dealt.",
     "EXTENDED_DESCRIPTION": ["Biora"]
+  },
+  "${ModID}:Blazing": {
+    "NAME": "Blazing",
+    "DESCRIPTION": "Exhaust a card. NL Gain starlight:SP equal to !M! times its cost."
   },
   "${ModID}:Blizzard": {
     "NAME": "Blizzard",
@@ -162,7 +166,7 @@
   },
   "${ModID}:SetAside": {
     "NAME": "Set Aside",
-    "DESCRIPTION": "Deal !D! damage. NL Scry !M!. NL Cards discarded this way are Upgraded this combat."
+    "DESCRIPTION": "Deal !D! damage. NL Scry !M!. Gain 1 starlight:Providence for each card discarded this way."
   },
   "${ModID}:Shell": {
     "NAME": "Shell",
@@ -189,6 +193,14 @@
   "${ModID}:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
+  },
+  "${ModID}:Supply": {
+    "NAME": "Supply",
+    "DESCRIPTION": "Gain !M! Vigor. NL starlight:Tag_Team: Gain !M! starlight:SP."
+  },
+  "${ModID}:Surmount": {
+    "NAME": "Surmount",
+    "DESCRIPTION": "Gain !M! starlight:Providence. NL Next turn, gain [E]."
   },
   "${ModID}:Swindle": {
     "NAME": "Swindle",

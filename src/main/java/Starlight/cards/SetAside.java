@@ -2,6 +2,7 @@ package Starlight.cards;
 
 import Starlight.actions.ScryFollowUpAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.powers.ProvidencePower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -36,10 +37,8 @@ public class SetAside extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new ScryAction(magicNumber));
         Wiz.atb(new ScryFollowUpAction(cards -> {
-            for (AbstractCard c : cards) {
-                if (c.canUpgrade()) {
-                    c.upgrade();
-                }
+            if (cards.size() > 0) {
+                Wiz.applyToSelf(new ProvidencePower(p, cards.size()));
             }
         }));
     }

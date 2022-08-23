@@ -1,7 +1,6 @@
 package Starlight.actions;
 
 import Starlight.TheStarlightMod;
-import Starlight.cards.interfaces.OnForetoldCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,27 +13,27 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.function.Predicate;
 
-public class ForetellAction extends AbstractGameAction {
-    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("Foretell")).TEXT;
+public class ExhaustByPredAction extends AbstractGameAction {
+    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("Exhaust")).TEXT;
     private static final float DUR = Settings.ACTION_DUR_FASTER;
     private final CardGroup cardGroup;
     private final Predicate<AbstractCard> filter;
     private final AbstractGameAction followUpAction;
-    public static final ArrayList<AbstractCard> foretoldCards = new ArrayList<>();
+    public static final ArrayList<AbstractCard> exhaustedCards = new ArrayList<>();
 
-    public ForetellAction(CardGroup cardGroup) {
+    public ExhaustByPredAction(CardGroup cardGroup) {
         this(cardGroup, 1, c -> true, null);
     }
 
-    public ForetellAction(CardGroup cardGroup, int amount) {
+    public ExhaustByPredAction(CardGroup cardGroup, int amount) {
         this(cardGroup, amount, c -> true, null);
     }
 
-    public ForetellAction(CardGroup cardGroup, int amount, Predicate<AbstractCard> filter) {
+    public ExhaustByPredAction(CardGroup cardGroup, int amount, Predicate<AbstractCard> filter) {
         this(cardGroup, amount, filter, null);
     }
 
-    public ForetellAction(CardGroup cardGroup, int amount, Predicate<AbstractCard> filter, AbstractGameAction followUpAction) {
+    public ExhaustByPredAction(CardGroup cardGroup, int amount, Predicate<AbstractCard> filter, AbstractGameAction followUpAction) {
         this.cardGroup = cardGroup;
         this.amount = amount;
         this.filter = filter;
@@ -45,7 +44,7 @@ public class ForetellAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        foretoldCards.clear();
+        exhaustedCards.clear();
         if (AbstractDungeon.getCurrRoom().isBattleEnding() || amount == 0) {
             this.isDone = true;
         }
@@ -62,12 +61,8 @@ public class ForetellAction extends AbstractGameAction {
 
         if (amount >= validCards.size()) {
             for (AbstractCard card : validCards) {
-                cardGroup.removeCard(card);
-                cardGroup.moveToDeck(card, false);
-                foretoldCards.add(card);
-                if (card instanceof OnForetoldCard) {
-                    ((OnForetoldCard) card).onForetold();
-                }
+                cardGroup.moveToExhaustPile(card);
+                exhaustedCards.add(card);
             }
             if (this.followUpAction != null) {
                 this.addToTop(this.followUpAction);
@@ -83,12 +78,8 @@ public class ForetellAction extends AbstractGameAction {
             Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], cards -> {
                 for (AbstractCard copy : cards) {
                     AbstractCard c = copyMap.get(copy);
-                    cardGroup.removeCard(c);
-                    cardGroup.moveToDeck(c, false);
-                    foretoldCards.add(c);
-                    if (c instanceof OnForetoldCard) {
-                        ((OnForetoldCard) c).onForetold();
-                    }
+                    cardGroup.moveToExhaustPile(c);
+                    exhaustedCards.add(c);
                 }
                 if (this.followUpAction != null) {
                     this.addToTop(this.followUpAction);
