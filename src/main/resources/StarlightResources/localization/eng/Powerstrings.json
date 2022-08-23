@@ -48,7 +48,7 @@
   },
   "${ModID}:ProvidencePower": {
     "NAME": "Providence",
-    "DESCRIPTIONS": ["When you obtain #b10 #yProvidence, #yAscend the top card of your draw pile."]
+    "DESCRIPTIONS": ["When you obtain #b10 #yProvidence, the next #yMagick card you play is #yProjected for the rest of this combat."]
   },
   "${ModID}:DupeSpellPower": {
     "NAME": "Nasty Nasty Spell",

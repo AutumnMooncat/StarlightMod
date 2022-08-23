@@ -18,8 +18,6 @@ public class AscendedMod extends AbstractCardModifier {
     public static String ID = makeID(AscendedMod.class.getSimpleName());
     public static String[] TEXT = CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION;
 
-    private boolean echo = false;
-
     @Override
     public String modifyName(String cardName, AbstractCard card) {
         return TEXT[0]+cardName+TEXT[1];
@@ -27,23 +25,19 @@ public class AscendedMod extends AbstractCardModifier {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        if (echo) {
-            return rawDescription + TEXT[2];
-        }
-        return rawDescription;
+        return rawDescription + TEXT[2];
     }
 
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        if (echo && !ProjectedCardManager.ProjectedActionField.projectedField.get(action)) {
-            AbstractCard tmp = card.makeSameInstanceOf();
-            AbstractDungeon.player.limbo.addToBottom(tmp);
-            tmp.current_x = card.current_x;
-            tmp.current_y = card.current_y;
-            tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
-            tmp.target_y = (float)Settings.HEIGHT / 2.0F;
-            Wiz.att(new ProjectSpecificCardAction(tmp));
-        }
+        AbstractCard tmp = card.makeSameInstanceOf();
+        AbstractDungeon.player.limbo.addToBottom(tmp);
+        tmp.current_x = card.current_x;
+        tmp.current_y = card.current_y;
+        tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+        tmp.target_y = (float)Settings.HEIGHT / 2.0F;
+        tmp.purgeOnUse = true;
+        Wiz.att(new ProjectSpecificCardAction(tmp));
     }
 
     public boolean shouldApply(AbstractCard card) {
@@ -52,25 +46,7 @@ public class AscendedMod extends AbstractCardModifier {
 
     public void onInitialApplication(AbstractCard card) {
         card.tags.add(CustomTags.ASCENDED);
-        if (!card.upgraded && card.canUpgrade()) {
-            card.upgrade();
-        }
-        boolean baseChange = false;
-        if (card.baseDamage > 0) {
-            card.baseDamage += Math.max(1, card.baseDamage/2f);
-            baseChange = true;
-        }
-        if (card.baseBlock > 0) {
-            card.baseBlock += Math.max(1, card.baseBlock/2f);
-            baseChange = true;
-        }
-        if (card.baseMagicNumber > 0) {
-            card.baseMagicNumber += Math.max(1, card.magicNumber/2f);
-            baseChange = true;
-        }
-        if (!baseChange) {
-            echo = true;
-        }
+        card.purgeOnUse = true;
     }
 
     public AbstractCardModifier makeCopy() {

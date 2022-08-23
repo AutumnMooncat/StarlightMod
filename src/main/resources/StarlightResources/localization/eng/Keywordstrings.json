@@ -1,12 +1,5 @@
 [
   {
-    "PROPER_NAME": "Ammo",
-    "NAMES": [
-      "ammo"
-    ],
-    "DESCRIPTION": "Required for #yRanged attacks."
-  },
-  {
     "PROPER_NAME": "Tag Team",
     "NAMES": [
       "tag team",
@@ -52,7 +45,7 @@
     "NAMES": [
       "providence"
     ],
-    "DESCRIPTION": "When you obtain #b10 #yProvidence, draw #b1 card and #yAscend it."
+    "DESCRIPTION": "When you obtain #b10 #yProvidence, the next #yMagick card you play is #yProjected for the rest of this combat."
   },
   {
     "PROPER_NAME": "Ascend",
