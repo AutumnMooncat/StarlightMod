@@ -141,6 +141,10 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Deals double damage if starlight:Projected.",
     "EXTENDED_DESCRIPTION": ["Meteorga"]
   },
+  "${ModID}:NastyNastySpell": {
+    "NAME": "Nasty Nasty Spell",
+    "DESCRIPTION": "{@@}This turn, your next {!M!|>1=!M! }starlight:Magick card{!M!|>1=s} {!M!|1=is|@=are} played twice."
+  },
   "${ModID}:Prepare": {
     "NAME": "Prepare",
     "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Gain !M! starlight:SP."
@@ -241,5 +245,9 @@
     "NAME": "Water",
     "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": ["Watera"]
+  },
+  "${ModID}:WildMagick": {
+    "NAME": "Wild Magick",
+    "DESCRIPTION": "Play a random starlight:Magick card from your draw pile."
   }
 }

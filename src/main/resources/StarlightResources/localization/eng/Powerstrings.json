@@ -49,5 +49,10 @@
   "${ModID}:ProvidencePower": {
     "NAME": "Providence",
     "DESCRIPTIONS": ["When you obtain #b10 #yProvidence, #yAscend the top card of your draw pile."]
+  },
+  "${ModID}:DupeSpellPower": {
+    "NAME": "Nasty Nasty Spell",
+    "DESCRIPTIONS": ["Your next #yMagick card is played twice this turn.",
+                    "Your next ", " #yMagick cards are played twice this turn."]
   }
 }
