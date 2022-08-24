@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Enlighten extends AbstractEasyCard implements OnProjectCard {
+public class Enlighten extends AbstractEasyCard {
     public final static String ID = makeID(Enlighten.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -25,7 +25,7 @@ public class Enlighten extends AbstractEasyCard implements OnProjectCard {
     private static final int COST = 1;
     private static final int BLK = 5;
     private static final int UP_BLK = 2;
-    private static final int EFFECT = 2;
+    private static final int EFFECT = 1;
     private static final int UP_EFFECT = 2;
 
     public Enlighten() {
@@ -43,7 +43,7 @@ public class Enlighten extends AbstractEasyCard implements OnProjectCard {
     }
 
     @Override
-    public void onProject() {
+    public void triggerWhenDrawn() {
         Wiz.atb(new GainEnergyAction(magicNumber));
     }
 

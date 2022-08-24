@@ -46,6 +46,10 @@
     "NAME": "Blazing",
     "DESCRIPTION": "Exhaust a card. NL Gain starlight:SP equal to !M! times its cost."
   },
+  "${ModID}:BlindSide": {
+    "NAME": "Blind Side",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL starlight:Tag_Team: Gain [E]."
+  },
   "${ModID}:Blizzard": {
     "NAME": "Blizzard",
     "DESCRIPTION": "Deal !D! damage twice. Apply !M! Weak.",
@@ -87,7 +91,7 @@
   },
   "${ModID}:Enlighten": {
     "NAME": "Enlighten",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL If starlight:Projected, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL When you draw this card, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}."
   },
   "${ModID}:Esuna": {
     "NAME": "Esuna",
@@ -153,6 +157,10 @@
   "${ModID}:NastyNastySpell": {
     "NAME": "Nasty Nasty Spell",
     "DESCRIPTION": "{@@}This turn, your next {!M!|>1=!M! }starlight:Magick card{!M!|>1=s} {!M!|1=is|@=are} played twice."
+  },
+  "${ModID}:Posturing": {
+    "NAME": "Posturing",
+    "DESCRIPTION": "At the end of your turn, if the last card you played was a... NL Skill: Gain !M! Block. NL Attack: Gain !M! Vigor."
   },
   "${ModID}:Prepare": {
     "NAME": "Prepare",

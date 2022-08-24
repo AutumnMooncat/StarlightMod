@@ -22,6 +22,8 @@ import Starlight.powers.LosePowerPower;
 import Starlight.powers.NextTurnPowerPower;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
@@ -181,5 +183,33 @@ public class Wiz {
 
     public static void applyToSelfNextTurn(AbstractPower po) {
         atb(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new NextTurnPowerPower(AbstractDungeon.player, po)));
+    }
+
+    public static List<AbstractCard> cardsPlayedThisCombat() {
+        if (isInCombat()) {
+            return AbstractDungeon.actionManager.cardsPlayedThisCombat;
+        }
+        return Collections.emptyList();
+    }
+
+    public static List<AbstractCard> cardsPlayedThisTurn() {
+        if (isInCombat()) {
+            return AbstractDungeon.actionManager.cardsPlayedThisTurn;
+        }
+        return Collections.emptyList();
+    }
+
+    public static AbstractCard lastCardPlayed() {
+        if (isInCombat() && !cardsPlayedThisCombat().isEmpty()) {
+            return cardsPlayedThisCombat().get(cardsPlayedThisCombat().size()-1);
+        }
+        return null;
+    }
+
+    public static AbstractCard lastCardPlayedThisTurn() {
+        if (isInCombat() && !cardsPlayedThisTurn().isEmpty()) {
+            return cardsPlayedThisTurn().get(cardsPlayedThisTurn().size()-1);
+        }
+        return null;
     }
 }
