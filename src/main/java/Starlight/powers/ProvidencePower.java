@@ -80,7 +80,7 @@ public class ProvidencePower extends AbstractPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse && this.amount >= 10 && !ProjectedCardManager.ProjectedActionField.projectedField.get(action)) {
+        if (!card.purgeOnUse && this.amount >= 10 && card instanceof AbstractMagickCard && !ProjectedCardManager.ProjectedActionField.projectedField.get(action)) {
             CardModifierManager.addModifier(card, new AscendedMod());
             this.flash();
             this.amount -= 10;

@@ -51,6 +51,10 @@
     "DESCRIPTION": "Deal !D! damage twice. Apply !M! Weak.",
     "EXTENDED_DESCRIPTION": ["Blizzara"]
   },
+  "${ModID}:Bulwark": {
+    "NAME": "Bulwark",
+    "DESCRIPTION": "Gain !M! starlight:Providence. NL Apply !Starlight:M2! Weak."
+  },
   "${ModID}:Dark": {
     "NAME": "Dark",
     "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain [E] [E].",
@@ -103,6 +107,11 @@
   "${ModID}:Fortify": {
     "NAME": "Fortify",
     "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Draw !M! cards."
+  },
+  "${ModID}:Fortuna": {
+    "NAME": "Fortuna",
+    "DESCRIPTION": "Whenever you gain Energy, gain !M! starlight:Providence.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain Energy, gain !M! starlight:Providence."
   },
   "${ModID}:FutureSight": {
     "NAME": "Future Sight",

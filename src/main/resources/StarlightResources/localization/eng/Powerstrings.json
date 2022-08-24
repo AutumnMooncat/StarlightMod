@@ -54,5 +54,9 @@
     "NAME": "Nasty Nasty Spell",
     "DESCRIPTIONS": ["Your next #yMagick card is played twice this turn.",
                     "Your next ", " #yMagick cards are played twice this turn."]
+  },
+  "${ModID}:FortunaPower": {
+    "NAME": "Fortuna",
+    "DESCRIPTIONS": ["Whenever you gain #yEnergy, gain #b"," #yProvidence."]
   }
 }

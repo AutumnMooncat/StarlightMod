@@ -1,8 +1,7 @@
 package Starlight.cardmods;
 
 import Starlight.actions.ProjectSpecificCardAction;
-import Starlight.patches.CustomTags;
-import Starlight.ui.ProjectedCardManager;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -28,7 +27,7 @@ public class AscendedMod extends AbstractCardModifier {
         return rawDescription + TEXT[2];
     }
 
-    @Override
+/*    @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         AbstractCard tmp = card.makeSameInstanceOf();
         AbstractDungeon.player.limbo.addToBottom(tmp);
@@ -38,7 +37,7 @@ public class AscendedMod extends AbstractCardModifier {
         tmp.target_y = (float)Settings.HEIGHT / 2.0F;
         tmp.purgeOnUse = true;
         Wiz.att(new ProjectSpecificCardAction(tmp));
-    }
+    }*/
 
     public boolean shouldApply(AbstractCard card) {
         return !card.tags.contains(CustomTags.ASCENDED);
@@ -46,7 +45,6 @@ public class AscendedMod extends AbstractCardModifier {
 
     public void onInitialApplication(AbstractCard card) {
         card.tags.add(CustomTags.ASCENDED);
-        card.purgeOnUse = true;
     }
 
     public AbstractCardModifier makeCopy() {

@@ -1,10 +1,12 @@
 package Starlight.ui;
 
 import Starlight.cards.interfaces.OnProjectCard;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.ShowCardAndPoofAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -82,13 +84,19 @@ public class ProjectedCardManager {
     }
 
     public static void addCard(AbstractCard card) {
+        addCard(card, true);
+    }
+
+    public static void addCard(AbstractCard card, boolean playSFX) {
         card.targetAngle = 0f;
         card.beginGlowing();
         cards.addToTop(card);
         if (card instanceof OnProjectCard) {
             ((OnProjectCard) card).onProject();
         }
-        CardCrawlGame.sound.play("ORB_SLOT_GAIN", 0.1F);
+        if (playSFX) {
+            CardCrawlGame.sound.play("ORB_SLOT_GAIN", 0.1F);
+        }
     }
 
     @SpirePatch2(clz = AbstractCard.class, method = SpirePatch.CLASS)
@@ -150,6 +158,28 @@ public class ProjectedCardManager {
         @SpirePostfixPatch
         public static void yeet() {
             cards.clear();
+        }
+    }
+
+    @SpirePatch2(clz = UseCardAction.class, method = "update")
+    public static class AscendedFix {
+        @SpireInsertPatch(locator = Locator.class)
+        public static SpireReturn<?> yeet(UseCardAction __instance, AbstractCard ___targetCard) {
+            if (___targetCard.hasTag(CustomTags.ASCENDED)) {
+                ProjectedCardManager.addCard(___targetCard, false);
+                __instance.isDone = true;
+                AbstractDungeon.player.cardInUse = null;
+                return SpireReturn.Return();
+            }
+            return SpireReturn.Continue();
+        }
+
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher m = new Matcher.FieldAccessMatcher(AbstractCard.class, "purgeOnUse");
+                return LineFinder.findInOrder(ctBehavior, m);
+            }
         }
     }
 }
