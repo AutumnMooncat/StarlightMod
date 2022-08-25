@@ -59,6 +59,10 @@
     "NAME": "Bulwark",
     "DESCRIPTION": "Gain !M! starlight:Providence. NL Apply !Starlight:M2! Weak."
   },
+  "${ModID}:Culminate": {
+    "NAME": "Culminate",
+    "DESCRIPTION": "Scry !M!. Gain !Starlight:M2! starlight:SP for each card discarded this way."
+  },
   "${ModID}:Dark": {
     "NAME": "Dark",
     "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain [E] [E].",
@@ -71,6 +75,11 @@
   "${ModID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
+  },
+  "${ModID}:Dia": {
+    "NAME": "Dia",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! starlight:Providence.",
+    "EXTENDED_DESCRIPTION": ["Diara"]
   },
   "${ModID}:DivineSense": {
     "NAME": "Divine Sense",
@@ -162,6 +171,10 @@
     "NAME": "Nasty Nasty Spell",
     "DESCRIPTION": "{@@}This turn, your next {!M!|>1=!M! }starlight:Magick card{!M!|>1=s} {!M!|1=is|@=are} played twice."
   },
+  "${ModID}:NullMomentum": {
+    "NAME": "Null Momentum",
+    "DESCRIPTION": "Draw !M! cards. NL Put a Void onto the top of your draw pile. NL starlight:Tag_Team: Gain !B! Block."
+  },
   "${ModID}:Posturing": {
     "NAME": "Posturing",
     "DESCRIPTION": "At the end of your turn, if the last card you played was a... NL Skill: Gain !M! Block. NL Attack: Gain !M! Vigor."
@@ -192,6 +205,10 @@
   "${ModID}:RejectFate": {
     "NAME": "Reject Fate",
     "DESCRIPTION": "Scry !M!. NL Deal !D! damage to ALL enemies for each card discarded this way."
+  },
+  "${ModID}:Serendipity": {
+    "NAME": "Serendipity",
+    "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Next turn, gain !B! Block."
   },
   "${ModID}:SetAside": {
     "NAME": "Set Aside",
@@ -239,6 +256,10 @@
     "NAME": "Team Effort",
     "DESCRIPTION": "Whenever you trigger starlight:Tag_Team, gain !M! Block."
   },
+  "${ModID}:ThePlot": {
+    "NAME": "The Plot",
+    "DESCRIPTION": "starlight:Foretell a card in your hand and Upgrade it. NL starlight:Tag_Team: It costs 0 until played."
+  },
   "${ModID}:Thoughtbloom": {
     "NAME": "Thoughtbloom",
     "DESCRIPTION": "Whenever you draw a starlight:Magick card, gain !M! starlight:SP."
@@ -263,9 +284,13 @@
     "UPGRADE_DESCRIPTION": "starlight:Project a copy of the first card you play each turn."
   },
   "${ModID}:Vanish": {
-    "NAME": "Vanish",
-    "DESCRIPTION": "Gain 1 Intangible. NL Next turn, gain !B! Block. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": ["Vanishga"]
+    "NAME": "",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [""]
+  },
+  "${ModID}:VirtuousWard": {
+    "NAME": "Virtuous Ward",
+    "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Gain !M! starlight:Providence."
   },
   "${ModID}:WandWhack": {
     "NAME": "Wand Whack",
