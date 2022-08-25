@@ -1,5 +1,6 @@
 package Starlight.cards;
 
+import Starlight.actions.CleansePowerAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -7,6 +8,7 @@ import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.cards.purple.Pray;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.SanctityEffect;
 
 import static Starlight.TheStarlightMod.makeID;
@@ -25,13 +27,12 @@ public class Esuna extends AbstractMagickCard {
     public Esuna() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
-        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         Wiz.atb(new VFXAction(new SanctityEffect(p.hb.cX, p.hb.cY)));
-        Wiz.atb(new RemoveDebuffsAction(p));
+        Wiz.atb(new CleansePowerAction(p, 1, c -> c.type == AbstractPower.PowerType.DEBUFF, powers -> {}));
     }
 
     @Override

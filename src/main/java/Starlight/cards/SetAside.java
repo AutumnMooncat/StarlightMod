@@ -35,6 +35,7 @@ public class SetAside extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         Wiz.atb(new ScryAction(magicNumber));
         Wiz.atb(new ScryFollowUpAction(cards -> {
             if (cards.size() > 0) {

@@ -1,7 +1,6 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.SpellPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.purple.Vault;
