@@ -72,14 +72,6 @@
             <systemPath>${Steam.path}/common/SlayTheSpire/mods/ArtlessCards.jar</systemPath>
             <!--<systemPath>${basedir}/../lib/StSLib.jar</systemPath>-->
         </dependency>
-        <dependency>
-            <groupId>iconaddons</groupId>
-            <artifactId>IconAddons</artifactId>
-            <version>0.0.3</version>
-            <scope>system</scope>
-            <systemPath>${Steam.path}/common/SlayTheSpire/mods/IconsAddon.jar</systemPath>
-            <!--<systemPath>${basedir}/../lib/StSLib.jar</systemPath>-->
-        </dependency>
     </dependencies>
 
 

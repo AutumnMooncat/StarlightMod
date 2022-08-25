@@ -95,7 +95,7 @@
   },
   "${ModID}:Esuna": {
     "NAME": "Esuna",
-    "DESCRIPTION": "Gain !B! Block. NL Remove all your debuffs. NL Exhaust.",
+    "DESCRIPTION": "Gain !B! Block. NL Remove a debuff.",
     "EXTENDED_DESCRIPTION": ["Esunaga"]
   },
   "${ModID}:Fire": {
@@ -124,6 +124,10 @@
   "${ModID}:Gank": {
     "NAME": "Gank",
     "DESCRIPTION": "Deal !D! damage. NL Whenever you trigger starlight:Tag_Team, return this from the discard pile to your hand."
+  },
+  "${ModID}:Harmony": {
+    "NAME": "Harmony",
+    "DESCRIPTION": "Whenever you trigger starlight:Tag_Team, gain !M! starlight:Providence."
   },
   "${ModID}:Haste": {
     "NAME": "Haste",
@@ -175,6 +179,10 @@
     "NAME": "Quake",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. Reduce this card's cost by !M! this combat.",
     "EXTENDED_DESCRIPTION": ["Quakra"]
+  },
+  "${ModID}:RealityPassage": {
+    "NAME": "Reality Passage",
+    "DESCRIPTION": "{@@}starlight:Foretell !M! card{!M!|>1=s} in your discard pile. NL Gain 1 starlight:Providence for each card starlight:Foretold this combat."
   },
   "${ModID}:Reflect": {
     "NAME": "Reflect",
@@ -243,6 +251,11 @@
     "NAME": "Thunder",
     "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies.",
     "EXTENDED_DESCRIPTION": ["Thundara"]
+  },
+  "${ModID}:Transcribe": {
+    "NAME": "Transcribe",
+    "DESCRIPTION": "Add a copy of the last starlight:Magick card you played this combat into your hand. starlight:Tag_Team: It costs 0 this turn.",
+    "EXTENDED_DESCRIPTION": [" NL (",")"]
   },
   "${ModID}:TwinForm": {
     "NAME": "Twin Form",

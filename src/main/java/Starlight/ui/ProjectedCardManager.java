@@ -1,6 +1,7 @@
 package Starlight.ui;
 
 import Starlight.cards.interfaces.OnProjectCard;
+import Starlight.patches.CardCounterPatches;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -97,6 +98,8 @@ public class ProjectedCardManager {
         if (playSFX) {
             CardCrawlGame.sound.play("ORB_SLOT_GAIN", 0.1F);
         }
+        CardCounterPatches.cardsProjectedThisTurn++;
+        CardCounterPatches.cardsProjectedThisCombat++;
     }
 
     @SpirePatch2(clz = AbstractCard.class, method = SpirePatch.CLASS)

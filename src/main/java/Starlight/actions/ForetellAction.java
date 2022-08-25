@@ -2,6 +2,7 @@ package Starlight.actions;
 
 import Starlight.TheStarlightMod;
 import Starlight.cards.interfaces.OnForetoldCard;
+import Starlight.patches.CardCounterPatches;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -72,6 +73,8 @@ public class ForetellAction extends AbstractGameAction {
             if (this.followUpAction != null) {
                 this.addToTop(this.followUpAction);
             }
+            CardCounterPatches.cardsForetoldThisTurn += foretoldCards.size();
+            CardCounterPatches.cardsForetoldThisCombat += foretoldCards.size();
         } else {
             HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
             ArrayList<AbstractCard> selection = new ArrayList<>();
@@ -93,6 +96,8 @@ public class ForetellAction extends AbstractGameAction {
                 if (this.followUpAction != null) {
                     this.addToTop(this.followUpAction);
                 }
+                CardCounterPatches.cardsForetoldThisTurn += foretoldCards.size();
+                CardCounterPatches.cardsForetoldThisCombat += foretoldCards.size();
             }));
         }
         this.isDone = true;

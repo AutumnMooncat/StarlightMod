@@ -114,8 +114,8 @@ public class TheStarlightMod implements
 
     @Override
     public void receiveEditCharacters() {
-        BaseMod.addCharacter(new StarlightSisters(StarlightSisters.characterStrings.NAMES[1], StarlightSisters.Enums.THE_STARFARERS),
-                CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, StarlightSisters.Enums.THE_STARFARERS);
+        BaseMod.addCharacter(new StarlightSisters(StarlightSisters.characterStrings.NAMES[1], StarlightSisters.Enums.THE_SISTERS),
+                CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, StarlightSisters.Enums.THE_SISTERS);
     }
 
     @Override

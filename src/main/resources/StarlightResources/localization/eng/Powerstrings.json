@@ -62,5 +62,9 @@
   "${ModID}:PosturingPower": {
     "NAME": "Posturing",
     "DESCRIPTIONS": ["At the end of your turn, if the last card you played was a #ySkill, gain #b"," #yBlock. If it was an #yAttack, gain #b"," #yVigor."]
+  },
+  "${ModID}:HarmonyPower": {
+    "NAME": "Harmony",
+    "DESCRIPTIONS": ["Whenever you trigger a #yTag #yTeam effect, gain #b"," #yProvidence."]
   }
 }

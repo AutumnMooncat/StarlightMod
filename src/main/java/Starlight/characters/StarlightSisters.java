@@ -10,6 +10,7 @@ import Starlight.relics.MagicWand;
 import Starlight.util.Wiz;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.brashmonkey.spriter.Player;
@@ -21,9 +22,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -31,6 +34,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import Starlight.relics.Constellation;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static Starlight.characters.StarlightSisters.Enums.METEORITE_PURPLE_COLOR;
 import static Starlight.TheStarlightMod.*;
@@ -117,8 +121,20 @@ public class StarlightSisters extends CustomPlayer {
     }
 
     @Override
+    public Texture getCutsceneBg() {
+        return ImageMaster.loadImage("StarlightResources/images/panels/bkg.png");
+    }
+
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> panels = new ArrayList<>();
+        panels.add(new CutscenePanel("StarlightResources/images/panels/HeartPanel.png", "UNLOCK_PING"));
+        return panels;
+    }
+
+    @Override
     public int getAscensionMaxHPLoss() {
-        return 5;
+        return 3;
     }
 
     @Override
@@ -186,7 +202,7 @@ public class StarlightSisters extends CustomPlayer {
 
     public static class Enums {
         @SpireEnum
-        public static AbstractPlayer.PlayerClass THE_STARFARERS;
+        public static AbstractPlayer.PlayerClass THE_SISTERS;
         @SpireEnum(name = "METEORITE_PURPLE_COLOR")
         public static AbstractCard.CardColor METEORITE_PURPLE_COLOR;
         @SpireEnum(name = "METEORITE_PURPLE_COLOR")
