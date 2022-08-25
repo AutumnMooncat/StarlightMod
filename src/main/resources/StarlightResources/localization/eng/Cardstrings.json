@@ -91,7 +91,7 @@
   },
   "${ModID}:Doomsday": {
     "NAME": "Doomsday",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL If starlight:Foretold, increase this card's damage by !M! this combat."
+    "DESCRIPTION": "{@@}Deal !D! damage to ALL enemies X{!M!|>0= + !M!} times. NL If starlight:Foretold, increase this card's hits by 1 this combat."
   },
   "${ModID}:Echo": {
     "NAME": "Echo",
