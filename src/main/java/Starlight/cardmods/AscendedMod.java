@@ -27,17 +27,10 @@ public class AscendedMod extends AbstractCardModifier {
         return rawDescription + TEXT[2];
     }
 
-/*    @Override
-    public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        AbstractCard tmp = card.makeSameInstanceOf();
-        AbstractDungeon.player.limbo.addToBottom(tmp);
-        tmp.current_x = card.current_x;
-        tmp.current_y = card.current_y;
-        tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
-        tmp.target_y = (float)Settings.HEIGHT / 2.0F;
-        tmp.purgeOnUse = true;
-        Wiz.att(new ProjectSpecificCardAction(tmp));
-    }*/
+    @Override
+    public boolean isInherent(AbstractCard card) {
+        return true;
+    }
 
     public boolean shouldApply(AbstractCard card) {
         return !card.tags.contains(CustomTags.ASCENDED);
