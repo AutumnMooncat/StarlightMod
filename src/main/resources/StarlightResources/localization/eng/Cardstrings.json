@@ -159,8 +159,13 @@
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Scry, gain !M! starlight:SP."
   },
   "${ModID}:MagickConduit": {
-    "NAME": "Magic Conduit",
-    "DESCRIPTION": "Gain [E] for each starlight:Magick card in your hand. starlight:Tag_Team: starlight:Project a copy of this card."
+    "NAME": "Magick Conduit",
+    "DESCRIPTION": "{@@}Gain !M! starlight:SP for each starlight:Magick card in your draw pile.{!Location!|0= (Gain !Starlight:M2! starlight:SP)} NL starlight:Tag_Team: Gain [E]."
+  },
+  "${ModID}:ManaConversion": {
+    "NAME": "Mana Conversion",
+    "DESCRIPTION": "Whenever you gain Energy, gain !M! starlight:SP.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain Energy, gain !M! starlight:Providence."
   },
   "${ModID}:Meteor": {
     "NAME": "Meteor",
@@ -239,6 +244,10 @@
     "NAME": "Star",
     "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|1>s}.",
     "EXTENDED_DESCRIPTION": ["Stara"]
+  },
+  "${ModID}:Stockpile": {
+    "NAME": "Stockpile",
+    "DESCRIPTION": "Gain !M! Block whenever you play a Skill this turn. NL starlight:Tag_Team: Gain !B! Block."
   },
   "${ModID}:Strike": {
     "NAME": "Strike",

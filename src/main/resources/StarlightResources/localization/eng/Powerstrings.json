@@ -70,5 +70,13 @@
   "${ModID}:MindLinkPower": {
     "NAME": "Mind Link",
     "DESCRIPTIONS": ["#yTag #yTeam effects trigger #b"," additional time."," additional times."]
+  },
+  "${ModID}:ManaConversionPower": {
+    "NAME": "Mana Conversion",
+    "DESCRIPTIONS": ["Whenever you gain #yEnergy, gain #b"," #ySP."]
+  },
+  "${ModID}:StockpilePower": {
+    "NAME": "Stockpile",
+    "DESCRIPTIONS": ["Whenever you play a #ySkill this turn, gain #b"," #yBlock."]
   }
 }
