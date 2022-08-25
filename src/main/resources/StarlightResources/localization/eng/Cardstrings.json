@@ -167,6 +167,10 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Deals double damage if starlight:Projected.",
     "EXTENDED_DESCRIPTION": ["Meteorga"]
   },
+  "${ModID}:MindLink": {
+    "NAME": "Mind Link",
+    "DESCRIPTION": "starlight:Tag_Team effects trigger !M! additional time{!M!|>1=s}.{@@}"
+  },
   "${ModID}:NastyNastySpell": {
     "NAME": "Nasty Nasty Spell",
     "DESCRIPTION": "{@@}This turn, your next {!M!|>1=!M! }starlight:Magick card{!M!|>1=s} {!M!|1=is|@=are} played twice."

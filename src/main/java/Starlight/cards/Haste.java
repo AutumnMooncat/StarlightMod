@@ -21,6 +21,7 @@ public class Haste extends AbstractMagickCard {
     private static final int COST = 1;
     private static final int UP_COST = 0;
     private static final int BLK = 4;
+    private static final int UP_BLK = 3;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
@@ -45,7 +46,8 @@ public class Haste extends AbstractMagickCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(UP_EFFECT);
+        upgradeBlock(UP_BLK);
+        //upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override

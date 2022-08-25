@@ -3,6 +3,7 @@ package Starlight.patches;
 import Starlight.TheStarlightMod;
 import Starlight.cards.interfaces.OnTagTeamTriggeredCard;
 import Starlight.cards.interfaces.TagTeamCard;
+import Starlight.powers.interfaces.ModTagAmountPower;
 import Starlight.powers.interfaces.OnTagTeamPower;
 import Starlight.ui.ProjectedCardManager;
 import com.evacipated.cardcrawl.modthespire.lib.*;
@@ -21,13 +22,23 @@ public class TagTeamPatch {
         @SpireInsertPatch(locator = Locator.class)
         public static void plz(AbstractPlayer __instance, AbstractCard c, AbstractMonster monster) {
             if (c instanceof TagTeamCard && TheStarlightMod.tagTest(c)) {
-                ((TagTeamCard) c).onTagTrigger(__instance, monster);
+                int tagTriggers = 1;
                 for (AbstractPower p : __instance.powers) {
-                    if (p instanceof OnTagTeamPower) {
-                        ((OnTagTeamPower) p).onTagTeam(c);
+                    if (p instanceof ModTagAmountPower) {
+                        tagTriggers = ((ModTagAmountPower) p).tagAmount(tagTriggers);
                     }
                 }
-                triggerOnTagTeamCards(c, __instance, monster);
+                for (int i = 0 ; i < tagTriggers ; i++) {
+                    ((TagTeamCard) c).onTagTrigger(__instance, monster);
+                }
+                for (AbstractPower p : __instance.powers) {
+                    if (p instanceof OnTagTeamPower) {
+                        for (int i = 0 ; i < tagTriggers ; i++) {
+                            ((OnTagTeamPower) p).onTagTeam(c);
+                        }
+                    }
+                }
+                triggerOnTagTeamCards(c, __instance, monster, tagTriggers);
             }
         }
 
@@ -40,7 +51,7 @@ public class TagTeamPatch {
         }
     }
 
-    public static void triggerOnTagTeamCards(AbstractCard card, AbstractPlayer p, AbstractMonster m) {
+    public static void triggerOnTagTeamCards(AbstractCard card, AbstractPlayer p, AbstractMonster m, int times) {
         ArrayList<AbstractCard> cards = new ArrayList<>();
         cards.addAll(p.hand.group);
         cards.addAll(p.drawPile.group);
@@ -51,7 +62,9 @@ public class TagTeamPatch {
 
         for (AbstractCard c : cards) {
             if (c instanceof OnTagTeamTriggeredCard) {
-                ((OnTagTeamTriggeredCard) c).onTagTriggered(card, p, m);
+                for (int i = 0 ; i < times ; i++) {
+                    ((OnTagTeamTriggeredCard) c).onTagTriggered(card, p, m);
+                }
             }
         }
     }
