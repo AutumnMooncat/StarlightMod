@@ -27,6 +27,10 @@
     "DESCRIPTION": "starlight:Project !M! cards. NL Gain !B! Block for each starlight:Projected [#efc851]Magick[] card.",
     "EXTENDED_DESCRIPTION": ["Astraga"]
   },
+  "${ModID}:AstralProtection": {
+    "NAME": "Astral Protection",
+    "DESCRIPTION": "Whenever you starlight:Project a card, gain !M! Block."
+  },
   "${ModID}:Augury": {
     "NAME": "Augury",
     "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: starlight:Foretell a card in your hand."
@@ -241,9 +245,17 @@
     "NAME": "Shuffle Strike",
     "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Tag_Team: Draw !M! card{!M!|>1=s}."
   },
+  "${ModID}:Skyfall": {
+    "NAME": "Skyfall",
+    "DESCRIPTION": "Deal !D! damage and gain 1 starlight:Providence for each starlight:Projected card."
+  },
   "${ModID}:SpellOptimizer": {
     "NAME": "Spell Optimizer",
     "DESCRIPTION": "Draw !M! cards. NL starlight:Magick cards drawn this way cost 1 less this turn."
+  },
+  "${ModID}:SpellScribe": {
+    "NAME": "Spell Scribe",
+    "DESCRIPTION": "The first starlight:Magick card you play each turn costs 0."
   },
   "${ModID}:SpellWeaver": {
     "NAME": "Spell Weaver",

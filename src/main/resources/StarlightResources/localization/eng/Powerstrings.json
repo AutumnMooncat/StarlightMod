@@ -82,5 +82,13 @@
   "${ModID}:BlessingPower": {
     "NAME": "Blessing",
     "DESCRIPTIONS": ["Whenever you gain #b10 #yProvidence, draw #b"," card."," cards."]
+  },
+  "${ModID}:AstralProtectionPower": {
+    "NAME": "Astral Protection",
+    "DESCRIPTIONS": ["Whenever you #yProject a card, gain #b"," #yBlock."]
+  },
+  "${ModID}:SpellScribePower": {
+    "NAME": "Spell Scribe",
+    "DESCRIPTIONS": ["The first #yMagick card you play each turn costs #b0.","The first #b"," #yMagick cards you play each turn cost #b0."]
   }
 }

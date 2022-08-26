@@ -2,6 +2,7 @@ package Starlight.ui;
 
 import Starlight.cards.interfaces.OnProjectCard;
 import Starlight.patches.CardCounterPatches;
+import Starlight.powers.interfaces.OnProjectPower;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -20,6 +21,7 @@ import com.megacrit.cardcrawl.core.OverlayMenu;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.ui.panels.ExhaustPanel;
 import com.megacrit.cardcrawl.vfx.BobEffect;
@@ -94,6 +96,11 @@ public class ProjectedCardManager {
         cards.addToTop(card);
         if (card instanceof OnProjectCard) {
             ((OnProjectCard) card).onProject();
+        }
+        for (AbstractPower p : Wiz.adp().powers) {
+            if (p instanceof OnProjectPower) {
+                ((OnProjectPower) p).onProject(card);
+            }
         }
         if (playSFX) {
             CardCrawlGame.sound.play("ORB_SLOT_GAIN", 0.1F);
