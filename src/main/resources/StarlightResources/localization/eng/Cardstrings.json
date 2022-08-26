@@ -144,7 +144,7 @@
   },
   "${ModID}:Gravity": {
     "NAME": "Gravity",
-    "DESCRIPTION": "NL Deal !D! damage to ALL enemies. starlight:SP affects this card !M! times.",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. starlight:SP affects this card !M! times.",
     "EXTENDED_DESCRIPTION": ["Graviga"]
   },
   "${ModID}:Harmony": {
