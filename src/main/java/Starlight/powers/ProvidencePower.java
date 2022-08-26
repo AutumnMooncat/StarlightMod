@@ -1,30 +1,21 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
-import Starlight.actions.ProjectSpecificCardAction;
 import Starlight.cardmods.AscendedMod;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.powers.interfaces.OnProvidenceActivatePower;
 import Starlight.ui.ProjectedCardManager;
-import Starlight.util.Wiz;
 import basemod.ReflectionHacks;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.Gdx;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.combat.FlashPowerEffect;
 import com.megacrit.cardcrawl.vfx.combat.SilentGainPowerEffect;
 
 import java.util.ArrayList;
@@ -39,6 +30,7 @@ public class ProvidencePower extends AbstractPower {
     private float flashTimer;
     private boolean flashing;
     private final ArrayList<AbstractGameEffect> array;
+    private int modTen;
 
     public ProvidencePower(AbstractCreature owner, int amount) {
         this.ID = POWER_ID;
@@ -54,13 +46,13 @@ public class ProvidencePower extends AbstractPower {
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
-        checkStacks();
+        checkStacks(this.amount);
     }
 
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
-        checkStacks();
+        checkStacks(stackAmount);
     }
 
     @Override
@@ -75,8 +67,19 @@ public class ProvidencePower extends AbstractPower {
         }
     }
 
-    private void checkStacks() {
+    private void checkStacks(int recentlyAdded) {
         flashing = amount >= 10;
+        if (recentlyAdded > 0) {
+            modTen += recentlyAdded;
+            while (modTen >= 10) {
+                modTen -= 10;
+                for (AbstractPower pow : owner.powers) {
+                    if (pow instanceof OnProvidenceActivatePower) {
+                        ((OnProvidenceActivatePower) pow).onProvidence();
+                    }
+                }
+            }
+        }
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
@@ -87,7 +90,7 @@ public class ProvidencePower extends AbstractPower {
             if (this.amount <= 0) {
                 this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             }
-            checkStacks();
+            checkStacks(-10);
         }
     }
 

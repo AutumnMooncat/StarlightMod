@@ -73,10 +73,14 @@
   },
   "${ModID}:ManaConversionPower": {
     "NAME": "Mana Conversion",
-    "DESCRIPTIONS": ["Whenever you gain #yEnergy, gain #b"," #ySP."]
+    "DESCRIPTIONS": ["Whenever you gain #yEnergy, gain #b"," #ySpell #yPower."]
   },
   "${ModID}:StockpilePower": {
     "NAME": "Stockpile",
     "DESCRIPTIONS": ["Whenever you play a #ySkill this turn, gain #b"," #yBlock."]
+  },
+  "${ModID}:BlessingPower": {
+    "NAME": "Blessing",
+    "DESCRIPTIONS": ["Whenever you gain #b10 #yProvidence, draw #b"," card."," cards."]
   }
 }
