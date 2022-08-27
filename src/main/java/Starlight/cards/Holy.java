@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.cards.blue.Melter;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.SanctityEffect;
 
@@ -36,10 +37,14 @@ public class Holy extends AbstractMagickCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        if (mo.type != AbstractMonster.EnemyType.NORMAL) {
+        if (damageBoost()) {
             this.damage *= 2;
         }
         this.isDamageModified = baseDamage != damage;
+    }
+
+    protected boolean damageBoost() {
+        return AbstractDungeon.getCurrRoom().eliteTrigger || AbstractDungeon.getMonsters().monsters.stream().anyMatch(m -> m.type == AbstractMonster.EnemyType.BOSS);
     }
 
     @Override

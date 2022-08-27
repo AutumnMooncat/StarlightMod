@@ -158,7 +158,7 @@
   },
   "${ModID}:Holy": {
     "NAME": "Holy",
-    "DESCRIPTION": "Deal !D! damage. NL Deals double damage to Elite and Boss enemies.",
+    "DESCRIPTION": "Deal !D! damage. NL Deals double damage in Elite and Boss combats.",
     "EXTENDED_DESCRIPTION": ["Holyra"]
   },
   "${ModID}:Imperil": {
