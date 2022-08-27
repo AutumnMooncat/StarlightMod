@@ -53,7 +53,7 @@ public class CleansePowerAction extends AbstractGameAction {
             ArrayList<AbstractCard> validPowerCards = new ArrayList<>();
             HashMap<AbstractCard, AbstractPower> powerMap = new HashMap<>();
             for (AbstractPower pow : target.powers) {
-                if (!(pow instanceof InvisiblePower) && pow.type != NeutralPowertypePatch.NEUTRAL) {
+                if (!(pow instanceof InvisiblePower) && pow.type != NeutralPowertypePatch.NEUTRAL && filter.test(pow)) {
                     AbstractCard card = new AbstractPowerCard(pow){};
                     validPowerCards.add(card);
                     powerMap.put(card, pow);
