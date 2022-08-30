@@ -48,6 +48,7 @@ public class Echo extends AbstractEasyCard {
             Wiz.atb(new ProjectSpecificCardAction(attacks.get(attacks.size()-1).makeStatEquivalentCopy()));
         }
         this.rawDescription = cardStrings.DESCRIPTION;
+        lastCard = null;
         this.initializeDescription();
     }
 

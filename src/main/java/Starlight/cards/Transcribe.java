@@ -50,6 +50,7 @@ public class Transcribe extends AbstractEasyCard implements TagTeamCard {
             Wiz.atb(new MakeTempCardInHandAction(card, true, true));
         }
         this.rawDescription = cardStrings.DESCRIPTION;
+        lastCard = null;
         this.initializeDescription();
     }
 
