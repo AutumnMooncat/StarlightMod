@@ -7,7 +7,7 @@
   },
   "${ModID}:Aero": {
     "NAME": "Aero",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! cards.",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Draw !M! cards.",
     "EXTENDED_DESCRIPTION": ["Aerora"]
   },
   "${ModID}:Ambush": {
