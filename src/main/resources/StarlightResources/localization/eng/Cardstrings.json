@@ -304,7 +304,7 @@
   },
   "${ModID}:Thunder": {
     "NAME": "Thunder",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Vulnerable to ALL enemies.",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable.",
     "EXTENDED_DESCRIPTION": ["Thundara"]
   },
   "${ModID}:Transcribe": {
