@@ -1,12 +1,16 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.blue.ColdSnap;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -30,6 +34,7 @@ public class Blizzard extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new VFXAction(new BlizzardEffect(damage*2, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.35F));
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
@@ -51,5 +56,10 @@ public class Blizzard extends AbstractMagickCard {
     @Override
     public String cardArtCopy() {
         return ColdSnap.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.61f, 0.63f, 0.54f, 0.54f, false);
     }
 }
