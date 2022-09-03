@@ -22,7 +22,7 @@
       "spell_power",
       "sp"
     ],
-    "DESCRIPTION": "Improves the potency of #yMagick cards."
+    "DESCRIPTION": "Improves the potency of your next #yMagick card."
   },
   {
     "PROPER_NAME": "Magicks",
@@ -46,6 +46,14 @@
       "providence"
     ],
     "DESCRIPTION": "When you obtain #b10 #yProvidence, the next #yMagick card you play is #yProjected for the rest of this combat."
+  },
+  {
+    "PROPER_NAME": "Crumple",
+    "NAMES": [
+      "crumple",
+      "crumpled"
+    ],
+    "DESCRIPTION": "Crumpled creatures take additional damage from #yAttacks this turn."
   },
   {
     "PROPER_NAME": "Ascend",
