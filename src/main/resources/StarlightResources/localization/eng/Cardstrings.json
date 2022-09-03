@@ -243,7 +243,7 @@
   },
   "${ModID}:ShuffleStrike": {
     "NAME": "Shuffle Strike",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Tag_Team: Draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Whenever this enters your draw pile, add it into your hand."
   },
   "${ModID}:Skyfall": {
     "NAME": "Skyfall",
