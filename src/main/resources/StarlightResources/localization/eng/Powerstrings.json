@@ -90,5 +90,13 @@
   "${ModID}:SpellScribePower": {
     "NAME": "Spell Scribe",
     "DESCRIPTIONS": ["The first #yMagick card you play each turn costs #b0.","The first #b"," #yMagick cards you play each turn cost #b0."]
+  },
+  "${ModID}:CrumplePower": {
+    "NAME": "Crumple",
+    "DESCRIPTIONS": ["Receives #b"," more damage from Attacks this turn."]
+  },
+  "${ModID}:FiredUpPower": {
+    "NAME": "Fired Up!",
+    "DESCRIPTIONS": ["Increases attack damage by #b"," this turn."]
   }
 }
