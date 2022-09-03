@@ -60,5 +60,16 @@
       "echo"
     ],
     "DESCRIPTION": "When you play this card, #yProject a copy of it."
+  },
+  {
+    "PROPER_NAME": "Tag",
+    "NAMES": [
+      "attack tag",
+      "skill tag",
+      "attack_tag",
+      "skill_tag",
+      "tag"
+    ],
+    "DESCRIPTION": "Effect triggers if the last card played matches the specified type."
   }
 ]

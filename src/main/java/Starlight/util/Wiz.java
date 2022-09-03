@@ -212,4 +212,11 @@ public class Wiz {
         }
         return null;
     }
+
+    public static AbstractCard secondLastCardPlayed() {
+        if (isInCombat() && cardsPlayedThisCombat().size() > 2) {
+            return cardsPlayedThisCombat().get(cardsPlayedThisCombat().size()-2);
+        }
+        return null;
+    }
 }

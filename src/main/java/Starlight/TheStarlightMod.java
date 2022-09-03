@@ -1,28 +1,33 @@
 package Starlight;
 
 import Starlight.cards.cardvars.Info;
+import Starlight.cards.cardvars.SecondDamage;
+import Starlight.cards.cardvars.SecondMagicNumber;
+import Starlight.cards.interfaces.LunaCard;
+import Starlight.cards.interfaces.PrimroseCard;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
+import Starlight.relics.AbstractEasyRelic;
 import Starlight.ui.ProjectedCardManager;
+import Starlight.util.Wiz;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.helpers.CardBorderGlowManager;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBlocks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import Starlight.cards.cardvars.SecondDamage;
-import Starlight.cards.cardvars.SecondMagicNumber;
-import Starlight.relics.AbstractEasyRelic;
 
 import java.nio.charset.StandardCharsets;
 
@@ -182,11 +187,45 @@ public class TheStarlightMod implements
 
     @Override
     public void receivePostInitialize() {
+        DynamicTextBlocks.registerCustomCheck(makeID("IsSisters"), card -> {
+            if (!CardCrawlGame.isInARun() || Wiz.adp() instanceof StarlightSisters) {
+                return 1;
+            }
+            return 0;
+        });
         CardBorderGlowManager.addGlowInfo(new CardBorderGlowManager.GlowInfo() {
-            private Color c = Settings.GOLD_COLOR.cpy();
+            private final Color c = Settings.GOLD_COLOR.cpy();
+            private final Color prim = new Color(0xdf7e86ff);
+            private final Color luna = new Color(0x996ab0ff);
+
             @Override
             public boolean test(AbstractCard abstractCard) {
                 return tagTest(abstractCard);
+            }
+
+            @Override
+            public Color getColor(AbstractCard abstractCard) {
+                if (Wiz.adp() instanceof StarlightSisters) {
+                    if (((StarlightSisters) Wiz.adp()).attackerInFront) {
+                        return luna;
+                    } else {
+                        return prim;
+                    }
+                }
+                return c;
+            }
+
+            @Override
+            public String glowID() {
+                return makeID("TagTeamGlow");
+            }
+        });
+        CardBorderGlowManager.addGlowInfo(new CardBorderGlowManager.GlowInfo() {
+            private final Color c = Settings.GOLD_COLOR.cpy();
+
+            @Override
+            public boolean test(AbstractCard abstractCard) {
+                return primroseTest(abstractCard);
             }
 
             @Override
@@ -196,7 +235,25 @@ public class TheStarlightMod implements
 
             @Override
             public String glowID() {
-                return makeID("TagTeamGlow");
+                return makeID("PrimroseGlow");
+            }
+        });
+        CardBorderGlowManager.addGlowInfo(new CardBorderGlowManager.GlowInfo() {
+            private final Color c = Settings.GOLD_COLOR.cpy();
+
+            @Override
+            public boolean test(AbstractCard abstractCard) {
+                return lunaTest(abstractCard);
+            }
+
+            @Override
+            public Color getColor(AbstractCard abstractCard) {
+                return c;
+            }
+
+            @Override
+            public String glowID() {
+                return makeID("LunaGlow");
             }
         });
     }
@@ -210,8 +267,9 @@ public class TheStarlightMod implements
                     return c.type == AbstractCard.CardType.ATTACK;
                 }
             } else {
-                if (!AbstractDungeon.actionManager.cardsPlayedThisCombat.isEmpty()) {
-                    switch (AbstractDungeon.actionManager.cardsPlayedThisCombat.get(AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1).type) {
+                AbstractCard last = Wiz.lastCardPlayed();
+                if (last != null) {
+                    switch (last.type) {
                         case ATTACK:
                             return c.type == AbstractCard.CardType.SKILL;
                         case SKILL:
@@ -221,7 +279,30 @@ public class TheStarlightMod implements
             }
         }
         return false;
+    }
 
+    public static boolean primroseTest(AbstractCard c) {
+        if (c instanceof PrimroseCard) {
+            if (Wiz.adp() instanceof StarlightSisters) {
+                return ((StarlightSisters) Wiz.adp()).attackerInFront;
+            } else {
+                AbstractCard last = Wiz.lastCardPlayed();
+                return last != null && last.type == AbstractCard.CardType.ATTACK;
+            }
+        }
+        return false;
+    }
+
+    public static boolean lunaTest(AbstractCard c) {
+        if (c instanceof LunaCard) {
+            if (Wiz.adp() instanceof StarlightSisters) {
+                return !((StarlightSisters) Wiz.adp()).attackerInFront;
+            } else {
+                AbstractCard last = Wiz.lastCardPlayed();
+                return last != null && last.type == AbstractCard.CardType.SKILL;
+            }
+        }
+        return false;
     }
 
     @Override
