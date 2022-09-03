@@ -12,7 +12,7 @@
   },
   "${ModID}:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Gain [E]."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Skill_Tag}: Gain [E]."
   },
   "${ModID}:Anticipate": {
     "NAME": "Anticipate",
@@ -33,7 +33,7 @@
   },
   "${ModID}:Augury": {
     "NAME": "Augury",
-    "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: starlight:Foretell a card in your hand."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Skill_Tag}: starlight:Foretell a card in your hand."
   },
   "${ModID}:Balance": {
     "NAME": "Balance",
@@ -56,7 +56,7 @@
   },
   "${ModID}:BlindSide": {
     "NAME": "Blind Side",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL starlight:Tag_Team: Gain [E]."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply !M! Weak. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Skill_Tag}: Gain [E]."
   },
   "${ModID}:Blizzard": {
     "NAME": "Blizzard",
@@ -95,7 +95,7 @@
   },
   "${ModID}:DizzyStrike": {
     "NAME": "Dizzy Strike",
-    "DESCRIPTION": "Deal !D! damage. NL starlight:Tag_Team: Deal !D! damage again."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Skill_Tag}: Deal !D! damage again."
   },
   "${ModID}:Doomsday": {
     "NAME": "Doomsday",
@@ -127,7 +127,7 @@
   },
   "${ModID}:Fortify": {
     "NAME": "Fortify",
-    "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Draw !M! cards."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Draw !M! cards."
   },
   "${ModID}:Fortuna": {
     "NAME": "Fortuna",
@@ -140,7 +140,7 @@
   },
   "${ModID}:Gank": {
     "NAME": "Gank",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you trigger starlight:Tag_Team, return this from the discard pile to your hand."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you trigger {!Starlight:IsSisters!|1=starlight:Tag_Team|0=a starlight:Tag effect}, return this from the discard pile to your hand."
   },
   "${ModID}:Gravity": {
     "NAME": "Gravity",
@@ -149,7 +149,7 @@
   },
   "${ModID}:Harmony": {
     "NAME": "Harmony",
-    "DESCRIPTION": "Whenever you trigger starlight:Tag_Team, gain !M! starlight:Providence."
+    "DESCRIPTION": "{@@}Whenever you trigger {!Starlight:IsSisters!|1=starlight:Tag_Team|0=a starlight:Tag effect}, gain !M! starlight:Providence."
   },
   "${ModID}:Haste": {
     "NAME": "Haste",
@@ -173,7 +173,7 @@
   },
   "${ModID}:MagickConduit": {
     "NAME": "Magick Conduit",
-    "DESCRIPTION": "{@@}Gain !M! starlight:SP for each starlight:Magick card in your draw pile.{!Location!|0= (Gain !Starlight:M2! starlight:SP)} NL starlight:Tag_Team: Gain [E]."
+    "DESCRIPTION": "{@@}Gain !M! starlight:SP for each starlight:Magick card in your draw pile.{!Location!|0= (Gain !Starlight:M2! starlight:SP)} NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain [E]."
   },
   "${ModID}:ManaConversion": {
     "NAME": "Mana Conversion",
@@ -187,7 +187,7 @@
   },
   "${ModID}:MindLink": {
     "NAME": "Mind Link",
-    "DESCRIPTION": "starlight:Tag_Team effects trigger !M! additional time{!M!|>1=s}.{@@}"
+    "DESCRIPTION": "{@@}{!Starlight:IsSisters!|1=starlight:Tag_Team|0=starlight:Tag} effects trigger !M! additional time{!M!|>1=s}."
   },
   "${ModID}:NastyNastySpell": {
     "NAME": "Nasty Nasty Spell",
@@ -195,7 +195,7 @@
   },
   "${ModID}:NullMomentum": {
     "NAME": "Null Momentum",
-    "DESCRIPTION": "Draw !M! cards. NL Put a Void onto the top of your draw pile. NL starlight:Tag_Team: Gain !B! Block."
+    "DESCRIPTION": "{@@}Draw !M! cards. NL Put a Void onto the top of your draw pile. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !B! Block."
   },
   "${ModID}:Posturing": {
     "NAME": "Posturing",
@@ -203,7 +203,7 @@
   },
   "${ModID}:Prepare": {
     "NAME": "Prepare",
-    "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Gain !M! starlight:SP."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !M! starlight:SP."
   },
   "${ModID}:Protect": {
     "NAME": "Protect",
@@ -230,7 +230,7 @@
   },
   "${ModID}:Serendipity": {
     "NAME": "Serendipity",
-    "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Next turn, gain !B! Block."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Next turn, gain !B! Block."
   },
   "${ModID}:SetAside": {
     "NAME": "Set Aside",
@@ -268,7 +268,7 @@
   },
   "${ModID}:Stockpile": {
     "NAME": "Stockpile",
-    "DESCRIPTION": "Gain !M! Block whenever you play a Skill this turn. NL starlight:Tag_Team: Gain !B! Block."
+    "DESCRIPTION": "{@@}Gain !M! Block whenever you play a Skill this turn. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !B! Block."
   },
   "${ModID}:Strike": {
     "NAME": "Strike",
@@ -276,7 +276,7 @@
   },
   "${ModID}:Supply": {
     "NAME": "Supply",
-    "DESCRIPTION": "Gain !M! Vigor. NL starlight:Tag_Team: Gain !M! starlight:SP."
+    "DESCRIPTION": "{@@}Gain !M! Vigor. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !M! starlight:SP."
   },
   "${ModID}:Surmount": {
     "NAME": "Surmount",
@@ -288,11 +288,11 @@
   },
   "${ModID}:TeamEffort": {
     "NAME": "Team Effort",
-    "DESCRIPTION": "Whenever you trigger starlight:Tag_Team, gain !M! Block."
+    "DESCRIPTION": "{@@}Whenever you trigger {!Starlight:IsSisters!|1=starlight:Tag_Team|0=a starlight:Tag effect}, gain !M! Block."
   },
   "${ModID}:ThePlot": {
     "NAME": "The Plot",
-    "DESCRIPTION": "starlight:Foretell a card in your hand and Upgrade it. NL starlight:Tag_Team: It costs 0 until played."
+    "DESCRIPTION": "{@@}starlight:Foretell a card in your hand and Upgrade it. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: It costs 0 until played."
   },
   "${ModID}:Thoughtbloom": {
     "NAME": "Thoughtbloom",
@@ -300,7 +300,7 @@
   },
   "${ModID}:Thrash": {
     "NAME": "Thrash",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you trigger starlight:Tag_Team, increase this card's damage by !M! this combat."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you trigger {!Starlight:IsSisters!|1=starlight:Tag_Team|0=a starlight:Tag effect}, increase this card's damage by !M! this combat."
   },
   "${ModID}:Thunder": {
     "NAME": "Thunder",
@@ -309,7 +309,7 @@
   },
   "${ModID}:Transcribe": {
     "NAME": "Transcribe",
-    "DESCRIPTION": "Add a copy of the last starlight:Magick card you played this combat into your hand. starlight:Tag_Team: It costs 0 this turn.",
+    "DESCRIPTION": "{@@}Add a copy of the last starlight:Magick card you played this combat into your hand. starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: It costs 0 this turn.",
     "EXTENDED_DESCRIPTION": [" NL (",")"]
   },
   "${ModID}:TwinForm": {
@@ -324,7 +324,7 @@
   },
   "${ModID}:VirtuousWard": {
     "NAME": "Virtuous Ward",
-    "DESCRIPTION": "Gain !B! Block. NL starlight:Tag_Team: Gain !M! starlight:Providence."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !M! starlight:Providence."
   },
   "${ModID}:WandWhack": {
     "NAME": "Wand Whack",
