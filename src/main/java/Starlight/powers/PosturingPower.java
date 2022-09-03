@@ -26,7 +26,7 @@ public class PosturingPower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("master_protect");
+        this.loadRegion("wave_of_the_hand");
         updateDescription();
     }
 
