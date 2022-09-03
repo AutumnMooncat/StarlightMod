@@ -117,7 +117,7 @@
   },
   "${ModID}:Fire": {
     "NAME": "Fire",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Vigor.",
+    "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! this combat.",
     "EXTENDED_DESCRIPTION": ["Fira"]
   },
   "${ModID}:Float": {

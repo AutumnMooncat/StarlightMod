@@ -3,11 +3,10 @@ package Starlight.cards;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.cards.purple.Eruption;
-import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -32,7 +31,8 @@ public class Fire extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.FIRE);
-        Wiz.applyToSelf(new VigorPower(p, magicNumber));
+        Wiz.atb(new ModifyDamageAction(this.uuid, magicNumber));
+        //Wiz.applyToSelf(new VigorPower(p, magicNumber));
     }
 
     @Override
