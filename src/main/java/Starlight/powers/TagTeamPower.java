@@ -3,12 +3,14 @@ package Starlight.powers;
 import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
 import Starlight.util.TexLoader;
+import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -47,27 +49,59 @@ public class TagTeamPower extends AbstractPower {
         updateDescription();
     }
 
+    private boolean isPrimrose() {
+        return owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront;
+    }
+
+    private boolean isLuna() {
+        return owner instanceof StarlightSisters && !((StarlightSisters) owner).attackerInFront;
+    }
+
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         super.onAfterUseCard(card, action);
         updateDescription();
     }
 
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        if (type == DamageInfo.DamageType.NORMAL && owner instanceof StarlightSisters) {
-            if (((StarlightSisters) owner).attackerInFront) {
-                return damage + 1;
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (isPrimrose()) {
+            if (card.type == AbstractCard.CardType.ATTACK) {
+                Wiz.atb(new GainBlockAction(owner, 2));
+            }
+        } else if (isLuna()) {
+            if (card.type == AbstractCard.CardType.SKILL) {
+                Wiz.atb(new ApplyPowerAction(owner, owner, new SpellPower(owner, 1)));
             }
         }
-        return damage;
     }
 
-    public float modifyBlock(float blockAmount) {
-        if (owner instanceof StarlightSisters && !((StarlightSisters) owner).attackerInFront) {
-            return blockAmount + 1;
+    /*@Override
+    public void onExhaust(AbstractCard card) {
+        flashWithoutSound();
+        if (((StarlightSisters) owner).attackerInFront) {
+            Wiz.atb(new ApplyPowerAction(owner, owner, new StrengthPower(owner, 1)));
         }
-        return blockAmount;
-    }
+    }*/
+
+    /*@Override
+    public void onCardDraw(AbstractCard card) {
+        if (isLuna()) {
+            if (card.type == AbstractCard.CardType.STATUS) {
+                flashWithoutSound();
+                Wiz.atb(new ImmediateExhaustCardAction(card));
+                //Wiz.atb(new ApplyPowerAction(owner, owner, new SpellPower(owner, 3)));
+            }
+        }
+    }*/
+
+    /*@Override
+    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
+        if (isPrimrose() && info.type != DamageInfo.DamageType.NORMAL) {
+            return (int) (damageAmount/2f);
+        }
+        return damageAmount;
+    }*/
 
     @Override
     public void updateDescription() {
@@ -88,4 +122,13 @@ public class TagTeamPower extends AbstractPower {
         }
     }
 
+    /*@Override
+    public boolean shouldPushMods(DamageInfo damageInfo, Object o, List<AbstractDamageModifier> list) {
+        return o instanceof AbstractCard && damageInfo!= null && damageInfo.type == DamageInfo.DamageType.NORMAL && isPrimrose();
+    }
+
+    @Override
+    public List<AbstractDamageModifier> modsToPush(DamageInfo damageInfo, Object o, List<AbstractDamageModifier> list) {
+        return Collections.singletonList(new FiredUpDamage());
+    }*/
 }
