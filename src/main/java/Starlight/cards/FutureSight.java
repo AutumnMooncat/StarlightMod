@@ -20,8 +20,8 @@ public class FutureSight extends AbstractEasyCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int EFFECT = 2;
-    private static final int UP_EFFECT = 1;
+    private static final int EFFECT = 3;
+    private static final int UP_EFFECT = 2;
 
     public FutureSight() {
         super(ID, COST, TYPE, RARITY, TARGET);
