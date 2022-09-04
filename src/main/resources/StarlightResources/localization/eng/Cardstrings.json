@@ -226,7 +226,7 @@
   },
   "${ModID}:RejectFate": {
     "NAME": "Reject Fate",
-    "DESCRIPTION": "Scry !M!. Increase this card's damage by 1 this combat for each card discarded this way. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Scry !M!."
   },
   "${ModID}:Serendipity": {
     "NAME": "Serendipity",
