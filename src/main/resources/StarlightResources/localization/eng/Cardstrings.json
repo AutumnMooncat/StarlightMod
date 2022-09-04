@@ -247,7 +247,7 @@
   },
   "${ModID}:Skyfall": {
     "NAME": "Skyfall",
-    "DESCRIPTION": "Deal !D! damage and gain 1 starlight:Providence for each starlight:Projected card."
+    "DESCRIPTION": "{@@}starlight:Project the top card of your draw pile. NL Deal !D! damage and gain !M! starlight:Providence for each starlight:Projected card."
   },
   "${ModID}:SpellOptimizer": {
     "NAME": "Spell Optimizer",
