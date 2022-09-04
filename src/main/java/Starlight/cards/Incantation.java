@@ -17,9 +17,9 @@ public class Incantation extends AbstractEasyCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 1;
-    private static final int EFFECT = 3;
-    private static final int UP_EFFECT = 1;
+    private static final int COST = 0;
+    private static final int EFFECT = 4;
+    private static final int UP_EFFECT = 2;
 
     public Incantation() {
         super(ID, COST, TYPE, RARITY, TARGET);
