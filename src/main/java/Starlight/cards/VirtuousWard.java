@@ -24,7 +24,7 @@ public class VirtuousWard extends AbstractEasyCard implements TagTeamCard {
     private static final int BLK = 10;
     private static final int UP_BLK = 3;
     private static final int EFFECT = 3;
-    private static final int UP_EFFECT = 2;
+    private static final int UP_EFFECT = 1;
 
     public VirtuousWard() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -38,7 +38,7 @@ public class VirtuousWard extends AbstractEasyCard implements TagTeamCard {
 
     public void upp() {
         upgradeBlock(UP_BLK);
-        //upgradeMagicNumber(UP_EFFECT);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override

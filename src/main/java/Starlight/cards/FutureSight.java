@@ -3,6 +3,7 @@ package Starlight.cards;
 import Starlight.actions.ProjectTopCardAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.interfaces.TagTeamCard;
+import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
@@ -40,5 +41,10 @@ public class FutureSight extends AbstractEasyCard {
     @Override
     public String cardArtCopy() {
         return Meditate.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.65f, 0.5f, 0.5f, 0.5f, false);
     }
 }
