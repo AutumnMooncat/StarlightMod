@@ -1,8 +1,14 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.damageMods.AntiWallopDamage;
+import Starlight.damageMods.WallopDamage;
+import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
+import Starlight.vfx.AngledFlashAtkImgEffect;
+import com.evacipated.cardcrawl.mod.stslib.damagemods.DamageModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.cards.green.Neutralize;
@@ -10,6 +16,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -21,28 +28,43 @@ public class Balance extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
+    private static final int DAMAGE = 9;
+    private static final int UP_DAMAGE = 3;
+    private static final int BOOST = 3;
+    private static final int UP_BOOST = 1;
 
     public Balance() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseDamage = damage = 0;
+        baseDamage = damage = DAMAGE;
+        baseMagicNumber = magicNumber = BOOST;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new RemoveAllBlockAction(m, p));
-        if (upgraded) {
-            allDmg(AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        } else {
-            dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        }
+        Wiz.atb(new VFXAction(new AngledFlashAtkImgEffect(m.hb.cX, m.hb.cY, AbstractGameAction.AttackEffect.SLASH_DIAGONAL, 90f)));
+        Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX, m.hb.cY, AbstractGameAction.AttackEffect.SLASH_DIAGONAL, true)));
+        dmg(m, AbstractGameAction.AttackEffect.NONE);
     }
 
-    @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        int baseBase = this.baseDamage;
-        this.baseDamage = mo.currentBlock;
+        int realBaseDamage = this.baseDamage;
+        this.baseDamage += this.magicNumber * countCards();
         super.calculateCardDamage(mo);
-        this.baseDamage = baseBase;
-        this.isDamageModified = baseDamage != damage;
+        this.baseDamage = realBaseDamage;
+        this.isDamageModified = this.damage != this.baseDamage;
+    }
+
+    public void applyPowers() {
+        int realBaseDamage = this.baseDamage;
+        this.baseDamage += this.magicNumber * countCards();
+        super.applyPowers();
+        this.baseDamage = realBaseDamage;
+        this.isDamageModified = this.damage != this.baseDamage;
+    }
+
+    private int countCards() {
+        return (int) (Wiz.adp().drawPile.group.stream().filter(c -> c.type == CardType.STATUS).count() +
+                Wiz.adp().hand.group.stream().filter(c -> c.type == CardType.STATUS).count() +
+                Wiz.adp().discardPile.group.stream().filter(c -> c.type == CardType.STATUS).count());
     }
 
     @Override
@@ -54,12 +76,17 @@ public class Balance extends AbstractMagickCard {
     }
 
     public void upp() {
-        isMultiDamage = true;
-        uDesc();
+        upgradeDamage(UP_DAMAGE);
+        upgradeMagicNumber(UP_BOOST);
     }
 
     @Override
     public String cardArtCopy() {
         return Neutralize.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.1f, 0.5f, 0.4f, 0.7f, false);
     }
 }

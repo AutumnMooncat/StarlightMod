@@ -37,7 +37,7 @@
   },
   "${ModID}:Balance": {
     "NAME": "Balance",
-    "DESCRIPTION": "Remove all Block from the enemy. NL Deal that much damage.{!Location!|0= NL (Deals !D! damage)}{@@}",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for ALL your Status cards.",
     "UPGRADE_DESCRIPTION": "Remove all Block from the enemy. NL Deal that much damage to ALL enemies.{!Location!|0= NL (Deals !D! damage)}{@@}",
     "EXTENDED_DESCRIPTION": ["Lifebreak"]
   },
