@@ -24,7 +24,7 @@
   },
   "${ModID}:Astra": {
     "NAME": "Astra",
-    "DESCRIPTION": "starlight:Project !M! cards. NL Gain !B! Block for each starlight:Projected [#efc851]Magick[] card.",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Project 1 card and !M! {!M!|1=copy|@=copies} of it.",
     "EXTENDED_DESCRIPTION": ["Astraga"]
   },
   "${ModID}:AstralProtection": {
