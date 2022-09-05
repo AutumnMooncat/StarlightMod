@@ -46,6 +46,7 @@ public class RejectFate extends AbstractEasyCard {
         Wiz.atb(new SFXAction("ATTACK_HEAVY"));
         Wiz.atb(new VFXAction(p, new CleaveUpEffect(), 0.1F));
         Wiz.atb(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
+        Wiz.atb(new SFXAction("ORB_DARK_EVOKE", 0.1f));
         Wiz.atb(new SFXAction("ATTACK_HEAVY"));
         Wiz.atb(new VFXAction(p, new CleaveDownEffect(), 0.1F));
         Wiz.atb(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
