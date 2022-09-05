@@ -5,6 +5,7 @@ import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.purple.FlyingSleeves;
 import com.megacrit.cardcrawl.cards.purple.JustLucky;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -22,14 +23,18 @@ public class Augury extends AbstractEasyCard implements TagTeamCard {
     private static final int COST = 1;
     private static final int DMG = 9;
     private static final int UP_DMG = 3;
+    private static final int DRAW = 1;
+    private static final int UP_DRAW = 1;
 
     public Augury() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
+        baseMagicNumber = magicNumber = DRAW;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        dmg(m, AbstractGameAction.AttackEffect.SMASH);
+        Wiz.atb(new DrawCardAction(magicNumber));
     }
 
     public void upp() {
