@@ -195,7 +195,7 @@
   },
   "${ModID}:NullMomentum": {
     "NAME": "Null Momentum",
-    "DESCRIPTION": "{@@}Draw !M! cards. NL Put a Void onto the top of your draw pile. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !B! Block."
+    "DESCRIPTION": "{@@}Put a Void onto the top of your draw pile. NL Draw !M! cards. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !B! Block."
   },
   "${ModID}:Posturing": {
     "NAME": "Posturing",

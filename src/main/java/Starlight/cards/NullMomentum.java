@@ -2,13 +2,10 @@ package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.interfaces.TagTeamCard;
-import Starlight.powers.ProvidencePower;
-import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.purple.Halt;
-import com.megacrit.cardcrawl.cards.purple.Sanctity;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -24,8 +21,8 @@ public class NullMomentum extends AbstractEasyCard implements TagTeamCard {
 
     private static final int COST = 0;
     private static final int BLK = 4;
-    private static final int UP_BLK = 1;
-    private static final int EFFECT = 2;
+    private static final int UP_BLK = 2;
+    private static final int EFFECT = 3;
     private static final int UP_EFFECT = 1;
 
     public NullMomentum() {
@@ -36,8 +33,8 @@ public class NullMomentum extends AbstractEasyCard implements TagTeamCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new DrawCardAction(magicNumber));
         Wiz.atb(new MakeTempCardInDrawPileAction(cardsToPreview.makeStatEquivalentCopy(), 1, false, true, false));
+        Wiz.atb(new DrawCardAction(magicNumber));
     }
 
     public void upp() {
