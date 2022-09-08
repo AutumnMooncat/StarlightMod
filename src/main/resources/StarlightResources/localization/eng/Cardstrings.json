@@ -16,7 +16,7 @@
   },
   "${ModID}:Anticipate": {
     "NAME": "Anticipate",
-    "DESCRIPTION": "starlight:Foretell a card in your discard pile. If you starlight:Foretell a starlight:Magick card, gain !M! starlight:SP."
+    "DESCRIPTION": "Gain !M! starlight:SP. NL starlight:Foretell and Upgrade a card in your discard pile."
   },
   "${ModID}:Ascend": {
     "NAME": "Ascend",

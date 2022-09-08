@@ -34,12 +34,14 @@ public class Anticipate extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        Wiz.applyToSelf(new SpellPower(p, magicNumber));
         Wiz.atb(new ForetellAction(p.discardPile, 1, c -> true, new AbstractGameAction() {
             @Override
             public void update() {
                 for (AbstractCard card : ForetellAction.foretoldCards) {
-                    if (card instanceof AbstractMagickCard) {
-                        Wiz.applyToSelfTop(new SpellPower(p, magicNumber));
+                    if (/*card instanceof AbstractMagickCard &&*/ card.canUpgrade()) {
+                        card.upgrade();
+                        //Wiz.applyToSelfTop(new SpellPower(p, magicNumber));
                         break;
                     }
                 }
