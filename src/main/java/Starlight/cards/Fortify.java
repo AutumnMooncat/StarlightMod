@@ -2,10 +2,10 @@ package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.interfaces.TagTeamCard;
+import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.blue.Stack;
-import com.megacrit.cardcrawl.cards.colorless.Chrysalis;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -47,5 +47,10 @@ public class Fortify extends AbstractEasyCard implements TagTeamCard {
     @Override
     public String cardArtCopy() {
         return Stack.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.15f, 0.5f, 0.5f, 0.5f, false);
     }
 }

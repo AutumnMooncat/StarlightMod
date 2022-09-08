@@ -1,12 +1,13 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.cards.green.QuickSlash;
+import com.megacrit.cardcrawl.cards.colorless.FlashOfSteel;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
@@ -55,6 +56,11 @@ public class Aero extends AbstractMagickCard {
 
     @Override
     public String cardArtCopy() {
-        return QuickSlash.ID;
+        return FlashOfSteel.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.25f, 0.5f, 0.5f, 0.5f, false);
     }
 }
