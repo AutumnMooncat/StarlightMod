@@ -292,7 +292,7 @@
   },
   "${ModID}:ThePlot": {
     "NAME": "The Plot",
-    "DESCRIPTION": "{@@}starlight:Foretell a card in your hand and Upgrade it. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: It costs 0 until played."
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL starlight:Foretell a card in your hand. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: It costs 0 until played."
   },
   "${ModID}:Thoughtbloom": {
     "NAME": "Thoughtbloom",
