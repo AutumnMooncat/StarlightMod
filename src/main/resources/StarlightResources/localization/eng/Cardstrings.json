@@ -249,6 +249,10 @@
     "NAME": "Skyfall",
     "DESCRIPTION": "{@@}starlight:Project the top card of your draw pile. NL Deal !D! damage and gain !M! starlight:Providence for each starlight:Projected card."
   },
+  "${ModID}:SoulFire": {
+    "NAME": "Soulfire",
+    "DESCRIPTION": "Unplayable."
+  },
   "${ModID}:SpellOptimizer": {
     "NAME": "Spell Optimizer",
     "DESCRIPTION": "Draw !M! cards. NL starlight:Magick cards drawn this way cost 1 less this turn."

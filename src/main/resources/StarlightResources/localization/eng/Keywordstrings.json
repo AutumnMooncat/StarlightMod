@@ -79,5 +79,40 @@
       "tag"
     ],
     "DESCRIPTION": "Effect triggers if the last card played matches the specified type."
+  },
+  {
+    "PROPER_NAME": "Primrose",
+    "NAMES": [
+      "primrose"
+    ],
+    "DESCRIPTION": "Effect triggers if Primrose is in front."
+  },
+  {
+    "PROPER_NAME": "Luna",
+    "NAMES": [
+      "luna"
+    ],
+    "DESCRIPTION": "Effect triggers if Luna is in front."
+  },
+  {
+    "PROPER_NAME": "Fisticuffs",
+    "NAMES": [
+      "fisticuffs"
+    ],
+    "DESCRIPTION": "#yPrimrose #yAbility - Gain #b1 Block per level when playing an #yAttack."
+  },
+  {
+    "PROPER_NAME": "Temperance",
+    "NAMES": [
+      "temperance"
+    ],
+    "DESCRIPTION": "#yLuna #yAbility - Gain #b1 #ySP per level when playing an #ySkill."
+  },
+  {
+    "PROPER_NAME": "Ability",
+    "NAMES": [
+      "ability"
+    ],
+    "DESCRIPTION": "Abilities are upgradeable passive effects."
   }
 ]

@@ -1,6 +1,6 @@
 package Starlight.damageMods;
 
-import Starlight.powers.FiredUpPower;
+import Starlight.powers.abilities.FiredUpPower;
 import Starlight.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.AbstractDamageModifier;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

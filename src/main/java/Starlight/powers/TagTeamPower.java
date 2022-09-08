@@ -2,19 +2,21 @@ package Starlight.powers;
 
 import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
+import Starlight.util.AbilityManager;
+import Starlight.util.FormatHelper;
 import Starlight.util.TexLoader;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import java.util.HashMap;
 
 public class TagTeamPower extends AbstractPower {
 
@@ -23,6 +25,8 @@ public class TagTeamPower extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     public static final String[] NAMES = CardCrawlGame.languagePack.getCharacterString(TheStarlightMod.makeID("StarlightSisters")).NAMES;
+    public static final String PRIM = NAMES[2];
+    public static final String LUNA = NAMES[3];
 
     public TextureAtlas.AtlasRegion P48, P128, L48, L128;
     Texture pTex = TexLoader.getTexture(TheStarlightMod.modID + "Resources/images/powers/TagTeamPower48.png");
@@ -31,6 +35,8 @@ public class TagTeamPower extends AbstractPower {
     Texture lTexLarge = TexLoader.getTexture(TheStarlightMod.modID + "Resources/images/powers/TagTeamPowerF128.png");
 
     boolean lastState;
+
+    HashMap<AbstractPower, Integer> addedPowers = new HashMap<>();
 
     public TagTeamPower(AbstractCreature owner) {
         this.ID = POWER_ID;
@@ -49,6 +55,18 @@ public class TagTeamPower extends AbstractPower {
         updateDescription();
     }
 
+    @Override
+    public void onInitialApplication() {
+        for (AbilityManager.AbilityType t : AbilityManager.AbilityType.values()) {
+            if (AbilityManager.getAbilityLevel(t) > 0) {
+                AbstractPower ability = AbilityManager.getAbilityPower(t);
+                Wiz.applyToSelf(ability);
+                addedPowers.put(ability, t.isPolarity());
+            }
+        }
+        updateDescription();
+    }
+
     private boolean isPrimrose() {
         return owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront;
     }
@@ -63,7 +81,7 @@ public class TagTeamPower extends AbstractPower {
         updateDescription();
     }
 
-    @Override
+    /*@Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (isPrimrose()) {
             if (card.type == AbstractCard.CardType.ATTACK) {
@@ -74,7 +92,7 @@ public class TagTeamPower extends AbstractPower {
                 Wiz.atb(new ApplyPowerAction(owner, owner, new SpellPower(owner, 1)));
             }
         }
-    }
+    }*/
 
     /*@Override
     public void onExhaust(AbstractCard card) {
@@ -112,11 +130,28 @@ public class TagTeamPower extends AbstractPower {
                 flashWithoutSound();
                 lastState = ((StarlightSisters) owner).attackerInFront;
             }
+            StringBuilder sb = new StringBuilder();
+            sb.append(DESCRIPTIONS[0]);
             if (((StarlightSisters) owner).attackerInFront) {
-                description = DESCRIPTIONS[0] + NAMES[2] + DESCRIPTIONS[1] + NAMES[3] + DESCRIPTIONS[2];
+                sb.append(PRIM);
             } else {
-                description = DESCRIPTIONS[3] + NAMES[3] + DESCRIPTIONS[4] + NAMES[2] + DESCRIPTIONS[5];
+                sb.append(LUNA);
             }
+            sb.append(DESCRIPTIONS[1]);
+            int pol = ((StarlightSisters) owner).attackerInFront ? 1 : -1;
+            for (AbstractPower ability : addedPowers.keySet()) {
+                ability.updateDescription();
+                if (addedPowers.get(ability) == 0 || addedPowers.get(ability) == pol) {
+                    sb.append(" NL - ").append(FormatHelper.prefixWords(ability.name, "#y"));
+                }
+            }
+            sb.append(DESCRIPTIONS[2]);
+            if (((StarlightSisters) owner).attackerInFront) {
+                sb.append(LUNA).append(DESCRIPTIONS[3]);
+            } else {
+                sb.append(PRIM).append(DESCRIPTIONS[4]);
+            }
+            description = sb.toString();
         } else {
             description = "???";
         }

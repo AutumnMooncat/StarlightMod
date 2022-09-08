@@ -50,5 +50,27 @@
       "Choose a card to Exhaust.",
       "Choose "," cards to Exhaust."
     ]
+  },
+  "${ModID}:AbilityOption": {
+    "TEXT": [
+      "Abilities",
+      "(Free Action) Spend Ability Points to Upgrade your Abilities.",
+      "Select Ability to improve",
+      "Viewing Abilities"
+    ]
+  },
+  "${ModID}:Abilities": {
+    "TEXT": [
+      "Ability",
+      "Abilities are upgradeable passive effects.",
+      " Level "
+    ]
+  },
+  "${ModID}:AbilityButton": {
+    "TEXT": [
+      "Abilities",
+      "Click to view your current abilities. Abilities may be upgraded at Campfires by spending Ability Points. NL Current Ability Points: #b",
+      ". NL Completing an Act provides #b1 Ability Point."
+    ]
   }
 }

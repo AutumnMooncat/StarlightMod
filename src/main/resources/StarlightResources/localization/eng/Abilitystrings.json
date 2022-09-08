@@ -1,0 +1,48 @@
+{
+  "${ModID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Main description",
+    "UPGRADE_DESCRIPTION": "Upgrade description",
+    "EXTENDED_DESCRIPTION": ["Extra Stuff"]
+  },
+  "${ModID}:FiredUpAbility": {
+    "NAME": "Fired Up!",
+    "DESCRIPTION": "At the start of combat, shuffle !Starlight:I! *Soulfire per level into your draw pile. NL Whenever you draw a *Soulfire, gain 2 Strength. NL (Shuffle !Starlight:M2! *Soulfire)"
+  },
+  "${ModID}:FisticuffsAbility": {
+    "NAME": "Fisticuffs",
+    "DESCRIPTION": "starlight:Primrose NL Gain !Starlight:I! Block per level when playing an Attack. NL (Gains !Starlight:M2! Block)"
+  },
+  "${ModID}:PileBunkerAbility": {
+    "NAME": "Pile Bunker",
+    "DESCRIPTION": "starlight:Primrose NL Attacks deal !Starlight:I! percent more damage per level to enemies with Block. NL (Plus !Starlight:M2! % damage)"
+  },
+  "${ModID}:BruiserAbility": {
+    "NAME": "Bruiser",
+    "DESCRIPTION": "starlight:Primrose NL Attacks deal !Starlight:I! additional damage per level per Attack played this turn. NL (Plus !Starlight:M2! damage)"
+  },
+  "${ModID}:BlackMagicAbility": {
+    "NAME": "Black Magick",
+    "DESCRIPTION": "Basic Strikes now Exhaust. Whenever you Exhaust a card, gain !Starlight:I! Strength per level. NL (Gains !Starlight:M2! Strength)"
+  },
+  "${ModID}:TemperanceAbility": {
+    "NAME": "Temperance",
+    "DESCRIPTION": "starlight:Luna NL Gain !Starlight:I! starlight:SP per level when playing a Skill. NL (Gains !Starlight:M2! starlight:SP)"
+  },
+  "${ModID}:EphemeralAbility": {
+    "NAME": "Ephemeral",
+    "DESCRIPTION": "starlight:Luna NL Whenever you draw a Status card, gain !Starlight:I! Block per level. NL (Gains !Starlight:M2! Block)"
+  },
+  "${ModID}:CovenantAbility": {
+    "NAME": "Covenant",
+    "DESCRIPTION": "starlight:Magick cards now Retain. Whenever you Retain a starlight:Magick card, gain !Starlight:I! starlight:SP per level. NL (Gains !Starlight:M2! starlight:SP)"
+  },
+  "${ModID}:DivinationAbility": {
+    "NAME": "Divination",
+    "DESCRIPTION": "starlight:Luna NL Whenever you Scry, gain !Starlight:I! starlight:Providence per level. NL (Gains !Starlight:M2! starlight:Providence)"
+  },
+  "${ModID}:AstralBodyAbility": {
+    "NAME": "Astral Body",
+    "DESCRIPTION": "Whenever you draw a Void, ALL enemies lose !Starlight:I! HP per level. NL (Loses !Starlight:M2! HP)"
+  }
+}

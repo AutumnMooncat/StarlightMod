@@ -26,4 +26,34 @@ public class MagicWand extends AbstractEasyRelic {
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + SP + DESCRIPTIONS[1];
     }
+
+    /*
+        @Override
+    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+        if (!mainEffect()) {
+            flash();
+            Wiz.atb(new GainBlockAction(Wiz.adp(), BLOCK));
+        }
+    }
+
+    @Override
+    public String getUpdatedDescription() {
+        if (mainEffect()) {
+            return DESCRIPTIONS[0];
+        }
+        return DESCRIPTIONS[1] + BLOCK + DESCRIPTIONS[2];
+    }
+
+    private boolean mainEffect() {
+        return !CardCrawlGame.isInARun() || (Wiz.adp() != null && Wiz.adp() instanceof StarlightSisters);
+    }
+
+    @Override
+    public int levelBoost(AbilityManager.AbilityType t) {
+        if (t == AbilityManager.AbilityType.FISTICUFFS || t == AbilityManager.AbilityType.TEMPERANCE) {
+            return 1;
+        }
+        return 0;
+    }
+     */
 }

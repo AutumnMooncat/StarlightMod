@@ -8,10 +8,13 @@ import Starlight.cards.interfaces.PrimroseCard;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.relics.AbstractEasyRelic;
+import Starlight.ui.AbilityButton;
 import Starlight.ui.ProjectedCardManager;
+import Starlight.util.AbilityManager;
 import Starlight.util.Wiz;
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import basemod.helpers.CardBorderGlowManager;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -40,7 +43,7 @@ public class TheStarlightMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        StartGameSubscriber {
+        StartGameSubscriber, PostDungeonInitializeSubscriber, StartActSubscriber {
 
     public static final String modID = "Starlight";
 
@@ -82,6 +85,8 @@ public class TheStarlightMod implements
 
     public static final String PRE_BATTLE_TALK_PROBABILITY_SETTING = "preTalkProbability";
     public static int preTalkProbability = 50; //Out of 100
+
+    public static AbilityButton abilityButton;
 
     public TheStarlightMod() {
         BaseMod.subscribe(this);
@@ -166,6 +171,8 @@ public class TheStarlightMod implements
         BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/Chatterstrings.json");
 
         BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/DamageModstrings.json");
+
+        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/Abilitystrings.json");
 
         BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/eng/UIstrings.json");
 
@@ -256,6 +263,20 @@ public class TheStarlightMod implements
                 return makeID("LunaGlow");
             }
         });
+        BaseMod.addSaveField(makeID("Abilities"), new CustomSavable<AbilityManager.AbilitySaveData>() {
+
+            @Override
+            public AbilityManager.AbilitySaveData onSave() {
+                return new AbilityManager.AbilitySaveData(AbilityManager.investedAbilityLevels, AbilityManager.abilityPoints, AbilityManager.timesProvided);
+            }
+
+            @Override
+            public void onLoad(AbilityManager.AbilitySaveData abilitySaveData) {
+                AbilityManager.load(abilitySaveData);
+            }
+        });
+
+        abilityButton = new AbilityButton();
     }
 
     public static boolean tagTest(AbstractCard c) {
@@ -308,5 +329,21 @@ public class TheStarlightMod implements
     @Override
     public void receiveStartGame() {
         ProjectedCardManager.EmptyCards.yeet();
+        BaseMod.removeTopPanelItem(abilityButton);
+        if (Wiz.adp() instanceof StarlightSisters) {
+            BaseMod.addTopPanelItem(abilityButton);
+        }
+    }
+
+    @Override
+    public void receiveStartAct() {
+        if (AbstractDungeon.actNum > AbilityManager.timesProvided) {
+            AbilityManager.actStartGainPoint();
+        }
+    }
+
+    @Override
+    public void receivePostDungeonInitialize() {
+        AbilityManager.reset();
     }
 }
