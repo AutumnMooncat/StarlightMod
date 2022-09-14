@@ -1,14 +1,12 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.purple.Evaluate;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ReboundPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -22,7 +20,7 @@ public class Deduce extends AbstractEasyCard {
     private static final int COST = 1;
     private static final int BLK = 7;
     private static final int UP_BLK = 2;
-    private static final int SCRY = 2;
+    private static final int SCRY = 3;
     private static final int UP_SCRY = 1;
 
     public Deduce() {
@@ -33,6 +31,14 @@ public class Deduce extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
+        /*Wiz.atb(new EnvisionAction(magicNumber, 1, cards -> {
+            for (AbstractCard c : cards) {
+                if (c.canUpgrade()) {
+                    c.upgrade();
+                }
+            }
+
+        }));*/
         Wiz.atb(new ScryAction(magicNumber));
         Wiz.atb(new DrawCardAction(1));
     }

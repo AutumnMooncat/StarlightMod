@@ -9,6 +9,7 @@ import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.relics.AbstractEasyRelic;
 import Starlight.ui.AbilityButton;
+import Starlight.ui.EnvisionedCardManager;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.AbilityManager;
 import Starlight.util.Wiz;
@@ -329,6 +330,7 @@ public class TheStarlightMod implements
     @Override
     public void receiveStartGame() {
         ProjectedCardManager.EmptyCards.yeet();
+        EnvisionedCardManager.EmptyCards.yeet();
         BaseMod.removeTopPanelItem(abilityButton);
         if (Wiz.adp() instanceof StarlightSisters) {
             BaseMod.addTopPanelItem(abilityButton);

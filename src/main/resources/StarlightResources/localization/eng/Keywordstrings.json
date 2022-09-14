@@ -114,5 +114,21 @@
       "ability"
     ],
     "DESCRIPTION": "Abilities are upgradeable passive effects."
+  },
+  {
+    "PROPER_NAME": "Scry",
+    "NAMES": [
+      "scries",
+      "scried"
+    ],
+    "DESCRIPTION": "Look at the top X cards of your draw pile. You may discard any of them."
+  },
+  {
+    "PROPER_NAME": "Envision",
+    "NAMES": [
+      "envision",
+      "envisioned"
+    ],
+    "DESCRIPTION": "Determine the next X cards you will draw. You may add Envisioned cards to your hand at the cost of drawing less cards next turn."
   }
 ]

@@ -72,5 +72,12 @@
       "Click to view your current abilities. Abilities may be upgraded at Campfires by spending Ability Points. NL Current Ability Points: #b",
       ". NL Completing an Act provides #b1 Ability Point."
     ]
+  },
+  "${ModID}:Envision": {
+    "TEXT": [
+      "Envision",
+      "Choose a card.",
+      "Choose "," cards."
+    ]
   }
 }
