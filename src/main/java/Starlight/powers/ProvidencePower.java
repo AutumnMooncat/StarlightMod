@@ -46,13 +46,22 @@ public class ProvidencePower extends AbstractPower {
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();
+        //flashing = amount >= 10;
         checkStacks(this.amount);
     }
 
     @Override
     public void stackPower(int stackAmount) {
         super.stackPower(stackAmount);
+        //flashing = amount >= 10;
         checkStacks(stackAmount);
+    }
+
+    @Override
+    public void reducePower(int reduceAmount) {
+        super.reducePower(reduceAmount);
+        //flashing = amount >= 10;
+        checkStacks(reduceAmount);
     }
 
     @Override
@@ -66,6 +75,19 @@ public class ProvidencePower extends AbstractPower {
             }
         }
     }
+
+    /*@Override
+    public void atEndOfTurn(boolean isPlayer) {
+        if (isPlayer && amount >= 10) {
+            AbstractDungeon.getCurrRoom().skipMonsterTurn = true;
+            RetainBlockPatches.retainBlockThisTurn = true;
+            amount -= 10;
+            flashing = amount >= 10;
+            if (amount <= 0) {
+                Wiz.att(new RemoveSpecificPowerAction(owner, owner, this));
+            }
+        }
+    }*/
 
     private void checkStacks(int recentlyAdded) {
         flashing = amount >= 10;
