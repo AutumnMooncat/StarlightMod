@@ -45,10 +45,10 @@ public class TagTeamPatch {
                 triggerOnTagTeamCards(c, __instance, monster, tagTriggers);
             }
             if (c instanceof PrimroseCard && checkPrimCard(c)) {
-                ((PrimroseCard) c).onPrimTrigger();
+                ((PrimroseCard) c).onPrimTrigger(__instance, monster);
             }
             if (c instanceof LunaCard && checkLunaCard(c)) {
-                ((LunaCard) c).onLunaTrigger();
+                ((LunaCard) c).onLunaTrigger(__instance, monster);
             }
         }
 
