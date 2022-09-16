@@ -63,7 +63,7 @@
     "TEXT": [
       "Ability",
       "Abilities are upgradeable passive effects.",
-      " Level "
+      " (Active)"
     ]
   },
   "${ModID}:AbilityButton": {

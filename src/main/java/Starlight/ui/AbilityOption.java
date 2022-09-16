@@ -22,7 +22,7 @@ public class AbilityOption extends AbstractCampfireOption {
     }
 
     public void updateUsability() {
-        this.usable = AbilityManager.abilityPoints > 0;
+        this.usable = AbilityManager.abilityPoints > 0 && !AbilityManager.getUpgradeableAbilityCards().isEmpty();
     }
 
     public void useOption() {

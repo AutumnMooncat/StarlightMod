@@ -2,13 +2,17 @@ package Starlight.powers.abilities;
 
 import Starlight.TheStarlightMod;
 import Starlight.cards.SoulFire;
+import Starlight.characters.StarlightSisters;
 import Starlight.util.Wiz;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ShaderHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -32,19 +36,14 @@ public class BlackMagicPower extends AbstractPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.tags.contains(AbstractCard.CardTags.STARTER_STRIKE)) {
+        if (card.tags.contains(AbstractCard.CardTags.STARTER_STRIKE) && isActive()) {
             this.flash();
             action.exhaustCard = true;
+            Wiz.atb(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
         }
     }
 
     @Override
-    public void onExhaust(AbstractCard card) {
-        flash();
-        Wiz.atb(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
-    }
-
-    /*@Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
         if (!isActive()) {
             ShaderHelper.setShader(sb, ShaderHelper.Shader.GRAYSCALE);
@@ -57,13 +56,13 @@ public class BlackMagicPower extends AbstractPower {
 
     private boolean isActive() {
         return owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront;
-    }*/
+    }
 
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        /*if (!isActive()) {
+        if (!isActive()) {
             this.description = DESCRIPTIONS[2] + description;
-        }*/
+        }
     }
 }

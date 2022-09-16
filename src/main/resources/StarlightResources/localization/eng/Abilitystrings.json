@@ -7,42 +7,42 @@
   },
   "${ModID}:FiredUpAbility": {
     "NAME": "Fired Up!",
-    "DESCRIPTION": "At the start of combat, shuffle !Starlight:I! *Soulfire per level into your draw pile. NL Whenever you draw a *Soulfire, gain 2 Strength. NL (Shuffle !Starlight:M2! *Soulfire)"
+    "DESCRIPTION": "starlight:Primrose's Attacks deal !Starlight:I! additional damage per Attack played this turn."
   },
   "${ModID}:FisticuffsAbility": {
     "NAME": "Fisticuffs",
-    "DESCRIPTION": "starlight:Primrose NL Gain !Starlight:I! Block per level when playing an Attack. NL (Gains !Starlight:M2! Block)"
+    "DESCRIPTION": "Whenever starlight:Primrose plays an Attack, she gains !Starlight:I! Block."
   },
   "${ModID}:PileBunkerAbility": {
     "NAME": "Pile Bunker",
-    "DESCRIPTION": "starlight:Primrose NL Attacks deal !Starlight:I! percent more damage per level to enemies with Block. NL (Plus !Starlight:M2! % damage)"
+    "DESCRIPTION": "starlight:Primrose's Attacks deal !Starlight:I! percent more damage to enemies with Block."
   },
   "${ModID}:BruiserAbility": {
     "NAME": "Bruiser",
-    "DESCRIPTION": "starlight:Primrose NL Attacks deal !Starlight:I! additional damage per level per Attack played this turn. NL (Plus !Starlight:M2! damage)"
+    "DESCRIPTION": "starlight:Primrose's non starlight:Magick Attacks deal !Starlight:I! percent more damage."
   },
   "${ModID}:BlackMagicAbility": {
     "NAME": "Black Magick",
-    "DESCRIPTION": "Basic Strikes now Exhaust. Whenever you Exhaust a card, gain !Starlight:I! Strength per level. NL (Gains !Starlight:M2! Strength)"
+    "DESCRIPTION": "{@@}Whenever starlight:Primrose plays a Basic Strike, it now Exhausts and provides !Starlight:I! Strength."
   },
   "${ModID}:TemperanceAbility": {
     "NAME": "Temperance",
-    "DESCRIPTION": "starlight:Luna NL Gain !Starlight:I! starlight:SP per level when playing a Skill. NL (Gains !Starlight:M2! starlight:SP)"
+    "DESCRIPTION": "Whenever starlight:Luna gains starlight:SP, she also gains !Starlight:I! Block."
   },
   "${ModID}:EphemeralAbility": {
     "NAME": "Ephemeral",
-    "DESCRIPTION": "starlight:Luna NL Whenever you draw a Status card, gain !Starlight:I! Block per level. NL (Gains !Starlight:M2! Block)"
+    "DESCRIPTION": "Whenever starlight:Luna draws a Status card, she gains !Starlight:I! Block."
   },
   "${ModID}:CovenantAbility": {
     "NAME": "Covenant",
-    "DESCRIPTION": "starlight:Magick cards now Retain. Whenever you Retain a starlight:Magick card, gain !Starlight:I! starlight:SP per level. NL (Gains !Starlight:M2! starlight:SP)"
+    "DESCRIPTION": "starlight:Luna now Retains starlight:Magick cards, gaining !Starlight:I! starlight:SP per card."
   },
   "${ModID}:DivinationAbility": {
     "NAME": "Divination",
-    "DESCRIPTION": "starlight:Luna NL Whenever you Scry, gain !Starlight:I! starlight:Providence per level. NL (Gains !Starlight:M2! starlight:Providence)"
+    "DESCRIPTION": "Whenever starlight:Luna starlight:Scries, she also gains !Starlight:I! starlight:Providence."
   },
   "${ModID}:AstralBodyAbility": {
     "NAME": "Astral Body",
-    "DESCRIPTION": "Whenever you draw a Void, ALL enemies lose !Starlight:I! HP per level. NL (Loses !Starlight:M2! HP)"
+    "DESCRIPTION": "Whenever starlight:Luna draws a Status card, ALL enemies lose !Starlight:I! HP."
   }
 }

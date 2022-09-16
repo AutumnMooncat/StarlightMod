@@ -13,15 +13,15 @@ import java.util.HashMap;
 public class AbilityManager {
     public enum AbilityType {
         FISTICUFFS(1, 2),
-        BRUISER(1, 1),
+        BRUISER(1, 15),
         PILE_BUNKER(1, 20),
-        TEMPERANCE(-1, 1),
+        FIRED_UP(1, 1),
+        BLACK_MAGIC(1, 1),
+        TEMPERANCE(-1, 2),
         EPHEMERAL(-1, 4),
         DIVINATION(-1, 1),
-        FIRED_UP(0, 1),
-        BLACK_MAGIC(0, 1),
-        COVENANT(0, 1),
-        ASTRAL_BODY(0, 7);
+        COVENANT(-1, 1),
+        ASTRAL_BODY(-1, 5);
 
         private final int polarity;
         private final int scale;
@@ -65,11 +65,11 @@ public class AbilityManager {
 
     public static int getAbilityLevel(AbilityType t) {
         int i = investedAbilityLevels.getOrDefault(t, 0);
-        for (AbstractRelic r : Wiz.adp().relics) {
+        /*for (AbstractRelic r : Wiz.adp().relics) {
             if (r instanceof AbilityProvidingRelic) {
                 i += ((AbilityProvidingRelic) r).levelBoost(t);
             }
-        }
+        }*/
         return i;
     }
 
@@ -121,6 +121,12 @@ public class AbilityManager {
         group.addToTop(new DivinationAbility());
         group.addToTop(new AstralBodyAbility());
         group.addToTop(new CovenantAbility());
+        return group;
+    }
+
+    public static CardGroup getUpgradeableAbilityCards() {
+        CardGroup group = getAbilityCards();
+        group.group.removeIf(c -> c.upgraded);
         return group;
     }
 

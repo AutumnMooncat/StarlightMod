@@ -99,42 +99,42 @@
   },
   "${ModID}:FiredUpPower": {
     "NAME": "Fired Up!",
-    "DESCRIPTIONS": ["Start each combat with #b"," #ySoulfire. Whenever you draw a #ySoulfire, gain #b2 #yStrength.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["#yPrimrose's Attacks deal #b"," additional damage per Attack played this turn.","#r(Inactive) NL "]
   },
   "${ModID}:FisticuffsPower": {
     "NAME": "Fisticuffs",
-    "DESCRIPTIONS": ["Whenever you play an #yAttack, gain #b"," #yBlock.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["Whenever #yPrimrose plays an #yAttack, gain #b"," #yBlock.","#r(Inactive) NL "]
   },
   "${ModID}:TemperancePower": {
     "NAME": "Temperance",
-    "DESCRIPTIONS": ["Whenever you play a #ySkill, gain #b"," #ySP.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["Whenever #yLuna gains #ySP, gain #b"," #yBlock.","#r(Inactive) NL "]
   },
   "${ModID}:PileBunkerPower": {
     "NAME": "Pile Bunker",
-    "DESCRIPTIONS": ["Attacks deal #b","% more damage to enemies with #yBlock.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["#yPrimrose's Attacks deal #b","% more damage to enemies with #yBlock.","#r(Inactive) NL "]
   },
   "${ModID}:BruiserPower": {
     "NAME": "Bruiser",
-    "DESCRIPTIONS": ["Whenever you play an #yAttack, gain #b"," #yBlock.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["#yPrimrose's #ynon-Magick Attacks deal #b","% more damage.","#r(Inactive) NL "]
   },
   "${ModID}:DivinationPower": {
     "NAME": "Divination",
-    "DESCRIPTIONS": ["Whenever you #yScry, gain #b"," #yProvidence.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["Whenever #yLuna #yScries, gain #b"," #yProvidence.","#r(Inactive) NL "]
   },
   "${ModID}:CovenantPower": {
     "NAME": "Covenant",
-    "DESCRIPTIONS": ["#yMagick cards now #yRetain. Whenever you #yRetain a #yMagick card, gain #b"," #ySP.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["#yLuna now #yRetains #yMagick cards gaining #b"," #ySP per #yRetained #yMagic card.","#r(Inactive) NL "]
   },
   "${ModID}:BlackMagicPower": {
     "NAME": "Black Magick",
-    "DESCRIPTIONS": ["Basic #yStrikes now #rExhaust. Whenever you #yExhaust a card, gain #b"," #yStrength.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["Whenever #yPrimrose plays a #yBasic #yStrike, it #rExhausts and provides #b"," #yStrength.","#r(Inactive) NL "]
   },
   "${ModID}:AstralBodyPower": {
     "NAME": "Astral Body",
-    "DESCRIPTIONS": ["Whenever you draw a #yVoid, ALL enemies lose #b"," #yHP.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["Whenever #yLuna draws a #yStatus, ALL enemies lose #b"," #yHP.","#r(Inactive) NL "]
   },
   "${ModID}:EphemeralPower": {
     "NAME": "Ephemeral",
-    "DESCRIPTIONS": ["Whenever you draw a #yStatus, gain #b"," #yBlock.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["Whenever #yLuna draws a #yStatus, gain #b"," #yBlock.","#r(Inactive) NL "]
   }
 }

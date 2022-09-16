@@ -35,7 +35,7 @@ public abstract class AbstractAbilityCard extends AbstractEasyCard {
         super(ID, -2, CardType.SKILL, CardRarity.SPECIAL, CardTarget.NONE, CardColor.COLORLESS);
         TypeOverridePatch.TypeOverrideField.typeOverride.set(this, ABILITY_TEXT[0]);
         this.storedPower = AbilityManager.getAbilityPower(type);
-        appendLevel();
+        //appendLevel();
         for (int i = 0 ; i < AbilityManager.getAbilityLevel(type) ; i++) {
             upgrade();
         }
@@ -77,7 +77,7 @@ public abstract class AbstractAbilityCard extends AbstractEasyCard {
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {}
 
     protected void appendLevel() {
-        this.name = this.originalName + ABILITY_TEXT[2] + timesUpgraded;
+        this.name = this.originalName + ABILITY_TEXT[2] /*+ timesUpgraded*/;
     }
 
     @Override

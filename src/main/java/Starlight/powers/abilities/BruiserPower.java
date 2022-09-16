@@ -1,6 +1,7 @@
 package Starlight.powers.abilities;
 
 import Starlight.TheStarlightMod;
+import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
@@ -31,9 +32,9 @@ public class BruiserPower extends AbstractPower {
     }
 
     @Override
-    public float atDamageGive(float damage, DamageInfo.DamageType type) {
-        if (isActive() && type == DamageInfo.DamageType.NORMAL) {
-            return damage + Wiz.cardsPlayedThisTurn().stream().filter(c -> c.type == AbstractCard.CardType.ATTACK).count();
+    public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
+        if (isActive() && card instanceof AbstractMagickCard) {
+            return damage * (1 + amount/100f);
         }
         return damage;
     }

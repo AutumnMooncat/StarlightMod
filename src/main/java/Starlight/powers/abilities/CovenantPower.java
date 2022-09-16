@@ -3,14 +3,18 @@ package Starlight.powers.abilities;
 import Starlight.TheStarlightMod;
 import Starlight.cards.SoulFire;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.characters.StarlightSisters;
 import Starlight.powers.SpellPower;
 import Starlight.util.Wiz;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ShaderHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -35,7 +39,7 @@ public class CovenantPower extends AbstractPower {
     }
 
     public void atEndOfTurn(boolean isPlayer) {
-        if (isPlayer) {
+        if (isPlayer && isActive()) {
             int sp = 0;
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if (!c.isEthereal && c instanceof AbstractMagickCard) {
@@ -50,7 +54,7 @@ public class CovenantPower extends AbstractPower {
         }
     }
 
-    /*@Override
+    @Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
         if (!isActive()) {
             ShaderHelper.setShader(sb, ShaderHelper.Shader.GRAYSCALE);
@@ -62,14 +66,14 @@ public class CovenantPower extends AbstractPower {
     }
 
     private boolean isActive() {
-        return owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront;
-    }*/
+        return owner instanceof StarlightSisters && !((StarlightSisters) owner).attackerInFront;
+    }
 
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        /*if (!isActive()) {
+        if (!isActive()) {
             this.description = DESCRIPTIONS[2] + description;
-        }*/
+        }
     }
 }

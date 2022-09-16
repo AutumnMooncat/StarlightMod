@@ -78,7 +78,7 @@ public class AbilityEffect extends AbstractGameEffect {
 
         if (this.duration < 1.0F && !this.openedScreen) {
             this.openedScreen = true;
-            AbstractDungeon.gridSelectScreen.open(AbilityManager.getAbilityCards(), 1, AbilityOption.TEXT[2], true, false, true, false);
+            AbstractDungeon.gridSelectScreen.open(AbilityManager.getUpgradeableAbilityCards(), 1, AbilityOption.TEXT[2], true, false, true, false);
         }
 
         if (this.duration < 0.0F) {

@@ -83,14 +83,16 @@
   {
     "PROPER_NAME": "Primrose",
     "NAMES": [
-      "primrose"
+      "primrose",
+      "primrose's"
     ],
     "DESCRIPTION": "Effect triggers if Primrose is in front."
   },
   {
     "PROPER_NAME": "Luna",
     "NAMES": [
-      "luna"
+      "luna",
+      "luna's"
     ],
     "DESCRIPTION": "Effect triggers if Luna is in front."
   },

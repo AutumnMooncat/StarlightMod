@@ -36,19 +36,14 @@ public class FiredUpPower extends AbstractPower {
     }
 
     @Override
-    public void onInitialApplication() {
-        Wiz.atb(new MakeTempCardInDrawPileAction(new SoulFire(), amount, true, true));
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        if (isActive() && type == DamageInfo.DamageType.NORMAL) {
+            return damage + Wiz.cardsPlayedThisTurn().stream().filter(c -> c.type == AbstractCard.CardType.ATTACK).count();
+        }
+        return damage;
     }
 
     @Override
-    public void onCardDraw(AbstractCard card) {
-        if (card instanceof SoulFire) {
-            flash();
-            Wiz.atb(new ApplyPowerAction(owner, owner, new StrengthPower(owner, 2)));
-        }
-    }
-
-    /*@Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
         if (!isActive()) {
             ShaderHelper.setShader(sb, ShaderHelper.Shader.GRAYSCALE);
@@ -61,13 +56,13 @@ public class FiredUpPower extends AbstractPower {
 
     private boolean isActive() {
         return owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront;
-    }*/
+    }
 
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        /*if (!isActive()) {
+        if (!isActive()) {
             this.description = DESCRIPTIONS[2] + description;
-        }*/
+        }
     }
 }
