@@ -14,7 +14,7 @@ public class FiredUpAbility extends AbstractAbilityCard {
         super(ID, TYPE);
         baseInfo = info = TYPE.scale();
         baseSecondMagic = secondMagic = AbilityManager.getAbilityLevel(TYPE) * TYPE.scale();
-        cardsToPreview = new SoulFire();
+        //cardsToPreview = new SoulFire();
     }
 
     @Override
