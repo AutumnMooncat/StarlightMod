@@ -38,7 +38,7 @@ public class PileBunkerPower extends AbstractPower implements DamageModApplyingP
         updateDescription();
     }
 
-    @Override
+    /*@Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
         if (!isActive()) {
             ShaderHelper.setShader(sb, ShaderHelper.Shader.GRAYSCALE);
@@ -47,7 +47,7 @@ public class PileBunkerPower extends AbstractPower implements DamageModApplyingP
         if (!isActive()) {
             ShaderHelper.setShader(sb, ShaderHelper.Shader.DEFAULT);
         }
-    }
+    }*/
 
     private boolean isActive() {
         return owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront;
@@ -56,9 +56,9 @@ public class PileBunkerPower extends AbstractPower implements DamageModApplyingP
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        if (!isActive()) {
+        /*if (!isActive()) {
             this.description = DESCRIPTIONS[2] + description;
-        }
+        }*/
     }
 
     @Override

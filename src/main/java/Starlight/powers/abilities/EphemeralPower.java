@@ -46,7 +46,8 @@ public class EphemeralPower extends AbstractPower {
             Wiz.atb(new GainBlockAction(owner, amount));
         }
     }
-    @Override
+
+    /*@Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
         if (!isActive()) {
             ShaderHelper.setShader(sb, ShaderHelper.Shader.GRAYSCALE);
@@ -56,7 +57,7 @@ public class EphemeralPower extends AbstractPower {
         } else {
             super.renderIcons(sb, x, y, c);
         }
-    }
+    }*/
 
     private boolean isActive() {
         return owner instanceof StarlightSisters && !((StarlightSisters) owner).attackerInFront;
@@ -65,8 +66,8 @@ public class EphemeralPower extends AbstractPower {
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
-        if (!isActive()) {
+        /*if (!isActive()) {
             this.description = DESCRIPTIONS[2] + description;
-        }
+        }*/
     }
 }
