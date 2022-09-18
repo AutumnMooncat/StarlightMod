@@ -1,6 +1,5 @@
 package Starlight.util.abilityCards;
 
-import Starlight.cards.SoulFire;
 import Starlight.cards.abstracts.AbstractAbilityCard;
 import Starlight.util.AbilityManager;
 

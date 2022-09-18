@@ -1,16 +1,12 @@
-package Starlight.cards;
+package Starlight.cards.status;
 
 import Starlight.actions.PlayRandomCardAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.purple.WaveOfTheHand;
-import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
@@ -18,7 +14,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class SoulFire extends AbstractEasyCard {
     public final static String ID = makeID(SoulFire.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardType TYPE = CardType.STATUS;
 
