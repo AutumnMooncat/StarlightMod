@@ -23,16 +23,18 @@ public class Esuna extends AbstractMagickCard {
     private static final int COST = 1;
     private static final int BLK = 9;
     private static final int UP_BLK = 3;
+    private static final int REMOVE = 1;
 
     public Esuna() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
+        baseMagicNumber = magicNumber = REMOVE;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         Wiz.atb(new VFXAction(new SanctityEffect(p.hb.cX, p.hb.cY)));
-        Wiz.atb(new CleansePowerAction(p, 1, c -> c.type == AbstractPower.PowerType.DEBUFF, powers -> {}));
+        Wiz.atb(new CleansePowerAction(p, magicNumber, c -> c.type == AbstractPower.PowerType.DEBUFF, powers -> {}));
     }
 
     @Override
