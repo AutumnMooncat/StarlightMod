@@ -13,7 +13,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class Protect extends AbstractMagickCard {
     public final static String ID = makeID(Protect.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
