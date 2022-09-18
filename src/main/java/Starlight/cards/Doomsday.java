@@ -48,14 +48,16 @@ public class Doomsday extends AbstractEasyCard implements OnForetoldCard {
                 Wiz.forAllMonstersLiving(mon -> Wiz.att(new VFXAction(new LightningEffect(mon.drawX, mon.drawY), 0.05F)));
                 Wiz.att(new SFXAction("THUNDERCLAP", 0.05F));
             }
-            Wiz.att(new VFXAction(new ScreenOnFireEffect(), 0.5f));
-            Wiz.att(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.MED, false);
-                    this.isDone = true;
-                }
-            });
+            if (effect + params[0] > 0) {
+                Wiz.att(new VFXAction(new ScreenOnFireEffect(), 0.5f));
+                Wiz.att(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.MED, false);
+                        this.isDone = true;
+                    }
+                });
+            }
             return true;
         }, magicNumber));
     }
