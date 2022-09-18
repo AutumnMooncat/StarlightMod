@@ -1,6 +1,7 @@
 package Starlight.cards;
 
 import Starlight.actions.ProjectCardsInHandAction;
+import Starlight.actions.ProjectCopyInHandAction;
 import Starlight.actions.ProjectSpecificCardAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
@@ -23,9 +24,9 @@ public class Astra extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int EFFECT = 1;
-    private static final int BLK = 7;
+    private static final int BLK = 6;
     private static final int UP_BLK = 3;
 
     public Astra() {
@@ -36,15 +37,7 @@ public class Astra extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        Wiz.atb(new ProjectCardsInHandAction(1, new AbstractGameAction() {
-            @Override
-            public void update() {
-                for (AbstractCard c : ProjectCardsInHandAction.projectedCards) {
-                    Wiz.att(new ProjectSpecificCardAction(c.makeStatEquivalentCopy()));
-                }
-                this.isDone = true;
-            }
-        }));
+        Wiz.atb(new ProjectCopyInHandAction(magicNumber));
     }
 
     @Override

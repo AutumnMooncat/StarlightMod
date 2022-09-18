@@ -20,11 +20,11 @@
   },
   "${ModID}:Ascend": {
     "NAME": "Ascend",
-    "DESCRIPTION": "starlight:Project 1 card. NL Gain [E] equal to its cost."
+    "DESCRIPTION": "starlight:Project 1 card in your hand. Gain [E] equal to its cost."
   },
   "${ModID}:Astra": {
     "NAME": "Astra",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Project 1 card and !M! {!M!|1=copy|@=copies} of it.",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Project !M! {!M!|1=copy|@=copies} of card in your hand.",
     "EXTENDED_DESCRIPTION": ["Astraga"]
   },
   "${ModID}:AstralProtection": {
@@ -267,7 +267,7 @@
   },
   "${ModID}:Star": {
     "NAME": "Star",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|1>s}.",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|1>s} in your hand.",
     "EXTENDED_DESCRIPTION": ["Stara"]
   },
   "${ModID}:Stockpile": {
