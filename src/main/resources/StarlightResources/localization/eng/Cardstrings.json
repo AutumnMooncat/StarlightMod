@@ -38,7 +38,6 @@
   "${ModID}:Balance": {
     "NAME": "Balance",
     "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for ALL your Status cards.",
-    "UPGRADE_DESCRIPTION": "Remove all Block from the enemy. NL Deal that much damage to ALL enemies.{!Location!|0= NL (Deals !D! damage)}{@@}",
     "EXTENDED_DESCRIPTION": ["Lifebreak"]
   },
   "${ModID}:Bio": {
@@ -112,7 +111,7 @@
   },
   "${ModID}:Esuna": {
     "NAME": "Esuna",
-    "DESCRIPTION": "Gain !B! Block. NL Remove a debuff.",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Remove !M! debuff{!M!|>1=s}.",
     "EXTENDED_DESCRIPTION": ["Esunaga"]
   },
   "${ModID}:Fire": {
@@ -267,7 +266,7 @@
   },
   "${ModID}:Star": {
     "NAME": "Star",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|1>s} in your hand.",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1s} in your hand.",
     "EXTENDED_DESCRIPTION": ["Stara"]
   },
   "${ModID}:Stockpile": {
