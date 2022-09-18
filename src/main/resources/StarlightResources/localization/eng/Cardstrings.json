@@ -103,7 +103,7 @@
   },
   "${ModID}:Echo": {
     "NAME": "Echo",
-    "DESCRIPTION": "starlight:Project a copy of the last Attack you played this combat.",
+    "DESCRIPTION": "starlight:Project a copy of the last Attack played this combat.",
     "EXTENDED_DESCRIPTION": [" NL (",")"]
   },
   "${ModID}:Enlighten": {
@@ -199,7 +199,7 @@
   },
   "${ModID}:Posturing": {
     "NAME": "Posturing",
-    "DESCRIPTION": "At the end of your turn, if the last card you played was a... NL Skill: Gain !M! Block. NL Attack: Gain !M! Vigor."
+    "DESCRIPTION": "At the end of your turn, if the last card played was a... NL Skill: Gain !M! Block. NL Attack: Gain !M! Vigor."
   },
   "${ModID}:Prepare": {
     "NAME": "Prepare",
@@ -313,7 +313,7 @@
   },
   "${ModID}:Transcribe": {
     "NAME": "Transcribe",
-    "DESCRIPTION": "{@@}Add a copy of the last starlight:Magick card you played this combat into your hand. starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: It costs 0 this turn.",
+    "DESCRIPTION": "{@@}Add a copy of the last starlight:Magick card played this combat into your hand. NL It costs 0 this turn.",
     "EXTENDED_DESCRIPTION": [" NL (",")"]
   },
   "${ModID}:TwinForm": {

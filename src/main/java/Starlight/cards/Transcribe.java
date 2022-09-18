@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Transcribe extends AbstractEasyCard implements TagTeamCard {
+public class Transcribe extends AbstractEasyCard /*implements TagTeamCard*/ {
     public final static String ID = makeID(Transcribe.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -34,19 +34,20 @@ public class Transcribe extends AbstractEasyCard implements TagTeamCard {
     private static final int UP_COST = 0;
 
     private AbstractCard lastCard;
-    private UUID lastUUID;
+    //private UUID lastUUID;
 
     public Transcribe() {
         super(ID, COST, TYPE, RARITY, TARGET);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        lastUUID = null;
+        //lastUUID = null;
         Wiz.atb(new SFXAction("ORB_DARK_EVOKE", 0.05F));
         ArrayList<AbstractCard> magicks = Wiz.cardsPlayedThisCombat().stream().filter(c -> c instanceof AbstractMagickCard).collect(Collectors.toCollection(ArrayList::new));
         if (!magicks.isEmpty()) {
             AbstractCard card = magicks.get(magicks.size()-1).makeStatEquivalentCopy();
-            lastUUID = card.uuid;
+            card.setCostForTurn(0);
+            //lastUUID = card.uuid;
             Wiz.atb(new MakeTempCardInHandAction(card, true, true));
         }
         this.rawDescription = cardStrings.DESCRIPTION;
@@ -85,7 +86,7 @@ public class Transcribe extends AbstractEasyCard implements TagTeamCard {
         return Scrawl.ID;
     }
 
-    @Override
+    /*@Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new AbstractGameAction() {
             @Override
@@ -101,5 +102,5 @@ public class Transcribe extends AbstractEasyCard implements TagTeamCard {
                 this.isDone = true;
             }
         });
-    }
+    }*/
 }
