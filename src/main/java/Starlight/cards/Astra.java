@@ -37,7 +37,17 @@ public class Astra extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        Wiz.atb(new ProjectCopyInHandAction(magicNumber));
+        Wiz.atb(new ProjectCopyInHandAction(1, new AbstractGameAction() {
+            @Override
+            public void update() {
+                for (AbstractCard card : ProjectCopyInHandAction.projectedCards) {
+                    for (int i = 0 ; i < magicNumber-1 ; i++) {
+                        Wiz.att(new ProjectSpecificCardAction(card.makeStatEquivalentCopy()));
+                    }
+                }
+                this.isDone = true;
+            }
+        }));
     }
 
     @Override
