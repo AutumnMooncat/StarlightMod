@@ -30,7 +30,7 @@ public class TemperancePower extends AbstractPower implements OnReceivePowerPowe
         this.ID = POWER_ID;
         this.name = NAME;
         this.owner = owner;
-        this.amount = amount;
+        this.amount = -1;
         this.type = PowerType.BUFF;
         this.loadRegion("master_protect");
         updateDescription();
@@ -62,7 +62,7 @@ public class TemperancePower extends AbstractPower implements OnReceivePowerPowe
 
     @Override
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0]; /*+ amount + DESCRIPTIONS[1];*/
         /*if (!isActive()) {
             this.description = DESCRIPTIONS[2] + description;
         }*/
@@ -70,9 +70,9 @@ public class TemperancePower extends AbstractPower implements OnReceivePowerPowe
 
     @Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (target == owner && power instanceof SpellPower && isActive()) {
+        if (target == owner && power instanceof SpellPower && isActive() && power.amount > 0) {
             flash();
-            Wiz.atb(new GainBlockAction(owner, amount));
+            Wiz.atb(new GainBlockAction(owner, power.amount));
         }
         return true;
     }

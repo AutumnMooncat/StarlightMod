@@ -27,7 +27,7 @@
   },
   "${ModID}:TemperanceAbility": {
     "NAME": "Temperance",
-    "DESCRIPTION": "Whenever starlight:Luna gains starlight:SP, she also gains !Starlight:I! Block."
+    "DESCRIPTION": "Whenever starlight:Luna gains starlight:SP, she also gains that much !Starlight:I! Block."
   },
   "${ModID}:EphemeralAbility": {
     "NAME": "Ephemeral",
@@ -35,7 +35,7 @@
   },
   "${ModID}:CovenantAbility": {
     "NAME": "Covenant",
-    "DESCRIPTION": "starlight:Luna now Retains starlight:Magick cards, gaining !Starlight:I! starlight:SP per card."
+    "DESCRIPTION": "starlight:Luna now Retains starlight:Magick cards, gaining !Starlight:I! starlight:SP per starlight:Magick card retained."
   },
   "${ModID}:DivinationAbility": {
     "NAME": "Divination",
