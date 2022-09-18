@@ -78,8 +78,8 @@ public class StarlightSisters extends CustomPlayer {
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo(NAMES[0], TEXT[0],
-                50,
-                50,
+                60,
+                60,
                 0,
                 99,
                 5, this, getStartingRelics(),
