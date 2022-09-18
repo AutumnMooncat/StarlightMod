@@ -12,6 +12,7 @@ import Starlight.ui.AbilityButton;
 import Starlight.ui.EnvisionedCardManager;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.AbilityManager;
+import Starlight.util.LoopingSoundManager;
 import Starlight.util.Wiz;
 import basemod.AutoAdd;
 import basemod.BaseMod;
@@ -31,6 +32,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.nio.charset.StandardCharsets;
@@ -44,7 +46,7 @@ public class TheStarlightMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        StartGameSubscriber, PostDungeonInitializeSubscriber, StartActSubscriber {
+        StartGameSubscriber, PostDungeonInitializeSubscriber, StartActSubscriber, PostDeathSubscriber, PostBattleSubscriber {
 
     public static final String modID = "Starlight";
 
@@ -329,6 +331,7 @@ public class TheStarlightMod implements
 
     @Override
     public void receiveStartGame() {
+        LoopingSoundManager.stopAllLoopedSounds();
         ProjectedCardManager.EmptyCards.yeet();
         EnvisionedCardManager.EmptyCards.yeet();
         BaseMod.removeTopPanelItem(abilityButton);
@@ -347,5 +350,15 @@ public class TheStarlightMod implements
     @Override
     public void receivePostDungeonInitialize() {
         AbilityManager.reset();
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        LoopingSoundManager.stopAllLoopedSounds();
+    }
+
+    @Override
+    public void receivePostDeath() {
+        LoopingSoundManager.stopAllLoopedSounds();
     }
 }

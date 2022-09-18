@@ -1,6 +1,8 @@
 package Starlight.cards.abstracts;
 
 import Starlight.TheStarlightMod;
+import Starlight.powers.AscensionPower;
+import Starlight.util.Wiz;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
@@ -20,6 +22,16 @@ public abstract class AbstractMagickCard extends AbstractEasyCard {
 
     public AbstractMagickCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target, CardColor color) {
         super(cardID, cost, type, rarity, target, color);
+    }
+
+    @Override
+    public void applyPowers() {
+        this.magicNumber = this.baseMagicNumber;
+        super.applyPowers();
+        if (Wiz.adp().hasPower(AscensionPower.POWER_ID)) {
+            this.magicNumber *= 2;
+            this.isMagicNumberModified = magicNumber != baseMagicNumber;
+        }
     }
 
     @Override

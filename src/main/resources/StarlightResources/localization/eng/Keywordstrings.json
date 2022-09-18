@@ -45,7 +45,7 @@
     "NAMES": [
       "providence"
     ],
-    "DESCRIPTION": "When you obtain #b10 #yProvidence, the next #yMagick card you play is #yProjected for the rest of this combat."
+    "DESCRIPTION": "When you obtain #b10 #yProvidence, #yMagick cards are twice as effective for #b1 turn."
   },
   {
     "PROPER_NAME": "Crumple",
