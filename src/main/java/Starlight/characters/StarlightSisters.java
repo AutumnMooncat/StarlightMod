@@ -68,7 +68,7 @@ public class StarlightSisters extends CustomPlayer {
                 SHOULDER1,
                 SHOULDER2,
                 CORPSE,
-                getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(3));
+                getLoadout(), 10.0F, -10.0F, 220.0F, 240.0F, new EnergyManager(3)); // 20.0F, -10.0F, 220.0F, 290.0F
 
 
         dialogX = (drawX + 0.0F * Settings.scale);
