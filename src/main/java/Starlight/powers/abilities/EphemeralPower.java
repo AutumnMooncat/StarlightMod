@@ -40,10 +40,10 @@ public class EphemeralPower extends AbstractPower {
     }
 
     @Override
-    public void onCardDraw(AbstractCard card) {
-        if (isActive() && card.type == AbstractCard.CardType.STATUS) {
+    public void onExhaust(AbstractCard card) {
+        if (isActive()) {
             flash();
-            Wiz.atb(new GainBlockAction(owner, amount));
+            Wiz.atb(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.POISON, true));
         }
     }
 

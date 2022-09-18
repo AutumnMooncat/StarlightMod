@@ -131,10 +131,10 @@
   },
   "${ModID}:AstralBodyPower": {
     "NAME": "Astral Body",
-    "DESCRIPTIONS": ["Whenever #yLuna draws a #yStatus, ALL enemies lose #b"," #yHP.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["Whenever #yLuna draws a #yStatus, gain #b"," #yBlock.","#r(Inactive) NL "]
   },
   "${ModID}:EphemeralPower": {
     "NAME": "Ephemeral",
-    "DESCRIPTIONS": ["Whenever #yLuna draws a #yStatus, gain #b"," #yBlock.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["Whenever #yLuna #yExhausts a card, ALL enemies lose #b"," #yHP.","#r(Inactive) NL "]
   }
 }

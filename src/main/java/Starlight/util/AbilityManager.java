@@ -13,15 +13,15 @@ import java.util.HashMap;
 public class AbilityManager {
     public enum AbilityType {
         FISTICUFFS(1, 2),
-        BRUISER(1, 15),
-        PILE_BUNKER(1, 20),
+        BRUISER(1, 20),
+        PILE_BUNKER(1, 25),
         FIRED_UP(1, 1),
         BLACK_MAGIC(1, 1),
         TEMPERANCE(-1, 2),
-        EPHEMERAL(-1, 4),
+        EPHEMERAL(-1, 3),
         DIVINATION(-1, 1),
         COVENANT(-1, 1),
-        ASTRAL_BODY(-1, 5);
+        ASTRAL_BODY(-1, 3);
 
         private final int polarity;
         private final int scale;

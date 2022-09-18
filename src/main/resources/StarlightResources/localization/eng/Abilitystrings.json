@@ -31,7 +31,7 @@
   },
   "${ModID}:EphemeralAbility": {
     "NAME": "Ephemeral",
-    "DESCRIPTION": "Whenever starlight:Luna draws a Status card, she gains !Starlight:I! Block."
+    "DESCRIPTION": "Whenever starlight:Luna Exhausts a card, ALL enemies lose !Starlight:I! HP."
   },
   "${ModID}:CovenantAbility": {
     "NAME": "Covenant",
@@ -43,6 +43,6 @@
   },
   "${ModID}:AstralBodyAbility": {
     "NAME": "Astral Body",
-    "DESCRIPTION": "Whenever starlight:Luna draws a Status card, ALL enemies lose !Starlight:I! HP."
+    "DESCRIPTION": "Whenever starlight:Luna draws a Status card, she also gains !Starlight:I! Block."
   }
 }

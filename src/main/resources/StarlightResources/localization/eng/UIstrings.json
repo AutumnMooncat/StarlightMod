@@ -55,14 +55,14 @@
     "TEXT": [
       "Abilities",
       "(Free Action) Spend Ability Points to Upgrade your Abilities.",
-      "Select Ability to improve",
+      "Select Ability to activate",
       "Viewing Abilities"
     ]
   },
   "${ModID}:Abilities": {
     "TEXT": [
       "Ability",
-      "Abilities are upgradeable passive effects.",
+      "Abilities are character specific passive effects.",
       " (Active)"
     ]
   },

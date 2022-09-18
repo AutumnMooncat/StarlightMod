@@ -2,10 +2,12 @@ package Starlight.powers.abilities;
 
 import Starlight.TheStarlightMod;
 import Starlight.cards.SoulFire;
+import Starlight.characters.StarlightSisters;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -36,9 +38,9 @@ public class AstralBodyPower extends AbstractPower {
 
     @Override
     public void onCardDraw(AbstractCard card) {
-        if (card instanceof VoidCard) {
+        if (isActive() && card.type == AbstractCard.CardType.STATUS) {
             flash();
-            Wiz.atb(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.POISON, true));
+            Wiz.atb(new GainBlockAction(owner, amount));
         }
     }
     /*@Override
@@ -50,11 +52,11 @@ public class AstralBodyPower extends AbstractPower {
         if (!isActive()) {
             ShaderHelper.setShader(sb, ShaderHelper.Shader.DEFAULT);
         }
-    }
+    }*/
 
     private boolean isActive() {
         return owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront;
-    }*/
+    }
 
     @Override
     public void updateDescription() {
