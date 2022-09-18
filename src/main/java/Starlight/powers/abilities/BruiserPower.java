@@ -3,14 +3,10 @@ package Starlight.powers.abilities;
 import Starlight.TheStarlightMod;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.characters.StarlightSisters;
-import Starlight.util.Wiz;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.helpers.ShaderHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -33,7 +29,7 @@ public class BruiserPower extends AbstractPower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        if (isActive() && card instanceof AbstractMagickCard) {
+        if (isActive() && !(card instanceof AbstractMagickCard)) {
             return damage * (1 + amount/100f);
         }
         return damage;
