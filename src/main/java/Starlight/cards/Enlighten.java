@@ -24,7 +24,7 @@ public class Enlighten extends AbstractEasyCard {
 
     private static final int COST = 1;
     private static final int BLK = 5;
-    private static final int UP_BLK = 2;
+    private static final int UP_BLK = 3;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 2;
 
