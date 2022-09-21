@@ -37,7 +37,7 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
             return;
         }
         ArrayList<AbstractCard> validCards = Wiz.adp().hand.group.stream().filter(c -> c.cost != -2).collect(Collectors.toCollection(ArrayList::new));
-        if (amount >= validCards.size()) {
+        if (validCards.size() == 1) {
             for (AbstractCard c : validCards) {
                 if (AbstractDungeon.player.hoveredCard == c) {
                     AbstractDungeon.player.releaseCard();
