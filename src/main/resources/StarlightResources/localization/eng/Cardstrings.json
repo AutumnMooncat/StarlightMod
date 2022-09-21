@@ -327,7 +327,7 @@
   },
   "${ModID}:VirtuousWard": {
     "NAME": "Virtuous Ward",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !M! starlight:Providence."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Gain !M! starlight:Providence."
   },
   "${ModID}:WandWhack": {
     "NAME": "Wand Whack",

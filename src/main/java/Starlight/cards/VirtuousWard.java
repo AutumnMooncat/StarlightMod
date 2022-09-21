@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class VirtuousWard extends AbstractEasyCard implements TagTeamCard {
+public class VirtuousWard extends AbstractEasyCard {
     public final static String ID = makeID(VirtuousWard.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -34,6 +34,7 @@ public class VirtuousWard extends AbstractEasyCard implements TagTeamCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
+        Wiz.applyToSelf(new ProvidencePower(p, magicNumber));
     }
 
     public void upp() {
@@ -41,10 +42,10 @@ public class VirtuousWard extends AbstractEasyCard implements TagTeamCard {
         upgradeMagicNumber(UP_EFFECT);
     }
 
-    @Override
+    /*@Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new ProvidencePower(p, magicNumber));
-    }
+    }*/
 
     @Override
     public String cardArtCopy() {
