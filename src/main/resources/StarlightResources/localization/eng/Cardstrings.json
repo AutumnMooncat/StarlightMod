@@ -126,7 +126,7 @@
   },
   "${ModID}:Fortify": {
     "NAME": "Fortify",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Draw !M! cards."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Draw !M! card{!M!|>1=s}."
   },
   "${ModID}:Fortuna": {
     "NAME": "Fortuna",

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Fortify extends AbstractEasyCard implements TagTeamCard {
+public class Fortify extends AbstractEasyCard {
     public final static String ID = makeID(Fortify.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -19,10 +19,10 @@ public class Fortify extends AbstractEasyCard implements TagTeamCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int BLK = 6;
+    private static final int BLK = 8;
     private static final int UP_BLK = 3;
-    private static final int EFFECT = 2;
-    private static final int UP_EFFECT = 2;
+    private static final int EFFECT = 1;
+    private static final int UP_EFFECT = 1;
 
     public Fortify() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -32,17 +32,18 @@ public class Fortify extends AbstractEasyCard implements TagTeamCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
+        Wiz.atb(new DrawCardAction(magicNumber));
     }
 
     public void upp() {
-        upgradeBlock(UP_BLK);
-        //upgradeMagicNumber(UP_EFFECT);
+        //upgradeBlock(UP_BLK);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
-    @Override
+    /*@Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new DrawCardAction(magicNumber));
-    }
+    }*/
 
     @Override
     public String cardArtCopy() {
