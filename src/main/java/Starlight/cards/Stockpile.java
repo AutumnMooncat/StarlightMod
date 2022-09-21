@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Stockpile extends AbstractEasyCard implements TagTeamCard {
+public class Stockpile extends AbstractEasyCard {
     public final static String ID = makeID(Stockpile.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -42,10 +42,10 @@ public class Stockpile extends AbstractEasyCard implements TagTeamCard {
         upgradeMagicNumber(UP_EFFECT);
     }
 
-    @Override
+    /*@Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         blck();
-    }
+    }*/
 
     @Override
     public String cardArtCopy() {

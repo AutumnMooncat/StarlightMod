@@ -194,7 +194,7 @@
   },
   "${ModID}:NullMomentum": {
     "NAME": "Null Momentum",
-    "DESCRIPTION": "{@@}Put a Void onto the top of your draw pile. NL Draw !M! cards. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !B! Block."
+    "DESCRIPTION": "{@@}Put a Void onto the top of your draw pile. NL Draw !M! cards."
   },
   "${ModID}:Posturing": {
     "NAME": "Posturing",
@@ -271,7 +271,7 @@
   },
   "${ModID}:Stockpile": {
     "NAME": "Stockpile",
-    "DESCRIPTION": "{@@}Gain !M! Block whenever you play a Skill this turn. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !B! Block."
+    "DESCRIPTION": "{@@}Gain !M! Block whenever you play a Skill this turn."
   },
   "${ModID}:Strike": {
     "NAME": "Strike",
@@ -295,7 +295,7 @@
   },
   "${ModID}:ThePlot": {
     "NAME": "The Plot",
-    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL starlight:Foretell a card in your hand. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: It costs 0 until played."
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL starlight:Foretell a card in your hand. It costs 0 until played."
   },
   "${ModID}:Thoughtbloom": {
     "NAME": "Thoughtbloom",

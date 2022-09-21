@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class ThePlot extends AbstractEasyCard implements TagTeamCard {
+public class ThePlot extends AbstractEasyCard {
     public final static String ID = makeID(ThePlot.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -25,7 +25,7 @@ public class ThePlot extends AbstractEasyCard implements TagTeamCard {
     private static final int DRAW = 2;
     private static final int UP_DRAW = 1;
 
-    private boolean tagged = false;
+    private boolean tagged = true;
 
     public ThePlot() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -61,8 +61,8 @@ public class ThePlot extends AbstractEasyCard implements TagTeamCard {
         return Tactician.ID;
     }
 
-    @Override
+    /*@Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         tagged = true;
-    }
+    }*/
 }
