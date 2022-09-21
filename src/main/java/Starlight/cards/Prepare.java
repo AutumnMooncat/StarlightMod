@@ -1,7 +1,10 @@
 package Starlight.cards;
 
+import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.cards.interfaces.PrimroseCard;
 import Starlight.cards.interfaces.TagTeamCard;
+import Starlight.characters.StarlightSisters;
 import Starlight.powers.SpellPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
@@ -11,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Prepare extends AbstractEasyCard implements TagTeamCard {
+public class Prepare extends AbstractEasyCard {
     public final static String ID = makeID(Prepare.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.BASIC;
@@ -32,6 +35,10 @@ public class Prepare extends AbstractEasyCard implements TagTeamCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
+        Wiz.applyToSelf(new SpellPower(p, magicNumber));
+        if (p instanceof StarlightSisters) {
+            Wiz.atb(new SwapAction());
+        }
     }
 
     public void upp() {
@@ -39,10 +46,10 @@ public class Prepare extends AbstractEasyCard implements TagTeamCard {
         upgradeMagicNumber(UP_EFFECT);
     }
 
-    @Override
+    /*@Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new SpellPower(p, magicNumber));
-    }
+    }*/
 
     @Override
     public String cardArtCopy() {
@@ -53,4 +60,12 @@ public class Prepare extends AbstractEasyCard implements TagTeamCard {
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
         return new CardArtRoller.ReskinInfo(ID, 0.2f, 0.5f, 0.65f, 1, false);
     }
+
+    /*@Override
+    public void onPrimTrigger(AbstractPlayer p, AbstractMonster m) {
+        Wiz.applyToSelf(new SpellPower(p, magicNumber));
+        if (p instanceof StarlightSisters) {
+            Wiz.atb(new SwapAction());
+        }
+    }*/
 }

@@ -202,7 +202,7 @@
   },
   "${ModID}:Prepare": {
     "NAME": "Prepare",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !M! starlight:SP."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Gain !M! starlight:SP.{!Starlight:IsSisters!|1= NL starlight:Swap.}"
   },
   "${ModID}:Protect": {
     "NAME": "Protect",
