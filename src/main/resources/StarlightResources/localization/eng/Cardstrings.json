@@ -233,7 +233,7 @@
   },
   "${ModID}:SetAside": {
     "NAME": "Set Aside",
-    "DESCRIPTION": "Deal !D! damage. NL Scry !M!. Gain 1 starlight:Providence for each card discarded this way."
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
   },
   "${ModID}:Shell": {
     "NAME": "Shell",

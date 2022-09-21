@@ -6,6 +6,8 @@ import Starlight.powers.ProvidencePower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.purple.CutThroughFate;
@@ -24,8 +26,8 @@ public class SetAside extends AbstractEasyCard {
 
     private static final int COST = 1;
     private static final int DMG = 8;
-    private static final int UP_DMG = 2;
-    private static final int EFFECT = 2;
+    private static final int UP_DMG = 1;
+    private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
     public SetAside() {
@@ -36,12 +38,14 @@ public class SetAside extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.atb(new ScryAction(magicNumber));
+        Wiz.atb(new DrawCardAction(magicNumber));
+        Wiz.atb(new DiscardAction(p, p, magicNumber, false));
+        /*Wiz.atb(new ScryAction(magicNumber));
         Wiz.atb(new ScryFollowUpAction(cards -> {
             if (cards.size() > 0) {
                 Wiz.applyToSelf(new ProvidencePower(p, cards.size()));
             }
-        }));
+        }));*/
     }
 
     public void upp() {
