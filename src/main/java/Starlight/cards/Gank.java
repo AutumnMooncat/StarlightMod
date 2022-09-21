@@ -1,7 +1,9 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.cards.interfaces.OnSwapCard;
 import Starlight.cards.interfaces.OnTagTeamTriggeredCard;
+import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Gank extends AbstractEasyCard implements OnTagTeamTriggeredCard {
+public class Gank extends AbstractEasyCard implements OnSwapCard {
     public final static String ID = makeID(Gank.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -36,15 +38,22 @@ public class Gank extends AbstractEasyCard implements OnTagTeamTriggeredCard {
         upgradeDamage(UP_DMG);
     }
 
-    @Override
+    /*@Override
     public void onTagTriggered(AbstractCard card, AbstractPlayer p, AbstractMonster m) {
         if (p.discardPile.contains(this)) {
             this.addToBot(new DiscardToHandAction(this));
         }
-    }
+    }*/
 
     @Override
     public String cardArtCopy() {
         return Pummel.ID;
+    }
+
+    @Override
+    public void onSwap(boolean toPrim) {
+        if (Wiz.adp().discardPile.contains(this)) {
+            this.addToBot(new DiscardToHandAction(this));
+        }
     }
 }

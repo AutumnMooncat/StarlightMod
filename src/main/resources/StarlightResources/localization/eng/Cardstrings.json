@@ -139,7 +139,7 @@
   },
   "${ModID}:Gank": {
     "NAME": "Gank",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you trigger {!Starlight:IsSisters!|1=starlight:Tag_Team|0=a starlight:Tag effect}, return this from the discard pile to your hand."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you starlight:Swap, return this from the discard pile to your hand."
   },
   "${ModID}:Gravity": {
     "NAME": "Gravity",
