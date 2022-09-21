@@ -303,7 +303,7 @@
   },
   "${ModID}:Thrash": {
     "NAME": "Thrash",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you trigger {!Starlight:IsSisters!|1=starlight:Tag_Team|0=a starlight:Tag effect}, increase this card's damage by !M! this combat."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you starlight:Swap, increase this card's damage by !M! this combat."
   },
   "${ModID}:Thunder": {
     "NAME": "Thunder",
