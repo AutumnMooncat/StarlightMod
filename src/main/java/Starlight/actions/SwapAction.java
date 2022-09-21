@@ -2,8 +2,10 @@ package Starlight.actions;
 
 import Starlight.characters.StarlightSisters;
 import Starlight.powers.TagTeamPower;
+import Starlight.powers.interfaces.OnSwapPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class SwapAction extends AbstractGameAction {
 
@@ -14,15 +16,21 @@ public class SwapAction extends AbstractGameAction {
     @Override
     public void update() {
         if (Wiz.adp() instanceof StarlightSisters) {
-            if (((StarlightSisters) Wiz.adp()).attackerInFront) {
-                ((StarlightSisters) Wiz.adp()).playAnimation("SkillSwap");
-                ((StarlightSisters) Wiz.adp()).attackerInFront = false;
+            StarlightSisters sisters = (StarlightSisters) Wiz.adp();
+            if (sisters.attackerInFront) {
+                sisters.playAnimation("SkillSwap");
+                sisters.attackerInFront = false;
             } else {
-                ((StarlightSisters) Wiz.adp()).playAnimation("AttackSwap");
-                ((StarlightSisters) Wiz.adp()).attackerInFront = true;
+                sisters.playAnimation("AttackSwap");
+                sisters.attackerInFront = true;
             }
-            if (Wiz.adp().hasPower(TagTeamPower.POWER_ID)) {
-                ((TagTeamPower)Wiz.adp().getPower(TagTeamPower.POWER_ID)).onSwap();
+            if (sisters.hasPower(TagTeamPower.POWER_ID)) {
+                ((TagTeamPower)sisters.getPower(TagTeamPower.POWER_ID)).onSwap();
+            }
+            for (AbstractPower p : sisters.powers) {
+                if (p instanceof OnSwapPower) {
+                    ((OnSwapPower) p).onSwap(sisters.attackerInFront);
+                }
             }
         }
         this.isDone = true;
