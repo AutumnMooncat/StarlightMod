@@ -44,15 +44,15 @@ public class Skyfall extends AbstractEasyCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 5;
-    private static final int UP_DMG = 2;
+    private static final int DMG = 6;
+    private static final int UP_DMG = 3;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
     public Skyfall() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = EFFECT;
+        //baseMagicNumber = magicNumber = EFFECT;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -64,7 +64,7 @@ public class Skyfall extends AbstractEasyCard {
                     cards.add(0, card);
                 }
                 for (AbstractCard card : cards) {
-                    Wiz.att(new ApplyPowerAction(p, p, new ProvidencePower(p, magicNumber), magicNumber, true));
+                    //Wiz.att(new ApplyPowerAction(p, p, new ProvidencePower(p, magicNumber), magicNumber, true));
                     Wiz.att(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AttackEffect.NONE, true));
                     Wiz.att(new CardPewPewAction(card, m));
                 }
