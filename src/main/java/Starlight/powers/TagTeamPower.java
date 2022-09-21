@@ -2,21 +2,15 @@ package Starlight.powers;
 
 import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
-import Starlight.util.AbilityManager;
-import Starlight.util.FormatHelper;
 import Starlight.util.TexLoader;
-import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import java.util.HashMap;
 
 public class TagTeamPower extends AbstractPower {
 
@@ -34,9 +28,9 @@ public class TagTeamPower extends AbstractPower {
     Texture lTex = TexLoader.getTexture(TheStarlightMod.modID + "Resources/images/powers/TagTeamPowerF48.png");
     Texture lTexLarge = TexLoader.getTexture(TheStarlightMod.modID + "Resources/images/powers/TagTeamPowerF128.png");
 
-    boolean lastState;
+    boolean primrose;
 
-    HashMap<AbstractPower, Integer> addedPowers = new HashMap<>();
+    //HashMap<AbstractPower, Integer> addedPowers = new HashMap<>();
 
     public TagTeamPower(AbstractCreature owner) {
         this.ID = POWER_ID;
@@ -49,13 +43,49 @@ public class TagTeamPower extends AbstractPower {
         P128 = new TextureAtlas.AtlasRegion(pTexLarge, 0, 0, pTexLarge.getWidth(), pTexLarge.getHeight());
         L48 = new TextureAtlas.AtlasRegion(lTex, 0, 0, lTex.getWidth(), lTex.getHeight());
         L128 = new TextureAtlas.AtlasRegion(lTexLarge, 0, 0, lTexLarge.getWidth(), lTexLarge.getHeight());
-        this.region48 = P48;
-        this.region128 = P128;
-        this.lastState = owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront;
+        this.primrose = owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront;
+        this.region48 = primrose ? P48 : L48;
+        this.region128 = primrose ? P128 : L128;
         updateDescription();
     }
 
     @Override
+    public float atDamageGive(float damage, DamageInfo.DamageType type) {
+        if (primrose && type == DamageInfo.DamageType.NORMAL) {
+            return damage + 1;
+        }
+        return damage;
+    }
+
+    public float modifyBlock(float blockAmount) {
+        if (!primrose) {
+            return blockAmount + 1;
+        }
+        return blockAmount;
+    }
+
+    public void onSwap() {
+        if (owner instanceof StarlightSisters) {
+            this.region48 = ((StarlightSisters) owner).attackerInFront ? P48 : L48;
+            this.region128 = ((StarlightSisters) owner).attackerInFront ? P128 : L128;
+            if (primrose != ((StarlightSisters) owner).attackerInFront) {
+                flashWithoutSound();
+                primrose = ((StarlightSisters) owner).attackerInFront;
+            }
+        }
+        updateDescription();
+    }
+
+    @Override
+    public void updateDescription() {
+        if (primrose) {
+            this.description = DESCRIPTIONS[0];
+        } else {
+            this.description = DESCRIPTIONS[1];
+        }
+    }
+
+    /*@Override
     public void onInitialApplication() {
         for (AbilityManager.AbilityType t : AbilityManager.AbilityType.values()) {
             if (AbilityManager.getAbilityLevel(t) > 0) {
@@ -65,70 +95,22 @@ public class TagTeamPower extends AbstractPower {
             }
         }
         updateDescription();
-    }
+    }*/
 
-    private boolean isPrimrose() {
-        return owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront;
-    }
-
-    private boolean isLuna() {
-        return owner instanceof StarlightSisters && !((StarlightSisters) owner).attackerInFront;
-    }
-
-    @Override
+    /*@Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         super.onAfterUseCard(card, action);
         updateDescription();
-    }
-
-    /*@Override
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (isPrimrose()) {
-            if (card.type == AbstractCard.CardType.ATTACK) {
-                Wiz.atb(new GainBlockAction(owner, 2));
-            }
-        } else if (isLuna()) {
-            if (card.type == AbstractCard.CardType.SKILL) {
-                Wiz.atb(new ApplyPowerAction(owner, owner, new SpellPower(owner, 1)));
-            }
-        }
     }*/
 
     /*@Override
-    public void onExhaust(AbstractCard card) {
-        flashWithoutSound();
-        if (((StarlightSisters) owner).attackerInFront) {
-            Wiz.atb(new ApplyPowerAction(owner, owner, new StrengthPower(owner, 1)));
-        }
-    }*/
-
-    /*@Override
-    public void onCardDraw(AbstractCard card) {
-        if (isLuna()) {
-            if (card.type == AbstractCard.CardType.STATUS) {
-                flashWithoutSound();
-                Wiz.atb(new ImmediateExhaustCardAction(card));
-                //Wiz.atb(new ApplyPowerAction(owner, owner, new SpellPower(owner, 3)));
-            }
-        }
-    }*/
-
-    /*@Override
-    public int onAttackedToChangeDamage(DamageInfo info, int damageAmount) {
-        if (isPrimrose() && info.type != DamageInfo.DamageType.NORMAL) {
-            return (int) (damageAmount/2f);
-        }
-        return damageAmount;
-    }*/
-
-    @Override
     public void updateDescription() {
         if (owner instanceof StarlightSisters) {
             this.region48 = ((StarlightSisters) owner).attackerInFront ? P48 : L48;
             this.region128 = ((StarlightSisters) owner).attackerInFront ? P128 : L128;
-            if (lastState != ((StarlightSisters) owner).attackerInFront) {
+            if (primrose != ((StarlightSisters) owner).attackerInFront) {
                 flashWithoutSound();
-                lastState = ((StarlightSisters) owner).attackerInFront;
+                primrose = ((StarlightSisters) owner).attackerInFront;
             }
             StringBuilder sb = new StringBuilder();
             sb.append(DESCRIPTIONS[0]);
@@ -155,15 +137,5 @@ public class TagTeamPower extends AbstractPower {
         } else {
             description = "???";
         }
-    }
-
-    /*@Override
-    public boolean shouldPushMods(DamageInfo damageInfo, Object o, List<AbstractDamageModifier> list) {
-        return o instanceof AbstractCard && damageInfo!= null && damageInfo.type == DamageInfo.DamageType.NORMAL && isPrimrose();
-    }
-
-    @Override
-    public List<AbstractDamageModifier> modsToPush(DamageInfo damageInfo, Object o, List<AbstractDamageModifier> list) {
-        return Collections.singletonList(new FiredUpDamage());
     }*/
 }

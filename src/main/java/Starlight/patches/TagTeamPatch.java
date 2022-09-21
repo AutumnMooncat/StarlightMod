@@ -64,11 +64,7 @@ public class TagTeamPatch {
     public static boolean checkTagCard(AbstractCard c) {
         if (c instanceof TagTeamCard) {
             if (AbstractDungeon.player instanceof StarlightSisters) {
-                if (((StarlightSisters) AbstractDungeon.player).attackerInFront) {
-                    return c.type == AbstractCard.CardType.SKILL;
-                } else {
-                    return c.type == AbstractCard.CardType.ATTACK;
-                }
+                return CardCounterPatches.swapsThisTurn > 0;
             } else {
                 AbstractCard previous = Wiz.secondLastCardPlayed();
                 if (previous != null) {
@@ -89,7 +85,7 @@ public class TagTeamPatch {
             if (AbstractDungeon.player instanceof StarlightSisters) {
                 return ((StarlightSisters) AbstractDungeon.player).attackerInFront;
             } else {
-                AbstractCard previous = Wiz.secondLastCardPlayed();
+                AbstractCard previous = Wiz.lastCardPlayed();
                 if (previous != null) {
                     return c.type == AbstractCard.CardType.ATTACK;
                 }
@@ -103,7 +99,7 @@ public class TagTeamPatch {
             if (AbstractDungeon.player instanceof StarlightSisters) {
                 return !((StarlightSisters) AbstractDungeon.player).attackerInFront;
             } else {
-                AbstractCard previous = Wiz.secondLastCardPlayed();
+                AbstractCard previous = Wiz.lastCardPlayed();
                 if (previous != null) {
                     return c.type == AbstractCard.CardType.SKILL;
                 }

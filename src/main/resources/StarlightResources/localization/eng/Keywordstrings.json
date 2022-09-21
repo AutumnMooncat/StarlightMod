@@ -5,7 +5,14 @@
       "tag team",
       "tag_team"
     ],
-    "DESCRIPTION": "Effect triggers if playing the card triggers a character switch."
+    "DESCRIPTION": "Effect triggers if you have swapped characters this turn."
+  },
+  {
+    "PROPER_NAME": "Swap",
+    "NAMES": [
+      "swap"
+    ],
+    "DESCRIPTION": "Switch the active character."
   },
   {
     "PROPER_NAME": "Projected",

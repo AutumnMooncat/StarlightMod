@@ -10,6 +10,8 @@ public class CardCounterPatches {
     public static int cardsProjectedThisCombat;
     public static int cardsForetoldThisTurn;
     public static int cardsForetoldThisCombat;
+    public static int swapsThisTurn;
+    public static int swapsThisCombat;
 
     @SpirePatch2(clz = GameActionManager.class, method = "clear")
     public static class ResetCounters {
@@ -19,6 +21,8 @@ public class CardCounterPatches {
             cardsForetoldThisTurn = 0;
             cardsProjectedThisCombat = 0;
             cardsProjectedThisTurn = 0;
+            swapsThisTurn = 0;
+            swapsThisCombat = 0;
         }
     }
 
@@ -28,6 +32,7 @@ public class CardCounterPatches {
         public static void reset() {
             cardsForetoldThisTurn = 0;
             cardsProjectedThisTurn = 0;
+            swapsThisTurn = 0;
         }
 
         public static class Locator extends SpireInsertLocator {

@@ -249,10 +249,11 @@ public class StarlightSisters extends CustomPlayer {
         switch (c.type) {
             case ATTACK:
                 if (attackerInFront) {
-                    playAnimation("Attack");
+                    playAnimation("AttackA");
                 } else {
-                    playAnimation("AttackSwap");
-                    attackerInFront = true;
+                    playAnimation("AttackB");
+                    /*playAnimation("AttackSwap");
+                    attackerInFront = true;*/
                 }
                 RandomChatterHelper.showChatter(RandomChatterHelper.getAttackText(), cardTalkProbability, enableCardBattleTalkEffect);
                 break;
@@ -266,10 +267,11 @@ public class StarlightSisters extends CustomPlayer {
                 break;
             case SKILL:
                 if (attackerInFront) {
-                    playAnimation("SkillSwap");
-                    attackerInFront = false;
+                    playAnimation("SkillA");
+                    /*playAnimation("SkillSwap");
+                    attackerInFront = false;*/
                 } else {
-                    playAnimation("Skill");
+                    playAnimation("SkillB");
                 }
                 RandomChatterHelper.showChatter(RandomChatterHelper.getSkillText(), cardTalkProbability, enableCardBattleTalkEffect);
                 break;

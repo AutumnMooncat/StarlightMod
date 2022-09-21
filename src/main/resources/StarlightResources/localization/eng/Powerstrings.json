@@ -13,10 +13,8 @@
   },
   "${ModID}:TagTeamPower": {
     "NAME": "Twin Sisters",
-    "DESCRIPTIONS": ["While #y"," is in front, the following #yAbilities are active:",
-                    " NL Swap to #y",
-                    " by playing a #ySkill.",
-                    " by playing an #yAttack."]
+    "DESCRIPTIONS": ["While #yPrimrose is in front, Attacks deal #b1 additional damage.",
+                    "While #yLuna is in front, cards give #b1 additional #yBlock."]
   },
   "${ModID}:SpellPower": {
     "NAME": "Spell Power",

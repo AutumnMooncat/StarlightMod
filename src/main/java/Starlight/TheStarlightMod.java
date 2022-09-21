@@ -7,6 +7,7 @@ import Starlight.cards.interfaces.LunaCard;
 import Starlight.cards.interfaces.PrimroseCard;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
+import Starlight.patches.CardCounterPatches;
 import Starlight.relics.AbstractEasyRelic;
 import Starlight.ui.AbilityButton;
 import Starlight.ui.EnvisionedCardManager;
@@ -215,13 +216,13 @@ public class TheStarlightMod implements
 
             @Override
             public Color getColor(AbstractCard abstractCard) {
-                if (Wiz.adp() instanceof StarlightSisters) {
+                /*if (Wiz.adp() instanceof StarlightSisters) {
                     if (((StarlightSisters) Wiz.adp()).attackerInFront) {
                         return luna;
                     } else {
                         return prim;
                     }
-                }
+                }*/
                 return c;
             }
 
@@ -285,11 +286,7 @@ public class TheStarlightMod implements
     public static boolean tagTest(AbstractCard c) {
         if (c instanceof TagTeamCard) {
             if (AbstractDungeon.player instanceof StarlightSisters) {
-                if (((StarlightSisters) AbstractDungeon.player).attackerInFront) {
-                    return c.type == AbstractCard.CardType.SKILL;
-                } else {
-                    return c.type == AbstractCard.CardType.ATTACK;
-                }
+                return CardCounterPatches.swapsThisTurn > 0;
             } else {
                 AbstractCard last = Wiz.lastCardPlayed();
                 if (last != null) {
