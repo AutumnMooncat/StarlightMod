@@ -1,9 +1,12 @@
 package Starlight.cards;
 
+import Starlight.actions.SpellWeaverAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.SpellPower;
 import Starlight.util.Wiz;
+import basemod.BaseMod;
+import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -27,11 +30,13 @@ public class SpellWeaver extends AbstractEasyCard {
 
     public SpellWeaver() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseMagicNumber = magicNumber = EFFECT;
+        //baseMagicNumber = magicNumber = EFFECT;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new DrawCardAction(1, new AbstractGameAction() {
+        Wiz.atb(new SpellWeaverAction(upgraded));
+        /*Wiz.atb(new DrawCardAction(1, new AbstractGameAction() {
             @Override
             public void update() {
                 for (AbstractCard c : DrawCardAction.drawnCards) {
@@ -42,11 +47,12 @@ public class SpellWeaver extends AbstractEasyCard {
                 }
                 this.isDone = true;
             }
-        }));
+        }));*/
     }
 
     public void upp() {
-        upgradeMagicNumber(UP_EFFECT);
+        //upgradeMagicNumber(UP_EFFECT);
+        uDesc();
     }
 
     @Override
