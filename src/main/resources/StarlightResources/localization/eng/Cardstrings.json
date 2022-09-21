@@ -148,7 +148,7 @@
   },
   "${ModID}:Harmony": {
     "NAME": "Harmony",
-    "DESCRIPTION": "{@@}Whenever you trigger {!Starlight:IsSisters!|1=starlight:Tag_Team|0=a starlight:Tag effect}, gain !M! starlight:Providence."
+    "DESCRIPTION": "{@@}Whenever you starlight:Swap, gain !M! starlight:Providence."
   },
   "${ModID}:Haste": {
     "NAME": "Haste",
