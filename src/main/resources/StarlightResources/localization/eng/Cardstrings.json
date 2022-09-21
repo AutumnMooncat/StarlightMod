@@ -33,7 +33,7 @@
   },
   "${ModID}:Augury": {
     "NAME": "Augury",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Skill_Tag}: starlight:Foretell a card in your hand."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw and Upgrade !M! card{!M!|>1=s}."
   },
   "${ModID}:Balance": {
     "NAME": "Balance",
