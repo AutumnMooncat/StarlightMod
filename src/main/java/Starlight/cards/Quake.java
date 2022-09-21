@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.cards.blue.Sunder;
 import com.megacrit.cardcrawl.cards.red.IronWave;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.scene.CeilingDustEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -36,7 +38,10 @@ public class Quake extends AbstractMagickCard {
         Wiz.atb(new AbstractGameAction() {
             @Override
             public void update() {
-                CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.MED, false);
+                CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.HIGH, ScreenShake.ShakeDur.MED, false);
+                for (int i = 0 ; i < 8 ; i ++) {
+                    AbstractDungeon.effectsQueue.add(new CeilingDustEffect());
+                }
                 this.isDone = true;
             }
         });
