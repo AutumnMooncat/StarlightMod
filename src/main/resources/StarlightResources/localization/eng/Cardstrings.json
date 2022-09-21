@@ -85,7 +85,7 @@
   },
   "${ModID}:Dia": {
     "NAME": "Dia",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! starlight:Providence.",
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Crumple to ALL enemies.",
     "EXTENDED_DESCRIPTION": ["Diara"]
   },
   "${ModID}:DivineSense": {
