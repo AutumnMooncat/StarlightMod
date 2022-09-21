@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Supply extends AbstractEasyCard implements TagTeamCard {
+public class Supply extends AbstractEasyCard {
     public final static String ID = makeID(Supply.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -29,6 +29,7 @@ public class Supply extends AbstractEasyCard implements TagTeamCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        Wiz.applyToSelf(new SpellPower(p, magicNumber));
         Wiz.applyToSelf(new VigorPower(p, magicNumber));
     }
 
@@ -46,8 +47,8 @@ public class Supply extends AbstractEasyCard implements TagTeamCard {
         return new CardArtRoller.ReskinInfo(ID, 0.61f, 0.63f, 0.54f, 0.54f, false);
     }
 
-    @Override
+    /*@Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new SpellPower(p, magicNumber));
-    }
+    }*/
 }

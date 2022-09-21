@@ -279,7 +279,7 @@
   },
   "${ModID}:Supply": {
     "NAME": "Supply",
-    "DESCRIPTION": "{@@}Gain !M! Vigor. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain !M! starlight:SP."
+    "DESCRIPTION": "Gain !M! starlight:SP. NL Gain !M! Vigor."
   },
   "${ModID}:Surmount": {
     "NAME": "Surmount",
