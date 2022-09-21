@@ -1,7 +1,9 @@
 package Starlight.cards;
 
+import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.interfaces.TagTeamCard;
+import Starlight.characters.StarlightSisters;
 import Starlight.powers.ProvidencePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
@@ -13,7 +15,7 @@ import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Serendipity extends AbstractEasyCard implements TagTeamCard {
+public class Serendipity extends AbstractEasyCard {
     public final static String ID = makeID(Serendipity.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -22,7 +24,7 @@ public class Serendipity extends AbstractEasyCard implements TagTeamCard {
 
     private static final int COST = 0;
     private static final int BLK = 4;
-    private static final int UP_BLK = 2;
+    private static final int UP_BLK = 3;
 
     public Serendipity() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -31,16 +33,20 @@ public class Serendipity extends AbstractEasyCard implements TagTeamCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
+        if (p instanceof StarlightSisters) {
+            Wiz.atb(new SwapAction());
+        }
+        //Wiz.applyToSelf(new NextTurnBlockPower(p, block));
     }
 
     public void upp() {
         upgradeBlock(UP_BLK);
     }
 
-    @Override
+    /*@Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new NextTurnBlockPower(p, block));
-    }
+    }*/
 
     @Override
     public String cardArtCopy() {

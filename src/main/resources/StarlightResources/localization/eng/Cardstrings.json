@@ -229,7 +229,7 @@
   },
   "${ModID}:Serendipity": {
     "NAME": "Serendipity",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Next turn, gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
   },
   "${ModID}:SetAside": {
     "NAME": "Set Aside",
