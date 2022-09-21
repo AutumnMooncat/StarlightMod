@@ -1,20 +1,15 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
-import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.interfaces.OnTagTeamPower;
+import Starlight.powers.interfaces.OnSwapPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class TeamEffortPower extends AbstractPower implements OnTagTeamPower {
+public class TeamEffortPower extends AbstractPower implements OnSwapPower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(TeamEffortPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -36,8 +31,14 @@ public class TeamEffortPower extends AbstractPower implements OnTagTeamPower {
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
-    @Override
+    /*@Override
     public void onTagTeam(AbstractCard card) {
+        flash();
+        Wiz.atb(new GainBlockAction(owner, owner, amount));
+    }*/
+
+    @Override
+    public void onSwap(boolean toPrim) {
         flash();
         Wiz.atb(new GainBlockAction(owner, owner, amount));
     }

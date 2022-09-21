@@ -291,7 +291,7 @@
   },
   "${ModID}:TeamEffort": {
     "NAME": "Team Effort",
-    "DESCRIPTION": "{@@}Whenever you trigger {!Starlight:IsSisters!|1=starlight:Tag_Team|0=a starlight:Tag effect}, gain !M! Block."
+    "DESCRIPTION": "{@@}Whenever you starlight:Swap, gain !M! Block."
   },
   "${ModID}:ThePlot": {
     "NAME": "The Plot",
