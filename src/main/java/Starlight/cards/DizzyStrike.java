@@ -1,18 +1,19 @@
 package Starlight.cards;
 
+import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.interfaces.TagTeamCard;
-import Starlight.powers.SpellPower;
+import Starlight.characters.StarlightSisters;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.purple.FlyingSleeves;
-import com.megacrit.cardcrawl.cards.purple.Wallop;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class DizzyStrike extends AbstractEasyCard implements TagTeamCard {
+public class DizzyStrike extends AbstractEasyCard {
     public final static String ID = makeID(DizzyStrike.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -29,10 +30,16 @@ public class DizzyStrike extends AbstractEasyCard implements TagTeamCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         tags.add(CardTags.STRIKE);
+        cardsToPreview = new Dazed();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        Wiz.atb(new MakeTempCardInDrawPileAction(cardsToPreview.makeStatEquivalentCopy(), 1, true, true));
+        if (p instanceof StarlightSisters) {
+            Wiz.atb(new SwapAction());
+        }
     }
 
     public void upp() {
@@ -44,8 +51,8 @@ public class DizzyStrike extends AbstractEasyCard implements TagTeamCard {
         return FlyingSleeves.ID;
     }
 
-    @Override
+    /*@Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-    }
+    }*/
 }
