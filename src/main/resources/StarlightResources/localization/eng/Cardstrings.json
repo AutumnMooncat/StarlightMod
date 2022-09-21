@@ -331,7 +331,7 @@
   },
   "${ModID}:WandWhack": {
     "NAME": "Wand Whack",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! starlight:SP."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Gain !M! starlight:SP. NL starlight:{!Starlight:IsSisters!|1=Primrose|0=Attack_Tag}: Apply !M! starlight:Crumple."
   },
   "${ModID}:Water": {
     "NAME": "Water",
