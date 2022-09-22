@@ -35,8 +35,8 @@ public class Blizzard extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new VFXAction(new BlizzardEffect(damage*2, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.35F));
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
     }
 
