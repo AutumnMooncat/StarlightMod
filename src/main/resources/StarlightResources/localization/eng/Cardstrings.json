@@ -146,6 +146,10 @@
     "DESCRIPTION": "Deal !D! damage to ALL enemies. starlight:SP affects this card !M! times.",
     "EXTENDED_DESCRIPTION": ["Graviga"]
   },
+  "${ModID}:Grit": {
+    "NAME": "Grit",
+    "DESCRIPTION": "Play a random card in your draw pile and Exhaust it. NL Exhaust."
+  },
   "${ModID}:Harmony": {
     "NAME": "Harmony",
     "DESCRIPTION": "{@@}Whenever you starlight:Swap, gain !M! starlight:Providence."
