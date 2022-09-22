@@ -31,6 +31,8 @@ public class SwapAction extends AbstractGameAction {
                 sisters.playAnimation("AttackSwap");
                 sisters.attackerInFront = true;
             }
+            CardCounterPatches.swapsThisTurn++;
+            CardCounterPatches.swapsThisCombat++;
             if (sisters.hasPower(TagTeamPower.POWER_ID)) {
                 ((TagTeamPower)sisters.getPower(TagTeamPower.POWER_ID)).onSwap();
             }
@@ -52,8 +54,6 @@ public class SwapAction extends AbstractGameAction {
                     ((OnSwapCard) c).onSwap(sisters.attackerInFront);
                 }
             }
-            CardCounterPatches.swapsThisTurn++;
-            CardCounterPatches.swapsThisCombat++;
         }
         this.isDone = true;
     }
