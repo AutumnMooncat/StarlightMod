@@ -5,6 +5,7 @@ import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.green.SneakyStrike;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
@@ -46,6 +47,7 @@ public class BlindSide extends AbstractEasyCard implements TagTeamCard {
     @Override
     public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new GainEnergyAction(1));
+        Wiz.atb(new DrawCardAction(1));
     }
 
     @Override

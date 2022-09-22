@@ -55,7 +55,7 @@
   },
   "${ModID}:BlindSide": {
     "NAME": "Blind Side",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply !M! Weak. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Skill_Tag}: Gain [E]."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply !M! Weak. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Skill_Tag}: Gain [E] and draw 1 card."
   },
   "${ModID}:Blizzard": {
     "NAME": "Blizzard",
@@ -229,7 +229,7 @@
   },
   "${ModID}:Serendipity": {
     "NAME": "Serendipity",
-    "DESCRIPTION": "Gain !B! Block.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
+    "DESCRIPTION": "Retain. NL Gain !B! Block.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
   },
   "${ModID}:SetAside": {
     "NAME": "Set Aside",

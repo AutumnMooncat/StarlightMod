@@ -29,6 +29,7 @@ public class Serendipity extends AbstractEasyCard {
     public Serendipity() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
+        selfRetain = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
