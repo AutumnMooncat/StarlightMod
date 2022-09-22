@@ -25,7 +25,7 @@ public class ThePlot extends AbstractEasyCard {
     private static final int DRAW = 2;
     private static final int UP_DRAW = 1;
 
-    private boolean tagged = true;
+    //private boolean tagged = true;
 
     public ThePlot() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -33,7 +33,7 @@ public class ThePlot extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        tagged = false;
+        //tagged = false;
         Wiz.atb(new DrawCardAction(magicNumber));
         Wiz.atb(new ForetellAction(p.hand, 1, c -> true, new AbstractGameAction() {
             @Override
@@ -42,9 +42,7 @@ public class ThePlot extends AbstractEasyCard {
                     /*if (card.canUpgrade()) {
                         card.upgrade();
                     }*/
-                    if (tagged) {
-                        card.freeToPlayOnce = true;
-                    }
+                    card.freeToPlayOnce = true;
                 }
                 this.isDone = true;
             }
