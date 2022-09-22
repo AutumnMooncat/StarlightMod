@@ -3,6 +3,7 @@ package Starlight.actions;
 import Starlight.cards.interfaces.OnSwapCard;
 import Starlight.cards.interfaces.OnTagTeamTriggeredCard;
 import Starlight.characters.StarlightSisters;
+import Starlight.patches.CardCounterPatches;
 import Starlight.powers.TagTeamPower;
 import Starlight.powers.interfaces.OnSwapPower;
 import Starlight.ui.ProjectedCardManager;
@@ -51,6 +52,8 @@ public class SwapAction extends AbstractGameAction {
                     ((OnSwapCard) c).onSwap(sisters.attackerInFront);
                 }
             }
+            CardCounterPatches.swapsThisTurn++;
+            CardCounterPatches.swapsThisCombat++;
         }
         this.isDone = true;
     }
