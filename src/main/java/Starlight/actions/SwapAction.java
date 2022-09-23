@@ -1,7 +1,6 @@
 package Starlight.actions;
 
 import Starlight.cards.interfaces.OnSwapCard;
-import Starlight.cards.interfaces.OnTagTeamTriggeredCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.patches.CardCounterPatches;
 import Starlight.powers.TagTeamPower;
@@ -15,9 +14,15 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.ArrayList;
 
 public class SwapAction extends AbstractGameAction {
+    boolean startOfTurn;
 
     public SwapAction() {
+        this(false);
+    }
+
+    public SwapAction(boolean startOfTurn) {
         actionType = ActionType.DIALOG;
+        this.startOfTurn = startOfTurn;
     }
 
     @Override
@@ -31,7 +36,9 @@ public class SwapAction extends AbstractGameAction {
                 sisters.playAnimation("AttackSwap");
                 sisters.attackerInFront = true;
             }
-            CardCounterPatches.swapsThisTurn++;
+            if (!startOfTurn) {
+                CardCounterPatches.swapsThisTurn++;
+            }
             CardCounterPatches.swapsThisCombat++;
             if (sisters.hasPower(TagTeamPower.POWER_ID)) {
                 ((TagTeamPower)sisters.getPower(TagTeamPower.POWER_ID)).onSwap();

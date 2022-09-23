@@ -13,8 +13,8 @@
   },
   "${ModID}:TagTeamPower": {
     "NAME": "Twin Sisters",
-    "DESCRIPTIONS": ["While #yPrimrose is in front, Attacks deal #b1 additional damage.",
-                    "While #yLuna is in front, cards give #b1 additional #yBlock."]
+    "DESCRIPTIONS": ["While #yPrimrose is in front, Attacks deal #b1 additional damage. NL Swap to #yLuna at the start of your next turn.",
+                    "While #yLuna is in front, cards give #b1 additional #yBlock. NL Swap to #yPrimrose at the start of your next turn."]
   },
   "${ModID}:SpellPower": {
     "NAME": "Spell Power",

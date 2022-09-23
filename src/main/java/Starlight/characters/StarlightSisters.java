@@ -3,8 +3,8 @@ package Starlight.characters;
 import Starlight.CustomAnimationListener;
 import Starlight.CustomSpriterAnimation;
 import Starlight.RandomChatterHelper;
+import Starlight.actions.SwapAction;
 import Starlight.cards.*;
-import Starlight.cards.interfaces.SkillAnimationAttack;
 import Starlight.powers.TagTeamPower;
 import Starlight.relics.MagicWand;
 import Starlight.util.AbilityManager;
@@ -33,13 +33,12 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import Starlight.relics.Constellation;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static Starlight.characters.StarlightSisters.Enums.METEORITE_PURPLE_COLOR;
 import static Starlight.TheStarlightMod.*;
+import static Starlight.characters.StarlightSisters.Enums.METEORITE_PURPLE_COLOR;
 
 public class StarlightSisters extends CustomPlayer {
     private static final String[] orbTextures = {
@@ -243,6 +242,23 @@ public class StarlightSisters extends CustomPlayer {
         } else {
             playAnimation("HappyB");
         }
+    }
+
+    private boolean swapSkip;
+
+    @Override
+    public void applyStartOfCombatLogic() {
+        super.applyStartOfCombatLogic();
+        swapSkip = true;
+    }
+
+    @Override
+    public void applyStartOfTurnRelics() {
+        super.applyStartOfTurnRelics();
+        if (!swapSkip) {
+            Wiz.atb(new SwapAction(true));
+        }
+        swapSkip = false;
     }
 
     @Override

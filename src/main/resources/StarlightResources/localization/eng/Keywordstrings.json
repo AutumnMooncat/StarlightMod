@@ -5,7 +5,7 @@
       "tag team",
       "tag_team"
     ],
-    "DESCRIPTION": "Effect triggers if you have swapped characters this turn."
+    "DESCRIPTION": "Effect triggers if you have manually swapped characters this turn."
   },
   {
     "PROPER_NAME": "Swap",
