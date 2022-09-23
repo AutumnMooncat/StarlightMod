@@ -27,7 +27,7 @@ public class NullMomentum extends AbstractEasyCard{
 
     public NullMomentum() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseBlock = block = BLK;
+        //baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
         cardsToPreview = new VoidCard();
     }
