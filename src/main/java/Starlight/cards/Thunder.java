@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.blue.BallLightning;
+import com.megacrit.cardcrawl.cards.blue.Tempest;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -57,6 +58,6 @@ public class Thunder extends AbstractMagickCard {
 
     @Override
     public String cardArtCopy() {
-        return BallLightning.ID;
+        return Tempest.ID;
     }
 }

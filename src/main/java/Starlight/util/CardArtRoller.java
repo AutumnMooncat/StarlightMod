@@ -28,7 +28,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
+import static com.badlogic.gdx.graphics.GL20.GL_DST_COLOR;
+import static com.badlogic.gdx.graphics.GL20.GL_ZERO;
+
 public class CardArtRoller {
+    private static final Texture attackMask = TexLoader.getTexture("StarlightResources/images/masks/AttackMask.png");
+    private static final Texture skillMask = TexLoader.getTexture("StarlightResources/images/masks/SkillMask.png");
+    private static final Texture powerMask = TexLoader.getTexture("StarlightResources/images/masks/PowerMask.png");
+
     public static final String partialHueRodrigues =
             "vec3 applyHue(vec3 rgb, float hue)\n" +
                     "{\n" +
@@ -166,7 +173,8 @@ public class CardArtRoller {
                 }
             });
             Color HSLC = new Color(r.H, r.S, r.L, r.C);
-            TextureAtlas.AtlasRegion t = CardLibrary.getCard(r.origCardID).portrait;
+            AbstractCard artCard = CardLibrary.getCard(r.origCardID);
+            TextureAtlas.AtlasRegion t = artCard.portrait;
             t.flip(false, true);
             FrameBuffer fb = ImageHelper.createBuffer(250, 190);
             OrthographicCamera og = new OrthographicCamera(250, 190);
@@ -176,7 +184,12 @@ public class CardArtRoller {
             sb.setShader(shade);
             sb.setColor(HSLC);
             sb.begin();
-            sb.draw(t, -125, -95);
+            sb.draw(t, -t.packedWidth/2f, -t.packedHeight/2f + (artCard.type == AbstractCard.CardType.POWER ? 3 : 0)); // -125, -95
+            if (needsMask(c, artCard)) {
+                sb.setBlendFunction(GL_DST_COLOR, GL_ZERO);
+                Texture mask = getMask(c);
+                sb.draw(mask, -125, -95, -125, -95, 250, 190, 1, 1, 0, 0, 0, mask.getWidth(), mask.getHeight(), false, true);
+            }
             sb.end();
             fb.end();
             t.flip(false, true);
@@ -199,6 +212,11 @@ public class CardArtRoller {
         sb.setColor(HSLC);
         sb.begin();
         sb.draw(t, -250, -190);
+        if (needsMask(c, CardLibrary.getCard(r.origCardID))) {
+            sb.setBlendFunction(GL_DST_COLOR, GL_ZERO);
+            Texture mask = getMask(c);
+            sb.draw(mask, -250, -190, -250, -190, 500, 380, 1, 1, 0, 0, 0, mask.getWidth(), mask.getHeight(), false, true);
+        }
         sb.end();
         fb.end();
         t.flip(false, true);
@@ -206,6 +224,41 @@ public class CardArtRoller {
         return a.getTexture();
 
         //Actually, I think this can work. Because SingleCardViewPopup disposes of the texture, we can just make a new one every time.
+    }
+
+    public static Texture getMask(AbstractCard card) {
+        switch (card.type) {
+            case SKILL:
+            case STATUS:
+            case CURSE:
+                return skillMask;
+            case ATTACK:
+                return attackMask;
+            case POWER:
+                return powerMask;
+        }
+        return skillMask;
+    }
+    public static int getMaskIndex(AbstractCard card) {
+        switch (card.type) {
+            case SKILL:
+            case STATUS:
+            case CURSE:
+                return 2;
+            case ATTACK:
+                return 1;
+            case POWER:
+                return 0;
+        }
+        return 0;
+    }
+
+    public static boolean needsMask(AbstractCard card, AbstractCard desiredArt) {
+        return getMaskIndex(card) != getMaskIndex(desiredArt);
+    }
+
+    public static boolean needsUpscale(AbstractCard card, AbstractCard desiredArt) {
+        return getMaskIndex(card) > getMaskIndex(desiredArt);
     }
 
     public static class ReskinInfo {
