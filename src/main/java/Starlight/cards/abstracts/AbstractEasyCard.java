@@ -4,7 +4,6 @@ import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.CommonKeywordIconsField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -47,7 +46,7 @@ public abstract class AbstractEasyCard extends CustomCard {
 
     private float rotationTimer = 0;
     private int previewIndex;
-    protected ArrayList<AbstractCard> cardToPreview = new ArrayList<>();
+    protected ArrayList<AbstractCard> cyclePreviewCards = new ArrayList<>();
 
     private boolean needsArtRefresh = false;
 
@@ -71,6 +70,9 @@ public abstract class AbstractEasyCard extends CustomCard {
         if (textureImg.contains("ui/missing.png")) {
             if (CardLibrary.getAllCards() != null && !CardLibrary.getAllCards().isEmpty()) {
                 CardArtRoller.computeCard(this);
+                if (cardsToPreview instanceof AbstractEasyCard) {
+                    CardArtRoller.computeCard((AbstractEasyCard) cardsToPreview);
+                }
             } else
                 needsArtRefresh = true;
         }
@@ -194,7 +196,7 @@ public abstract class AbstractEasyCard extends CustomCard {
     }
 
     protected void upgradeCardToPreview() {
-        for (AbstractCard q : cardToPreview) {
+        for (AbstractCard q : cyclePreviewCards) {
             q.upgrade();
         }
     }
@@ -212,13 +214,16 @@ public abstract class AbstractEasyCard extends CustomCard {
         super.update();
         if (needsArtRefresh) {
             CardArtRoller.computeCard(this);
+            if (cardsToPreview instanceof AbstractEasyCard) {
+                CardArtRoller.computeCard((AbstractEasyCard) cardsToPreview);
+            }
         }
-        if (!cardToPreview.isEmpty()) {
+        if (!cyclePreviewCards.isEmpty()) {
             if (hb.hovered) {
                 if (rotationTimer <= 0F) {
                     rotationTimer = getRotationTimeNeeded();
-                    cardsToPreview = cardToPreview.get(previewIndex);
-                    if (previewIndex == cardToPreview.size() - 1) {
+                    cardsToPreview = cyclePreviewCards.get(previewIndex);
+                    if (previewIndex == cyclePreviewCards.size() - 1) {
                         previewIndex = 0;
                     } else {
                         previewIndex++;
