@@ -21,8 +21,8 @@ public class Dia extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 2;
-    private static final int DMG = 11;
-    private static final int UP_DMG = 3;
+    private static final int DMG = 13;
+    private static final int UP_DMG = 4;
     private static final int EFFECT = 4;
     private static final int UP_EFFECT = 2;
 
