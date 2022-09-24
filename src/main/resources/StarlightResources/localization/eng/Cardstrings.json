@@ -83,10 +83,6 @@
     "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain [E] [E].",
     "EXTENDED_DESCRIPTION": ["Darkra"]
   },
-  "${ModID}:Deduce": {
-    "NAME": "Deduce",
-    "DESCRIPTION": "Gain !B! Block. NL Scry !M!. NL Draw 1 card."
-  },
   "${ModID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
@@ -281,6 +277,10 @@
     "NAME": "Star",
     "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1s} in your hand.",
     "EXTENDED_DESCRIPTION": ["Stara"]
+  },
+  "${ModID}:StarChart": {
+    "NAME": "Star Chart",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Add !M! starlight:Star_Shard{!M!|>1=s} into your hand."
   },
   "${ModID}:StarShard": {
     "NAME": "Star Shard",
