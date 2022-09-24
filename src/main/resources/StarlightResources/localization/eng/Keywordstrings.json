@@ -139,5 +139,23 @@
       "envisioned"
     ],
     "DESCRIPTION": "Determine the next X cards you will draw. You may add Envisioned cards to your hand at the cost of drawing less cards next turn."
+  },
+  {
+    "PROPER_NAME": "Resonant",
+    "NAMES": [
+      "resonant",
+      "envisioned"
+    ],
+    "DESCRIPTION": "Resonant cards deal #b2 additional damage and gain #b2 additional Block for each other Resonant card in your hand."
+  },
+  {
+    "PROPER_NAME": "Star Shard",
+    "NAMES": [
+      "star shard",
+      "star shards",
+      "star_shard",
+      "star_shards"
+    ],
+    "DESCRIPTION": "Star Shards are Resonant cards which Retain and Exhaust."
   }
 ]

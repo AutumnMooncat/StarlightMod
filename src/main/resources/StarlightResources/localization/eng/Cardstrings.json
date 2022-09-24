@@ -40,6 +40,10 @@
     "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for ALL your Status cards.",
     "EXTENDED_DESCRIPTION": ["Lifebreak"]
   },
+  "${ModID}:BeatUp": {
+    "NAME": "Beat Up",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Vulnerable, deal !D! damage again."
+  },
   "${ModID}:Bio": {
     "NAME": "Bio",
     "DESCRIPTION": "Deal !D! damage. NL Apply Poison equal to unblocked damage dealt.",
@@ -65,6 +69,10 @@
   "${ModID}:Bulwark": {
     "NAME": "Bulwark",
     "DESCRIPTION": "Gain !M! starlight:Providence. NL Apply !Starlight:M2! Weak."
+  },
+  "${ModID}:CriticalHit": {
+    "NAME": "Critical Hit",
+    "DESCRIPTION": "Deal !D! damage. NL Damage modification affects this card twice."
   },
   "${ModID}:Culminate": {
     "NAME": "Culminate",
@@ -273,6 +281,10 @@
     "NAME": "Star",
     "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1s} in your hand.",
     "EXTENDED_DESCRIPTION": ["Stara"]
+  },
+  "${ModID}:StarShard": {
+    "NAME": "Star Shard",
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Deal !D! damage. NL Exhaust."
   },
   "${ModID}:Stockpile": {
     "NAME": "Stockpile",

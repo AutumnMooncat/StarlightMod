@@ -1,7 +1,6 @@
 {
-  "${ModID}:RangedDamage": {
-    "NAME": "Ranged",
-    "DESCRIPTION": "Ranged [RangedIcon]",
-    "EXTENDED_DESCRIPTION": ["Requires #yAmmo to play. NL Applies #yBleeding and bypasses #yThorns."]
+  "${ModID}:ResonantDamage": {
+    "NAME": "Resonant",
+    "DESCRIPTION": "Resonant cards deal #b2 additional damage and gain #b2 additional Block for each other Resonant card in your hand."
   }
 }
