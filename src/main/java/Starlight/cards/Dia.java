@@ -23,7 +23,7 @@ public class Dia extends AbstractMagickCard {
     private static final int COST = 2;
     private static final int DMG = 11;
     private static final int UP_DMG = 3;
-    private static final int EFFECT = 3;
+    private static final int EFFECT = 4;
     private static final int UP_EFFECT = 2;
 
     public Dia() {
