@@ -1,4 +1,4 @@
-package Starlight.cards.status;
+package Starlight.cutContent;
 
 import Starlight.actions.PlayRandomCardAction;
 import Starlight.cards.abstracts.AbstractEasyCard;

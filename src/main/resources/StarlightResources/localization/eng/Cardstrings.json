@@ -236,7 +236,7 @@
     "DESCRIPTION": "Retain. NL Gain !B! Block.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
   },
   "${ModID}:SetAside": {
-    "NAME": "Set Aside",
+    "NAME": "Set Aside DEPRECATED",
     "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
   },
   "${ModID}:Shell": {
@@ -253,7 +253,7 @@
     "DESCRIPTION": "{@@}starlight:Project the top card of your draw pile. NL Deal !D! damage for each starlight:Projected card."
   },
   "${ModID}:SoulFire": {
-    "NAME": "Soulfire",
+    "NAME": "Soulfire DEPRECATED",
     "DESCRIPTION": "Unplayable."
   },
   "${ModID}:SpellOptimizer": {
