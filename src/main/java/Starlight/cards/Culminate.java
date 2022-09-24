@@ -1,5 +1,6 @@
 package Starlight.cards;
 
+import Starlight.actions.BoostDamageInHandAction;
 import Starlight.actions.ScryFollowUpAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.powers.ProvidencePower;
@@ -29,16 +30,17 @@ public class Culminate extends AbstractEasyCard {
     public Culminate() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
-        baseSecondMagic = secondMagic = SP;
+        //baseSecondMagic = secondMagic = SP;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new ScryAction(magicNumber));
+        Wiz.atb(new BoostDamageInHandAction(magicNumber, c -> c.type == CardType.ATTACK));
+        /*Wiz.atb(new ScryAction(magicNumber));
         Wiz.atb(new ScryFollowUpAction(cards -> {
             if (cards.size() > 0) {
                 Wiz.applyToSelf(new SpellPower(p, secondMagic * cards.size()));
             }
-        }));
+        }));*/
     }
 
     public void upp() {

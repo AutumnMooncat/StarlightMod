@@ -1,7 +1,9 @@
 package Starlight.cards;
 
+import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.interfaces.TagTeamCard;
+import Starlight.characters.StarlightSisters;
 import Starlight.powers.SpellPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
@@ -19,8 +21,8 @@ public class Supply extends AbstractEasyCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 0;
-    private static final int EFFECT = 3;
+    private static final int COST = 1;
+    private static final int EFFECT = 4;
     private static final int UP_EFFECT = 2;
 
     public Supply() {
@@ -31,6 +33,9 @@ public class Supply extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new SpellPower(p, magicNumber));
         Wiz.applyToSelf(new VigorPower(p, magicNumber));
+        if (p instanceof StarlightSisters) {
+            Wiz.atb(new SwapAction());
+        }
     }
 
     public void upp() {

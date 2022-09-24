@@ -76,7 +76,7 @@
   },
   "${ModID}:Culminate": {
     "NAME": "Culminate",
-    "DESCRIPTION": "Scry !M!. Gain !Starlight:M2! starlight:SP for each card discarded this way."
+    "DESCRIPTION": "Increase the damage of all Attacks in your hand by !M! this combat."
   },
   "${ModID}:Dark": {
     "NAME": "Dark",
@@ -296,7 +296,7 @@
   },
   "${ModID}:Supply": {
     "NAME": "Supply",
-    "DESCRIPTION": "Gain !M! starlight:SP. NL Gain !M! Vigor."
+    "DESCRIPTION": "Gain !M! starlight:SP. NL Gain !M! Vigor.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
   },
   "${ModID}:Surmount": {
     "NAME": "Surmount",
