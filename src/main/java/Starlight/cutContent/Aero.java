@@ -1,4 +1,4 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;

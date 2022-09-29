@@ -1,8 +1,7 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.powers.IncantationPower;
-import Starlight.powers.TeamEffortPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.purple.Nirvana;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

@@ -6,7 +6,7 @@
     "EXTENDED_DESCRIPTION": ["Extra Stuff"]
   },
   "${ModID}:Aero": {
-    "NAME": "Aero",
+    "NAME": "Aero DEPRECATED",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Draw !M! cards.",
     "EXTENDED_DESCRIPTION": ["Aerora"]
   },
@@ -138,7 +138,7 @@
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain Energy, gain !M! starlight:Providence."
   },
   "${ModID}:FutureSight": {
-    "NAME": "Future Sight",
+    "NAME": "Future Sight DEPRECATED",
     "DESCRIPTION": "Scry !M!. NL starlight:Project the top card of your draw pile."
   },
   "${ModID}:Gank": {
@@ -174,7 +174,7 @@
     "EXTENDED_DESCRIPTION": ["Imperilga"]
   },
   "${ModID}:Incantation": {
-    "NAME": "Incantation",
+    "NAME": "Incantation DEPRECATED",
     "DESCRIPTION": "Whenever you Scry, gain !M! starlight:SP.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Scry, gain !M! starlight:SP."
   },
@@ -232,7 +232,7 @@
     "EXTENDED_DESCRIPTION": ["Reflectga"]
   },
   "${ModID}:RejectFate": {
-    "NAME": "Reject Fate",
+    "NAME": "Reject Fate DEPRECATED",
     "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Scry !M!."
   },
   "${ModID}:Serendipity": {
@@ -255,10 +255,6 @@
   "${ModID}:Skyfall": {
     "NAME": "Skyfall",
     "DESCRIPTION": "{@@}starlight:Project the top card of your draw pile. NL Deal !D! damage for each starlight:Projected card."
-  },
-  "${ModID}:SoulFire": {
-    "NAME": "Soulfire DEPRECATED",
-    "DESCRIPTION": "Unplayable."
   },
   "${ModID}:SpellOptimizer": {
     "NAME": "Spell Optimizer",
@@ -336,11 +332,6 @@
     "NAME": "Twin Form",
     "DESCRIPTION": "Ethereal. NL starlight:Project a copy of the first card you play each turn.",
     "UPGRADE_DESCRIPTION": "starlight:Project a copy of the first card you play each turn."
-  },
-  "${ModID}:Vanish": {
-    "NAME": "",
-    "DESCRIPTION": "",
-    "EXTENDED_DESCRIPTION": [""]
   },
   "${ModID}:VirtuousWard": {
     "NAME": "Virtuous Ward",

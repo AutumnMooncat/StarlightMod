@@ -1,11 +1,9 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
 import Starlight.actions.ProjectTopCardAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.purple.Meditate;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

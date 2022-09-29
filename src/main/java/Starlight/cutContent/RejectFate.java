@@ -1,6 +1,5 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
-import Starlight.actions.ScryFollowUpAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
@@ -9,15 +8,11 @@ import Starlight.vfx.CleaveUpEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.purple.CutThroughFate;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
