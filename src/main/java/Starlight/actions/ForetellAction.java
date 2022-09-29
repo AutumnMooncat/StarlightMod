@@ -3,6 +3,7 @@ package Starlight.actions;
 import Starlight.TheStarlightMod;
 import Starlight.cards.interfaces.OnForetoldCard;
 import Starlight.patches.CardCounterPatches;
+import Starlight.powers.interfaces.OnForetellPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,9 +68,7 @@ public class ForetellAction extends AbstractGameAction {
                 cardGroup.removeCard(card);
                 cardGroup.moveToDeck(card, false);
                 foretoldCards.add(card);
-                if (card instanceof OnForetoldCard) {
-                    ((OnForetoldCard) card).onForetold();
-                }
+                triggerEffects(card);
             }
             if (this.followUpAction != null) {
                 this.addToTop(this.followUpAction);
@@ -89,9 +89,7 @@ public class ForetellAction extends AbstractGameAction {
                     cardGroup.removeCard(c);
                     cardGroup.moveToDeck(c, false);
                     foretoldCards.add(c);
-                    if (c instanceof OnForetoldCard) {
-                        ((OnForetoldCard) c).onForetold();
-                    }
+                    triggerEffects(c);
                 }
                 if (this.followUpAction != null) {
                     this.addToTop(this.followUpAction);
@@ -101,5 +99,16 @@ public class ForetellAction extends AbstractGameAction {
             }));
         }
         this.isDone = true;
+    }
+
+    private static void triggerEffects(AbstractCard card) {
+        if (card instanceof OnForetoldCard) {
+            ((OnForetoldCard) card).onForetold();
+        }
+        for (AbstractPower p : Wiz.adp().powers) {
+            if (p instanceof OnForetellPower) {
+                ((OnForetellPower) p).onForetell(card);
+            }
+        }
     }
 }

@@ -43,7 +43,8 @@
     "PROPER_NAME": "Foretell",
     "NAMES": [
       "foretell",
-      "foretold"
+      "foretold",
+      "foretells"
     ],
     "DESCRIPTION": "Place a card on top of your draw pile."
   },

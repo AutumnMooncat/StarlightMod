@@ -39,7 +39,7 @@
   },
   "${ModID}:DivinationAbility": {
     "NAME": "Divination",
-    "DESCRIPTION": "Whenever starlight:Luna starlight:Scries, she also gains !Starlight:I! starlight:Providence."
+    "DESCRIPTION": "Whenever starlight:Luna starlight:Foretells, she also gains !Starlight:I! starlight:Providence."
   },
   "${ModID}:AstralBodyAbility": {
     "NAME": "Astral Body",

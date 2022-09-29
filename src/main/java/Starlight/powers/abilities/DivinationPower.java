@@ -3,20 +3,17 @@ package Starlight.powers.abilities;
 import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
 import Starlight.powers.ProvidencePower;
-import Starlight.powers.SpellPower;
+import Starlight.powers.interfaces.OnForetellPower;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.helpers.ShaderHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class DivinationPower extends AbstractPower {
+public class DivinationPower extends AbstractPower implements OnForetellPower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(DivinationPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -35,13 +32,13 @@ public class DivinationPower extends AbstractPower {
         updateDescription();
     }
 
-    @Override
+    /*@Override
     public void onScry() {
         if (isActive()) {
             flash();
             Wiz.atb(new ApplyPowerAction(owner, owner, new ProvidencePower(owner, amount)));
         }
-    }
+    }*/
 
     /*@Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
@@ -65,5 +62,13 @@ public class DivinationPower extends AbstractPower {
         /*if (!isActive()) {
             this.description = DESCRIPTIONS[2] + description;
         }*/
+    }
+
+    @Override
+    public void onForetell(AbstractCard card) {
+        if (isActive()) {
+            flash();
+            Wiz.atb(new ApplyPowerAction(owner, owner, new ProvidencePower(owner, amount)));
+        }
     }
 }

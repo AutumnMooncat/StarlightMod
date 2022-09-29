@@ -123,7 +123,7 @@
   },
   "${ModID}:DivinationPower": {
     "NAME": "Divination",
-    "DESCRIPTIONS": ["Whenever #yLuna #yScries, gain #b"," #yProvidence.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["Whenever #yLuna #yForetells, gain #b"," #yProvidence.","#r(Inactive) NL "]
   },
   "${ModID}:CovenantPower": {
     "NAME": "Covenant",
