@@ -130,7 +130,7 @@
   },
   "${ModID}:Fortify": {
     "NAME": "Fortify",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Draw !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Retain. NL Gain !B! Block. NL Draw !M! card{!M!|>1=s}."
   },
   "${ModID}:Fortuna": {
     "NAME": "Fortuna",
