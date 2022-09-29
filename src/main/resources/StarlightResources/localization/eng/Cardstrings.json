@@ -42,7 +42,7 @@
   },
   "${ModID}:BeatUp": {
     "NAME": "Beat Up",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Vulnerable, deal !D! damage again."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has starlight:Crumple, deal !D! damage again."
   },
   "${ModID}:Bio": {
     "NAME": "Bio",
