@@ -1,4 +1,4 @@
-package Starlight.cards;
+package Starlight.cards.token;
 
 import Starlight.cardmods.ResonantMod;
 import Starlight.cards.abstracts.AbstractEasyCard;

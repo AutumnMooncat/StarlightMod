@@ -1,6 +1,7 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.cards.token.StarShard;
 import Starlight.damageMods.ResonantDamage;
 import Starlight.util.Wiz;
 import basemod.helpers.TooltipInfo;
