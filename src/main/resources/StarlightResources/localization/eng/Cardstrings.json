@@ -208,6 +208,10 @@
     "NAME": "Posturing",
     "DESCRIPTION": "At the end of your turn, if the last card played was a... NL Skill: Gain !M! Block. NL Attack: Gain !M! Vigor."
   },
+  "${ModID}:PowerFist": {
+    "NAME": "Power Fist",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for ALL your Power Fist cards."
+  },
   "${ModID}:Prepare": {
     "NAME": "Prepare",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Gain !M! starlight:SP.{!Starlight:IsSisters!|1= NL starlight:Swap.}"
