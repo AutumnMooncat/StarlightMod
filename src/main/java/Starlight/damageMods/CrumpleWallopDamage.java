@@ -8,17 +8,12 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-public class CrumpleDamage extends AbstractDamageModifier {
-    int amount;
-
-    public CrumpleDamage(int amount) {
-        this.amount = amount;
-    }
+public class CrumpleWallopDamage extends AbstractDamageModifier {
 
     @Override
     public void onLastDamageTakenUpdate(DamageInfo info, int lastDamageTaken, int overkillAmount, AbstractCreature target) {
         if (lastDamageTaken > 0) {
-            Wiz.atb(new ApplyPowerAction(target, info.owner, new CrumplePower(target, amount)));
+            Wiz.atb(new ApplyPowerAction(target, info.owner, new CrumplePower(target, lastDamageTaken)));
         }
     }
 
@@ -29,6 +24,6 @@ public class CrumpleDamage extends AbstractDamageModifier {
 
     @Override
     public AbstractDamageModifier makeCopy() {
-        return new CrumpleDamage(amount);
+        return new CrumpleWallopDamage();
     }
 }

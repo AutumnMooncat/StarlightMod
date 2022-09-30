@@ -59,7 +59,7 @@
   },
   "${ModID}:BlindSide": {
     "NAME": "Blind Side",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply !M! Weak. NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Skill_Tag}: Gain [E] and draw 1 card."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply starlight:Crumple equal to unblocked damage dealt."
   },
   "${ModID}:Blizzard": {
     "NAME": "Blizzard",
