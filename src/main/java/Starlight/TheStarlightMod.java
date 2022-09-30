@@ -8,6 +8,7 @@ import Starlight.cards.interfaces.PrimroseCard;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.patches.CardCounterPatches;
+import Starlight.powers.CrumplePower;
 import Starlight.relics.AbstractEasyRelic;
 import Starlight.ui.AbilityButton;
 import Starlight.ui.EnvisionedCardManager;
@@ -279,6 +280,8 @@ public class TheStarlightMod implements
                 AbilityManager.load(abilitySaveData);
             }
         });
+
+        BaseMod.addPower(CrumplePower.class, CrumplePower.POWER_ID);
 
         abilityButton = new AbilityButton();
     }
