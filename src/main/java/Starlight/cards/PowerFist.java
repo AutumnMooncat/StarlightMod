@@ -22,7 +22,7 @@ public class PowerFist extends AbstractEasyCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 8;
+    private static final int DMG = 6;
     private static final int UP_DMG = 2;
     private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
@@ -31,7 +31,7 @@ public class PowerFist extends AbstractEasyCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
-        CardModifierManager.addModifier(this, new ResonantMod(true));
+        //CardModifierManager.addModifier(this, new ResonantMod(true));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -55,9 +55,9 @@ public class PowerFist extends AbstractEasyCard {
     }
 
     private int countCards() {
-        return (int) (Wiz.adp().drawPile.group.stream().filter(c -> c != this && c instanceof PowerFist).count() +
-                Wiz.adp().hand.group.stream().filter(c -> c != this && c instanceof PowerFist).count() +
-                Wiz.adp().discardPile.group.stream().filter(c -> c != this && c instanceof PowerFist).count());
+        return (int) (Wiz.adp().drawPile.group.stream().filter(c -> c instanceof PowerFist).count() +
+                Wiz.adp().hand.group.stream().filter(c -> c instanceof PowerFist).count() +
+                Wiz.adp().discardPile.group.stream().filter(c -> c instanceof PowerFist).count());
     }
 
     public void upp() {

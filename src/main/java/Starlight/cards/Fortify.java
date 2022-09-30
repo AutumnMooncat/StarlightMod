@@ -31,7 +31,7 @@ public class Fortify extends AbstractEasyCard {
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
         selfRetain = true;
-        CardModifierManager.addModifier(this, new ResonantMod(true));
+        //CardModifierManager.addModifier(this, new ResonantMod(true));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

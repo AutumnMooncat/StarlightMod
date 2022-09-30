@@ -28,7 +28,7 @@ public class StarShard extends AbstractEasyCard {
         baseDamage = damage = AMT;
         selfRetain = true;
         exhaust = true;
-        CardModifierManager.addModifier(this, new ResonantMod(true));
+        //CardModifierManager.addModifier(this, new ResonantMod(true));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
