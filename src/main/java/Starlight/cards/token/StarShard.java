@@ -19,8 +19,8 @@ public class StarShard extends AbstractEasyCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int AMT = 6;
-    private static final int UP_AMT = 2;
+    private static final int AMT = 7;
+    private static final int UP_AMT = 3;
 
     public StarShard() {
         super(ID, COST, TYPE, RARITY, TARGET, CardColor.COLORLESS);
