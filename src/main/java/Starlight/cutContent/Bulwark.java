@@ -1,14 +1,12 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.powers.ProvidencePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.cards.purple.Perseverance;
 import com.megacrit.cardcrawl.cards.red.Sentinel;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.EnergizedBluePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Starlight.TheStarlightMod.makeID;

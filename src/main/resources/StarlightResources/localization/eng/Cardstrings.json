@@ -67,7 +67,7 @@
     "EXTENDED_DESCRIPTION": ["Blizzara"]
   },
   "${ModID}:Bulwark": {
-    "NAME": "Bulwark",
+    "NAME": "Bulwark DEPRECATED",
     "DESCRIPTION": "Gain !M! starlight:Providence. NL Apply !Starlight:M2! Weak."
   },
   "${ModID}:CriticalHit": {
