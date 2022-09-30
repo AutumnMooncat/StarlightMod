@@ -1,4 +1,4 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
 import Starlight.actions.MoveFromDrawToHandAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
