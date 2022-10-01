@@ -3,7 +3,6 @@ package Starlight.cards;
 import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.interfaces.LunaCard;
-import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
@@ -16,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Ambush extends AbstractEasyCard implements LunaCard {
+public class Ambush extends AbstractEasyCard {
     public final static String ID = makeID(Ambush.class.getSimpleName());
 
     private static final AbstractCard.CardRarity RARITY = CardRarity.BASIC;
@@ -24,20 +23,25 @@ public class Ambush extends AbstractEasyCard implements LunaCard {
     private static final AbstractCard.CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 2;
-    private static final int DMG = 10;
-    private static final int UP_DMG = 3;
+    private static final int AMT = 4;
+    private static final int UP_AMT = 2;
 
     public Ambush() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseDamage = damage = DMG;
+        baseDamage = damage = AMT;
+        baseBlock = block = AMT;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        blck();
+        blck();
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
     }
 
     public void upp() {
-        upgradeDamage(UP_DMG);
+        upgradeDamage(UP_AMT);
+        upgradeBlock(UP_AMT);
     }
 
     /*@Override
@@ -55,11 +59,11 @@ public class Ambush extends AbstractEasyCard implements LunaCard {
         return new CardArtRoller.ReskinInfo(ID, 0.1f, 0.5f, 0.6f, 1, false);
     }
 
-    @Override
+    /*@Override
     public void onLunaTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new GainEnergyAction(1));
         if (p instanceof StarlightSisters) {
             Wiz.atb(new SwapAction());
         }
-    }
+    }*/
 }

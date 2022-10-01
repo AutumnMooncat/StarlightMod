@@ -12,7 +12,7 @@
   },
   "${ModID}:Ambush": {
     "NAME": "Ambush",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:{!Starlight:IsSisters!|1=Luna|0=Skill_Tag}: Gain [E]{!Starlight:IsSisters!|1= and starlight:Swap}."
+    "DESCRIPTION": "Gain !B! Block twice. NL Deal !D! damage twice."
   },
   "${ModID}:Anticipate": {
     "NAME": "Anticipate",
