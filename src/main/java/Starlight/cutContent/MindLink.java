@@ -1,11 +1,9 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.powers.MindLinkPower;
-import Starlight.powers.ThoughtbloomPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.purple.MentalFortress;
-import com.megacrit.cardcrawl.cards.purple.Study;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 

@@ -201,7 +201,7 @@
     "EXTENDED_DESCRIPTION": ["Meteorga"]
   },
   "${ModID}:MindLink": {
-    "NAME": "Mind Link",
+    "NAME": "Mind Link DEPRECATED",
     "DESCRIPTION": "{@@}{!Starlight:IsSisters!|1=starlight:Tag_Team|0=starlight:Tag} effects trigger !M! additional time{!M!|>1=s}."
   },
   "${ModID}:NastyNastySpell": {
