@@ -1,6 +1,7 @@
 package Starlight.actions;
 
 import Starlight.powers.CrumplePower;
+import Starlight.powers.JinxPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -20,7 +21,7 @@ public class BeatUpAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (target.hasPower(CrumplePower.POWER_ID)) {
+        if (target.hasPower(JinxPower.POWER_ID)) {
             this.addToTop(new DamageAction(target, new DamageInfo(Wiz.adp(), damage, type), AttackEffect.BLUNT_HEAVY));
         }
         this.addToTop(new DamageAction(target, new DamageInfo(Wiz.adp(), damage, type), AttackEffect.BLUNT_LIGHT));

@@ -3,6 +3,7 @@ package Starlight.cards;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.interfaces.PrimroseCard;
 import Starlight.powers.CrumplePower;
+import Starlight.powers.JinxPower;
 import Starlight.powers.SpellPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class WandWhack extends AbstractEasyCard implements PrimroseCard {
+public class WandWhack extends AbstractEasyCard {
     public final static String ID = makeID(WandWhack.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -22,7 +23,7 @@ public class WandWhack extends AbstractEasyCard implements PrimroseCard {
     private static final int COST = 1;
     private static final int DMG = 7;
     private static final int UP_DMG = 2;
-    private static final int EFFECT = 2;
+    private static final int EFFECT = 3;
     private static final int UP_EFFECT = 1;
 
     public WandWhack() {
@@ -33,7 +34,8 @@ public class WandWhack extends AbstractEasyCard implements PrimroseCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.applyToSelf(new SpellPower(p, magicNumber));
+        //Wiz.applyToSelf(new SpellPower(p, magicNumber));
+        Wiz.applyToEnemy(m, new JinxPower(m, magicNumber));
     }
 
     public void upp() {
@@ -46,8 +48,8 @@ public class WandWhack extends AbstractEasyCard implements PrimroseCard {
         return Wallop.ID;
     }
 
-    @Override
+    /*@Override
     public void onPrimTrigger(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToEnemy(m, new CrumplePower(m, magicNumber));
-    }
+    }*/
 }

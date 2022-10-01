@@ -3,6 +3,7 @@ package Starlight.cards;
 import Starlight.actions.BeatUpAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.powers.CrumplePower;
+import Starlight.powers.JinxPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -41,7 +42,7 @@ public class BeatUp extends AbstractEasyCard {
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if (!m.isDeadOrEscaped() && m.hasPower(CrumplePower.POWER_ID)) {
+            if (!m.isDeadOrEscaped() && m.hasPower(JinxPower.POWER_ID)) {
                 this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
                 break;
             }

@@ -46,7 +46,7 @@
   },
   "${ModID}:BeatUp": {
     "NAME": "Beat Up",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy has starlight:Crumple, deal !D! damage again."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has starlight:Jinx, deal !D! damage again."
   },
   "${ModID}:Bio": {
     "NAME": "Bio",
@@ -63,7 +63,7 @@
   },
   "${ModID}:BlindSide": {
     "NAME": "Blind Side",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply starlight:Crumple equal to unblocked damage dealt."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply starlight:Jinx equal to unblocked damage dealt."
   },
   "${ModID}:Blizzard": {
     "NAME": "Blizzard",
@@ -93,7 +93,7 @@
   },
   "${ModID}:Dia": {
     "NAME": "Dia",
-    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Crumple to ALL enemies.",
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Jinx to ALL enemies.",
     "EXTENDED_DESCRIPTION": ["Diara"]
   },
   "${ModID}:DivineSense": {
@@ -151,7 +151,7 @@
   },
   "${ModID}:Gravity": {
     "NAME": "Gravity",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. starlight:SP affects this card !M! times.",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL starlight:SP affects this card !M! times.",
     "EXTENDED_DESCRIPTION": ["Graviga"]
   },
   "${ModID}:Grit": {
@@ -227,7 +227,7 @@
   },
   "${ModID}:Quake": {
     "NAME": "Quake",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. Reduce this card's cost by !M! this combat.",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Reduce this card's cost by !M! this combat.",
     "EXTENDED_DESCRIPTION": ["Quakra"]
   },
   "${ModID}:RealityPassage": {
@@ -347,7 +347,7 @@
   },
   "${ModID}:WandWhack": {
     "NAME": "Wand Whack",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Gain !M! starlight:SP. NL starlight:{!Starlight:IsSisters!|1=Primrose|0=Attack_Tag}: Apply !M! starlight:Crumple."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Jinx."
   },
   "${ModID}:Water": {
     "NAME": "Water",

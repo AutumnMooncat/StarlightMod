@@ -64,6 +64,14 @@
     "DESCRIPTION": "Crumpled creatures take additional damage from #yAttacks this turn."
   },
   {
+    "PROPER_NAME": "Jinx",
+    "NAMES": [
+      "jinx",
+      "jinxed"
+    ],
+    "DESCRIPTION": "Jinxed creatures take additional damage from #yAttacks this turn."
+  },
+  {
     "PROPER_NAME": "Ascend",
     "NAMES": [
       "ascend"

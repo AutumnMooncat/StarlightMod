@@ -2,6 +2,7 @@ package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.CrumplePower;
+import Starlight.powers.JinxPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -37,7 +38,7 @@ public class Dia extends AbstractMagickCard {
         Wiz.atb(new VFXAction(new SpotlightEffect()));
         Wiz.atb(new WaitAction(0.6f));
         allDmg(AbstractGameAction.AttackEffect.FIRE);
-        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new CrumplePower(mon, magicNumber)));
+        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new JinxPower(mon, magicNumber)));
         //Wiz.applyToSelf(new ProvidencePower(p, magicNumber));
     }
 

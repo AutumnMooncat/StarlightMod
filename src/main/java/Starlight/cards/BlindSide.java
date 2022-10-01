@@ -1,19 +1,13 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.interfaces.TagTeamCard;
-import Starlight.damageMods.CrumpleWallopDamage;
+import Starlight.damageMods.JinxWallopDamage;
 import Starlight.util.CardArtRoller;
-import Starlight.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.DamageModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.green.SneakyStrike;
-import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -34,7 +28,7 @@ public class BlindSide extends AbstractEasyCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         //baseMagicNumber = magicNumber = EFFECT;
-        DamageModifierManager.addModifier(this, new CrumpleWallopDamage());
+        DamageModifierManager.addModifier(this, new JinxWallopDamage());
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
