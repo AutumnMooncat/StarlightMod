@@ -1,6 +1,5 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
-import Starlight.actions.ProjectSpecificCardAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.cards.interfaces.TagTeamCard;

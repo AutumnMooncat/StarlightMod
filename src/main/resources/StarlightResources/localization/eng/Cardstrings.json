@@ -179,7 +179,7 @@
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Scry, gain !M! starlight:SP."
   },
   "${ModID}:MagickConduit": {
-    "NAME": "Magick Conduit",
+    "NAME": "Magick Conduit DEPRECATED",
     "DESCRIPTION": "{@@}Gain !M! starlight:SP for each starlight:Magick card in your draw pile.{!Location!|0= (Gain !Starlight:M2! starlight:SP)} NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain [E]."
   },
   "${ModID}:ManaConversion": {
