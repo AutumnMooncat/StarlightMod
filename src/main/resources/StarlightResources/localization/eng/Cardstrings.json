@@ -82,6 +82,10 @@
     "NAME": "Culminate",
     "DESCRIPTION": "Increase the damage of all Attacks in your hand by !M! this combat."
   },
+  "${ModID}:Curse": {
+    "NAME": "Curse",
+    "DESCRIPTION": "Apply !M! starlight:Jinx."
+  },
   "${ModID}:Dark": {
     "NAME": "Dark",
     "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain [E] [E].",
