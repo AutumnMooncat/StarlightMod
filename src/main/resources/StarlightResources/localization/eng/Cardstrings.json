@@ -304,7 +304,7 @@
   },
   "${ModID}:Swindle": {
     "NAME": "Swindle",
-    "DESCRIPTION": "Gain !M! starlight:SP. NL Put 2 random starlight:Magick cards from your draw pile into your hand."
+    "DESCRIPTION": "Apply 1 Vulnerable. NL Put !M! random Attacks from your draw pile into your hand."
   },
   "${ModID}:TeamEffort": {
     "NAME": "Team Effort",
