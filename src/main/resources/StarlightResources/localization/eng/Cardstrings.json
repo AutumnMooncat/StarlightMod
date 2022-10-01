@@ -40,6 +40,10 @@
     "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for ALL your Status cards.",
     "EXTENDED_DESCRIPTION": ["Lifebreak"]
   },
+  "${ModID}:Banish": {
+    "NAME": "Banish",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Can be Upgraded any number of times."
+  },
   "${ModID}:BeatUp": {
     "NAME": "Beat Up",
     "DESCRIPTION": "Deal !D! damage. NL If the enemy has starlight:Crumple, deal !D! damage again."
