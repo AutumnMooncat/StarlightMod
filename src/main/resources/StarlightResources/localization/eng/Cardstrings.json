@@ -351,7 +351,11 @@
   },
   "${ModID}:VirtuousWard": {
     "NAME": "Virtuous Ward",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Gain !M! starlight:Providence."
+    "DESCRIPTION": "{@@}Retain. NL Gain !B! Block. NL Gain !M! starlight:Providence. NL Exhaust."
+  },
+  "${ModID}:VoidWanderer": {
+    "NAME": "Void Wanderer",
+    "DESCRIPTION": "Whenever you Exhaust a card, apply !M! starlight:Jinx to ALL enemies."
   },
   "${ModID}:WandWhack": {
     "NAME": "Wand Whack",

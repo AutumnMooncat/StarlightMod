@@ -21,7 +21,7 @@ public class VirtuousWard extends AbstractEasyCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 2;
-    private static final int BLK = 10;
+    private static final int BLK = 12;
     private static final int UP_BLK = 3;
     private static final int EFFECT = 3;
     private static final int UP_EFFECT = 1;
@@ -30,6 +30,8 @@ public class VirtuousWard extends AbstractEasyCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
+        exhaust = true;
+        selfRetain = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

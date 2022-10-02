@@ -99,6 +99,10 @@
     "NAME": "Jinx",
     "DESCRIPTIONS": ["Receives #b"," more damage from Attacks this turn."]
   },
+  "${ModID}:VoidWandererPower": {
+    "NAME": "Void Wanderer",
+    "DESCRIPTIONS": ["Whenever you #yExhaust a card, apply #b"," #yJinx to ALL enemies."]
+  },
   "${ModID}:AscensionPower": {
     "NAME": "Ascension",
     "DESCRIPTIONS": ["#yMagick cards are twice as effective for #b",
