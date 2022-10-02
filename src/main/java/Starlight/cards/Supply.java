@@ -7,6 +7,7 @@ import Starlight.characters.StarlightSisters;
 import Starlight.powers.SpellPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.blue.Equilibrium;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -22,24 +23,30 @@ public class Supply extends AbstractEasyCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int EFFECT = 4;
-    private static final int UP_EFFECT = 2;
+    private static final int EFFECT = 2;
+    private static final int UP_EFFECT = 1;
+    private static final int BLK = 5;
+    private static final int UP_BLK = 3;
 
     public Supply() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
+        baseBlock = block = BLK;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new SpellPower(p, magicNumber));
-        Wiz.applyToSelf(new VigorPower(p, magicNumber));
+        blck();
+        Wiz.atb(new DrawCardAction(magicNumber));
+        /*Wiz.applyToSelf(new SpellPower(p, magicNumber));
+        Wiz.applyToSelf(new VigorPower(p, magicNumber));*/
         if (p instanceof StarlightSisters) {
             Wiz.atb(new SwapAction());
         }
     }
 
     public void upp() {
-        upgradeMagicNumber(UP_EFFECT);
+        upgradeBlock(UP_BLK);
+        //upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override

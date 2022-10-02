@@ -307,8 +307,8 @@
     "DESCRIPTION": "Deal !D! damage."
   },
   "${ModID}:Supply": {
-    "NAME": "Supply",
-    "DESCRIPTION": "Gain !M! starlight:SP. NL Gain !M! Vigor.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
+    "NAME": "Resupply",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! cards.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
   },
   "${ModID}:Surmount": {
     "NAME": "Surmount",
