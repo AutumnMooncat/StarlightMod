@@ -35,7 +35,7 @@ public class Surmount extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new ProvidencePower(p, magicNumber));
-        Wiz.applyToSelfTop(new EnergizedBluePower(p, 1));
+        Wiz.applyToSelf(new EnergizedBluePower(p, 1));
     }
 
     public void upp() {

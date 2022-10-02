@@ -68,7 +68,7 @@ public class DivinationPower extends AbstractPower implements OnForetellPower {
     public void onForetell(AbstractCard card) {
         if (isActive()) {
             flash();
-            Wiz.atb(new ApplyPowerAction(owner, owner, new ProvidencePower(owner, amount)));
+            Wiz.att(new ApplyPowerAction(owner, owner, new ProvidencePower(owner, amount)));
         }
     }
 }

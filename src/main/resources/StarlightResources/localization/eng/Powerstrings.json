@@ -65,7 +65,7 @@
   },
   "${ModID}:HarmonyPower": {
     "NAME": "Harmony",
-    "DESCRIPTIONS": ["Whenever you trigger a #yTag #yTeam effect, gain #b"," #yProvidence."]
+    "DESCRIPTIONS": ["Whenever you trigger a #ySwap, gain #b"," #yProvidence."]
   },
   "${ModID}:MindLinkPower": {
     "NAME": "Mind Link",

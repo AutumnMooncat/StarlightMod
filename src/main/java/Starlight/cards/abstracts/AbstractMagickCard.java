@@ -5,6 +5,7 @@ import Starlight.powers.AscensionPower;
 import Starlight.util.Wiz;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,6 +29,16 @@ public abstract class AbstractMagickCard extends AbstractEasyCard {
     public void applyPowers() {
         this.magicNumber = this.baseMagicNumber;
         super.applyPowers();
+        if (Wiz.adp().hasPower(AscensionPower.POWER_ID)) {
+            this.magicNumber *= 2;
+            this.isMagicNumberModified = magicNumber != baseMagicNumber;
+        }
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        this.magicNumber = this.baseMagicNumber;
+        super.calculateCardDamage(mo);
         if (Wiz.adp().hasPower(AscensionPower.POWER_ID)) {
             this.magicNumber *= 2;
             this.isMagicNumberModified = magicNumber != baseMagicNumber;

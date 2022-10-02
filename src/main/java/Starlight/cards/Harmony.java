@@ -27,7 +27,7 @@ public class Harmony extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new HarmonyPower(p, magicNumber));
+        Wiz.applyToSelfTop(new HarmonyPower(p, magicNumber));
     }
 
     public void upp() {

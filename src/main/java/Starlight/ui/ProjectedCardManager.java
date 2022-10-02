@@ -66,22 +66,27 @@ public class ProjectedCardManager {
     }
 
     public static void playCards() {
-        Wiz.atb(new AbstractGameAction() {
-            @Override
-            public void update() {
-                for (AbstractCard card : cards.group) {
-                    Wiz.adp().limbo.group.add(card);
-                    card.targetDrawScale = 0.75F;
-                    card.applyPowers();
-                    ProjectedCardField.projectedField.set(card, true);
-                    //AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(card, true, EnergyPanel.getCurrentEnergy(), false, true), false);
-                    Wiz.atb(new NewQueueCardAction(card, true, false, true));
-                    Wiz.atb(new UnlimboAction(card));
+        for (AbstractCard card : cards.group) {
+            Wiz.adp().limbo.group.add(card);
+            Wiz.atb(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    //for (AbstractCard card : cards.group) {
+
+                        card.targetDrawScale = 0.75F;
+                        card.applyPowers();
+                        ProjectedCardField.projectedField.set(card, true);
+                        //AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(card, true, EnergyPanel.getCurrentEnergy(), false, true), false);
+                        Wiz.atb(new NewQueueCardAction(card, true, false, true));
+                        Wiz.atb(new UnlimboAction(card));
+                    //}
+
+                    this.isDone = true;
                 }
-                cards.clear();
-                this.isDone = true;
-            }
-        });
+            });
+        }
+        cards.clear();
+
     }
 
     public static void addCard(AbstractCard card) {

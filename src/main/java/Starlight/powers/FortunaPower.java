@@ -34,12 +34,12 @@ public class FortunaPower extends AbstractPower implements OnGainEnergyPower {
     @Override
     public void onEnergyRecharge() {
         flash();
-        Wiz.atb(new ApplyPowerAction(owner, owner, new ProvidencePower(owner, this.amount)));
+        Wiz.att(new ApplyPowerAction(owner, owner, new ProvidencePower(owner, this.amount)));
     }
 
     @Override
     public void onGainEnergy(int amount) {
         flash();
-        Wiz.atb(new ApplyPowerAction(owner, owner, new ProvidencePower(owner, this.amount)));
+        Wiz.att(new ApplyPowerAction(owner, owner, new ProvidencePower(owner, this.amount)));
     }
 }
