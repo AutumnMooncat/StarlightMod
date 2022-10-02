@@ -166,5 +166,12 @@
       "star_shards"
     ],
     "DESCRIPTION": "Star Shards are Resonant cards which Retain and Exhaust."
+  },
+  {
+    "PROPER_NAME": "Grit",
+    "NAMES": [
+      "grit"
+    ],
+    "DESCRIPTION": "Grit is a status card that plays and Exhausts other cards."
   }
 ]

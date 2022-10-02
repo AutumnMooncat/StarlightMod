@@ -200,6 +200,10 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Deals double damage if starlight:Projected.",
     "EXTENDED_DESCRIPTION": ["Meteorga"]
   },
+  "${ModID}:Moxie": {
+    "NAME": "Moxie",
+    "DESCRIPTION": "Gain !B! Block. NL Add a starlight:Grit into your hand."
+  },
   "${ModID}:MindLink": {
     "NAME": "Mind Link DEPRECATED",
     "DESCRIPTION": "{@@}{!Starlight:IsSisters!|1=starlight:Tag_Team|0=starlight:Tag} effects trigger !M! additional time{!M!|>1=s}."
