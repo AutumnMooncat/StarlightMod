@@ -21,9 +21,9 @@ public class Fortify extends AbstractEasyCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int BLK = 6;
+    private static final int BLK = 4;
     private static final int UP_BLK = 2;
-    private static final int EFFECT = 1;
+    private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
     public Fortify() {
@@ -35,12 +35,14 @@ public class Fortify extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
-        Wiz.atb(new DrawCardAction(magicNumber));
+        for (int i = 0 ; i < magicNumber ; i++) {
+            blck();
+        }
+        //Wiz.atb(new DrawCardAction(magicNumber));
     }
 
     public void upp() {
-        upgradeBlock(UP_BLK);
+        //upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
     }
 
