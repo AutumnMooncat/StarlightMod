@@ -1,13 +1,10 @@
 package Starlight.cards;
 
-import Starlight.cardmods.ResonantMod;
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.ui.ProjectedCardManager;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
-import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.purple.EmptyFist;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -57,7 +54,8 @@ public class PowerFist extends AbstractEasyCard {
     private int countCards() {
         return (int) (Wiz.adp().drawPile.group.stream().filter(c -> c instanceof PowerFist).count() +
                 Wiz.adp().hand.group.stream().filter(c -> c instanceof PowerFist).count() +
-                Wiz.adp().discardPile.group.stream().filter(c -> c instanceof PowerFist).count());
+                Wiz.adp().discardPile.group.stream().filter(c -> c instanceof PowerFist).count() +
+                ProjectedCardManager.cards.group.stream().filter(c -> c instanceof PowerFist).count());
     }
 
     public void upp() {
