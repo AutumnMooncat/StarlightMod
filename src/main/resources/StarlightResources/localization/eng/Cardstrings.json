@@ -226,7 +226,7 @@
   },
   "${ModID}:Protect": {
     "NAME": "Protect",
-    "DESCRIPTION": "Gain !B! Block. NL starlight:Foretell the next card you play this turn.",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Foretell the next {!M!|>1=!M! }card{!M!|>1=s} you play this turn.",
     "EXTENDED_DESCRIPTION": ["Protectga"]
   },
   "${ModID}:Quake": {
@@ -257,7 +257,7 @@
   },
   "${ModID}:Shell": {
     "NAME": "Shell",
-    "DESCRIPTION": "Gain !B! Block. NL Block is not removed at the start of your next turn.",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Block is not removed at the start of your next {!M!|>1=!M! }turn{!M!|>1=s}.",
     "EXTENDED_DESCRIPTION": ["Shellga"]
   },
   "${ModID}:ShuffleStrike": {

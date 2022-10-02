@@ -20,15 +20,17 @@ public class Protect extends AbstractMagickCard {
     private static final int COST = 1;
     private static final int BLK = 7;
     private static final int UP_BLK = 3;
+    private static final int EFFECT = 1;
 
     public Protect() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
+        baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        Wiz.applyToSelf(new ForetellNextCardPower(p, 1));
+        Wiz.applyToSelf(new ForetellNextCardPower(p, magicNumber));
     }
 
     @Override

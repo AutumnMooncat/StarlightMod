@@ -24,11 +24,12 @@ public class Shell extends AbstractMagickCard {
     public Shell() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
+        baseMagicNumber = magicNumber = 1;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        Wiz.applyToSelf(new BlurPower(p, 1));
+        Wiz.applyToSelf(new BlurPower(p, magicNumber));
     }
 
     @Override
