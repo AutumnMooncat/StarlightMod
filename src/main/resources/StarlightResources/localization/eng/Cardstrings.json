@@ -217,7 +217,7 @@
     "DESCRIPTION": "{@@}Put a Void onto the top of your draw pile. NL Draw !M! cards."
   },
   "${ModID}:Posturing": {
-    "NAME": "Posturing",
+    "NAME": "Posturing DEPRECATED",
     "DESCRIPTION": "At the end of your turn, if the last card played was a... NL Skill: Gain !M! Block. NL Attack: Gain !M! Vigor."
   },
   "${ModID}:PowerFist": {

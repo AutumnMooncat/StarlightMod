@@ -1,12 +1,10 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.powers.FortunaPower;
 import Starlight.powers.PosturingPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.green.Footwork;
-import com.megacrit.cardcrawl.cards.purple.Establishment;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
