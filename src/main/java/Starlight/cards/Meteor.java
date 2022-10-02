@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.blue.MeteorStrike;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 
 import static Starlight.TheStarlightMod.makeID;
@@ -40,7 +41,7 @@ public class Meteor extends AbstractMagickCard implements OnProjectCard {
         }
         this.addToBot(new WaitAction(0.8F));
         dmg(m, AbstractGameAction.AttackEffect.NONE);
-        Wiz.applyToEnemy(m, new VulnerablePower(m, magicNumber, false));
+        Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
         projected = false;
     }
 

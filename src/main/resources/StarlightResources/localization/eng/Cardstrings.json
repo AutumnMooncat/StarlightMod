@@ -197,7 +197,7 @@
   },
   "${ModID}:Meteor": {
     "NAME": "Meteor",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Deals double damage if starlight:Projected.",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Deals double damage if starlight:Projected.",
     "EXTENDED_DESCRIPTION": ["Meteorga"]
   },
   "${ModID}:Moxie": {
