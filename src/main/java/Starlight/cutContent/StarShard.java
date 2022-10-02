@@ -1,9 +1,7 @@
-package Starlight.cards.token;
+package Starlight.cutContent;
 
-import Starlight.cardmods.ResonantMod;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.util.CardArtRoller;
-import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.purple.Collect;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

@@ -287,11 +287,11 @@
     "EXTENDED_DESCRIPTION": ["Stara"]
   },
   "${ModID}:StarChart": {
-    "NAME": "Star Chart",
+    "NAME": "Star Chart DEPRECATED",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Add !M! starlight:Star_Shard{!M!|>1=s} into your hand."
   },
   "${ModID}:StarShard": {
-    "NAME": "Star Shard",
+    "NAME": "Star Shard DEPRECATED",
     "DESCRIPTION": "Retain. NL Gain !B! Block. NL Deal !D! damage. NL Exhaust."
   },
   "${ModID}:Stockpile": {
