@@ -57,7 +57,7 @@ public class ProjectCopyInHandAction extends AbstractGameAction {
                 this.addToTop(this.followUpAction);
             }
         } else {
-            Wiz.att(new BetterSelectCardsCenteredAction(copies, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], cards -> {
+            Wiz.att(new BetterSelectCardsCenteredAction(copies, this.amount, amount == 1 ? TEXT[4] : TEXT[5] + amount + TEXT[6], cards -> {
                 for (AbstractCard c : cards) {
                     if (AbstractDungeon.player.hoveredCard == c) {
                         AbstractDungeon.player.releaseCard();

@@ -27,7 +27,9 @@
     "TEXT": [
       "Project",
       "Choose a card to Project.",
-      "Choose "," cards to Project."
+      "Choose "," cards to Project.",
+      "Choose a card to Project a copy of.",
+      "Choose "," cards to Project copies of."
     ]
   },
   "${ModID}:Foretell": {
