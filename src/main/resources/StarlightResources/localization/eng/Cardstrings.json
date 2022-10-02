@@ -283,7 +283,7 @@
   },
   "${ModID}:Star": {
     "NAME": "Star",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1s} in your hand.",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1=s} in your hand.",
     "EXTENDED_DESCRIPTION": ["Stara"]
   },
   "${ModID}:StarChart": {
