@@ -1,8 +1,8 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.powers.ThoughtbloomPower;
 import Starlight.powers.TwinFormPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.cards.blue.EchoForm;
@@ -41,5 +41,10 @@ public class TwinForm extends AbstractEasyCard {
     @Override
     public String cardArtCopy() {
         return EchoForm.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.10f, 0.5f, 0.5f, 0.5f, false);
     }
 }
