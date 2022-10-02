@@ -50,7 +50,8 @@
     "TEXT": [
       "Exhaust",
       "Choose a card to Exhaust.",
-      "Choose "," cards to Exhaust."
+      "Choose "," cards to Exhaust.",
+      "Choose up to "," card to Exhaust."," cards to Exhaust."
     ]
   },
   "${ModID}:AbilityOption": {
