@@ -6,6 +6,7 @@ import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.red.Intimidate;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -38,11 +39,11 @@ public class Grit extends AbstractEasyCard {
 
     @Override
     public String cardArtCopy() {
-        return VoidCard.ID;
+        return Intimidate.ID;
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.8f, 0.5f, 0.5f, 0.5f, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.99f, 0.5f, 0.5f, 0.5f, false);
     }
 }
