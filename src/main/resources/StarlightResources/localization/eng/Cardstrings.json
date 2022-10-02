@@ -55,7 +55,7 @@
   },
   "${ModID}:Blazing": {
     "NAME": "Blazing",
-    "DESCRIPTION": "Exhaust a card. NL Gain starlight:SP equal to !M! times its cost."
+    "DESCRIPTION": "Exhaust up to !M! cards in your hand. NL Gain !M! starlight:SP for each card Exhausted this way."
   },
   "${ModID}:Blessing": {
     "NAME": "Blessing",
