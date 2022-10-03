@@ -1,4 +1,4 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.cards.colorless.Chrysalis;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BlurPower;
-import com.megacrit.cardcrawl.powers.ReboundPower;
 
 import static Starlight.TheStarlightMod.makeID;
 

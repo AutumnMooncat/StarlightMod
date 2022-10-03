@@ -260,7 +260,7 @@
     "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
   },
   "${ModID}:Shell": {
-    "NAME": "Shell",
+    "NAME": "Shell DEPRECATED",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Block is not removed at the start of your next {!M!|>1=!M! }turn{!M!|>1=s}.",
     "EXTENDED_DESCRIPTION": ["Shellga"]
   },
