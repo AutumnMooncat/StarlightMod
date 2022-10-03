@@ -29,7 +29,7 @@ public class Stockpile extends AbstractEasyCard {
 
     public Stockpile() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseBlock = block = BLK;
+        //baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
     }
 
@@ -38,7 +38,7 @@ public class Stockpile extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBlock(UP_BLK);
+        //upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
     }
 
