@@ -184,9 +184,9 @@
     "EXTENDED_DESCRIPTION": ["Imperilga"]
   },
   "${ModID}:Incantation": {
-    "NAME": "Incantation DEPRECATED",
-    "DESCRIPTION": "Whenever you Scry, gain !M! starlight:SP.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Scry, gain !M! starlight:SP."
+    "NAME": "Incantation",
+    "DESCRIPTION": "Whenever you starlight:Foretell, gain !M! starlight:SP.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you starlight:Foretell, gain !M! starlight:SP."
   },
   "${ModID}:MagickConduit": {
     "NAME": "Magick Conduit",

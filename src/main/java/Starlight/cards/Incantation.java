@@ -1,4 +1,4 @@
-package Starlight.cutContent;
+package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.powers.IncantationPower;
@@ -16,8 +16,8 @@ public class Incantation extends AbstractEasyCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 0;
-    private static final int EFFECT = 4;
+    private static final int COST = 1;
+    private static final int EFFECT = 6;
     private static final int UP_EFFECT = 2;
 
     public Incantation() {

@@ -39,7 +39,7 @@
   },
   "${ModID}:IncantationPower": {
     "NAME": "Incantation",
-    "DESCRIPTIONS": ["Whenever you #yScry, gain #b"," #ySpell #yPower."]
+    "DESCRIPTIONS": ["Whenever you #yForetell, gain #b"," #ySpell #yPower."]
   },
   "${ModID}:ForetellNextCardPower": {
     "NAME": "Foretelling",
