@@ -62,7 +62,7 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
                 copyMap.put(copy, c);
                 selection.add(copy);
             }
-            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], cards -> {
+            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], true, cards -> {
                 for (AbstractCard copy : cards) {
                     AbstractCard c = copyMap.get(copy);
                     if (AbstractDungeon.player.hoveredCard == c) {

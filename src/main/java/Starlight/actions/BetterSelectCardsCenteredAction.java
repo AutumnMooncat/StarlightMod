@@ -19,6 +19,7 @@ public class BetterSelectCardsCenteredAction
     private String text;
     private boolean anyNumber;
     private CardGroup selectGroup;
+    private boolean forceSelect;
 
     /**
      * @param group         - ArrayList of cards to filter and select from.
@@ -69,6 +70,11 @@ public class BetterSelectCardsCenteredAction
         this(group, amount, textForSelect, false, c -> true, callback);
     }
 
+    public BetterSelectCardsCenteredAction(ArrayList<AbstractCard> group, int amount, String textForSelect, boolean forceSelect, Consumer<List<AbstractCard>> callback) {
+        this(group, amount, textForSelect, false, c -> true, callback);
+        this.forceSelect = forceSelect;
+    }
+
     @Override
     public void update() {
         if (this.duration == this.startDuration) {
@@ -77,7 +83,7 @@ public class BetterSelectCardsCenteredAction
                 return;
             }
 
-            if (selectGroup.size() <= amount && !anyNumber) {
+            if (!forceSelect && selectGroup.size() <= amount && !anyNumber) {
                 callback.accept(selectGroup.group);
                 isDone = true;
                 return;
