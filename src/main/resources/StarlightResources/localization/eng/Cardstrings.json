@@ -250,6 +250,11 @@
     "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage back.",
     "EXTENDED_DESCRIPTION": ["Reflectga"]
   },
+  "${ModID}:Refresh": {
+    "NAME": "Refresh DEPRECATED",
+    "DESCRIPTION": "starlight:Resonant !Starlight:M2!. NL Whenever you play a card, gain [E].",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
+  },
   "${ModID}:Resolve": {
     "NAME": "Resolve",
     "DESCRIPTION": "{@@}starlight:Foretell the next {!M!|>1=!M! }card{!M!|>1=s} you play this turn."
