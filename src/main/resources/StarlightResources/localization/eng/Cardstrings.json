@@ -204,7 +204,7 @@
     "EXTENDED_DESCRIPTION": ["Meteorga"]
   },
   "${ModID}:Moxie": {
-    "NAME": "Moxie",
+    "NAME": "Moxie DEPRECATED",
     "DESCRIPTION": "Gain !B! Block. NL Add a starlight:Grit into your hand."
   },
   "${ModID}:MindLink": {
