@@ -1,5 +1,6 @@
 package Starlight.cards;
 
+import Starlight.actions.ForetellAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
@@ -20,25 +21,26 @@ public class Augury extends AbstractEasyCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 7;
-    private static final int UP_DMG = 1;
+    private static final int DMG = 8;
+    private static final int UP_DMG = 3;
     private static final int DRAW = 1;
     private static final int UP_DRAW = 1;
 
     public Augury() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = DRAW;
+        //baseMagicNumber = magicNumber = DRAW;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SMASH);
-        Wiz.atb(new DrawCardAction(magicNumber, new AbstractGameAction() {
+        Wiz.atb(new ForetellAction(p.discardPile, 1, c -> true, new AbstractGameAction() {
             @Override
             public void update() {
-                for (AbstractCard c : DrawCardAction.drawnCards) {
-                    if (c.canUpgrade()) {
-                        c.upgrade();
+                for (AbstractCard card : ForetellAction.foretoldCards) {
+                    if (card.canUpgrade()) {
+                        card.upgrade();
+                        break;
                     }
                 }
                 this.isDone = true;
@@ -48,7 +50,7 @@ public class Augury extends AbstractEasyCard {
 
     public void upp() {
         upgradeDamage(UP_DMG);
-        upgradeMagicNumber(UP_DRAW);
+        //upgradeMagicNumber(UP_DRAW);
     }
 
     @Override

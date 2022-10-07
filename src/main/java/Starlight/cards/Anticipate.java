@@ -25,8 +25,8 @@ public class Anticipate extends AbstractEasyCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int EFFECT = 5;
-    private static final int UP_EFFECT = 2;
+    private static final int EFFECT = 2;
+    private static final int UP_EFFECT = 1;
 
     public Anticipate() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -35,14 +35,12 @@ public class Anticipate extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new SpellPower(p, magicNumber));
-        Wiz.atb(new ForetellAction(p.discardPile, 1, c -> true, new AbstractGameAction() {
+        Wiz.atb(new DrawCardAction(magicNumber, new AbstractGameAction() {
             @Override
             public void update() {
-                for (AbstractCard card : ForetellAction.foretoldCards) {
-                    if (/*card instanceof AbstractMagickCard &&*/ card.canUpgrade()) {
-                        card.upgrade();
-                        //Wiz.applyToSelfTop(new SpellPower(p, magicNumber));
-                        break;
+                for (AbstractCard c : DrawCardAction.drawnCards) {
+                    if (c.canUpgrade()) {
+                        c.upgrade();
                     }
                 }
                 this.isDone = true;
