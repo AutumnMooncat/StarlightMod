@@ -16,7 +16,7 @@
   },
   "${ModID}:Anticipate": {
     "NAME": "Anticipate",
-    "DESCRIPTION": "Gain !M! starlight:SP. NL starlight:Foretell and Upgrade a card in your discard pile."
+    "DESCRIPTION": "{@@}Gain !M! starlight:SP. NL Draw and Upgrade !M! card{!M!|>1=s}."
   },
   "${ModID}:Ascend": {
     "NAME": "Ascend",
@@ -33,7 +33,7 @@
   },
   "${ModID}:Augury": {
     "NAME": "Augury",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw and Upgrade !M! card{!M!|>1=s}."
+    "DESCRIPTION": "Deal !D! damage.  NL starlight:Foretell and Upgrade a card in your discard pile."
   },
   "${ModID}:Balance": {
     "NAME": "Balance",
@@ -80,7 +80,8 @@
   },
   "${ModID}:Culminate": {
     "NAME": "Culminate",
-    "DESCRIPTION": "Increase the damage of all Attacks in your hand by !M! this combat."
+    "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Attacks deal !M! additional damage.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:Curse": {
     "NAME": "Curse",
@@ -138,7 +139,8 @@
   },
   "${ModID}:Fortify": {
     "NAME": "Fortify",
-    "DESCRIPTION": "Retain. NL Gain !B! Block !M! times."
+    "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Increases Block gained from cards by !M!.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:Fortuna": {
     "NAME": "Fortuna",
@@ -187,8 +189,9 @@
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Scry, gain !M! starlight:SP."
   },
   "${ModID}:MagickConduit": {
-    "NAME": "Magick Conduit DEPRECATED",
-    "DESCRIPTION": "{@@}Gain !M! starlight:SP for each starlight:Magick card in your draw pile.{!Location!|0= (Gain !Starlight:M2! starlight:SP)} NL starlight:{!Starlight:IsSisters!|1=Tag_Team|0=Attack_Tag}: Gain [E]."
+    "NAME": "Magick Conduit",
+    "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Increase the starlight:Secondary effects of starlight:Magick cards by !M!.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:ManaConversion": {
     "NAME": "Mana Conversion",
@@ -246,6 +249,10 @@
     "NAME": "Reflect",
     "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage back.",
     "EXTENDED_DESCRIPTION": ["Reflectga"]
+  },
+  "${ModID}:Resolve": {
+    "NAME": "Resolve",
+    "DESCRIPTION": "{@@}starlight:Foretell the next {!M!|>1=!M! }card{!M!|>1=s} you play this turn."
   },
   "${ModID}:RejectFate": {
     "NAME": "Reject Fate DEPRECATED",
