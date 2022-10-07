@@ -270,7 +270,7 @@
   },
   "${ModID}:Skyfall": {
     "NAME": "Skyfall",
-    "DESCRIPTION": "{@@}starlight:Project the top card of your draw pile. NL Deal !D! damage for each starlight:Projected card."
+    "DESCRIPTION": "{@@}starlight:Project the top playable card of your draw pile. NL Deal !D! damage for each starlight:Projected card."
   },
   "${ModID}:SpellOptimizer": {
     "NAME": "Spell Optimizer",

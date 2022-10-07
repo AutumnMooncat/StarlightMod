@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class ProjectTopCardAction extends AbstractGameAction {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("Project")).TEXT;
@@ -27,26 +29,26 @@ public class ProjectTopCardAction extends AbstractGameAction {
     @Override
     public void update() {
         projectedCards.clear();
-        if (Wiz.adp().drawPile.isEmpty()) {
+        ArrayList<AbstractCard> validCards = Wiz.adp().drawPile.group.stream().filter(c -> c.cost != -2).collect(Collectors.toCollection(ArrayList::new));
+        if (validCards.isEmpty()) {
             if (followUpAction != null) {
                 Wiz.att(followUpAction);
             }
             this.isDone = true;
             return;
         }
-        if (amount > Wiz.adp().drawPile.size()) {
-            amount = Wiz.adp().drawPile.size();
+        if (amount > validCards.size()) {
+            amount = validCards.size();
         }
+        Collections.reverse(validCards);
         ArrayList<AbstractCard> cards = new ArrayList<>();
         for (int i = 0 ; i < amount ; i++) {
-            cards.add(Wiz.adp().drawPile.getNCardFromTop(i));
+            cards.add(validCards.get(i));
         }
         for (AbstractCard c : cards) {
-            if (c.cost != -2) {
-                ProjectedCardManager.addCard(c);
-                Wiz.adp().drawPile.removeCard(c);
-                projectedCards.add(c);
-            }
+            ProjectedCardManager.addCard(c);
+            Wiz.adp().drawPile.removeCard(c);
+            projectedCards.add(c);
         }
         if (followUpAction != null) {
             Wiz.att(followUpAction);
