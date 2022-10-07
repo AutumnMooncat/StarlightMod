@@ -155,7 +155,7 @@
       "resonant",
       "envisioned"
     ],
-    "DESCRIPTION": "Resonant cards deal #b2 additional damage and gain #b2 additional Block for each other Resonant card in your hand."
+    "DESCRIPTION": "Resonant cards are unplayable Retaining cards that confer an effect while in hand. When their uses hit 0, they are automatically discarded and reset."
   },
   {
     "PROPER_NAME": "Star Shard",
@@ -173,5 +173,12 @@
       "grit"
     ],
     "DESCRIPTION": "Grit is a status card that plays and Exhausts other cards."
+  },
+  {
+    "PROPER_NAME": "Secondary",
+    "NAMES": [
+      "secondary"
+    ],
+    "DESCRIPTION": "Secondary effects are the non-damage and non-Block effects of a card."
   }
 ]
