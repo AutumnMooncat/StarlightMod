@@ -1,4 +1,4 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.ForetellNextCardPower;
@@ -6,7 +6,6 @@ import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.red.Entrench;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ReboundPower;
 
 import static Starlight.TheStarlightMod.makeID;
 

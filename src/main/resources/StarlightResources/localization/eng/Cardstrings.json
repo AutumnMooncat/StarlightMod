@@ -229,7 +229,7 @@
     "DESCRIPTION": "{@@}Gain !B! Block. NL Gain !M! starlight:SP.{!Starlight:IsSisters!|1= NL starlight:Swap.}"
   },
   "${ModID}:Protect": {
-    "NAME": "Protect",
+    "NAME": "Protect DEPRECATED",
     "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Foretell the next {!M!|>1=!M! }card{!M!|>1=s} you play this turn.",
     "EXTENDED_DESCRIPTION": ["Protectga"]
   },
