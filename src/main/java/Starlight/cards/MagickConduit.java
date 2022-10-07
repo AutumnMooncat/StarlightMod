@@ -22,7 +22,7 @@ public class MagickConduit extends AbstractEasyCard implements InHandCard {
     private static final int COST = -2;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 3;
-    private static final int USES = 2;
+    private static final int USES = 3;
     private static final int UP_USES = 1;
 
     public MagickConduit() {
