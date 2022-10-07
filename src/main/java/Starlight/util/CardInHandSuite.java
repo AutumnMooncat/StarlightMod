@@ -98,7 +98,7 @@ public class CardInHandSuite implements
     }
 
     public static float onModifyBlock(float block, AbstractCard cardAffected) {
-        for (AbstractCard card: Wiz.adp().hand.group) {
+        for (AbstractCard card : Wiz.adp().hand.group) {
             if (card instanceof InHandCard) {
                 block = ((InHandCard) card).onModifyBlock(block, cardAffected);
             }
@@ -107,12 +107,21 @@ public class CardInHandSuite implements
     }
 
     public static float onModifyBlockFinal(float block, AbstractCard cardAffected) {
-        for (AbstractCard card: Wiz.adp().hand.group) {
+        for (AbstractCard card : Wiz.adp().hand.group) {
             if (card instanceof InHandCard) {
                 block = ((InHandCard) card).onModifyBlockFinal(block, cardAffected);
             }
         }
         return block;
+    }
+
+    public static float modifyMagicMagic(float magic, AbstractCard cardAffected) {
+        for (AbstractCard card : Wiz.adp().hand.group) {
+            if (card instanceof InHandCard) {
+                magic = ((InHandCard) card).modifyMagicMagic(magic, cardAffected);
+            }
+        }
+        return magic;
     }
 
     @SpirePatch(clz = AbstractCard.class, method = "calculateCardDamage")

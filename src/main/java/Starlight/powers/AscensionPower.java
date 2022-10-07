@@ -2,6 +2,7 @@ package Starlight.powers;
 
 import Starlight.TheStarlightMod;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.powers.interfaces.MagicMagicModPower;
 import Starlight.util.LoopingSoundManager;
 import Starlight.util.Wiz;
 import Starlight.vfx.AscensionAuraEffect;
@@ -27,7 +28,7 @@ import com.megacrit.cardcrawl.vfx.combat.SilentGainPowerEffect;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class AscensionPower extends AbstractPower {
+public class AscensionPower extends AbstractPower implements MagicMagicModPower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(AscensionPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -142,5 +143,10 @@ public class AscensionPower extends AbstractPower {
             AbstractDungeon.effectList.add(new UncommonPotionParticleEffect(owner.hb.cX+xOff, owner.hb.cY+yOff));
             this.particleTimer = PARTICLE_INTERVAL;
         }
+    }
+
+    @Override
+    public float modifyMagicMagic(float magic, AbstractCard magicCard) {
+        return magic * 2;
     }
 }

@@ -22,4 +22,7 @@ public interface InHandCard {
     default float onModifyBlockFinal(float blk, AbstractCard card) {
         return blk;
     }
+    default float modifyMagicMagic(float magic, AbstractCard card) {
+        return magic;
+    }
 }
