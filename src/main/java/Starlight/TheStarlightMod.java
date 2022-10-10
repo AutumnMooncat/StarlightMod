@@ -48,7 +48,11 @@ public class TheStarlightMod implements
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
         PostInitializeSubscriber,
-        StartGameSubscriber, PostDungeonInitializeSubscriber, StartActSubscriber, PostDeathSubscriber, PostBattleSubscriber {
+        StartGameSubscriber,
+        PostDungeonInitializeSubscriber,
+        StartActSubscriber,
+        PostDeathSubscriber,
+        PostBattleSubscriber {
 
     public static final String modID = "Starlight";
 
