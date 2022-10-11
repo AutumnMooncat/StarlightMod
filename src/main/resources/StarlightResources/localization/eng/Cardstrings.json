@@ -259,6 +259,10 @@
     "NAME": "Resolve",
     "DESCRIPTION": "{@@}starlight:Foretell the next {!M!|>1=!M! }card{!M!|>1=s} you play this turn."
   },
+  "${ModID}:Reverse": {
+    "NAME": "Reverse",
+    "DESCRIPTION": "The next {!M!|>1=!M! }time{!M!|>1=s} this target attempts to Block, it instead loses that much HP.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
+  },
   "${ModID}:RejectFate": {
     "NAME": "Reject Fate DEPRECATED",
     "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Scry !M!."

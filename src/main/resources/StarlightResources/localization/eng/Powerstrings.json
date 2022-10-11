@@ -109,6 +109,11 @@
       " turn.",
       " turns."]
   },
+  "${ModID}:ReversePower": {
+    "NAME": "Reverse",
+    "DESCRIPTIONS": ["The next time this creature attempts to #yBlock, it instead loses that much HP.",
+      "Your next #b", " times this creature attempts to #yBlock, it instead loses that much HP."]
+  },
   "${ModID}:FiredUpPower": {
     "NAME": "Fired Up!",
     "DESCRIPTIONS": ["#yPrimrose's Attacks deal #b"," additional damage per Attack played this turn.","#r(Inactive) NL "]
