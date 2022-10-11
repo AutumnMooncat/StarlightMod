@@ -1,17 +1,13 @@
 package Starlight.cards;
 
-import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.interfaces.TagTeamCard;
-import Starlight.characters.StarlightSisters;
-import Starlight.powers.SpellPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.blue.Equilibrium;
+import com.megacrit.cardcrawl.cards.red.Entrench;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -23,9 +19,9 @@ public class Supply extends AbstractEasyCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int EFFECT = 2;
+    private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
-    private static final int BLK = 5;
+    private static final int BLK = 7;
     private static final int UP_BLK = 3;
 
     public Supply() {
@@ -37,11 +33,7 @@ public class Supply extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         Wiz.atb(new DrawCardAction(magicNumber));
-        /*Wiz.applyToSelf(new SpellPower(p, magicNumber));
-        Wiz.applyToSelf(new VigorPower(p, magicNumber));*/
-        if (p instanceof StarlightSisters) {
-            Wiz.atb(new SwapAction());
-        }
+        Wiz.applyToSelf(new DrawCardNextTurnPower(p, magicNumber));
     }
 
     public void upp() {
@@ -51,7 +43,7 @@ public class Supply extends AbstractEasyCard {
 
     @Override
     public String cardArtCopy() {
-        return Equilibrium.ID;
+        return Entrench.ID;
     }
 
     @Override

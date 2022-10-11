@@ -320,7 +320,7 @@
   },
   "${ModID}:Supply": {
     "NAME": "Resupply",
-    "DESCRIPTION": "Gain !B! Block. NL Draw !M! cards.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Next turn, draw !M! additional card{!M!|>1=s}{@@}."
   },
   "${ModID}:Surmount": {
     "NAME": "Surmount",
