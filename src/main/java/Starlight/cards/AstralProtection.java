@@ -32,8 +32,8 @@ public class AstralProtection extends AbstractEasyCard {
     }
 
     public void upp() {
-        //upgradeMagicNumber(UP_EFFECT);
-        upgradeBaseCost(UP_COST);
+        upgradeMagicNumber(UP_EFFECT);
+        //upgradeBaseCost(UP_COST);
     }
 
     @Override
