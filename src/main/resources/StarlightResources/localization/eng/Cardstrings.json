@@ -20,7 +20,8 @@
   },
   "${ModID}:Ascend": {
     "NAME": "Ascend",
-    "DESCRIPTION": "starlight:Project 1 card in your hand. Gain [E] equal to its cost."
+    "DESCRIPTION": "starlight:Project an Attack card in your hand for the rest of combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "starlight:Project an Attack or Skill card in your hand for the rest of combat. NL Exhaust."
   },
   "${ModID}:Astra": {
     "NAME": "Astra",
