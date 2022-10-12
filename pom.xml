@@ -4,7 +4,7 @@
     <groupId>Info</groupId>
 
     <artifactId>Starlight</artifactId>
-    <version>0.2.0</version>
+    <version>0.3.0</version>
     <name>The Starlight Sisters</name>
     <description>Adds a twin magi to the Spire</description>
     <!-- Change the above for mod information. -->
