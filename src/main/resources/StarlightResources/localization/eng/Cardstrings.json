@@ -253,7 +253,7 @@
   },
   "${ModID}:RealityPassage": {
     "NAME": "Reality Passage",
-    "DESCRIPTION": "{@@}starlight:Foretell !M! card{!M!|>1=s} in your discard pile. NL Gain 1 starlight:Providence for each card starlight:Foretold this combat."
+    "DESCRIPTION": "Gain !M! starlight:Providence. NL starlight:Foretell any number of cards in your discard pile. NL Exhaust."
   },
   "${ModID}:Reflect": {
     "NAME": "Reflect",

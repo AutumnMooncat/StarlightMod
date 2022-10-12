@@ -25,25 +25,18 @@ public class RealityPassage extends AbstractEasyCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 0;
-    private static final int EFFECT = 1;
-    private static final int UP_EFFECT = 1;
+    private static final int EFFECT = 3;
+    private static final int UP_EFFECT = 2;
 
     public RealityPassage() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new ForetellAction(p.discardPile, magicNumber));
-        Wiz.atb(new AbstractGameAction() {
-            @Override
-            public void update() {
-                if (CardCounterPatches.cardsForetoldThisCombat > 0) {
-                    Wiz.applyToSelfTop(new ProvidencePower(p, CardCounterPatches.cardsForetoldThisCombat));
-                }
-                this.isDone = true;
-            }
-        });
+        Wiz.applyToSelf(new ProvidencePower(p, magicNumber));
+        Wiz.atb(new ForetellAction(p.discardPile, p.discardPile.size(), true, c -> true, null));
     }
 
     public void upp() {
