@@ -89,7 +89,7 @@
   },
   "${ModID}:Dark": {
     "NAME": "Dark",
-    "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain [E] [E].",
+    "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}",
     "EXTENDED_DESCRIPTION": ["Darkra"]
   },
   "${ModID}:Defend": {
@@ -251,9 +251,8 @@
     "EXTENDED_DESCRIPTION": ["Reflectga"]
   },
   "${ModID}:Refresh": {
-    "NAME": "Refresh DEPRECATED",
-    "DESCRIPTION": "starlight:Resonant !Starlight:M2!. NL Whenever you play a card, gain [E].",
-    "EXTENDED_DESCRIPTION": ["I can't play this card."]
+    "NAME": "Refresh",
+    "DESCRIPTION": "Gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} for every !Starlight:M2! starlight:SP you have.{@@}"
   },
   "${ModID}:Resolve": {
     "NAME": "Resolve",
