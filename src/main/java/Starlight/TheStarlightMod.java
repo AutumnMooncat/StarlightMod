@@ -14,6 +14,7 @@ import Starlight.ui.AbilityButton;
 import Starlight.ui.EnvisionedCardManager;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.AbilityManager;
+import Starlight.util.AugmentHelper;
 import Starlight.util.LoopingSoundManager;
 import Starlight.util.Wiz;
 import basemod.AutoAdd;
@@ -26,6 +27,9 @@ import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBloc
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.mod.widepotions.WidePotionsMod;
+import com.evacipated.cardcrawl.modthespire.Loader;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -169,6 +173,8 @@ public class TheStarlightMod implements
     public void receiveEditStrings() {
         BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/Cardstrings.json");
 
+        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/Augmentstrings.json");
+
         BaseMod.loadCustomStringsFile(RelicStrings.class, modID + "Resources/localization/eng/Relicstrings.json");
 
         BaseMod.loadCustomStringsFile(CharacterStrings.class, modID + "Resources/localization/eng/Charstrings.json");
@@ -203,6 +209,28 @@ public class TheStarlightMod implements
 
     @Override
     public void receivePostInitialize() {
+
+        if (Loader.isModLoaded("widepotions")) {
+
+
+            //Simple Potions
+
+            //WidePotionsMod.whitelistSimplePotion(BoosterPotion.POTION_ID);
+            //WidePotionsMod.whitelistSimplePotion(LockingPotion.POTION_ID);
+            //WidePotionsMod.whitelistSimplePotion(NullPotion.POTION_ID);
+            //WidePotionsMod.whitelistSimplePotion(OverclockPotion.POTION_ID);
+            //WidePotionsMod.whitelistSimplePotion(SpikyPotion.POTION_ID);
+
+            //Complex Potions
+
+            //WidePotionsMod.whitelistComplexPotion(MyOtherPotion.POTION_ID, new WideMyOtherPotion());
+        }
+
+        if (Loader.isModLoaded("CardAugments")) {
+            AugmentHelper.register();
+        }
+
+
         DynamicTextBlocks.registerCustomCheck(makeID("IsSisters"), card -> {
             if (!CardCrawlGame.isInARun() || Wiz.adp() instanceof StarlightSisters) {
                 return 1;

@@ -1,0 +1,5 @@
+{
+  "${ModID}:Example": {
+    "TEXT": ["Prefix", "Suffix", "Description stuff"]
+  }
+}
