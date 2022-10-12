@@ -74,6 +74,10 @@
     "NAME": "Bulwark DEPRECATED",
     "DESCRIPTION": "Gain !M! starlight:Providence. NL Apply !Starlight:M2! Weak."
   },
+  "${ModID}:Conserve": {
+    "NAME": "Conserve",
+    "DESCRIPTION": "Whenever you Exhaust a card, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}"
+  },
   "${ModID}:CriticalHit": {
     "NAME": "Critical Hit",
     "DESCRIPTION": "Deal !D! damage. NL Damage modification affects this card twice."
@@ -240,6 +244,11 @@
     "NAME": "Quake",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Reduce this card's cost by !M! this combat.",
     "EXTENDED_DESCRIPTION": ["Quakra"]
+  },
+  "${ModID}:Quicksilver": {
+    "NAME": "Quicksilver",
+    "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Whenever you play an Attack, draw !M! card{!M!|>1=s}.{@@}",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${ModID}:RealityPassage": {
     "NAME": "Reality Passage",

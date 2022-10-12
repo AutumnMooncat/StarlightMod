@@ -103,6 +103,10 @@
     "NAME": "Void Wanderer",
     "DESCRIPTIONS": ["Whenever you #yExhaust a card, apply #b"," #yJinx to ALL enemies."]
   },
+  "${ModID}:ConservePower": {
+    "NAME": "Conserve",
+    "DESCRIPTIONS": ["Whenever you #yExhaust a card, gain #b"," [E] ."]
+  },
   "${ModID}:AscensionPower": {
     "NAME": "Ascension",
     "DESCRIPTIONS": ["#yMagick cards are twice as effective for #b",
