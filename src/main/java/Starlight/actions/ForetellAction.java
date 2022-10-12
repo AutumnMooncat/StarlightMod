@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.function.Predicate;
 
@@ -23,6 +24,7 @@ public class ForetellAction extends AbstractGameAction {
     private final CardGroup cardGroup;
     private final Predicate<AbstractCard> filter;
     private final AbstractGameAction followUpAction;
+    private final boolean anyNumber;
     public static final ArrayList<AbstractCard> foretoldCards = new ArrayList<>();
 
     public ForetellAction(CardGroup cardGroup) {
@@ -38,12 +40,17 @@ public class ForetellAction extends AbstractGameAction {
     }
 
     public ForetellAction(CardGroup cardGroup, int amount, Predicate<AbstractCard> filter, AbstractGameAction followUpAction) {
+        this(cardGroup, amount, false, filter, followUpAction);
+    }
+
+    public ForetellAction(CardGroup cardGroup, int amount, boolean anyNumber, Predicate<AbstractCard> filter, AbstractGameAction followUpAction) {
         this.cardGroup = cardGroup;
         this.amount = amount;
         this.filter = filter;
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = DUR;
         this.followUpAction = followUpAction;
+        this.anyNumber = anyNumber;
     }
 
     @Override
@@ -63,7 +70,8 @@ public class ForetellAction extends AbstractGameAction {
             return;
         }
 
-        if (amount >= validCards.size()) {
+        if (amount >= validCards.size() && !anyNumber) {
+            Collections.reverse(validCards);
             for (AbstractCard card : validCards) {
                 cardGroup.removeCard(card);
                 cardGroup.moveToDeck(card, false);
@@ -83,7 +91,8 @@ public class ForetellAction extends AbstractGameAction {
                 copyMap.put(copy, c);
                 selection.add(copy);
             }
-            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], cards -> {
+            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyNumber, c -> true, cards -> {
+                Collections.reverse(cards);
                 for (AbstractCard copy : cards) {
                     AbstractCard c = copyMap.get(copy);
                     cardGroup.removeCard(c);
