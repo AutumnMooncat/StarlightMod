@@ -1,5 +1,20 @@
 {
   "${ModID}:Example": {
     "TEXT": ["Prefix", "Suffix", "Description stuff"]
+  },
+  "${ModID}:ProjectMod": {
+    "TEXT": ["Projected ", "", " NL starlight:Project %d card in your hand."]
+  },
+  "${ModID}:ForetellMod": {
+    "TEXT": ["", " and Tell", " NL starlight:Foretell %d card in your discard pile."]
+  },
+  "${ModID}:SPMod": {
+    "TEXT": ["SP ", "", " NL Gain %d starlight:SP."]
+  },
+  "${ModID}:CleanseMod": {
+    "TEXT": ["Cleansing ", "", " NL Remove %d of your debuffs."]
+  },
+  "${ModID}:JinxMod": {
+    "TEXT": ["Hexing ", "", " NL Apply %d starlight:Jinx."]
   }
 }
