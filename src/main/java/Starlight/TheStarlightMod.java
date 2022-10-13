@@ -8,17 +8,16 @@ import Starlight.cards.interfaces.PrimroseCard;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.patches.CardCounterPatches;
-import Starlight.powers.CrumplePower;
+import Starlight.powers.*;
 import Starlight.relics.AbstractEasyRelic;
 import Starlight.ui.AbilityButton;
 import Starlight.ui.EnvisionedCardManager;
 import Starlight.ui.ProjectedCardManager;
-import Starlight.util.AbilityManager;
-import Starlight.util.AugmentHelper;
-import Starlight.util.LoopingSoundManager;
-import Starlight.util.Wiz;
+import Starlight.util.*;
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
 import basemod.abstracts.CustomSavable;
 import basemod.helpers.CardBorderGlowManager;
 import basemod.helpers.RelicType;
@@ -26,8 +25,8 @@ import basemod.interfaces.*;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBlocks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
-import com.evacipated.cardcrawl.mod.widepotions.WidePotionsMod;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -37,11 +36,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Properties;
 
 @SuppressWarnings({"unused", "WeakerAccess"})
 @SpireInitializer
@@ -81,6 +85,19 @@ public class TheStarlightMod implements
     private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
     private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
 
+    public static final String BADGE_IMAGE = modID + "Resources/images/Badge.png";
+
+    public static UIStrings uiStrings;
+    public static String[] TEXT;
+    public static String[] EXTRA_TEXT;
+    private static final String AUTHOR = "Mistress Alison";
+
+    // Mod-settings settings. This is if you want an on/off savable button
+    public static SpireConfig starlightConfig;
+
+    public static final String ENABLE_CHIMERA_CROSSOVER = "enableChimeraCrossover";
+    public static boolean enableChimeraCrossover = true; // The boolean we'll be setting on/off (true/false)
+
     public static final String ENABLE_CARD_BATTLE_TALK_SETTING = "enableCardBattleTalk";
     public static boolean enableCardBattleTalkEffect = false;
 
@@ -109,6 +126,29 @@ public class TheStarlightMod implements
                 ATTACK_S_ART, SKILL_S_ART, POWER_S_ART, CARD_ENERGY_S,
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
                 CARD_ENERGY_L, TEXT_ENERGY);
+
+        Properties starlightDefaultSettings = new Properties();
+        starlightDefaultSettings.setProperty(ENABLE_CHIMERA_CROSSOVER, Boolean.toString(enableChimeraCrossover));
+
+        starlightDefaultSettings.setProperty(ENABLE_CARD_BATTLE_TALK_SETTING, Boolean.toString(enableCardBattleTalkEffect));
+        starlightDefaultSettings.setProperty(CARD_BATTLE_TALK_PROBABILITY_SETTING, String.valueOf(cardTalkProbability));
+        starlightDefaultSettings.setProperty(ENABLE_DAMAGED_BATTLE_TALK_SETTING, Boolean.toString(enableDamagedBattleTalkEffect));
+        starlightDefaultSettings.setProperty(DAMAGED_BATTLE_TALK_PROBABILITY_SETTING, String.valueOf(damagedTalkProbability));
+        starlightDefaultSettings.setProperty(ENABLE_PRE_BATTLE_TALK_SETTING, Boolean.toString(enablePreBattleTalkEffect));
+        starlightDefaultSettings.setProperty(PRE_BATTLE_TALK_PROBABILITY_SETTING, String.valueOf(preTalkProbability));
+        try {
+            starlightConfig = new SpireConfig("StarlightMod", "StarlightModConfig", starlightDefaultSettings);
+            enableChimeraCrossover = starlightConfig.getBool(ENABLE_CHIMERA_CROSSOVER);
+
+            enableCardBattleTalkEffect = starlightConfig.getBool(ENABLE_CARD_BATTLE_TALK_SETTING);
+            cardTalkProbability = starlightConfig.getInt(CARD_BATTLE_TALK_PROBABILITY_SETTING);
+            enableDamagedBattleTalkEffect = starlightConfig.getBool(ENABLE_DAMAGED_BATTLE_TALK_SETTING);
+            damagedTalkProbability = starlightConfig.getInt(DAMAGED_BATTLE_TALK_PROBABILITY_SETTING);
+            enablePreBattleTalkEffect = starlightConfig.getBool(ENABLE_PRE_BATTLE_TALK_SETTING);
+            preTalkProbability = starlightConfig.getInt(PRE_BATTLE_TALK_PROBABILITY_SETTING);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static String makePath(String resourcePath) {
@@ -173,7 +213,7 @@ public class TheStarlightMod implements
     public void receiveEditStrings() {
         BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/Cardstrings.json");
 
-        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/Augmentstrings.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/eng/Augmentstrings.json");
 
         BaseMod.loadCustomStringsFile(RelicStrings.class, modID + "Resources/localization/eng/Relicstrings.json");
 
@@ -229,6 +269,44 @@ public class TheStarlightMod implements
         if (Loader.isModLoaded("CardAugments")) {
             AugmentHelper.register();
         }
+
+        uiStrings = CardCrawlGame.languagePack.getUIString(makeID("ModConfigs"));
+        EXTRA_TEXT = uiStrings.EXTRA_TEXT;
+        TEXT = uiStrings.TEXT;
+        // Create the Mod Menu
+        ModPanel settingsPanel = new ModPanel();
+
+        // Load the Mod Badge
+        Texture badgeTexture = TexLoader.getTexture(BADGE_IMAGE);
+        BaseMod.registerModBadge(badgeTexture, EXTRA_TEXT[0], AUTHOR, EXTRA_TEXT[1], settingsPanel);
+
+        //Get the longest slider text for positioning
+        ArrayList<String> labelStrings = new ArrayList<>(Arrays.asList(TEXT));
+        float sliderOffset = getSliderPosition(labelStrings);
+        labelStrings.clear();
+        float currentYposition = 740f;
+        float spacingY = 55f;
+
+        //Used to set the tutorial setting
+        /*showBoosterTutorialButton = new ModLabeledToggleButton(TEXT[0],350.0f, currentYposition, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                !m10RobotConfig.getBool(BOOSTER_TUTORIAL_SEEN), settingsPanel, (label) -> {}, (button) -> {
+            m10RobotConfig.setBool(BOOSTER_TUTORIAL_SEEN, !button.enabled);
+            boosterTutorialSeen = !button.enabled;
+            try {m10RobotConfig.save();} catch (IOException e) {e.printStackTrace();}
+        });
+        currentYposition -= spacingY;*/
+
+        //Used to set the unused self damage setting.
+        ModLabeledToggleButton enableChimeraCrossoverButton = new ModLabeledToggleButton(TEXT[0],350.0f, currentYposition, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                starlightConfig.getBool(ENABLE_CHIMERA_CROSSOVER), settingsPanel, (label) -> {}, (button) -> {
+            starlightConfig.setBool(ENABLE_CHIMERA_CROSSOVER, button.enabled);
+            enableChimeraCrossover = button.enabled;
+            try {
+                starlightConfig.save();} catch (IOException e) {e.printStackTrace();}
+        });
+        currentYposition -= spacingY;
+
+        settingsPanel.addUIElement(enableChimeraCrossoverButton);
 
 
         DynamicTextBlocks.registerCustomCheck(makeID("IsSisters"), card -> {
@@ -313,9 +391,21 @@ public class TheStarlightMod implements
             }
         });
 
-        BaseMod.addPower(CrumplePower.class, CrumplePower.POWER_ID);
+        BaseMod.addPower(JinxPower.class, JinxPower.POWER_ID);
+        BaseMod.addPower(SpellPower.class, SpellPower.POWER_ID);
+        BaseMod.addPower(ReversePower.class, ReversePower.POWER_ID);
+        BaseMod.addPower(AscensionPower.class, AscensionPower.POWER_ID);
 
         abilityButton = new AbilityButton();
+    }
+
+    //Get the longest text so all sliders are centered
+    private float getSliderPosition (ArrayList<String> stringsToCompare) {
+        float longest = 0;
+        for (String s : stringsToCompare) {
+            longest = Math.max(longest, FontHelper.getWidth(FontHelper.charDescFont, s, 1 / Settings.scale));
+        }
+        return longest + 60f;
     }
 
     public static boolean tagTest(AbstractCard c) {
