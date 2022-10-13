@@ -1,7 +1,9 @@
 package Starlight.augments;
 
 import CardAugments.cardmods.AbstractAugment;
+import CardAugments.cardmods.DynvarCarrier;
 import Starlight.TheStarlightMod;
+import Starlight.cards.BlindSide;
 import Starlight.cards.WandWhack;
 import Starlight.powers.JinxPower;
 import Starlight.util.Wiz;
@@ -14,9 +16,10 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class JinxMod extends AbstractAugment {
+public class JinxMod extends AbstractAugment implements DynvarCarrier {
     public static final String ID = TheStarlightMod.makeID(JinxMod.class.getSimpleName());
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ID).TEXT;
+    private static final String KEY = "!" + ID + "!";
 
     private int damageComponent = 0;
     private boolean setBaseVar;
@@ -42,7 +45,7 @@ public class JinxMod extends AbstractAugment {
 
     @Override
     public boolean validCard(AbstractCard card) {
-        return TheStarlightMod.enableChimeraCrossover && card.cost != -2 && card.baseDamage > 1 && cardCheck(card, c -> usesEnemyTargeting(c));
+        return TheStarlightMod.enableChimeraCrossover && card.cost != -2 && card.baseDamage > 1 && cardCheck(card, c -> usesEnemyTargeting(c)) && !(card instanceof BlindSide);
     }
 
     @Override
@@ -55,7 +58,7 @@ public class JinxMod extends AbstractAugment {
         if (setBaseVar) {
             return rawDescription;
         }
-        return rawDescription + String.format(TEXT[2], damageComponent);
+        return rawDescription + String.format(TEXT[2], KEY);
     }
 
     @Override
@@ -78,5 +81,30 @@ public class JinxMod extends AbstractAugment {
     @Override
     public String identifier(AbstractCard card) {
         return ID;
+    }
+
+    @Override
+    public String key() {
+        return ID;
+    }
+
+    @Override
+    public int val(AbstractCard abstractCard) {
+        return damageComponent;
+    }
+
+    @Override
+    public int baseVal(AbstractCard abstractCard) {
+        return damageComponent;
+    }
+
+    @Override
+    public boolean modified(AbstractCard abstractCard) {
+        return false;
+    }
+
+    @Override
+    public boolean upgraded(AbstractCard abstractCard) {
+        return false;
     }
 }

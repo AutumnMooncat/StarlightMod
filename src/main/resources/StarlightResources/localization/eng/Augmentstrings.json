@@ -9,12 +9,12 @@
     "TEXT": ["", " and Tell", " NL starlight:Foretell %d card in your discard pile."]
   },
   "${ModID}:SPMod": {
-    "TEXT": ["SP ", "", " NL Gain %d starlight:SP."]
+    "TEXT": ["SP ", "", " NL Gain %s starlight:SP."]
   },
   "${ModID}:CleanseMod": {
     "TEXT": ["Cleansing ", "", " NL Remove %d of your debuffs."]
   },
   "${ModID}:JinxMod": {
-    "TEXT": ["Hexing ", "", " NL Apply %d starlight:Jinx."]
+    "TEXT": ["Hexing ", "", " NL Apply %s starlight:Jinx."]
   }
 }

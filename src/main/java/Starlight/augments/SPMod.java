@@ -1,6 +1,7 @@
 package Starlight.augments;
 
 import CardAugments.cardmods.AbstractAugment;
+import CardAugments.cardmods.DynvarCarrier;
 import Starlight.TheStarlightMod;
 import Starlight.cards.Float;
 import Starlight.cards.abstracts.AbstractMagickCard;
@@ -17,9 +18,10 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class SPMod extends AbstractAugment {
+public class SPMod extends AbstractAugment implements DynvarCarrier {
     public static final String ID = TheStarlightMod.makeID(SPMod.class.getSimpleName());
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ID).TEXT;
+    private static final String KEY = "!" + ID + "!";
 
     private int damageComponent = 0;
     private int blockComponent = 0;
@@ -67,7 +69,7 @@ public class SPMod extends AbstractAugment {
         if (setBaseVar) {
             return rawDescription;
         }
-        return rawDescription + String.format(TEXT[2], damageComponent + blockComponent);
+        return rawDescription + String.format(TEXT[2], KEY);
     }
 
     @Override
@@ -90,5 +92,30 @@ public class SPMod extends AbstractAugment {
     @Override
     public String identifier(AbstractCard card) {
         return ID;
+    }
+
+    @Override
+    public String key() {
+        return ID;
+    }
+
+    @Override
+    public int val(AbstractCard abstractCard) {
+        return damageComponent + blockComponent;
+    }
+
+    @Override
+    public int baseVal(AbstractCard abstractCard) {
+        return damageComponent + blockComponent;
+    }
+
+    @Override
+    public boolean modified(AbstractCard abstractCard) {
+        return false;
+    }
+
+    @Override
+    public boolean upgraded(AbstractCard abstractCard) {
+        return false;
     }
 }
