@@ -46,6 +46,11 @@
     "DESCRIPTIONS": ["#yForetell the next card you play this turn.",
       "#yForetell the next #b"," cards you play this turn."]
   },
+  "${ModID}:ProjectNextCardCopyPower": {
+    "NAME": "Time Split",
+    "DESCRIPTIONS": ["#yProject a copy of the next card you play this turn.",
+      "#yProject #b"," copies of the next card you play this turn."]
+  },
   "${ModID}:ProvidencePower": {
     "NAME": "Providence",
     "DESCRIPTIONS": ["When you obtain #b10 #yProvidence, #yMagick cards are twice as effective for #b1 turn."]

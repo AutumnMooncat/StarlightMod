@@ -84,5 +84,12 @@
       "Choose a card.",
       "Choose "," cards."
     ]
+  },
+  "${ModID}:ReduceCost": {
+    "TEXT": [
+      "Reduce Cost",
+      "Choose a card to reduce its cost to 0.",
+      "Choose "," cards to reduce their costs to 0."
+    ]
   }
 }

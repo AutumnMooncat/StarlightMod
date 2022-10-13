@@ -8,6 +8,7 @@ import Starlight.cards.interfaces.PrimroseCard;
 import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.patches.CardCounterPatches;
+import Starlight.potions.*;
 import Starlight.powers.*;
 import Starlight.relics.AbstractEasyRelic;
 import Starlight.ui.AbilityButton;
@@ -27,6 +28,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.mod.widepotions.WidePotionsMod;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -179,6 +181,12 @@ public class TheStarlightMod implements
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new StarlightSisters(StarlightSisters.characterStrings.NAMES[1], StarlightSisters.Enums.THE_SISTERS),
                 CHARSELECT_BUTTON, CHARSELECT_PORTRAIT, StarlightSisters.Enums.THE_SISTERS);
+
+        BaseMod.addPotion(SPPotion.class, new Color(65/255f,138/255f,217/255f,1), new Color(87/255f,66/255f,245/255f,1), null, SPPotion.POTION_ID, StarlightSisters.Enums.THE_SISTERS);
+        BaseMod.addPotion(JinxPotion.class, new Color(95/255f,46/255f,209/255f,1), new Color(40/255f,20/255f,107/255f,1), null, JinxPotion.POTION_ID, StarlightSisters.Enums.THE_SISTERS);
+        BaseMod.addPotion(TimeSplitter.class, new Color(255/255f,255/255f,255/255f,1), new Color(0/255f,0/255f,0/255f,1), null, TimeSplitter.POTION_ID, StarlightSisters.Enums.THE_SISTERS);
+        BaseMod.addPotion(EfficiencyPotion.class, new Color(65/255f,217/255f,90/255f,1), new Color(5/255f,66/255f,15/255f,1), null, EfficiencyPotion.POTION_ID, StarlightSisters.Enums.THE_SISTERS);
+        BaseMod.addPotion(BottledFists.class, new Color(217/255f,215/255f,65/255f,1), new Color(105/255f,101/255f,12/255f,1), null, BottledFists.POTION_ID, StarlightSisters.Enums.THE_SISTERS);
     }
 
     @Override
@@ -231,6 +239,8 @@ public class TheStarlightMod implements
 
         BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/eng/UIstrings.json");
 
+        BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/eng/Potionstrings.json");
+
         //BaseMod.loadCustomStringsFile(MonsterStrings.class, modID + "Resources/localization/eng/Monsterstrings.json");
     }
 
@@ -255,11 +265,11 @@ public class TheStarlightMod implements
 
             //Simple Potions
 
-            //WidePotionsMod.whitelistSimplePotion(BoosterPotion.POTION_ID);
-            //WidePotionsMod.whitelistSimplePotion(LockingPotion.POTION_ID);
-            //WidePotionsMod.whitelistSimplePotion(NullPotion.POTION_ID);
-            //WidePotionsMod.whitelistSimplePotion(OverclockPotion.POTION_ID);
-            //WidePotionsMod.whitelistSimplePotion(SpikyPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(SPPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(JinxPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(TimeSplitter.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(EfficiencyPotion.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(BottledFists.POTION_ID);
 
             //Complex Potions
 

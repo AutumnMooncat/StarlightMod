@@ -1,0 +1,25 @@
+{
+  "${ModID}:BottledFists": {
+    "NAME": "Bottled Fists",
+    "DESCRIPTIONS": ["Add #b"," #yPower #yFist+ to your hand. They cost #b0 this turn."]
+  },
+  "${ModID}:EfficiencyPotion": {
+    "NAME": "Efficiency Potion",
+    "DESCRIPTIONS": ["Choose a card in your hand, it costs #b0 this combat.","Choose #b"," cards in your hand. they cost #b0 this combat."]
+  },
+  "${ModID}:TimeSplitter": {
+    "NAME": "Time Splitter",
+    "DESCRIPTIONS": ["This turn, #yProject #b"," copies of the next card you play.",
+                    "starlight:Project"]
+  },
+  "${ModID}:JinxPotion": {
+    "NAME": "Jinx Potion",
+    "DESCRIPTIONS": ["Apply #b"," #yJinx.",
+                    "starlight:Jinx"]
+  },
+  "${ModID}:SPPotion": {
+    "NAME": "SP Potion",
+    "DESCRIPTIONS": ["Gain #b"," #ySP.",
+                    "starlight:SP"]
+  }
+}
