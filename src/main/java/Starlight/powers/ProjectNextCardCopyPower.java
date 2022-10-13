@@ -3,6 +3,7 @@ package Starlight.powers;
 import Starlight.TheStarlightMod;
 import Starlight.actions.ProjectSpecificCardAction;
 import Starlight.cards.interfaces.OnForetoldCard;
+import Starlight.ui.ProjectedCardManager;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -40,10 +41,12 @@ public class ProjectNextCardCopyPower extends AbstractPower {
         if (this.justApplied) {
             this.justApplied = false;
         } else {
-            for (int i = 0 ; i < amount; i++) {
-                Wiz.att(new ProjectSpecificCardAction(card.makeStatEquivalentCopy()));
+            if (!card.purgeOnUse && !ProjectedCardManager.ProjectedActionField.projectedField.get(action)) {
+                for (int i = 0 ; i < amount; i++) {
+                    Wiz.att(new ProjectSpecificCardAction(card.makeStatEquivalentCopy()));
+                }
+                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             }
-            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
     }
 
