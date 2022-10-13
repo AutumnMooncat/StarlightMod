@@ -25,7 +25,7 @@ public class Ascend extends AbstractEasyCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
     private static final int UP_COST = 0;
 
     private boolean allowSkill = false;
