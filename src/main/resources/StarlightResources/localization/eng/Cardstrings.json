@@ -34,7 +34,7 @@
   },
   "${ModID}:Augury": {
     "NAME": "Augury",
-    "DESCRIPTION": "Deal !D! damage.  NL starlight:Foretell and Upgrade a card in your discard pile."
+    "DESCRIPTION": "Deal !D! damage. NL starlight:Foretell and Upgrade a card in your discard pile."
   },
   "${ModID}:Balance": {
     "NAME": "Balance",
@@ -129,7 +129,7 @@
   },
   "${ModID}:Esuna": {
     "NAME": "Esuna",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Remove !M! debuff{!M!|>1=s}.",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Remove !M! of your debuffs.",
     "EXTENDED_DESCRIPTION": ["Esunaga"]
   },
   "${ModID}:Fire": {
