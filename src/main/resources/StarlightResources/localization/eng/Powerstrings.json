@@ -26,7 +26,7 @@
   },
   "${ModID}:ThoughtbloomPower": {
     "NAME": "Thoughtbloom",
-    "DESCRIPTIONS": ["Whenever you draw a #yMagick card gain #b"," #ySpell #yPower."]
+    "DESCRIPTIONS": ["At the end of your turn, #yProject up to #b"," card in your hand."," cards in your hand."]
   },
   "${ModID}:ReflectPower": {
     "NAME": "Reflect",

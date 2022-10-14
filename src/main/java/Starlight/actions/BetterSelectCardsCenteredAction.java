@@ -51,7 +51,7 @@ public class BetterSelectCardsCenteredAction
         this.callback = callback;
         this.selectGroup = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         this.selectGroup.group.addAll(group.stream().distinct().filter(cardFilter).collect(Collectors.toList()));
-        // It's distinct() because if i don't it may cause the infamous "jiggle" when you see a grid of cards with a same object in different locations.
+        // It's distinct() because if I don't it may cause the infamous "jiggle" when you see a grid of cards with a same object in different locations.
     }
 
     public BetterSelectCardsCenteredAction(ArrayList<AbstractCard> group, String textForSelect, boolean anyNumber, Predicate<AbstractCard> cardFilter, Consumer<List<AbstractCard>> callback) {
@@ -72,6 +72,11 @@ public class BetterSelectCardsCenteredAction
 
     public BetterSelectCardsCenteredAction(ArrayList<AbstractCard> group, int amount, String textForSelect, boolean forceSelect, Consumer<List<AbstractCard>> callback) {
         this(group, amount, textForSelect, false, c -> true, callback);
+        this.forceSelect = forceSelect;
+    }
+
+    public BetterSelectCardsCenteredAction(ArrayList<AbstractCard> group, int amount, String textForSelect, boolean anyNumber, boolean forceSelect, Consumer<List<AbstractCard>> callback) {
+        this(group, amount, textForSelect, anyNumber, c -> true, callback);
         this.forceSelect = forceSelect;
     }
 

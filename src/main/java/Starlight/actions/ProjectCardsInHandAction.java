@@ -18,6 +18,7 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
     public static final ArrayList<AbstractCard> projectedCards = new ArrayList<>();
     private final AbstractGameAction followUpAction;
     private Predicate<AbstractCard> filter;
+    private boolean anyAmount;
 
     public ProjectCardsInHandAction(int amount) {
         this(amount, null);
@@ -26,10 +27,16 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
     public ProjectCardsInHandAction(int amount, AbstractGameAction followUpAction) {
         this(amount, c -> true, followUpAction);
     }
+
     public ProjectCardsInHandAction(int amount, Predicate<AbstractCard> filter, AbstractGameAction followUpAction) {
+        this(amount, false, filter, followUpAction);
+    }
+
+    public ProjectCardsInHandAction(int amount, boolean anyAmount, Predicate<AbstractCard> filter, AbstractGameAction followUpAction) {
         this.amount = amount;
         this.followUpAction = followUpAction;
         this.filter = filter;
+        this.anyAmount = anyAmount;
     }
 
     @Override
@@ -43,7 +50,7 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
             return;
         }
         ArrayList<AbstractCard> validCards = Wiz.adp().hand.group.stream().filter(c -> c.cost != -2 && filter.test(c)).collect(Collectors.toCollection(ArrayList::new));
-        if (validCards.size() == 1) {
+        if (validCards.size() == 1 && !anyAmount) {
             for (AbstractCard c : validCards) {
                 if (AbstractDungeon.player.hoveredCard == c) {
                     AbstractDungeon.player.releaseCard();
@@ -68,7 +75,7 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
                 copyMap.put(copy, c);
                 selection.add(copy);
             }
-            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], true, cards -> {
+            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyAmount, true, cards -> {
                 for (AbstractCard copy : cards) {
                     AbstractCard c = copyMap.get(copy);
                     if (AbstractDungeon.player.hoveredCard == c) {
