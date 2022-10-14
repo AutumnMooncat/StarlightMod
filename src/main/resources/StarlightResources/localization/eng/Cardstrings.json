@@ -112,7 +112,7 @@
   },
   "${ModID}:DizzyStrike": {
     "NAME": "Dizzy Strike",
-    "DESCRIPTION": "Deal !D! damage twice. NL Shuffle a Dazed into your draw pile.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
+    "DESCRIPTION": "Deal !D! damage twice.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
   },
   "${ModID}:Doomsday": {
     "NAME": "Doomsday",

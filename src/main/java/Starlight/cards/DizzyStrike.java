@@ -21,7 +21,7 @@ public class DizzyStrike extends AbstractEasyCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 6;
+    private static final int DMG = 5;
     private static final int UP_DMG = 2;
     private static final int EFFECT = 3;
     private static final int UP_EFFECT = 2;
@@ -30,13 +30,13 @@ public class DizzyStrike extends AbstractEasyCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         tags.add(CardTags.STRIKE);
-        cardsToPreview = new Dazed();
+        //cardsToPreview = new Dazed();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.atb(new MakeTempCardInDrawPileAction(cardsToPreview.makeStatEquivalentCopy(), 1, true, true));
+        //Wiz.atb(new MakeTempCardInDrawPileAction(cardsToPreview.makeStatEquivalentCopy(), 1, true, true));
         if (p instanceof StarlightSisters) {
             Wiz.atb(new SwapAction());
         }
