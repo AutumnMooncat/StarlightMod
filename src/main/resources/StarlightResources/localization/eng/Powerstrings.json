@@ -39,7 +39,7 @@
   },
   "${ModID}:IncantationPower": {
     "NAME": "Incantation",
-    "DESCRIPTIONS": ["Whenever you #yForetell, gain #b"," #ySpell #yPower."]
+    "DESCRIPTIONS": ["At the start of your turn, add #b"," random #yMagick card to your hand. It has #yEthereal and #yExhaust."," random #yMagick cards to your hand. They have #yEthereal and #yExhaust."]
   },
   "${ModID}:ForetellNextCardPower": {
     "NAME": "Foretelling",

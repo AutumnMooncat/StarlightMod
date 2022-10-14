@@ -190,8 +190,8 @@
   },
   "${ModID}:Incantation": {
     "NAME": "Incantation",
-    "DESCRIPTION": "Whenever you starlight:Foretell, gain !M! starlight:SP.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you starlight:Foretell, gain !M! starlight:SP."
+    "DESCRIPTION": "At the start of your turn, add !M! random starlight:Magick card{!M!|>1=s} to your hand. {!M!|1=It has|@=They have} Ethereal and Exhaust.{@@}",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add !M! random starlight:Magick card{!M!|>1=s} to your hand. {!M!|1=It has|@=They have} Ethereal and Exhaust.{@@}"
   },
   "${ModID}:MagickConduit": {
     "NAME": "Magick Conduit",
