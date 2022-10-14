@@ -6,6 +6,7 @@ import Starlight.powers.interfaces.OnTagTeamPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -35,13 +36,9 @@ public class IncantationPower extends AbstractPower implements OnForetellPower {
     }
 
     @Override
-    public void onScry() {
-        flash();
-        Wiz.atb(new ApplyPowerAction(owner, owner, new SpellPower(owner, amount)));
-    }
-
-    @Override
     public void onForetell(AbstractCard card) {
-
+        flash();
+        //Wiz.atb(new GainEnergyAction(amount));
+        Wiz.atb(new ApplyPowerAction(owner, owner, new SpellPower(owner, amount)));
     }
 }
