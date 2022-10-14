@@ -1,15 +1,17 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
-import Starlight.powers.interfaces.OnSwapPower;
 import Starlight.util.Wiz;
+import com.evacipated.cardcrawl.mod.stslib.powers.StunMonsterPower;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class TeamEffortPower extends AbstractPower implements OnSwapPower {
+public class TeamEffortPower extends AbstractPower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(TeamEffortPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -31,15 +33,28 @@ public class TeamEffortPower extends AbstractPower implements OnSwapPower {
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
+    @Override
+    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
+        int attacking = 0;
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+            if (m.getIntentBaseDmg() >= 0 && !m.hasPower(StunMonsterPower.POWER_ID)) {
+                attacking++;
+            }
+        }
+        if (attacking > 0) {
+            Wiz.atb(new GainBlockAction(owner, owner, attacking * amount));
+        }
+    }
+
     /*@Override
     public void onTagTeam(AbstractCard card) {
         flash();
         Wiz.atb(new GainBlockAction(owner, owner, amount));
     }*/
 
-    @Override
+    /*@Override
     public void onSwap(boolean toPrim) {
         flash();
         Wiz.atb(new GainBlockAction(owner, owner, amount));
-    }
+    }*/
 }

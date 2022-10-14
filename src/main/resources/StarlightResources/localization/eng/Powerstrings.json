@@ -22,7 +22,7 @@
   },
   "${ModID}:TeamEffortPower": {
     "NAME": "Team Effort",
-    "DESCRIPTIONS": ["Whenever you trigger a #yTag #yTeam effect, gain #b"," #yBlock."]
+    "DESCRIPTIONS": ["At the end of your turn, gain #b"," #yBlock for each enemy that intends to attack."]
   },
   "${ModID}:ThoughtbloomPower": {
     "NAME": "Thoughtbloom",

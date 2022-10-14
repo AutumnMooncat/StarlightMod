@@ -345,7 +345,7 @@
   },
   "${ModID}:TeamEffort": {
     "NAME": "Team Effort",
-    "DESCRIPTION": "{@@}Whenever you starlight:Swap, gain !M! Block."
+    "DESCRIPTION": "At the end of your turn, gain !M! Block for each enemy that intends to attack."
   },
   "${ModID}:ThePlot": {
     "NAME": "The Plot",
