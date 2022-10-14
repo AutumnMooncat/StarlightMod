@@ -22,7 +22,7 @@ public class Holy extends AbstractMagickCard {
 
     private static final int COST = 1;
     private static final int DMG = 7;
-    private static final int UP_DMG = 2;
+    private static final int UP_DMG = 3;
 
     public Holy() {
         super(ID, COST, TYPE, RARITY, TARGET);
