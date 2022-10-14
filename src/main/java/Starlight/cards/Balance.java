@@ -1,26 +1,21 @@
 package Starlight.cards;
 
+import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.damageMods.AntiWallopDamage;
-import Starlight.damageMods.WallopDamage;
+import Starlight.powers.ProvidencePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import Starlight.vfx.AngledFlashAtkImgEffect;
-import com.evacipated.cardcrawl.mod.stslib.damagemods.DamageModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
-import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Balance extends AbstractMagickCard {
+public class Balance extends AbstractEasyCard {
     public final static String ID = makeID(Balance.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -43,9 +38,10 @@ public class Balance extends AbstractMagickCard {
         Wiz.atb(new VFXAction(new AngledFlashAtkImgEffect(m.hb.cX, m.hb.cY, AbstractGameAction.AttackEffect.SLASH_DIAGONAL, 90f)));
         Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX, m.hb.cY, AbstractGameAction.AttackEffect.SLASH_DIAGONAL, true)));
         dmg(m, AbstractGameAction.AttackEffect.NONE);
+        Wiz.applyToSelf(new ProvidencePower(Wiz.adp(), magicNumber));
     }
 
-    public void calculateCardDamage(AbstractMonster mo) {
+    /*public void calculateCardDamage(AbstractMonster mo) {
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.magicNumber * countCards();
         super.calculateCardDamage(mo);
@@ -65,15 +61,15 @@ public class Balance extends AbstractMagickCard {
         return (int) (Wiz.adp().drawPile.group.stream().filter(c -> c.type == CardType.STATUS).count() +
                 Wiz.adp().hand.group.stream().filter(c -> c.type == CardType.STATUS).count() +
                 Wiz.adp().discardPile.group.stream().filter(c -> c.type == CardType.STATUS).count());
-    }
+    }*/
 
-    @Override
+    /*@Override
     protected void upgradeName() {
         ++this.timesUpgraded;
         this.upgraded = true;
         this.name = cardStrings.EXTENDED_DESCRIPTION[0];
         this.initializeTitle();
-    }
+    }*/
 
     public void upp() {
         upgradeDamage(UP_DAMAGE);

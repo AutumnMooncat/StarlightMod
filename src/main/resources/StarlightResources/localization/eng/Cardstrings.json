@@ -38,7 +38,7 @@
   },
   "${ModID}:Balance": {
     "NAME": "Balance",
-    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for ALL your Status cards.",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! starlight:Providence.",
     "EXTENDED_DESCRIPTION": ["Lifebreak"]
   },
   "${ModID}:Banish": {
