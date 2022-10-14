@@ -20,9 +20,9 @@ public class Imperil extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 0;
-    private static final int DMG = 4;
-    private static final int UP_DMG = 1;
+    private static final int COST = 1;
+    private static final int DMG = 6;
+    private static final int UP_DMG = 2;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
