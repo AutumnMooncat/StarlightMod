@@ -70,7 +70,7 @@
   },
   "${ModID}:HarmonyPower": {
     "NAME": "Harmony",
-    "DESCRIPTIONS": ["Whenever you trigger a #ySwap, gain #b"," #yProvidence."]
+    "DESCRIPTIONS": ["#yMagick cards deal #b"," additional damage and gain #b"," additional Block."]
   },
   "${ModID}:MindLinkPower": {
     "NAME": "Mind Link",

@@ -171,7 +171,7 @@
   },
   "${ModID}:Harmony": {
     "NAME": "Harmony",
-    "DESCRIPTION": "{@@}Whenever you starlight:Swap, gain !M! starlight:Providence."
+    "DESCRIPTION": "starlight:Magick cards deal !M! additional damage and grant !M! additional Block."
   },
   "${ModID}:Haste": {
     "NAME": "Haste",

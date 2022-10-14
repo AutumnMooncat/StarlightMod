@@ -18,7 +18,7 @@ public class Harmony extends AbstractEasyCard {
 
     private static final int COST = 1;
     private static final int UP_COST = 0;
-    private static final int EFFECT = 1;
+    private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
     public Harmony() {
@@ -31,7 +31,8 @@ public class Harmony extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBaseCost(UP_COST);
+        //upgradeBaseCost(UP_COST);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
