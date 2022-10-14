@@ -20,6 +20,7 @@ public class Blazing extends AbstractEasyCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
+    private static final int UP_COST = 0;
     private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
@@ -48,7 +49,8 @@ public class Blazing extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(UP_EFFECT);
+        upgradeBaseCost(UP_COST);
+        //upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
