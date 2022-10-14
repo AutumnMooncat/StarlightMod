@@ -42,6 +42,7 @@ public class TeamEffortPower extends AbstractPower {
             }
         }
         if (attacking > 0) {
+            flash();
             Wiz.atb(new GainBlockAction(owner, owner, attacking * amount));
         }
     }
