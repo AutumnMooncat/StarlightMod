@@ -37,7 +37,7 @@ public class TeamEffortPower extends AbstractPower {
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         int attacking = 0;
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            if (m.getIntentBaseDmg() >= 0 && !m.hasPower(StunMonsterPower.POWER_ID)) {
+            if (!m.isDeadOrEscaped() && m.getIntentBaseDmg() >= 0 && !m.hasPower(StunMonsterPower.POWER_ID)) {
                 attacking++;
             }
         }
