@@ -1,7 +1,6 @@
 package Starlight.cutContent;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.status.Grit;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;

@@ -1,13 +1,11 @@
-package Starlight.cards.status;
+package Starlight.cutContent;
 
 import Starlight.actions.PlayRandomCardAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.red.Intimidate;
-import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
