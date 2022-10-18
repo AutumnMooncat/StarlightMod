@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class CustomTags {
     @SpireEnum
-    public static AbstractCard.CardTags CAST_ANIM;
+    public static AbstractCard.CardTags STARLIGHT_CAST_ANIM;
     @SpireEnum
-    public static AbstractCard.CardTags ASCENDED;
+    public static AbstractCard.CardTags STARLIGHT_ASCENDED;
 }

@@ -178,7 +178,7 @@ public class ProjectedCardManager {
     public static class AscendedFix {
         @SpireInsertPatch(locator = Locator.class)
         public static SpireReturn<?> yeet(UseCardAction __instance, AbstractCard ___targetCard) {
-            if (___targetCard.hasTag(CustomTags.ASCENDED)) {
+            if (___targetCard.hasTag(CustomTags.STARLIGHT_ASCENDED)) {
                 ProjectedCardManager.addCard(___targetCard, false);
                 __instance.isDone = true;
                 AbstractDungeon.player.cardInUse = null;

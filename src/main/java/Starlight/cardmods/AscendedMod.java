@@ -1,15 +1,9 @@
 package Starlight.cardmods;
 
-import Starlight.actions.ProjectSpecificCardAction;
 import Starlight.util.CustomTags;
-import Starlight.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -33,11 +27,11 @@ public class AscendedMod extends AbstractCardModifier {
     }
 
     public boolean shouldApply(AbstractCard card) {
-        return !card.tags.contains(CustomTags.ASCENDED);
+        return !card.tags.contains(CustomTags.STARLIGHT_ASCENDED);
     }
 
     public void onInitialApplication(AbstractCard card) {
-        card.tags.add(CustomTags.ASCENDED);
+        card.tags.add(CustomTags.STARLIGHT_ASCENDED);
     }
 
     public AbstractCardModifier makeCopy() {
