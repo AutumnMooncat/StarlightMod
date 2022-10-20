@@ -1,0 +1,12 @@
+{
+  "${ModID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Main description",
+    "UPGRADE_DESCRIPTION": "Upgrade description",
+    "EXTENDED_DESCRIPTION": ["Extra Stuff"]
+  },
+  "${ModID}:FireBolt": {
+    "NAME": "Fire Bolt",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Burn."
+  }
+}

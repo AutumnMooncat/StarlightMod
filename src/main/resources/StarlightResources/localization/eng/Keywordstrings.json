@@ -180,5 +180,35 @@
       "secondary"
     ],
     "DESCRIPTION": "Secondary effects are the non-damage and non-Block effects of a card."
+  },
+  {
+    "PROPER_NAME": "Wet",
+    "NAMES": [
+      "wet"
+    ],
+    "DESCRIPTION": "Wet creatures provide Block when attacked. Each turn, Wet is reduced by 1."
+  },
+  {
+    "PROPER_NAME": "Burn",
+    "NAMES": [
+      "burn",
+      "burning"
+    ],
+    "DESCRIPTION": "Burning creatures take damage at the start of their turn."
+  },
+  {
+    "PROPER_NAME": "Chill",
+    "NAMES": [
+      "chill",
+      "chilled"
+    ],
+    "DESCRIPTION": "Chilled creatures deal #b20% less damage with Attacks, and take #b20 more damage from Attacks if they are #yWet."
+  },
+  {
+    "PROPER_NAME": "Tangled",
+    "NAMES": [
+      "tangled"
+    ],
+    "DESCRIPTION": "Tangled creatures deal #b10% less damage with Attacks per stack this turn."
   }
 ]

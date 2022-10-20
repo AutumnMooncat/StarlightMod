@@ -14,6 +14,7 @@ import Starlight.relics.AbstractEasyRelic;
 import Starlight.ui.AbilityButton;
 import Starlight.ui.EnvisionedCardManager;
 import Starlight.ui.ProjectedCardManager;
+import Starlight.ui.SpellbookUI;
 import Starlight.util.*;
 import basemod.AutoAdd;
 import basemod.BaseMod;
@@ -85,7 +86,7 @@ public class TheStarlightMod implements
     private static final String TEXT_ENERGY = modID + "Resources/images/512/text_energy.png";
     private static final String CARD_ENERGY_L = modID + "Resources/images/1024/energy.png";
     private static final String CHARSELECT_BUTTON = modID + "Resources/images/charSelect/charButton.png";
-    private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG.png";
+    private static final String CHARSELECT_PORTRAIT = modID + "Resources/images/charSelect/charBG3.png";
 
     public static final String BADGE_IMAGE = modID + "Resources/images/Badge.png";
 
@@ -118,7 +119,15 @@ public class TheStarlightMod implements
     public static final String PRE_BATTLE_TALK_PROBABILITY_SETTING = "preTalkProbability";
     public static int preTalkProbability = 50; //Out of 100
 
+    public static final String PRIMROSE_BOOK_INDEX = "PRIM_BOOK";
+    public static final String LUNA_BOOK_INDEX = "LUNA_BOOK";
+    public static int primroseBookIndex = 0;
+    public static int lunaBookIndex = 1;
+
+    public static final int MAX_INDEX = 3;
+
     public static AbilityButton abilityButton;
+    public static SpellbookUI spellUI;
 
     public TheStarlightMod() {
         BaseMod.subscribe(this);
@@ -138,16 +147,25 @@ public class TheStarlightMod implements
         starlightDefaultSettings.setProperty(DAMAGED_BATTLE_TALK_PROBABILITY_SETTING, String.valueOf(damagedTalkProbability));
         starlightDefaultSettings.setProperty(ENABLE_PRE_BATTLE_TALK_SETTING, Boolean.toString(enablePreBattleTalkEffect));
         starlightDefaultSettings.setProperty(PRE_BATTLE_TALK_PROBABILITY_SETTING, String.valueOf(preTalkProbability));
+        starlightDefaultSettings.setProperty(PRIMROSE_BOOK_INDEX, Integer.toString(primroseBookIndex));
+        starlightDefaultSettings.setProperty(LUNA_BOOK_INDEX, Integer.toString(lunaBookIndex));
         try {
             starlightConfig = new SpireConfig("StarlightMod", "StarlightModConfig", starlightDefaultSettings);
             enableChimeraCrossover = starlightConfig.getBool(ENABLE_CHIMERA_CROSSOVER);
-
             enableCardBattleTalkEffect = starlightConfig.getBool(ENABLE_CARD_BATTLE_TALK_SETTING);
             cardTalkProbability = starlightConfig.getInt(CARD_BATTLE_TALK_PROBABILITY_SETTING);
             enableDamagedBattleTalkEffect = starlightConfig.getBool(ENABLE_DAMAGED_BATTLE_TALK_SETTING);
             damagedTalkProbability = starlightConfig.getInt(DAMAGED_BATTLE_TALK_PROBABILITY_SETTING);
             enablePreBattleTalkEffect = starlightConfig.getBool(ENABLE_PRE_BATTLE_TALK_SETTING);
             preTalkProbability = starlightConfig.getInt(PRE_BATTLE_TALK_PROBABILITY_SETTING);
+            primroseBookIndex = starlightConfig.getInt(PRIMROSE_BOOK_INDEX);
+            lunaBookIndex = starlightConfig.getInt(LUNA_BOOK_INDEX);
+            if (primroseBookIndex > MAX_INDEX || primroseBookIndex == lunaBookIndex) {
+                primroseBookIndex = lunaBookIndex == 0 ? 1 : 0;
+            }
+            if (lunaBookIndex > MAX_INDEX) {
+                lunaBookIndex = primroseBookIndex == 1 ? 0 : 1;
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -241,7 +259,13 @@ public class TheStarlightMod implements
 
         BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/eng/Potionstrings.json");
 
-        //BaseMod.loadCustomStringsFile(MonsterStrings.class, modID + "Resources/localization/eng/Monsterstrings.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/BookOfWaterstrings.json");
+
+        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/BookOfIcestrings.json");
+
+        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/BookOfFirestrings.json");
+
+        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/BookOfNaturestrings.json");
     }
 
     @Override
@@ -407,6 +431,7 @@ public class TheStarlightMod implements
         BaseMod.addPower(AscensionPower.class, AscensionPower.POWER_ID);
 
         abilityButton = new AbilityButton();
+        spellUI = new SpellbookUI();
     }
 
     //Get the longest text so all sliders are centered

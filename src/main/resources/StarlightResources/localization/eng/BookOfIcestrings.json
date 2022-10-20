@@ -1,0 +1,12 @@
+{
+  "${ModID}:ExampleCard": {
+    "NAME": "Name",
+    "DESCRIPTION": "Main description",
+    "UPGRADE_DESCRIPTION": "Upgrade description",
+    "EXTENDED_DESCRIPTION": ["Extra Stuff"]
+  },
+  "${ModID}:FrostRay": {
+    "NAME": "Frost Ray",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Chill."
+  }
+}

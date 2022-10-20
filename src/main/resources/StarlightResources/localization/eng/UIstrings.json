@@ -91,5 +91,35 @@
       "Choose a card to reduce its cost to 0.",
       "Choose "," cards to reduce their costs to 0."
     ]
+  },
+  "${ModID}:SpellbookUI": {
+    "TEXT": [
+      "Spellbooks",
+      "Spellbooks determine each sister's passive ability and card draft."
+    ]
+  },
+  "${ModID}:BookOfFire": {
+    "TEXT": [
+      "Book of Fire",
+      "Burn enemies to scale damage over time."
+    ]
+  },
+  "${ModID}:BookOfWater": {
+    "TEXT": [
+      "Book of Water",
+      "Make enemies Wet to gain Block and boost the effect of other Spellbooks."
+    ]
+  },
+  "${ModID}:BookOfIce": {
+    "TEXT": [
+      "Book of Frost",
+      "Chill enemies for strong damage mitigation."
+    ]
+  },
+  "${ModID}:BookOfNature": {
+    "TEXT": [
+      "Book of Nature",
+      "Tangle enemies and impale them with Barbs when they attack."
+    ]
   }
 }

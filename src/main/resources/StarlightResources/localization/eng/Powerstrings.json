@@ -64,6 +64,22 @@
     "NAME": "Fortuna",
     "DESCRIPTIONS": ["Whenever you gain #yEnergy, gain #b"," #yProvidence."]
   },
+  "${ModID}:WetPower": {
+    "NAME": "Wet",
+    "DESCRIPTIONS": ["Provides #b"," #yBlock when attacked."]
+  },
+  "${ModID}:BurnPower": {
+    "NAME": "Burn",
+    "DESCRIPTIONS": ["At the start of its turn, takes #b"," damage."]
+  },
+  "${ModID}:TanglePower": {
+    "NAME": "Tangle",
+    "DESCRIPTIONS": ["#yAttacks deal #b","% less damage this turn."]
+  },
+  "${ModID}:ChillPower": {
+    "NAME": "Chill",
+    "DESCRIPTIONS": ["Deals #b20% less damage with #yAttacks for #b"," turn."," turns."," If this creature is #yWet, it also takes #b20% more damage from Attacks."]
+  },
   "${ModID}:PosturingPower": {
     "NAME": "Posturing",
     "DESCRIPTIONS": ["At the end of your turn, if the last card you played was a #ySkill, gain #b"," #yBlock. If it was an #yAttack, gain #b"," #yVigor."]
@@ -123,6 +139,14 @@
     "DESCRIPTIONS": ["The next time this creature attempts to #yBlock, it instead loses that much HP.",
       "Your next #b", " times this creature attempts to #yBlock, it instead loses that much HP."]
   },
+
+
+
+
+
+
+
+
   "${ModID}:FiredUpPower": {
     "NAME": "Fired Up!",
     "DESCRIPTIONS": ["#yPrimrose's Attacks deal #b"," additional damage per Attack played this turn.","#r(Inactive) NL "]
