@@ -8,5 +8,45 @@
   "${ModID}:FireBolt": {
     "NAME": "Fire Bolt",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Burn."
+  },
+  "${ModID}:FireArrow": {
+    "NAME": "Fire Arrow",
+    "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Fire Arrow cards by 4(6)."
+  },
+  "${ModID}:FlameShield": {
+    "NAME": "Flame Shield",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Vigor."
+  },
+  "${ModID}:Napalm": {
+    "NAME": "Napalm",
+    "DESCRIPTION": "Apply !M! starlight:Burn to a random enemy 3 times."
+  },
+  "${ModID}:Flamethrower": {
+    "NAME": "Flamethrower",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
+  },
+  "${ModID}:LavaBomb": {
+    "NAME": "Lava Bomb",
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Burn to ALL enemies."
+  },
+  "${ModID}:FlameWall": {
+    "NAME": "Flame Wall",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, apply !M! starlight:Burn back."
+  },
+  "${ModID}:Firestorm": {
+    "NAME": "Firestorm",
+    "DESCRIPTION": "At the start of your turn, apply !M! starlight:Burn to ALL enemies."
+  },
+  "${ModID}:Eruption": {
+    "NAME": "Eruption",
+    "DESCRIPTION": "Deal !D! damage. Increase the damage of all Attacks in your hand by !M! this combat."
+  },
+  "${ModID}:WillOWisp": {
+    "NAME": "Will-O-Wisp",
+    "DESCRIPTION": "Apply !M! starlight:Burn. NL Exhaust."
+  },
+  "${ModID}:Vulcanize": {
+    "NAME": "Vulcanize",
+    "DESCRIPTION": "Whenever you deal unblocked attack damage, apply !M! starlight:Burn."
   }
 }
