@@ -118,8 +118,8 @@ public class TheStarlightMod implements
 
     public static final String PRIMROSE_BOOK_INDEX = "PRIM_BOOK";
     public static final String LUNA_BOOK_INDEX = "LUNA_BOOK";
-    public static int primroseBookIndex = 0;
-    public static int lunaBookIndex = 1;
+    public static int primroseBookIndex = 1;
+    public static int lunaBookIndex = 0;
 
     public static final int MAX_INDEX = 3;
 
@@ -159,10 +159,10 @@ public class TheStarlightMod implements
             primroseBookIndex = starlightConfig.getInt(PRIMROSE_BOOK_INDEX);
             lunaBookIndex = starlightConfig.getInt(LUNA_BOOK_INDEX);
             if (primroseBookIndex > MAX_INDEX || primroseBookIndex == lunaBookIndex) {
-                primroseBookIndex = lunaBookIndex == 0 ? 1 : 0;
+                primroseBookIndex = lunaBookIndex == 1 ? 0 : 1;
             }
             if (lunaBookIndex > MAX_INDEX) {
-                lunaBookIndex = primroseBookIndex == 1 ? 0 : 1;
+                lunaBookIndex = primroseBookIndex == 0 ? 1 : 0;
             }
         } catch (IOException e) {
             e.printStackTrace();

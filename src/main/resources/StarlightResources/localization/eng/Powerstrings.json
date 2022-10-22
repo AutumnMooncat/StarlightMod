@@ -86,7 +86,11 @@
   },
   "${ModID}:BubbleShieldPower": {
     "NAME": "Bubble Shield",
-    "DESCRIPTIONS": ["#When attacked this turn, apply #b"," Wet back."]
+    "DESCRIPTIONS": ["#When attacked this turn, apply #b"," #yWet back."]
+  },
+  "${ModID}:FlameWallPower": {
+    "NAME": "Flame Wall",
+    "DESCRIPTIONS": ["#When attacked this turn, apply #b"," #yBurn back."]
   },
   "${ModID}:PosturingPower": {
     "NAME": "Posturing",

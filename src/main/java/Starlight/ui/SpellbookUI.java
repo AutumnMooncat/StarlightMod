@@ -27,14 +27,14 @@ public class SpellbookUI {
     public SpellbookUI() {
         primPanel = new SpellbookPanel(Settings.WIDTH*2/3F, Settings.HEIGHT/2F, true);
         lunaPanel = new SpellbookPanel(Settings.WIDTH/3F, Settings.HEIGHT/2F, false);
-        primPanel.addBook(new BookOfIce());
         primPanel.addBook(new BookOfWater());
+        primPanel.addBook(new BookOfIce());
         primPanel.addBook(new BookOfFire());
         primPanel.addBook(new BookOfNature());
 
 
-        lunaPanel.addBook(new BookOfIce());
         lunaPanel.addBook(new BookOfWater());
+        lunaPanel.addBook(new BookOfIce());
         lunaPanel.addBook(new BookOfFire());
         lunaPanel.addBook(new BookOfNature());
 
