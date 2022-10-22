@@ -98,6 +98,16 @@
       "Spellbooks determine each sister's passive ability and card draft."
     ]
   },
+  "${ModID}:FilterUI": {
+    "TEXT": [
+      "All Cards",
+      "Non Spellbook Cards",
+      "Water Cards",
+      "Ice Cards",
+      "Fire Cards",
+      "Nature Cards"
+    ]
+  },
   "${ModID}:BookOfFire": {
     "TEXT": [
       "Book of Fire",

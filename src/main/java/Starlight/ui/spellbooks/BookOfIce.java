@@ -3,7 +3,9 @@ package Starlight.ui.spellbooks;
 import Starlight.TheStarlightMod;
 import Starlight.cards.Blizzard;
 import Starlight.cards.bookOfIce.FrostRay;
+import Starlight.util.CustomTags;
 import Starlight.util.TexLoader;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 public class BookOfIce extends ClickableSpellbook {
@@ -20,5 +22,10 @@ public class BookOfIce extends ClickableSpellbook {
     @Override
     public String starterCardID() {
         return FrostRay.ID;
+    }
+
+    @Override
+    public boolean allowCardInPool(AbstractCard card) {
+        return card.hasTag(CustomTags.STARLIGHT_ICE);
     }
 }

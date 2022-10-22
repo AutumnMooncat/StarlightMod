@@ -1,14 +1,16 @@
 package Starlight.ui;
 
 import Starlight.TheStarlightMod;
-import Starlight.ui.spellbooks.BookOfFire;
-import Starlight.ui.spellbooks.BookOfIce;
-import Starlight.ui.spellbooks.BookOfNature;
-import Starlight.ui.spellbooks.BookOfWater;
+import Starlight.patches.CompendiumPatches;
+import Starlight.ui.spellbooks.*;
+import Starlight.util.CustomTags;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ import java.util.Objects;
 public class SpellbookUI {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("SpellbookUI")).TEXT;
     private static final float X_OFFSET = 200.0F * Settings.scale;
-    private static final float HEADER_Y = Settings.HEIGHT/2f + 200f * Settings.scale;
+    private static final float HEADER_Y = Settings.HEIGHT/2f + 100f * Settings.scale;
     private static final float TEXT_Y = HEADER_Y - 75f * Settings.scale;
     private final SpellbookPanel primPanel;
     private final SpellbookPanel lunaPanel;
@@ -43,6 +45,14 @@ public class SpellbookUI {
         lunaPanel.books.get(TheStarlightMod.lunaBookIndex).selected = true;
     }
 
+    public void onSwapBook(int newIndex, int oldIndex, SpellbookPanel panel) {
+        if (panel == primPanel && lunaPanel.books.indexOf(lunaPanel.getSelectedBook()) == newIndex) {
+            lunaPanel.selectBook(lunaPanel.books.get(oldIndex));
+        } else if (panel == lunaPanel && primPanel.books.indexOf(primPanel.getSelectedBook()) == newIndex) {
+            primPanel.selectBook(primPanel.books.get(oldIndex));
+        }
+    }
+
     public void update() {
         primPanel.update();
         lunaPanel.update();
@@ -66,5 +76,21 @@ public class SpellbookUI {
             ret.add(id);
         }
         return ret;
+    }
+
+    public void fillCardPools() {
+        ArrayList<CardGroup> groups = new ArrayList<>();
+        ClickableSpellbook primBook, lunaBook;
+        primBook = primPanel.getSelectedBook();
+        lunaBook = lunaPanel.getSelectedBook();
+        groups.add(AbstractDungeon.commonCardPool);
+        groups.add(AbstractDungeon.srcCommonCardPool);
+        groups.add(AbstractDungeon.uncommonCardPool);
+        groups.add(AbstractDungeon.srcUncommonCardPool);
+        groups.add(AbstractDungeon.rareCardPool);
+        groups.add(AbstractDungeon.srcRareCardPool);
+        for (CardGroup g : groups) {
+            g.group.removeIf(c -> !(CompendiumPatches.noMagicTags(c) || primBook.allowCardInPool(c) || lunaBook.allowCardInPool(c)));
+        }
     }
 }

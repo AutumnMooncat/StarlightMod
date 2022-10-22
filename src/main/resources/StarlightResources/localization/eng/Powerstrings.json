@@ -76,9 +76,17 @@
     "NAME": "Tangle",
     "DESCRIPTIONS": ["#yAttacks deal #b","% less damage this turn."]
   },
+  "${ModID}:MudPower": {
+    "NAME": "Mud",
+    "DESCRIPTIONS": ["#yAttacks deal #b"," less damage this turn. Each turn, Mud is halved."]
+  },
   "${ModID}:ChillPower": {
     "NAME": "Chill",
     "DESCRIPTIONS": ["Deals #b20% less damage with #yAttacks for #b"," turn."," turns."," If this creature is #yWet, it also takes #b20% more damage from Attacks."]
+  },
+  "${ModID}:BubbleShieldPower": {
+    "NAME": "Bubble Shield",
+    "DESCRIPTIONS": ["#When attacked this turn, apply #b"," Wet back."]
   },
   "${ModID}:PosturingPower": {
     "NAME": "Posturing",

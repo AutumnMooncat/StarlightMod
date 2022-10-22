@@ -202,7 +202,7 @@
       "chill",
       "chilled"
     ],
-    "DESCRIPTION": "Chilled creatures deal #b20% less damage with Attacks, and take #b20 more damage from Attacks if they are #yWet."
+    "DESCRIPTION": "Chilled creatures deal #b20% less damage with Attacks, and take #b20% more damage from Attacks if they are #yWet."
   },
   {
     "PROPER_NAME": "Tangled",
@@ -210,5 +210,13 @@
       "tangled"
     ],
     "DESCRIPTION": "Tangled creatures deal #b10% less damage with Attacks per stack this turn."
+  },
+  {
+    "PROPER_NAME": "Mud",
+    "NAMES": [
+      "mud",
+      "muddy"
+    ],
+    "DESCRIPTION": "Muddy creatures deal less damage with Attacks. Each turn, Mud is halved."
   }
 ]

@@ -4,7 +4,9 @@ import Starlight.TheStarlightMod;
 import Starlight.cards.Float;
 import Starlight.cards.Strike;
 import Starlight.cards.bookOfNature.VineWrap;
+import Starlight.util.CustomTags;
 import Starlight.util.TexLoader;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 public class BookOfNature extends ClickableSpellbook {
@@ -21,5 +23,10 @@ public class BookOfNature extends ClickableSpellbook {
     @Override
     public String starterCardID() {
         return VineWrap.ID;
+    }
+
+    @Override
+    public boolean allowCardInPool(AbstractCard card) {
+        return card.hasTag(CustomTags.STARLIGHT_NATURE);
     }
 }

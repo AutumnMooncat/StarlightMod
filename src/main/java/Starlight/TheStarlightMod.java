@@ -11,10 +11,7 @@ import Starlight.patches.CardCounterPatches;
 import Starlight.potions.*;
 import Starlight.powers.*;
 import Starlight.relics.AbstractEasyRelic;
-import Starlight.ui.AbilityButton;
-import Starlight.ui.EnvisionedCardManager;
-import Starlight.ui.ProjectedCardManager;
-import Starlight.ui.SpellbookUI;
+import Starlight.ui.*;
 import Starlight.util.*;
 import basemod.AutoAdd;
 import basemod.BaseMod;
@@ -128,6 +125,7 @@ public class TheStarlightMod implements
 
     public static AbilityButton abilityButton;
     public static SpellbookUI spellUI;
+    public static FilterUI filterUI;
 
     public TheStarlightMod() {
         BaseMod.subscribe(this);
@@ -432,6 +430,7 @@ public class TheStarlightMod implements
 
         abilityButton = new AbilityButton();
         spellUI = new SpellbookUI();
+        //filterUI = new FilterUI();
     }
 
     //Get the longest text so all sliders are centered
