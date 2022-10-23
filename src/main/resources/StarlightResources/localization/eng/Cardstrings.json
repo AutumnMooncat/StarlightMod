@@ -66,11 +66,6 @@
     "NAME": "Blind Side",
     "DESCRIPTION": "{@@}Deal !D! damage. NL Apply starlight:Jinx equal to unblocked damage dealt."
   },
-  "${ModID}:Blizzard": {
-    "NAME": "Blizzard",
-    "DESCRIPTION": "Deal !D! damage twice. Apply !M! Weak.",
-    "EXTENDED_DESCRIPTION": ["Blizzara"]
-  },
   "${ModID}:Bulwark": {
     "NAME": "Bulwark DEPRECATED",
     "DESCRIPTION": "Gain !M! starlight:Providence. NL Apply !Starlight:M2! Weak."
@@ -254,11 +249,6 @@
   "${ModID}:RealityPassage": {
     "NAME": "Reality Passage",
     "DESCRIPTION": "Gain !M! starlight:Providence. NL starlight:Foretell any number of cards in your discard pile. NL Exhaust."
-  },
-  "${ModID}:Reflect": {
-    "NAME": "Reflect",
-    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage back.",
-    "EXTENDED_DESCRIPTION": ["Reflectga"]
   },
   "${ModID}:Refresh": {
     "NAME": "Refresh",

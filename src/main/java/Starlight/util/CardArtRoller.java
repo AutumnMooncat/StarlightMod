@@ -132,7 +132,7 @@ public class CardArtRoller {
                     if (possAttacks.isEmpty()) {
                         for (CardLibrary.LibraryType l : basicColors) {
                             for (AbstractCard card : CardLibrary.getCardList(l)) {
-                                if (card.type == AbstractCard.CardType.ATTACK) {
+                                if (card.type == AbstractCard.CardType.ATTACK && WhatMod.findModName(card.getClass()) == null) {
                                     possAttacks.add(card.cardID);
                                 }
                             }
@@ -144,7 +144,7 @@ public class CardArtRoller {
                     if (possPowers.isEmpty()) {
                         for (CardLibrary.LibraryType l : basicColors) {
                             for (AbstractCard card : CardLibrary.getCardList(l)) {
-                                if (card.type == AbstractCard.CardType.POWER) {
+                                if (card.type == AbstractCard.CardType.POWER && WhatMod.findModName(card.getClass()) == null) {
                                     possPowers.add(card.cardID);
                                 }
                             }
@@ -156,7 +156,7 @@ public class CardArtRoller {
                     if (possSkills.isEmpty()) {
                         for (CardLibrary.LibraryType l : basicColors) {
                             for (AbstractCard card : CardLibrary.getCardList(l)) {
-                                if (card.type == AbstractCard.CardType.SKILL) {
+                                if (card.type == AbstractCard.CardType.SKILL && WhatMod.findModName(card.getClass()) == null) {
                                     possSkills.add(card.cardID);
                                 }
                             }

@@ -1,17 +1,17 @@
-package Starlight.cards;
+package Starlight.cards.bookOfIce;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.ReflectPower;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.blue.AutoShields;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.BlurPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Reflect extends AbstractMagickCard {
-    public final static String ID = makeID(Reflect.class.getSimpleName());
+public class Reflection extends AbstractMagickCard {
+    public final static String ID = makeID(Reflection.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -23,23 +23,16 @@ public class Reflect extends AbstractMagickCard {
     private static final int EFFECT = 3;
     private static final int UP_EFFECT = 2;
 
-    public Reflect() {
+    public Reflection() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
+        tags.add(CustomTags.STARLIGHT_ICE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         Wiz.applyToSelf(new ReflectPower(p, magicNumber));
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {

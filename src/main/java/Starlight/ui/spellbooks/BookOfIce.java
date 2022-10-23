@@ -1,7 +1,6 @@
 package Starlight.ui.spellbooks;
 
 import Starlight.TheStarlightMod;
-import Starlight.cards.Blizzard;
 import Starlight.cards.bookOfIce.FrostRay;
 import Starlight.util.CustomTags;
 import Starlight.util.TexLoader;
