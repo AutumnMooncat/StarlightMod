@@ -33,7 +33,7 @@ public class FlameShield extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.FIRE);
+        blck();
         Wiz.applyToSelf(new VigorPower(p, magicNumber));
     }
 

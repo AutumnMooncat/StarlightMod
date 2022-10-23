@@ -4,6 +4,7 @@ import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
 import Starlight.ui.FilterUI;
 import Starlight.util.CustomTags;
+import basemod.ReflectionHacks;
 import basemod.patches.com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen.EverythingFix;
 import basemod.patches.com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar.ColorTabBarFix;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -11,11 +12,13 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.screens.compendium.CardLibSortHeader;
 import com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen;
 import com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar;
 
 public class CompendiumPatches {
     public static FilterType filterType = FilterType.GENERIC;
+    public static boolean needsRefresh;
 
     @SpirePatch2(clz = EverythingFix.DidChangeTab.class, method = "Insert")
     public static class FilterCards {
@@ -23,9 +26,29 @@ public class CompendiumPatches {
         @SpirePostfixPatch
         public static void plz(CardGroup[] visibleCards) {
             if (ColorTabBarFix.Fields.getModTab().color == StarlightSisters.Enums.METEORITE_PURPLE_COLOR) {
-                filteredGroup = new CardGroup(visibleCards[0], CardGroup.CardGroupType.CARD_POOL);
-                filteredGroup.group.removeIf(CompendiumPatches::filterCard);
+                //We need a new group of it won't sort properly
+                filteredGroup = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
+                for (AbstractCard c : visibleCards[0].group) {
+                    if (!filterCard(c)) {
+                        filteredGroup.group.add(c);
+                    }
+                }
                 visibleCards[0] = filteredGroup;
+                needsRefresh = true;
+
+            }
+        }
+    }
+
+    @SpirePatch2(clz = CardLibraryScreen.class, method = "didChangeTab")
+    public static class StopJitteringPlz {
+        @SpirePostfixPatch
+        public static void plz(CardLibraryScreen __instance) {
+            if (needsRefresh) {
+                needsRefresh = false;
+                CardLibSortHeader clsb = ReflectionHacks.getPrivate(__instance, CardLibraryScreen.class, "sortHeader");
+                clsb.justSorted = true;
+                ReflectionHacks.privateMethod(CardLibraryScreen.class, "updateCards").invoke(__instance);
             }
         }
     }

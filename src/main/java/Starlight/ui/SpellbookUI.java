@@ -19,7 +19,7 @@ import java.util.Objects;
 public class SpellbookUI {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("SpellbookUI")).TEXT;
     private static final float X_OFFSET = 200.0F * Settings.scale;
-    private static final float HEADER_Y = Settings.HEIGHT/2f + 100f * Settings.scale;
+    private static final float HEADER_Y = Settings.HEIGHT/2f + 150f * Settings.scale;
     private static final float TEXT_Y = HEADER_Y - 75f * Settings.scale;
     private final SpellbookPanel primPanel;
     private final SpellbookPanel lunaPanel;

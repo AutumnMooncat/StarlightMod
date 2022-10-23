@@ -8,5 +8,45 @@
   "${ModID}:FrostRay": {
     "NAME": "Frost Ray",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Chill."
+  },
+  "${ModID}:IceBeam": {
+    "NAME": "Ice Beam",
+    "DESCRIPTION": "Deal !D! damage. NL If this deals unblocked damage, apply !M! starlight:Chill."
+  },
+  "${ModID}:SlushBall": {
+    "NAME": "Slush Ball",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Wet."
+  },
+  "${ModID}:IceShield": {
+    "NAME": "Ice Shield",
+    "DESCRIPTION": "Apply !M! Weak. NL Gain !B! Block."
+  },
+  "${ModID}:Reflection": {
+    "NAME": "Reflection",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage back."
+  },
+  "${ModID}:FreezeDry": {
+    "NAME": "Freeze-Dry",
+    "DESCRIPTION": "Deal !D! damage. NL Deals double damage to starlight:Wet enemies."
+  },
+  "${ModID}:IcyWind": {
+    "NAME": "Icy Wind",
+    "DESCRIPTION": "Apply !M! starlight:Chill and Weak to ALL enemies. NL Exhaust."
+  },
+  "${ModID}:Hail": {
+    "NAME": "Hail",
+    "DESCRIPTION": "At the end of your turn, gain !M! Block and deal !M! damage to ALL enemies."
+  },
+  "${ModID}:Mist": {
+    "NAME": "Mist",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust."
+  },
+  "${ModID}:Blizzard": {
+    "NAME": "Blizzard",
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Chill to ALL enemies X times. NL Exhaust."
+  },
+  "${ModID}:Frostburn": {
+    "NAME": "Frostburn",
+    "DESCRIPTION": "Whenever you apply starlight:Chill, apply an equal amount of starlight:Burn."
   }
 }
