@@ -3,9 +3,11 @@ package Starlight.cards.bookOfWater;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BurnPower;
 import Starlight.powers.WetPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.purple.Brilliance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -52,5 +54,15 @@ public class Deluge extends AbstractMagickCard {
         //upgradeDamage(UP_DMG);
         exhaust = false;
         uDesc();
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Brilliance.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.48f, 0.48f, 0.59f, 0.55f, false);
     }
 }

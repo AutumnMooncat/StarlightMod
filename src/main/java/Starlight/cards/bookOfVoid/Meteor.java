@@ -1,7 +1,8 @@
-package Starlight.cards;
+package Starlight.cards.bookOfVoid;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.cards.interfaces.OnProjectCard;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -9,7 +10,6 @@ import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.blue.MeteorStrike;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 
@@ -33,6 +33,7 @@ public class Meteor extends AbstractMagickCard implements OnProjectCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = VULN;
+        tags.add(CustomTags.STARLIGHT_VOID);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -61,14 +62,6 @@ public class Meteor extends AbstractMagickCard implements OnProjectCard {
             this.damage *= 2;
         }
         this.isDamageModified = baseDamage != damage;
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {

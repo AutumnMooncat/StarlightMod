@@ -1,8 +1,8 @@
-package Starlight.cards;
+package Starlight.cards.bookOfLight;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.CrumplePower;
 import Starlight.powers.JinxPower;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -32,6 +32,7 @@ public class Dia extends AbstractMagickCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
         isMultiDamage = true;
+        tags.add(CustomTags.STARLIGHT_LIGHT);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -40,14 +41,6 @@ public class Dia extends AbstractMagickCard {
         allDmg(AbstractGameAction.AttackEffect.FIRE);
         Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new JinxPower(mon, magicNumber)));
         //Wiz.applyToSelf(new ProvidencePower(p, magicNumber));
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {

@@ -105,7 +105,11 @@
       "Water Cards",
       "Ice Cards",
       "Fire Cards",
-      "Nature Cards"
+      "Nature Cards",
+      "Dark Cards",
+      "Light Cards",
+      "Storm Cards",
+      "Void Cards"
     ]
   },
   "${ModID}:BookOfFire": {

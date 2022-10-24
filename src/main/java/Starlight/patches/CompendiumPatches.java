@@ -65,6 +65,14 @@ public class CompendiumPatches {
                 return !card.tags.contains(CustomTags.STARLIGHT_FIRE);
             case NATURE:
                 return !card.tags.contains(CustomTags.STARLIGHT_NATURE);
+            case DARK:
+                return !card.tags.contains(CustomTags.STARLIGHT_DARK);
+            case LIGHT:
+                return !card.tags.contains(CustomTags.STARLIGHT_LIGHT);
+            case STORM:
+                return !card.tags.contains(CustomTags.STARLIGHT_STORM);
+            case VOID:
+                return !card.tags.contains(CustomTags.STARLIGHT_VOID);
         }
         return false;
     }
@@ -109,6 +117,10 @@ public class CompendiumPatches {
         WATER,
         ICE,
         FIRE,
-        NATURE
+        NATURE,
+        DARK,
+        LIGHT,
+        STORM,
+        VOID
     }
 }

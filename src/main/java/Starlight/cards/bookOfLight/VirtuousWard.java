@@ -1,19 +1,18 @@
-package Starlight.cards;
+package Starlight.cards.bookOfLight;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.interfaces.TagTeamCard;
+import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.ProvidencePower;
-import Starlight.powers.SpellPower;
 import Starlight.util.CardArtRoller;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.purple.Sanctity;
-import com.megacrit.cardcrawl.cards.red.Warcry;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class VirtuousWard extends AbstractEasyCard {
+public class VirtuousWard extends AbstractMagickCard {
     public final static String ID = makeID(VirtuousWard.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -32,6 +31,7 @@ public class VirtuousWard extends AbstractEasyCard {
         baseMagicNumber = magicNumber = EFFECT;
         exhaust = true;
         selfRetain = true;
+        tags.add(CustomTags.STARLIGHT_LIGHT);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -1,10 +1,10 @@
-package Starlight.cards;
+package Starlight.cards.bookOfLight;
 
 import Starlight.actions.CleansePowerAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.cards.purple.Pray;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,20 +29,13 @@ public class Esuna extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = REMOVE;
+        tags.add(CustomTags.STARLIGHT_LIGHT);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         Wiz.atb(new VFXAction(new SanctityEffect(p.hb.cX, p.hb.cY)));
         Wiz.atb(new CleansePowerAction(p, magicNumber, c -> c.type == AbstractPower.PowerType.DEBUFF, powers -> {}));
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {

@@ -1,8 +1,9 @@
 
-package Starlight.cards;
+package Starlight.cards.bookOfVoid;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.SpellPower;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -38,6 +39,7 @@ public class Gravity extends AbstractMagickCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = SCALE;
         isMultiDamage = true;
+        tags.add(CustomTags.STARLIGHT_VOID);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -101,14 +103,6 @@ public class Gravity extends AbstractMagickCard {
                 }
             }
         });
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void applyPowers() {

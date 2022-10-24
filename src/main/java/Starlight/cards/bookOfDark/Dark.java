@@ -1,8 +1,9 @@
-package Starlight.cards;
+package Starlight.cards.bookOfDark;
 
 import Starlight.actions.LethalDamageAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.damageMods.PiercingDamage;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.DamageModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -31,18 +32,11 @@ public class Dark extends AbstractMagickCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = NRG;
         DamageModifierManager.addModifier(this, new PiercingDamage());
+        tags.add(CustomTags.STARLIGHT_DARK);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new LethalDamageAction(m, new DamageInfo(p, damage, damageType), AbstractGameAction.AttackEffect.POISON, mon -> Wiz.att(new GainEnergyAction(magicNumber))));
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {

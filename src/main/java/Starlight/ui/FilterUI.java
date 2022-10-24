@@ -73,6 +73,33 @@ public class FilterUI {
                 refreshFilters();
             }
         });
+        filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookDark.png"), TEXT[6], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_DARK)), size)) {
+            @Override
+            public void onSelect() {
+                CompendiumPatches.filterType = CompendiumPatches.FilterType.DARK;
+                refreshFilters();
+            }
+        });
+        filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookLight.png"), TEXT[7], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_LIGHT)), size)) {
+            @Override
+            public void onSelect() {
+                CompendiumPatches.filterType = CompendiumPatches.FilterType.LIGHT;
+                refreshFilters();
+            }
+        });
+        filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookElec.png"), TEXT[8], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_STORM)), size)) {
+            @Override
+            public void onSelect() {
+                CompendiumPatches.filterType = CompendiumPatches.FilterType.STORM;
+                refreshFilters();
+            }
+        });filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookVoid.png"), TEXT[9], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_VOID)), size)) {
+            @Override
+            public void onSelect() {
+                CompendiumPatches.filterType = CompendiumPatches.FilterType.VOID;
+                refreshFilters();
+            }
+        });
 
         filterPanel.layoutFilters();
 

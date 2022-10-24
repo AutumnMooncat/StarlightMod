@@ -1,10 +1,10 @@
-package Starlight.cards;
+package Starlight.cards.bookOfLight;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.cards.blue.Melter;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -27,6 +27,7 @@ public class Holy extends AbstractMagickCard {
     public Holy() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
+        tags.add(CustomTags.STARLIGHT_LIGHT);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -45,14 +46,6 @@ public class Holy extends AbstractMagickCard {
 
     protected boolean damageBoost() {
         return AbstractDungeon.getCurrRoom().eliteTrigger || AbstractDungeon.getMonsters().monsters.stream().anyMatch(m -> m.type == AbstractMonster.EnemyType.BOSS);
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {

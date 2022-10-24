@@ -47,6 +47,6 @@
   },
   "${ModID}:Vulcanize": {
     "NAME": "Vulcanize",
-    "DESCRIPTION": "Whenever you deal unblocked attack damage, apply !M! starlight:Burn."
+    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! starlight:Burn."
   }
 }

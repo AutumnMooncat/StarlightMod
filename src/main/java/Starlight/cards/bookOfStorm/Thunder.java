@@ -1,11 +1,11 @@
-package Starlight.cards;
+package Starlight.cards.bookOfStorm;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.cards.blue.BallLightning;
 import com.megacrit.cardcrawl.cards.blue.Tempest;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -31,6 +31,7 @@ public class Thunder extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
+        tags.add(CustomTags.STARLIGHT_STORM);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -41,14 +42,6 @@ public class Thunder extends AbstractMagickCard {
         /*Wiz.forAllMonstersLiving(mon -> Wiz.atb(new VFXAction(new LightningEffect(mon.drawX, mon.drawY), 0.05F)));
         allDmg(AbstractGameAction.AttackEffect.NONE);
         Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new VulnerablePower(mon, magicNumber, false)));*/
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {

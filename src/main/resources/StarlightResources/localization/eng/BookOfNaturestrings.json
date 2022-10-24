@@ -8,5 +8,45 @@
   "${ModID}:VineWrap": {
     "NAME": "Vine Wrap",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Tangled."
+  },
+  "${ModID}:Bramble": {
+    "NAME": "Bramble",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:Barbs."
+  },
+  "${ModID}:ThornBall": {
+    "NAME": "Thorn Ball",
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to your starlight:Barbs."
+  },
+  "${ModID}:StickySap": {
+    "NAME": "Sticky Sap",
+    "DESCRIPTION": "Retain. NL Apply !M! starlight:Tangled. NL Apply !M! starlight:Wet. NL Exhaust."
+  },
+  "${ModID}:SolarBlade": {
+    "NAME": "Solar Blade",
+    "DESCRIPTION": "Deal !D! damage. NL If this deals unblocked damage, apply !M! starlight:Burn."
+  },
+  "${ModID}:Entangle": {
+    "NAME": "Entangle",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! starlight:Tangled."
+  },
+  "${ModID}:VineBomb": {
+    "NAME": "Vine Bomb",
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Tangled to ALL enemies. Deals additional damage equal to your starlight:Barbs."
+  },
+  "${ModID}:Sanctuary": {
+    "NAME": "Sanctuary",
+    "DESCRIPTION": "At the end of your turn, gain Block equal to {!M!|>1=!M! times }your starlight:Barbs.{@@}"
+  },
+  "${ModID}:ToxicBarbs": {
+    "NAME": "Toxic Barbs",
+    "DESCRIPTION": "Gain !M! starlight:Barbs. NL Apply !M! Poison to ALL enemies."
+  },
+  "${ModID}:LeafStorm": {
+    "NAME": "Leaf Storm",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Deals double damage to starlight:Burning enemies."
+  },
+  "${ModID}:Bloom": {
+    "NAME": "Bloom",
+    "DESCRIPTION": "Whenever you play an Attack, gain !M! starlight:Barb{!M!|>1=s}{@@}."
   }
 }

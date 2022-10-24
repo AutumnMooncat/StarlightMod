@@ -1,14 +1,13 @@
-package Starlight.cards;
+package Starlight.cards.bookOfDark;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.damageMods.PoisonDamage;
-import Starlight.util.Wiz;
+import Starlight.util.CustomTags;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.DamageModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.green.PoisonedStab;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -27,18 +26,11 @@ public class Bio extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         DamageModifierManager.addModifier(this, new PoisonDamage());
+        tags.add(CustomTags.STARLIGHT_DARK);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.POISON);
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {

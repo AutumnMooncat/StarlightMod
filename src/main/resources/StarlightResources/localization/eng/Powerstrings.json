@@ -80,17 +80,49 @@
     "NAME": "Mud",
     "DESCRIPTIONS": ["#yAttacks deal #b"," less damage this turn. Each turn, Mud is halved."]
   },
+  "${ModID}:BarbPower": {
+    "NAME": "Barbs",
+    "DESCRIPTIONS": ["When attacked, deals #b"," damage back, then reduce #yBarbs by 1."]
+  },
   "${ModID}:ChillPower": {
     "NAME": "Chill",
     "DESCRIPTIONS": ["Deals #b20% less damage with #yAttacks for #b"," turn."," turns."," If this creature is #yWet, it also takes #b20% more damage from Attacks."]
   },
   "${ModID}:BubbleShieldPower": {
     "NAME": "Bubble Shield",
-    "DESCRIPTIONS": ["#When attacked this turn, apply #b"," #yWet back."]
+    "DESCRIPTIONS": ["When attacked this turn, apply #b"," #yWet back."]
   },
   "${ModID}:FlameWallPower": {
     "NAME": "Flame Wall",
-    "DESCRIPTIONS": ["#When attacked this turn, apply #b"," #yBurn back."]
+    "DESCRIPTIONS": ["When attacked this turn, apply #b"," #yBurn back."]
+  },
+  "${ModID}:SanctuaryPower": {
+    "NAME": "Sanctuary",
+    "DESCRIPTIONS": ["At the end of your turn, gain #yBlock equal to your #yBarbs.","At the end of your turn, gain #yBlock equal to #b"," times your #yBarbs."]
+  },
+  "${ModID}:BloomPower": {
+    "NAME": "Bloom",
+    "DESCRIPTIONS": ["Whenever you play an Attack, gain #b"," #yBarbs."]
+  },
+  "${ModID}:FrostburnPower": {
+    "NAME": "Frostburn",
+    "DESCRIPTIONS": ["Whenever you apply #yChill, apply an equal amount of #yBurn.","Whenever you apply #yChill, apply #b"," times as much #yBurn."]
+  },
+  "${ModID}:HailPower": {
+    "NAME": "Hail",
+    "DESCRIPTIONS": ["At the end of your turn, gain #b"," #yBlock and deal #b"," damage to ALL enemies."]
+  },
+  "${ModID}:VulcanizePower": {
+    "NAME": "Vulcanize",
+    "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, apply #b"," #yBurn."]
+  },
+  "${ModID}:FirestormPower": {
+    "NAME": "Firestorm",
+    "DESCRIPTIONS": ["At the start of your turn, apply #b"," #yBurn to ALL enemies."]
+  },
+  "${ModID}:Maelstrom": {
+    "NAME": "Maelstrom",
+    "DESCRIPTIONS": ["At the start of your turn, apply #b"," #yWet to ALL enemies."]
   },
   "${ModID}:PosturingPower": {
     "NAME": "Posturing",

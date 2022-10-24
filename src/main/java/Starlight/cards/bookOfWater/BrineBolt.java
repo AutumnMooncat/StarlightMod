@@ -7,6 +7,7 @@ import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.cards.blue.ColdSnap;
 import com.megacrit.cardcrawl.cards.purple.DeceiveReality;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -39,5 +40,15 @@ public class BrineBolt extends AbstractMagickCard {
 
     public void upp() {
         upgradeDamage(UP_DMG);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return ColdSnap.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.5f, 0.1f, 0.6f, 0.5f, false);
     }
 }

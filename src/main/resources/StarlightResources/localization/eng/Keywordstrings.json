@@ -218,5 +218,13 @@
       "muddy"
     ],
     "DESCRIPTION": "Muddy creatures deal less damage with Attacks. Each turn, Mud is halved."
+  },
+  {
+    "PROPER_NAME": "Barbs",
+    "NAMES": [
+      "barb",
+      "barbs"
+    ],
+    "DESCRIPTION": "Barbs deal damage back and reduce by #b1 whenever you are attacked."
   }
 ]

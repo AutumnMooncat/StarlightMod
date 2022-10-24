@@ -1,19 +1,15 @@
-package Starlight.cards;
+package Starlight.cards.bookOfVoid;
 
-import Starlight.actions.ProjectCardsInHandAction;
 import Starlight.actions.ProjectCopyInHandAction;
 import Starlight.actions.ProjectSpecificCardAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.purple.Wish;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.BlurPower;
-
-import java.util.List;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -33,6 +29,7 @@ public class Astra extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = EFFECT;
         baseBlock = block = BLK;
+        tags.add(CustomTags.STARLIGHT_VOID);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -48,14 +45,6 @@ public class Astra extends AbstractMagickCard {
                 this.isDone = true;
             }
         }));
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {

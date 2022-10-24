@@ -3,7 +3,7 @@ package Starlight.augments;
 import CardAugments.cardmods.AbstractAugment;
 import Starlight.TheStarlightMod;
 import Starlight.actions.CleansePowerAction;
-import Starlight.cards.Esuna;
+import Starlight.cards.bookOfLight.Esuna;
 import Starlight.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

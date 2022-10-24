@@ -1,11 +1,11 @@
-package Starlight.cards;
+package Starlight.cards.bookOfStorm;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.cards.blue.Sunder;
-import com.megacrit.cardcrawl.cards.red.IronWave;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -32,6 +32,7 @@ public class Quake extends AbstractMagickCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = REDUCE;
         isMultiDamage = true;
+        tags.add(CustomTags.STARLIGHT_STORM);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

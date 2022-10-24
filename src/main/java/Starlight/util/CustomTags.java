@@ -21,15 +21,15 @@ public class CustomTags {
     @SpireEnum
     public static AbstractCard.CardTags STARLIGHT_LIGHT;
     @SpireEnum
-    public static AbstractCard.CardTags STARLIGHT_EARTH;
-    @SpireEnum
     public static AbstractCard.CardTags STARLIGHT_STORM;
+    @SpireEnum
+    public static AbstractCard.CardTags STARLIGHT_VOID;
+    @SpireEnum
+    public static AbstractCard.CardTags STARLIGHT_SAND;
     @SpireEnum
     public static AbstractCard.CardTags STARLIGHT_SPACE;
     @SpireEnum
     public static AbstractCard.CardTags STARLIGHT_TIME;
     @SpireEnum
-    public static AbstractCard.CardTags STARLIGHT_VOID;
-    @SpireEnum
-    public static AbstractCard.CardTags STARLIGHT_SAND;
+    public static AbstractCard.CardTags STARLIGHT_EARTH;
 }
