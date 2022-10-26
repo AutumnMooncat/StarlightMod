@@ -6,6 +6,7 @@ import Starlight.powers.ChillPower;
 import Starlight.powers.WetPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -38,8 +39,9 @@ public class SoakPower extends AbstractPower {
     }
 
     @Override
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (isActive() && source == this.owner && target != this.owner && power instanceof WetPower && !applied) {
+    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
+        if (isActive() && target != owner && !applied) {
+            flash();
             Wiz.atb(new DrawCardAction(amount));
             applied = true;
         }
@@ -64,6 +66,5 @@ public class SoakPower extends AbstractPower {
                 this.description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[3];
             }
         }
-
     }
 }

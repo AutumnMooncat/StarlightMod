@@ -19,8 +19,8 @@ public class SlushBall extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 0;
-    private static final int DMG = 5;
+    private static final int COST = 1;
+    private static final int DMG = 7;
     private static final int UP_DMG = 2;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;

@@ -15,7 +15,7 @@
   },
   "${ModID}:SlushBall": {
     "NAME": "Slush Ball",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Wet."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Wet. NL Apply !M! starlight:Chill."
   },
   "${ModID}:IceShield": {
     "NAME": "Ice Shield",

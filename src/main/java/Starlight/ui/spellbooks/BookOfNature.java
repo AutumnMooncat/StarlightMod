@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class BookOfNature extends ClickableSpellbook {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("BookOfNature")).TEXT;
-    private static final int AMOUNT = 2;
+    private static final int AMOUNT = 1;
 
     public BookOfNature(boolean prim) {
         super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookNature.png"), TEXT[0], TEXT[1], new AbstractAbilityCard(new ThornyVinesPower(null, AMOUNT, prim)) {});

@@ -197,15 +197,15 @@
   },
   "${ModID}:SoakPower": {
     "NAME": "Soak",
-    "DESCRIPTIONS": ["The first time #yPrimrose applies #yWet each turn, draw #b","The first time #yLuna applies #yWet each turn, draw #b"," card.", "cards."]
+    "DESCRIPTIONS": ["The first time #yPrimrose attacks a #yWet enemy each turn, draw #b","The first time #yLuna attacks a #yWet enemy each turn, draw #b"," card.", "cards."]
   },
   "${ModID}:SnowCloakPower": {
     "NAME": "Snow Cloak",
-    "DESCRIPTIONS": ["Whenever #yPrimrose applies #yChill, gain #b","Whenever #yLuna applies #yChill, gain #b"," #yBlock."]
+    "DESCRIPTIONS": ["Whenever #yPrimrose plays a #ySkill, gain #b","Whenever #yLuna plays a #ySkill, gain #b"," #yBlock."]
   },
   "${ModID}:ThornyVinesPower": {
     "NAME": "Thorny Vines",
-    "DESCRIPTIONS": ["Whenever #yPrimrose applies #yTangle, gain #b","Whenever #yLuna applies #yTangle, gain #b"," #yBarbs."]
+    "DESCRIPTIONS": ["Whenever #yPrimrose gains #yBlock, gain #b","Whenever #yLuna gains #yBlock, gain #b"," #yBarb."," #yBarbs."]
   },
 
 

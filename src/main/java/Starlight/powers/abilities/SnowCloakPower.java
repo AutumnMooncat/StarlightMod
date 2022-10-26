@@ -7,8 +7,12 @@ import Starlight.powers.WetPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -31,9 +35,9 @@ public class SnowCloakPower extends AbstractPower {
         updateDescription();
     }
 
-    @Override
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (isActive() && source == this.owner && target != this.owner && power instanceof ChillPower) {
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (isActive() && card.type == AbstractCard.CardType.SKILL) {
+            flash();
             Wiz.atb(new GainBlockAction(owner, amount));
         }
     }

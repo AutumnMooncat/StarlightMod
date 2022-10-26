@@ -38,16 +38,32 @@ public class ThornyVinesPower extends AbstractPower {
         }
     }
 
+    @Override
+    public void onGainedBlock(float blockAmount) {
+        if (isActive()) {
+            flash();
+            Wiz.applyToSelf(new BarbPower(Wiz.adp(), amount));
+        }
+    }
+
     private boolean isActive() {
         return owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront == prim;
     }
 
     @Override
     public void updateDescription() {
-        if (prim) {
-            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+        if (amount == 1) {
+            if (prim) {
+                this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+            } else {
+                this.description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+            }
         } else {
-            this.description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+            if (prim) {
+                this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[3];
+            } else {
+                this.description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[3];
+            }
         }
     }
 }

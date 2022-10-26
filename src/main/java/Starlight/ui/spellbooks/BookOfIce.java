@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class BookOfIce extends ClickableSpellbook {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("BookOfIce")).TEXT;
-    private static final int AMOUNT = 2;
+    private static final int AMOUNT = 1;
 
     public BookOfIce(boolean prim) {
         super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookIce.png"), TEXT[0], TEXT[1], new AbstractAbilityCard(new SnowCloakPower(null, AMOUNT, prim)) {});
