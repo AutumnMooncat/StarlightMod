@@ -120,7 +120,7 @@
     "NAME": "Firestorm",
     "DESCRIPTIONS": ["At the start of your turn, apply #b"," #yBurn to ALL enemies."]
   },
-  "${ModID}:Maelstrom": {
+  "${ModID}:MaelstromPower": {
     "NAME": "Maelstrom",
     "DESCRIPTIONS": ["At the start of your turn, apply #b"," #yWet to ALL enemies."]
   },

@@ -40,7 +40,7 @@ public class SoakPower extends AbstractPower {
 
     @Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (isActive() && target != owner && !applied) {
+        if (isActive() && target != owner && !applied && target.hasPower(WetPower.POWER_ID)) {
             flash();
             Wiz.atb(new DrawCardAction(amount));
             applied = true;
