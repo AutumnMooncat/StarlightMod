@@ -39,7 +39,7 @@ public class HarmonyPower extends AbstractPower {
         if (card instanceof AbstractMagickCard) {
             return damage + amount;
         }
-        return amount;
+        return damage;
     }
 
     @Override
