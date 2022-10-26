@@ -32,15 +32,8 @@ public class ThornyVinesPower extends AbstractPower {
     }
 
     @Override
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (isActive() && source == this.owner && target != this.owner && power instanceof TanglePower) {
-            Wiz.applyToSelf(new BarbPower(Wiz.adp(), amount));
-        }
-    }
-
-    @Override
-    public void onGainedBlock(float blockAmount) {
-        if (isActive()) {
+    public void atEndOfTurn(boolean isPlayer) {
+        if (isPlayer && isActive()) {
             flash();
             Wiz.applyToSelf(new BarbPower(Wiz.adp(), amount));
         }

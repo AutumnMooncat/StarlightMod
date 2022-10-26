@@ -2,8 +2,11 @@ package Starlight.cards.bookOfIce;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.FrostburnPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.blue.MultiCast;
+import com.megacrit.cardcrawl.cards.red.FeelNoPain;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -32,5 +35,15 @@ public class Hail extends AbstractMagickCard {
 
     public void upp() {
         upgradeMagicNumber(UP_AMOUNT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return FeelNoPain.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.05f, 0.55f, 0.55f, 0.45f, false);
     }
 }

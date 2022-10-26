@@ -3,8 +3,11 @@ package Starlight.cards.bookOfNature;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.TanglePower;
 import Starlight.powers.WetPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.green.Unload;
+import com.megacrit.cardcrawl.cards.red.Disarm;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -38,5 +41,15 @@ public class Entangle extends AbstractMagickCard {
     public void upp() {
         upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Disarm.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.85f, 0.55f, 0.55f, 0.45f, false);
     }
 }

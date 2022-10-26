@@ -2,9 +2,11 @@ package Starlight.cards.bookOfFire;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BurnPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.purple.Worship;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
@@ -35,6 +37,16 @@ public class WillOWisp extends AbstractMagickCard {
 
     public void upp() {
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Worship.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.55f, 0.35f, 0.45f, false);
     }
 
 }

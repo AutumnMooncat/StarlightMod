@@ -2,10 +2,13 @@ package Starlight.cards.bookOfFire;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BurnPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.blue.BeamCell;
 import com.megacrit.cardcrawl.cards.purple.Eruption;
+import com.megacrit.cardcrawl.cards.purple.WreathOfFlame;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
@@ -40,6 +43,16 @@ public class FlameShield extends AbstractMagickCard {
     public void upp() {
         upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return WreathOfFlame.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.65f, 0.45f, false);
     }
 
 }

@@ -3,9 +3,12 @@ package Starlight.cards.bookOfFire;
 
 import Starlight.actions.NapalmAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.blue.BeamCell;
+import com.megacrit.cardcrawl.cards.red.BurningPact;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -41,5 +44,15 @@ public class Napalm extends AbstractMagickCard {
 
     public void upp() {
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return BurningPact.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.65f, 0.45f, false);
     }
 }

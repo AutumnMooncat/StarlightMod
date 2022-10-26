@@ -3,8 +3,11 @@ package Starlight.cards.bookOfWater;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BubbleShieldPower;
 import Starlight.powers.WetPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.blue.BootSequence;
+import com.megacrit.cardcrawl.cards.purple.ReachHeaven;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -37,4 +40,15 @@ public class BubbleShield extends AbstractMagickCard {
     public void upp() {
         upgradeBlock(UP_BLK);
     }
+
+    @Override
+    public String cardArtCopy() {
+        return BootSequence.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.35f, 0.55f, false);
+    }
+
 }

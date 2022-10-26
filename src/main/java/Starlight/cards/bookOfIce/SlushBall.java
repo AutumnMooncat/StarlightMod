@@ -3,10 +3,13 @@ package Starlight.cards.bookOfIce;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.ChillPower;
 import Starlight.powers.WetPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.blue.Blizzard;
+import com.megacrit.cardcrawl.cards.blue.MultiCast;
+import com.megacrit.cardcrawl.cards.purple.Meditate;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -35,6 +38,7 @@ public class SlushBall extends AbstractMagickCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         Wiz.applyToEnemy(m, new WetPower(m, magicNumber));
+        Wiz.applyToEnemy(m, new ChillPower(m, magicNumber));
     }
 
     public void upp() {
@@ -42,4 +46,13 @@ public class SlushBall extends AbstractMagickCard {
         upgradeMagicNumber(UP_EFFECT);
     }
 
+    @Override
+    public String cardArtCopy() {
+        return MultiCast.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.55f, 0.55f, 0.55f, 0.45f, false);
+    }
 }

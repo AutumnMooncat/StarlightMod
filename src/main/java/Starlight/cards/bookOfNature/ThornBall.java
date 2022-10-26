@@ -3,10 +3,13 @@ package Starlight.cards.bookOfNature;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BarbPower;
 import Starlight.powers.TanglePower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.colorless.DarkShackles;
+import com.megacrit.cardcrawl.cards.green.Skewer;
+import com.megacrit.cardcrawl.cards.red.GhostlyArmor;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -57,5 +60,15 @@ public class ThornBall extends AbstractMagickCard {
 
     public void upp() {
         upgradeDamage(UP_DMG);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Skewer.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.85f, 0.55f, 0.55f, 0.45f, false);
     }
 }

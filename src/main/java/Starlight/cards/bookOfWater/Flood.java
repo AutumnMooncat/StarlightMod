@@ -2,8 +2,11 @@ package Starlight.cards.bookOfWater;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.WetPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.colorless.Violence;
+import com.megacrit.cardcrawl.cards.purple.Meditate;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -39,5 +42,15 @@ public class Flood extends AbstractMagickCard {
 
     public void upp() {
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Meditate.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.55f, 0.55f, 0.35f, 0.45f, false);
     }
 }

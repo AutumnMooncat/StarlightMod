@@ -124,6 +124,10 @@
     "NAME": "Maelstrom",
     "DESCRIPTIONS": ["At the start of your turn, apply #b"," #yWet to ALL enemies."]
   },
+  "${ModID}:WhirlpoolPower": {
+    "NAME": "Whirlpool",
+    "DESCRIPTIONS": ["At the end of your turn, ALL enemies take #b"," damage for each #yWet they have."]
+  },
   "${ModID}:PosturingPower": {
     "NAME": "Posturing",
     "DESCRIPTIONS": ["At the end of your turn, if the last card you played was a #ySkill, gain #b"," #yBlock. If it was an #yAttack, gain #b"," #yVigor."]
@@ -205,7 +209,7 @@
   },
   "${ModID}:ThornyVinesPower": {
     "NAME": "Thorny Vines",
-    "DESCRIPTIONS": ["Whenever #yPrimrose gains #yBlock, gain #b","Whenever #yLuna gains #yBlock, gain #b"," #yBarb."," #yBarbs."]
+    "DESCRIPTIONS": ["At the end of #yPrimrose's turn, gain #b","At the end of #yLuna's turn, gain #b"," #yBarb."," #yBarbs."]
   },
 
 

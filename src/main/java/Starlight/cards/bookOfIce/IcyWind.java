@@ -3,8 +3,10 @@ package Starlight.cards.bookOfIce;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.ChillPower;
 import Starlight.powers.WetPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.red.Shockwave;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -39,5 +41,15 @@ public class IcyWind extends AbstractMagickCard {
 
     public void upp() {
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Shockwave.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.65f, 0.45f, false);
     }
 }

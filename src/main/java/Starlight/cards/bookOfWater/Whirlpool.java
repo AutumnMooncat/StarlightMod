@@ -3,8 +3,11 @@ package Starlight.cards.bookOfWater;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.MaelstromPower;
 import Starlight.powers.WhirlpoolPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.blue.Coolheaded;
+import com.megacrit.cardcrawl.cards.purple.LikeWater;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -33,5 +36,15 @@ public class Whirlpool extends AbstractMagickCard {
 
     public void upp() {
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return LikeWater.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.65f, 0.55f, false);
     }
 }

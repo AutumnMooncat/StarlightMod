@@ -3,10 +3,13 @@ package Starlight.cards.bookOfNature;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BarbPower;
 import Starlight.powers.TanglePower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.colorless.DarkShackles;
+import com.megacrit.cardcrawl.cards.red.FeelNoPain;
+import com.megacrit.cardcrawl.cards.red.GhostlyArmor;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -40,5 +43,15 @@ public class Bramble extends AbstractMagickCard {
     public void upp() {
         upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return GhostlyArmor.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.15f, 0.55f, 0.55f, 0.45f, false);
     }
 }

@@ -3,11 +3,14 @@ package Starlight.cards.bookOfNature;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BarbPower;
 import Starlight.powers.TanglePower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import Starlight.vfx.AngledFlashAtkImgEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.cards.green.Skewer;
+import com.megacrit.cardcrawl.cards.green.Unload;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
@@ -71,5 +74,15 @@ public class VineBomb extends AbstractMagickCard {
     public void upp() {
         upgradeDamage(UP_DMG);
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Unload.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.65f, 0.55f, 0.55f, 0.45f, false);
     }
 }

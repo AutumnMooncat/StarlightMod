@@ -1,6 +1,8 @@
 package Starlight.cards.bookOfIce;
 
+import Starlight.cards.Anticipate;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -38,5 +40,15 @@ public class Mist extends AbstractMagickCard {
 
     public void upp() {
         upgradeBlock(UP_BLK);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Anticipate.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.65f, 0.55f, false);
     }
 }

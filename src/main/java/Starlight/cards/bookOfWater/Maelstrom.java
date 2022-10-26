@@ -3,8 +3,11 @@ package Starlight.cards.bookOfWater;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.FirestormPower;
 import Starlight.powers.MaelstromPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.blue.BeamCell;
+import com.megacrit.cardcrawl.cards.blue.Storm;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -33,5 +36,15 @@ public class Maelstrom extends AbstractMagickCard {
 
     public void upp() {
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Storm.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.65f, 0.45f, false);
     }
 }

@@ -3,9 +3,12 @@ package Starlight.cards.bookOfFire;
 import Starlight.actions.BoostDamageInHandAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BurnPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.blue.BeamCell;
+import com.megacrit.cardcrawl.cards.purple.Tantrum;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -41,4 +44,13 @@ public class Eruption extends AbstractMagickCard {
         upgradeMagicNumber(UP_EFFECT);
     }
 
+    @Override
+    public String cardArtCopy() {
+        return Tantrum.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.65f, 0.45f, false);
+    }
 }

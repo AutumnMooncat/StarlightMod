@@ -3,8 +3,11 @@ package Starlight.cards.bookOfNature;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BloomPower;
 import Starlight.powers.SanctuaryPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.blue.HelloWorld;
+import com.megacrit.cardcrawl.cards.red.Hemokinesis;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -33,5 +36,15 @@ public class Bloom extends AbstractMagickCard {
 
     public void upp() {
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return HelloWorld.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.55f, 0.55f, 0.55f, false);
     }
 }

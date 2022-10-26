@@ -1,8 +1,11 @@
 package Starlight.cards.bookOfIce;
 
+import Starlight.cards.Anticipate;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.blue.Coolheaded;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -37,5 +40,15 @@ public class IceShield extends AbstractMagickCard {
     public void upp() {
         upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public String cardArtCopy() {
+        return Coolheaded.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.65f, 0.55f, false);
     }
 }
