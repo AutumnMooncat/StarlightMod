@@ -5,6 +5,7 @@ import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.cards.purple.Vigilance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
@@ -44,7 +45,7 @@ public class Mist extends AbstractMagickCard {
 
     @Override
     public String cardArtCopy() {
-        return Anticipate.ID;
+        return Vigilance.ID;
     }
 
     @Override
