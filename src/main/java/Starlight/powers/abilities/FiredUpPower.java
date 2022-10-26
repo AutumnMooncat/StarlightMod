@@ -35,7 +35,7 @@ public class FiredUpPower extends AbstractPower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (isActive() && source == this.owner && target != this.owner && power instanceof ChillPower) {
+        if (isActive() && source == this.owner && target != this.owner && power instanceof BurnPower) {
             Wiz.applyToSelf(new VigorPower(Wiz.adp(), amount));
         }
     }
