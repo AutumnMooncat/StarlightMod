@@ -1,3 +1,4 @@
+/*
 package Starlight.util;
 
 import Starlight.powers.abilities.*;
@@ -65,11 +66,13 @@ public class AbilityManager {
 
     public static int getAbilityLevel(AbilityType t) {
         int i = investedAbilityLevels.getOrDefault(t, 0);
-        /*for (AbstractRelic r : Wiz.adp().relics) {
+        */
+/*for (AbstractRelic r : Wiz.adp().relics) {
             if (r instanceof AbilityProvidingRelic) {
                 i += ((AbilityProvidingRelic) r).levelBoost(t);
             }
-        }*/
+        }*//*
+
         return i;
     }
 
@@ -144,3 +147,4 @@ public class AbilityManager {
         }
     }
 }
+*/

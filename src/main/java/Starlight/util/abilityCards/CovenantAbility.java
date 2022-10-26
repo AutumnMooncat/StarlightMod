@@ -1,3 +1,4 @@
+/*
 package Starlight.util.abilityCards;
 
 import Starlight.cards.abstracts.AbstractAbilityCard;
@@ -25,3 +26,4 @@ public class CovenantAbility extends AbstractAbilityCard {
         AbilityManager.addAbilityLevel(TYPE, 1);
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package Starlight.patches;
 
 import Starlight.characters.StarlightSisters;
@@ -30,3 +31,4 @@ public class AddAbilityOptionPatch {
         }
     }
 }
+*/

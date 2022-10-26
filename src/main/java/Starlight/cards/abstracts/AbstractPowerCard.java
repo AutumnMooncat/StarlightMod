@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.cards.tempCards.Miracle;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -37,7 +38,23 @@ public abstract class AbstractPowerCard extends AbstractEasyCard {
         StringBuilder sb = new StringBuilder();
         for (String s : storedPower.description.split(" ")) {
             if (s.startsWith("#") && s.length() > 2) {
-                s = s.substring(2);
+                switch(s.charAt(1)) {
+                    case 'b':
+                        s = "[#87CEEB]" + s.substring(2);
+                        break;
+                    case 'g':
+                        s = "[#7FFF00]" + s.substring(2);
+                        break;
+                    case 'p':
+                        s = "[#EE82EE]" + s.substring(2);
+                        break;
+                    case 'r':
+                        s = "[#FF6563]" + s.substring(2);
+                        break;
+                    case 'y':
+                        s = "[#EFC851]" + s.substring(2);
+                        break;
+                }
             }
             /*if (GameDictionary.keywords.containsKey(prefixID+":"+s)) {
                 s = prefixID+":"+s;

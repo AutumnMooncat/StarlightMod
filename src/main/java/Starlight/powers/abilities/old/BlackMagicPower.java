@@ -1,39 +1,42 @@
-package Starlight.powers.abilities;
+package Starlight.powers.abilities.old;
 
 import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class AstralBodyPower extends AbstractPower {
+public class BlackMagicPower extends AbstractPower {
 
-    public static final String POWER_ID = TheStarlightMod.makeID(AstralBodyPower.class.getSimpleName());
+    public static final String POWER_ID = TheStarlightMod.makeID(BlackMagicPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public AstralBodyPower(AbstractCreature owner, int amount) {
+    public BlackMagicPower(AbstractCreature owner, int amount) {
         this.ID = POWER_ID;
         this.name = NAME;
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("channel");
+        this.loadRegion("corruption");
         updateDescription();
     }
 
-    @Override
-    public void onCardDraw(AbstractCard card) {
-        if (isActive() && card.type == AbstractCard.CardType.STATUS) {
-            flash();
-            Wiz.atb(new GainBlockAction(owner, amount));
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.tags.contains(AbstractCard.CardTags.STARTER_STRIKE) && isActive()) {
+            this.flash();
+            action.exhaustCard = true;
+            Wiz.atb(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
         }
     }
+
     /*@Override
     public void renderIcons(SpriteBatch sb, float x, float y, Color c) {
         if (!isActive()) {

@@ -7,7 +7,6 @@ import Starlight.actions.SwapAction;
 import Starlight.cards.*;
 import Starlight.powers.TagTeamPower;
 import Starlight.relics.MagicWand;
-import Starlight.util.AbilityManager;
 import Starlight.util.Wiz;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
@@ -31,7 +30,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
@@ -363,12 +361,13 @@ public class StarlightSisters extends CustomPlayer {
         resetToIdleAnimation();
         super.preBattlePrep();
         Wiz.applyToSelfTop(new TagTeamPower(this));
-        for (AbilityManager.AbilityType t : AbilityManager.AbilityType.values()) {
+        spellUI.setupAbilities();
+        /*for (AbilityManager.AbilityType t : AbilityManager.AbilityType.values()) {
             if (AbilityManager.getAbilityLevel(t) > 0) {
                 AbstractPower ability = AbilityManager.getAbilityPower(t);
                 Wiz.applyToSelf(ability);
             }
-        }
+        }*/
         boolean bossFight = false;
         for (AbstractMonster mons : AbstractDungeon.getMonsters().monsters) {
             if (mons.type == AbstractMonster.EnemyType.BOSS) {

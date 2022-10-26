@@ -9,9 +9,11 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.io.IOException;
 
@@ -23,11 +25,21 @@ public abstract class ClickableSpellbook extends ClickableUIElement {
     public SpellbookPanel containingPanel;
     private String header;
     private String body;
+    private AbstractCard card;
 
     public ClickableSpellbook(TextureAtlas.AtlasRegion img, String header, String body) {
         super(img, 0, 0, SIZE, SIZE);
         this.header = header;
         this.body = body;
+    }
+
+    public ClickableSpellbook(TextureAtlas.AtlasRegion img, String header, String body, AbstractCard card) {
+        super(img, 0, 0, SIZE, SIZE);
+        this.header = header;
+        this.body = body;
+        this.card = card;
+        card.current_x = card.target_x = Settings.WIDTH/2f;
+        card.current_y = card.target_y = Settings.HEIGHT/2f - 100f * Settings.scale;
     }
 
     public void setPanel(SpellbookPanel panel) {
@@ -47,6 +59,11 @@ public abstract class ClickableSpellbook extends ClickableUIElement {
             float halfWidth = selectedTexture.packedWidth / 2.0F;
             float halfHeight = selectedTexture.packedHeight / 2.0F;
             sb.draw(selectedTexture, x - halfWidth + halfWidth * Settings.scale * texScale, y - halfHeight + halfHeight * Settings.scale * texScale, halfWidth, halfHeight, selectedTexture.packedWidth, selectedTexture.packedHeight, Settings.scale * texScale * 0.5f, Settings.scale * texScale * 0.5f, 0);
+        }
+        if (hitbox.hovered && card != null) {
+            float scale = FontHelper.cardTitleFont.getData().scaleX;
+            card.render(sb);
+            FontHelper.cardTitleFont.getData().setScale(scale);
         }
     }
 
@@ -98,4 +115,6 @@ public abstract class ClickableSpellbook extends ClickableUIElement {
     public abstract String starterCardID();
 
     public abstract boolean allowCardInPool(AbstractCard card);
+
+    public abstract AbstractPower getAbility(boolean primrose);
 }

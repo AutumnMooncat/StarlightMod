@@ -1,3 +1,4 @@
+/*
 package Starlight.ui;
 
 import Starlight.cards.abstracts.AbstractAbilityCard;
@@ -83,11 +84,13 @@ public class AbilityEffect extends AbstractGameEffect {
 
         if (this.duration < 0.0F) {
             this.isDone = true;
-            /*if (CampfireUI.hidden) {
+            */
+/*if (CampfireUI.hidden) {
                 AbstractRoom.waitTimer = 0.0F;
                 AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
                 ((RestRoom)AbstractDungeon.getCurrRoom()).cutFireSound();
-            }*/
+            }*//*
+
         }
     }
 
@@ -117,3 +120,4 @@ public class AbilityEffect extends AbstractGameEffect {
         TEXT = uiStrings.TEXT;
     }
 }
+*/

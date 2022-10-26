@@ -1,3 +1,4 @@
+/*
 package Starlight.ui;
 
 import Starlight.TheStarlightMod;
@@ -36,3 +37,4 @@ public class AbilityOption extends AbstractCampfireOption {
         TEXT = uiStrings.TEXT;
     }
 }
+*/

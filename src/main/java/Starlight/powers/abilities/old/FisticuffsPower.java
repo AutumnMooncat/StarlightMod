@@ -1,41 +1,39 @@
-package Starlight.powers.abilities;
+package Starlight.powers.abilities.old;
 
 import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
-import Starlight.damageMods.PileBunkerDamage;
 import Starlight.util.Wiz;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.evacipated.cardcrawl.mod.stslib.damagemods.AbstractDamageModifier;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.DamageModApplyingPower;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.helpers.ShaderHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import java.util.Collections;
-import java.util.List;
+public class FisticuffsPower extends AbstractPower {
 
-public class PileBunkerPower extends AbstractPower implements DamageModApplyingPower {
-
-    public static final String POWER_ID = TheStarlightMod.makeID(PileBunkerPower.class.getSimpleName());
+    public static final String POWER_ID = TheStarlightMod.makeID(FisticuffsPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public PileBunkerPower(AbstractCreature owner, int amount) {
+    public FisticuffsPower(AbstractCreature owner, int amount) {
         this.ID = POWER_ID;
         this.name = NAME;
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("juggernaut");
+        this.loadRegion("master_smite");
         updateDescription();
+    }
+
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (isActive() && card.type == AbstractCard.CardType.ATTACK) {
+            flashWithoutSound();
+            Wiz.atb(new GainBlockAction(owner, amount));
+        }
     }
 
     /*@Override
@@ -59,15 +57,5 @@ public class PileBunkerPower extends AbstractPower implements DamageModApplyingP
         /*if (!isActive()) {
             this.description = DESCRIPTIONS[2] + description;
         }*/
-    }
-
-    @Override
-    public boolean shouldPushMods(DamageInfo damageInfo, Object o, List<AbstractDamageModifier> list) {
-        return isActive() && o instanceof AbstractCard && ((AbstractCard) o).type == AbstractCard.CardType.ATTACK;
-    }
-
-    @Override
-    public List<AbstractDamageModifier> modsToPush(DamageInfo damageInfo, Object o, List<AbstractDamageModifier> list) {
-        return Collections.singletonList(new PileBunkerDamage(amount));
     }
 }

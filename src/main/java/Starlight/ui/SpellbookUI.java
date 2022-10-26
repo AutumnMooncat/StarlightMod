@@ -4,6 +4,7 @@ import Starlight.TheStarlightMod;
 import Starlight.patches.CompendiumPatches;
 import Starlight.ui.spellbooks.*;
 import Starlight.util.CustomTags;
+import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -27,16 +28,16 @@ public class SpellbookUI {
     public SpellbookUI() {
         primPanel = new SpellbookPanel(Settings.WIDTH*2/3F, Settings.HEIGHT/2F, true);
         lunaPanel = new SpellbookPanel(Settings.WIDTH/3F, Settings.HEIGHT/2F, false);
-        primPanel.addBook(new BookOfWater());
-        primPanel.addBook(new BookOfIce());
-        primPanel.addBook(new BookOfFire());
-        primPanel.addBook(new BookOfNature());
+        primPanel.addBook(new BookOfWater(true));
+        primPanel.addBook(new BookOfIce(true));
+        primPanel.addBook(new BookOfFire(true));
+        primPanel.addBook(new BookOfNature(true));
 
 
-        lunaPanel.addBook(new BookOfWater());
-        lunaPanel.addBook(new BookOfIce());
-        lunaPanel.addBook(new BookOfFire());
-        lunaPanel.addBook(new BookOfNature());
+        lunaPanel.addBook(new BookOfWater(false));
+        lunaPanel.addBook(new BookOfIce(false));
+        lunaPanel.addBook(new BookOfFire(false));
+        lunaPanel.addBook(new BookOfNature(false));
 
         primPanel.layoutBooks();
         lunaPanel.layoutBooks();
@@ -92,5 +93,10 @@ public class SpellbookUI {
         for (CardGroup g : groups) {
             g.group.removeIf(c -> !(CompendiumPatches.noMagicTags(c) || primBook.allowCardInPool(c) || lunaBook.allowCardInPool(c)));
         }
+    }
+
+    public void setupAbilities() {
+        Wiz.applyToSelf(primPanel.getSelectedBook().getAbility(true));
+        Wiz.applyToSelf(lunaPanel.getSelectedBook().getAbility(false));
     }
 }

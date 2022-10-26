@@ -123,7 +123,7 @@ public class TheStarlightMod implements
 
     public static final int MAX_INDEX = 3;
 
-    public static AbilityButton abilityButton;
+    //public static AbilityButton abilityButton;
     public static SpellbookUI spellUI;
     public static FilterUI filterUI;
 
@@ -410,7 +410,7 @@ public class TheStarlightMod implements
                 return makeID("LunaGlow");
             }
         });
-        BaseMod.addSaveField(makeID("Abilities"), new CustomSavable<AbilityManager.AbilitySaveData>() {
+        /*BaseMod.addSaveField(makeID("Abilities"), new CustomSavable<AbilityManager.AbilitySaveData>() {
 
             @Override
             public AbilityManager.AbilitySaveData onSave() {
@@ -421,14 +421,14 @@ public class TheStarlightMod implements
             public void onLoad(AbilityManager.AbilitySaveData abilitySaveData) {
                 AbilityManager.load(abilitySaveData);
             }
-        });
+        });*/
 
         BaseMod.addPower(JinxPower.class, JinxPower.POWER_ID);
         BaseMod.addPower(SpellPower.class, SpellPower.POWER_ID);
         BaseMod.addPower(ReversePower.class, ReversePower.POWER_ID);
         BaseMod.addPower(AscensionPower.class, AscensionPower.POWER_ID);
 
-        abilityButton = new AbilityButton();
+        //abilityButton = new AbilityButton();
         spellUI = new SpellbookUI();
         //filterUI = new FilterUI();
     }
@@ -490,22 +490,22 @@ public class TheStarlightMod implements
         LoopingSoundManager.stopAllLoopedSounds();
         ProjectedCardManager.EmptyCards.yeet();
         EnvisionedCardManager.EmptyCards.yeet();
-        BaseMod.removeTopPanelItem(abilityButton);
+        /*BaseMod.removeTopPanelItem(abilityButton);
         if (Wiz.adp() instanceof StarlightSisters) {
             BaseMod.addTopPanelItem(abilityButton);
-        }
+        }*/
     }
 
     @Override
     public void receiveStartAct() {
-        if (AbstractDungeon.actNum > AbilityManager.timesProvided) {
+        /*if (AbstractDungeon.actNum > AbilityManager.timesProvided) {
             AbilityManager.actStartGainPoint();
-        }
+        }*/
     }
 
     @Override
     public void receivePostDungeonInitialize() {
-        AbilityManager.reset();
+        //AbilityManager.reset();
     }
 
     @Override

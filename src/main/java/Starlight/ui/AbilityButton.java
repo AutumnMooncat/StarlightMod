@@ -1,3 +1,4 @@
+/*
 package Starlight.ui;
 
 import Starlight.TheStarlightMod;
@@ -83,3 +84,4 @@ public class AbilityButton extends TopPanelItem {
         sb.setBlendFunction(770, 771);
     }
 }
+*/

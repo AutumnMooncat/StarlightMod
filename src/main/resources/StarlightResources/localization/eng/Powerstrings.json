@@ -66,7 +66,7 @@
   },
   "${ModID}:WetPower": {
     "NAME": "Wet",
-    "DESCRIPTIONS": ["Provides #b"," #yBlock when attacked."]
+    "DESCRIPTIONS": ["Provides #b"," #yBlock when attacked. Each turn, #yWet is reduced by #b1."]
   },
   "${ModID}:BurnPower": {
     "NAME": "Burn",
@@ -193,8 +193,23 @@
 
   "${ModID}:FiredUpPower": {
     "NAME": "Fired Up!",
-    "DESCRIPTIONS": ["#yPrimrose's Attacks deal #b"," additional damage per Attack played this turn.","#r(Inactive) NL "]
+    "DESCRIPTIONS": ["Whenever #yPrimrose applies #yBurn, gain #b","Whenever #yLuna applies #yBurn, gain #b"," #yVigor."]
   },
+  "${ModID}:SoakPower": {
+    "NAME": "Soak",
+    "DESCRIPTIONS": ["The first time #yPrimrose applies #yWet each turn, draw #b","The first time #yLuna applies #yWet each turn, draw #b"," card.", "cards."]
+  },
+  "${ModID}:SnowCloakPower": {
+    "NAME": "Snow Cloak",
+    "DESCRIPTIONS": ["Whenever #yPrimrose applies #yChill, gain #b","Whenever #yLuna applies #yChill, gain #b"," #yBlock."]
+  },
+  "${ModID}:ThornyVinesPower": {
+    "NAME": "Thorny Vines",
+    "DESCRIPTIONS": ["Whenever #yPrimrose applies #yTangle, gain #b","Whenever #yLuna applies #yTangle, gain #b"," #yBarbs."]
+  },
+
+
+
   "${ModID}:FisticuffsPower": {
     "NAME": "Fisticuffs",
     "DESCRIPTIONS": ["Whenever #yPrimrose plays an #yAttack, gain #b"," #yBlock.","#r(Inactive) NL "]
