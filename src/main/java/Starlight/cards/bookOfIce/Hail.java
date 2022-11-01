@@ -2,6 +2,7 @@ package Starlight.cards.bookOfIce;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.FrostburnPower;
+import Starlight.powers.HailPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
@@ -30,7 +31,7 @@ public class Hail extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new FrostburnPower(p, 1));
+        Wiz.applyToSelf(new HailPower(p, magicNumber));
     }
 
     public void upp() {
