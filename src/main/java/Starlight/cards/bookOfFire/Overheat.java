@@ -34,7 +34,7 @@ public class Overheat extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new ExhaustByPredAction(p.hand, magicNumber, true, c -> true, new AbstractGameAction() {
+        Wiz.atb(new ExhaustByPredAction(p.hand, (int) p.hand.group.stream().filter(c -> c != this).count(), true, c -> true, new AbstractGameAction() {
             @Override
             public void update() {
                 if (!ExhaustByPredAction.exhaustedCards.isEmpty()) {

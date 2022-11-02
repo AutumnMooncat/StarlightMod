@@ -32,7 +32,7 @@ public class Heatwave extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new VigorPower(p, magicNumber * Wiz.adp().hand.size()));
+        Wiz.applyToSelf(new VigorPower(p, (int) (magicNumber * p.hand.group.stream().filter(c -> c != this).count())));
     }
 
     public void upp() {
