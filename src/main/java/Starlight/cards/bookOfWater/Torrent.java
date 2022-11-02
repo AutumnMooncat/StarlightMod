@@ -7,9 +7,11 @@ import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.green.BladeDance;
 import com.megacrit.cardcrawl.cards.red.ThunderClap;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
@@ -37,7 +39,15 @@ public class Torrent extends AbstractMagickCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.atb(new PredicateDrawPileToHandAction(magicNumber, c -> c.costForTurn == 0));
+        Wiz.atb(new PredicateDrawPileToHandAction(magicNumber, c -> c.costForTurn == 0 || c.freeToPlayOnce));
+    }
+
+    public void triggerOnGlowCheck() {
+        if (Wiz.adp().drawPile.group.stream().noneMatch(c -> c.costForTurn == 0 || c.freeToPlayOnce)) {
+            this.glowColor = Settings.RED_TEXT_COLOR.cpy();
+        } else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        }
     }
 
     public void upp() {
