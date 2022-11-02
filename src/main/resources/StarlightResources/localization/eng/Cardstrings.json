@@ -434,6 +434,22 @@
     "NAME": "Whirlpool",
     "DESCRIPTION": "At the end of your turn, ALL enemies take !M! damage for each starlight:Wet they have."
   },
+  "${ModID}:Flow": {
+    "NAME": "Flow",
+    "DESCRIPTION": "Deal !D! damage. NL Discard any number of cards. Draw that many cards next turn."
+  },
+  "${ModID}:Riptide": {
+    "NAME": "Riptide",
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! cards. NL Discard all cards drawn this way that do not cost 0."
+  },
+  "${ModID}:Liquidation": {
+    "NAME": "Liquidation",
+    "DESCRIPTION": "Remove all Block from the enemy. NL Deal !D! damage. NL Apply !M! starlight:Wet."
+  },
+  "${ModID}:Torrent": {
+    "NAME": "Torrent",
+    "DESCRIPTION": "Deal !D! damage twice. Put !M! random cost 0 card{!M!|>1=s} from your draw pile into your hand.{@@}"
+  },
 
 
 

@@ -85,6 +85,12 @@
       "Choose "," cards."
     ]
   },
+  "${ModID}:Flow": {
+    "TEXT": [
+      "Flow",
+      "Discard any number of cards to draw additional cards next turn."
+    ]
+  },
   "${ModID}:ReduceCost": {
     "TEXT": [
       "Reduce Cost",
