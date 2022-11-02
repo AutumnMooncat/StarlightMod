@@ -25,8 +25,8 @@ public class Sanctuary extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 2;
-    private static final int UP_COST = 1;
+    private static final int COST = 1;
+    private static final int UP_COST = 0;
     private static final int EFFECT = 1;
 
     public Sanctuary() {
