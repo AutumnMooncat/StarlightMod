@@ -23,7 +23,7 @@ public class Flare extends AbstractMagickCard {
     public final static String ID = makeID(Flare.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 0;
