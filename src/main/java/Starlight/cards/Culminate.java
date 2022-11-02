@@ -33,7 +33,7 @@ public class Culminate extends AbstractEasyCard implements InHandCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //Wiz.atb(new BoostDamageInHandAction(magicNumber, c -> c.type == CardType.ATTACK));
+        //Wiz.atb(new BoostValuesInHandAction(magicNumber, c -> c.type == CardType.ATTACK));
     }
 
     @Override

@@ -1,13 +1,11 @@
 package Starlight.cards.bookOfFire;
 
-import Starlight.actions.BoostDamageInHandAction;
+import Starlight.actions.BoostValuesInHandAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BurnPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.blue.BeamCell;
 import com.megacrit.cardcrawl.cards.purple.Tantrum;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -36,7 +34,7 @@ public class Eruption extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.FIRE);
-        Wiz.atb(new BoostDamageInHandAction(magicNumber));
+        Wiz.atb(new BoostValuesInHandAction(Wiz.adp().hand.size(), magicNumber, BoostValuesInHandAction.StatBoost.DAMAGE));
     }
 
     public void upp() {

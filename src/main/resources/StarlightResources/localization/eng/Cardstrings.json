@@ -467,7 +467,7 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Wet. NL Apply !M! starlight:Chill."
   },
   "${ModID}:IceShield": {
-    "NAME": "Ice Shield",
+    "NAME": "Frozen Shield",
     "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak."
   },
   "${ModID}:Reflection": {
@@ -497,6 +497,22 @@
   "${ModID}:Frostburn": {
     "NAME": "Frostburn",
     "DESCRIPTION": "Whenever you apply starlight:Chill, apply {!M!|1=an equal amount of|@=!M! times that much} starlight:Burn.{@@}"
+  },
+  "${ModID}:Refrigerate": {
+    "NAME": "Refrigerate",
+    "DESCRIPTION": "Gain !B! Block. NL Increase the Block of a card in your hand by !M! this combat."
+  },
+  "${ModID}:Glaciate": {
+    "NAME": "Glaciate",
+    "DESCRIPTION": "Draw !M! cards. NL Retain your hand this turn."
+  },
+  "${ModID}:IceShard": {
+    "NAME": "Ice Shard",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Whenever this card enters your draw pile, move it to your hand."
+  },
+  "${ModID}:Snowball": {
+    "NAME": "Snowball",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Increase the Block and damage of this card by !M! this combat."
   },
 
 

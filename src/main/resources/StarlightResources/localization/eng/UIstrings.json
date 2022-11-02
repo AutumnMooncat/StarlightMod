@@ -91,6 +91,13 @@
       "Discard any number of cards to draw additional cards next turn."
     ]
   },
+  "${ModID}:Boost": {
+    "TEXT": [
+      "Boost",
+      "Choose a card to boost.",
+      "Choose "," cards to boost."
+    ]
+  },
   "${ModID}:ReduceCost": {
     "TEXT": [
       "Reduce Cost",

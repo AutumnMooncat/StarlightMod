@@ -1,55 +1,53 @@
 package Starlight.cards.bookOfIce;
 
-import Starlight.cards.Anticipate;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.powers.ReflectPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.cards.blue.Chill;
-import com.megacrit.cardcrawl.cards.blue.Coolheaded;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.cards.blue.AutoShields;
+import com.megacrit.cardcrawl.cards.blue.Glacier;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.EquilibriumPower;
+import com.megacrit.cardcrawl.powers.RetainCardPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class IceShield extends AbstractMagickCard {
-    public final static String ID = makeID(IceShield.class.getSimpleName());
+public class Glaciate extends AbstractMagickCard {
+    public final static String ID = makeID(Glaciate.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int BLK = 5;
-    private static final int UP_BLK = 2;
-    private static final int EFFECT = 1;
+    private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
-    public IceShield() {
+    public Glaciate() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_ICE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
-        Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
+        Wiz.atb(new DrawCardAction(magicNumber));
+        Wiz.applyToSelf(new EquilibriumPower(p, 1));
     }
 
     public void upp() {
-        upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
     public String cardArtCopy() {
-        return Chill.ID;
+        return Glacier.ID;
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.65f, 0.55f, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.55f, 0.6f, 0.45f, 0.5f, false);
     }
 }

@@ -1,11 +1,10 @@
 package Starlight.cards.bookOfIce;
 
-import Starlight.cards.Anticipate;
+import Starlight.actions.BoostValuesInHandAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.cards.blue.Chill;
 import com.megacrit.cardcrawl.cards.blue.Coolheaded;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -13,20 +12,20 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class IceShield extends AbstractMagickCard {
-    public final static String ID = makeID(IceShield.class.getSimpleName());
+public class Refrigerate extends AbstractMagickCard {
+    public final static String ID = makeID(Refrigerate.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int BLK = 5;
-    private static final int UP_BLK = 2;
-    private static final int EFFECT = 1;
+    private static final int BLK = 6;
+    private static final int UP_BLK = 1;
+    private static final int EFFECT = 3;
     private static final int UP_EFFECT = 1;
 
-    public IceShield() {
+    public Refrigerate() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
@@ -35,17 +34,17 @@ public class IceShield extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
+        Wiz.atb(new BoostValuesInHandAction(1, magicNumber, BoostValuesInHandAction.StatBoost.BLOCK));
     }
 
     public void upp() {
-        upgradeBlock(UP_BLK);
+        //upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
     public String cardArtCopy() {
-        return Chill.ID;
+        return Coolheaded.ID;
     }
 
     @Override

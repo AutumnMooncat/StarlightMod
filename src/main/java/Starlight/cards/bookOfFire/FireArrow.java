@@ -1,14 +1,11 @@
 package Starlight.cards.bookOfFire;
 
-import Starlight.actions.ScaleByPredAction;
+import Starlight.actions.ScaleAllByPredAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BurnPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.blue.Coolheaded;
-import com.megacrit.cardcrawl.cards.purple.Eruption;
 import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -37,7 +34,7 @@ public class FireArrow extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.FIRE);
-        Wiz.atb(new ScaleByPredAction(this, magicNumber, ScaleByPredAction.StatBoost.DAMAGE, c -> c instanceof FireArrow));
+        Wiz.atb(new ScaleAllByPredAction(this, magicNumber, ScaleAllByPredAction.StatBoost.DAMAGE, c -> c instanceof FireArrow));
     }
 
     public void upp() {

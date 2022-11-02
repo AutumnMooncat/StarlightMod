@@ -1,12 +1,10 @@
 package Starlight.cards;
 
-import Starlight.actions.BoostDamageInHandAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.powers.JinxPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.blue.Aggregate;
 import com.megacrit.cardcrawl.cards.green.Malaise;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

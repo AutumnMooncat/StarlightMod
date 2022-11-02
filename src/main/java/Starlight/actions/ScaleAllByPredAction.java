@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import java.util.ArrayList;
 import java.util.function.Predicate;
 
-public class ScaleByPredAction extends AbstractGameAction {
+public class ScaleAllByPredAction extends AbstractGameAction {
     public enum StatBoost {
         DAMAGE,
         BLOCK,
@@ -19,7 +19,7 @@ public class ScaleByPredAction extends AbstractGameAction {
     private final Predicate<AbstractCard> pred;
     private final StatBoost stat;
 
-    public ScaleByPredAction(AbstractCard card, int amount, StatBoost stat, Predicate<AbstractCard> pred) {
+    public ScaleAllByPredAction(AbstractCard card, int amount, StatBoost stat, Predicate<AbstractCard> pred) {
         this.card = card;
         this.amount = amount;
         this.pred = pred;
@@ -39,17 +39,17 @@ public class ScaleByPredAction extends AbstractGameAction {
             if (pred.test(c)) {
                 switch (stat) {
                     case DAMAGE:
-                        card.baseDamage += amount;
+                        c.baseDamage += amount;
                         break;
                     case BLOCK:
-                        card.baseBlock += amount;
+                        c.baseBlock += amount;
                         break;
                     case MAGIC:
-                        card.baseMagicNumber += amount;
-                        card.magicNumber += amount;
+                        c.baseMagicNumber += amount;
+                        c.magicNumber += amount;
                         break;
                 }
-                card.applyPowers();
+                c.applyPowers();
             }
         }
 
