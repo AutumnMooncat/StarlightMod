@@ -2,6 +2,7 @@ package Starlight.cards.bookOfNature;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.TanglePower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -47,4 +48,8 @@ public class VineWrap extends AbstractMagickCard {
         return DarkShackles.ID;
     }
 
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.85f, 0.55f, 0.55f, 0.45f, false);
+    }
 }
