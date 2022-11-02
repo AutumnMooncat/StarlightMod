@@ -36,7 +36,7 @@ public class Overgrowth extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new BarbPower(p, magicNumber));
-        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new WeakPower(mon, magicNumber, false)));
+        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new WeakPower(mon, secondMagic, false)));
     }
 
     public void upp() {
