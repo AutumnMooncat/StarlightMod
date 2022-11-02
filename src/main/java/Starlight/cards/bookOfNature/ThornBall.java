@@ -30,6 +30,7 @@ public class ThornBall extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         tags.add(CustomTags.STARLIGHT_NATURE);
+        tags.add(CustomTags.STARLIGHT_ARROW);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -233,5 +233,20 @@
       "ice"
     ],
     "DESCRIPTION": "Ice deals damage back and reduces by #b1 whenever you are attacked."
+  },
+  {
+    "PROPER_NAME": "Taint",
+    "NAMES": [
+      "taint",
+      "tainted"
+    ],
+    "DESCRIPTION": "The next time this creature attempts to #yBlock, it instead loses that much HP."
+  },
+  {
+    "PROPER_NAME": "Arrow",
+    "NAMES": [
+      "arrow"
+    ],
+    "DESCRIPTION": "Any card with the word \"Arrow\" in its name."
   }
 ]

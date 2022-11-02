@@ -6,6 +6,7 @@ import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.green.Skewer;
 import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -30,11 +31,12 @@ public class FireArrow extends AbstractMagickCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_FIRE);
+        tags.add(CustomTags.STARLIGHT_ARROW);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.FIRE);
-        Wiz.atb(new ScaleAllByPredAction(this, magicNumber, ScaleAllByPredAction.StatBoost.DAMAGE, c -> c instanceof FireArrow));
+        Wiz.atb(new ScaleAllByPredAction(this, magicNumber, ScaleAllByPredAction.StatBoost.DAMAGE, c -> c.tags.contains(CustomTags.STARLIGHT_ARROW)));
     }
 
     public void upp() {
@@ -43,12 +45,12 @@ public class FireArrow extends AbstractMagickCard {
 
     @Override
     public String cardArtCopy() {
-        return SearingBlow.ID;
+        return Skewer.ID;
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.65f, 0.55f, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.55f, 0.65f, 0.65f, 0.55f, false);
     }
 
 }
