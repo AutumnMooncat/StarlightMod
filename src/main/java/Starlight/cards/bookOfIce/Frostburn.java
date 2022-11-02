@@ -21,14 +21,16 @@ public class Frostburn extends AbstractMagickCard {
 
     private static final int COST = 2;
     private static final int UP_COST = 1;
+    private static final int EFFECT = 1;
 
     public Frostburn() {
         super(ID, COST, TYPE, RARITY, TARGET);
+        baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_ICE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new FrostburnPower(p, 1));
+        Wiz.applyToSelf(new FrostburnPower(p, magicNumber));
     }
 
     public void upp() {

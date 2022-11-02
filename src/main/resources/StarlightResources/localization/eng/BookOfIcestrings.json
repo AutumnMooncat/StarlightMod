@@ -47,6 +47,6 @@
   },
   "${ModID}:Frostburn": {
     "NAME": "Frostburn",
-    "DESCRIPTION": "Whenever you apply starlight:Chill, apply an equal amount of starlight:Burn."
+    "DESCRIPTION": "Whenever you apply starlight:Chill, apply {!M!|1=an equal amount of|@=!M! times that much} starlight:Burn.{@@}"
   }
 }
