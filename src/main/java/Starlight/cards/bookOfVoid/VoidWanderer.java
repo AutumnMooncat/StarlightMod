@@ -1,6 +1,5 @@
-package Starlight.cards.bookOfDark;
+package Starlight.cards.bookOfVoid;
 
-import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.VoidWandererPower;
 import Starlight.util.CardArtRoller;
@@ -26,7 +25,7 @@ public class VoidWanderer extends AbstractMagickCard {
     public VoidWanderer() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
-        tags.add(CustomTags.STARLIGHT_DARK);
+        tags.add(CustomTags.STARLIGHT_VOID);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
