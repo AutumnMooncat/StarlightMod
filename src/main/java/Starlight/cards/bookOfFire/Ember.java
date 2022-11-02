@@ -25,7 +25,7 @@ public class Ember extends AbstractMagickCard {
 
     private static final int COST = 0;
     private static final int DMG = 3;
-    private static final int UP_DMG = 4;
+    private static final int UP_DMG = 2;
 
     public Ember() {
         super(ID, COST, TYPE, RARITY, TARGET);
