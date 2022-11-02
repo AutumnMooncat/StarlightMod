@@ -18,20 +18,29 @@ public class MagicCardMagicPatches {
         public static void reset(AbstractCard __instance) {
             if (__instance instanceof AbstractMagickCard) {
                 __instance.magicNumber = __instance.baseMagicNumber;
+                ((AbstractMagickCard) __instance).secondMagic = ((AbstractMagickCard) __instance).baseSecondMagic;
             }
         }
         @SpirePostfixPatch
         public static void modifyMagic(AbstractCard __instance) {
             if (__instance instanceof AbstractMagickCard && __instance.baseMagicNumber > 0) {
                 float mag = __instance.magicNumber;
+                float mag2 = ((AbstractMagickCard) __instance).secondMagic;
+
                 mag = CardInHandSuite.modifyMagicMagic(mag, __instance);
+                mag2 = CardInHandSuite.modifyMagicMagic(mag2, __instance);
+
                 for (AbstractPower p : Wiz.adp().powers) {
                     if (p instanceof MagicMagicModPower) {
                         mag = ((MagicMagicModPower) p).modifyMagicMagic(mag, __instance);
+                        mag2 = ((MagicMagicModPower) p).modifyMagicMagic(mag2, __instance);
                     }
                 }
+
                 __instance.magicNumber = (int) mag;
                 __instance.isMagicNumberModified = __instance.magicNumber != __instance.baseMagicNumber;
+                ((AbstractMagickCard) __instance).secondMagic = (int) mag2;
+                ((AbstractMagickCard) __instance).isSecondMagicModified = ((AbstractMagickCard) __instance).secondMagic != ((AbstractMagickCard) __instance).baseSecondMagic;
             }
         }
     }
