@@ -225,6 +225,13 @@
       "barb",
       "barbs"
     ],
-    "DESCRIPTION": "Barbs deal damage back and reduce by #b1 whenever you are attacked."
+    "DESCRIPTION": "Barbs deal damage to ALL enemies the next time you are attacked."
+  },
+  {
+    "PROPER_NAME": "Ice",
+    "NAMES": [
+      "ice"
+    ],
+    "DESCRIPTION": "Ice deals damage back and reduces by #b1 whenever you are attacked."
   }
 ]

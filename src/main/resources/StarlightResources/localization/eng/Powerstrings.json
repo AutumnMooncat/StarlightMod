@@ -82,7 +82,11 @@
   },
   "${ModID}:BarbPower": {
     "NAME": "Barbs",
-    "DESCRIPTIONS": ["When attacked, deals #b"," damage back, then reduce #yBarbs by 1."]
+    "DESCRIPTIONS": ["The next time you are attacked, deals #b"," damage to ALL enemies."]
+  },
+  "${ModID}:IcePower": {
+    "NAME": "Ice",
+    "DESCRIPTIONS": ["When attacked, deals #b"," damage back, then reduce #yIce by 1."]
   },
   "${ModID}:ChillPower": {
     "NAME": "Chill",
