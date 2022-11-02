@@ -186,7 +186,7 @@
     "NAMES": [
       "wet"
     ],
-    "DESCRIPTION": "Wet creatures provide Block when attacked. Each turn, Wet is reduced by 1."
+    "DESCRIPTION": "Wet creatures provide Block when attacked. Each turn, Wet is halved."
   },
   {
     "PROPER_NAME": "Burn",

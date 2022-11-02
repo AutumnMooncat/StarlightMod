@@ -66,7 +66,7 @@
   },
   "${ModID}:WetPower": {
     "NAME": "Wet",
-    "DESCRIPTIONS": ["Provides #b"," #yBlock when attacked. Each turn, #yWet is reduced by #b1."]
+    "DESCRIPTIONS": ["Provides #b"," #yBlock when attacked. Each turn, #yWet is halved."]
   },
   "${ModID}:BurnPower": {
     "NAME": "Burn",
