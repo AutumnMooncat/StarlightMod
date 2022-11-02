@@ -1,23 +1,19 @@
-package Starlight.cards;
+package Starlight.cards.bookOfLight;
 
 import Starlight.actions.ForetellAction;
-import Starlight.actions.ProjectCardsInHandAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.purple.ThirdEye;
-import com.megacrit.cardcrawl.cards.red.LimitBreak;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class DivineSense extends AbstractEasyCard {
+public class DivineSense extends AbstractMagickCard {
     public final static String ID = makeID(DivineSense.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.RARE;
@@ -32,6 +28,7 @@ public class DivineSense extends AbstractEasyCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = CARDS;
         exhaust = true;
+        tags.add(CustomTags.STARLIGHT_LIGHT);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

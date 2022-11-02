@@ -1,25 +1,21 @@
-package Starlight.cards;
+package Starlight.cards.bookOfDark;
 
 import Starlight.actions.BeatUpAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.powers.CrumplePower;
+import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.JinxPower;
 import Starlight.util.CardArtRoller;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.green.AllOutAttack;
-import com.megacrit.cardcrawl.cards.purple.JustLucky;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import java.util.Iterator;
-
 import static Starlight.TheStarlightMod.makeID;
 
-public class BeatUp extends AbstractEasyCard {
+public class BeatUp extends AbstractMagickCard {
     public final static String ID = makeID(BeatUp.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -33,6 +29,7 @@ public class BeatUp extends AbstractEasyCard {
     public BeatUp() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
+        tags.add(CustomTags.STARLIGHT_DARK);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

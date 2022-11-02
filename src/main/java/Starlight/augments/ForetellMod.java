@@ -4,7 +4,7 @@ import CardAugments.cardmods.AbstractAugment;
 import Starlight.TheStarlightMod;
 import Starlight.actions.ForetellAction;
 import Starlight.cards.Augury;
-import Starlight.cards.DivineSense;
+import Starlight.cards.bookOfLight.DivineSense;
 import Starlight.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;

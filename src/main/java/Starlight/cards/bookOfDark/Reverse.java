@@ -1,10 +1,12 @@
-package Starlight.cards;
+package Starlight.cards.bookOfDark;
 
 import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.powers.ReversePower;
 import Starlight.util.CardArtRoller;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.blue.Equilibrium;
@@ -13,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Reverse extends AbstractEasyCard {
+public class Reverse extends AbstractMagickCard {
     public final static String ID = makeID(Reverse.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -27,6 +29,7 @@ public class Reverse extends AbstractEasyCard {
     public Reverse() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
+        tags.add(CustomTags.STARLIGHT_DARK);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

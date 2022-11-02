@@ -45,15 +45,6 @@
     "NAME": "Banish",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Can be Upgraded any number of times."
   },
-  "${ModID}:BeatUp": {
-    "NAME": "Beat Up",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy has starlight:Jinx, deal !D! damage again."
-  },
-  "${ModID}:Bio": {
-    "NAME": "Bio",
-    "DESCRIPTION": "Deal !D! damage. NL Apply Poison equal to unblocked damage dealt.",
-    "EXTENDED_DESCRIPTION": ["Biora"]
-  },
   "${ModID}:Blazing": {
     "NAME": "Blazing",
     "DESCRIPTION": "Exhaust up to !M! cards in your hand. NL Gain !M! starlight:SP for each card Exhausted this way."
@@ -62,17 +53,9 @@
     "NAME": "Blessing",
     "DESCRIPTION": "Whenever you gain 10 starlight:Providence, draw !M! cards."
   },
-  "${ModID}:BlindSide": {
-    "NAME": "Blind Side",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply starlight:Jinx equal to unblocked damage dealt."
-  },
   "${ModID}:Bulwark": {
     "NAME": "Bulwark DEPRECATED",
     "DESCRIPTION": "Gain !M! starlight:Providence. NL Apply !Starlight:M2! Weak."
-  },
-  "${ModID}:Conserve": {
-    "NAME": "Conserve",
-    "DESCRIPTION": "Whenever you Exhaust a card, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}"
   },
   "${ModID}:CriticalHit": {
     "NAME": "Critical Hit",
@@ -82,15 +65,6 @@
     "NAME": "Culminate",
     "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Attacks deal !M! additional damage.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
-  },
-  "${ModID}:Curse": {
-    "NAME": "Curse",
-    "DESCRIPTION": "Apply !M! starlight:Jinx."
-  },
-  "${ModID}:Dark": {
-    "NAME": "Dark",
-    "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}",
-    "EXTENDED_DESCRIPTION": ["Darkra"]
   },
   "${ModID}:Defend": {
     "NAME": "Defend",
@@ -258,10 +232,6 @@
     "NAME": "Resolve",
     "DESCRIPTION": "{@@}starlight:Foretell the next {!M!|>1=!M! }card{!M!|>1=s} you play this turn."
   },
-  "${ModID}:Reverse": {
-    "NAME": "Reverse",
-    "DESCRIPTION": "The next {!M!|>1=!M! }time{!M!|>1=s} this target attempts to Block, it instead loses that much HP.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
-  },
   "${ModID}:RejectFate": {
     "NAME": "Reject Fate DEPRECATED",
     "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Scry !M!."
@@ -367,10 +337,6 @@
   "${ModID}:VirtuousWard": {
     "NAME": "Virtuous Ward",
     "DESCRIPTION": "{@@}Retain. NL Gain !B! Block. NL Gain !M! starlight:Providence. NL Exhaust."
-  },
-  "${ModID}:VoidWanderer": {
-    "NAME": "Void Wanderer",
-    "DESCRIPTION": "Whenever you Exhaust a card, apply !M! starlight:Jinx to ALL enemies."
   },
   "${ModID}:WandWhack": {
     "NAME": "Wand Whack",
@@ -641,5 +607,43 @@
   "${ModID}:Overgrowth": {
     "NAME": "Overgrowth",
     "DESCRIPTION": "Gain !M! starlight:Barbs. NL Apply !Starlight:M2! Weak to ALL enemies."
+  },
+
+
+
+
+  "${ModID}:BeatUp": {
+    "NAME": "Beat Up",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has starlight:Jinx, deal !D! damage again."
+  },
+  "${ModID}:Curse": {
+    "NAME": "Curse",
+    "DESCRIPTION": "Apply !M! starlight:Jinx."
+  },
+  "${ModID}:Bio": {
+    "NAME": "Bio",
+    "DESCRIPTION": "Deal !D! damage. NL Apply Poison equal to unblocked damage dealt.",
+    "EXTENDED_DESCRIPTION": ["Biora"]
+  },
+  "${ModID}:BlindSide": {
+    "NAME": "Blind Side",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply starlight:Jinx equal to unblocked damage dealt."
+  },
+  "${ModID}:Dark": {
+    "NAME": "Dark",
+    "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}",
+    "EXTENDED_DESCRIPTION": ["Darkra"]
+  },
+  "${ModID}:Reverse": {
+    "NAME": "Reverse",
+    "DESCRIPTION": "The next {!M!|>1=!M! }time{!M!|>1=s} this target attempts to Block, it instead loses that much HP.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
+  },
+  "${ModID}:VoidWanderer": {
+    "NAME": "Void Wanderer",
+    "DESCRIPTION": "Whenever you Exhaust a card, apply !M! starlight:Jinx to ALL enemies."
+  },
+  "${ModID}:Conserve": {
+    "NAME": "Conserve",
+    "DESCRIPTION": "Whenever you Exhaust a card, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}"
   }
 }

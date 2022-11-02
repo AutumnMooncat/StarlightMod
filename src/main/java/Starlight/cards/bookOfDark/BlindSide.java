@@ -1,8 +1,10 @@
-package Starlight.cards;
+package Starlight.cards.bookOfDark;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.damageMods.JinxWallopDamage;
 import Starlight.util.CardArtRoller;
+import Starlight.util.CustomTags;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.DamageModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.green.SneakyStrike;
@@ -11,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class BlindSide extends AbstractEasyCard {
+public class BlindSide extends AbstractMagickCard {
     public final static String ID = makeID(BlindSide.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -29,6 +31,7 @@ public class BlindSide extends AbstractEasyCard {
         baseDamage = damage = DMG;
         //baseMagicNumber = magicNumber = EFFECT;
         DamageModifierManager.addModifier(this, new JinxWallopDamage());
+        tags.add(CustomTags.STARLIGHT_DARK);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

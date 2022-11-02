@@ -1,7 +1,9 @@
-package Starlight.cards;
+package Starlight.cards.bookOfDark;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.JinxPower;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -11,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Curse extends AbstractEasyCard {
+public class Curse extends AbstractMagickCard {
     public final static String ID = makeID(Curse.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -27,6 +29,7 @@ public class Curse extends AbstractEasyCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
         //baseSecondMagic = secondMagic = SP;
+        tags.add(CustomTags.STARLIGHT_DARK);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

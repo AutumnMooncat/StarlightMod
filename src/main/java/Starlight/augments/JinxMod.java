@@ -3,7 +3,7 @@ package Starlight.augments;
 import CardAugments.cardmods.AbstractAugment;
 import CardAugments.cardmods.DynvarCarrier;
 import Starlight.TheStarlightMod;
-import Starlight.cards.BlindSide;
+import Starlight.cards.bookOfDark.BlindSide;
 import Starlight.cards.WandWhack;
 import Starlight.powers.JinxPower;
 import Starlight.util.Wiz;
