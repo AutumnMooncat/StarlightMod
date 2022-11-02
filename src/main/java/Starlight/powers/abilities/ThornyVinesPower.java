@@ -32,7 +32,7 @@ public class ThornyVinesPower extends AbstractPower {
     }
 
     @Override
-    public void atEndOfTurn(boolean isPlayer) {
+    public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
         if (isPlayer && isActive()) {
             flash();
             Wiz.applyToSelf(new BarbPower(Wiz.adp(), amount));

@@ -1,6 +1,7 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
+import Starlight.actions.SanctuaryAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -29,10 +30,8 @@ public class SanctuaryPower extends AbstractPower {
     }
 
     public void atEndOfTurnPreEndTurnCards(boolean isPlayer) {
-        if (owner.hasPower(BarbPower.POWER_ID)) {
-            this.flash();
-            this.addToBot(new GainBlockAction(this.owner, this.owner, this.amount * owner.getPower(BarbPower.POWER_ID).amount));
-        }
+        this.flash();
+        this.addToBot(new SanctuaryAction(owner, amount));
     }
 
     @Override
