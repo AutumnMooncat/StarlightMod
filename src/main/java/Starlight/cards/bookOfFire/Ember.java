@@ -52,7 +52,7 @@ public class Ember extends AbstractMagickCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.95f, 0.65f, 0.45f, 0.55f, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.985f, 0.65f, 0.45f, 0.55f, false);
     }
 
 }
