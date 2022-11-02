@@ -40,11 +40,17 @@ public class WetPower extends AbstractPower {
     }
 
     @Override
+    public void atStartOfTurn() {
+        int reduce = (int) Math.ceil(amount/2f);
+        Wiz.atb(new ReducePowerAction(owner, owner, this, reduce));
+    }
+
+    /*@Override
     public void atEndOfRound() {
         int reduce = (int) Math.ceil(amount/2f);
         Wiz.atb(new ReducePowerAction(owner, owner, this, reduce));
         //Wiz.atb(new ReducePowerAction(owner, owner, this, 1));
-    }
+    }*/
 
     @Override
     public void updateDescription() {
