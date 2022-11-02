@@ -384,5 +384,198 @@
   "${ModID}:WildMagick": {
     "NAME": "Wild Magick",
     "DESCRIPTION": "Play a random starlight:Magick card from your draw pile."
+  },
+
+
+
+
+  "${ModID}:WaterBall": {
+    "NAME": "Water Ball",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Wet."
+  },
+  "${ModID}:BrineBolt": {
+    "NAME": "Brine Bolt",
+    "DESCRIPTION": "Deal !D! damage. NL Target loses HP equal to its starlight:Wet."
+  },
+  "${ModID}:Hydration": {
+    "NAME": "Hydration",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! starlight:Wet to ALL enemies."
+  },
+  "${ModID}:Scald": {
+    "NAME": "Scald",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Burn."
+  },
+  "${ModID}:BubbleShield": {
+    "NAME": "Bubble Shield",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, apply !M! starlight:Wet back."
+  },
+  "${ModID}:MuddyWaters": {
+    "NAME": "Muddy Waters",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Mud."
+  },
+  "${ModID}:Deluge": {
+    "NAME": "Deluge",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Deals additional damage equal to the target's starlight:Wet. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL Deals additional damage equal to the target's starlight:Wet."
+  },
+  "${ModID}:Maelstrom": {
+    "NAME": "Maelstrom",
+    "DESCRIPTION": "At the start of your turn, apply !M! starlight:Wet to ALL enemies."
+  },
+  "${ModID}:SteamBlast": {
+    "NAME": "Steam Blast",
+    "DESCRIPTION": "Deal !D! damage. NL Apply starlight:Burn equal to the target's starlight:Wet."
+  },
+  "${ModID}:Flood": {
+    "NAME": "Flood",
+    "DESCRIPTION": "Apply !M! starlight:Wet, Weak, and Vulnerable to ALL enemies. NL Exhaust."
+  },
+  "${ModID}:Whirlpool": {
+    "NAME": "Whirlpool",
+    "DESCRIPTION": "At the end of your turn, ALL enemies take !M! damage for each starlight:Wet they have."
+  },
+
+
+
+
+  "${ModID}:FrostRay": {
+    "NAME": "Frost Ray",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Chill."
+  },
+  "${ModID}:IceBeam": {
+    "NAME": "Ice Beam",
+    "DESCRIPTION": "Deal !D! damage. NL If this deals unblocked damage, apply !M! starlight:Chill."
+  },
+  "${ModID}:SlushBall": {
+    "NAME": "Slush Ball",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Wet. NL Apply !M! starlight:Chill."
+  },
+  "${ModID}:IceShield": {
+    "NAME": "Ice Shield",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak."
+  },
+  "${ModID}:Reflection": {
+    "NAME": "Reflection",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, deal !M! damage back."
+  },
+  "${ModID}:FreezeDry": {
+    "NAME": "Freeze-Dry",
+    "DESCRIPTION": "Deal !D! damage. NL Deals double damage to starlight:Wet enemies."
+  },
+  "${ModID}:IcyWind": {
+    "NAME": "Icy Wind",
+    "DESCRIPTION": "Apply !M! starlight:Chill and Weak to ALL enemies. NL Exhaust."
+  },
+  "${ModID}:Hail": {
+    "NAME": "Hail",
+    "DESCRIPTION": "At the end of your turn, gain !M! Block and deal !M! damage to ALL enemies."
+  },
+  "${ModID}:Mist": {
+    "NAME": "Mist",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact. NL Exhaust."
+  },
+  "${ModID}:Blizzard": {
+    "NAME": "Blizzard",
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Chill to ALL enemies X times. NL Exhaust."
+  },
+  "${ModID}:Frostburn": {
+    "NAME": "Frostburn",
+    "DESCRIPTION": "Whenever you apply starlight:Chill, apply {!M!|1=an equal amount of|@=!M! times that much} starlight:Burn.{@@}"
+  },
+
+
+
+
+  "${ModID}:FireBolt": {
+    "NAME": "Fire Bolt",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Burn."
+  },
+  "${ModID}:FireArrow": {
+    "NAME": "Fire Arrow",
+    "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Fire Arrow cards by !M!."
+  },
+  "${ModID}:FlameShield": {
+    "NAME": "Flame Shield",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Vigor."
+  },
+  "${ModID}:Napalm": {
+    "NAME": "Napalm",
+    "DESCRIPTION": "Apply !M! starlight:Burn to a random enemy !Starlight:M2! times."
+  },
+  "${ModID}:Flamethrower": {
+    "NAME": "Flamethrower",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
+  },
+  "${ModID}:LavaBomb": {
+    "NAME": "Lava Bomb",
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Burn to ALL enemies."
+  },
+  "${ModID}:FlameWall": {
+    "NAME": "Flame Wall",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, apply !M! starlight:Burn back."
+  },
+  "${ModID}:Firestorm": {
+    "NAME": "Firestorm",
+    "DESCRIPTION": "At the start of your turn, apply !M! starlight:Burn to ALL enemies."
+  },
+  "${ModID}:Eruption": {
+    "NAME": "Eruption",
+    "DESCRIPTION": "Deal !D! damage. Increase the damage of all Attacks in your hand by !M! this combat."
+  },
+  "${ModID}:WillOWisp": {
+    "NAME": "Will-O-Wisp",
+    "DESCRIPTION": "Apply !M! starlight:Burn. NL Exhaust."
+  },
+  "${ModID}:Vulcanize": {
+    "NAME": "Vulcanize",
+    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! starlight:Burn."
+  },
+
+
+
+
+  "${ModID}:VineWrap": {
+    "NAME": "Vine Wrap",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Tangled."
+  },
+  "${ModID}:Bramble": {
+    "NAME": "Bramble",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:Barbs."
+  },
+  "${ModID}:ThornBall": {
+    "NAME": "Thorn Ball",
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to your starlight:Barbs."
+  },
+  "${ModID}:StickySap": {
+    "NAME": "Sticky Sap",
+    "DESCRIPTION": "Retain. NL Apply !M! starlight:Tangled. NL Apply !M! starlight:Wet. NL Exhaust."
+  },
+  "${ModID}:SolarBlade": {
+    "NAME": "Solar Blade",
+    "DESCRIPTION": "Deal !D! damage. NL If this deals unblocked damage, apply !M! starlight:Burn."
+  },
+  "${ModID}:Entangle": {
+    "NAME": "Entangle",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! starlight:Tangled."
+  },
+  "${ModID}:VineBomb": {
+    "NAME": "Vine Bomb",
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Tangled to ALL enemies. Deals additional damage equal to your starlight:Barbs."
+  },
+  "${ModID}:Sanctuary": {
+    "NAME": "Sanctuary",
+    "DESCRIPTION": "At the end of your turn, gain Block equal to {!M!|>1=!M! times }your starlight:Barbs.{@@}"
+  },
+  "${ModID}:ToxicBarbs": {
+    "NAME": "Toxic Barbs",
+    "DESCRIPTION": "Gain !M! starlight:Barbs. NL Apply !M! Poison to ALL enemies."
+  },
+  "${ModID}:LeafStorm": {
+    "NAME": "Leaf Storm",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. Deals double damage to starlight:Burning enemies."
+  },
+  "${ModID}:Bloom": {
+    "NAME": "Bloom",
+    "DESCRIPTION": "Whenever you play an Attack, gain !M! starlight:Barb{!M!|>1=s}{@@}."
   }
 }

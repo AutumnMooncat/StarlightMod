@@ -256,14 +256,6 @@ public class TheStarlightMod implements
         BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/eng/UIstrings.json");
 
         BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/eng/Potionstrings.json");
-
-        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/BookOfWaterstrings.json");
-
-        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/BookOfIcestrings.json");
-
-        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/BookOfFirestrings.json");
-
-        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/BookOfNaturestrings.json");
     }
 
     @Override
