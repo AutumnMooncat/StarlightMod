@@ -1,11 +1,14 @@
 package Starlight.cards.bookOfNature;
 
+import Starlight.actions.DamageFollowupAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.TanglePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.blue.Scrape;
 import com.megacrit.cardcrawl.cards.colorless.DarkShackles;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -22,23 +25,28 @@ public class Harvest extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 2;
-    private static final int DMG = 15;
-    private static final int UP_DMG = 5;
+    private static final int DMG = 14;
+    private static final int UP_DMG = 4;
     private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
     public Harvest() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = EFFECT;
+        //baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_NATURE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.POISON, i -> {
+            if (i > 0 && m.hasPower(TanglePower.POWER_ID)) {
+                Wiz.att(new GainBlockAction(p, i));
+            }
+        }));
+        /*dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         if (m.hasPower(TanglePower.POWER_ID)) {
             Wiz.applyToEnemy(m, new StrengthPower(m, -magicNumber));
-        }
+        }*/
     }
 
     public void upp() {

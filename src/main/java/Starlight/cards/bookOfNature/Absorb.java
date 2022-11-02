@@ -41,7 +41,7 @@ public class Absorb extends AbstractMagickCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.POISON, i -> {
             if (i > 0 && m.hasPower(TanglePower.POWER_ID)) {
-                Wiz.att(new GainBlockAction(p, i));
+                Wiz.applyToEnemy(m, new StrengthPower(m, -magicNumber));
             }
         }));
         Wiz.atb(new HealAction(p, p, magicNumber));

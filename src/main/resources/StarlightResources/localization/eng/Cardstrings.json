@@ -598,11 +598,11 @@
   },
   "${ModID}:Absorb": {
     "NAME": "Absorb",
-    "DESCRIPTION": "Deal !D! damage. NL Heal !M! HP. NL If the enemy is starlight:Wet, gain Block equal to unblocked damage dealt."
+    "DESCRIPTION": "Deal !D! damage. NL Heal !M! HP. NL If the enemy is starlight:Tangled, it loses !M! Strength."
   },
   "${ModID}:Harvest": {
     "NAME": "Harvest",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy is starlight:Tangled, it loses !M! Strength."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy is starlight:Tangled, gain Block equal to unblocked damage dealt."
   },
   "${ModID}:Overgrowth": {
     "NAME": "Overgrowth",
