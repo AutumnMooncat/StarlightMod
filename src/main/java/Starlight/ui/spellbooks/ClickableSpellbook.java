@@ -71,7 +71,7 @@ public abstract class ClickableSpellbook extends ClickableUIElement {
     protected void onHover() {
         this.angle = MathHelper.angleLerpSnap(this.angle, 15.0F);
         this.tint.a = 0.25F;
-        TipHelper.renderGenericTip(this.x, this.y + 200F * Settings.scale, header, body);
+        TipHelper.renderGenericTip(containingPanel.x - 160F * Settings.scale, containingPanel.y + 160F * Settings.scale, header, body);
     }
 
     @Override

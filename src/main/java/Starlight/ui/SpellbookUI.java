@@ -32,12 +32,14 @@ public class SpellbookUI {
         primPanel.addBook(new BookOfIce(true));
         primPanel.addBook(new BookOfFire(true));
         primPanel.addBook(new BookOfNature(true));
+        primPanel.addBook(new BookOfDark(true));
 
 
         lunaPanel.addBook(new BookOfWater(false));
         lunaPanel.addBook(new BookOfIce(false));
         lunaPanel.addBook(new BookOfFire(false));
         lunaPanel.addBook(new BookOfNature(false));
+        lunaPanel.addBook(new BookOfDark(false));
 
         primPanel.layoutBooks();
         lunaPanel.layoutBooks();

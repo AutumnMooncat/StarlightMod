@@ -148,5 +148,11 @@
       "Book of Nature",
       "Tangle enemies and impale them with Barbs when they attack."
     ]
+  },
+  "${ModID}:BookOfDark": {
+    "TEXT": [
+      "Book of Darkness",
+      "Curse enemies and bypass their Block."
+    ]
   }
 }

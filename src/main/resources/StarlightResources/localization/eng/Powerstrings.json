@@ -187,9 +187,13 @@
       " turns."]
   },
   "${ModID}:ReversePower": {
-    "NAME": "Reverse",
+    "NAME": "Taint",
     "DESCRIPTIONS": ["The next time this creature attempts to #yBlock, it instead loses that much HP.",
       "Your next #b", " times this creature attempts to #yBlock, it instead loses that much HP."]
+  },
+  "${ModID}:PowerTripPower": {
+    "NAME": "Power Trip",
+    "DESCRIPTIONS": ["Whenever you #yExhaust a card, gain #b"," [E] ."]
   },
 
 
@@ -214,6 +218,10 @@
   "${ModID}:ThornyVinesPower": {
     "NAME": "Thorny Vines",
     "DESCRIPTIONS": ["At the end of #yPrimrose's turn, gain #b","At the end of #yLuna's turn, gain #b"," #yBarb."," #yBarbs."]
+  },
+  "${ModID}:BlackMagicPower": {
+    "NAME": "Black Magick",
+    "DESCRIPTIONS": ["Whenever #yPrimrose plays a #yStrike, #yExhaust it.","Whenever #yLuna plays a #yStrike, #yExhaust it."]
   },
 
 
@@ -242,7 +250,7 @@
     "NAME": "Covenant",
     "DESCRIPTIONS": ["#yLuna now #yRetains #yMagick cards, gaining #b"," #ySP per #yRetained #yMagic card.","#r(Inactive) NL "]
   },
-  "${ModID}:BlackMagicPower": {
+  "${ModID}:BlackMagicPowerOLD": {
     "NAME": "Black Magick",
     "DESCRIPTIONS": ["Whenever #yPrimrose plays a #yBasic #yStrike, it #rExhausts and provides #b"," #yStrength.","#r(Inactive) NL "]
   },

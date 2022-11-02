@@ -1,60 +1,62 @@
 package Starlight.cards.bookOfDark;
 
-import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.actions.LethalDamageAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.damageMods.JinxWallopDamage;
 import Starlight.damageMods.PiercingDamage;
-import Starlight.powers.JinxPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.DamageModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.green.SneakyStrike;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.green.Skewer;
+import com.megacrit.cardcrawl.cards.purple.FearNoEvil;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
+
+import java.util.HashSet;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class BlindSide extends AbstractMagickCard {
-    public final static String ID = makeID(BlindSide.class.getSimpleName());
+public class ShadowArrow extends AbstractMagickCard {
+    public final static String ID = makeID(ShadowArrow.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 1;
-    private static final int DMG = 5;
-    private static final int UP_DMG = 2;
-    private static final int EFFECT = 5;
-    private static final int UP_EFFECT = 2;
+    private static final int COST = 0;
+    private static final int DMG = 6;
+    private static final int UP_DMG = 3;
 
-    public BlindSide() {
+    public ShadowArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = EFFECT;
         DamageModifierManager.addModifier(this, new PiercingDamage());
         tags.add(CustomTags.STARLIGHT_DARK);
+        tags.add(CustomTags.STARLIGHT_ARROW);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        Wiz.applyToEnemy(m, new JinxPower(m, magicNumber));
-        //Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
+        dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
+        HashSet<Class<?>> blah = new HashSet<>();
     }
 
     public void upp() {
         upgradeDamage(UP_DMG);
-        upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
     public String cardArtCopy() {
-        return SneakyStrike.ID;
+        return Skewer.ID;
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.1f, 0.5f, 0.6f, 1, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.35f, 0.55f, 0.55f, 0.45f, false);
     }
 }

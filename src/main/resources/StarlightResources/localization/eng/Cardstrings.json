@@ -490,7 +490,7 @@
   },
   "${ModID}:FireArrow": {
     "NAME": "Fire Arrow",
-    "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Fire Arrow cards by !M!."
+    "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL starlight:Arrow cards by !M!."
   },
   "${ModID}:FlameShield": {
     "NAME": "Flame Shield",
@@ -557,7 +557,7 @@
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:Barbs."
   },
   "${ModID}:ThornBall": {
-    "NAME": "Thorn Ball",
+    "NAME": "Thorn Arrow",
     "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to your starlight:Barbs."
   },
   "${ModID}:StickySap": {
@@ -612,9 +612,17 @@
 
 
 
+  "${ModID}:ShadowArrow": {
+    "NAME": "Shadow Arrow",
+    "DESCRIPTION": "Deal !D! damage. NL Ignores Block."
+  },
   "${ModID}:BeatUp": {
     "NAME": "Beat Up",
     "DESCRIPTION": "Deal !D! damage. NL If the enemy has starlight:Jinx, deal !D! damage again."
+  },
+  "${ModID}:Payback": {
+    "NAME": "Payback",
+    "DESCRIPTION": "Deal !D! damage. NL Deals double damage to the enemy that last attacked you."
   },
   "${ModID}:Curse": {
     "NAME": "Curse",
@@ -622,28 +630,55 @@
   },
   "${ModID}:Bio": {
     "NAME": "Bio",
-    "DESCRIPTION": "Deal !D! damage. NL Apply Poison equal to unblocked damage dealt.",
-    "EXTENDED_DESCRIPTION": ["Biora"]
-  },
-  "${ModID}:BlindSide": {
-    "NAME": "Blind Side",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Apply starlight:Jinx equal to unblocked damage dealt."
+    "DESCRIPTION": "Deal !D! damage. NL Apply Poison equal to unblocked damage dealt."
   },
   "${ModID}:Dark": {
-    "NAME": "Dark",
-    "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}",
-    "EXTENDED_DESCRIPTION": ["Darkra"]
+    "NAME": "Dark Pulse",
+    "DESCRIPTION": "Deal !D! damage. NL Ignores Block. NL If this kills an enemy, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}"
+  },
+  "${ModID}:Toxic": {
+    "NAME": "Toxicity",
+    "DESCRIPTION": "Apply !M! Poison and starlight:Jinx to ALL enemies."
+  },
+  "${ModID}:PowerTrip": {
+    "NAME": "Moxie",
+    "DESCRIPTION": "Whenever you Exhaust a card, gain !M! Strength.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Exhaust a card, gain !M! Strength."
+  },
+  "${ModID}:KissOfDeath": {
+    "NAME": "Kiss of Death",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage per debuff on the enemy."
+  },
+  "${ModID}:MalevolentMelody": {
+    "NAME": "Malevolent Melody",
+    "DESCRIPTION": "ALL enemies lose !M! HP !Starlight:M2! times. NL Exhaust."
+  },
+  "${ModID}:Conserve": {
+    "NAME": "Replenish",
+    "DESCRIPTION": "Whenever you Exhaust a card, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}"
+  },
+  "${ModID}:Malice": {
+    "NAME": "Malice",
+    "DESCRIPTION": "Apply !M! Poison. NL Exhaust a card in your hand."
   },
   "${ModID}:Reverse": {
     "NAME": "Reverse",
-    "DESCRIPTION": "The next {!M!|>1=!M! }time{!M!|>1=s} this target attempts to Block, it instead loses that much HP.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
+    "DESCRIPTION": "Apply !M! Weak. NL The next time this target attempts to Block, it instead loses {!M!|>1=!M! times }that much HP.{@@}"
   },
+  "${ModID}:BlindSide": {
+    "NAME": "Blind Side",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Jinx. NL Ignores Block."
+  },
+  "${ModID}:SoulSteal": {
+    "NAME": "Soul Steal",
+    "DESCRIPTION": "Deal !D! damage. NL Target loses !M! Strength. NL Gain !M! Strength. NL Exhaust."
+  },
+
+
+
+
   "${ModID}:VoidWanderer": {
     "NAME": "Void Wanderer",
     "DESCRIPTION": "Whenever you Exhaust a card, apply !M! starlight:Jinx to ALL enemies."
-  },
-  "${ModID}:Conserve": {
-    "NAME": "Conserve",
-    "DESCRIPTION": "Whenever you Exhaust a card, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}"
   }
 }

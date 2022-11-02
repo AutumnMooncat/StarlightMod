@@ -1,40 +1,43 @@
 package Starlight.cards.bookOfDark;
 
-import Starlight.actions.SwapAction;
-import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.characters.StarlightSisters;
-import Starlight.powers.ReversePower;
+import Starlight.powers.JinxPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.blue.Equilibrium;
+import com.megacrit.cardcrawl.cards.green.DeadlyPoison;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Reverse extends AbstractMagickCard {
-    public final static String ID = makeID(Reverse.class.getSimpleName());
+public class Toxic extends AbstractMagickCard {
+    public final static String ID = makeID(Toxic.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 0;
     private static final int UP_COST = 0;
-    private static final int EFFECT = 1;
-    private static final int UP_EFFECT = 1;
+    private static final int EFFECT = 3;
+    private static final int UP_EFFECT = 2;
+    private static final int BOOST = 1;
 
-    public Reverse() {
+    public Toxic() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
+        baseSecondMagic = secondMagic = BOOST;
         tags.add(CustomTags.STARLIGHT_DARK);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new ApplyPowerAction(m, p, new ReversePower(m, magicNumber)));
+        Wiz.forAllMonstersLiving(mon -> {
+            Wiz.applyToEnemy(mon, new PoisonPower(mon, p, magicNumber));
+            Wiz.applyToEnemy(mon, new JinxPower(mon, magicNumber));
+        });
+        //Wiz.atb(new ModifyMagicAction(this.uuid, secondMagic));
     }
 
     public void upp() {
@@ -44,11 +47,11 @@ public class Reverse extends AbstractMagickCard {
 
     @Override
     public String cardArtCopy() {
-        return Equilibrium.ID;
+        return DeadlyPoison.ID;
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.61f, 0.63f, 0.54f, 0.54f, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.05f, 0.63f, 0.54f, 0.54f, false);
     }
 }

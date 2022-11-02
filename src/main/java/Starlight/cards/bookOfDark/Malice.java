@@ -1,7 +1,7 @@
 package Starlight.cards.bookOfDark;
 
+import Starlight.actions.ExhaustByPredAction;
 import Starlight.actions.SwapAction;
-import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.powers.ReversePower;
@@ -10,31 +10,34 @@ import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.blue.Equilibrium;
+import com.megacrit.cardcrawl.cards.green.Nightmare;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.PoisonPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Reverse extends AbstractMagickCard {
-    public final static String ID = makeID(Reverse.class.getSimpleName());
+public class Malice extends AbstractMagickCard {
+    public final static String ID = makeID(Malice.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 0;
     private static final int UP_COST = 0;
-    private static final int EFFECT = 1;
-    private static final int UP_EFFECT = 1;
+    private static final int EFFECT = 3;
+    private static final int UP_EFFECT = 2;
 
-    public Reverse() {
+    public Malice() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_DARK);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new ApplyPowerAction(m, p, new ReversePower(m, magicNumber)));
+        Wiz.applyToEnemy(m, new PoisonPower(m, p, magicNumber));
+        Wiz.atb(new ExhaustByPredAction(Wiz.adp().hand, 1));
     }
 
     public void upp() {
@@ -44,11 +47,11 @@ public class Reverse extends AbstractMagickCard {
 
     @Override
     public String cardArtCopy() {
-        return Equilibrium.ID;
+        return Nightmare.ID;
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.61f, 0.63f, 0.54f, 0.54f, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.41f, 0.63f, 0.54f, 0.54f, false);
     }
 }
