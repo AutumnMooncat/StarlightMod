@@ -27,7 +27,6 @@ public class Heatwave extends AbstractMagickCard {
     public Heatwave() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
-        exhaust = true;
         tags.add(CustomTags.STARLIGHT_FIRE);
     }
 
