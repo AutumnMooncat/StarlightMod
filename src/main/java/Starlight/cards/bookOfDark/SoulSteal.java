@@ -32,8 +32,8 @@ public class SoulSteal extends AbstractMagickCard {
     private static final int COST = 2;
     private static final int DMG = 13;
     private static final int UP_DMG = 2;
-    private static final int EFFECT = 3;
-    private static final int UP_EFFECT = 2;
+    private static final int EFFECT = 2;
+    private static final int UP_EFFECT = 1;
 
     public SoulSteal() {
         super(ID, COST, TYPE, RARITY, TARGET);
