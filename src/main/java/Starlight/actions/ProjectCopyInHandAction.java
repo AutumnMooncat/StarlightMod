@@ -57,6 +57,9 @@ public class ProjectCopyInHandAction extends AbstractGameAction {
                 this.addToTop(this.followUpAction);
             }
         } else {
+            if (amount > validCards.size()) {
+                amount = validCards.size();
+            }
             Wiz.att(new BetterSelectCardsCenteredAction(copies, this.amount, amount == 1 ? TEXT[4] : TEXT[5] + amount + TEXT[6], cards -> {
                 for (AbstractCard c : cards) {
                     if (AbstractDungeon.player.hoveredCard == c) {

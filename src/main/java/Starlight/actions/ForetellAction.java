@@ -84,6 +84,9 @@ public class ForetellAction extends AbstractGameAction {
             CardCounterPatches.cardsForetoldThisTurn += foretoldCards.size();
             CardCounterPatches.cardsForetoldThisCombat += foretoldCards.size();
         } else {
+            if (amount > validCards.size()) {
+                amount = validCards.size();
+            }
             HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
             ArrayList<AbstractCard> selection = new ArrayList<>();
             for (AbstractCard c : validCards) {

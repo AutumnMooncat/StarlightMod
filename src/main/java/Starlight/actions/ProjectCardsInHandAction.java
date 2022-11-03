@@ -72,6 +72,9 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
                 this.addToTop(this.followUpAction);
             }
         } else {
+            if (amount > validCards.size()) {
+                amount = validCards.size();
+            }
             HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
             ArrayList<AbstractCard> selection = new ArrayList<>();
             for (AbstractCard c : validCards) {
