@@ -7,6 +7,7 @@ import Starlight.powers.JinxPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.green.AllOutAttack;
 import com.megacrit.cardcrawl.cards.green.Bane;
@@ -34,7 +35,7 @@ public class Payback extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new BeatUpAction(m, damage, damageTypeForTurn));
+        dmg(m, AbstractGameAction.AttackEffect.FIRE);
     }
 
     @Override
