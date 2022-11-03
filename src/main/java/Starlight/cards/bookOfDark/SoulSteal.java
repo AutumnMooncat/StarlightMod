@@ -40,6 +40,7 @@ public class SoulSteal extends AbstractMagickCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_DARK);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
