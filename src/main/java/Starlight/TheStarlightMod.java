@@ -121,7 +121,7 @@ public class TheStarlightMod implements
     public static int primroseBookIndex = 1;
     public static int lunaBookIndex = 0;
 
-    public static final int MAX_INDEX = 3;
+    public static final int MAX_INDEX = 4;
 
     //public static AbilityButton abilityButton;
     public static SpellbookUI spellUI;
