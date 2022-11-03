@@ -49,10 +49,6 @@
     "NAME": "Blazing",
     "DESCRIPTION": "Exhaust up to !M! cards in your hand. NL Gain !M! starlight:SP for each card Exhausted this way."
   },
-  "${ModID}:Blessing": {
-    "NAME": "Blessing",
-    "DESCRIPTION": "Whenever you gain 10 starlight:Providence, draw !M! cards."
-  },
   "${ModID}:Bulwark": {
     "NAME": "Bulwark DEPRECATED",
     "DESCRIPTION": "Gain !M! starlight:Providence. NL Apply !Starlight:M2! Weak."
@@ -69,15 +65,6 @@
   "${ModID}:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
-  },
-  "${ModID}:Dia": {
-    "NAME": "Dia",
-    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Jinx to ALL enemies.",
-    "EXTENDED_DESCRIPTION": ["Diara"]
-  },
-  "${ModID}:DivineSense": {
-    "NAME": "Divine Sense",
-    "DESCRIPTION": "starlight:Foretell !M! cards in your discard pile. They cost 0 until played. NL Exhaust."
   },
   "${ModID}:DizzyStrike": {
     "NAME": "Dizzy Strike",
@@ -96,11 +83,6 @@
     "NAME": "Enlighten",
     "DESCRIPTION": "{@@}Gain !B! Block. NL When you draw this card, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}."
   },
-  "${ModID}:Esuna": {
-    "NAME": "Esuna",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Remove !M! of your debuffs.",
-    "EXTENDED_DESCRIPTION": ["Esunaga"]
-  },
   "${ModID}:Fire": {
     "NAME": "Fire",
     "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! this combat.",
@@ -115,11 +97,6 @@
     "NAME": "Fortify",
     "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Increases Block gained from cards by !M!.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
-  },
-  "${ModID}:Fortuna": {
-    "NAME": "Fortuna",
-    "DESCRIPTION": "Whenever you gain Energy, gain !M! starlight:Providence.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain Energy, gain !M! starlight:Providence."
   },
   "${ModID}:FutureSight": {
     "NAME": "Future Sight DEPRECATED",
@@ -146,11 +123,6 @@
     "NAME": "Haste",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Next turn, NL gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! additional card{!M!|>1=s}.",
     "EXTENDED_DESCRIPTION": ["Hastega"]
-  },
-  "${ModID}:Holy": {
-    "NAME": "Holy",
-    "DESCRIPTION": "Deal !D! damage. NL Deals double damage in Elite and Boss combats.",
-    "EXTENDED_DESCRIPTION": ["Holyra"]
   },
   "${ModID}:Imperil": {
     "NAME": "Imperil",
@@ -333,10 +305,6 @@
     "NAME": "Twin Form",
     "DESCRIPTION": "Ethereal. NL starlight:Project a copy of the first card you play each turn.",
     "UPGRADE_DESCRIPTION": "starlight:Project a copy of the first card you play each turn."
-  },
-  "${ModID}:VirtuousWard": {
-    "NAME": "Virtuous Ward",
-    "DESCRIPTION": "{@@}Retain. NL Gain !B! Block. NL Gain !M! starlight:Providence. NL Exhaust."
   },
   "${ModID}:WandWhack": {
     "NAME": "Wand Whack",
@@ -672,6 +640,73 @@
   "${ModID}:SoulSteal": {
     "NAME": "Soul Steal",
     "DESCRIPTION": "Deal !D! damage. NL Target loses !M! Strength. NL Gain !M! Strength. NL Exhaust."
+  },
+
+
+
+  "${ModID}:Geas": {
+    "NAME": "Geas",
+    "DESCRIPTION": "?"
+  },
+  "${ModID}:Smite": {
+    "NAME": "Smite",
+    "DESCRIPTION": "?"
+  },
+  "${ModID}:VirtuousWard": {
+    "NAME": "Virtuous Ward",
+    "DESCRIPTION": "{@@}Retain. NL Gain !B! Block. NL Gain !M! starlight:Providence. NL Exhaust."
+  },
+  "${ModID}:SacredFlame": {
+    "NAME": "Sacred Flame",
+    "DESCRIPTION": "?"
+  },
+  "${ModID}:Dia": {
+    "NAME": "Dia",
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Jinx to ALL enemies.",
+    "EXTENDED_DESCRIPTION": ["Diara"]
+  },
+  "${ModID}:Holy": {
+    "NAME": "Holy",
+    "DESCRIPTION": "Deal !D! damage. NL Deals double damage in Elite and Boss combats.",
+    "EXTENDED_DESCRIPTION": ["Holyra"]
+  },
+  "${ModID}:Esuna": {
+    "NAME": "Esuna",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Remove !M! of your debuffs.",
+    "EXTENDED_DESCRIPTION": ["Esunaga"]
+  },
+  "${ModID}:Fortuna": {
+    "NAME": "Fortuna",
+    "DESCRIPTION": "Whenever you gain Energy, gain !M! starlight:Providence.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain Energy, gain !M! starlight:Providence."
+  },
+  "${ModID}:Reckoning": {
+    "NAME": "Reckoning",
+    "DESCRIPTION": "?"
+  },
+  "${ModID}:DivineSense": {
+    "NAME": "Divine Sense",
+    "DESCRIPTION": "starlight:Foretell !M! cards in your discard pile. They cost 0 until played. NL Exhaust."
+  },
+  "${ModID}:Blessing": {
+    "NAME": "Blessing",
+    "DESCRIPTION": "Whenever you gain 10 starlight:Providence, draw !M! cards."
+  },
+  "${ModID}:Lantern": {
+    "NAME": "Lantern",
+    "DESCRIPTION": "?"
+  },
+  "${ModID}:Tribute": {
+    "NAME": "Tribute",
+    "DESCRIPTION": "?"
+  },
+  "${ModID}:Hallow": {
+    "NAME": "Hallow",
+    "DESCRIPTION": "?"
+  },
+  "${ModID}:LightOfRuin": {
+    "NAME": "Light of Ruin",
+    "DESCRIPTION": "?"
   },
 
 
