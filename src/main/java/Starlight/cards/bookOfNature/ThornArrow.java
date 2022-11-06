@@ -20,7 +20,7 @@ public class ThornArrow extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
-    private static final int DMG = 6;
+    private static final int DMG = 4;
     private static final int UP_DMG = 2;
 
     public ThornArrow() {
