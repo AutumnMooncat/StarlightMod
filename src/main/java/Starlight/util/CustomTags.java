@@ -7,6 +7,10 @@ public class CustomTags {
     @SpireEnum
     public static AbstractCard.CardTags STARLIGHT_CAST_ANIM;
     @SpireEnum
+    public static AbstractCard.CardTags STARLIGHT_APPLIES_BURN;
+    @SpireEnum
+    public static AbstractCard.CardTags STARLIGHT_APPLIES_CHILL;
+    @SpireEnum
     public static AbstractCard.CardTags STARLIGHT_ARROW;
     @SpireEnum
     public static AbstractCard.CardTags STARLIGHT_ASCENDED;

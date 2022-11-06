@@ -39,6 +39,7 @@ public class Blizzard extends AbstractMagickCard {
         baseMagicNumber = magicNumber = EFFECT;
         isMultiDamage = true;
         tags.add(CustomTags.STARLIGHT_ICE);
+        tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

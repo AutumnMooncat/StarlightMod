@@ -4,6 +4,9 @@ import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
 import Starlight.powers.BurnPower;
 import Starlight.powers.ChillPower;
+import Starlight.powers.FrostburnPower;
+import Starlight.powers.interfaces.RenderOnCardPower;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,7 +17,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
-public class FiredUpPower extends AbstractPower {
+public class FiredUpPower extends AbstractPower implements RenderOnCardPower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(FiredUpPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -51,5 +54,19 @@ public class FiredUpPower extends AbstractPower {
         } else {
             this.description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
         }
+    }
+
+    @Override
+    public boolean shouldRender(AbstractCard card) {
+        return isActive() && appliesBurn(card);
+    }
+
+    public static boolean appliesBurn(AbstractCard card) {
+        if (card.tags.contains(CustomTags.STARLIGHT_APPLIES_BURN)) {
+            return true;
+        } else if (card.tags.contains(CustomTags.STARLIGHT_APPLIES_CHILL) && Wiz.adp().hasPower(FrostburnPower.POWER_ID)) {
+            return true;
+        }
+        return false;
     }
 }

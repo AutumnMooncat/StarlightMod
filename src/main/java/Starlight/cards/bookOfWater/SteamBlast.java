@@ -30,6 +30,7 @@ public class SteamBlast extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         tags.add(CustomTags.STARLIGHT_WATER);
+        tags.add(CustomTags.STARLIGHT_APPLIES_BURN);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

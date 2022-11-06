@@ -29,6 +29,7 @@ public class WillOWisp extends AbstractMagickCard {
         baseMagicNumber = magicNumber = EFFECT;
         exhaust = true;
         tags.add(CustomTags.STARLIGHT_FIRE);
+        tags.add(CustomTags.STARLIGHT_APPLIES_BURN);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

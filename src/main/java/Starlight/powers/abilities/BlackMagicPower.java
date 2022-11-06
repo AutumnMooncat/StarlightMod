@@ -3,6 +3,7 @@ package Starlight.powers.abilities;
 import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
 import Starlight.powers.BarbPower;
+import Starlight.powers.interfaces.RenderOnCardPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class BlackMagicPower extends AbstractPower {
+public class BlackMagicPower extends AbstractPower implements RenderOnCardPower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(BlackMagicPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -50,5 +51,10 @@ public class BlackMagicPower extends AbstractPower {
         } else {
             this.description = DESCRIPTIONS[1];
         }
+    }
+
+    @Override
+    public boolean shouldRender(AbstractCard card) {
+        return isActive() && card.tags.contains(AbstractCard.CardTags.STRIKE);
     }
 }

@@ -29,6 +29,7 @@ public class IcyWind extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_ICE);
+        tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
         exhaust = true;
     }
 

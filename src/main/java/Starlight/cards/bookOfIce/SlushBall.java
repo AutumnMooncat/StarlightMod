@@ -33,6 +33,7 @@ public class SlushBall extends AbstractMagickCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_ICE);
+        tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

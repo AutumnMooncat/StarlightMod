@@ -36,6 +36,7 @@ public class SacredFlame extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_LIGHT);
+        tags.add(CustomTags.STARLIGHT_APPLIES_BURN);
         exhaust = true;
     }
 

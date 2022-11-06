@@ -33,6 +33,7 @@ public class Napalm extends AbstractMagickCard {
         baseMagicNumber = magicNumber = EFFECT;
         baseSecondMagic = secondMagic = TIMES;
         tags.add(CustomTags.STARLIGHT_FIRE);
+        tags.add(CustomTags.STARLIGHT_APPLIES_BURN);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
