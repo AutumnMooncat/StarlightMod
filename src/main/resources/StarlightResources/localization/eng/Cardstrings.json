@@ -285,7 +285,7 @@
   },
   "${ModID}:Thoughtbloom": {
     "NAME": "Thoughtbloom",
-    "DESCRIPTION": "At the end of your turn, starlight:Project !M! up to card{!M!|>1=s} in your hand.{@@}"
+    "DESCRIPTION": "At the end of your turn, starlight:Project up to !M! card{!M!|>1=s} in your hand.{@@}"
   },
   "${ModID}:Thrash": {
     "NAME": "Thrash",
