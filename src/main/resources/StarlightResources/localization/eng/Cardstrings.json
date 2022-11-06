@@ -18,6 +18,10 @@
     "NAME": "Anticipate",
     "DESCRIPTION": "{@@}Gain !M! starlight:SP. NL Draw and Upgrade !M! card{!M!|>1=s}."
   },
+  "${ModID}:ArcaneArrow": {
+    "NAME": "Arcane Arrow",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for ALL your Arcane Arrow cards."
+  },
   "${ModID}:Ascend": {
     "NAME": "Ascend",
     "DESCRIPTION": "starlight:Project an Attack card in your hand for the rest of combat. NL Exhaust.",
@@ -168,10 +172,6 @@
   "${ModID}:Posturing": {
     "NAME": "Posturing DEPRECATED",
     "DESCRIPTION": "At the end of your turn, if the last card played was a... NL Skill: Gain !M! Block. NL Attack: Gain !M! Vigor."
-  },
-  "${ModID}:PowerFist": {
-    "NAME": "Power Fist",
-    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for ALL your Power Fist cards."
   },
   "${ModID}:Prepare": {
     "NAME": "Prepare",

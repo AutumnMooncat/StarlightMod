@@ -1,10 +1,8 @@
 package Starlight.potions;
 
 import Starlight.TheStarlightMod;
-import Starlight.cards.PowerFist;
-import Starlight.powers.SpellPower;
+import Starlight.cards.ArcaneArrow;
 import Starlight.util.Wiz;
-import basemod.BaseMod;
 import basemod.abstracts.CustomPotion;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -31,7 +29,7 @@ public class BottledFists extends CustomPotion {
 
     @Override
     public void use(AbstractCreature target) {
-        AbstractCard c = new PowerFist();
+        AbstractCard c = new ArcaneArrow();
         c.upgrade();
         c.setCostForTurn(0);
         Wiz.makeInHand(c, potency);
