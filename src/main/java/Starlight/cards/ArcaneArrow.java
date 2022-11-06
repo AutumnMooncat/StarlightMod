@@ -1,6 +1,7 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class ArcaneArrow extends AbstractEasyCard {
+public class ArcaneArrow extends AbstractMagickCard {
     public final static String ID = makeID(ArcaneArrow.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -21,7 +22,7 @@ public class ArcaneArrow extends AbstractEasyCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 8;
+    private static final int DMG = 7;
     private static final int UP_DMG = 2;
     private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
