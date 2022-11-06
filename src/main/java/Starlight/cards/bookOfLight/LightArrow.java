@@ -38,6 +38,15 @@ public class LightArrow extends AbstractMagickCard {
     }
 
     @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (damageBoost()) {
+            this.damage *= 2;
+        }
+        this.isDamageModified = baseDamage != damage;
+    }
+
+    @Override
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
         if (damageBoost()) {
