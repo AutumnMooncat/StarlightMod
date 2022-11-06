@@ -22,7 +22,7 @@ public class Overgrowth extends AbstractMagickCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int EFFECT = 5;
+    private static final int EFFECT = 7;
     private static final int UP_EFFECT = 3;
     private static final int WEAK = 1;
     private static final int UP_WEAK = 1;

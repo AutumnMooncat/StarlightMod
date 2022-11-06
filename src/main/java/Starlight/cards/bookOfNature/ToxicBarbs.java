@@ -23,7 +23,7 @@ public class ToxicBarbs extends AbstractMagickCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int EFFECT = 4;
+    private static final int EFFECT = 5;
     private static final int UP_EFFECT = 2;
 
     public ToxicBarbs() {
