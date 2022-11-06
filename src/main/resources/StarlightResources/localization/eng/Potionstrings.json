@@ -1,7 +1,8 @@
 {
-  "${ModID}:BottledFists": {
-    "NAME": "Bottled Fists",
-    "DESCRIPTIONS": ["Add #b"," #yPower #yFist+ to your hand. They cost #b0 this turn."]
+  "${ModID}:QuiverPotion": {
+    "NAME": "Quiver Potion",
+    "DESCRIPTIONS": ["Add #b"," random #yArrow cards into your hand. They cost #b0 this turn.",
+                    "starlight:Arrow"]
   },
   "${ModID}:EfficiencyPotion": {
     "NAME": "Efficiency Potion",

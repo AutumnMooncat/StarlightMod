@@ -17,7 +17,6 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.abstracts.CustomSavable;
 import basemod.helpers.CardBorderGlowManager;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -194,7 +193,7 @@ public class TheStarlightMod implements
         BaseMod.addPotion(JinxPotion.class, new Color(95/255f,46/255f,209/255f,1), new Color(40/255f,20/255f,107/255f,1), null, JinxPotion.POTION_ID, StarlightSisters.Enums.THE_SISTERS);
         BaseMod.addPotion(TimeSplitter.class, new Color(255/255f,255/255f,255/255f,1), new Color(0/255f,0/255f,0/255f,1), null, TimeSplitter.POTION_ID, StarlightSisters.Enums.THE_SISTERS);
         BaseMod.addPotion(EfficiencyPotion.class, new Color(65/255f,217/255f,90/255f,1), new Color(5/255f,66/255f,15/255f,1), null, EfficiencyPotion.POTION_ID, StarlightSisters.Enums.THE_SISTERS);
-        BaseMod.addPotion(BottledFists.class, new Color(217/255f,215/255f,65/255f,1), new Color(105/255f,101/255f,12/255f,1), null, BottledFists.POTION_ID, StarlightSisters.Enums.THE_SISTERS);
+        BaseMod.addPotion(QuiverPotion.class, new Color(217/255f,215/255f,65/255f,1), new Color(105/255f,101/255f,12/255f,1), null, QuiverPotion.POTION_ID, StarlightSisters.Enums.THE_SISTERS);
     }
 
     @Override
@@ -275,7 +274,7 @@ public class TheStarlightMod implements
             WidePotionsMod.whitelistSimplePotion(JinxPotion.POTION_ID);
             WidePotionsMod.whitelistSimplePotion(TimeSplitter.POTION_ID);
             WidePotionsMod.whitelistSimplePotion(EfficiencyPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(BottledFists.POTION_ID);
+            WidePotionsMod.whitelistSimplePotion(QuiverPotion.POTION_ID);
 
             //Complex Potions
 
