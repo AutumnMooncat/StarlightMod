@@ -6,7 +6,6 @@ import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.cards.blue.Melter;
 import com.megacrit.cardcrawl.cards.green.Skewer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,8 +14,8 @@ import com.megacrit.cardcrawl.vfx.combat.SanctityEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class ArrowOfLight extends AbstractMagickCard {
-    public final static String ID = makeID(ArrowOfLight.class.getSimpleName());
+public class LightArrow extends AbstractMagickCard {
+    public final static String ID = makeID(LightArrow.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -26,7 +25,7 @@ public class ArrowOfLight extends AbstractMagickCard {
     private static final int DMG = 7;
     private static final int UP_DMG = 3;
 
-    public ArrowOfLight() {
+    public LightArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         tags.add(CustomTags.STARLIGHT_LIGHT);

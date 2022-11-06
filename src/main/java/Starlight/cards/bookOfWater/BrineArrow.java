@@ -7,15 +7,14 @@ import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.cards.blue.ColdSnap;
-import com.megacrit.cardcrawl.cards.purple.DeceiveReality;
+import com.megacrit.cardcrawl.cards.green.Skewer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class BrineBolt extends AbstractMagickCard {
-    public final static String ID = makeID(BrineBolt.class.getSimpleName());
+public class BrineArrow extends AbstractMagickCard {
+    public final static String ID = makeID(BrineArrow.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -25,10 +24,11 @@ public class BrineBolt extends AbstractMagickCard {
     private static final int DMG = 7;
     private static final int UP_DMG = 3;
 
-    public BrineBolt() {
+    public BrineArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         tags.add(CustomTags.STARLIGHT_WATER);
+        tags.add(CustomTags.STARLIGHT_ARROW);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -44,11 +44,11 @@ public class BrineBolt extends AbstractMagickCard {
 
     @Override
     public String cardArtCopy() {
-        return ColdSnap.ID;
+        return Skewer.ID;
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.5f, 0.1f, 0.6f, 0.5f, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.05f, 0.05f, 0.90f, 0.5f, false);
     }
 }

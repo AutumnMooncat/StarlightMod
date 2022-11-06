@@ -327,8 +327,8 @@
     "NAME": "Water Ball",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Wet."
   },
-  "${ModID}:BrineBolt": {
-    "NAME": "Brine Bolt",
+  "${ModID}:BrineArrow": {
+    "NAME": "Brine Arrow",
     "DESCRIPTION": "Deal !D! damage. NL Target loses HP equal to its starlight:Wet."
   },
   "${ModID}:Hydration": {
@@ -388,8 +388,8 @@
 
 
 
-  "${ModID}:FrostRay": {
-    "NAME": "Frost Ray",
+  "${ModID}:FrostArrow": {
+    "NAME": "Frost Arrow",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Chill."
   },
   "${ModID}:IceBeam": {
@@ -524,7 +524,7 @@
     "NAME": "Bramble",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:Barbs."
   },
-  "${ModID}:ThornBall": {
+  "${ModID}:ThornArrow": {
     "NAME": "Thorn Arrow",
     "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to your starlight:Barbs."
   },
@@ -664,8 +664,8 @@
     "NAME": "Divine Spears",
     "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Gain !M! starlight:Providence."
   },
-  "${ModID}:ArrowOfLight": {
-    "NAME": "Arrow of Light",
+  "${ModID}:LightArrow": {
+    "NAME": "Light Arrow",
     "DESCRIPTION": "Deal !D! damage. NL Deals double damage in Elite and Boss combats."
   },
   "${ModID}:Esuna": {

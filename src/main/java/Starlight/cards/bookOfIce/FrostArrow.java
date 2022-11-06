@@ -2,21 +2,20 @@ package Starlight.cards.bookOfIce;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.ChillPower;
-import Starlight.powers.TanglePower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.blue.Blizzard;
-import com.megacrit.cardcrawl.cards.colorless.DarkShackles;
+import com.megacrit.cardcrawl.cards.green.Skewer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class FrostRay extends AbstractMagickCard {
-    public final static String ID = makeID(FrostRay.class.getSimpleName());
+public class FrostArrow extends AbstractMagickCard {
+    public final static String ID = makeID(FrostArrow.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
@@ -26,12 +25,13 @@ public class FrostRay extends AbstractMagickCard {
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
-    public FrostRay() {
+    public FrostArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_ICE);
         tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
+        tags.add(CustomTags.STARLIGHT_ARROW);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -46,7 +46,12 @@ public class FrostRay extends AbstractMagickCard {
 
     @Override
     public String cardArtCopy() {
-        return Blizzard.ID;
+        return Skewer.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.03f, 0.6f, 0.75f, 0.5f, false);
     }
 
 }

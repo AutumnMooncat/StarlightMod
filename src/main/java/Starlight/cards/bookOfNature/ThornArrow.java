@@ -2,21 +2,18 @@ package Starlight.cards.bookOfNature;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BarbPower;
-import Starlight.powers.TanglePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.colorless.DarkShackles;
 import com.megacrit.cardcrawl.cards.green.Skewer;
-import com.megacrit.cardcrawl.cards.red.GhostlyArmor;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class ThornBall extends AbstractMagickCard {
-    public final static String ID = makeID(ThornBall.class.getSimpleName());
+public class ThornArrow extends AbstractMagickCard {
+    public final static String ID = makeID(ThornArrow.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -26,7 +23,7 @@ public class ThornBall extends AbstractMagickCard {
     private static final int DMG = 6;
     private static final int UP_DMG = 2;
 
-    public ThornBall() {
+    public ThornArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         tags.add(CustomTags.STARLIGHT_NATURE);

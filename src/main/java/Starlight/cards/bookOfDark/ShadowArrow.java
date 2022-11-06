@@ -57,6 +57,7 @@ public class ShadowArrow extends AbstractMagickCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.35f, 0.55f, 0.55f, 0.45f, false);
+        //return new CardArtRoller.ReskinInfo(ID, 0.35f, 0.55f, 0.55f, 0.45f, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.15f, 0.1f, 0.6f, 0.5f, false);
     }
 }

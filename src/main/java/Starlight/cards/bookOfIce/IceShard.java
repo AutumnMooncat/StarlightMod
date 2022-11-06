@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.blue.Blizzard;
 import com.megacrit.cardcrawl.cards.blue.ColdSnap;
 import com.megacrit.cardcrawl.cards.colorless.SwiftStrike;
+import com.megacrit.cardcrawl.cards.green.Skewer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -53,12 +54,12 @@ public class IceShard extends AbstractMagickCard implements OnEnterDrawPileCard 
 
     @Override
     public String cardArtCopy() {
-        return SwiftStrike.ID;
+        return Blizzard.ID;
     }
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.00f, 0.6f, 0.65f, 0.5f, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.5f, 0.6f, 0.65f, 0.5f, false);
     }
 
 }
