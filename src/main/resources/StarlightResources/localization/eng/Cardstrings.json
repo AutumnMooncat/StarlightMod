@@ -20,7 +20,7 @@
   },
   "${ModID}:ArcaneArrow": {
     "NAME": "Arcane Arrow",
-    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for ALL your Arcane Arrow cards."
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for ALL your starlight:Arrow cards."
   },
   "${ModID}:Ascend": {
     "NAME": "Ascend",

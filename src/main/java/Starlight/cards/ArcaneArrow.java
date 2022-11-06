@@ -22,7 +22,7 @@ public class ArcaneArrow extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 7;
+    private static final int DMG = 5;
     private static final int UP_DMG = 2;
     private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
@@ -56,10 +56,10 @@ public class ArcaneArrow extends AbstractMagickCard {
     }
 
     private int countCards() {
-        return (int) (Wiz.adp().drawPile.group.stream().filter(c -> c instanceof ArcaneArrow).count() +
-                Wiz.adp().hand.group.stream().filter(c -> c instanceof ArcaneArrow).count() +
-                Wiz.adp().discardPile.group.stream().filter(c -> c instanceof ArcaneArrow).count() +
-                ProjectedCardManager.cards.group.stream().filter(c -> c instanceof ArcaneArrow).count());
+        return (int) (Wiz.adp().drawPile.group.stream().filter(c -> c.hasTag(CustomTags.STARLIGHT_ARROW)).count() +
+                Wiz.adp().hand.group.stream().filter(c -> c.hasTag(CustomTags.STARLIGHT_ARROW)).count() +
+                Wiz.adp().discardPile.group.stream().filter(c -> c.hasTag(CustomTags.STARLIGHT_ARROW)).count() +
+                ProjectedCardManager.cards.group.stream().filter(c -> c.hasTag(CustomTags.STARLIGHT_ARROW)).count());
     }
 
     public void upp() {
