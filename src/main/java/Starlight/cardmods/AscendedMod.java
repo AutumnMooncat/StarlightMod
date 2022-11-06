@@ -13,12 +13,12 @@ public class AscendedMod extends AbstractCardModifier {
 
     @Override
     public String modifyName(String cardName, AbstractCard card) {
-        return TEXT[0]+cardName+TEXT[1];
+        return TEXT[0]+cardName;
     }
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[2];
+        return rawDescription + TEXT[1];
     }
 
     @Override

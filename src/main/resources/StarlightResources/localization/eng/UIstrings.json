@@ -154,5 +154,11 @@
       "Book of Darkness",
       "Curse enemies and bypass their Block."
     ]
+  },
+  "${ModID}:BookOfLight": {
+    "TEXT": [
+      "Book of Light",
+      "Cleanse the Spire and accrue Providence."
+    ]
   }
 }

@@ -25,12 +25,12 @@ import static Starlight.TheStarlightMod.makeID;
 public class ShadowArrow extends AbstractMagickCard {
     public final static String ID = makeID(ShadowArrow.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
-    private static final int DMG = 6;
+    private static final int DMG = 7;
     private static final int UP_DMG = 3;
 
     public ShadowArrow() {

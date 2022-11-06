@@ -16,6 +16,7 @@ public class CardCounterPatches {
     public static int swapsThisTurn;
     public static int swapsThisCombat;
     public static AbstractCreature lastAttacker;
+    public static int providenceGained;
 
     @SpirePatch2(clz = GameActionManager.class, method = "clear")
     public static class ResetCounters {
@@ -27,6 +28,8 @@ public class CardCounterPatches {
             cardsProjectedThisTurn = 0;
             swapsThisTurn = 0;
             swapsThisCombat = 0;
+            lastAttacker = null;
+            providenceGained = 0;
         }
     }
 

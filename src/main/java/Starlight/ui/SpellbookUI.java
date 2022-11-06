@@ -33,6 +33,7 @@ public class SpellbookUI {
         primPanel.addBook(new BookOfFire(true));
         primPanel.addBook(new BookOfNature(true));
         primPanel.addBook(new BookOfDark(true));
+        primPanel.addBook(new BookOfLight(true));
 
 
         lunaPanel.addBook(new BookOfWater(false));
@@ -40,9 +41,17 @@ public class SpellbookUI {
         lunaPanel.addBook(new BookOfFire(false));
         lunaPanel.addBook(new BookOfNature(false));
         lunaPanel.addBook(new BookOfDark(false));
+        lunaPanel.addBook(new BookOfLight(false));
 
         primPanel.layoutBooks();
         lunaPanel.layoutBooks();
+
+        if (TheStarlightMod.primroseBookIndex > primPanel.books.size() || TheStarlightMod.primroseBookIndex == TheStarlightMod.lunaBookIndex) {
+            TheStarlightMod.primroseBookIndex = TheStarlightMod.lunaBookIndex == 1 ? 0 : 1;
+        }
+        if (TheStarlightMod.lunaBookIndex > lunaPanel.books.size()) {
+            TheStarlightMod.lunaBookIndex = TheStarlightMod.primroseBookIndex == 0 ? 1 : 0;
+        }
 
         primPanel.books.get(TheStarlightMod.primroseBookIndex).selected = true;
         lunaPanel.books.get(TheStarlightMod.lunaBookIndex).selected = true;

@@ -20,7 +20,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class Payback extends AbstractMagickCard {
     public final static String ID = makeID(Payback.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 

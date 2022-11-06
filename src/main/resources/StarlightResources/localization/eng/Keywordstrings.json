@@ -248,5 +248,12 @@
       "arrow"
     ],
     "DESCRIPTION": "Any card with the word \"Arrow\" in its name."
+  },
+  {
+    "PROPER_NAME": "Stricture",
+    "NAMES": [
+      "stricture"
+    ],
+    "DESCRIPTION": "A creature with a Stricture loses HP whenever they attack."
   }
 ]

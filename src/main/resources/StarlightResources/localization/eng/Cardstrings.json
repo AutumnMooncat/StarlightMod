@@ -646,34 +646,31 @@
 
   "${ModID}:Geas": {
     "NAME": "Geas",
-    "DESCRIPTION": "?"
+    "DESCRIPTION": "Apply !Starlight:M2! Weak. NL Apply !M! starlight:Stricture."
   },
   "${ModID}:Smite": {
     "NAME": "Smite",
-    "DESCRIPTION": "?"
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Stricture."
   },
   "${ModID}:VirtuousWard": {
     "NAME": "Virtuous Ward",
-    "DESCRIPTION": "{@@}Retain. NL Gain !B! Block. NL Gain !M! starlight:Providence. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Gain !M! starlight:Providence. NL Exhaust."
   },
   "${ModID}:SacredFlame": {
     "NAME": "Sacred Flame",
-    "DESCRIPTION": "?"
+    "DESCRIPTION": "Apply !M! starlight:Burn. NL Apply !M! starlight:Stricture."
   },
-  "${ModID}:Dia": {
-    "NAME": "Dia",
-    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Jinx to ALL enemies.",
-    "EXTENDED_DESCRIPTION": ["Diara"]
+  "${ModID}:DivineSpears": {
+    "NAME": "Divine Spears",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Gain !M! starlight:Providence."
   },
-  "${ModID}:Holy": {
-    "NAME": "Holy",
-    "DESCRIPTION": "Deal !D! damage. NL Deals double damage in Elite and Boss combats.",
-    "EXTENDED_DESCRIPTION": ["Holyra"]
+  "${ModID}:ArrowOfLight": {
+    "NAME": "Arrow of Light",
+    "DESCRIPTION": "Deal !D! damage. NL Deals double damage in Elite and Boss combats."
   },
   "${ModID}:Esuna": {
     "NAME": "Esuna",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Remove !M! of your debuffs.",
-    "EXTENDED_DESCRIPTION": ["Esunaga"]
+    "DESCRIPTION": "Gain !B! Block. NL Remove !M! of your debuffs."
   },
   "${ModID}:Fortuna": {
     "NAME": "Fortuna",
@@ -682,7 +679,7 @@
   },
   "${ModID}:Reckoning": {
     "NAME": "Reckoning",
-    "DESCRIPTION": "?"
+    "DESCRIPTION": "Deal !D! damage. NL Trigger the enemy's starlight:Stricture !M! times."
   },
   "${ModID}:DivineSense": {
     "NAME": "Divine Sense",
@@ -694,19 +691,20 @@
   },
   "${ModID}:Lantern": {
     "NAME": "Lantern",
-    "DESCRIPTION": "?"
+    "DESCRIPTION": "starlight:Foretell a card in your discard pile. NL The next time you draw it, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}"
   },
   "${ModID}:Tribute": {
     "NAME": "Tribute",
-    "DESCRIPTION": "?"
+    "DESCRIPTION": "Exhaust a card in your hand. If you do, add !M! *Miracle{!M!|>1=s}{@@} into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust a card in your hand. If you do, add !M! *Miracle{!M!|>1=s}{@@} into your hand."
   },
   "${ModID}:Hallow": {
-    "NAME": "Hallow",
-    "DESCRIPTION": "?"
+    "NAME": "Hallowed Ground",
+    "DESCRIPTION": "Gain !Starlight:M2! Artifact. NL Apply !M! starlight:Stricture to ALL enemies. NL Exhaust."
   },
   "${ModID}:LightOfRuin": {
     "NAME": "Light of Ruin",
-    "DESCRIPTION": "?"
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to starlight:Providence gained this combat."
   },
 
 

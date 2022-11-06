@@ -9,7 +9,9 @@
     "EXTENDED_DESCRIPTION": ["Retain. NL "]
   },
   "${ModID}:AscendedMod": {
-    "EXTENDED_DESCRIPTION": ["Ascended ","",
-                            " NL starlight:Project this card."]
+    "EXTENDED_DESCRIPTION": ["Ascended "," NL starlight:Project this card."]
+  },
+  "${ModID}:LanternMod": {
+    "EXTENDED_DESCRIPTION": ["Guiding "," NL Gain"," the next time you draw this card."]
   }
 }

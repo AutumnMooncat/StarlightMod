@@ -1,11 +1,13 @@
 package Starlight.cards.bookOfLight;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.blue.Melter;
+import com.megacrit.cardcrawl.cards.green.Skewer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -13,10 +15,10 @@ import com.megacrit.cardcrawl.vfx.combat.SanctityEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Holy extends AbstractMagickCard {
-    public final static String ID = makeID(Holy.class.getSimpleName());
+public class ArrowOfLight extends AbstractMagickCard {
+    public final static String ID = makeID(ArrowOfLight.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
@@ -24,10 +26,11 @@ public class Holy extends AbstractMagickCard {
     private static final int DMG = 7;
     private static final int UP_DMG = 3;
 
-    public Holy() {
+    public ArrowOfLight() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         tags.add(CustomTags.STARLIGHT_LIGHT);
+        tags.add(CustomTags.STARLIGHT_ARROW);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -54,6 +57,11 @@ public class Holy extends AbstractMagickCard {
 
     @Override
     public String cardArtCopy() {
-        return Melter.ID;
+        return Skewer.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.60f, 0.55f, 0.85f, 0.55f, false);
     }
 }

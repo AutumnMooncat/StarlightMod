@@ -195,6 +195,10 @@
     "NAME": "Moxie",
     "DESCRIPTIONS": ["Whenever you #yExhaust a card, gain #b"," #yStrength."]
   },
+  "${ModID}:StricturePower": {
+    "NAME": "Stricture",
+    "DESCRIPTIONS": ["Whenever this creature attacks, it loses #b"," HP."]
+  },
 
 
 
@@ -223,6 +227,10 @@
     "NAME": "Black Magick",
     "DESCRIPTIONS": ["Whenever #yPrimrose plays a #yStrike, #yExhaust it.","Whenever #yLuna plays a #yStrike, #yExhaust it."]
   },
+  "${ModID}:CovenantPower": {
+    "NAME": "Covenant",
+    "DESCRIPTIONS": ["#yPrimrose now #yRetains #yMagick cards, gaining #b","#yLuna now #yRetains #yMagick cards, gaining #b"," #ySP per card retained this way."]
+  },
 
 
 
@@ -246,7 +254,7 @@
     "NAME": "Divination",
     "DESCRIPTIONS": ["Whenever #yLuna #yForetells, gain #b"," #yProvidence.","#r(Inactive) NL "]
   },
-  "${ModID}:CovenantPower": {
+  "${ModID}:CovenantPowerOLD": {
     "NAME": "Covenant",
     "DESCRIPTIONS": ["#yLuna now #yRetains #yMagick cards, gaining #b"," #ySP per #yRetained #yMagic card.","#r(Inactive) NL "]
   },

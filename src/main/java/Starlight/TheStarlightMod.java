@@ -121,8 +121,6 @@ public class TheStarlightMod implements
     public static int primroseBookIndex = 1;
     public static int lunaBookIndex = 0;
 
-    public static final int MAX_INDEX = 4;
-
     //public static AbilityButton abilityButton;
     public static SpellbookUI spellUI;
     public static FilterUI filterUI;
@@ -158,12 +156,6 @@ public class TheStarlightMod implements
             preTalkProbability = starlightConfig.getInt(PRE_BATTLE_TALK_PROBABILITY_SETTING);
             primroseBookIndex = starlightConfig.getInt(PRIMROSE_BOOK_INDEX);
             lunaBookIndex = starlightConfig.getInt(LUNA_BOOK_INDEX);
-            if (primroseBookIndex > MAX_INDEX || primroseBookIndex == lunaBookIndex) {
-                primroseBookIndex = lunaBookIndex == 1 ? 0 : 1;
-            }
-            if (lunaBookIndex > MAX_INDEX) {
-                lunaBookIndex = primroseBookIndex == 0 ? 1 : 0;
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }

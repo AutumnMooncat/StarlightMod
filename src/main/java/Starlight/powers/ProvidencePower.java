@@ -1,6 +1,7 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
+import Starlight.patches.CardCounterPatches;
 import Starlight.powers.interfaces.OnProvidenceActivatePower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -31,6 +32,7 @@ public class ProvidencePower extends AbstractPower {
         this.loadRegion("nirvana");
         //array = ReflectionHacks.getPrivateInherited(this, ProvidencePower.class, "effect");
         updateDescription();
+        CardCounterPatches.providenceGained += amount;
     }
 
     @Override
