@@ -16,8 +16,11 @@ import com.megacrit.cardcrawl.screens.compendium.CardLibSortHeader;
 import com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen;
 import com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar;
 
+import java.util.function.Predicate;
+
 public class CompendiumPatches {
-    public static FilterType filterType = FilterType.GENERIC;
+    public static Predicate<AbstractCard> cardFilter = c -> true;
+    //public static FilterType filterType = FilterType.GENERIC;
     public static boolean needsRefresh;
 
     @SpirePatch2(clz = EverythingFix.DidChangeTab.class, method = "Insert")
@@ -29,7 +32,7 @@ public class CompendiumPatches {
                 //We need a new group of it won't sort properly
                 filteredGroup = new CardGroup(CardGroup.CardGroupType.CARD_POOL);
                 for (AbstractCard c : visibleCards[0].group) {
-                    if (!filterCard(c)) {
+                    if (cardFilter.test(c)) {
                         filteredGroup.group.add(c);
                     }
                 }
@@ -53,32 +56,13 @@ public class CompendiumPatches {
         }
     }
 
-    public static boolean filterCard(AbstractCard card) {
-        switch (filterType) {
-            case GENERIC:
-                return !noMagicTags(card);
-            case WATER:
-                return !card.tags.contains(CustomTags.STARLIGHT_WATER);
-            case ICE:
-                return !card.tags.contains(CustomTags.STARLIGHT_ICE);
-            case FIRE:
-                return !card.tags.contains(CustomTags.STARLIGHT_FIRE);
-            case NATURE:
-                return !card.tags.contains(CustomTags.STARLIGHT_NATURE);
-            case DARK:
-                return !card.tags.contains(CustomTags.STARLIGHT_DARK);
-            case LIGHT:
-                return !card.tags.contains(CustomTags.STARLIGHT_LIGHT);
-            case STORM:
-                return !card.tags.contains(CustomTags.STARLIGHT_STORM);
-            case VOID:
-                return !card.tags.contains(CustomTags.STARLIGHT_VOID);
-        }
-        return false;
-    }
-
     public static boolean noMagicTags(AbstractCard card) {
-        return !card.tags.contains(CustomTags.STARLIGHT_WATER) && !card.tags.contains(CustomTags.STARLIGHT_ICE) && !card.tags.contains(CustomTags.STARLIGHT_FIRE) && !card.tags.contains(CustomTags.STARLIGHT_NATURE) && !card.tags.contains(CustomTags.STARLIGHT_DARK) && !card.tags.contains(CustomTags.STARLIGHT_EARTH) && !card.tags.contains(CustomTags.STARLIGHT_LIGHT) && !card.tags.contains(CustomTags.STARLIGHT_SAND) && !card.tags.contains(CustomTags.STARLIGHT_SPACE) && !card.tags.contains(CustomTags.STARLIGHT_STORM) && !card.tags.contains(CustomTags.STARLIGHT_TIME) && !card.tags.contains(CustomTags.STARLIGHT_VOID);
+        for (AbstractCard.CardTags tag : TheStarlightMod.magicTags) {
+            if (card.tags.contains(tag)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @SpirePatch2(clz = CardLibraryScreen.class, method = "render")
@@ -111,7 +95,7 @@ public class CompendiumPatches {
         }
     }
 
-    public enum FilterType {
+    /*public enum FilterType {
         NONE,
         GENERIC,
         WATER,
@@ -122,5 +106,5 @@ public class CompendiumPatches {
         LIGHT,
         STORM,
         VOID
-    }
+    }*/
 }

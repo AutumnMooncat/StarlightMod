@@ -123,6 +123,7 @@ public class TheStarlightMod implements
     //public static AbilityButton abilityButton;
     public static SpellbookUI spellUI;
     public static FilterUI filterUI;
+    public static ArrayList<AbstractCard.CardTags> magicTags;
 
     public TheStarlightMod() {
         BaseMod.subscribe(this);
@@ -414,6 +415,7 @@ public class TheStarlightMod implements
         //abilityButton = new AbilityButton();
         spellUI = new SpellbookUI();
         //filterUI = new FilterUI();
+        magicTags = CustomTags.getMagicTags();
     }
 
     //Get the longest text so all sliders are centered

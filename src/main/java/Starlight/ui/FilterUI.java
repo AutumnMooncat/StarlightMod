@@ -34,69 +34,69 @@ public class FilterUI {
         filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookEmpty.png"), TEXT[0], makeBody(size, size)) {
             @Override
             public void onSelect() {
-                CompendiumPatches.filterType = CompendiumPatches.FilterType.NONE;
+                CompendiumPatches.cardFilter = c -> true;
                 refreshFilters();
             }
         });
         filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookNo.png"), TEXT[1], makeBody(countByPred(group, CompendiumPatches::noMagicTags), size)) {
             @Override
             public void onSelect() {
-                CompendiumPatches.filterType = CompendiumPatches.FilterType.GENERIC;
+                CompendiumPatches.cardFilter = CompendiumPatches::noMagicTags;
                 refreshFilters();
             }
         });
         filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookWater.png"), TEXT[2], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_WATER)), size)) {
             @Override
             public void onSelect() {
-                CompendiumPatches.filterType = CompendiumPatches.FilterType.WATER;
+                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_WATER);
                 refreshFilters();
             }
         });
         filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookIce.png"), TEXT[3], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_ICE)), size)) {
             @Override
             public void onSelect() {
-                CompendiumPatches.filterType = CompendiumPatches.FilterType.ICE;
+                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_ICE);
                 refreshFilters();
             }
         });
         filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookFire.png"), TEXT[4], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_FIRE)), size)) {
             @Override
             public void onSelect() {
-                CompendiumPatches.filterType = CompendiumPatches.FilterType.FIRE;
+                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_FIRE);
                 refreshFilters();
             }
         });
         filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookNature.png"), TEXT[5], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_NATURE)), size)) {
             @Override
             public void onSelect() {
-                CompendiumPatches.filterType = CompendiumPatches.FilterType.NATURE;
+                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_NATURE);
                 refreshFilters();
             }
         });
         filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookDark.png"), TEXT[6], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_DARK)), size)) {
             @Override
             public void onSelect() {
-                CompendiumPatches.filterType = CompendiumPatches.FilterType.DARK;
+                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_DARK);
                 refreshFilters();
             }
         });
         filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookLight.png"), TEXT[7], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_LIGHT)), size)) {
             @Override
             public void onSelect() {
-                CompendiumPatches.filterType = CompendiumPatches.FilterType.LIGHT;
+                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_LIGHT);
                 refreshFilters();
             }
         });
         filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookElec.png"), TEXT[8], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_STORM)), size)) {
             @Override
             public void onSelect() {
-                CompendiumPatches.filterType = CompendiumPatches.FilterType.STORM;
+                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_STORM);
                 refreshFilters();
             }
-        });filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookVoid.png"), TEXT[9], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_VOID)), size)) {
+        });filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookSpace.png"), TEXT[9], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_VOID)), size)) {
             @Override
             public void onSelect() {
-                CompendiumPatches.filterType = CompendiumPatches.FilterType.VOID;
+                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_VOID);
                 refreshFilters();
             }
         });
