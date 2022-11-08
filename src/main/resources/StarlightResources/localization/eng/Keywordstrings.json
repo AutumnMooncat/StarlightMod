@@ -134,12 +134,11 @@
     "DESCRIPTION": "Abilities are upgradeable passive effects."
   },
   {
-    "PROPER_NAME": "Scry",
+    "PROPER_NAME": "Exhaust",
     "NAMES": [
-      "scries",
-      "scried"
+      "exhausting"
     ],
-    "DESCRIPTION": "Look at the top X cards of your draw pile. You may discard any of them."
+    "DESCRIPTION": "Removed until end of combat."
   },
   {
     "PROPER_NAME": "Envision",

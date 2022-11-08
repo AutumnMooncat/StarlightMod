@@ -159,5 +159,11 @@
       "Book of Light",
       "Cleanse the Spire and accrue Providence."
     ]
+  },
+  "${ModID}:BookOfSpace": {
+    "TEXT": [
+      "Book of Space",
+      "Project cards and manipulate your deck."
+    ]
   }
 }

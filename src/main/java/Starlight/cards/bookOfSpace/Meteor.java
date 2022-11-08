@@ -2,6 +2,7 @@ package Starlight.cards.bookOfSpace;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.cards.interfaces.OnProjectCard;
+import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -18,13 +19,13 @@ import static Starlight.TheStarlightMod.makeID;
 public class Meteor extends AbstractMagickCard implements OnProjectCard {
     public final static String ID = makeID(Meteor.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 2;
-    private static final int DMG = 16;
-    private static final int UP_DMG = 5;
+    private static final int DMG = 13;
+    private static final int UP_DMG = 4;
     private static final int VULN = 2;
 
     private boolean projected;
@@ -32,7 +33,7 @@ public class Meteor extends AbstractMagickCard implements OnProjectCard {
     public Meteor() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = VULN;
+        //baseMagicNumber = magicNumber = VULN;
         tags.add(CustomTags.STARLIGHT_SPACE);
     }
 
@@ -42,7 +43,7 @@ public class Meteor extends AbstractMagickCard implements OnProjectCard {
         }
         this.addToBot(new WaitAction(0.8F));
         dmg(m, AbstractGameAction.AttackEffect.NONE);
-        Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
+        //Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
         projected = false;
     }
 
@@ -76,5 +77,10 @@ public class Meteor extends AbstractMagickCard implements OnProjectCard {
     @Override
     public String cardArtCopy() {
         return MeteorStrike.ID;
+    }
+
+    @Override
+    public CardArtRoller.ReskinInfo reskinInfo(String ID) {
+        return new CardArtRoller.ReskinInfo(ID, 0.12f, 0.5f, 0.5f, 0.5f, false);
     }
 }

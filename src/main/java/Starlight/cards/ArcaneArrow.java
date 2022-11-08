@@ -27,10 +27,12 @@ public class ArcaneArrow extends AbstractMagickCard {
     private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
+    private int magicLastFrame;
+
     public ArcaneArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = EFFECT;
+        baseMagicNumber = magicNumber = magicLastFrame = EFFECT;
         tags.add(CustomTags.STARLIGHT_ARROW);
         //CardModifierManager.addModifier(this, new ResonantMod(true));
     }
@@ -40,14 +42,20 @@ public class ArcaneArrow extends AbstractMagickCard {
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
+        magicLastFrame = magicNumber;
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.magicNumber * countCards();
         super.calculateCardDamage(mo);
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
+        if (magicLastFrame != magicNumber) {
+            magicLastFrame = magicNumber;
+            calculateCardDamage(mo);
+        }
     }
 
     public void applyPowers() {
+        magicLastFrame = magicNumber;
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.magicNumber * countCards();
         super.applyPowers();

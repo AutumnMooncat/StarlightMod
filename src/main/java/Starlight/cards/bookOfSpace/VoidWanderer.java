@@ -14,13 +14,13 @@ import static Starlight.TheStarlightMod.makeID;
 public class VoidWanderer extends AbstractMagickCard {
     public final static String ID = makeID(VoidWanderer.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
     private static final int COST = 1;
-    private static final int EFFECT = 4;
-    private static final int UP_EFFECT = 2;
+    private static final int EFFECT = 1;
+    private static final int UP_EFFECT = 1;
 
     public VoidWanderer() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -33,7 +33,9 @@ public class VoidWanderer extends AbstractMagickCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(UP_EFFECT);
+        //upgradeMagicNumber(UP_EFFECT);
+        isInnate = true;
+        uDesc();
     }
 
     @Override

@@ -34,6 +34,7 @@ public class SpellbookUI {
         primPanel.addBook(new BookOfNature(true));
         primPanel.addBook(new BookOfDark(true));
         primPanel.addBook(new BookOfLight(true));
+        primPanel.addBook(new BookOfSpace(true));
 
 
         lunaPanel.addBook(new BookOfWater(false));
@@ -42,6 +43,7 @@ public class SpellbookUI {
         lunaPanel.addBook(new BookOfNature(false));
         lunaPanel.addBook(new BookOfDark(false));
         lunaPanel.addBook(new BookOfLight(false));
+        lunaPanel.addBook(new BookOfSpace(false));
 
         primPanel.layoutBooks();
         lunaPanel.layoutBooks();

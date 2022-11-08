@@ -174,7 +174,7 @@
   },
   "${ModID}:VoidWandererPower": {
     "NAME": "Void Wanderer",
-    "DESCRIPTIONS": ["Whenever you #yExhaust a card, apply #b"," #yJinx to ALL enemies."]
+    "DESCRIPTIONS": ["Whenever you #yProject a card, draw #b"," card."," cards."]
   },
   "${ModID}:ConservePower": {
     "NAME": "Replenish",
@@ -231,7 +231,10 @@
     "NAME": "Covenant",
     "DESCRIPTIONS": ["#yPrimrose now #yRetains #yMagick cards, gaining #b","#yLuna now #yRetains #yMagick cards, gaining #b"," #ySP per card retained this way."]
   },
-
+  "${ModID}:EquinoxPower": {
+    "NAME": "Equinox",
+    "DESCRIPTIONS": ["Whenever #yPrimrose #yProjects a card, gain #b","Whenever #yLuna #yProjects a card, gain #b"," #ySP."]
+  },
 
 
   "${ModID}:FisticuffsPower": {

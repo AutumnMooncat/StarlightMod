@@ -31,10 +31,12 @@ public class KissOfDeath extends AbstractMagickCard {
     private static final int EFFECT = 6;
     private static final int UP_EFFECT = 2;
 
+    private int magicLastFrame;
+
     public KissOfDeath() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = EFFECT;
+        baseMagicNumber = magicNumber = magicLastFrame = EFFECT;
         tags.add(CustomTags.STARLIGHT_DARK);
     }
 
@@ -47,11 +49,20 @@ public class KissOfDeath extends AbstractMagickCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
+        magicLastFrame = magicNumber;
         int base = baseDamage;
         baseDamage += (countDebuffs(mo) * magicNumber);
         super.calculateCardDamage(mo);
         baseDamage = base;
         isDamageModified = damage != baseDamage;
+        if (magicLastFrame != magicNumber) {
+            magicLastFrame = magicNumber;
+            calculateCardDamage(mo);
+        }
+        if (magicLastFrame != magicNumber) {
+            magicLastFrame = magicNumber;
+            applyPowers();
+        }
     }
 
     private int countDebuffs(AbstractCreature c) {

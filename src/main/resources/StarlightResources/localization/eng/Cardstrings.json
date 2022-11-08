@@ -690,28 +690,67 @@
   },
 
 
-
-  "${ModID}:Astra": {
-    "NAME": "Astra",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Project !M! {!M!|1=copy|@=copies} of card in your hand.",
-    "EXTENDED_DESCRIPTION": ["Astraga"]
+  "${ModID}:Eclipse": {
+    "NAME": "Eclipse",
+    "DESCRIPTION": "Retain. NL starlight:Project the top {@@}{!M!|>1=!M! }playable card{!M!|>1=s} of your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL starlight:Project the top {@@}{!M!|>1=!M! }playable card{!M!|>1=s} of your draw pile."
+  },
+  "${ModID}:OrbitalArrow": {
+    "NAME": "Orbital Arrow",
+    "DESCRIPTION": "Deal !D! damage. NL starlight:Project an starlight:Exhausting copy of this card without this effect.",
+    "EXTENDED_DESCRIPTION": ["Deal !D! damage. NL Exhaust."]
+  },
+  "${ModID}:Stardust": {
+    "NAME": "Stardust",
+    "DESCRIPTION": "Gain !B! Block. NL Gains !M! additional Block for each starlight:Projected card."
+  },
+  "${ModID}:Nebula": {
+    "NAME": "Nebula",
+    "DESCRIPTION": "Gain !B! Block. NL starlight:Foretell !M! card{!M!|>1=s} in your discard pile.{@@}"
+  },
+  "${ModID}:StellarArray": {
+    "NAME": "Stellar Array",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Project !M! {!M!|1=copy|@=copies} of card in your hand."
+  },
+  "${ModID}:LunarBlessing": {
+    "NAME": "Lunar Blessing",
+    "DESCRIPTION": "Gain !B! Block. NL Whenever this card is starlight:Projected, increase its Block by !M! this combat."
+  },
+  "${ModID}:CosmicRay": {
+    "NAME": "Cosmic Ray",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable. NL Exhaust."
   },
   "${ModID}:AstralProtection": {
     "NAME": "Astral Protection",
     "DESCRIPTION": "Whenever you starlight:Project a card, gain !M! Block."
   },
-  "${ModID}:Meteor": {
-    "NAME": "Meteor",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Deals double damage if starlight:Projected.",
-    "EXTENDED_DESCRIPTION": ["Meteorga"]
+  "${ModID}:SolGate": {
+    "NAME": "Sol Gate",
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Burn to ALL enemies. NL starlight:Foretell !Starlight:M2! card{!Starlight:M2!|>1=s}{@@} in your discard pile."
   },
   "${ModID}:Gravity": {
     "NAME": "Gravity",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL starlight:SP affects this card !M! times.",
-    "EXTENDED_DESCRIPTION": ["Graviga"]
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Play ALL your starlight:Projected cards."
   },
   "${ModID}:VoidWanderer": {
     "NAME": "Void Wanderer",
-    "DESCRIPTION": "Whenever you Exhaust a card, apply !M! starlight:Jinx to ALL enemies."
+    "DESCRIPTION": "Whenever you starlight:Project a card, draw !M! card{!M!|>1=s}{@@}.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you starlight:Project a card, draw !M! card{!M!|>1=s}{@@}."
+  },
+  "${ModID}:Moonblast": {
+    "NAME": "Moonblast",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Draw !M! card{!M!|>1=s}{@@}."
+  },
+  "${ModID}:SpacialRend": {
+    "NAME": "Spacial Rend",
+    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1=s} in your discard pile."
+  },
+  "${ModID}:Meteor": {
+    "NAME": "Meteor",
+    "DESCRIPTION": "Deal !D! damage. NL Deals double damage if starlight:Projected."
+  },
+  "${ModID}:DimensionLock": {
+    "NAME": "Dimension Lock",
+    "DESCRIPTION": "starlight:Project the top !M! playable cards of your draw pile. NL You cannot draw additional cards this turn. NL Exhaust."
   }
 }

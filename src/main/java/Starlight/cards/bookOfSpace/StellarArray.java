@@ -13,8 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Astra extends AbstractMagickCard {
-    public final static String ID = makeID(Astra.class.getSimpleName());
+public class StellarArray extends AbstractMagickCard {
+    public final static String ID = makeID(StellarArray.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -25,7 +25,7 @@ public class Astra extends AbstractMagickCard {
     private static final int BLK = 6;
     private static final int UP_BLK = 3;
 
-    public Astra() {
+    public StellarArray() {
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = EFFECT;
         baseBlock = block = BLK;
