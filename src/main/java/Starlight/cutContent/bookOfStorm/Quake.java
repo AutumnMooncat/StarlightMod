@@ -1,4 +1,4 @@
-package Starlight.cards.bookOfStorm;
+package Starlight.cutContent.bookOfStorm;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CustomTags;

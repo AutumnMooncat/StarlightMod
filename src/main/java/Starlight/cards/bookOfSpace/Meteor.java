@@ -1,4 +1,4 @@
-package Starlight.cards.bookOfVoid;
+package Starlight.cards.bookOfSpace;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.cards.interfaces.OnProjectCard;
@@ -33,7 +33,7 @@ public class Meteor extends AbstractMagickCard implements OnProjectCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = VULN;
-        tags.add(CustomTags.STARLIGHT_VOID);
+        tags.add(CustomTags.STARLIGHT_SPACE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

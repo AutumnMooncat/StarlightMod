@@ -87,16 +87,10 @@ public class FilterUI {
                 refreshFilters();
             }
         });
-        filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookElec.png"), TEXT[8], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_STORM)), size)) {
+        filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookSpace.png"), TEXT[8], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_SPACE)), size)) {
             @Override
             public void onSelect() {
-                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_STORM);
-                refreshFilters();
-            }
-        });filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookSpace.png"), TEXT[9], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_VOID)), size)) {
-            @Override
-            public void onSelect() {
-                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_VOID);
+                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_SPACE);
                 refreshFilters();
             }
         });

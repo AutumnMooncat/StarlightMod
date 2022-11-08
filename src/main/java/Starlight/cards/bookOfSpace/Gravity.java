@@ -1,5 +1,5 @@
 
-package Starlight.cards.bookOfVoid;
+package Starlight.cards.bookOfSpace;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.SpellPower;
@@ -39,7 +39,7 @@ public class Gravity extends AbstractMagickCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = SCALE;
         isMultiDamage = true;
-        tags.add(CustomTags.STARLIGHT_VOID);
+        tags.add(CustomTags.STARLIGHT_SPACE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

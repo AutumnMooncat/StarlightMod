@@ -1,6 +1,5 @@
-package Starlight.cards.bookOfVoid;
+package Starlight.cards.bookOfSpace;
 
-import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.AstralProtectionPower;
 import Starlight.util.CardArtRoller;
@@ -27,7 +26,7 @@ public class AstralProtection extends AbstractMagickCard {
     public AstralProtection() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
-        tags.add(CustomTags.STARLIGHT_VOID);
+        tags.add(CustomTags.STARLIGHT_SPACE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

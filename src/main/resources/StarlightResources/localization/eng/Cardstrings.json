@@ -27,15 +27,7 @@
     "DESCRIPTION": "starlight:Project an Attack card in your hand for the rest of combat. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "starlight:Project an Attack or Skill card in your hand for the rest of combat. NL Exhaust."
   },
-  "${ModID}:Astra": {
-    "NAME": "Astra",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Project !M! {!M!|1=copy|@=copies} of card in your hand.",
-    "EXTENDED_DESCRIPTION": ["Astraga"]
-  },
-  "${ModID}:AstralProtection": {
-    "NAME": "Astral Protection",
-    "DESCRIPTION": "Whenever you starlight:Project a card, gain !M! Block."
-  },
+
   "${ModID}:Augury": {
     "NAME": "Augury",
     "DESCRIPTION": "Deal !D! damage. NL starlight:Foretell and Upgrade a card in your discard pile."
@@ -110,11 +102,6 @@
     "NAME": "Gank",
     "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you starlight:Swap, return this from the discard pile to your hand."
   },
-  "${ModID}:Gravity": {
-    "NAME": "Gravity",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL starlight:SP affects this card !M! times.",
-    "EXTENDED_DESCRIPTION": ["Graviga"]
-  },
   "${ModID}:Grit": {
     "NAME": "Grit",
     "DESCRIPTION": "Play a random card in your draw pile and Exhaust it. NL Exhaust."
@@ -147,11 +134,6 @@
     "NAME": "Mana Conversion",
     "DESCRIPTION": "Whenever you gain Energy, gain !M! starlight:SP.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain Energy, gain !M! starlight:Providence."
-  },
-  "${ModID}:Meteor": {
-    "NAME": "Meteor",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Deals double damage if starlight:Projected.",
-    "EXTENDED_DESCRIPTION": ["Meteorga"]
   },
   "${ModID}:Moxie": {
     "NAME": "Moxie DEPRECATED",
@@ -709,7 +691,25 @@
 
 
 
-
+  "${ModID}:Astra": {
+    "NAME": "Astra",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Project !M! {!M!|1=copy|@=copies} of card in your hand.",
+    "EXTENDED_DESCRIPTION": ["Astraga"]
+  },
+  "${ModID}:AstralProtection": {
+    "NAME": "Astral Protection",
+    "DESCRIPTION": "Whenever you starlight:Project a card, gain !M! Block."
+  },
+  "${ModID}:Meteor": {
+    "NAME": "Meteor",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Deals double damage if starlight:Projected.",
+    "EXTENDED_DESCRIPTION": ["Meteorga"]
+  },
+  "${ModID}:Gravity": {
+    "NAME": "Gravity",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL starlight:SP affects this card !M! times.",
+    "EXTENDED_DESCRIPTION": ["Graviga"]
+  },
   "${ModID}:VoidWanderer": {
     "NAME": "Void Wanderer",
     "DESCRIPTION": "Whenever you Exhaust a card, apply !M! starlight:Jinx to ALL enemies."

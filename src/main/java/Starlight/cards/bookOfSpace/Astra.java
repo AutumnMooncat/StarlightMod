@@ -1,4 +1,4 @@
-package Starlight.cards.bookOfVoid;
+package Starlight.cards.bookOfSpace;
 
 import Starlight.actions.ProjectCopyInHandAction;
 import Starlight.actions.ProjectSpecificCardAction;
@@ -29,7 +29,7 @@ public class Astra extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         magicNumber = baseMagicNumber = EFFECT;
         baseBlock = block = BLK;
-        tags.add(CustomTags.STARLIGHT_VOID);
+        tags.add(CustomTags.STARLIGHT_SPACE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
