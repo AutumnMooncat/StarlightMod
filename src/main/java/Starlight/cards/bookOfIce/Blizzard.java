@@ -40,6 +40,7 @@ public class Blizzard extends AbstractMagickCard {
         isMultiDamage = true;
         tags.add(CustomTags.STARLIGHT_ICE);
         tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
