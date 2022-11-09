@@ -28,14 +28,14 @@ import static Starlight.TheStarlightMod.makeID;
 public class SolGate extends AbstractMagickCard {
     public final static String ID = makeID(SolGate.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
     private static final int DMG = 6;
-    private static final int UP_DMG = 2;
-    private static final int SCALE = 2;
+    private static final int UP_DMG = 3;
+    private static final int SCALE = 1;
     private static final int UP_SCALE = 1;
     private static final int EFFECT = 1;
 
@@ -43,7 +43,7 @@ public class SolGate extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = SCALE;
-        baseSecondMagic = secondMagic = EFFECT;
+        //baseSecondMagic = secondMagic = EFFECT;
         isMultiDamage = true;
         tags.add(CustomTags.STARLIGHT_SPACE);
     }
@@ -51,13 +51,13 @@ public class SolGate extends AbstractMagickCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new VFXAction(new ColoredMindBlastEffect(p.dialogX, p.dialogY, p.flipHorizontal, Color.RED.cpy())));
         allDmg(AbstractGameAction.AttackEffect.FIRE);
-        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new BurnPower(mon, p, magicNumber)));
-        Wiz.atb(new ForetellAction(Wiz.adp().discardPile, secondMagic));
+        //Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new BurnPower(mon, p, magicNumber)));
+        Wiz.atb(new ForetellAction(Wiz.adp().discardPile, magicNumber));
     }
 
     public void upp() {
         upgradeDamage(UP_DMG);
-        upgradeMagicNumber(UP_SCALE);
+        //upgradeMagicNumber(UP_SCALE);
     }
 
     @Override

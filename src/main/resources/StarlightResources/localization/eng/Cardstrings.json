@@ -725,7 +725,7 @@
   },
   "${ModID}:SolGate": {
     "NAME": "Sol Gate",
-    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Burn to ALL enemies. NL starlight:Foretell !Starlight:M2! card{!Starlight:M2!|>1=s}{@@} in your discard pile."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. starlight:Foretell !M! card{!M!|>1=s}{@@} in your discard pile."
   },
   "${ModID}:Gravity": {
     "NAME": "Gravity",
