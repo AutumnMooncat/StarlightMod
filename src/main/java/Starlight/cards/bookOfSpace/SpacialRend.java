@@ -18,12 +18,12 @@ import static Starlight.TheStarlightMod.makeID;
 public class SpacialRend extends AbstractMagickCard {
     public final static String ID = makeID(SpacialRend.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 7;
+    private static final int DMG = 9;
     private static final int UP_DMG = 3;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
