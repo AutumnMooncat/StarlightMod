@@ -2,6 +2,7 @@ package Starlight.cards;
 
 import Starlight.actions.ProjectCardsInHandAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.purple.CarveReality;
@@ -28,6 +29,7 @@ public class Star extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
+        tags.add(CustomTags.STARLIGHT_PROJECTS);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
