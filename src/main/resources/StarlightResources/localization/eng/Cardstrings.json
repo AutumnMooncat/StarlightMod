@@ -326,7 +326,7 @@
   },
   "${ModID}:MuddyWaters": {
     "NAME": "Muddy Waters",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Mud."
+    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength this turn."
   },
   "${ModID}:Deluge": {
     "NAME": "Deluge",
