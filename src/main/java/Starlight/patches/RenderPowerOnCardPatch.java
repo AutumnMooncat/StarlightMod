@@ -44,12 +44,12 @@ public class RenderPowerOnCardPatch {
         }
 
         private static void renderHelper(SpriteBatch sb, ArrayList<AbstractPower> powers, AbstractCard card) {
-            float renderScale = 0.6f;
+            float renderScale = 0.65f;
             float ddx = 130f;
-            float dx = (powers.size()-1) /2f * ddx;
-            float dy = -200.0F / renderScale;
+            float dx = (powers.size()-1) /2f * ddx / renderScale;
+            float dy = -220.0F / renderScale;
             float scale = card.drawScale * Settings.scale * renderScale;
-            float w, h, w2, h2, ox, oy;
+            float w, h, w2, h2;
             TextureAtlas.AtlasRegion img;
             for (AbstractPower p : powers) {
                 img = p.region128;
@@ -57,9 +57,7 @@ public class RenderPowerOnCardPatch {
                 w2 = w / 2f;
                 h = img.packedHeight;
                 h2 = h / 2f;
-                ox = img.offsetX;
-                oy = img.offsetY;
-                sb.draw(img, card.current_x + ox - w2 - dx, card.current_y + oy - h2 - dy, w2 - ox + dx, h2 - oy + dy, w, h, scale, scale, card.angle);
+                sb.draw(img, card.current_x - w2 - dx, card.current_y - h2 - dy, w2 + dx, h2 + dy, w, h, scale, scale, card.angle);
                 dx -= ddx;
             }
         }
