@@ -19,8 +19,9 @@ public class Stardust extends AbstractMagickCard {
 
     private static final int COST = 1;
     private static final int EFFECT = 2;
+    private static final int UP_EFFECT = 1;
     private static final int BLK = 8;
-    private static final int UP_BLK = 3;
+    private static final int UP_BLK = 2;
 
     private int magicLastFrame;
 
@@ -37,6 +38,7 @@ public class Stardust extends AbstractMagickCard {
 
     public void upp() {
         upgradeBlock(UP_BLK);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
     //TODO Testing solution to fix This, Kiss of Death, and Arcane Arrow will not calculating properly if these methods are only called for 1 frame
