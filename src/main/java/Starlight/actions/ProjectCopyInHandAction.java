@@ -10,20 +10,27 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ProjectCopyInHandAction extends AbstractGameAction {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("Project")).TEXT;
     public static final ArrayList<AbstractCard> projectedCards = new ArrayList<>();
     private AbstractGameAction followUpAction;
+    private Predicate<AbstractCard> filter;
 
     public ProjectCopyInHandAction(int amount) {
-        this(amount, null);
+        this(amount, c -> true, null);
     }
 
     public ProjectCopyInHandAction(int amount, AbstractGameAction followUpAction) {
+        this(amount, c -> true, followUpAction);
+    }
+
+    public ProjectCopyInHandAction(int amount, Predicate<AbstractCard> filter, AbstractGameAction followUpAction) {
         this.amount = amount;
         this.followUpAction = followUpAction;
+        this.filter = filter;
     }
 
     @Override
@@ -36,7 +43,11 @@ public class ProjectCopyInHandAction extends AbstractGameAction {
             this.isDone = true;
             return;
         }
-        ArrayList<AbstractCard> validCards = Wiz.adp().hand.group.stream().filter(c -> c.cost != -2).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<AbstractCard> validCards = Wiz.adp().hand.group.stream().filter(c -> c.cost != -2 && filter.test(c)).collect(Collectors.toCollection(ArrayList::new));
+        if (validCards.isEmpty()) {
+            this.isDone = true;
+            return;
+        }
         ArrayList<AbstractCard> copies = new ArrayList<>();
         for (AbstractCard c : validCards) {
             copies.add(c.makeStatEquivalentCopy());

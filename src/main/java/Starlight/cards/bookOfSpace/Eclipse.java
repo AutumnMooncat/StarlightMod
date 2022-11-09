@@ -34,6 +34,7 @@ public class Eclipse extends AbstractMagickCard {
         tags.add(CustomTags.STARLIGHT_SPACE);
         selfRetain = true;
         exhaust = true;
+        tags.add(CustomTags.STARLIGHT_PROJECTS);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

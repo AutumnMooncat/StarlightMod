@@ -4,6 +4,7 @@ import Starlight.actions.ProjectCardsInHandAction;
 import Starlight.cardmods.AscendedMod;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.util.CardArtRoller;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -33,6 +34,7 @@ public class Ascend extends AbstractEasyCard {
     public Ascend() {
         super(ID, COST, TYPE, RARITY, TARGET);
         exhaust = true;
+        tags.add(CustomTags.STARLIGHT_PROJECTS);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

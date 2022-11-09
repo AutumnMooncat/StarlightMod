@@ -29,6 +29,7 @@ public class DimensionLock extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_SPACE);
+        tags.add(CustomTags.STARLIGHT_PROJECTS);
         exhaust = true;
     }
 

@@ -30,11 +30,12 @@ public class StellarArray extends AbstractMagickCard {
         magicNumber = baseMagicNumber = EFFECT;
         baseBlock = block = BLK;
         tags.add(CustomTags.STARLIGHT_SPACE);
+        tags.add(CustomTags.STARLIGHT_PROJECTS);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        Wiz.atb(new ProjectCopyInHandAction(1, new AbstractGameAction() {
+        Wiz.atb(new ProjectCopyInHandAction(1, c -> c.type == CardType.SKILL, new AbstractGameAction() {
             @Override
             public void update() {
                 for (AbstractCard card : ProjectCopyInHandAction.projectedCards) {

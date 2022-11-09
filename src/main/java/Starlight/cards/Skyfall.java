@@ -10,6 +10,7 @@ import Starlight.patches.CardCounterPatches;
 import Starlight.powers.ProvidencePower;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.CardArtRoller;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -53,6 +54,7 @@ public class Skyfall extends AbstractEasyCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         //baseMagicNumber = magicNumber = EFFECT;
+        tags.add(CustomTags.STARLIGHT_PROJECTS);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

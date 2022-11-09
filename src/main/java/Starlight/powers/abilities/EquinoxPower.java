@@ -5,6 +5,8 @@ import Starlight.characters.StarlightSisters;
 import Starlight.powers.BarbPower;
 import Starlight.powers.SpellPower;
 import Starlight.powers.interfaces.OnProjectPower;
+import Starlight.powers.interfaces.RenderOnCardPower;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,7 +15,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class EquinoxPower extends AbstractPower implements OnProjectPower {
+public class EquinoxPower extends AbstractPower implements OnProjectPower, RenderOnCardPower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(EquinoxPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -51,5 +53,10 @@ public class EquinoxPower extends AbstractPower implements OnProjectPower {
             flash();
             Wiz.applyToSelf(new SpellPower(Wiz.adp(), amount));
         }
+    }
+
+    @Override
+    public boolean shouldRender(AbstractCard card) {
+        return isActive() && card.hasTag(CustomTags.STARLIGHT_PROJECTS);
     }
 }

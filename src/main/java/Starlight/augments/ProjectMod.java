@@ -4,6 +4,7 @@ import CardAugments.cardmods.AbstractAugment;
 import Starlight.TheStarlightMod;
 import Starlight.actions.ProjectCardsInHandAction;
 import Starlight.cards.Star;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -26,6 +27,9 @@ public class ProjectMod extends AbstractAugment {
             card.baseMagicNumber += PROJECT;
             card.magicNumber += PROJECT;
             setBaseVar = true;
+        }
+        if (!card.hasTag(CustomTags.STARLIGHT_PROJECTS)) {
+            card.tags.add(CustomTags.STARLIGHT_PROJECTS);
         }
     }
 

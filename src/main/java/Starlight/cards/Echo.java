@@ -4,6 +4,7 @@ import Starlight.actions.ProjectSpecificCardAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.SpellPower;
+import Starlight.util.CustomTags;
 import Starlight.util.FormatHelper;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -39,6 +40,7 @@ public class Echo extends AbstractEasyCard {
 
     public Echo() {
         super(ID, COST, TYPE, RARITY, TARGET);
+        tags.add(CustomTags.STARLIGHT_PROJECTS);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

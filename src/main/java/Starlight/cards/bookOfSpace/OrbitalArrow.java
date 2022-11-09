@@ -42,6 +42,7 @@ public class OrbitalArrow extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         tags.add(CustomTags.STARLIGHT_SPACE);
+        tags.add(CustomTags.STARLIGHT_PROJECTS);
         if (projected) {
             setProjected();
         }

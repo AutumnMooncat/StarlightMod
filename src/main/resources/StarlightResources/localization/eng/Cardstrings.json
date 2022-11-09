@@ -27,7 +27,6 @@
     "DESCRIPTION": "starlight:Project an Attack card in your hand for the rest of combat. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "starlight:Project an Attack or Skill card in your hand for the rest of combat. NL Exhaust."
   },
-
   "${ModID}:Augury": {
     "NAME": "Augury",
     "DESCRIPTION": "Deal !D! damage. NL starlight:Foretell and Upgrade a card in your discard pile."
@@ -710,7 +709,7 @@
   },
   "${ModID}:StellarArray": {
     "NAME": "Stellar Array",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Project !M! {!M!|1=copy|@=copies} of card in your hand."
+    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Project !M! {!M!|1=copy|@=copies} of a Skill in your hand."
   },
   "${ModID}:LunarBlessing": {
     "NAME": "Lunar Blessing",
