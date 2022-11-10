@@ -38,7 +38,7 @@ public class Refrigerate extends AbstractMagickCard {
     }
 
     public void upp() {
-        //upgradeBlock(UP_BLK);
+        upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
     }
 
