@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.blue.Equilibrium;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -34,7 +35,8 @@ public class Reverse extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new ApplyPowerAction(m, p, new ReversePower(m, magicNumber)));
+        Wiz.applyToEnemy(m, new WeakPower(m, magicNumber,  false));
+        Wiz.applyToEnemy(m, new ReversePower(m, magicNumber));
     }
 
     public void upp() {
