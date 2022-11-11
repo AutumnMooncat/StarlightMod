@@ -59,10 +59,6 @@ public class KissOfDeath extends AbstractMagickCard {
             magicLastFrame = magicNumber;
             calculateCardDamage(mo);
         }
-        if (magicLastFrame != magicNumber) {
-            magicLastFrame = magicNumber;
-            applyPowers();
-        }
     }
 
     private int countDebuffs(AbstractCreature c) {

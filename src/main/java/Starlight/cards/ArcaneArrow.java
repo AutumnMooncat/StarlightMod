@@ -61,6 +61,10 @@ public class ArcaneArrow extends AbstractMagickCard {
         super.applyPowers();
         this.baseDamage = realBaseDamage;
         this.isDamageModified = this.damage != this.baseDamage;
+        if (magicLastFrame != magicNumber) {
+            magicLastFrame = magicNumber;
+            applyPowers();
+        }
     }
 
     private int countCards() {
