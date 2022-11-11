@@ -1,6 +1,5 @@
 package Starlight.cards.bookOfDark;
 
-import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.ConservePower;
 import Starlight.util.CardArtRoller;
@@ -12,8 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Conserve extends AbstractMagickCard {
-    public final static String ID = makeID(Conserve.class.getSimpleName());
+public class Replenish extends AbstractMagickCard {
+    public final static String ID = makeID(Replenish.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -24,7 +23,7 @@ public class Conserve extends AbstractMagickCard {
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
-    public Conserve() {
+    public Replenish() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_DARK);

@@ -5,11 +5,6 @@
     "UPGRADE_DESCRIPTION": "Upgrade description",
     "EXTENDED_DESCRIPTION": ["Extra Stuff"]
   },
-  "${ModID}:Aero": {
-    "NAME": "Aero DEPRECATED",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Draw !M! cards.",
-    "EXTENDED_DESCRIPTION": ["Aerora"]
-  },
   "${ModID}:Ambush": {
     "NAME": "Ambush",
     "DESCRIPTION": "Gain !B! Block twice. NL Deal !D! damage twice."
@@ -43,10 +38,6 @@
   "${ModID}:Blazing": {
     "NAME": "Blazing",
     "DESCRIPTION": "Exhaust up to !M! cards in your hand. NL Gain !M! starlight:SP for each card Exhausted this way."
-  },
-  "${ModID}:Bulwark": {
-    "NAME": "Bulwark DEPRECATED",
-    "DESCRIPTION": "Gain !M! starlight:Providence. NL Apply !Starlight:M2! Weak."
   },
   "${ModID}:CriticalHit": {
     "NAME": "Critical Hit",
@@ -93,10 +84,6 @@
     "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Increases Block gained from cards by !M!.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
-  "${ModID}:FutureSight": {
-    "NAME": "Future Sight DEPRECATED",
-    "DESCRIPTION": "Scry !M!. NL starlight:Project the top card of your draw pile."
-  },
   "${ModID}:Gank": {
     "NAME": "Gank",
     "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you starlight:Swap, return this from the discard pile to your hand."
@@ -134,14 +121,6 @@
     "DESCRIPTION": "Whenever you gain Energy, gain !M! starlight:SP.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you gain Energy, gain !M! starlight:Providence."
   },
-  "${ModID}:Moxie": {
-    "NAME": "Moxie DEPRECATED",
-    "DESCRIPTION": "Gain !B! Block. NL Add a starlight:Grit into your hand."
-  },
-  "${ModID}:MindLink": {
-    "NAME": "Mind Link DEPRECATED",
-    "DESCRIPTION": "{@@}{!Starlight:IsSisters!|1=starlight:Tag_Team|0=starlight:Tag} effects trigger !M! additional time{!M!|>1=s}."
-  },
   "${ModID}:NastyNastySpell": {
     "NAME": "Nasty Nasty Spell",
     "DESCRIPTION": "{@@}This turn, your next {!M!|>1=!M! }starlight:Magick card{!M!|>1=s} {!M!|1=is|@=are} played twice."
@@ -150,18 +129,9 @@
     "NAME": "Null Momentum",
     "DESCRIPTION": "{@@}Put a Void onto the top of your draw pile. NL Draw !M! cards."
   },
-  "${ModID}:Posturing": {
-    "NAME": "Posturing DEPRECATED",
-    "DESCRIPTION": "At the end of your turn, if the last card played was a... NL Skill: Gain !M! Block. NL Attack: Gain !M! Vigor."
-  },
   "${ModID}:Prepare": {
     "NAME": "Prepare",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Gain !M! starlight:SP.{!Starlight:IsSisters!|1= NL starlight:Swap.}"
-  },
-  "${ModID}:Protect": {
-    "NAME": "Protect DEPRECATED",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL starlight:Foretell the next {!M!|>1=!M! }card{!M!|>1=s} you play this turn.",
-    "EXTENDED_DESCRIPTION": ["Protectga"]
   },
   "${ModID}:Quake": {
     "NAME": "Quake",
@@ -185,26 +155,9 @@
     "NAME": "Resolve",
     "DESCRIPTION": "{@@}starlight:Foretell the next {!M!|>1=!M! }card{!M!|>1=s} you play this turn."
   },
-  "${ModID}:RejectFate": {
-    "NAME": "Reject Fate DEPRECATED",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Scry !M!."
-  },
   "${ModID}:Serendipity": {
     "NAME": "Serendipity",
     "DESCRIPTION": "Retain. NL Gain !B! Block.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
-  },
-  "${ModID}:SetAside": {
-    "NAME": "Set Aside DEPRECATED",
-    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
-  },
-  "${ModID}:Shell": {
-    "NAME": "Shell DEPRECATED",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Block is not removed at the start of your next {!M!|>1=!M! }turn{!M!|>1=s}.",
-    "EXTENDED_DESCRIPTION": ["Shellga"]
-  },
-  "${ModID}:ShuffleStrike": {
-    "NAME": "Shuffle Strike DEPRECATED",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Whenever this enters your draw pile, add it into your hand."
   },
   "${ModID}:Skyfall": {
     "NAME": "Skyfall",
@@ -227,14 +180,6 @@
     "NAME": "Star",
     "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1=s} in your hand.",
     "EXTENDED_DESCRIPTION": ["Stara"]
-  },
-  "${ModID}:StarChart": {
-    "NAME": "Star Chart DEPRECATED",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Add !M! starlight:Star_Shard{!M!|>1=s} into your hand."
-  },
-  "${ModID}:StarShard": {
-    "NAME": "Star Shard DEPRECATED",
-    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Deal !D! damage. NL Exhaust."
   },
   "${ModID}:Stockpile": {
     "NAME": "Stockpile",
@@ -588,7 +533,7 @@
     "NAME": "Toxicity",
     "DESCRIPTION": "Apply !M! Poison and starlight:Jinx to ALL enemies."
   },
-  "${ModID}:PowerTrip": {
+  "${ModID}:Moxie": {
     "NAME": "Moxie",
     "DESCRIPTION": "Whenever you Exhaust a card, gain !M! Strength.",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Exhaust a card, gain !M! Strength."
@@ -601,7 +546,7 @@
     "NAME": "Malevolent Melody",
     "DESCRIPTION": "ALL enemies lose !M! HP !Starlight:M2! times. NL Exhaust."
   },
-  "${ModID}:Conserve": {
+  "${ModID}:Replenish": {
     "NAME": "Replenish",
     "DESCRIPTION": "Whenever you Exhaust a card, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}.{@@}"
   },

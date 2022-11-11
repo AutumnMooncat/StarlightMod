@@ -1,20 +1,18 @@
 package Starlight.cards.bookOfDark;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.ConservePower;
 import Starlight.powers.PowerTripPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.cards.purple.Fasting;
 import com.megacrit.cardcrawl.cards.red.Rupture;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class PowerTrip extends AbstractMagickCard {
-    public final static String ID = makeID(PowerTrip.class.getSimpleName());
+public class Moxie extends AbstractMagickCard {
+    public final static String ID = makeID(Moxie.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -25,7 +23,7 @@ public class PowerTrip extends AbstractMagickCard {
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
-    public PowerTrip() {
+    public Moxie() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_DARK);
