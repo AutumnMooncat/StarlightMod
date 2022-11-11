@@ -330,8 +330,7 @@
   },
   "${ModID}:Deluge": {
     "NAME": "Deluge",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Deals additional damage equal to the target's starlight:Wet. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL Deals additional damage equal to the target's starlight:Wet."
+    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to !M! times the target's starlight:Wet."
   },
   "${ModID}:Maelstrom": {
     "NAME": "Maelstrom",

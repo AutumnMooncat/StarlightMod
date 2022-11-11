@@ -6,10 +6,15 @@ import Starlight.powers.WetPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.purple.Brilliance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -21,39 +26,57 @@ public class Deluge extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 3;
+    private static final int DMG = 9;
     private static final int UP_DMG = 1;
     private static final int EFFECT = 3;
+    private static final int UP_EFFECT = 1;
+
+    private int magicLastFrame;
 
     public Deluge() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_WATER);
-        exhaust = true;
+        //exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0 ; i < magicNumber ; i++) {
-            dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        }
+        Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX + MathUtils.random(-10f, 10f) * Settings.scale, m.hb.cY + MathUtils.random(-10f, 10f) * Settings.scale, AbstractGameAction.AttackEffect.BLUNT_LIGHT, false), 0.2f));
+        Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX + MathUtils.random(-10f, 10f) * Settings.scale, m.hb.cY+ MathUtils.random(-10f, 10f) * Settings.scale, AbstractGameAction.AttackEffect.BLUNT_LIGHT, false), 0.2f));
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
+        magicLastFrame = magicNumber;
         int base = baseDamage;
-        if (mo.hasPower(WetPower.POWER_ID)) {
-            baseDamage += mo.getPower(WetPower.POWER_ID).amount;
-        }
+        baseDamage += (getWet(mo) * magicNumber);
         super.calculateCardDamage(mo);
         baseDamage = base;
-        isDamageModified = baseDamage != damage;
+        isDamageModified = damage != baseDamage;
+        if (magicLastFrame != magicNumber) {
+            magicLastFrame = magicNumber;
+            calculateCardDamage(mo);
+        }
+        if (magicLastFrame != magicNumber) {
+            magicLastFrame = magicNumber;
+            applyPowers();
+        }
+    }
+
+    private int getWet(AbstractCreature c) {
+        if (c.hasPower(WetPower.POWER_ID)) {
+            return c.getPower(WetPower.POWER_ID).amount;
+        }
+        return 0;
     }
 
     public void upp() {
         //upgradeDamage(UP_DMG);
-        exhaust = false;
-        uDesc();
+        upgradeMagicNumber(UP_EFFECT);
+        //exhaust = false;
+        //uDesc();
     }
 
     @Override
