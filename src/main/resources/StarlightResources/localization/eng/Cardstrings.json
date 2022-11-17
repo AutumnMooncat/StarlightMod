@@ -199,7 +199,7 @@
   },
   "${ModID}:Swindle": {
     "NAME": "Swindle",
-    "DESCRIPTION": "Apply 1 Vulnerable. NL Put !M! random Attacks from your draw pile into your hand."
+    "DESCRIPTION": "Apply 1 Vulnerable. NL Put !M! random Attacks from your draw pile into your hand. NL Exhaust."
   },
   "${ModID}:TeamEffort": {
     "NAME": "Team Effort",

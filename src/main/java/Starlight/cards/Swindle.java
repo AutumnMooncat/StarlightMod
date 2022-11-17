@@ -36,6 +36,7 @@ public class Swindle extends AbstractEasyCard {
     public Swindle() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
