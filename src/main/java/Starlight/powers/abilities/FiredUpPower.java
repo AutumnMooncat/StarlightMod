@@ -5,6 +5,7 @@ import Starlight.characters.StarlightSisters;
 import Starlight.powers.BurnPower;
 import Starlight.powers.ChillPower;
 import Starlight.powers.FrostburnPower;
+import Starlight.powers.VulcanizePower;
 import Starlight.powers.interfaces.RenderOnCardPower;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
@@ -65,6 +66,8 @@ public class FiredUpPower extends AbstractPower implements RenderOnCardPower {
         if (card.tags.contains(CustomTags.STARLIGHT_APPLIES_BURN)) {
             return true;
         } else if (card.tags.contains(CustomTags.STARLIGHT_APPLIES_CHILL) && Wiz.adp().hasPower(FrostburnPower.POWER_ID)) {
+            return true;
+        } else if (card.type == AbstractCard.CardType.ATTACK && Wiz.adp().hasPower(VulcanizePower.POWER_ID)) {
             return true;
         }
         return false;

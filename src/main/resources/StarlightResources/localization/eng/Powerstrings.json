@@ -213,7 +213,7 @@
 
 
   "${ModID}:FiredUpPower": {
-    "NAME": "Fired Up!",
+    "NAME": "Fired Up",
     "DESCRIPTIONS": ["Whenever #yPrimrose applies #yBurn, gain #b","Whenever #yLuna applies #yBurn, gain #b"," #yVigor."]
   },
   "${ModID}:SoakPower": {
