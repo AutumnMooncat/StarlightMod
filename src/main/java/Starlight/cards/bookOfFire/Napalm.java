@@ -54,6 +54,6 @@ public class Napalm extends AbstractMagickCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.65f, 0.45f, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.45f, 0.65f, 0.35f, 0.45f, false);
     }
 }
