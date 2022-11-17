@@ -25,8 +25,8 @@ public class Torrent extends AbstractMagickCard {
 
     private static final int COST = 1;
     private static final int DMG = 5;
-    private static final int UP_DMG = 1;
-    private static final int EFFECT = 1;
+    private static final int UP_DMG = 2;
+    private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
     public Torrent() {
@@ -34,6 +34,7 @@ public class Torrent extends AbstractMagickCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_WATER);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -52,7 +53,7 @@ public class Torrent extends AbstractMagickCard {
 
     public void upp() {
         upgradeDamage(UP_DMG);
-        upgradeMagicNumber(UP_EFFECT);
+        //upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override

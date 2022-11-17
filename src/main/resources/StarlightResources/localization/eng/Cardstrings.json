@@ -307,7 +307,7 @@
   },
   "${ModID}:Torrent": {
     "NAME": "Torrent",
-    "DESCRIPTION": "Deal !D! damage twice. Put !M! random cost 0 card{!M!|>1=s} from your draw pile into your hand.{@@}"
+    "DESCRIPTION": "Deal !D! damage twice. Put !M! random cost 0 cards from your draw pile into your hand. NL Exhaust."
   },
 
 
