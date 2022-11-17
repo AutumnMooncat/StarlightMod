@@ -531,7 +531,7 @@
   },
   "${ModID}:Toxic": {
     "NAME": "Toxicity",
-    "DESCRIPTION": "Apply !M! Poison and starlight:Jinx to ALL enemies."
+    "DESCRIPTION": "Apply !M! Poison and starlight:Jinx to ALL enemies. NL Exhaust."
   },
   "${ModID}:Moxie": {
     "NAME": "Moxie",

@@ -28,8 +28,9 @@ public class Toxic extends AbstractMagickCard {
     public Toxic() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
-        baseSecondMagic = secondMagic = BOOST;
+        //baseSecondMagic = secondMagic = BOOST;
         tags.add(CustomTags.STARLIGHT_DARK);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
