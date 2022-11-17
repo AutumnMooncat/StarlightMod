@@ -395,7 +395,7 @@
   },
   "${ModID}:Flamethrower": {
     "NAME": "Flamethrower",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Apply starlight:Burn equal to unblocked damage dealt. NL Exhaust."
   },
   "${ModID}:LavaBomb": {
     "NAME": "Lava Bomb",
