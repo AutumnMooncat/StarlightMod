@@ -199,6 +199,11 @@
     "NAME": "Stricture",
     "DESCRIPTIONS": ["Whenever this creature attacks, it loses #b"," HP."]
   },
+  "${ModID}:ProjectCopyPower": {
+    "NAME": "Ascended Copy",
+    "DESCRIPTIONS": ["At the start of your next turn, #yProject a copy of ",".",
+                    "At the start of your next #b"," turns, #yProject a copy of ","."]
+  },
 
 
 
