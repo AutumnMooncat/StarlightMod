@@ -40,6 +40,7 @@ public class FiredUpPower extends AbstractPower implements RenderOnCardPower {
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (isActive() && source == this.owner && target != this.owner && power instanceof BurnPower) {
+            flash();
             Wiz.applyToSelf(new VigorPower(Wiz.adp(), amount));
         }
     }
