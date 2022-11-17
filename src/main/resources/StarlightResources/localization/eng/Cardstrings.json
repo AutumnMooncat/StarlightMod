@@ -471,7 +471,7 @@
   },
   "${ModID}:Sanctuary": {
     "NAME": "Sanctuary",
-    "DESCRIPTION": "At the end of your turn, gain Block equal to {!M!|>1=!M! times }your starlight:Barbs.{@@}"
+    "DESCRIPTION": "Whenever you apply starlight:Tangled, gain !M! starlight:Barbs."
   },
   "${ModID}:ToxicBarbs": {
     "NAME": "Toxic Barbs",

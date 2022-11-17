@@ -102,7 +102,7 @@
   },
   "${ModID}:SanctuaryPower": {
     "NAME": "Sanctuary",
-    "DESCRIPTIONS": ["At the end of your turn, gain #yBlock equal to your #yBarbs.","At the end of your turn, gain #yBlock equal to #b"," times your #yBarbs."]
+    "DESCRIPTIONS": ["Whenever you apply #yTangled, gain #b"," #yBarbs."]
   },
   "${ModID}:BloomPower": {
     "NAME": "Bloom",

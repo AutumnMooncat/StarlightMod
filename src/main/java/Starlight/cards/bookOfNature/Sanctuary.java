@@ -25,9 +25,10 @@ public class Sanctuary extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int UP_COST = 1;
-    private static final int EFFECT = 1;
+    private static final int EFFECT = 3;
+    private static final int UP_EFFECT = 1;
 
     public Sanctuary() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -40,7 +41,8 @@ public class Sanctuary extends AbstractMagickCard {
     }
 
     public void upp() {
-        upgradeBaseCost(UP_COST);
+        //upgradeBaseCost(UP_COST);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
