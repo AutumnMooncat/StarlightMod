@@ -391,7 +391,7 @@
   },
   "${ModID}:Napalm": {
     "NAME": "Napalm",
-    "DESCRIPTION": "Apply !M! starlight:Burn to a random enemy !Starlight:M2! times."
+    "DESCRIPTION": "Apply !M! starlight:Burn to a random enemy !Starlight:M2! times. NL Exhaust."
   },
   "${ModID}:Flamethrower": {
     "NAME": "Flamethrower",
