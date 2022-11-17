@@ -21,7 +21,7 @@ public class Firestorm extends AbstractMagickCard {
     private static final CardType TYPE = CardType.POWER;
 
     private static final int COST = 1;
-    private static final int EFFECT = 2;
+    private static final int EFFECT = 3;
     private static final int UP_EFFECT = 1;
 
     public Firestorm() {
