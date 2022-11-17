@@ -431,7 +431,7 @@
   },
   "${ModID}:Overheat": {
     "NAME": "Overheat",
-    "DESCRIPTION": "Exhaust any number of cards in your hand. Apply !M! starlight:Burn for each card Exhausted. NL Exhaust."
+    "DESCRIPTION": "Exhaust any number of cards in your hand. Gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}{@@} for each card Exhausted. NL Exhaust."
   },
   "${ModID}:Heatwave": {
     "NAME": "Heatwave",
