@@ -45,9 +45,11 @@ public class ReversePower extends AbstractPower implements MonsterGainBlockPower
 
     @Override
     public float onGainedBlockMonster(float blockAmount) {
-        flash();
-        this.addToTop(new RemoveSpecificPowerAction(owner, owner, this));
-        this.addToTop(new LoseHPAction(owner, owner, (int) blockAmount, AbstractGameAction.AttackEffect.FIRE));
+        if (blockAmount > 0) {
+            flash();
+            this.addToTop(new RemoveSpecificPowerAction(owner, owner, this));
+            this.addToTop(new LoseHPAction(owner, owner, amount * (int) blockAmount, AbstractGameAction.AttackEffect.FIRE));
+        }
         return 0;
     }
 }

@@ -189,7 +189,7 @@
   "${ModID}:ReversePower": {
     "NAME": "Taint",
     "DESCRIPTIONS": ["The next time this creature attempts to #yBlock, it instead loses that much HP.",
-      "Your next #b", " times this creature attempts to #yBlock, it instead loses that much HP."]
+                    "The next time this creature attempts to #yBlock, it instead loses #b"," times that much HP."]
   },
   "${ModID}:PowerTripPower": {
     "NAME": "Moxie",
