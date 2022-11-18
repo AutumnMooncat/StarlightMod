@@ -45,7 +45,7 @@ public class BoostValuesInHandAction extends AbstractGameAction {
             return;
         }
 
-        if (validCards.size() < amount) {
+        if (validCards.size() <= amount) {
             for (AbstractCard c : validCards) {
                 switch (stat) {
                     case DAMAGE:
