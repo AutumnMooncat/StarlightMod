@@ -6,10 +6,12 @@ import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.green.Skewer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -23,10 +25,12 @@ public class BrineArrow extends AbstractMagickCard {
     private static final int COST = 1;
     private static final int DMG = 7;
     private static final int UP_DMG = 3;
+    private static final int EFFECT = 2;
 
     public BrineArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
+        baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_WATER);
         tags.add(CustomTags.STARLIGHT_ARROW);
     }
@@ -34,7 +38,8 @@ public class BrineArrow extends AbstractMagickCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         if (m.hasPower(WetPower.POWER_ID)) {
-            Wiz.atb(new LoseHPAction(m, p, m.getPower(WetPower.POWER_ID).amount, AbstractGameAction.AttackEffect.FIRE));
+            Wiz.atb(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false)));
+            //Wiz.atb(new LoseHPAction(m, p, magicNumber, AbstractGameAction.AttackEffect.FIRE));
         }
     }
 

@@ -255,7 +255,7 @@
   },
   "${ModID}:BrineArrow": {
     "NAME": "Brine Arrow",
-    "DESCRIPTION": "Deal !D! damage. NL Target loses HP equal to its starlight:Wet."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has starlight:Wet, apply !M! Weak."
   },
   "${ModID}:Hydration": {
     "NAME": "Hydration",
