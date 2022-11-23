@@ -1,7 +1,6 @@
 package Starlight.patches;
 
 import Starlight.powers.interfaces.RenderOnCardPower;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -11,10 +10,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 public class RenderPowerOnCardPatch {
 
@@ -24,7 +22,7 @@ public class RenderPowerOnCardPatch {
         static ArrayList<AbstractPower> powersToRender = new ArrayList<>();
         @SpirePostfixPatch
         public static void RenderOnCard(AbstractCard __instance, SpriteBatch sb) {
-            if (AbstractDungeon.player != null && validLocation(__instance)) {
+            if (AbstractDungeon.player != null && validLocation(__instance) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
                 powersToRender.clear();
                 for (AbstractPower p : AbstractDungeon.player.powers) {
                     if (p instanceof RenderOnCardPower && ((RenderOnCardPower) p).shouldRender(__instance)) {
