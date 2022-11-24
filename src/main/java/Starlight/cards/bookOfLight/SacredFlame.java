@@ -37,7 +37,7 @@ public class SacredFlame extends AbstractMagickCard {
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_LIGHT);
         tags.add(CustomTags.STARLIGHT_APPLIES_BURN);
-        exhaust = true;
+        //exhaust = true; //TODO was listed as exhaust but didnt state in text. Was exhaust better for balance?
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
