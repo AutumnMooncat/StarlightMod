@@ -1,16 +1,17 @@
 package Starlight.cards.bookOfFire;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BurnPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import basemod.helpers.VfxBuilder;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.blue.BeamCell;
-import com.megacrit.cardcrawl.cards.purple.Eruption;
 import com.megacrit.cardcrawl.cards.red.Immolate;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -22,10 +23,10 @@ public class LavaBomb extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 2;
-    private static final int DMG = 11;
+    private static final int DMG = 12;
     private static final int UP_DMG = 3;
-    private static final int EFFECT = 4;
-    private static final int UP_EFFECT = 2;
+    private static final int EFFECT = 2;
+    private static final int UP_EFFECT = 1;
 
     public LavaBomb() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -33,12 +34,13 @@ public class LavaBomb extends AbstractMagickCard {
         baseMagicNumber = magicNumber = EFFECT;
         isMultiDamage = true;
         tags.add(CustomTags.STARLIGHT_FIRE);
-        tags.add(CustomTags.STARLIGHT_APPLIES_BURN);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        Wiz.forAllMonstersLiving(mon -> Wiz.vfx(new VfxBuilder(ImageMaster.ATK_FIRE, mon.hb.cX, mon.hb.cY - mon.hb.height/2f, 0.3f).scale(1, 0.2f).moveY(mon.hb.cY - mon.hb.height/2f, mon.hb.cY + 150f * Settings.scale).playSoundAt(0f, "ATTACK_FIRE").emitEvery((x, y) ->
+                new VfxBuilder(ImageMaster.ATK_FIRE, mon.hb.cX, mon.hb.cY - mon.hb.height/2f, 0.3f).scale(1, 0.2f).moveY(mon.hb.cY - mon.hb.height/2f, mon.hb.cY + 150f * Settings.scale).build(), 0.05f).build()));
         allDmg(AbstractGameAction.AttackEffect.FIRE);
-        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new BurnPower(mon, p, magicNumber)));
+        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new WeakPower(mon, magicNumber, false)));
     }
 
     public void upp() {

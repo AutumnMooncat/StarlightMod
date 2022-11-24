@@ -398,8 +398,8 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply starlight:Burn equal to unblocked damage dealt. NL Exhaust."
   },
   "${ModID}:LavaBomb": {
-    "NAME": "Lava Bomb",
-    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Burn to ALL enemies."
+    "NAME": "Lava Plume",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
   },
   "${ModID}:FlameWall": {
     "NAME": "Flame Wall",
