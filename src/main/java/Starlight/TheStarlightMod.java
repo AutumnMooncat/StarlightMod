@@ -224,30 +224,33 @@ public class TheStarlightMod implements
                 .cards();
     }
 
+    private void loadLocalizedStrings(Class<?> stringClass, String fileName) {
+        //Load English first
+        BaseMod.loadCustomStringsFile(stringClass, modID + "Resources/localization/eng/"+fileName+".json");
+
+        //Attempt loading localization
+        if (!Settings.language.toString().equalsIgnoreCase("eng")) {
+            String path = modID + "Resources/localization/" + Settings.language.toString().toLowerCase() + "/" + fileName + ".json";
+            if (Gdx.files.internal(path).exists()) {
+                BaseMod.loadCustomStringsFile(stringClass, path);
+            }
+        }
+    }
+
 
     @Override
     public void receiveEditStrings() {
-        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/Cardstrings.json");
-
-        BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/eng/Augmentstrings.json");
-
-        BaseMod.loadCustomStringsFile(RelicStrings.class, modID + "Resources/localization/eng/Relicstrings.json");
-
-        BaseMod.loadCustomStringsFile(CharacterStrings.class, modID + "Resources/localization/eng/Charstrings.json");
-
-        BaseMod.loadCustomStringsFile(PowerStrings.class, modID + "Resources/localization/eng/Powerstrings.json");
-
-        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/CardModstrings.json");
-
-        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/Chatterstrings.json");
-
-        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/DamageModstrings.json");
-
-        BaseMod.loadCustomStringsFile(CardStrings.class, modID + "Resources/localization/eng/Abilitystrings.json");
-
-        BaseMod.loadCustomStringsFile(UIStrings.class, modID + "Resources/localization/eng/UIstrings.json");
-
-        BaseMod.loadCustomStringsFile(PotionStrings.class, modID + "Resources/localization/eng/Potionstrings.json");
+        loadLocalizedStrings(CardStrings.class, "Cardstrings");
+        loadLocalizedStrings(UIStrings.class, "Augmentstrings");
+        loadLocalizedStrings(RelicStrings.class, "Relicstrings");
+        loadLocalizedStrings(CharacterStrings.class, "Charstrings");
+        loadLocalizedStrings(PowerStrings.class, "Powerstrings");
+        loadLocalizedStrings(CardStrings.class, "CardModstrings");
+        loadLocalizedStrings(CardStrings.class, "Chatterstrings"); //unused
+        loadLocalizedStrings(CardStrings.class, "DamageModstrings"); //TODO unused
+        loadLocalizedStrings(CardStrings.class, "Abilitystrings"); //unused
+        loadLocalizedStrings(UIStrings.class, "UIstrings");
+        loadLocalizedStrings(PotionStrings.class, "Potionstrings");
     }
 
     @Override
