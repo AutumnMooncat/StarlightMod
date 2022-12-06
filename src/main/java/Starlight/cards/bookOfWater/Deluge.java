@@ -9,6 +9,7 @@ import Starlight.util.Wiz;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.purple.Brilliance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -42,9 +43,13 @@ public class Deluge extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX + MathUtils.random(-10f, 10f) * Settings.scale, m.hb.cY + MathUtils.random(-10f, 10f) * Settings.scale, AbstractGameAction.AttackEffect.BLUNT_LIGHT, false), 0.2f));
-        Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX + MathUtils.random(-10f, 10f) * Settings.scale, m.hb.cY+ MathUtils.random(-10f, 10f) * Settings.scale, AbstractGameAction.AttackEffect.BLUNT_LIGHT, false), 0.2f));
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        Wiz.atb(new SFXAction("BLUNT_FAST"));
+        Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX, m.hb.cY + 99f * Settings.scale, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true), 0.15f));
+        Wiz.atb(new SFXAction("BLUNT_FAST"));
+        Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX, m.hb.cY + 66f * Settings.scale, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true), 0.15f));
+        Wiz.atb(new SFXAction("BLUNT_FAST"));
+        Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX, m.hb.cY + 33f * Settings.scale, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true), 0.15f));
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
     }
 
     @Override
