@@ -19,7 +19,8 @@ public class Bio extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 6;
+    private static final int UP_COST = 0;
+    private static final int DMG = 4;
     private static final int UP_DMG = 2;
 
     public Bio() {
@@ -34,7 +35,8 @@ public class Bio extends AbstractMagickCard {
     }
 
     public void upp() {
-        upgradeDamage(UP_DMG);
+        //upgradeDamage(UP_DMG);
+        upgradeBaseCost(UP_COST);
     }
 
     @Override
