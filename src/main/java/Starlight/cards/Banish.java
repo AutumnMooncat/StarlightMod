@@ -29,7 +29,7 @@ public class Banish extends AbstractEasyCard {
 
     private static final int COST = 2;
     private static final int DMG = 10;
-    private static final int UP_DMG = 4;
+    private static final int UP_DMG = 3;
 
     public Banish() {
         this(0);
