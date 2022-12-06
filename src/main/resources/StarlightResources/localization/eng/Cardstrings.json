@@ -587,7 +587,7 @@
   },
   "${ModID}:DivineSpears": {
     "NAME": "Divine Spears",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Gain !M! starlight:Providence."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! starlight:Providence."
   },
   "${ModID}:LightArrow": {
     "NAME": "Light Arrow",
@@ -669,7 +669,7 @@
   },
   "${ModID}:SolGate": {
     "NAME": "Sol Gate",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. starlight:Foretell !M! card{!M!|>1=s}{@@} in your discard pile."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL starlight:Foretell !M! card{!M!|>1=s}{@@} in your discard pile."
   },
   "${ModID}:Gravity": {
     "NAME": "Gravity",

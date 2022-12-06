@@ -32,8 +32,8 @@ public class DivineSpears extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 2;
-    private static final int DMG = 5;
-    private static final int UP_DMG = 2;
+    private static final int DMG = 10;
+    private static final int UP_DMG = 3;
     private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
@@ -46,10 +46,9 @@ public class DivineSpears extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new WaitAction(0.3f));
         Wiz.atb(new VFXAction(new SpearWaveEffect()));
-        Wiz.atb(new WaitAction(0.2f));
-        allDmg(AbstractGameAction.AttackEffect.NONE);
+        Wiz.atb(new WaitAction(0.5f));
+        //allDmg(AbstractGameAction.AttackEffect.NONE);
         Wiz.atb(new VFXAction(new SpearWaveEffect()));
         Wiz.atb(new WaitAction(0.2f));
         allDmg(AbstractGameAction.AttackEffect.NONE);
