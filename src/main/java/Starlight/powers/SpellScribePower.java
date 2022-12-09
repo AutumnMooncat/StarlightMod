@@ -4,6 +4,7 @@ import Starlight.TheStarlightMod;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.interfaces.FreeToPlayPower;
 import Starlight.ui.ProjectedCardManager;
+import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -56,7 +57,7 @@ public class SpellScribePower extends AbstractPower implements FreeToPlayPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse && card instanceof AbstractMagickCard && amount > hitsThisTurn && !ProjectedCardManager.ProjectedActionField.projectedField.get(action)) {
+        if (!card.purgeOnUse && Wiz.isMagic(card) && amount > hitsThisTurn && !ProjectedCardManager.ProjectedActionField.projectedField.get(action)) {
             this.flash();
             hitsThisTurn++;
         }
@@ -64,6 +65,6 @@ public class SpellScribePower extends AbstractPower implements FreeToPlayPower {
 
     @Override
     public boolean isFreeToPlay(AbstractCard card) {
-        return card instanceof AbstractMagickCard && amount > hitsThisTurn;
+        return Wiz.isMagic(card) && amount > hitsThisTurn;
     }
 }

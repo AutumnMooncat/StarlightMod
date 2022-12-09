@@ -2,6 +2,7 @@ package Starlight.powers;
 
 import Starlight.TheStarlightMod;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -35,7 +36,7 @@ public class DupeSpellPower extends AbstractPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse && card instanceof AbstractMagickCard && this.amount > 0) {
+        if (!card.purgeOnUse && Wiz.isMagic(card) && this.amount > 0) {
             this.flash();
             AbstractMonster m = null;
             if (action.target != null) {

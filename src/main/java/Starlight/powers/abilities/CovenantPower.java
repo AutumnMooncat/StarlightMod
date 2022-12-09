@@ -39,7 +39,7 @@ public class CovenantPower extends AbstractPower implements RenderOnCardPower {
         if (isPlayer && isActive()) {
             int sp = 0;
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
-                if (!c.isEthereal && c instanceof AbstractMagickCard) {
+                if (!c.isEthereal && Wiz.isMagic(c)) {
                     c.retain = true;
                     sp += amount;
                 }
@@ -65,6 +65,6 @@ public class CovenantPower extends AbstractPower implements RenderOnCardPower {
 
     @Override
     public boolean shouldRender(AbstractCard card) {
-        return isActive() && card instanceof AbstractMagickCard && !card.isEthereal;
+        return isActive() && Wiz.isMagic(card) && !card.isEthereal;
     }
 }

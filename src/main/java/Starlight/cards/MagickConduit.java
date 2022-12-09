@@ -53,7 +53,7 @@ public class MagickConduit extends AbstractEasyCard implements InHandCard {
 
     @Override
     public void onCardUsed(AbstractCard card) {
-        if (card instanceof AbstractMagickCard && card.baseMagicNumber > 0 && secondMagic > 0) {
+        if (Wiz.isMagic(card) && card.baseMagicNumber > 0 && secondMagic > 0) {
             secondMagic--;
             isSecondMagicModified = baseSecondMagic != secondMagic;
             flash();

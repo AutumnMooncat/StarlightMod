@@ -1,5 +1,6 @@
 package Starlight.util;
 
+import Starlight.cards.abstracts.AbstractMagickCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -218,5 +219,9 @@ public class Wiz {
             return cardsPlayedThisCombat().get(cardsPlayedThisCombat().size()-2);
         }
         return null;
+    }
+
+    public static boolean isMagic(AbstractCard card) {
+        return card instanceof AbstractMagickCard || card.hasTag(CustomTags.STARLIGHT_FORCED_MAGIC);
     }
 }

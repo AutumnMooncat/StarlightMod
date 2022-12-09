@@ -67,7 +67,7 @@ public class TheStarlightMod implements
         return modID + ":" + idText;
     }
 
-    public static final Color METEORITE_PURPLE = CardHelper.getColor(60, 31, 118);
+    public static final Color METEORITE_PURPLE = CardHelper.getColor(60, 31, 118); //0x3C1F76
 
     public static final String SHOULDER1 = modID + "Resources/images/char/mainChar/shoulderHappy.png";
     public static final String SHOULDER2 = modID + "Resources/images/char/mainChar/shoulderLook.png";

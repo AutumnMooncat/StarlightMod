@@ -43,7 +43,7 @@ public class Transcribe extends AbstractEasyCard /*implements TagTeamCard*/ {
     public void use(AbstractPlayer p, AbstractMonster m) {
         //lastUUID = null;
         Wiz.atb(new SFXAction("ORB_DARK_EVOKE", 0.05F));
-        ArrayList<AbstractCard> magicks = Wiz.cardsPlayedThisCombat().stream().filter(c -> c instanceof AbstractMagickCard).collect(Collectors.toCollection(ArrayList::new));
+        ArrayList<AbstractCard> magicks = Wiz.cardsPlayedThisCombat().stream().filter(Wiz::isMagic).collect(Collectors.toCollection(ArrayList::new));
         if (!magicks.isEmpty()) {
             AbstractCard card = magicks.get(magicks.size()-1).makeStatEquivalentCopy();
             card.setCostForTurn(0);
@@ -60,7 +60,7 @@ public class Transcribe extends AbstractEasyCard /*implements TagTeamCard*/ {
     }
 
     public void triggerOnGlowCheck() {
-        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().noneMatch(c -> c instanceof AbstractMagickCard)) {
+        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().noneMatch(Wiz::isMagic)) {
             this.glowColor = Settings.RED_TEXT_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
@@ -69,8 +69,8 @@ public class Transcribe extends AbstractEasyCard /*implements TagTeamCard*/ {
 
     public void applyPowers() {
         super.applyPowers();
-        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().anyMatch(c -> c instanceof AbstractMagickCard)) {
-            ArrayList<AbstractCard> magicks = AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(c -> c instanceof AbstractMagickCard).collect(Collectors.toCollection(ArrayList::new));
+        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().anyMatch(Wiz::isMagic)) {
+            ArrayList<AbstractCard> magicks = AbstractDungeon.actionManager.cardsPlayedThisCombat.stream().filter(Wiz::isMagic).collect(Collectors.toCollection(ArrayList::new));
             AbstractCard preview = magicks.get(magicks.size()-1);
             if (preview != lastCard) {
                 lastCard = preview;

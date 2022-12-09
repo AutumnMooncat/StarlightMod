@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class CustomTags {
     @SpireEnum
-    public static AbstractCard.CardTags STARLIGHT_CAST_ANIM;
+    public static AbstractCard.CardTags STARLIGHT_FORCED_MAGIC;
     @SpireEnum
     public static AbstractCard.CardTags STARLIGHT_APPLIES_BURN;
     @SpireEnum

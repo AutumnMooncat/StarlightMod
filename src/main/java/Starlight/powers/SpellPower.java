@@ -2,6 +2,7 @@ package Starlight.powers;
 
 import Starlight.TheStarlightMod;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -32,7 +33,7 @@ public class SpellPower extends AbstractPower {
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        if (card instanceof AbstractMagickCard) {
+        if (Wiz.isMagic(card)) {
             return damage + amount;
         }
         return damage;
@@ -40,7 +41,7 @@ public class SpellPower extends AbstractPower {
 
     @Override
     public float modifyBlock(float blockAmount, AbstractCard card) {
-        if (card instanceof AbstractMagickCard) {
+        if (Wiz.isMagic(card)) {
             return blockAmount + amount;
         }
         return blockAmount;
@@ -48,7 +49,7 @@ public class SpellPower extends AbstractPower {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractMagickCard && !card.purgeOnUse && (card.baseDamage != -1 || card.baseBlock != -1)) {
+        if (Wiz.isMagic(card) && !card.purgeOnUse && (card.baseDamage != -1 || card.baseBlock != -1)) {
             flash();
             this.addToBot(new ReducePowerAction(owner, owner, this, amount));
         }

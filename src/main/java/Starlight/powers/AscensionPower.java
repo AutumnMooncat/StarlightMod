@@ -84,7 +84,7 @@ public class AscensionPower extends AbstractPower implements MagicMagicModPower 
 
     @Override
     public float modifyBlock(float blockAmount, AbstractCard card) {
-        if (card instanceof AbstractMagickCard) {
+        if (Wiz.isMagic(card)) {
             return blockAmount * 2f;
         }
         return blockAmount;
@@ -92,7 +92,7 @@ public class AscensionPower extends AbstractPower implements MagicMagicModPower 
 
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
-        if (card instanceof AbstractMagickCard) {
+        if (Wiz.isMagic(card)) {
             return damage * 2f;
         }
         return damage;

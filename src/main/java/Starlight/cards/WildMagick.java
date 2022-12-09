@@ -35,7 +35,7 @@ public class WildMagick extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new PlayRandomCardAction(p.drawPile, 1, c -> c instanceof AbstractMagickCard));
+        Wiz.atb(new PlayRandomCardAction(p.drawPile, 1, Wiz::isMagic));
     }
 
     public void upp() {
@@ -43,7 +43,7 @@ public class WildMagick extends AbstractEasyCard {
     }
 
     public void triggerOnGlowCheck() {
-        if (Wiz.adp().drawPile.group.stream().noneMatch(c -> c instanceof AbstractMagickCard)) {
+        if (Wiz.adp().drawPile.group.stream().noneMatch(Wiz::isMagic)) {
             this.glowColor = Settings.RED_TEXT_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();

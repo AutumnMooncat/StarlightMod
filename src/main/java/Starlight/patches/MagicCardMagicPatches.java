@@ -16,16 +16,21 @@ public class MagicCardMagicPatches {
     public static class MagicStuff {
         @SpirePrefixPatch
         public static void reset(AbstractCard __instance) {
-            if (__instance instanceof AbstractMagickCard) {
+            if (Wiz.isMagic(__instance)) {
                 __instance.magicNumber = __instance.baseMagicNumber;
-                ((AbstractMagickCard) __instance).secondMagic = ((AbstractMagickCard) __instance).baseSecondMagic;
+                if (__instance instanceof AbstractMagickCard) {
+                    ((AbstractMagickCard) __instance).secondMagic = ((AbstractMagickCard) __instance).baseSecondMagic;
+                }
             }
         }
         @SpirePostfixPatch
         public static void modifyMagic(AbstractCard __instance) {
-            if (__instance instanceof AbstractMagickCard && __instance.baseMagicNumber > 0) {
+            if (Wiz.isMagic(__instance) && __instance.baseMagicNumber > 0) {
                 float mag = __instance.magicNumber;
-                float mag2 = ((AbstractMagickCard) __instance).secondMagic;
+                float mag2 = 0;
+                if (__instance instanceof AbstractMagickCard) {
+                    mag2 = ((AbstractMagickCard) __instance).secondMagic;
+                }
 
                 mag = CardInHandSuite.modifyMagicMagic(mag, __instance);
                 mag2 = CardInHandSuite.modifyMagicMagic(mag2, __instance);
@@ -39,8 +44,10 @@ public class MagicCardMagicPatches {
 
                 __instance.magicNumber = (int) mag;
                 __instance.isMagicNumberModified = __instance.magicNumber != __instance.baseMagicNumber;
-                ((AbstractMagickCard) __instance).secondMagic = (int) mag2;
-                ((AbstractMagickCard) __instance).isSecondMagicModified = ((AbstractMagickCard) __instance).secondMagic != ((AbstractMagickCard) __instance).baseSecondMagic;
+                if (__instance instanceof AbstractMagickCard) {
+                    ((AbstractMagickCard) __instance).secondMagic = (int) mag2;
+                    ((AbstractMagickCard) __instance).isSecondMagicModified = ((AbstractMagickCard) __instance).secondMagic != ((AbstractMagickCard) __instance).baseSecondMagic;
+                }
             }
         }
     }
