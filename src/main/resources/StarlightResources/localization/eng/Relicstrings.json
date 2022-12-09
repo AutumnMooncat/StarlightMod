@@ -1,16 +1,79 @@
 {
-  "${ModID}:Constellation": {
-    "NAME": "Constellation",
-    "FLAVOR": "It watches over you.",
-    "DESCRIPTIONS": [
-      "You can now remove cards from your deck at Rest Sites up to #b3 times. Start each combat with buffs based on the type and rarity of the cards offered."
-    ]
-  },
   "${ModID}:MagicWand": {
     "NAME": "Magic Wand",
     "FLAVOR": "Isn't this just a stick?",
     "DESCRIPTIONS": [
+      "At the start of each combat, draw a random #yAttack and #ySkill."
+    ]
+  },
+  "${ModID}:StarWand": {
+    "NAME": "Star Wand",
+    "FLAVOR": "\"This one is actually useful!\" - Luna \"Can I keep the stick?\" - Primrose",
+    "DESCRIPTIONS": [
+      "Replaces [#aa80ff]Magic [#aa80ff]Wand. At the start of your turn, draw a random #yAttack and #ySkill."
+    ]
+  },
+  "${ModID}:AstralRose": {
+    "NAME": "Astral Rose",
+    "FLAVOR": "Despite being cut long ago, it appears unable to wilt and is unaffected by gravity.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, #ystarlight:Project the top playable card of your draw pile."
+    ]
+  },
+  "${ModID}:BikiniArmor": {
+    "NAME": "Bikini Armor",
+    "FLAVOR": "It's a mystery how this protects anyone.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, gain #b"," #yBlock."
+    ]
+  },
+  "${ModID}:CatEars": {
+    "NAME": "Cat Ears",
+    "FLAVOR": "\"Optimal fashion choice.\" - Luna",
+    "DESCRIPTIONS": [
       "At the start of each combat, gain #b"," #ystarlight:SP."
+    ]
+  },
+  "${ModID}:CursedBelt": {
+    "NAME": "Cursed Belt",
+    "FLAVOR": "It offers great power, but you feel drained while wearing it.",
+    "DESCRIPTIONS": [
+      "At the start of combat, put a #rVoid on top of your draw pile. Whenever you #yExhaust a card, draw a card."
+    ]
+  },
+  "${ModID}:DramaticCloak": {
+    "NAME": "Dramatic Cloak",
+    "FLAVOR": "It compels you to show off pretentiously. Dagger not included.",
+    "DESCRIPTIONS": [
+      "During your first turn of combat, #yAttacks deal double damage but #yExhaust."
+    ]
+  },
+  "${ModID}:MonsterManual": {
+    "NAME": "Monster Manual",
+    "FLAVOR": "Describes a bizarre ritual called the Monster Mash. It seems dangerous.",
+    "DESCRIPTIONS": [
+      "Whenever an enemy dies, draw and #yUpgrade #b"," cards."
+    ]
+  },
+  "${ModID}:PersuasionTool": {
+    "NAME": "Persuasion Tool",
+    "FLAVOR": "Who's going to argue?",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose #b"," #ynon-Magick #yAttacks. They count as #ystarlight:Magick cards.","Choose 2 cards to make Magick."
+    ]
+  },
+  "${ModID}:PureFeather": {
+    "NAME": "Pure Feather",
+    "FLAVOR": "You feel lighter carrying this. It's like it wants to lift off on its own.",
+    "DESCRIPTIONS": [
+      "#ystarlight:Project a copy of the first card you play each combat."
+    ]
+  },
+  "${ModID}:WitchPowder": {
+    "NAME": "Witch Powder",
+    "FLAVOR": "Not made of sugar, spire, nor anything nice.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, apply #b"," #ystarlight:Jinx to ALL enemies."
     ]
   }
 }

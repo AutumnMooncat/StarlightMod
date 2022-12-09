@@ -21,7 +21,7 @@ public class Hallow extends AbstractMagickCard {
 
     private static final int COST = 2;
     private static final int EFFECT = 6;
-    private static final int UP_EFFECT = 3;
+    private static final int UP_EFFECT = 2;
     private static final int NEGATE = 2;
     private static final int UP_NEGATE = 1;
 
