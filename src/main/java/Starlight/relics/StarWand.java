@@ -7,20 +7,22 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class MagicWand extends AbstractEasyRelic {
-    public static final String ID = makeID(MagicWand.class.getSimpleName());
+public class StarWand extends AbstractEasyRelic {
+    public static final String ID = makeID(StarWand.class.getSimpleName());
+    private static final int SP = 8;
 
-    public MagicWand() {
-        super(ID, RelicTier.STARTER, LandingSound.FLAT, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
+    public StarWand() {
+        super(ID, RelicTier.BOSS, LandingSound.FLAT, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
     }
 
-    public void atBattleStart() {
+    @Override
+    public void atTurnStart() {
         flash();
-        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
@@ -41,5 +43,34 @@ public class MagicWand extends AbstractEasyRelic {
                 this.isDone = true;
             }
         });
+    }
+
+    @Override //Should replace default relic. Big thanks papa kio
+    public void obtain() {
+        //Grab the player
+        AbstractPlayer p = AbstractDungeon.player;
+        //If we have the starter relic...
+        if (p.hasRelic(MagicWand.ID)) {
+            //Grab its data for relic stats if you want to carry the stats over to the boss relic
+            //DualCore r = (DualCore) p.getRelic(DualCore.ID);
+            //stats.put(ATTACKS_CLOCKED, r.getAttacks());
+            //stats.put(SKILLS_CLOCKED, r.getSkills());
+            //stats.put(POWERS_CLOCKED, r.getPowers());
+            //Find it...
+            for (int i = 0; i < p.relics.size(); ++i) {
+                if (p.relics.get(i).relicId.equals(MagicWand.ID)) {
+                    //Replace it
+                    instantObtain(p, i, true);
+                    break;
+                }
+            }
+        } else {
+            super.obtain();
+        }
+    }
+
+    //Only spawn if we have the starter relic
+    public boolean canSpawn() {
+        return AbstractDungeon.player.hasRelic(MagicWand.ID);
     }
 }
