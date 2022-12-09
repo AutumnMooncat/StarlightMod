@@ -28,9 +28,9 @@ public class Reckoning extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 2;
-    private static final int DMG = 15;
+    private static final int DMG = 20;
     private static final int UP_DMG = 5;
-    private static final int EFFECT = 2;
+    private static final int EFFECT = 3;
     private static final int UP_EFFECT = 1;
 
     public Reckoning() {
