@@ -1,34 +1,50 @@
-package Starlight.relics;
+package Starlight.cutContent.relics;
 
 import Starlight.characters.StarlightSisters;
-import Starlight.relics.Campfire.ConstellationOption;
+import Starlight.relics.AbstractEasyRelic;
 import Starlight.util.Wiz;
-import basemod.abstracts.CustomSavable;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.ui.campfire.AbstractCampfireOption;
-
-import java.util.ArrayList;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Constellation extends AbstractEasyRelic implements CustomSavable<Integer> {
+public class Constellation extends AbstractEasyRelic {
     public static final String ID = makeID(Constellation.class.getSimpleName());
-    private static final int OFFSET = 100;
-    private int str;
-    private int dex;
-    private int art;
 
     public Constellation() {
         super(ID, RelicTier.STARTER, LandingSound.MAGICAL, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
-        this.counter = 0;
+        //this.counter = 0;
     }
 
-    public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
+    @Override
+    public void atBattleStart() {
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                int draw = 0;
+                if (!Wiz.adp().drawPile.getCardsOfType(AbstractCard.CardType.SKILL).isEmpty()) {
+                    AbstractCard c = Wiz.adp().drawPile.getCardsOfType(AbstractCard.CardType.SKILL).getRandomCard(true);
+                    Wiz.adp().drawPile.removeCard(c);
+                    Wiz.adp().drawPile.addToTop(c);
+                    draw++;
+                }
+                if (!Wiz.adp().drawPile.getCardsOfType(AbstractCard.CardType.ATTACK).isEmpty()) {
+                    AbstractCard c = Wiz.adp().drawPile.getCardsOfType(AbstractCard.CardType.ATTACK).getRandomCard(true);
+                    Wiz.adp().drawPile.removeCard(c);
+                    Wiz.adp().drawPile.addToTop(c);
+                    draw++;
+                }
+                Wiz.att(new DrawCardAction(draw));
+                this.isDone = true;
+            }
+        });
+    }
+
+    /*public void addCampfireOption(ArrayList<AbstractCampfireOption> options) {
         options.add(new ConstellationOption(this.counter < 3 && !CardGroup.getGroupWithoutBottledCards(AbstractDungeon.player.masterDeck.getPurgeableCards()).isEmpty()));
     }
 
@@ -72,5 +88,5 @@ public class Constellation extends AbstractEasyRelic implements CustomSavable<In
         this.dex = integer % OFFSET;
         integer /= OFFSET;
         this.art = integer % OFFSET;
-    }
+    }*/
 }

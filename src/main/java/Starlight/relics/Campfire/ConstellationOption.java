@@ -1,3 +1,4 @@
+/*
 package Starlight.relics.Campfire;
 
 import Starlight.TheStarlightMod;
@@ -31,3 +32,4 @@ public class ConstellationOption extends AbstractCampfireOption {
         TEXT = uiStrings.TEXT;
     }
 }
+*/

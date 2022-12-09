@@ -1,6 +1,7 @@
+/*
 package Starlight.relics.Campfire;
 
-import Starlight.relics.Constellation;
+import Starlight.cutContent.relics.Constellation;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -118,3 +119,4 @@ public class ConstellationEffect extends AbstractGameEffect {
         TEXT = uiStrings.TEXT;
     }
 }
+*/
