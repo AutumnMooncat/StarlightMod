@@ -23,7 +23,7 @@ public class SlushBall extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 7;
+    private static final int DMG = 5;
     private static final int UP_DMG = 2;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
@@ -43,7 +43,7 @@ public class SlushBall extends AbstractMagickCard {
     }
 
     public void upp() {
-        upgradeDamage(UP_DMG);
+        //upgradeDamage(UP_DMG);
         upgradeMagicNumber(UP_EFFECT);
     }
 
