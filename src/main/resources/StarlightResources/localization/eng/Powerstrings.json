@@ -90,7 +90,7 @@
   },
   "${ModID}:ChillPower": {
     "NAME": "Chill",
-    "DESCRIPTIONS": ["Deals #b20% less damage with #yAttacks for #b"," turn."," turns."," If this creature is #yWet, it also takes #b20% more damage from Attacks."]
+    "DESCRIPTIONS": ["Deals #b20% less damage with #yAttacks for #b"," turn."," turns."," If this creature is #yWet, it also takes #b20% more damage from #yAttacks."]
   },
   "${ModID}:BubbleShieldPower": {
     "NAME": "Bubble Shield",
