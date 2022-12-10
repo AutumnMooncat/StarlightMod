@@ -1,6 +1,8 @@
 package Starlight.cards.bookOfIce;
 
+import Starlight.actions.MoveFromDrawToHandAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.cards.interfaces.OnEnterDrawPileCard;
 import Starlight.powers.ChillPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
@@ -12,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class FrostArrow extends AbstractMagickCard {
+public class FrostArrow extends AbstractMagickCard implements OnEnterDrawPileCard {
     public final static String ID = makeID(FrostArrow.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -20,15 +22,15 @@ public class FrostArrow extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
-    private static final int DMG = 3;
-    private static final int UP_DMG = 1;
+    private static final int DMG = 5;
+    private static final int UP_DMG = 3;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
     public FrostArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = EFFECT;
+        //baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_ICE);
         tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
         tags.add(CustomTags.STARLIGHT_ARROW);
@@ -36,12 +38,17 @@ public class FrostArrow extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
-        Wiz.applyToEnemy(m, new ChillPower(m, magicNumber));
+        //Wiz.applyToEnemy(m, new ChillPower(m, magicNumber));
     }
 
     public void upp() {
         upgradeDamage(UP_DMG);
-        upgradeMagicNumber(UP_EFFECT);
+        //upgradeMagicNumber(UP_EFFECT);
+    }
+
+    @Override
+    public void onEnter() {
+        Wiz.att(new MoveFromDrawToHandAction(this));
     }
 
     @Override
