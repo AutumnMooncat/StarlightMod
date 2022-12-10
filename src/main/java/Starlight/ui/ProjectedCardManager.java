@@ -66,6 +66,7 @@ public class ProjectedCardManager {
     }
 
     public static void playCards() {
+        //TODO has bugs if you open a screen, the cards darken and don't re-lighten
         for (AbstractCard card : cards.group) {
             Wiz.adp().limbo.group.add(card);
             Wiz.atb(new AbstractGameAction() {

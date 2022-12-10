@@ -204,6 +204,11 @@
     "DESCRIPTIONS": ["At the start of your next turn, #yProject a copy of ",".",
                     "At the start of your next #b"," turns, #yProject a copy of ","."]
   },
+  "${ModID}:DramaticPower": {
+    "NAME": "Dramatic",
+    "DESCRIPTIONS": ["This turn, #yAttacks deal double damage but #yExhaust.",
+                    "For #b"," turns, #yAttacks deal double damage but #yExhaust."]
+  },
 
 
 
