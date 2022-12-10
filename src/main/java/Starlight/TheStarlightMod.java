@@ -9,9 +9,15 @@ import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.patches.CardCounterPatches;
 import Starlight.potions.*;
-import Starlight.powers.*;
+import Starlight.powers.AscensionPower;
+import Starlight.powers.JinxPower;
+import Starlight.powers.ReversePower;
+import Starlight.powers.SpellPower;
 import Starlight.relics.AbstractEasyRelic;
-import Starlight.ui.*;
+import Starlight.ui.EnvisionedCardManager;
+import Starlight.ui.FilterUI;
+import Starlight.ui.ProjectedCardManager;
+import Starlight.ui.SpellbookUI;
 import Starlight.util.*;
 import basemod.AutoAdd;
 import basemod.BaseMod;
@@ -25,7 +31,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
-import com.evacipated.cardcrawl.mod.widepotions.WidePotionsMod;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -268,21 +273,8 @@ public class TheStarlightMod implements
 
     @Override
     public void receivePostInitialize() {
-
         if (Loader.isModLoaded("widepotions")) {
-
-
-            //Simple Potions
-
-            WidePotionsMod.whitelistSimplePotion(SPPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(JinxPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(TimeSplitter.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(EfficiencyPotion.POTION_ID);
-            WidePotionsMod.whitelistSimplePotion(QuiverPotion.POTION_ID);
-
-            //Complex Potions
-
-            //WidePotionsMod.whitelistComplexPotion(MyOtherPotion.POTION_ID, new WideMyOtherPotion());
+            CrossoverLoader.loadCrossoverContent();
         }
 
         if (Loader.isModLoaded("CardAugments")) {
