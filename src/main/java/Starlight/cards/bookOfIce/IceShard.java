@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class IceShard extends AbstractMagickCard implements OnEnterDrawPileCard {
+public class IceShard extends AbstractMagickCard {
     public final static String ID = makeID(IceShard.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -27,7 +27,7 @@ public class IceShard extends AbstractMagickCard implements OnEnterDrawPileCard 
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
-    private static final int DMG = 4;
+    private static final int DMG = 7;
     private static final int UP_DMG = 3;
     private static final int EFFECT = 1;
 
@@ -36,6 +36,8 @@ public class IceShard extends AbstractMagickCard implements OnEnterDrawPileCard 
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_ICE);
+        isInnate = true;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -45,11 +47,6 @@ public class IceShard extends AbstractMagickCard implements OnEnterDrawPileCard 
 
     public void upp() {
         upgradeDamage(UP_DMG);
-    }
-
-    @Override
-    public void onEnter() {
-        Wiz.att(new MoveFromDrawToHandAction(this));
     }
 
     @Override

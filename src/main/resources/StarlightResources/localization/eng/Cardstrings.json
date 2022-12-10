@@ -367,7 +367,7 @@
   },
   "${ModID}:IceShard": {
     "NAME": "Ice Shard",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Whenever this card enters your draw pile, move it to your hand."
+    "DESCRIPTION": "Innate. NL Deal !D! damage. NL Apply !M! Weak. NL Exhaust."
   },
   "${ModID}:Snowball": {
     "NAME": "Snowball",
