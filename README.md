@@ -24,7 +24,7 @@ _**Providence:**_
 Acting as a way to get the most out of your Magick cards, Providence is similar to Mantra, in that it activates an effect upon reading 10 stacks called Ascension. While Ascension is active, ALL values besides cost on your Magick cards are doubled. This allows for strategic use to Ascension for things like burst damage from your Magick Attacks, but also less obvious effects such as doubled energy gain or card draw, or even doubling the effectiveness of your Magick Powers.  
 
 _**Spell Power:**_
-Acting in a way similar for Vigor, Spell Power is a resources you retain until used that increases both the damage and Block of the next Magic card you play. This offers the potential tradeoff of using it for dealing more damage vs using it to take less damage. 
+Acting in a way similar for Vigor, Spell Power is a resources you retain until used that increases both the damage and Block of the next Magick card you play. This offers the potential tradeoff of using it for dealing more damage vs using it to take less damage. 
 
 _**Foretell:**_ 
 Acting as an additional way to control your card flow, Foretelling allows you to choose a card and set it on top of your draw pile. Aside from being able to play a given card more than once per deck shuffle, this mechanic provides synergy with effects that play or Project the top card of your draw pile, and there are also cards which have effects when they are Foretold. 
