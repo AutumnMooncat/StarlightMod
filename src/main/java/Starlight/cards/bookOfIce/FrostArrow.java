@@ -32,7 +32,7 @@ public class FrostArrow extends AbstractMagickCard implements OnEnterDrawPileCar
         baseDamage = damage = DMG;
         //baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_ICE);
-        tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
+        //tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
         tags.add(CustomTags.STARLIGHT_ARROW);
     }
 
