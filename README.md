@@ -28,6 +28,7 @@ Acting in a way similar for Vigor, Spell Power is a resources you retain until u
 
 _**Foretell:**_ 
 Acting as an additional way to control your card flow, Foretelling allows you to choose a card and set it on top of your draw pile. Aside from being able to play a given card more than once per deck shuffle, this mechanic provides synergy with effects that play or Project the top card of your draw pile, and there are also cards which have effects when they are Foretold. 
+
 ---
 
 Made using Protemplate.
