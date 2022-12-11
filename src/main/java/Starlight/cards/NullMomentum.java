@@ -20,14 +20,11 @@ public class NullMomentum extends AbstractEasyCard{
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 0;
-    private static final int BLK = 4;
-    private static final int UP_BLK = 2;
     private static final int EFFECT = 3;
     private static final int UP_EFFECT = 1;
 
     public NullMomentum() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        //baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
         cardsToPreview = new VoidCard();
     }
@@ -38,14 +35,8 @@ public class NullMomentum extends AbstractEasyCard{
     }
 
     public void upp() {
-        upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
     }
-
-    /*@Override
-    public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
-        blck();
-    }*/
 
     @Override
     public String cardArtCopy() {
