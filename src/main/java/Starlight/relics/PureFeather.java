@@ -28,6 +28,7 @@ public class PureFeather extends AbstractEasyRelic {
 
     public PureFeather() {
         super(ID, RelicTier.UNCOMMON, LandingSound.MAGICAL, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
+        resetStats();
     }
 
     public void atBattleStart() {

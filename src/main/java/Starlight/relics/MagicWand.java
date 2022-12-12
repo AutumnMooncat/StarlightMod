@@ -26,6 +26,7 @@ public class MagicWand extends AbstractEasyRelic {
 
     public MagicWand() {
         super(ID, RelicTier.STARTER, LandingSound.FLAT, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
+        resetStats();
     }
 
     public void atBattleStart() {

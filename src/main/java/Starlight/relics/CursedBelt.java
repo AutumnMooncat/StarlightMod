@@ -29,6 +29,7 @@ public class CursedBelt extends AbstractEasyRelic {
 
     public CursedBelt() {
         super(ID, RelicTier.SHOP, LandingSound.FLAT, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
+        resetStats();
     }
 
     @Override

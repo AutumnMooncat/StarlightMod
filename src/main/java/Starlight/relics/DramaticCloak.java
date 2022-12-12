@@ -27,6 +27,7 @@ public class DramaticCloak extends AbstractEasyRelic {
 
     public DramaticCloak() {
         super(ID, RelicTier.SHOP, LandingSound.MAGICAL, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
+        resetStats();
     }
 
     public void atBattleStart() {

@@ -29,6 +29,7 @@ public class AstralRose extends AbstractEasyRelic {
 
     public AstralRose() {
         super(ID, RelicTier.BOSS, LandingSound.MAGICAL, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
+        resetStats();
     }
 
     @Override

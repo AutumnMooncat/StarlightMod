@@ -26,6 +26,7 @@ public class StarWand extends AbstractEasyRelic {
 
     public StarWand() {
         super(ID, RelicTier.BOSS, LandingSound.FLAT, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
+        resetStats();
     }
 
     @Override

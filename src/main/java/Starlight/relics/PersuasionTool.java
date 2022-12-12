@@ -33,6 +33,7 @@ public class PersuasionTool extends AbstractEasyRelic {
 
     public PersuasionTool() {
         super(ID, RelicTier.RARE, LandingSound.HEAVY, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
+        resetStats();
     }
 
     @Override

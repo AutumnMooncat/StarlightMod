@@ -29,6 +29,7 @@ public class MonsterManual extends AbstractEasyRelic {
 
     public MonsterManual() {
         super(ID, RelicTier.UNCOMMON, LandingSound.FLAT, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
+        resetStats();
     }
 
     public void onMonsterDeath(AbstractMonster m) {

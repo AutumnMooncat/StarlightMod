@@ -25,6 +25,7 @@ public class BikiniArmor extends AbstractEasyRelic {
 
     public BikiniArmor() {
         super(ID, RelicTier.RARE, LandingSound.FLAT, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
+        resetStats();
     }
 
     @Override
