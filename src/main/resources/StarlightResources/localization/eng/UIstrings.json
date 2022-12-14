@@ -121,7 +121,8 @@
       "Nature Cards",
       "Dark Cards",
       "Light Cards",
-      "Space Cards"
+      "Space Cards",
+      "Time Cards"
     ]
   },
   "${ModID}:BookOfFire": {
@@ -164,6 +165,12 @@
     "TEXT": [
       "Book of Space",
       "Project cards and manipulate your deck."
+    ]
+  },
+  "${ModID}:BookOfTime": {
+    "TEXT": [
+      "Book of Time",
+      ""
     ]
   }
 }

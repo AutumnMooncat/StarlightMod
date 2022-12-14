@@ -74,11 +74,6 @@
     "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! this combat.",
     "EXTENDED_DESCRIPTION": ["Fira"]
   },
-  "${ModID}:Float": {
-    "NAME": "Float",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:SP.",
-    "EXTENDED_DESCRIPTION": ["Floatga"]
-  },
   "${ModID}:Fortify": {
     "NAME": "Fortify",
     "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Increases Block gained from cards by !M!.",
@@ -95,11 +90,6 @@
   "${ModID}:Harmony": {
     "NAME": "Harmony",
     "DESCRIPTION": "starlight:Magick cards deal !M! additional damage and grant !M! additional Block."
-  },
-  "${ModID}:Haste": {
-    "NAME": "Haste",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Next turn, NL gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! additional card{!M!|>1=s}.",
-    "EXTENDED_DESCRIPTION": ["Hastega"]
   },
   "${ModID}:Imperil": {
     "NAME": "Imperil",
@@ -569,6 +559,7 @@
 
 
 
+
   "${ModID}:Geas": {
     "NAME": "Geas",
     "DESCRIPTION": "Apply !Starlight:M2! Weak. NL Apply !M! starlight:Stricture."
@@ -633,6 +624,8 @@
   },
 
 
+
+
   "${ModID}:Eclipse": {
     "NAME": "Eclipse",
     "DESCRIPTION": "Retain. NL starlight:Project the top {@@}{!M!|>1=!M! }playable card{!M!|>1=s} of your draw pile. NL Exhaust.",
@@ -695,5 +688,69 @@
   "${ModID}:DimensionLock": {
     "NAME": "Dimension Lock",
     "DESCRIPTION": "starlight:Project the top !M! playable cards of your draw pile. NL You cannot draw additional cards this turn. NL Exhaust."
+  },
+
+
+
+
+  "${ModID}:Haste": {
+    "NAME": "Haste",
+    "DESCRIPTION": "{@@}Gain !B! Block. NL Next turn, NL gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! additional card{!M!|>1=s}."
+  },
+  "${ModID}:Stasis": {
+    "NAME": "Stasis",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:ArrowOfTime": {
+    "NAME": "Arrow of Time",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:Float": {
+    "NAME": "Float",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:SP."
+  },
+  "${ModID}:BlastFromThePast": {
+    "NAME": "Blast from the Past",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:Omen": {
+    "NAME": "Omen",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:Reoccurrence": {
+    "NAME": "Reoccurrence",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:Pulse": {
+    "NAME": "Pulse",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:Epitaph": {
+    "NAME": "Epitaph",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:Wither": {
+    "NAME": "Wither",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:Chronophage": {
+    "NAME": "Chronophage",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:DustToDust": {
+    "NAME": "Dust to Dust",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:Blink": {
+    "NAME": "Blink",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:Acceleration": {
+    "NAME": "Acceleration",
+    "DESCRIPTION": ""
+  },
+  "${ModID}:Vanish": {
+    "NAME": "Vanish",
+    "DESCRIPTION": ""
   }
 }

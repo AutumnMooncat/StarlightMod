@@ -94,6 +94,13 @@ public class FilterUI {
                 refreshFilters();
             }
         });
+        filterPanel.addFilter(new ClickableFilter(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID+"Resources/images/books/BookTime.png"), TEXT[9], makeBody(countByPred(group, c -> c.tags.contains(CustomTags.STARLIGHT_TIME)), size)) {
+            @Override
+            public void onSelect() {
+                CompendiumPatches.cardFilter = c -> c.hasTag(CustomTags.STARLIGHT_TIME);
+                refreshFilters();
+            }
+        });
 
         filterPanel.layoutFilters();
 
