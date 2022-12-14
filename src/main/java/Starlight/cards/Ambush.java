@@ -18,7 +18,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class Ambush extends AbstractEasyCard {
     public final static String ID = makeID(Ambush.class.getSimpleName());
 
-    private static final AbstractCard.CardRarity RARITY = CardRarity.BASIC;
+    private static final AbstractCard.CardRarity RARITY = CardRarity.COMMON;
     private static final AbstractCard.CardTarget TARGET = CardTarget.ENEMY;
     private static final AbstractCard.CardType TYPE = CardType.ATTACK;
 
