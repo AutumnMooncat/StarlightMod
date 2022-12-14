@@ -15,12 +15,12 @@ import static Starlight.TheStarlightMod.makeID;
 public class IceShard extends AbstractMagickCard {
     public final static String ID = makeID(IceShard.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
-    private static final int DMG = 6;
+    private static final int DMG = 7;
     private static final int UP_DMG = 3;
     private static final int EFFECT = 1;
 
