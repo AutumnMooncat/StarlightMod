@@ -1,13 +1,12 @@
-package Starlight.cards;
+package Starlight.cards.bookOfTime;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.SpellPower;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.green.Expertise;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -28,19 +27,12 @@ public class Float extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = SP;
+        tags.add(CustomTags.STARLIGHT_TIME);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         Wiz.applyToSelf(new SpellPower(p, magicNumber));
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {

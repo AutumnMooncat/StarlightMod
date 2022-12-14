@@ -3,7 +3,7 @@ package Starlight.augments;
 import CardAugments.cardmods.AbstractAugment;
 import CardAugments.cardmods.DynvarCarrier;
 import Starlight.TheStarlightMod;
-import Starlight.cards.Float;
+import Starlight.cards.bookOfTime.Float;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.powers.SpellPower;

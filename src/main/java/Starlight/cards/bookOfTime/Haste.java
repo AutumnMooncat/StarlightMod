@@ -1,7 +1,8 @@
-package Starlight.cards;
+package Starlight.cards.bookOfTime;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.green.Blur;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,7 +15,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class Haste extends AbstractMagickCard {
     public final static String ID = makeID(Haste.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
@@ -29,20 +30,13 @@ public class Haste extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
+        tags.add(CustomTags.STARLIGHT_TIME);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         Wiz.applyToSelf(new EnergizedBluePower(p, magicNumber));
         Wiz.applyToSelf(new DrawCardNextTurnPower(p, magicNumber));
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {

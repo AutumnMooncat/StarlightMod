@@ -1,11 +1,8 @@
 package Starlight.ui.spellbooks;
 
 import Starlight.TheStarlightMod;
-import Starlight.cards.Float;
-import Starlight.cards.Strike;
 import Starlight.cards.abstracts.AbstractAbilityCard;
 import Starlight.cards.bookOfNature.VineWrap;
-import Starlight.powers.abilities.FiredUpPower;
 import Starlight.powers.abilities.ThornyVinesPower;
 import Starlight.util.CustomTags;
 import Starlight.util.TexLoader;

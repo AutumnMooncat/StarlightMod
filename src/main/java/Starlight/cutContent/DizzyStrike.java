@@ -1,13 +1,11 @@
-package Starlight.cards;
+package Starlight.cutContent;
 
 import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.purple.FlyingSleeves;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
