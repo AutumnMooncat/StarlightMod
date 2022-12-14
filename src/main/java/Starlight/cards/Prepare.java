@@ -17,14 +17,14 @@ import static Starlight.TheStarlightMod.makeID;
 public class Prepare extends AbstractEasyCard {
     public final static String ID = makeID(Prepare.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 0;
-    private static final int BLK = 4;
+    private static final int COST = 1;
+    private static final int BLK = 6;
     private static final int UP_BLK = 2;
-    private static final int EFFECT = 3;
+    private static final int EFFECT = 5;
     private static final int UP_EFFECT = 2;
 
     public Prepare() {
