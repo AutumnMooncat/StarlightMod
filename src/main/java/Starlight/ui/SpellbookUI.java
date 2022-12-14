@@ -92,6 +92,14 @@ public class SpellbookUI {
         return ret;
     }
 
+    public String getPrimroseStarter() {
+        return primPanel.getStarterCard();
+    }
+
+    public String getLunaStarter() {
+        return lunaPanel.getStarterCard();
+    }
+
     public void fillCardPools() {
         ArrayList<CardGroup> groups = new ArrayList<>();
         ClickableSpellbook primBook, lunaBook;
