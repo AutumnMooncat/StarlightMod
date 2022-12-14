@@ -91,16 +91,20 @@ public class StarlightSisters extends CustomPlayer {
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
-        retVal.add(Ambush.ID);
-        retVal.add(Star.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Prepare.ID);
+        retVal.add(Strike.ID);
         if (spellUI != null) {
-            retVal.addAll(spellUI.getStarterCards());
+            retVal.add(spellUI.getPrimroseStarter());
         }
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        if (spellUI != null) {
+            retVal.add(spellUI.getLunaStarter());
+        }
+        /*if (spellUI != null) {
+            retVal.addAll(spellUI.getStarterCards());
+        }*/
         return retVal;
     }
 
