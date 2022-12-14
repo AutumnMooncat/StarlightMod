@@ -2,7 +2,7 @@ package Starlight.ui.spellbooks;
 
 import Starlight.TheStarlightMod;
 import Starlight.cards.abstracts.AbstractAbilityCard;
-import Starlight.cards.bookOfIce.IceBeam;
+import Starlight.cards.bookOfIce.Reflection;
 import Starlight.powers.abilities.SnowCloakPower;
 import Starlight.util.CustomTags;
 import Starlight.util.TexLoader;
@@ -26,7 +26,7 @@ public class BookOfIce extends ClickableSpellbook {
 
     @Override
     public String starterCardID() {
-        return IceBeam.ID;
+        return Reflection.ID;
     }
 
     @Override

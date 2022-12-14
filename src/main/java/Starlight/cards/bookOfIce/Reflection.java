@@ -13,12 +13,12 @@ import static Starlight.TheStarlightMod.makeID;
 public class Reflection extends AbstractMagickCard {
     public final static String ID = makeID(Reflection.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int BLK = 6;
+    private static final int BLK = 5;
     private static final int UP_BLK = 2;
     private static final int EFFECT = 3;
     private static final int UP_EFFECT = 2;
