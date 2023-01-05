@@ -3,7 +3,6 @@ package Starlight.augments;
 import CardAugments.cardmods.AbstractAugment;
 import CardAugments.cardmods.DynvarCarrier;
 import Starlight.TheStarlightMod;
-import Starlight.cards.bookOfTime.Float;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.powers.SpellPower;
@@ -47,7 +46,7 @@ public class SPMod extends AbstractAugment implements DynvarCarrier {
 
     @Override
     public float modifyBaseMagic(float magic, AbstractCard card) {
-        if (card instanceof Float || card instanceof Prepared) {
+        if (card instanceof Prepared) {
             setBaseVar = true;
             return magic + damageComponent + blockComponent;
         }
