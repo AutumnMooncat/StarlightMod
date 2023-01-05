@@ -699,58 +699,59 @@
   },
   "${ModID}:Stasis": {
     "NAME": "Stasis",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "Exhaust a card in your hand. Next turn, add !M! {@@}{!M!|1=copy|@=copies} of that card into your hand."
   },
-  "${ModID}:ArrowOfTime": {
-    "NAME": "Arrow of Time",
-    "DESCRIPTION": ""
+  "${ModID}:ClockworkArrow": {
+    "NAME": "Clockwork Arrow",
+    "DESCRIPTION": "Deal !D! damage. NL Set this card's cost to 0 this combat."
   },
-  "${ModID}:Float": {
-    "NAME": "Float",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:SP."
+  "${ModID}:MinutesToMidnight": {
+    "NAME": "Minutes to Midnight",
+    "DESCRIPTION": "Apply !M! starlight:Ruin to ALL enemies. Exhaust."
   },
   "${ModID}:BlastFromThePast": {
     "NAME": "Blast from the Past",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "Deal !D! damage. NL Whenever this card enters your draw pile, ALL enemies lose !M! HP."
   },
   "${ModID}:Omen": {
     "NAME": "Omen",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, apply !M! Vulnerable to ALL enemies."
   },
   "${ModID}:Reoccurrence": {
     "NAME": "Reoccurrence",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "Put up to !M! cards from your discard pile into your hand. NL Exhaust."
   },
   "${ModID}:Pulse": {
     "NAME": "Pulse",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "{@@}At the start of your turn, reduce the cost of !M! random card{!M!|>1=s} in your hand by 1 this combat."
   },
   "${ModID}:Epitaph": {
     "NAME": "Epitaph",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "Deal !D! damage. NL Apply starlight:Ruin equal to unblocked damage dealt."
   },
   "${ModID}:Wither": {
     "NAME": "Wither",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "Apply !M! starlight:Ruin."
   },
   "${ModID}:Chronophage": {
     "NAME": "Chronophage",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "Whenever you play 12 cards, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! card{!M!|>1=s}{@@}.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play 12 cards, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! card{!M!|>1=s}{@@}."
   },
   "${ModID}:DustToDust": {
     "NAME": "Dust to Dust",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "Exhaust any number of cards in your hand. Apply !M! starlight:Ruin to ALL enemies for each card Exhausted. Exhaust."
   },
   "${ModID}:Blink": {
     "NAME": "Blink",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, draw !M! additional cards."
   },
   "${ModID}:Acceleration": {
     "NAME": "Acceleration",
-    "DESCRIPTION": ""
+    "DESCRIPTION": "{@@}Your next {!M!|>1=!M! }Attack{!M!|>1=s} deal{!M!|1=s} double damage."
   },
-  "${ModID}:Vanish": {
-    "NAME": "Vanish",
-    "DESCRIPTION": ""
+  "${ModID}:BorrowedTime": {
+    "NAME": "Borrowed Time",
+    "DESCRIPTION": "{@@}Next turn, NL gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} and draw !M! additional card{!M!|>1=s}. NL Exhaust."
   }
 }

@@ -1,10 +1,13 @@
 package Starlight.cards.bookOfTime;
 
+import Starlight.actions.ExhaustByPredAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.SpellPower;
+import Starlight.powers.RuinPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.curses.Decay;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -15,30 +18,37 @@ public class DustToDust extends AbstractMagickCard {
     public final static String ID = makeID(DustToDust.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int BLK = 5;
-    private static final int UP_BLK = 2;
-    private static final int SP = 4;
-    private static final int UP_SP = 2;
+    private static final int EFFECT = 5;
+    private static final int UP_EFFECT = 2;
 
     public DustToDust() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseBlock = block = BLK;
-        baseMagicNumber = magicNumber = SP;
+        baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_TIME);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
-        Wiz.applyToSelf(new SpellPower(p, magicNumber));
+        Wiz.atb(new ExhaustByPredAction(p.hand, (int) p.hand.group.stream().filter(c -> c != this).count(), true, c -> true, new AbstractGameAction() {
+            @Override
+            public void update() {
+                if (!ExhaustByPredAction.exhaustedCards.isEmpty()) {
+                    Wiz.forAllMonstersLiving(mon -> {
+                        Wiz.applyToEnemyTop(mon, new RuinPower(mon, p, magicNumber * ExhaustByPredAction.exhaustedCards.size()));
+                    });
+                    Wiz.att(new SFXAction("ATTACK_WHIFF_1", 0.2f));
+                }
+                this.isDone = true;
+            }
+        }));
     }
 
     public void upp() {
-        upgradeBlock(UP_BLK);
-        upgradeMagicNumber(UP_SP);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override

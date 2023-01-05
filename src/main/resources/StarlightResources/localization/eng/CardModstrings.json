@@ -13,5 +13,8 @@
   },
   "${ModID}:LanternMod": {
     "EXTENDED_DESCRIPTION": ["Guiding "," NL Gain"," the next time you draw this card."]
+  },
+  "${ModID}:EternalMod": {
+    "EXTENDED_DESCRIPTION": ["starlight:Eternal. NL "]
   }
 }

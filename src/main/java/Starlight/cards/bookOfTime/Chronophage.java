@@ -1,10 +1,9 @@
 package Starlight.cards.bookOfTime;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.SpellPower;
+import Starlight.powers.ChronophagePower;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.cards.blue.Electrodynamics;
 import com.megacrit.cardcrawl.cards.purple.MasterReality;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,27 +17,23 @@ public class Chronophage extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 1;
-    private static final int BLK = 5;
-    private static final int UP_BLK = 2;
-    private static final int SP = 4;
-    private static final int UP_SP = 2;
+    private static final int COST = 2;
+    private static final int SP = 2;
+    private static final int UP_SP = 1;
 
     public Chronophage() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseBlock = block = BLK;
         baseMagicNumber = magicNumber = SP;
         tags.add(CustomTags.STARLIGHT_TIME);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
-        Wiz.applyToSelf(new SpellPower(p, magicNumber));
+        Wiz.applyToSelf(new ChronophagePower(p, magicNumber));
     }
 
     public void upp() {
-        upgradeBlock(UP_BLK);
-        upgradeMagicNumber(UP_SP);
+        isInnate = true;
+        uDesc();
     }
 
     @Override

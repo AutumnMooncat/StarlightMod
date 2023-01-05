@@ -1,6 +1,7 @@
 package Starlight.cards.bookOfTime;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.powers.PulsePower;
 import Starlight.powers.SpellPower;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
@@ -18,27 +19,24 @@ public class Pulse extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 1;
-    private static final int BLK = 5;
-    private static final int UP_BLK = 2;
-    private static final int SP = 4;
-    private static final int UP_SP = 2;
+    private static final int COST = 2;
+    private static final int UP_COST = 1;
+    private static final int SP = 1;
+    private static final int UP_SP = 1;
 
     public Pulse() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseBlock = block = BLK;
         baseMagicNumber = magicNumber = SP;
         tags.add(CustomTags.STARLIGHT_TIME);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
-        Wiz.applyToSelf(new SpellPower(p, magicNumber));
+        Wiz.applyToSelf(new PulsePower(p, magicNumber));
     }
 
     public void upp() {
-        upgradeBlock(UP_BLK);
-        upgradeMagicNumber(UP_SP);
+        //upgradeMagicNumber(UP_SP);
+        upgradeBaseCost(UP_COST);
     }
 
     @Override

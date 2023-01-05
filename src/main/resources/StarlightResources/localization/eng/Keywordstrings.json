@@ -254,5 +254,20 @@
       "stricture"
     ],
     "DESCRIPTION": "A creature with a Stricture loses HP whenever they attack."
+  },
+  {
+    "PROPER_NAME": "Ruin",
+    "NAMES": [
+      "ruin",
+      "ruined"
+    ],
+    "DESCRIPTION": "A creature with Ruin loses HP at the start of your next turn."
+  },
+  {
+    "PROPER_NAME": "Eternal",
+    "NAMES": [
+      "eternal"
+    ],
+    "DESCRIPTION": "Whenever this card would Exhaust, add it into your hand. It costs 0 this turn."
   }
 ]

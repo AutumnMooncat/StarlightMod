@@ -209,6 +209,32 @@
     "DESCRIPTIONS": ["This turn, #yAttacks deal double damage but #yExhaust.",
                     "For #b"," turns, #yAttacks deal double damage but #yExhaust."]
   },
+  "${ModID}:RuinPower": {
+    "NAME": "Ruin",
+    "DESCRIPTIONS": ["At the start of your next turn, this creature loses #b"," HP."]
+  },
+  "${ModID}:AcceleratePower": {
+    "NAME": "Acceleration",
+    "DESCRIPTIONS": ["Your next #yAttack deals double damage.",
+                    "Your next #b"," #yAttacks deal double damage."]
+  },
+  "${ModID}:StasisPower": {
+    "NAME": "Stasis",
+    "DESCRIPTIONS": ["Next turn, add #b1 copy of "," into your hand.",
+                     "Next turn, add #b"," copies of "," into your hand."]
+  },
+  "${ModID}:ChronophagePower": {
+    "NAME": "Chronophage",
+    "DESCRIPTIONS": ["Whenever you play #b12 cards, gain #b"," [E] and draw #b"," card."," cards."]
+  },
+  "${ModID}:OmenPower": {
+    "NAME": "Omen",
+    "DESCRIPTIONS": ["At the start of your next turn, apply #b"," #yVulnerable to ALL enemies."]
+  },
+  "${ModID}:PulsePower": {
+    "NAME": "Pulse",
+    "DESCRIPTIONS": ["At the start of your turn, reduce the cost of #b"," random card in your hand by 1 this combat."," random cards in your hand by 1 this combat."]
+  },
 
 
 
@@ -244,6 +270,10 @@
   "${ModID}:EquinoxPower": {
     "NAME": "Equinox",
     "DESCRIPTIONS": ["Whenever #yPrimrose #yProjects a card, gain #b","Whenever #yLuna #yProjects a card, gain #b"," #ySP."]
+  },
+  "${ModID}:FrameSkipPower": {
+    "NAME": "Frame Skip",
+    "DESCRIPTIONS": ["Whenever #yPrimrose #ySwaps out, draw #b","Whenever #yLuna #ySwaps out, draw #b"," card.", "cards."]
   },
 
 

@@ -1,11 +1,11 @@
 package Starlight.cards.bookOfTime;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.SpellPower;
+import Starlight.powers.RuinPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.cards.colorless.Impatience;
+import com.megacrit.cardcrawl.cards.green.PhantasmalKiller;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -19,31 +19,26 @@ public class Wither extends AbstractMagickCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 0;
-    private static final int BLK = 5;
-    private static final int UP_BLK = 2;
-    private static final int SP = 4;
-    private static final int UP_SP = 2;
+    private static final int EFFECT = 8;
+    private static final int UP_EFFECT = 3;
 
     public Wither() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseBlock = block = BLK;
-        baseMagicNumber = magicNumber = SP;
+        baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_TIME);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
-        Wiz.applyToSelf(new SpellPower(p, magicNumber));
+        Wiz.applyToEnemy(m, new RuinPower(m, p, magicNumber));
     }
 
     public void upp() {
-        upgradeBlock(UP_BLK);
-        upgradeMagicNumber(UP_SP);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
     public String cardArtCopy() {
-        return Impatience.ID;
+        return PhantasmalKiller.ID;
     }
 
     @Override

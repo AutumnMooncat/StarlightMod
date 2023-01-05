@@ -3,11 +3,9 @@ package Starlight.ui;
 import Starlight.TheStarlightMod;
 import Starlight.patches.CompendiumPatches;
 import Starlight.ui.spellbooks.*;
-import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -35,6 +33,7 @@ public class SpellbookUI {
         primPanel.addBook(new BookOfDark(true));
         primPanel.addBook(new BookOfLight(true));
         primPanel.addBook(new BookOfSpace(true));
+        primPanel.addBook(new BookOfTime(true));
 
 
         lunaPanel.addBook(new BookOfWater(false));
@@ -44,6 +43,7 @@ public class SpellbookUI {
         lunaPanel.addBook(new BookOfDark(false));
         lunaPanel.addBook(new BookOfLight(false));
         lunaPanel.addBook(new BookOfSpace(false));
+        lunaPanel.addBook(new BookOfTime(false));
 
         primPanel.layoutBooks();
         lunaPanel.layoutBooks();

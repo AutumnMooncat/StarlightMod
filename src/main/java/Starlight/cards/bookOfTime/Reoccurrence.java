@@ -1,11 +1,10 @@
 package Starlight.cards.bookOfTime;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.SpellPower;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.cards.green.Doppelganger;
-import com.megacrit.cardcrawl.cards.green.Expertise;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -19,26 +18,22 @@ public class Reoccurrence extends AbstractMagickCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int BLK = 5;
-    private static final int UP_BLK = 2;
-    private static final int SP = 4;
-    private static final int UP_SP = 2;
+    private static final int EFFECT = 3;
+    private static final int UP_EFFECT = 1;
 
     public Reoccurrence() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        baseBlock = block = BLK;
-        baseMagicNumber = magicNumber = SP;
+        baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_TIME);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
-        Wiz.applyToSelf(new SpellPower(p, magicNumber));
+        Wiz.atb(new BetterDiscardPileToHandAction(magicNumber, true));
     }
 
     public void upp() {
-        upgradeBlock(UP_BLK);
-        upgradeMagicNumber(UP_SP);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
