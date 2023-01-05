@@ -38,14 +38,14 @@ public class StarWand extends AbstractEasyRelic {
                 int draw = 0;
                 if (!Wiz.adp().drawPile.getCardsOfType(AbstractCard.CardType.SKILL).isEmpty()) {
                     AbstractCard c = Wiz.adp().drawPile.getCardsOfType(AbstractCard.CardType.SKILL).getRandomCard(true);
-                    Wiz.adp().drawPile.removeCard(c);
-                    Wiz.adp().drawPile.addToTop(c);
+                    Wiz.adp().drawPile.group.remove(c);
+                    Wiz.adp().drawPile.group.add(c);
                     draw++;
                 }
                 if (!Wiz.adp().drawPile.getCardsOfType(AbstractCard.CardType.ATTACK).isEmpty()) {
                     AbstractCard c = Wiz.adp().drawPile.getCardsOfType(AbstractCard.CardType.ATTACK).getRandomCard(true);
-                    Wiz.adp().drawPile.removeCard(c);
-                    Wiz.adp().drawPile.addToTop(c);
+                    Wiz.adp().drawPile.group.remove(c);
+                    Wiz.adp().drawPile.group.add(c);
                     draw++;
                 }
                 Wiz.att(new DrawCardAction(draw, new AbstractGameAction() {
