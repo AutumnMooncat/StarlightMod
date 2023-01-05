@@ -76,7 +76,6 @@ public class ExhaustByPredAction extends AbstractGameAction {
                 this.addToTop(this.followUpAction);
             }
         } else {
-            // TODO use hand select if group is hand
             if (cardGroup == Wiz.adp().hand) {
                 Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[0], anyNumber, anyNumber, validCards::contains, cards -> {
                     for (AbstractCard c : cards) {

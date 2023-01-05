@@ -66,17 +66,9 @@ public class ProjectCopyInHandAction extends AbstractGameAction {
                 this.addToTop(this.followUpAction);
             }
         } else {
-            // TODO use hand select
             Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[7], validCards::contains, cards -> {
                 for (AbstractCard c : cards) {
                     AbstractCard copy = c.makeStatEquivalentCopy();
-                    /*if (AbstractDungeon.player.hoveredCard == c) {
-                        AbstractDungeon.player.releaseCard();
-                    }
-
-                    AbstractDungeon.actionManager.removeFromQueue(c);
-                    c.unhover();
-                    c.untip();*/
                     ProjectedCardManager.addCard(copy);
                     projectedCards.add(copy);
                 }
@@ -84,22 +76,6 @@ public class ProjectCopyInHandAction extends AbstractGameAction {
                     this.addToTop(this.followUpAction);
                 }
             }));
-            /*Wiz.att(new BetterSelectCardsCenteredAction(copies, this.amount, amount == 1 ? TEXT[4] : TEXT[5] + amount + TEXT[6], cards -> {
-                for (AbstractCard c : cards) {
-                    if (AbstractDungeon.player.hoveredCard == c) {
-                        AbstractDungeon.player.releaseCard();
-                    }
-
-                    AbstractDungeon.actionManager.removeFromQueue(c);
-                    c.unhover();
-                    c.untip();
-                    ProjectedCardManager.addCard(c);
-                    projectedCards.add(c);
-                }
-                if (this.followUpAction != null) {
-                    this.addToTop(this.followUpAction);
-                }
-            }));*/
         }
         this.isDone = true;
     }

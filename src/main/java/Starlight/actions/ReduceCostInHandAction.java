@@ -76,14 +76,6 @@ public class ReduceCostInHandAction extends AbstractGameAction {
                 this.addToTop(this.followUpAction);
             }
         } else {
-            /*HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
-            ArrayList<AbstractCard> selection = new ArrayList<>();
-            for (AbstractCard c : validCards) {
-                AbstractCard copy = c.makeStatEquivalentCopy();
-                copyMap.put(copy, c);
-                selection.add(copy);
-            }*/
-            // TODO use hand select
             Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[0], anyNumber, anyNumber, validCards::contains, cards -> {
                 for (AbstractCard c : cards) {
                     triggerEffects(c);
@@ -92,16 +84,6 @@ public class ReduceCostInHandAction extends AbstractGameAction {
                     this.addToTop(this.followUpAction);
                 }
             }));
-            /*Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyNumber, c -> true, cards -> {
-                Collections.reverse(cards);
-                for (AbstractCard copy : cards) {
-                    AbstractCard c = copyMap.get(copy);
-                    triggerEffects(c);
-                }
-                if (this.followUpAction != null) {
-                    this.addToTop(this.followUpAction);
-                }
-            }));*/
         }
         this.isDone = true;
     }
