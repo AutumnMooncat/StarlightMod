@@ -251,9 +251,7 @@ public class TheStarlightMod implements
         loadLocalizedStrings(CharacterStrings.class, "Charstrings");
         loadLocalizedStrings(PowerStrings.class, "Powerstrings");
         loadLocalizedStrings(CardStrings.class, "CardModstrings");
-        loadLocalizedStrings(CardStrings.class, "Chatterstrings"); //unused
-        loadLocalizedStrings(CardStrings.class, "DamageModstrings"); //TODO unused
-        loadLocalizedStrings(CardStrings.class, "Abilitystrings"); //unused
+        //loadLocalizedStrings(CardStrings.class, "Chatterstrings"); // TODO - chatter is unimplemented and strings need to be made
         loadLocalizedStrings(UIStrings.class, "UIstrings");
         loadLocalizedStrings(PotionStrings.class, "Potionstrings");
     }
