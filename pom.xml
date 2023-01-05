@@ -4,7 +4,7 @@
     <groupId>Info</groupId>
 
     <artifactId>Starlight</artifactId>
-    <version>0.7.2</version>
+    <version>0.7.3</version>
     <name>The Starlight Sisters</name>
     <description>Adds twin magi to the Spire.</description>
     <!-- Change the above for mod information. -->
@@ -18,7 +18,7 @@
         <ModID>Starlight</ModID>
 
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
-        <Steam.path>D:\Steam\steamapps</Steam.path>
+        <Steam.path>E:\SteamLibrary\steamapps</Steam.path>
 
     </properties>
 
