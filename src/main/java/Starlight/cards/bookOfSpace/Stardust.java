@@ -41,8 +41,6 @@ public class Stardust extends AbstractMagickCard {
         upgradeMagicNumber(UP_EFFECT);
     }
 
-    //TODO Testing solution to fix This, Kiss of Death, and Arcane Arrow will not calculating properly if these methods are only called for 1 frame
-
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         magicLastFrame = magicNumber;
