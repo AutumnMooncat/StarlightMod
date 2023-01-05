@@ -2,11 +2,10 @@ package Starlight.cards;
 
 import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.interfaces.PrimroseCard;
-import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
 import Starlight.powers.SpellPower;
 import Starlight.util.CardArtRoller;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.red.Warcry;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -31,6 +30,7 @@ public class Prepare extends AbstractEasyCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
+        tags.add(CustomTags.STARLIGHT_SWAPS);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

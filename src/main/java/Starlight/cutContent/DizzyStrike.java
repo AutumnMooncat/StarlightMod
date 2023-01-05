@@ -3,6 +3,7 @@ package Starlight.cutContent;
 import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.characters.StarlightSisters;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.purple.FlyingSleeves;
@@ -28,6 +29,7 @@ public class DizzyStrike extends AbstractEasyCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
         tags.add(CardTags.STRIKE);
+        tags.add(CustomTags.STARLIGHT_SWAPS);
         //cardsToPreview = new Dazed();
     }
 

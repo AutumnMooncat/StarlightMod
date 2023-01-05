@@ -2,16 +2,13 @@ package Starlight.cards;
 
 import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.interfaces.TagTeamCard;
 import Starlight.characters.StarlightSisters;
-import Starlight.powers.ProvidencePower;
 import Starlight.util.CardArtRoller;
+import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.purple.InnerPeace;
-import com.megacrit.cardcrawl.cards.purple.Sanctity;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -30,6 +27,7 @@ public class Serendipity extends AbstractEasyCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
         selfRetain = true;
+        tags.add(CustomTags.STARLIGHT_SWAPS);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
