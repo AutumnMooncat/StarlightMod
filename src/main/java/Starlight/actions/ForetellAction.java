@@ -5,6 +5,7 @@ import Starlight.cards.interfaces.OnForetoldCard;
 import Starlight.patches.CardCounterPatches;
 import Starlight.powers.interfaces.OnForetellPower;
 import Starlight.util.Wiz;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -87,28 +88,48 @@ public class ForetellAction extends AbstractGameAction {
             if (amount > validCards.size()) {
                 amount = validCards.size();
             }
-            HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
-            ArrayList<AbstractCard> selection = new ArrayList<>();
-            for (AbstractCard c : validCards) {
-                AbstractCard copy = c.makeStatEquivalentCopy();
-                copyMap.put(copy, c);
-                selection.add(copy);
+            // TODO use hand select if group is hand
+            if (cardGroup == Wiz.adp().hand) {
+                Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[0], anyNumber, anyNumber, validCards::contains, cards -> {
+                    Collections.reverse(cards);
+                    for (AbstractCard c : cards) {
+                        //cardGroup.removeCard(c);
+                        cardGroup.moveToDeck(c, false);
+                        foretoldCards.add(c);
+                        triggerEffects(c);
+                    }
+                    if (this.followUpAction != null) {
+                        this.addToTop(this.followUpAction);
+                    }
+                    CardCounterPatches.cardsForetoldThisTurn += foretoldCards.size();
+                    CardCounterPatches.cardsForetoldThisCombat += foretoldCards.size();
+                    cards.clear(); // Remove from selection, so they don't get added back to hand
+                }));
+            } else {
+                HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
+                ArrayList<AbstractCard> selection = new ArrayList<>();
+                for (AbstractCard c : validCards) {
+                    AbstractCard copy = c.makeStatEquivalentCopy();
+                    copyMap.put(copy, c);
+                    selection.add(copy);
+                }
+                Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyNumber, c -> true, cards -> {
+                    Collections.reverse(cards);
+                    for (AbstractCard copy : cards) {
+                        AbstractCard c = copyMap.get(copy);
+                        cardGroup.removeCard(c);
+                        cardGroup.moveToDeck(c, false);
+                        foretoldCards.add(c);
+                        triggerEffects(c);
+                    }
+                    if (this.followUpAction != null) {
+                        this.addToTop(this.followUpAction);
+                    }
+                    CardCounterPatches.cardsForetoldThisTurn += foretoldCards.size();
+                    CardCounterPatches.cardsForetoldThisCombat += foretoldCards.size();
+                }));
             }
-            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyNumber, c -> true, cards -> {
-                Collections.reverse(cards);
-                for (AbstractCard copy : cards) {
-                    AbstractCard c = copyMap.get(copy);
-                    cardGroup.removeCard(c);
-                    cardGroup.moveToDeck(c, false);
-                    foretoldCards.add(c);
-                    triggerEffects(c);
-                }
-                if (this.followUpAction != null) {
-                    this.addToTop(this.followUpAction);
-                }
-                CardCounterPatches.cardsForetoldThisTurn += foretoldCards.size();
-                CardCounterPatches.cardsForetoldThisCombat += foretoldCards.size();
-            }));
+
         }
         this.isDone = true;
     }

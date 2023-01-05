@@ -1,7 +1,9 @@
 package Starlight.actions;
 
 import Starlight.TheStarlightMod;
+import Starlight.ui.ProjectedCardManager;
 import Starlight.util.Wiz;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -74,38 +76,52 @@ public class ExhaustByPredAction extends AbstractGameAction {
                 this.addToTop(this.followUpAction);
             }
         } else {
-            HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
-            ArrayList<AbstractCard> selection = new ArrayList<>();
-            for (AbstractCard c : validCards) {
-                AbstractCard copy = c.makeStatEquivalentCopy();
-                copyMap.put(copy, c);
-                selection.add(copy);
-            }
-            String displayText;
-            if (anyNumber) {
-                if (amount == 1) {
-                    displayText = TEXT[4] + amount + TEXT[5];
-                } else {
-                    displayText = TEXT[4] + amount + TEXT[6];
-                }
+            // TODO use hand select if group is hand
+            if (cardGroup == Wiz.adp().hand) {
+                Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[0], anyNumber, anyNumber, validCards::contains, cards -> {
+                    for (AbstractCard c : cards) {
+                        cardGroup.moveToExhaustPile(c);
+                        exhaustedCards.add(c);
+                    }
+                    cards.clear(); // Remove from selection, so they don't get added back to hand
+                    if (this.followUpAction != null) {
+                        this.addToTop(this.followUpAction);
+                    }
+                }));
             } else {
-                if (amount == 1) {
-                    displayText = TEXT[1];
+                HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
+                ArrayList<AbstractCard> selection = new ArrayList<>();
+                for (AbstractCard c : validCards) {
+                    AbstractCard copy = c.makeStatEquivalentCopy();
+                    copyMap.put(copy, c);
+                    selection.add(copy);
+                }
+                String displayText;
+                if (anyNumber) {
+                    if (amount == 1) {
+                        displayText = TEXT[4] + amount + TEXT[5];
+                    } else {
+                        displayText = TEXT[4] + amount + TEXT[6];
+                    }
                 } else {
-                    displayText = TEXT[2] + amount + TEXT[3];
+                    if (amount == 1) {
+                        displayText = TEXT[1];
+                    } else {
+                        displayText = TEXT[2] + amount + TEXT[3];
+                    }
                 }
+                //Pre-filtered so just pass c -> true
+                Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, displayText, anyNumber, c -> true, cards -> {
+                    for (AbstractCard copy : cards) {
+                        AbstractCard c = copyMap.get(copy);
+                        cardGroup.moveToExhaustPile(c);
+                        exhaustedCards.add(c);
+                    }
+                    if (this.followUpAction != null) {
+                        this.addToTop(this.followUpAction);
+                    }
+                }));
             }
-            //Pre-filtered so just pass c -> true
-            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, displayText, anyNumber, c -> true, cards -> {
-                for (AbstractCard copy : cards) {
-                    AbstractCard c = copyMap.get(copy);
-                    cardGroup.moveToExhaustPile(c);
-                    exhaustedCards.add(c);
-                }
-                if (this.followUpAction != null) {
-                    this.addToTop(this.followUpAction);
-                }
-            }));
         }
         this.isDone = true;
     }

@@ -3,6 +3,7 @@ package Starlight.actions;
 import Starlight.TheStarlightMod;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.Wiz;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -75,14 +76,34 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
             if (amount > validCards.size()) {
                 amount = validCards.size();
             }
-            HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
+            /*HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
             ArrayList<AbstractCard> selection = new ArrayList<>();
             for (AbstractCard c : validCards) {
                 AbstractCard copy = c.makeStatEquivalentCopy();
                 copyMap.put(copy, c);
                 selection.add(copy);
-            }
-            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyAmount, true, cards -> {
+            }*/
+            // TODO use hand select
+            Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[0], anyAmount, anyAmount, validCards::contains, cards -> {
+                for (AbstractCard c : cards) {
+                    if (AbstractDungeon.player.hoveredCard == c) {
+                        AbstractDungeon.player.releaseCard();
+                    }
+
+                    AbstractDungeon.actionManager.removeFromQueue(c);
+                    c.unhover();
+                    c.untip();
+                    //c.stopGlowing();
+                    //Wiz.adp().hand.group.remove(c);
+                    ProjectedCardManager.addCard(c);
+                    projectedCards.add(c);
+                }
+                cards.clear(); // Remove from selection, so they don't get added back to hand
+                if (this.followUpAction != null) {
+                    this.addToTop(this.followUpAction);
+                }
+            }));
+            /*Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyAmount, true, cards -> {
                 for (AbstractCard copy : cards) {
                     AbstractCard c = copyMap.get(copy);
                     if (AbstractDungeon.player.hoveredCard == c) {
@@ -100,7 +121,7 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
                 if (this.followUpAction != null) {
                     this.addToTop(this.followUpAction);
                 }
-            }));
+            }));*/
         }
         this.isDone = true;
     }

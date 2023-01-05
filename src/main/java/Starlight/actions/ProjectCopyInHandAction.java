@@ -3,6 +3,7 @@ package Starlight.actions;
 import Starlight.TheStarlightMod;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.Wiz;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -48,30 +49,42 @@ public class ProjectCopyInHandAction extends AbstractGameAction {
             this.isDone = true;
             return;
         }
-        ArrayList<AbstractCard> copies = new ArrayList<>();
-        for (AbstractCard c : validCards) {
-            copies.add(c.makeStatEquivalentCopy());
-        }
-        if (amount >= copies.size()) {
-            for (AbstractCard c : copies) {
-                if (AbstractDungeon.player.hoveredCard == c) {
+        if (amount >= validCards.size()) {
+            for (AbstractCard c : validCards) {
+                AbstractCard copy = c.makeStatEquivalentCopy();
+                /*if (AbstractDungeon.player.hoveredCard == c) {
                     AbstractDungeon.player.releaseCard();
                 }
 
                 AbstractDungeon.actionManager.removeFromQueue(c);
                 c.unhover();
-                c.untip();
-                ProjectedCardManager.addCard(c);
-                projectedCards.add(c);
+                c.untip();*/
+                ProjectedCardManager.addCard(copy);
+                projectedCards.add(copy);
             }
             if (this.followUpAction != null) {
                 this.addToTop(this.followUpAction);
             }
         } else {
-            if (amount > validCards.size()) {
-                amount = validCards.size();
-            }
-            Wiz.att(new BetterSelectCardsCenteredAction(copies, this.amount, amount == 1 ? TEXT[4] : TEXT[5] + amount + TEXT[6], cards -> {
+            // TODO use hand select
+            Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[7], validCards::contains, cards -> {
+                for (AbstractCard c : cards) {
+                    AbstractCard copy = c.makeStatEquivalentCopy();
+                    /*if (AbstractDungeon.player.hoveredCard == c) {
+                        AbstractDungeon.player.releaseCard();
+                    }
+
+                    AbstractDungeon.actionManager.removeFromQueue(c);
+                    c.unhover();
+                    c.untip();*/
+                    ProjectedCardManager.addCard(copy);
+                    projectedCards.add(copy);
+                }
+                if (this.followUpAction != null) {
+                    this.addToTop(this.followUpAction);
+                }
+            }));
+            /*Wiz.att(new BetterSelectCardsCenteredAction(copies, this.amount, amount == 1 ? TEXT[4] : TEXT[5] + amount + TEXT[6], cards -> {
                 for (AbstractCard c : cards) {
                     if (AbstractDungeon.player.hoveredCard == c) {
                         AbstractDungeon.player.releaseCard();
@@ -86,7 +99,7 @@ public class ProjectCopyInHandAction extends AbstractGameAction {
                 if (this.followUpAction != null) {
                     this.addToTop(this.followUpAction);
                 }
-            }));
+            }));*/
         }
         this.isDone = true;
     }

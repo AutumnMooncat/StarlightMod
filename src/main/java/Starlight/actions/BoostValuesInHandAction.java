@@ -3,6 +3,7 @@ package Starlight.actions;
 import Starlight.TheStarlightMod;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.Wiz;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -64,14 +65,34 @@ public class BoostValuesInHandAction extends AbstractGameAction {
             }
             CardCrawlGame.sound.play("GHOST_ORB_IGNITE_1", 0.3F);
         } else {
-            HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
+            /*HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
             ArrayList<AbstractCard> selection = new ArrayList<>();
             for (AbstractCard c : validCards) {
                 AbstractCard copy = c.makeStatEquivalentCopy();
                 copyMap.put(copy, c);
                 selection.add(copy);
-            }
-            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], false, true, cards -> {
+            }*/
+            // TODO use hand select
+            Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[0], validCards::contains, cards -> {
+                for (AbstractCard c : cards) {
+                    switch (stat) {
+                        case DAMAGE:
+                            c.baseDamage += boost;
+                            break;
+                        case BLOCK:
+                            c.baseBlock += boost;
+                            break;
+                        case MAGIC:
+                            c.baseMagicNumber += boost;
+                            c.magicNumber += boost;
+                            break;
+                    }
+                    c.applyPowers();
+                    c.superFlash();
+                }
+                CardCrawlGame.sound.play("GHOST_ORB_IGNITE_1", 0.3F);
+            }));
+            /*Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], false, true, cards -> {
                 for (AbstractCard copy : cards) {
                     AbstractCard c = copyMap.get(copy);
                     switch (stat) {
@@ -90,7 +111,7 @@ public class BoostValuesInHandAction extends AbstractGameAction {
                     c.superFlash();
                 }
                 CardCrawlGame.sound.play("GHOST_ORB_IGNITE_1", 0.3F);
-            }));
+            }));*/
         }
         this.isDone = true;
     }

@@ -6,6 +6,7 @@ import Starlight.patches.CardCounterPatches;
 import Starlight.powers.interfaces.OnForetellPower;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -75,14 +76,23 @@ public class ReduceCostInHandAction extends AbstractGameAction {
                 this.addToTop(this.followUpAction);
             }
         } else {
-            HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
+            /*HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
             ArrayList<AbstractCard> selection = new ArrayList<>();
             for (AbstractCard c : validCards) {
                 AbstractCard copy = c.makeStatEquivalentCopy();
                 copyMap.put(copy, c);
                 selection.add(copy);
-            }
-            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyNumber, c -> true, cards -> {
+            }*/
+            // TODO use hand select
+            Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[0], anyNumber, anyNumber, validCards::contains, cards -> {
+                for (AbstractCard c : cards) {
+                    triggerEffects(c);
+                }
+                if (this.followUpAction != null) {
+                    this.addToTop(this.followUpAction);
+                }
+            }));
+            /*Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyNumber, c -> true, cards -> {
                 Collections.reverse(cards);
                 for (AbstractCard copy : cards) {
                     AbstractCard c = copyMap.get(copy);
@@ -91,7 +101,7 @@ public class ReduceCostInHandAction extends AbstractGameAction {
                 if (this.followUpAction != null) {
                     this.addToTop(this.followUpAction);
                 }
-            }));
+            }));*/
         }
         this.isDone = true;
     }
