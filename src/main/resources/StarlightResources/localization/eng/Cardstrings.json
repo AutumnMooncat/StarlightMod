@@ -54,7 +54,7 @@
   },
   "${ModID}:DizzyStrike": {
     "NAME": "Dizzy Strike",
-    "DESCRIPTION": "Deal !D! damage twice.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
+    "DESCRIPTION": "Deal !D! damage to a random enemy twice.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
   },
   "${ModID}:Doomsday": {
     "NAME": "Doomsday",
@@ -747,7 +747,7 @@
     "DESCRIPTION": "Gain !B! Block. NL Next turn, draw !M! additional cards."
   },
   "${ModID}:Acceleration": {
-    "NAME": "Acceleration",
+    "NAME": "Time Out",
     "DESCRIPTION": "{@@}Your next {!M!|>1=!M! }Attack{!M!|>1=s} deal{!M!|1=s} double damage."
   },
   "${ModID}:BorrowedTime": {
