@@ -2,17 +2,15 @@ package Starlight.powers;
 
 import Starlight.TheStarlightMod;
 import Starlight.util.Wiz;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.InvisiblePower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.NonStackablePower;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class DramaticPower extends AbstractPower implements NonStackablePower, InvisiblePower {
+public class DramaticPower extends AbstractPower implements NonStackablePower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(DramaticPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
