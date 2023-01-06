@@ -1,4 +1,4 @@
-package Starlight.cutContent;
+package Starlight.cards;
 
 import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
@@ -6,6 +6,7 @@ import Starlight.characters.StarlightSisters;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.cards.purple.FlyingSleeves;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -15,12 +16,12 @@ import static Starlight.TheStarlightMod.makeID;
 public class DizzyStrike extends AbstractEasyCard {
     public final static String ID = makeID(DizzyStrike.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 5;
+    private static final int DMG = 7;
     private static final int UP_DMG = 2;
     private static final int EFFECT = 3;
     private static final int UP_EFFECT = 2;
@@ -34,8 +35,10 @@ public class DizzyStrike extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        Wiz.atb(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        Wiz.atb(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        //dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        //dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         //Wiz.atb(new MakeTempCardInDrawPileAction(cardsToPreview.makeStatEquivalentCopy(), 1, true, true));
         if (p instanceof StarlightSisters) {
             Wiz.atb(new SwapAction());
