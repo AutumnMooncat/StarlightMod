@@ -746,9 +746,9 @@
     "NAME": "Blink",
     "DESCRIPTION": "Gain !B! Block. NL Next turn, draw !M! additional cards."
   },
-  "${ModID}:Acceleration": {
+  "${ModID}:TimeOut": {
     "NAME": "Time Out",
-    "DESCRIPTION": "{@@}Your next {!M!|>1=!M! }Attack{!M!|>1=s} deal{!M!|1=s} double damage."
+    "DESCRIPTION": "If the enemy intends to attack, apply !M! Weak and Vulnerable."
   },
   "${ModID}:BorrowedTime": {
     "NAME": "Borrowed Time",
