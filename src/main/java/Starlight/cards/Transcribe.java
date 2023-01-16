@@ -35,7 +35,7 @@ public class Transcribe extends AbstractEasyCard /*implements TagTeamCard*/ {
 
     private AbstractCard lastCard;
     //private UUID lastUUID;
-
+    // TODO - Very OP. Either remove this card via transforming into the target card/exhausting, or at the very least not make the copy cost 0.
     public Transcribe() {
         super(ID, COST, TYPE, RARITY, TARGET);
     }
@@ -49,6 +49,13 @@ public class Transcribe extends AbstractEasyCard /*implements TagTeamCard*/ {
             card.setCostForTurn(0);
             //lastUUID = card.uuid;
             Wiz.atb(new MakeTempCardInHandAction(card, true, true));
+            Wiz.atb(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    purgeOnUse = true;
+                    this.isDone = true;
+                }
+            });
         }
         this.rawDescription = cardStrings.DESCRIPTION;
         lastCard = null;

@@ -214,7 +214,7 @@
   },
   "${ModID}:Transcribe": {
     "NAME": "Transcribe",
-    "DESCRIPTION": "{@@}Add a copy of the last starlight:Magick card played this combat into your hand. NL It costs 0 this turn.",
+    "DESCRIPTION": "{@@}Replace this card with a copy of the last starlight:Magick card played this combat. NL It costs 0 this turn.",
     "EXTENDED_DESCRIPTION": [" NL (",")"]
   },
   "${ModID}:TwinForm": {
