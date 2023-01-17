@@ -71,7 +71,8 @@ public class ArcaneArrow extends AbstractMagickCard {
         return (int) (Wiz.adp().drawPile.group.stream().filter(c -> c.hasTag(CustomTags.STARLIGHT_ARROW)).count() +
                 Wiz.adp().hand.group.stream().filter(c -> c.hasTag(CustomTags.STARLIGHT_ARROW)).count() +
                 Wiz.adp().discardPile.group.stream().filter(c -> c.hasTag(CustomTags.STARLIGHT_ARROW)).count() +
-                ProjectedCardManager.cards.group.stream().filter(c -> c.hasTag(CustomTags.STARLIGHT_ARROW)).count());
+                ProjectedCardManager.cards.group.stream().filter(c -> c.hasTag(CustomTags.STARLIGHT_ARROW)).count() +
+                ProjectedCardManager.renderQueue.group.stream().filter(c -> c.hasTag(CustomTags.STARLIGHT_ARROW)).count());
     }
 
     public void upp() {

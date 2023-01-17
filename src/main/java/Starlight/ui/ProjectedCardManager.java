@@ -73,19 +73,12 @@ public class ProjectedCardManager {
             @Override
             public void update() {
                 for (AbstractCard card : cards.group) {
-                    renderQueue.group.add(card);
                     card.targetDrawScale = 0.75F;
                     card.applyPowers();
                     ProjectedCardField.projectedField.set(card, true);
                     Wiz.atb(new NewQueueCardAction(card, true, false, true));
-                    Wiz.atb(new AbstractGameAction() {
-                        @Override
-                        public void update() {
-                            renderQueue.removeCard(card);
-                            this.isDone = true;
-                        }
-                    });
                 }
+                renderQueue.group.addAll(cards.group);
                 cards.clear();
                 this.isDone = true;
             }
@@ -134,6 +127,7 @@ public class ProjectedCardManager {
                 ProjectedActionField.projectedField.set(__instance, true);
                 ProjectedCardField.projectedField.set(card, false);
             }
+            renderQueue.removeCard(card);
         }
     }
 
