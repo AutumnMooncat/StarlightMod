@@ -49,7 +49,7 @@ public class Omen extends AbstractMagickCard {
 
     @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
-        return new CardArtRoller.ReskinInfo(ID, 0.55f, 0.0f, 0.65f, 0.55f, false);
+        return new CardArtRoller.ReskinInfo(ID, 0.55f, 0.10f, 0.65f, 0.55f, false);
     }
 
 }
