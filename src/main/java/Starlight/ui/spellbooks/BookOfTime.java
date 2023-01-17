@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class BookOfTime extends ClickableSpellbook {
     public static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("BookOfTime")).TEXT;
-    private static final int AMOUNT = 1;
+    private static final int AMOUNT = 3;
 
     public BookOfTime(boolean prim) {
         super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookTime.png"), TEXT[0], TEXT[1], new AbstractAbilityCard(new FrameSkipPower(null, AMOUNT, prim)) {});

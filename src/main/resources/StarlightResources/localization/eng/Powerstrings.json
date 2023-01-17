@@ -273,7 +273,11 @@
   },
   "${ModID}:FrameSkipPower": {
     "NAME": "Frame Skip",
-    "DESCRIPTIONS": ["Whenever #yPrimrose #ySwaps out, draw #b","Whenever #yLuna #ySwaps out, draw #b"," card.", "cards."]
+    "DESCRIPTIONS": ["Whenever #yPrimrose would lose HP, delay up to #b","Whenever #yLuna would lose HP, delay up to #b"," damage each turn until the end of your next turn."]
+  },
+  "${ModID}:DelayedDamagePower": {
+    "NAME": "Delayed Damage",
+    "DESCRIPTIONS": ["At the end of your next turn, take #b"," damage.","At the end of this turn, take #b"]
   },
 
 
