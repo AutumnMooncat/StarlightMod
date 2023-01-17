@@ -29,6 +29,7 @@ public class ProjectedCardManager {
     public static final float Y_OFFSET = 70f * Settings.scale;
     public static final float X_OFFSET = 100f * Settings.scale;
     public static final CardGroup cards = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+    public static final CardGroup renderQueue = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
     private static final BobEffect bob = new BobEffect(3.0f * Settings.scale, 3.0f);
     public static AbstractCard hovered;
 
@@ -42,6 +43,7 @@ public class ProjectedCardManager {
             hovered.render(sb);
             TipHelper.renderTipForCard(hovered, sb, hovered.keywords);
         }
+        renderQueue.render(sb);
     }
 
     public static void update() {
@@ -63,30 +65,31 @@ public class ProjectedCardManager {
             card.applyPowers();
             i++;
         }
+        renderQueue.update();
     }
 
     public static void playCards() {
-        //TODO has bugs if you open a screen, the cards darken and don't re-lighten
-        for (AbstractCard card : cards.group) {
-            Wiz.adp().limbo.group.add(card);
-            Wiz.atb(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    //for (AbstractCard card : cards.group) {
-
-                        card.targetDrawScale = 0.75F;
-                        card.applyPowers();
-                        ProjectedCardField.projectedField.set(card, true);
-                        //AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(card, true, EnergyPanel.getCurrentEnergy(), false, true), false);
-                        Wiz.atb(new NewQueueCardAction(card, true, false, true));
-                        Wiz.atb(new UnlimboAction(card));
-                    //}
-
-                    this.isDone = true;
+        Wiz.atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                for (AbstractCard card : cards.group) {
+                    renderQueue.group.add(card);
+                    card.targetDrawScale = 0.75F;
+                    card.applyPowers();
+                    ProjectedCardField.projectedField.set(card, true);
+                    Wiz.atb(new NewQueueCardAction(card, true, false, true));
+                    Wiz.atb(new AbstractGameAction() {
+                        @Override
+                        public void update() {
+                            renderQueue.removeCard(card);
+                            this.isDone = true;
+                        }
+                    });
                 }
-            });
-        }
-        cards.clear();
+                cards.clear();
+                this.isDone = true;
+            }
+        });
 
     }
 
