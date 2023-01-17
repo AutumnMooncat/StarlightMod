@@ -3,7 +3,6 @@ package Starlight.cards.bookOfIce;
 import Starlight.actions.MoveFromDrawToHandAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.cards.interfaces.OnEnterDrawPileCard;
-import Starlight.powers.ChillPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
@@ -23,7 +22,7 @@ public class FrostArrow extends AbstractMagickCard implements OnEnterDrawPileCar
 
     private static final int COST = 0;
     private static final int DMG = 5;
-    private static final int UP_DMG = 3;
+    private static final int UP_DMG = 2;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
