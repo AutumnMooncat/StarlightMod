@@ -1,5 +1,6 @@
 package Starlight.relics;
 
+import Starlight.cards.token.Starburst;
 import Starlight.characters.StarlightSisters;
 import Starlight.util.Wiz;
 import com.google.gson.Gson;
@@ -7,6 +8,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -29,7 +33,12 @@ public class StarWand extends AbstractEasyRelic {
         resetStats();
     }
 
-    @Override
+    public void atBattleStartPreDraw() {
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        this.addToBot(new MakeTempCardInHandAction(new Starburst(), 3, false));
+    }
+
+    /*@Override
     public void atTurnStart() {
         flash();
         addToBot(new AbstractGameAction() {
@@ -64,6 +73,17 @@ public class StarWand extends AbstractEasyRelic {
                 this.isDone = true;
             }
         });
+    }*/
+
+    @Override
+    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+        if (targetCard instanceof Starburst) {
+            stats.put(SKILLS_STAT, stats.get(SKILLS_STAT) + targetCard.block);
+        }
+    }
+
+    public void updateDamage(int damage) {
+        stats.put(ATTACKS_STAT, stats.get(ATTACKS_STAT) + damage);
     }
 
     @Override //Should replace default relic. Big thanks papa kio

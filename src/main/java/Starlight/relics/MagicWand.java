@@ -1,13 +1,13 @@
 package Starlight.relics;
 
+import Starlight.cards.token.Starburst;
 import Starlight.characters.StarlightSisters;
-import Starlight.util.Wiz;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -29,10 +29,11 @@ public class MagicWand extends AbstractEasyRelic {
         resetStats();
     }
 
-    public void atBattleStart() {
-        flash();
+    public void atBattleStartPreDraw() {
+        //flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        addToBot(new AbstractGameAction() {
+        this.addToBot(new MakeTempCardInHandAction(new Starburst(), 1, false));
+        /*addToBot(new AbstractGameAction() {
             @Override
             public void update() {
                 int draw = 0;
@@ -63,7 +64,18 @@ public class MagicWand extends AbstractEasyRelic {
                 }));
                 this.isDone = true;
             }
-        });
+        });*/
+    }
+
+    @Override
+    public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
+        if (targetCard instanceof Starburst) {
+            stats.put(SKILLS_STAT, stats.get(SKILLS_STAT) + targetCard.block);
+        }
+    }
+
+    public void updateDamage(int damage) {
+        stats.put(ATTACKS_STAT, stats.get(ATTACKS_STAT) + damage);
     }
 
     public int getAttacks() {

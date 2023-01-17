@@ -3,16 +3,16 @@
     "NAME": "Magic Wand",
     "FLAVOR": "Isn't this just a stick?",
     "DESCRIPTIONS": [
-      "At the start of each combat, draw a random #yAttack and #ySkill.",
-      "Attacks drawn: "," NL Skills drawn: "
+      "At the start of each combat, add a #yStarburst into your hand.",
+      "Damage dealt: "," NL Block gained: "
     ]
   },
   "${ModID}:StarWand": {
     "NAME": "Star Wand",
     "FLAVOR": "\"This one is actually useful!\" - Luna \"Can I keep the stick?\" - Primrose",
     "DESCRIPTIONS": [
-      "Replaces [#aa80ff]Magic [#aa80ff]Wand. At the start of your turn, draw a random #yAttack and #ySkill.",
-      "Attacks drawn: "," NL Skills drawn: "
+      "Replaces [#aa80ff]Magic [#aa80ff]Wand. At the start of each combat, add #b3 #yStarburst into your hand.",
+      "Damage dealt: "," NL Block gained: "
     ]
   },
   "${ModID}:AstralRose": {

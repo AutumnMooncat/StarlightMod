@@ -1,6 +1,7 @@
 package Starlight.cutContent;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.cards.token.Starburst;
 import Starlight.damageMods.ResonantDamage;
 import Starlight.util.Wiz;
 import basemod.helpers.TooltipInfo;
@@ -31,7 +32,7 @@ public class StarChart extends AbstractEasyCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = AMT;
-        cardsToPreview = new StarShard();
+        cardsToPreview = new Starburst();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

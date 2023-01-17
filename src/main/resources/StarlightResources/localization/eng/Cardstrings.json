@@ -171,6 +171,10 @@
     "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1=s} in your hand.",
     "EXTENDED_DESCRIPTION": ["Stara"]
   },
+  "${ModID}:Starburst": {
+    "NAME": "Starburst",
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Deal !D! damage. NL Exhaust."
+  },
   "${ModID}:Stockpile": {
     "NAME": "Stockpile",
     "DESCRIPTION": "{@@}Gain !M! Block whenever you play a Skill this turn."
