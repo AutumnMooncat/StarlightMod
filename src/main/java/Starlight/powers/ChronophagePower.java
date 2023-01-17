@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -54,11 +55,13 @@ public class ChronophagePower extends AbstractPower {
 
     @Override
     public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
-        if (!this.isTurnBased) {
+        FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(counter), x, y + 15.0F * Settings.scale, this.fontScale, c);
+        super.renderAmount(sb, x, y, c);
+        /*if (!this.isTurnBased) {
             this.greenColor.a = c.a;
             c = this.greenColor;
         }
-        FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, counter+"/12", x, y, this.fontScale, c);
+        FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, String.valueOf(counter), x, y, this.fontScale, c);*/
     }
 
     @Override
