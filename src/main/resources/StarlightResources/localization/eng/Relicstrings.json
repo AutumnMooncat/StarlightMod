@@ -4,7 +4,7 @@
     "FLAVOR": "Isn't this just a stick?",
     "DESCRIPTIONS": [
       "At the start of each combat, add a #yStarburst into your hand.",
-      "Damage dealt: "," NL Block gained: "
+      "Damage dealt: "," NL Block gained: "," NL Damage per combat: "," NL Block per combat: "
     ]
   },
   "${ModID}:StarWand": {
@@ -12,7 +12,7 @@
     "FLAVOR": "\"This one is actually useful!\" - Luna \"Can I keep the stick?\" - Primrose",
     "DESCRIPTIONS": [
       "Replaces [#aa80ff]Magic [#aa80ff]Wand. At the start of each combat, add #b3 #yStarburst into your hand.",
-      "Damage dealt: "," NL Block gained: "
+      "Damage dealt: "," NL Block gained: "," NL Damage per combat: "," NL Block per combat: "
     ]
   },
   "${ModID}:AstralRose": {

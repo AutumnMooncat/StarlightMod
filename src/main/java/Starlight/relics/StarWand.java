@@ -2,12 +2,9 @@ package Starlight.relics;
 
 import Starlight.cards.token.Starburst;
 import Starlight.characters.StarlightSisters;
-import Starlight.util.Wiz;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -16,6 +13,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -25,8 +23,10 @@ public class StarWand extends AbstractEasyRelic {
     public static final String ID = makeID(StarWand.class.getSimpleName());
 
     HashMap<String, Integer> stats = new HashMap<>();
-    private final String ATTACKS_STAT = DESCRIPTIONS[1];
-    private final String SKILLS_STAT = DESCRIPTIONS[2];
+    private final String DAMAGE_STAT = DESCRIPTIONS[1];
+    private final String BLOCK_STAT = DESCRIPTIONS[2];
+    private final String DPC = DESCRIPTIONS[3];
+    private final String BPC = DESCRIPTIONS[4];
 
     public StarWand() {
         super(ID, RelicTier.BOSS, LandingSound.FLAT, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
@@ -78,12 +78,12 @@ public class StarWand extends AbstractEasyRelic {
     @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
         if (targetCard instanceof Starburst) {
-            stats.put(SKILLS_STAT, stats.get(SKILLS_STAT) + targetCard.block);
+            stats.put(BLOCK_STAT, stats.get(BLOCK_STAT) + targetCard.block);
         }
     }
 
     public void updateDamage(int damage) {
-        stats.put(ATTACKS_STAT, stats.get(ATTACKS_STAT) + damage);
+        stats.put(DAMAGE_STAT, stats.get(DAMAGE_STAT) + damage);
     }
 
     @Override //Should replace default relic. Big thanks papa kio
@@ -94,8 +94,8 @@ public class StarWand extends AbstractEasyRelic {
         if (p.hasRelic(MagicWand.ID)) {
             //Grab its data for relic stats if you want to carry the stats over to the boss relic
             MagicWand mw = (MagicWand) p.getRelic(MagicWand.ID);
-            stats.put(ATTACKS_STAT, mw.getAttacks());
-            stats.put(SKILLS_STAT, mw.getSkills());
+            stats.put(DAMAGE_STAT, mw.getAttacks());
+            stats.put(BLOCK_STAT, mw.getSkills());
             //Find it...
             for (int i = 0; i < p.relics.size(); ++i) {
                 if (p.relics.get(i).relicId.equals(MagicWand.ID)) {
@@ -115,32 +115,43 @@ public class StarWand extends AbstractEasyRelic {
     }
 
     public String getStatsDescription() {
-        return ATTACKS_STAT + stats.get(ATTACKS_STAT) + SKILLS_STAT + stats.get(SKILLS_STAT);
+        return DAMAGE_STAT + stats.get(DAMAGE_STAT) + BLOCK_STAT + stats.get(BLOCK_STAT);
     }
 
     public String getExtendedStatsDescription(int totalCombats, int totalTurns) {
-        return getStatsDescription();
+        // You would just return getStatsDescription() if you don't want to display per-combat and per-turn stats
+        StringBuilder builder = new StringBuilder();
+        builder.append(getStatsDescription());
+        float stat = stats.get(DAMAGE_STAT);
+        // Relic Stats truncates these extended stats to 3 decimal places, so we do the same
+        DecimalFormat perTurnFormat = new DecimalFormat("#.###");
+        builder.append(DPC);
+        builder.append(perTurnFormat.format(stat / Math.max(totalCombats, 1)));
+        stat = stats.get(BLOCK_STAT);
+        builder.append(BPC);
+        builder.append(perTurnFormat.format(stat / Math.max(totalCombats, 1)));
+        return builder.toString();
     }
 
     public void resetStats() {
-        stats.put(ATTACKS_STAT, 0);
-        stats.put(SKILLS_STAT, 0);
+        stats.put(DAMAGE_STAT, 0);
+        stats.put(BLOCK_STAT, 0);
     }
 
     public JsonElement onSaveStats() {
         // An array makes more sense if you want to store more than one stat
         Gson gson = new Gson();
         ArrayList<Integer> statsToSave = new ArrayList<>();
-        statsToSave.add(stats.get(ATTACKS_STAT));
-        statsToSave.add(stats.get(SKILLS_STAT));
+        statsToSave.add(stats.get(DAMAGE_STAT));
+        statsToSave.add(stats.get(BLOCK_STAT));
         return gson.toJsonTree(statsToSave);
     }
 
     public void onLoadStats(JsonElement jsonElement) {
         if (jsonElement != null) {
             JsonArray jsonArray = jsonElement.getAsJsonArray();
-            stats.put(ATTACKS_STAT, jsonArray.get(0).getAsInt());
-            stats.put(SKILLS_STAT, jsonArray.get(1).getAsInt());
+            stats.put(DAMAGE_STAT, jsonArray.get(0).getAsInt());
+            stats.put(BLOCK_STAT, jsonArray.get(1).getAsInt());
         } else {
             resetStats();
         }
