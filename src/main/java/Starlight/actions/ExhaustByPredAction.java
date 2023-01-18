@@ -77,7 +77,7 @@ public class ExhaustByPredAction extends AbstractGameAction {
             }
         } else {
             if (cardGroup == Wiz.adp().hand) {
-                Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[0], anyNumber, anyNumber, validCards::contains, cards -> {
+                Wiz.att(new BetterSelectCardsInHandAction(this.amount, TEXT[0], anyNumber, anyNumber, validCards::contains, cards -> {
                     for (AbstractCard c : cards) {
                         cardGroup.moveToExhaustPile(c);
                         exhaustedCards.add(c);

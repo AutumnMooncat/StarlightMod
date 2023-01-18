@@ -76,7 +76,7 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
             if (amount > validCards.size()) {
                 amount = validCards.size();
             }
-            Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[0], anyAmount, anyAmount, validCards::contains, cards -> {
+            Wiz.att(new BetterSelectCardsInHandAction(this.amount, TEXT[0], anyAmount, anyAmount, validCards::contains, cards -> {
                 for (AbstractCard c : cards) {
                     if (AbstractDungeon.player.hoveredCard == c) {
                         AbstractDungeon.player.releaseCard();
