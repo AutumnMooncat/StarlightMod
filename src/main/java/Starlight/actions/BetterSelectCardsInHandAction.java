@@ -9,16 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class BetterSelectCardsInHandAction extends AbstractGameAction {
-    private Predicate<AbstractCard> predicate;
-    private Consumer<List<AbstractCard>> callback;
-    private String text;
-    private boolean anyNumber;
-    private boolean canPickZero;
-    private ArrayList<AbstractCard> hand;
-    private ArrayList<AbstractCard> tempHand;
+    private final Predicate<AbstractCard> predicate;
+    private final Consumer<List<AbstractCard>> callback;
+    private final String text;
+    private final boolean anyNumber;
+    private final boolean canPickZero;
+    private final ArrayList<AbstractCard> hand;
+    private final ArrayList<AbstractCard> tempHand;
 
     public BetterSelectCardsInHandAction(int amount, String textForSelect, boolean anyNumber, boolean canPickZero, Predicate<AbstractCard> cardFilter, Consumer<List<AbstractCard>> callback) {
         this.amount = amount;
@@ -29,36 +28,16 @@ public class BetterSelectCardsInHandAction extends AbstractGameAction {
         this.predicate = cardFilter;
         this.callback = callback;
         this.hand = AbstractDungeon.player.hand.group;
-        this.tempHand = new ArrayList();
+        this.tempHand = new ArrayList<>();
         this.tempHand.addAll(this.hand);
-    }
-
-    public BetterSelectCardsInHandAction(int amount, String textForSelect, Predicate<AbstractCard> cardFilter, Consumer<List<AbstractCard>> callback) {
-        this(amount, textForSelect, false, false, cardFilter, callback);
-    }
-
-    public BetterSelectCardsInHandAction(int amount, String textForSelect, Consumer<List<AbstractCard>> callback) {
-        this(amount, textForSelect, false, false, (c) -> {
-            return true;
-        }, callback);
-    }
-
-    public BetterSelectCardsInHandAction(String textForSelect, Predicate<AbstractCard> cardFilter, Consumer<List<AbstractCard>> callback) {
-        this(1, textForSelect, false, false, cardFilter, callback);
-    }
-
-    public BetterSelectCardsInHandAction(String textForSelect, Consumer<List<AbstractCard>> callback) {
-        this(1, textForSelect, false, false, (c) -> {
-            return true;
-        }, callback);
     }
 
     public void update() {
         if (this.duration == this.startDuration) {
-            if (this.hand.size() != 0 && !this.hand.stream().noneMatch(this.predicate) && this.callback != null) {
+            if (this.hand.size() != 0 && this.hand.stream().anyMatch(this.predicate) && this.callback != null) {
                 this.tempHand.removeIf(this.predicate);
                 if (this.tempHand.size() > 0) {
-                    this.hand.removeIf((c) -> this.tempHand.contains(c));
+                    this.hand.removeIf(this.tempHand::contains);
                 }
                 AbstractDungeon.handCardSelectScreen.open(this.text, this.amount, this.anyNumber, this.canPickZero);
                 this.tickDuration();
