@@ -273,7 +273,7 @@
   },
   "${ModID}:Maelstrom": {
     "NAME": "Maelstrom",
-    "DESCRIPTION": "At the start of your turn, apply !M! starlight:Wet to ALL enemies."
+    "DESCRIPTION": "Whenever you discard a card during your turn, gain !M! Block."
   },
   "${ModID}:SteamBlast": {
     "NAME": "Steam Blast",
