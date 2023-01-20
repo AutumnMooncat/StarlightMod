@@ -135,7 +135,7 @@
   "${ModID}:BookOfWater": {
     "TEXT": [
       "Book of Water",
-      "Make enemies Wet to gain Block and boost the effect of other Spellbooks."
+      "Control the flow of cards to take down threats."
     ]
   },
   "${ModID}:BookOfIce": {
