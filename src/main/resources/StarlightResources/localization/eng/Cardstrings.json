@@ -281,7 +281,7 @@
   },
   "${ModID}:Flood": {
     "NAME": "Flood",
-    "DESCRIPTION": "Apply !M! starlight:Wet, Weak, and Vulnerable to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Draw cards until your hand is full. NL Apply !M! Vulnerable to ALL enemies. NL Exhaust."
   },
   "${ModID}:Whirlpool": {
     "NAME": "Whirlpool",
