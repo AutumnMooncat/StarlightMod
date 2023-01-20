@@ -29,7 +29,7 @@ public class BrineArrow extends AbstractMagickCard {
     public BrineArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = EFFECT;
+        //baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_WATER);
         tags.add(CustomTags.STARLIGHT_ARROW);
     }
@@ -57,12 +57,12 @@ public class BrineArrow extends AbstractMagickCard {
         this.isDamageModified = baseDamage != damage;
     }
 
-/*    public void triggerOnGlowCheck() {
+    public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         if (GameActionManager.totalDiscardedThisTurn > 0) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
-    }*/
+    }
 
     public void upp() {
         upgradeDamage(UP_DMG);
