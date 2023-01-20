@@ -1,20 +1,14 @@
 package Starlight.cards.bookOfWater;
 
-import Starlight.actions.ApplyPowerActionWithFollowup;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BurnPower;
-import Starlight.powers.MudPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.blue.MultiCast;
+import com.megacrit.cardcrawl.actions.unique.RandomCardFromDiscardPileToHandAction;
 import com.megacrit.cardcrawl.cards.red.ThunderClap;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.GainStrengthPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -27,8 +21,8 @@ public class MuddyWaters extends AbstractMagickCard {
 
     private static final int COST = 1;
     private static final int DMG = 9;
-    private static final int UP_DMG = 3;
-    private static final int EFFECT = 3;
+    private static final int UP_DMG = 1;
+    private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
     public MuddyWaters() {
@@ -40,8 +34,12 @@ public class MuddyWaters extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        //Wiz.applyToEnemy(m, new MudPower(m, magicNumber));
-        addToBot(new ApplyPowerActionWithFollowup(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber), new ApplyPowerAction(m, p, new GainStrengthPower(m, magicNumber), magicNumber)));
+        //addToBot(new ApplyPowerActionWithFollowup(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber), new ApplyPowerAction(m, p, new GainStrengthPower(m, magicNumber), magicNumber)));
+        //Wiz.atb(new DrawCardAction(magicNumber));
+        //Wiz.atb(new DiscardAction(p, p, magicNumber, false));
+        for (int i = 0 ; i < magicNumber ; i++) {
+            Wiz.atb(new RandomCardFromDiscardPileToHandAction());
+        }
     }
 
     public void upp() {

@@ -265,7 +265,7 @@
   },
   "${ModID}:MuddyWaters": {
     "NAME": "Muddy Waters",
-    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength this turn."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Put !M! random card{!M!|>1=s} from your discard pile into your hand."
   },
   "${ModID}:Deluge": {
     "NAME": "Deluge",
