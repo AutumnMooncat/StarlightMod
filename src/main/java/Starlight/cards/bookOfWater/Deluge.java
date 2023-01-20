@@ -6,12 +6,11 @@ import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.purple.Brilliance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
@@ -52,7 +51,8 @@ public class Deluge extends AbstractMagickCard {
 
     @Override
     public void triggerOnManualDiscard() {
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, false));
+        Wiz.atb(new NewQueueCardAction(this, true, false, true));
+        //AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, false));
         Wiz.adp().discardPile.removeCard(this);
     }
 
