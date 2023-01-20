@@ -245,7 +245,7 @@
 
   "${ModID}:WaterBall": {
     "NAME": "Water Ball",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Wet."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Discard !M! card{!M!|>1=s}."
   },
   "${ModID}:BrineArrow": {
     "NAME": "Brine Arrow",
