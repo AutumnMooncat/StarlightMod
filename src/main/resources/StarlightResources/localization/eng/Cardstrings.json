@@ -269,7 +269,7 @@
   },
   "${ModID}:Deluge": {
     "NAME": "Deluge",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to !M! times the target's starlight:Wet."
+    "DESCRIPTION": "Deal !D! damage. NL If this card is discarded from your hand, play it instead."
   },
   "${ModID}:Maelstrom": {
     "NAME": "Maelstrom",

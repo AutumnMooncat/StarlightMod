@@ -1,19 +1,17 @@
 package Starlight.cards.bookOfWater;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BurnPower;
-import Starlight.powers.WetPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.purple.Brilliance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
@@ -27,8 +25,8 @@ public class Deluge extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 9;
-    private static final int UP_DMG = 1;
+    private static final int DMG = 11;
+    private static final int UP_DMG = 4;
     private static final int EFFECT = 3;
     private static final int UP_EFFECT = 1;
 
@@ -37,7 +35,7 @@ public class Deluge extends AbstractMagickCard {
     public Deluge() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = EFFECT;
+        //baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_WATER);
         //exhaust = true;
     }
@@ -53,6 +51,12 @@ public class Deluge extends AbstractMagickCard {
     }
 
     @Override
+    public void triggerOnManualDiscard() {
+        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, false));
+        Wiz.adp().discardPile.removeCard(this);
+    }
+
+    /*@Override
     public void calculateCardDamage(AbstractMonster mo) {
         magicLastFrame = magicNumber;
         int base = baseDamage;
@@ -75,11 +79,11 @@ public class Deluge extends AbstractMagickCard {
             return c.getPower(WetPower.POWER_ID).amount;
         }
         return 0;
-    }
+    }*/
 
     public void upp() {
-        //upgradeDamage(UP_DMG);
-        upgradeMagicNumber(UP_EFFECT);
+        upgradeDamage(UP_DMG);
+        //upgradeMagicNumber(UP_EFFECT);
         //exhaust = false;
         //uDesc();
     }
