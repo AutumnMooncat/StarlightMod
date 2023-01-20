@@ -277,7 +277,7 @@
   },
   "${ModID}:SteamBlast": {
     "NAME": "Steam Blast",
-    "DESCRIPTION": "Deal !D! damage. NL Apply starlight:Burn equal to the target's starlight:Wet."
+    "DESCRIPTION": "{@@}Deal !D! damage for each card in your hand.{!Location!|0= NL (Deals !Starlight:I! damage)}"
   },
   "${ModID}:Flood": {
     "NAME": "Flood",
