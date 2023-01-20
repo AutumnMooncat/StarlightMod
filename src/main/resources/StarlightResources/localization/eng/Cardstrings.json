@@ -450,7 +450,7 @@
   },
   "${ModID}:StickySap": {
     "NAME": "Sticky Sap",
-    "DESCRIPTION": "Retain. NL Apply !M! starlight:Tangled. NL Apply !M! starlight:Wet. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Apply !M! starlight:Tangled. NL Exhaust."
   },
   "${ModID}:SolarBlade": {
     "NAME": "Solar Blade",

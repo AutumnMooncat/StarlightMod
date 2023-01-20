@@ -1,14 +1,11 @@
 package Starlight.cards.bookOfNature;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BarbPower;
 import Starlight.powers.TanglePower;
-import Starlight.powers.WetPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.colorless.Violence;
-import com.megacrit.cardcrawl.cards.purple.Worship;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -35,7 +32,7 @@ public class StickySap extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToEnemy(m, new TanglePower(m, magicNumber));
-        Wiz.applyToEnemy(m, new WetPower(m, magicNumber));
+        //Wiz.applyToEnemy(m, new WetPower(m, magicNumber));
     }
 
     public void upp() {
