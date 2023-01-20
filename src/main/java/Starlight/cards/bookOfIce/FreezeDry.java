@@ -1,15 +1,13 @@
 package Starlight.cards.bookOfIce;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.WetPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
-import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.blue.Hyperbeam;
-import com.megacrit.cardcrawl.cards.tempCards.Expunger;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -37,7 +35,7 @@ public class FreezeDry extends AbstractMagickCard {
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         int base = baseDamage;
-        if (mo.hasPower(WetPower.POWER_ID)) {
+        if (mo.hasPower(WeakPower.POWER_ID)) {
             baseDamage *= 2;
         }
         super.calculateCardDamage(mo);
