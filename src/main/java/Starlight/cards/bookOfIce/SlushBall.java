@@ -2,7 +2,6 @@ package Starlight.cards.bookOfIce;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.ChillPower;
-import Starlight.powers.WetPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
@@ -20,10 +19,10 @@ public class SlushBall extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 1;
-    private static final int DMG = 7;
+    private static final int COST = 2;
+    private static final int DMG = 14;
     private static final int UP_DMG = 2;
-    private static final int EFFECT = 1;
+    private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
     public SlushBall() {
@@ -36,7 +35,7 @@ public class SlushBall extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.applyToEnemy(m, new WetPower(m, magicNumber));
+        //Wiz.applyToEnemy(m, new WetPower(m, magicNumber));
         Wiz.applyToEnemy(m, new ChillPower(m, magicNumber));
     }
 
