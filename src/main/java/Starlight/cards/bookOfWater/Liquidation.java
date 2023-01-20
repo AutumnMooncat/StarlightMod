@@ -1,11 +1,12 @@
 package Starlight.cards.bookOfWater;
 
+import Starlight.actions.FlowAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.blue.Melter;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,9 +20,9 @@ public class Liquidation extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 0;
-    private static final int DMG = 8;
-    private static final int UP_DMG = 2;
+    private static final int COST = 3;
+    private static final int DMG = 17;
+    private static final int UP_DMG = 6;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
@@ -33,8 +34,12 @@ public class Liquidation extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new RemoveAllBlockAction(m, p));
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        dmg(m, AbstractGameAction.AttackEffect.FIRE);
+        Wiz.atb(new FlowAction(cards -> {
+            if (!cards.isEmpty()) {
+                Wiz.att(new GainEnergyAction(cards.size()*magicNumber));
+            }
+        }));
         //Wiz.applyToEnemy(m, new WetPower(m, magicNumber));
     }
 

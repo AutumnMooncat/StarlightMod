@@ -297,7 +297,7 @@
   },
   "${ModID}:Liquidation": {
     "NAME": "Liquidation",
-    "DESCRIPTION": "Remove all Block from the enemy. NL Deal !D! damage."
+    "DESCRIPTION": "Deal !D! damage. NL Discard any number of cards. Gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}{@@} for each card discarded."
   },
   "${ModID}:Torrent": {
     "NAME": "Torrent",
