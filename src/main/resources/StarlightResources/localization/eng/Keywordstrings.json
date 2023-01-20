@@ -269,5 +269,12 @@
       "eternal"
     ],
     "DESCRIPTION": "Whenever this card would Exhaust, add it into your hand. It costs 0 this turn."
+  },
+  {
+    "PROPER_NAME": "Quickdraw",
+    "NAMES": [
+      "quickdraw"
+    ],
+    "DESCRIPTION": "Whenever this card is drawn, draw a card."
   }
 ]

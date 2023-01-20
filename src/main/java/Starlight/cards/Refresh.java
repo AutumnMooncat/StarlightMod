@@ -6,6 +6,7 @@ import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.blue.Consume;
@@ -51,6 +52,11 @@ public class Refresh extends AbstractEasyCard {
                 this.isDone = true;
             }
         });
+    }
+
+    @Override
+    public void triggerWhenDrawn() {
+        Wiz.atb(new DrawCardAction(1));
     }
 
     public void upp() {

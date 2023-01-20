@@ -139,7 +139,7 @@
   },
   "${ModID}:Refresh": {
     "NAME": "Refresh",
-    "DESCRIPTION": "Gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} for every !Starlight:M2! starlight:SP you have.{@@}"
+    "DESCRIPTION": "starlight:Quickdraw. NL Gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]} for every !Starlight:M2! starlight:SP you have.{@@}"
   },
   "${ModID}:Resolve": {
     "NAME": "Resolve",
