@@ -1,17 +1,16 @@
 package Starlight.cards.bookOfWater;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.WetPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.unique.GainEnergyIfDiscardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.green.Skewer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -25,7 +24,7 @@ public class BrineArrow extends AbstractMagickCard {
     private static final int COST = 1;
     private static final int DMG = 7;
     private static final int UP_DMG = 3;
-    private static final int EFFECT = 2;
+    private static final int EFFECT = 1;
 
     public BrineArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -37,9 +36,13 @@ public class BrineArrow extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        if (m.hasPower(WetPower.POWER_ID)) {
-            Wiz.atb(new ApplyPowerAction(m, p, new WeakPower(m, magicNumber, false)));
-            //Wiz.atb(new LoseHPAction(m, p, magicNumber, AbstractGameAction.AttackEffect.FIRE));
+        Wiz.atb(new GainEnergyIfDiscardAction(magicNumber));
+    }
+
+    public void triggerOnGlowCheck() {
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (GameActionManager.totalDiscardedThisTurn > 0) {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
 

@@ -249,7 +249,7 @@
   },
   "${ModID}:BrineArrow": {
     "NAME": "Brine Arrow",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy has starlight:Wet, apply !M! Weak."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL If you have discarded a card this turn, NL gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}."
   },
   "${ModID}:Hydration": {
     "NAME": "Hydration",
