@@ -257,7 +257,7 @@
   },
   "${ModID}:Scald": {
     "NAME": "Scald",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Burn."
+    "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! this combat."
   },
   "${ModID}:BubbleShield": {
     "NAME": "Bubble Shield",

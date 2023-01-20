@@ -1,14 +1,11 @@
 package Starlight.cards.bookOfWater;
 
-import Starlight.cards.Anticipate;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BurnPower;
-import Starlight.powers.WetPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.purple.DeceiveReality;
+import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.cards.red.Hemokinesis;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -33,12 +30,13 @@ public class Scald extends AbstractMagickCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_WATER);
-        tags.add(CustomTags.STARLIGHT_APPLIES_BURN);
+        //tags.add(CustomTags.STARLIGHT_APPLIES_BURN);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.applyToEnemy(m, new BurnPower(m, p, magicNumber));
+        Wiz.atb(new ModifyDamageAction(uuid, magicNumber));
+        //Wiz.applyToEnemy(m, new BurnPower(m, p, magicNumber));
     }
 
     public void upp() {
