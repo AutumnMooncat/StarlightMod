@@ -2,11 +2,9 @@ package Starlight.cards.bookOfTime;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.PulsePower;
-import Starlight.powers.SpellPower;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.blue.Electrodynamics;
-import com.megacrit.cardcrawl.cards.green.Expertise;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -19,8 +17,8 @@ public class Pulse extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 2;
-    private static final int UP_COST = 1;
+    private static final int COST = 3;
+    private static final int UP_COST = 2;
     private static final int SP = 1;
     private static final int UP_SP = 1;
 
