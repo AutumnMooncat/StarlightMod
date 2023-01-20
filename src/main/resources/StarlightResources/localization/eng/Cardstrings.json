@@ -261,7 +261,7 @@
   },
   "${ModID}:BubbleShield": {
     "NAME": "Bubble Shield",
-    "DESCRIPTION": "Gain !B! Block. NL Whenever you are attacked this turn, apply !M! starlight:Wet back."
+    "DESCRIPTION": "Gain !B! Block. NL If this card is discarded from your hand, increase its Block by !M! this combat."
   },
   "${ModID}:MuddyWaters": {
     "NAME": "Muddy Waters",
