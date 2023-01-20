@@ -285,7 +285,7 @@
   },
   "${ModID}:Whirlpool": {
     "NAME": "Whirlpool",
-    "DESCRIPTION": "At the end of your turn, ALL enemies take !M! damage for each starlight:Wet they have."
+    "DESCRIPTION": "Whenever you discard a card during your turn, deal !M! damage to ALL enemies."
   },
   "${ModID}:Flow": {
     "NAME": "Flow",

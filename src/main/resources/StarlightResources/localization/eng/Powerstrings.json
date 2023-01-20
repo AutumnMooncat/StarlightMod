@@ -130,7 +130,7 @@
   },
   "${ModID}:WhirlpoolPower": {
     "NAME": "Whirlpool",
-    "DESCRIPTIONS": ["At the end of your turn, ALL enemies take #b"," damage for each #yWet they have."]
+    "DESCRIPTIONS": ["Whenever you discard a card during your turn, deal #b"," damage to ALL enemies."]
   },
   "${ModID}:PosturingPower": {
     "NAME": "Posturing",
