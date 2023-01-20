@@ -2,21 +2,15 @@ package Starlight.powers.abilities;
 
 import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
-import Starlight.powers.ChillPower;
-import Starlight.powers.WetPower;
-import Starlight.powers.interfaces.RenderOnCardPower;
+import Starlight.powers.interfaces.OnManualDiscardPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
-public class SoakPower extends AbstractPower implements RenderOnCardPower {
+public class SoakPower extends AbstractPower implements OnManualDiscardPower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(SoakPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -41,14 +35,14 @@ public class SoakPower extends AbstractPower implements RenderOnCardPower {
         applied = false;
     }
 
-    @Override
+    /*@Override
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
         if (isActive() && target != owner && !applied && target.hasPower(WetPower.POWER_ID) && info.type == DamageInfo.DamageType.NORMAL) {
             flash();
             Wiz.atb(new DrawCardAction(amount));
             applied = true;
         }
-    }
+    }*/
 
     private boolean isActive() {
         return owner instanceof StarlightSisters && ((StarlightSisters) owner).attackerInFront == prim;
@@ -71,8 +65,18 @@ public class SoakPower extends AbstractPower implements RenderOnCardPower {
         }
     }
 
-    @Override
+    //TODO - Add rendering back for cards that discard.
+    /*@Override
     public boolean shouldRender(AbstractCard card) {
         return isActive() && card.type == AbstractCard.CardType.ATTACK && !applied && AbstractDungeon.getMonsters().monsters.stream().anyMatch(m -> !m.isDeadOrEscaped() && m.hasPower(WetPower.POWER_ID));
+    }*/
+
+    @Override
+    public void onManualDiscard() {
+        if (isActive() && !applied) {
+            flash();
+            Wiz.atb(new DrawCardAction(amount));
+            applied = true;
+        }
     }
 }

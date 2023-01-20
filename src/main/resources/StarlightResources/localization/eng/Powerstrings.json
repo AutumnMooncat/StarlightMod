@@ -249,7 +249,7 @@
   },
   "${ModID}:SoakPower": {
     "NAME": "Soak",
-    "DESCRIPTIONS": ["The first time #yPrimrose attacks a #yWet enemy each turn, draw #b","The first time #yLuna attacks a #yWet enemy each turn, draw #b"," card.", "cards."]
+    "DESCRIPTIONS": ["The first time #yPrimrose discards a card each turn, draw #b","The first time #yLuna discards a card each turn, draw #b"," card.","cards."]
   },
   "${ModID}:SnowCloakPower": {
     "NAME": "Snow Cloak",
