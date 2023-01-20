@@ -249,7 +249,7 @@
   },
   "${ModID}:BrineArrow": {
     "NAME": "Brine Arrow",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL If you have discarded a card this turn, NL gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL Deals double damage if you have discarded a card this turn."
   },
   "${ModID}:Hydration": {
     "NAME": "Hydration",

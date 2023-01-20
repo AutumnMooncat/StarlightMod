@@ -36,15 +36,33 @@ public class BrineArrow extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.atb(new GainEnergyIfDiscardAction(magicNumber));
+        //Wiz.atb(new GainEnergyIfDiscardAction(magicNumber));
     }
 
-    public void triggerOnGlowCheck() {
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (GameActionManager.totalDiscardedThisTurn > 0) {
+            this.damage *= 2;
+        }
+        this.isDamageModified = baseDamage != damage;
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        if (GameActionManager.totalDiscardedThisTurn > 0) {
+            this.damage *= 2;
+        }
+        this.isDamageModified = baseDamage != damage;
+    }
+
+/*    public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         if (GameActionManager.totalDiscardedThisTurn > 0) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
-    }
+    }*/
 
     public void upp() {
         upgradeDamage(UP_DMG);
