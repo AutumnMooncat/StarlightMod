@@ -2,6 +2,7 @@ package Starlight.actions;
 
 import Starlight.TheStarlightMod;
 import Starlight.util.Wiz;
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,8 +11,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -34,21 +33,13 @@ public class FlowAction extends AbstractGameAction {
             this.isDone = true;
         }
 
-        HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
-        ArrayList<AbstractCard> selection = new ArrayList<>();
-        for (AbstractCard c : hand.group) {
-            AbstractCard copy = c.makeStatEquivalentCopy();
-            copyMap.put(copy, c);
-            selection.add(copy);
-        }
-
-        Wiz.att(new BetterSelectCardsCenteredAction(selection, 99, TEXT[1], true, c -> true, cards -> {
-            for (AbstractCard copy : cards) {
-                AbstractCard c = copyMap.get(copy);
+        Wiz.att(new BetterSelectCardsInHandAction(BaseMod.MAX_HAND_SIZE, TEXT[0], true, true, c -> true, cards -> {
+            for (AbstractCard c : cards) {
                 hand.moveToDiscardPile(c);
                 c.triggerOnManualDiscard();
                 GameActionManager.incrementDiscard(false);
             }
+            cards.clear(); // Remove from selection, so they don't get added back to hand
             if (!cards.isEmpty()) {
                 Wiz.applyToSelf(new DrawCardNextTurnPower(Wiz.adp(), cards.size()));
             }
