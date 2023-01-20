@@ -253,7 +253,7 @@
   },
   "${ModID}:Hydration": {
     "NAME": "Hydration",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! starlight:Wet to ALL enemies."
+    "DESCRIPTION": "starlight:Quickdraw. NL Gain !B! Block."
   },
   "${ModID}:Scald": {
     "NAME": "Scald",
