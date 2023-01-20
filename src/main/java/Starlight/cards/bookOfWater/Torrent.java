@@ -23,7 +23,7 @@ public class Torrent extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int DMG = 5;
     private static final int UP_DMG = 2;
     private static final int EFFECT = 2;
@@ -39,7 +39,7 @@ public class Torrent extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
+        //dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         Wiz.atb(new PredicateDrawPileToHandAction(magicNumber, c -> c.costForTurn == 0 || c.freeToPlayOnce));
     }
 
@@ -52,8 +52,10 @@ public class Torrent extends AbstractMagickCard {
     }
 
     public void upp() {
-        upgradeDamage(UP_DMG);
+        //upgradeDamage(UP_DMG);
         //upgradeMagicNumber(UP_EFFECT);
+        exhaust = false;
+        uDesc();
     }
 
     @Override
