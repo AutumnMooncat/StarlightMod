@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -39,11 +38,8 @@ public class FlowAction extends AbstractGameAction {
                 c.triggerOnManualDiscard();
                 GameActionManager.incrementDiscard(false);
             }
-            cards.clear(); // Remove from selection, so they don't get added back to hand
-            if (!cards.isEmpty()) {
-                Wiz.applyToSelf(new DrawCardNextTurnPower(Wiz.adp(), cards.size()));
-            }
             pickedCards.accept(cards);
+            cards.clear(); // Remove from selection, so they don't get added back to hand
         }));
 
         this.isDone = true;

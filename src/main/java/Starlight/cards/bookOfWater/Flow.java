@@ -2,16 +2,14 @@ package Starlight.cards.bookOfWater;
 
 import Starlight.actions.FlowAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.WetPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
-import com.megacrit.cardcrawl.cards.blue.ColdSnap;
 import com.megacrit.cardcrawl.cards.purple.Tranquility;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -34,7 +32,11 @@ public class Flow extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.atb(new FlowAction());
+        Wiz.atb(new FlowAction(cards -> {
+            if (!cards.isEmpty()) {
+                Wiz.applyToSelfTop(new DrawCardNextTurnPower(Wiz.adp(), cards.size()));
+            }
+        }));
     }
 
     public void upp() {
