@@ -22,7 +22,7 @@ public class ManaConversionPower extends AbstractPower implements OnGainEnergyPo
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("forcefield");
+        this.loadRegion("deva2");
         updateDescription();
     }
 
