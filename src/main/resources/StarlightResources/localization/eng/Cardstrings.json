@@ -297,7 +297,7 @@
   },
   "${ModID}:Liquidation": {
     "NAME": "Liquidation",
-    "DESCRIPTION": "Remove all Block from the enemy. NL Deal !D! damage. NL Apply !M! starlight:Wet."
+    "DESCRIPTION": "Remove all Block from the enemy. NL Deal !D! damage."
   },
   "${ModID}:Torrent": {
     "NAME": "Torrent",

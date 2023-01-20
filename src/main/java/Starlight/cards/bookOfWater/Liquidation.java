@@ -1,15 +1,12 @@
 package Starlight.cards.bookOfWater;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.MudPower;
-import Starlight.powers.WetPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
 import com.megacrit.cardcrawl.cards.blue.Melter;
-import com.megacrit.cardcrawl.cards.red.ThunderClap;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -38,12 +35,12 @@ public class Liquidation extends AbstractMagickCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new RemoveAllBlockAction(m, p));
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.applyToEnemy(m, new WetPower(m, magicNumber));
+        //Wiz.applyToEnemy(m, new WetPower(m, magicNumber));
     }
 
     public void upp() {
         upgradeDamage(UP_DMG);
-        upgradeMagicNumber(UP_EFFECT);
+        //upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
