@@ -126,6 +126,12 @@
       "Time Cards"
     ]
   },
+  "${ModID}:RandomButton": {
+    "TEXT": [
+      "Randomize!",
+      "Leave it to fate."
+    ]
+  },
   "${ModID}:BookOfFire": {
     "TEXT": [
       "Book of Fire",
