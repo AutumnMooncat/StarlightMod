@@ -24,7 +24,7 @@ public class WhirlpoolPower extends AbstractPower implements OnManualDiscardPowe
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("amplify");
+        this.loadRegion("evolve");
         updateDescription();
     }
 
