@@ -1,18 +1,19 @@
 package Starlight.cards.bookOfNature;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BarbPower;
-import Starlight.powers.BurnPower;
 import Starlight.powers.TanglePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import Starlight.vfx.AngledFlashAtkImgEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.green.Flechettes;
-import com.megacrit.cardcrawl.cards.red.FlameBarrier;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
@@ -38,24 +39,44 @@ public class LeafStorm extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.forAllMonstersLiving(mon -> {
-            if (mon.hasPower(BurnPower.POWER_ID)) {
-                Wiz.atb(new VFXAction(new FlashAtkImgEffect(mon.hb.cX, mon.hb.cY, AbstractGameAction.AttackEffect.FIRE, false)));
+        Wiz.atb(new SFXAction("ATTACK_FAST"));
+        Wiz.atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                Wiz.forAllMonstersLiving(mon -> {
+                    AbstractDungeon.effectList.add(new FlashAtkImgEffect(mon.hb.cX - 66F * Settings.scale, mon.hb.cY - 66F * Settings.scale, AttackEffect.SLASH_HORIZONTAL, true));
+                });
+                this.isDone = true;
             }
         });
-        allDmg(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
-    }
+        Wiz.atb(new WaitAction(0.15f));
+        Wiz.atb(new SFXAction("ATTACK_FAST"));
+        Wiz.atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                Wiz.forAllMonstersLiving(mon -> {
+                    AbstractDungeon.effectList.add(new FlashAtkImgEffect(mon.hb.cX, mon.hb.cY, AttackEffect.SLASH_HORIZONTAL, true));
+                });
+                this.isDone = true;
+            }
+        });
+        Wiz.atb(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
+        Wiz.atb(new SFXAction("ATTACK_FAST"));
+        Wiz.atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                Wiz.forAllMonstersLiving(mon -> {
+                    AbstractDungeon.effectList.add(new FlashAtkImgEffect(mon.hb.cX + 66F * Settings.scale, mon.hb.cY + 66F * Settings.scale, AttackEffect.SLASH_HORIZONTAL, true));
+                });
+                this.isDone = true;
+            }
+        });
 
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        super.calculateCardDamage(mo);
-        Wiz.forAllMonstersLiving(m -> {
-            if (m.hasPower(BurnPower.POWER_ID)) {
-                multiDamage[AbstractDungeon.getMonsters().monsters.indexOf(m)] *= 2;
+        Wiz.forAllMonstersLiving(mon -> {
+            if (mon.hasPower(TanglePower.POWER_ID)) {
+                Wiz.atb(new DamageAction(mon, new DamageInfo(p, multiDamage[AbstractDungeon.getMonsters().monsters.indexOf(mon)], damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, true));
             }
         });
-        damage = multiDamage[0];
-        isDamageModified = damage != baseDamage;
     }
 
     public void upp() {

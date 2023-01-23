@@ -474,7 +474,7 @@
   },
   "${ModID}:LeafStorm": {
     "NAME": "Leaf Storm",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. Deals double damage to starlight:Burning enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. starlight:Tangled enemies are hit twice."
   },
   "${ModID}:Bloom": {
     "NAME": "Bloom",
