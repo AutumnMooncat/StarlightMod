@@ -6,6 +6,7 @@ import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.purple.DeceiveReality;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,9 +20,9 @@ public class WaterBall extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 0;
-    private static final int DMG = 7;
-    private static final int UP_DMG = 2;
+    private static final int COST = 1;
+    private static final int DMG = 8;
+    private static final int UP_DMG = 3;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
@@ -35,6 +36,7 @@ public class WaterBall extends AbstractMagickCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         //Wiz.applyToEnemy(m, new WetPower(m, magicNumber));
+        Wiz.atb(new DrawCardAction(magicNumber));
         Wiz.atb(new DiscardAction(p, p, magicNumber, false));
     }
 
