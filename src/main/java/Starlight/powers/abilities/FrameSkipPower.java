@@ -15,14 +15,13 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class FrameSkipPower extends AbstractPower /*implements RenderOnCardPower, OnSwapPower*/ {
+public class FrameSkipPower extends AbstractPower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(FrameSkipPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private boolean prim;
-    private boolean applied;
     private int stored;
 
     public FrameSkipPower(AbstractCreature owner, int amount, boolean prim) {
@@ -35,17 +34,6 @@ public class FrameSkipPower extends AbstractPower /*implements RenderOnCardPower
         this.loadRegion("amplify");
         updateDescription();
     }
-
-    //TODO - rework to something less OP?
-    // Ideas:
-    // Some damage negated each turn? Could lower like Tungsten Rod, or carry over to next turn like Snail Shell
-    /*@Override
-    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (isActive() && (card.exhaust || action.exhaustCard) && !card.purgeOnUse) {
-            flash();
-            Wiz.atb(new DrawCardAction(amount));
-        }
-    }*/
 
     @Override
     public void atStartOfTurn() {
@@ -80,31 +68,5 @@ public class FrameSkipPower extends AbstractPower /*implements RenderOnCardPower
         } else {
             this.description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
         }
-        /*if (amount == 1) {
-            if (prim) {
-                this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
-            } else {
-                this.description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
-            }
-        } else {
-            if (prim) {
-                this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[3];
-            } else {
-                this.description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[3];
-            }
-        }*/
     }
-
-    /*@Override
-    public boolean shouldRender(AbstractCard card) {
-        return isActive() && card.hasTag(CustomTags.STARLIGHT_SWAPS);
-    }
-
-    @Override
-    public void onSwap(boolean toPrim) {
-        if (!isActive()) {
-            flash();
-            Wiz.atb(new DrawCardAction(amount));
-        }
-    }*/
 }
