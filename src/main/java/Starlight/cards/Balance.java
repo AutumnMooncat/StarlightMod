@@ -1,7 +1,6 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.ProvidencePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
@@ -40,36 +39,6 @@ public class Balance extends AbstractEasyCard {
         dmg(m, AbstractGameAction.AttackEffect.NONE);
         Wiz.applyToSelf(new ProvidencePower(Wiz.adp(), magicNumber));
     }
-
-    /*public void calculateCardDamage(AbstractMonster mo) {
-        int realBaseDamage = this.baseDamage;
-        this.baseDamage += this.magicNumber * countCards();
-        super.calculateCardDamage(mo);
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
-    }
-
-    public void applyPowers() {
-        int realBaseDamage = this.baseDamage;
-        this.baseDamage += this.magicNumber * countCards();
-        super.applyPowers();
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
-    }
-
-    private int countCards() {
-        return (int) (Wiz.adp().drawPile.group.stream().filter(c -> c.type == CardType.STATUS).count() +
-                Wiz.adp().hand.group.stream().filter(c -> c.type == CardType.STATUS).count() +
-                Wiz.adp().discardPile.group.stream().filter(c -> c.type == CardType.STATUS).count());
-    }*/
-
-    /*@Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
-    }*/
 
     public void upp() {
         upgradeDamage(UP_DAMAGE);

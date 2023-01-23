@@ -28,8 +28,7 @@
   },
   "${ModID}:Balance": {
     "NAME": "Balance",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! starlight:Providence.",
-    "EXTENDED_DESCRIPTION": ["Lifebreak"]
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! starlight:Providence."
   },
   "${ModID}:Banish": {
     "NAME": "Banish",
@@ -69,11 +68,6 @@
     "NAME": "Enlighten",
     "DESCRIPTION": "{@@}Gain !B! Block. NL When you draw this card, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}."
   },
-  "${ModID}:Fire": {
-    "NAME": "Fire",
-    "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! this combat.",
-    "EXTENDED_DESCRIPTION": ["Fira"]
-  },
   "${ModID}:Fortify": {
     "NAME": "Fortify",
     "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Increases Block gained from cards by !M!.",
@@ -93,8 +87,7 @@
   },
   "${ModID}:Imperil": {
     "NAME": "Imperil",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable.",
-    "EXTENDED_DESCRIPTION": ["Imperilga"]
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable."
   },
   "${ModID}:Incantation": {
     "NAME": "Incantation",
@@ -122,11 +115,6 @@
   "${ModID}:Prepare": {
     "NAME": "Prepare",
     "DESCRIPTION": "{@@}Gain !B! Block. NL Gain !M! starlight:SP.{!Starlight:IsSisters!|1= NL starlight:Swap.}"
-  },
-  "${ModID}:Quake": {
-    "NAME": "Quake",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Reduce this card's cost by !M! this combat.",
-    "EXTENDED_DESCRIPTION": ["Quakra"]
   },
   "${ModID}:Quicksilver": {
     "NAME": "Quicksilver",
@@ -168,8 +156,7 @@
   },
   "${ModID}:Star": {
     "NAME": "Star",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1=s} in your hand.",
-    "EXTENDED_DESCRIPTION": ["Stara"]
+    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1=s} in your hand."
   },
   "${ModID}:Starburst": {
     "NAME": "Starburst",
@@ -211,11 +198,6 @@
     "NAME": "Thrash",
     "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you starlight:Swap, increase this card's damage by !M! this combat."
   },
-  "${ModID}:Thunder": {
-    "NAME": "Thunder",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable.",
-    "EXTENDED_DESCRIPTION": ["Thundara"]
-  },
   "${ModID}:Transcribe": {
     "NAME": "Transcribe",
     "DESCRIPTION": "{@@}Replace this card with a copy of the last starlight:Magick card played this combat. NL It costs 0 this turn.",
@@ -229,11 +211,6 @@
   "${ModID}:WandWhack": {
     "NAME": "Wand Whack",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Jinx."
-  },
-  "${ModID}:Water": {
-    "NAME": "Water",
-    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage.",
-    "EXTENDED_DESCRIPTION": ["Watera"]
   },
   "${ModID}:WildMagick": {
     "NAME": "Wild Magick",

@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class ArcaneArrow extends AbstractMagickCard {
+public class ArcaneArrow extends AbstractEasyCard {
     public final static String ID = makeID(ArcaneArrow.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;

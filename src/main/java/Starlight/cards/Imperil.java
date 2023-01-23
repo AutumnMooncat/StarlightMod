@@ -1,5 +1,6 @@
 package Starlight.cards;
 
+import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.vfx.combat.ScrapeEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class Imperil extends AbstractMagickCard {
+public class Imperil extends AbstractEasyCard {
     public final static String ID = makeID(Imperil.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -39,14 +40,6 @@ public class Imperil extends AbstractMagickCard {
         dmg(m, AbstractGameAction.AttackEffect.NONE);
         Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
         Wiz.applyToEnemy(m, new VulnerablePower(m, magicNumber, false));
-    }
-
-    @Override
-    protected void upgradeName() {
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.EXTENDED_DESCRIPTION[0];
-        this.initializeTitle();
     }
 
     public void upp() {
