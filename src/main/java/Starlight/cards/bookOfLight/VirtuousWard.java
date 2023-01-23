@@ -1,6 +1,5 @@
 package Starlight.cards.bookOfLight;
 
-import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.ProvidencePower;
 import Starlight.util.CardArtRoller;
@@ -29,7 +28,7 @@ public class VirtuousWard extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
-        exhaust = true;
+        //exhaust = true;
         selfRetain = true;
         tags.add(CustomTags.STARLIGHT_LIGHT);
     }
