@@ -253,7 +253,7 @@
   },
   "${ModID}:Hydration": {
     "NAME": "Hydration",
-    "DESCRIPTION": "starlight:Quickdraw. NL Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block twice."
   },
   "${ModID}:Scald": {
     "NAME": "Scald",
