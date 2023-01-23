@@ -750,7 +750,7 @@
   },
   "${ModID}:Blink": {
     "NAME": "Blink",
-    "DESCRIPTION": "Gain !B! Block. NL Next turn, draw !M! additional cards."
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, gain !B! Block."
   },
   "${ModID}:TimeOut": {
     "NAME": "Time Out",
