@@ -3,7 +3,11 @@ package Starlight.cards.bookOfIce;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
+import Starlight.util.Wiz;
+import Starlight.vfx.ColoredMindBlastEffect;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.blue.Hyperbeam;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,6 +33,7 @@ public class FreezeDry extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        Wiz.atb(new VFXAction(new ColoredMindBlastEffect(p.dialogX, p.dialogY, p.flipHorizontal, Color.CYAN.cpy())));
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
     }
 
