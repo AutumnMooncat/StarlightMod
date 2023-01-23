@@ -289,7 +289,7 @@
   },
   "${ModID}:Flow": {
     "NAME": "Flow",
-    "DESCRIPTION": "Deal !D! damage. NL Discard any number of cards. Draw that many cards next turn."
+    "DESCRIPTION": "Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
   },
   "${ModID}:Riptide": {
     "NAME": "Riptide",
