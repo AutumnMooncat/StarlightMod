@@ -575,7 +575,7 @@
   },
   "${ModID}:VirtuousWard": {
     "NAME": "Virtuous Ward",
-    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Gain !M! starlight:Providence. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Gain !M! starlight:Providence."
   },
   "${ModID}:SacredFlame": {
     "NAME": "Sacred Flame",

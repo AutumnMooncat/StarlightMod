@@ -20,8 +20,8 @@ public class VirtuousWard extends AbstractMagickCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 2;
-    private static final int BLK = 12;
-    private static final int UP_BLK = 3;
+    private static final int BLK = 10;
+    private static final int UP_BLK = 2;
     private static final int EFFECT = 3;
     private static final int UP_EFFECT = 1;
 
