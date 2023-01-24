@@ -68,6 +68,10 @@
     "NAME": "Enlighten",
     "DESCRIPTION": "{@@}Gain !B! Block. NL When you draw this card, gain {!M!|1=[E]|2=[E] [E]|3=[E] [E] [E]|@=!M! [E]}."
   },
+  "${ModID}:Float": {
+    "NAME": "Float",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:SP."
+  },
   "${ModID}:Fortify": {
     "NAME": "Fortify",
     "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Increases Block gained from cards by !M!.",
