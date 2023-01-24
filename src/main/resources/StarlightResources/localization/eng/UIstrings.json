@@ -153,7 +153,7 @@
   "${ModID}:BookOfNature": {
     "TEXT": [
       "Book of Nature",
-      "Tangle enemies and impale them with Barbs when they attack."
+      "Tangle enemies and impale attackers with Barbs."
     ]
   },
   "${ModID}:BookOfDark": {
@@ -177,7 +177,7 @@
   "${ModID}:BookOfTime": {
     "TEXT": [
       "Book of Time",
-      "Control the flow of battle."
+      "Set up delayed effects to build advantage."
     ]
   }
 }
