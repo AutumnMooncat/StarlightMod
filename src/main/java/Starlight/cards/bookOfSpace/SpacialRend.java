@@ -23,8 +23,8 @@ public class SpacialRend extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 9;
-    private static final int UP_DMG = 3;
+    private static final int DMG = 12;
+    private static final int UP_DMG = 4;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
@@ -34,6 +34,7 @@ public class SpacialRend extends AbstractMagickCard {
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_SPACE);
         tags.add(CustomTags.STARLIGHT_PROJECTS);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
