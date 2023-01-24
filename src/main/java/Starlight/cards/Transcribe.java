@@ -1,6 +1,7 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
+import Starlight.patches.YeetCardPatches;
 import Starlight.util.FormatHelper;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -42,11 +43,11 @@ public class Transcribe extends AbstractEasyCard /*implements TagTeamCard*/ {
             AbstractCard card = magicks.get(magicks.size()-1).makeStatEquivalentCopy();
             card.setCostForTurn(0);
             //lastUUID = card.uuid;
-            Wiz.atb(new MakeTempCardInHandAction(card, true, true));
+            Wiz.atb(new MakeTempCardInHandAction(card, false, true));
             Wiz.atb(new AbstractGameAction() {
                 @Override
                 public void update() {
-                    purgeOnUse = true;
+                    YeetCardPatches.YeetField.yeet.set(Transcribe.this, true);
                     this.isDone = true;
                 }
             });
