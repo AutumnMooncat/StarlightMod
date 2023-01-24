@@ -2,13 +2,11 @@ package Starlight.cards.bookOfSpace;
 
 import Starlight.actions.ProjectTopCardAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.ui.ProjectedCardManager;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.cards.purple.Collect;
 import com.megacrit.cardcrawl.cards.red.Havoc;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,7 +17,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class Eclipse extends AbstractMagickCard {
     public final static String ID = makeID(Eclipse.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 

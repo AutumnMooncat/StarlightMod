@@ -1,12 +1,10 @@
 package Starlight.cards.bookOfLight;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BarbPower;
 import Starlight.powers.StricturePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.cards.blue.GeneticAlgorithm;
 import com.megacrit.cardcrawl.cards.colorless.Blind;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -17,7 +15,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class Geas extends AbstractMagickCard {
     public final static String ID = makeID(Geas.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
 

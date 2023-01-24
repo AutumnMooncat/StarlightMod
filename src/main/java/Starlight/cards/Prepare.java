@@ -16,7 +16,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class Prepare extends AbstractEasyCard {
     public final static String ID = makeID(Prepare.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 

@@ -2,12 +2,9 @@ package Starlight.cards.bookOfFire;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BurnPower;
-import Starlight.powers.WetPower;
-import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.purple.DeceiveReality;
 import com.megacrit.cardcrawl.cards.purple.Eruption;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -17,7 +14,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class FireBolt extends AbstractMagickCard {
     public final static String ID = makeID(FireBolt.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 

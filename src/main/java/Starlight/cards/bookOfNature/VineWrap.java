@@ -7,7 +7,6 @@ import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.colorless.DarkShackles;
-import com.megacrit.cardcrawl.cards.purple.Eruption;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -16,7 +15,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class VineWrap extends AbstractMagickCard {
     public final static String ID = makeID(VineWrap.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 

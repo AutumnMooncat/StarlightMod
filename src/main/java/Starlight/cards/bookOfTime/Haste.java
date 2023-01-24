@@ -15,7 +15,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class Haste extends AbstractMagickCard {
     public final static String ID = makeID(Haste.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
