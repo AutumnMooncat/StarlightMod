@@ -79,7 +79,7 @@
   },
   "${ModID}:Gank": {
     "NAME": "Gank",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you starlight:Swap, return this from the discard pile to your hand."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL At the start of your turn, return this from the discard pile to your hand."
   },
   "${ModID}:Grit": {
     "NAME": "Grit",

@@ -52,8 +52,27 @@ public class Gank extends AbstractEasyCard implements OnSwapCard {
 
     @Override
     public void onSwap(boolean toPrim) {
-        if (Wiz.adp().discardPile.contains(this)) {
+        /*if (Wiz.adp().discardPile.contains(this)) {
             this.addToBot(new DiscardToHandAction(this));
-        }
+        }*/
+    }
+
+    @Override
+    public void atTurnStart() {
+        Wiz.atb(new AbstractGameAction() {
+            @Override
+            public void update() {
+                Wiz.atb(new AbstractGameAction() {
+                    @Override
+                    public void update() {
+                        if (Wiz.adp().discardPile.contains(Gank.this)) {
+                            this.addToTop(new DiscardToHandAction(Gank.this));
+                        }
+                        this.isDone = true;
+                    }
+                });
+                this.isDone = true;
+            }
+        });
     }
 }
