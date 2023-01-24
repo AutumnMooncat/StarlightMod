@@ -41,6 +41,7 @@ public class Echo extends AbstractEasyCard {
     public Echo() {
         super(ID, COST, TYPE, RARITY, TARGET);
         tags.add(CustomTags.STARLIGHT_PROJECTS);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -55,7 +56,9 @@ public class Echo extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBaseCost(UP_COST);
+        //upgradeBaseCost(UP_COST);
+        exhaust = false;
+        uDesc();
     }
 
     public void triggerOnGlowCheck() {

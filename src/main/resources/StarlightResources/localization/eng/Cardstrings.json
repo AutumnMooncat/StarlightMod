@@ -61,7 +61,8 @@
   },
   "${ModID}:Echo": {
     "NAME": "Echo",
-    "DESCRIPTION": "starlight:Project a copy of the last Attack played this combat.",
+    "DESCRIPTION": "starlight:Project a copy of the last Attack played this combat. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "starlight:Project a copy of the last Attack played this combat.",
     "EXTENDED_DESCRIPTION": [" NL (",")"]
   },
   "${ModID}:Enlighten": {
