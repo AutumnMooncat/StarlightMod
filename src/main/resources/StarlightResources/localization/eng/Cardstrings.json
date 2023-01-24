@@ -168,7 +168,7 @@
   },
   "${ModID}:Stockpile": {
     "NAME": "Stockpile",
-    "DESCRIPTION": "{@@}Gain !M! Block whenever you play a Skill this turn."
+    "DESCRIPTION": "Gain !M! starlight:SP."
   },
   "${ModID}:Strike": {
     "NAME": "Strike",

@@ -1,14 +1,10 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.interfaces.TagTeamCard;
-import Starlight.powers.StockpilePower;
+import Starlight.powers.SpellPower;
+import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.green.Prepared;
-import com.megacrit.cardcrawl.cards.purple.Halt;
-import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -17,15 +13,15 @@ import static Starlight.TheStarlightMod.makeID;
 public class Stockpile extends AbstractEasyCard {
     public final static String ID = makeID(Stockpile.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int BLK = 3;
     private static final int UP_BLK = 1;
-    private static final int EFFECT = 3;
-    private static final int UP_EFFECT = 1;
+    private static final int EFFECT = 6;
+    private static final int UP_EFFECT = 3;
 
     public Stockpile() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -34,7 +30,8 @@ public class Stockpile extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new StockpilePower(p, magicNumber));
+        //Wiz.applyToSelf(new StockpilePower(p, magicNumber));
+        Wiz.applyToSelf(new SpellPower(p, magicNumber));
     }
 
     public void upp() {
@@ -42,18 +39,13 @@ public class Stockpile extends AbstractEasyCard {
         upgradeMagicNumber(UP_EFFECT);
     }
 
-    /*@Override
-    public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
-        blck();
-    }*/
-
     @Override
     public String cardArtCopy() {
         return Prepared.ID;
     }
 
-    /*@Override
+    @Override
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
         return new CardArtRoller.ReskinInfo(ID, 0.5f, 0.63f, 0.54f, 0.54f, false);
-    }*/
+    }
 }
