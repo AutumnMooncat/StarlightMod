@@ -319,9 +319,9 @@ public class TheStarlightMod implements
 
 
         DynamicTextBlocks.registerCustomCheck(makeID("IsSisters"), card -> {
-            if (!CardCrawlGame.isInARun() || Wiz.adp() instanceof StarlightSisters) {
+            /*if (!CardCrawlGame.isInARun() || Wiz.adp() instanceof StarlightSisters) {
                 return 1;
-            }
+            }*/
             return 0;
         });
         CardBorderGlowManager.addGlowInfo(new CardBorderGlowManager.GlowInfo() {
