@@ -169,6 +169,7 @@ public class ProjectedCardManager {
         @SpirePostfixPatch
         public static void yeet() {
             cards.clear();
+            renderQueue.clear();
         }
     }
 
