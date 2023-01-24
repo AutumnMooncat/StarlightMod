@@ -7,6 +7,7 @@ import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -127,6 +128,14 @@ public class SpellbookUI {
         for (CardGroup g : groups) {
             g.group.removeIf(c -> !(CompendiumPatches.noMagicTags(c) || primBook.allowCardInPool(c) || lunaBook.allowCardInPool(c)));
         }
+    }
+
+    public boolean isPrimCard(AbstractCard c) {
+        return primPanel.getSelectedBook().allowCardInPool(c);
+    }
+
+    public boolean isLunaCard(AbstractCard c) {
+        return lunaPanel.getSelectedBook().allowCardInPool(c);
     }
 
     public void setupAbilities() {

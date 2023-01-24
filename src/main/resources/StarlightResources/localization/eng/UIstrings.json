@@ -109,7 +109,7 @@
   "${ModID}:SpellbookUI": {
     "TEXT": [
       "Spellbooks",
-      "Spellbooks determine each sister's passive ability and card draft."
+      "Spellbooks determine what cards will appear in your draft."
     ]
   },
   "${ModID}:FilterUI": {

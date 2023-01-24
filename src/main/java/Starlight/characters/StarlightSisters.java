@@ -300,6 +300,9 @@ public class StarlightSisters extends CustomPlayer {
                 }
                 break;
         }
+        if ((attackerInFront && spellUI.isLunaCard(c)) || (!attackerInFront && spellUI.isPrimCard(c))) {
+            Wiz.atb(new SwapAction(true));
+        }
     }
 
     public void damage(DamageInfo info) {
@@ -357,8 +360,8 @@ public class StarlightSisters extends CustomPlayer {
         attackerInFront = true;
         resetToIdleAnimation();
         super.preBattlePrep();
-        Wiz.applyToSelfTop(new TagTeamPower(this));
-        spellUI.setupAbilities();
+        //Wiz.applyToSelfTop(new TagTeamPower(this));
+        //spellUI.setupAbilities();
         /*for (AbilityManager.AbilityType t : AbilityManager.AbilityType.values()) {
             if (AbilityManager.getAbilityLevel(t) > 0) {
                 AbstractPower ability = AbilityManager.getAbilityPower(t);
