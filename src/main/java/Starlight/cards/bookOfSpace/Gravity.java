@@ -4,20 +4,13 @@ package Starlight.cards.bookOfSpace;
 import Starlight.actions.GravityVFXAction;
 import Starlight.actions.PlayProjectedCardsAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.SpellPower;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.purple.Conclude;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -29,8 +22,8 @@ public class Gravity extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 2;
-    private static final int DMG = 12;
-    private static final int UP_DMG = 4;
+    private static final int DMG = 15;
+    private static final int UP_DMG = 5;
     private static final int SCALE = 2;
     private static final int UP_SCALE = 1;
 
