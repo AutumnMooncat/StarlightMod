@@ -36,13 +36,13 @@ public class ChillPower extends AbstractPower {
         return damage;
     }
 
-    @Override
+    /*@Override
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL && owner.hasPower(WetPower.POWER_ID)) {
             return damage * 1.2f;
         }
         return damage;
-    }
+    }*/
 
     @Override
     public void atEndOfRound() {
@@ -52,9 +52,9 @@ public class ChillPower extends AbstractPower {
     @Override
     public void updateDescription() {
         if (amount == 1) {
-            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + DESCRIPTIONS[3];
+            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
         } else {
-            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2] + DESCRIPTIONS[3];
+            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
     }
 }
