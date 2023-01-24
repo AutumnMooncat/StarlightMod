@@ -6,6 +6,8 @@ import Starlight.util.TexLoader;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
+import com.evacipated.cardcrawl.modthespire.lib.SpireSuper;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 
@@ -19,8 +21,8 @@ public abstract class AbstractMagickCard extends AbstractEasyCard {
     private static List<String> descriptors = new ArrayList<>(Collections.singletonList(TEXT[0]));
     private static List<TooltipInfo> tip = new ArrayList<>(Collections.singletonList(new TooltipInfo(TEXT[1], TEXT[2])));
 
-    private TextureAtlas.AtlasRegion spellbookIcon;
-    private boolean checked;
+    public TextureAtlas.AtlasRegion spellbookIcon;
+    public boolean checked;
 
     public AbstractMagickCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target) {
         super(cardID, cost, type, rarity, target);
@@ -30,21 +32,9 @@ public abstract class AbstractMagickCard extends AbstractEasyCard {
         super(cardID, cost, type, rarity, target, color);
     }
 
-    @Override
-    public void render(SpriteBatch sb, boolean selected) {
-        super.render(sb, selected);
-        if (!checked) {
-            spellbookIcon = getSpellbookIcon();
-            checked = true;
-        }
-        if (spellbookIcon != null) {
-            renderHelper(sb);
-        }
-    }
-
-    @Override
-    public void renderInLibrary(SpriteBatch sb) {
-        super.renderInLibrary(sb);
+    @SpireOverride
+    public void renderEnergy(SpriteBatch sb) {
+        SpireSuper.call(sb);
         if (!checked) {
             spellbookIcon = getSpellbookIcon();
             checked = true;
@@ -77,7 +67,7 @@ public abstract class AbstractMagickCard extends AbstractEasyCard {
     }
 
     private void renderHelper(SpriteBatch sb) {
-        float renderScale = 1.0f;
+        float renderScale = 0.9f;
         float dx = -132.0F / renderScale;
         float dy = -192.0F / renderScale;
         float scale = drawScale * Settings.scale * renderScale;

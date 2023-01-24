@@ -1,16 +1,20 @@
 package Starlight.patches;
 
+import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.interfaces.RenderOnCardPower;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
 
 import java.util.ArrayList;
 
@@ -71,6 +75,31 @@ public class RenderPowerOnCardPatch {
                     (float) img.originalWidth / 2.0F - img.offsetX - dx, (float) img.originalHeight / 2.0F - img.offsetY - dy,
                     (float) img.packedWidth, (float) img.packedHeight,
                     card.drawScale * Settings.scale, card.drawScale * Settings.scale, card.angle);
+        }
+    }
+
+    @SpirePatch2(clz = SingleCardViewPopup.class, method = "renderCost")
+    public static class RenderSpellbook {
+        @SpirePostfixPatch
+        public static void render(SingleCardViewPopup __instance, SpriteBatch sb, AbstractCard ___card) {
+            if (___card instanceof AbstractMagickCard) {
+                if (!((AbstractMagickCard) ___card).checked) {
+                    ((AbstractMagickCard) ___card).spellbookIcon = ((AbstractMagickCard) ___card).getSpellbookIcon();
+                    ((AbstractMagickCard) ___card).checked = true;
+                }
+                if (((AbstractMagickCard) ___card).spellbookIcon != null) {
+                    float renderScale = 1.8f;
+                    float dx = -270.0F / renderScale;
+                    float dy = -380.0F / renderScale;
+                    float scale = Settings.scale * renderScale;
+                    float w, h, w2, h2;
+                    w = ((AbstractMagickCard) ___card).spellbookIcon.packedWidth;
+                    w2 = w / 2f;
+                    h = ((AbstractMagickCard) ___card).spellbookIcon.packedHeight;
+                    h2 = h / 2f;
+                    sb.draw(((AbstractMagickCard) ___card).spellbookIcon, Settings.WIDTH / 2.0F - w2 - dx, Settings.HEIGHT / 2.0F - h2 - dy, w2 + dx, h2 + dy, w, h, scale, scale, 0);
+                }
+            }
         }
     }
 }
