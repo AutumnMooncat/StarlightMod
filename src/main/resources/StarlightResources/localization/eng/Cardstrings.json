@@ -667,7 +667,7 @@
   },
   "${ModID}:SpacialRend": {
     "NAME": "Spacial Rend",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1=s} in your discard pile."
+    "DESCRIPTION": "{@@}Deal !D! damage. NL starlight:Project !M! card{!M!|>1=s} in your discard pile. NL Exhaust."
   },
   "${ModID}:Meteor": {
     "NAME": "Meteor",
