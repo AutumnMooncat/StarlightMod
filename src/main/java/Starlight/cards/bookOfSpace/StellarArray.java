@@ -20,10 +20,10 @@ public class StellarArray extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int EFFECT = 1;
-    private static final int BLK = 6;
-    private static final int UP_BLK = 3;
+    private static final int BLK = 10;
+    private static final int UP_BLK = 4;
 
     public StellarArray() {
         super(ID, COST, TYPE, RARITY, TARGET);
