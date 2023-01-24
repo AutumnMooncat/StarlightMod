@@ -16,9 +16,9 @@ public class Resolve extends AbstractEasyCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 0;
-    private static final int BLOCK = 3;
-    private static final int UP_BLOCK = 2;
+    private static final int COST = 1;
+    private static final int BLOCK = 8;
+    private static final int UP_BLOCK = 3;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
