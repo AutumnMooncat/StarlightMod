@@ -401,7 +401,7 @@
   },
   "${ModID}:Ember": {
     "NAME": "Ember",
-    "DESCRIPTION": "Gain !D! damage. NL Gain Vigor equal to unblocked damage dealt."
+    "DESCRIPTION": "Deal !D! damage. NL Gain Vigor equal to unblocked damage dealt."
   },
   "${ModID}:Flare": {
     "NAME": "Flare",
@@ -437,7 +437,12 @@
   },
   "${ModID}:SolarBlade": {
     "NAME": "Solar Blade",
-    "DESCRIPTION": "Deal !D! damage. NL If this deals unblocked damage, apply !M! starlight:Burn."
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL If this deals unblocked damage, apply !M! starlight:Burn. NL Exhaust."
+  },
+  "${ModID}:SolarCharge": {
+    "NAME": "Solar Charge",
+    "DESCRIPTION": "Put a *Solar\u00A0Blade on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Put a *Solar\u00A0Blade+ on top of your draw pile."
   },
   "${ModID}:Entangle": {
     "NAME": "Entangle",
@@ -445,7 +450,7 @@
   },
   "${ModID}:VineBomb": {
     "NAME": "Vine Bomb",
-    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Tangled to ALL enemies. Deals additional damage equal to your starlight:Barbs."
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Tangled to ALL enemies."
   },
   "${ModID}:Sanctuary": {
     "NAME": "Sanctuary",
