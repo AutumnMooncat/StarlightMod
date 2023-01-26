@@ -1,20 +1,13 @@
 package Starlight.cards.bookOfNature;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BarbPower;
 import Starlight.powers.SanctuaryPower;
-import Starlight.powers.TanglePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import Starlight.vfx.AngledFlashAtkImgEffect;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.cards.blue.HelloWorld;
 import com.megacrit.cardcrawl.cards.optionCards.LiveForever;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -27,8 +20,8 @@ public class Sanctuary extends AbstractMagickCard {
 
     private static final int COST = 1;
     private static final int UP_COST = 1;
-    private static final int EFFECT = 3;
-    private static final int UP_EFFECT = 1;
+    private static final int EFFECT = 5;
+    private static final int UP_EFFECT = 2;
 
     public Sanctuary() {
         super(ID, COST, TYPE, RARITY, TARGET);
