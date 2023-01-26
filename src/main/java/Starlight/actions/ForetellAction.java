@@ -5,7 +5,6 @@ import Starlight.cards.interfaces.OnForetoldCard;
 import Starlight.patches.CardCounterPatches;
 import Starlight.powers.interfaces.OnForetellPower;
 import Starlight.util.Wiz;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -71,8 +70,8 @@ public class ForetellAction extends AbstractGameAction {
             return;
         }
 
-        if (amount >= validCards.size() && !anyNumber) {
-            Collections.reverse(validCards);
+        if (validCards.size() == 1) {
+            //Collections.reverse(validCards);
             for (AbstractCard card : validCards) {
                 cardGroup.removeCard(card);
                 cardGroup.moveToDeck(card, false);
@@ -89,7 +88,7 @@ public class ForetellAction extends AbstractGameAction {
                 amount = validCards.size();
             }
             if (cardGroup == Wiz.adp().hand) {
-                Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[0], anyNumber, anyNumber, validCards::contains, cards -> {
+                Wiz.att(new BetterSelectCardsInHandAction(this.amount, TEXT[0], anyNumber, anyNumber, validCards::contains, cards -> {
                     Collections.reverse(cards);
                     for (AbstractCard c : cards) {
                         //cardGroup.removeCard(c);
@@ -112,7 +111,7 @@ public class ForetellAction extends AbstractGameAction {
                     copyMap.put(copy, c);
                     selection.add(copy);
                 }
-                Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyNumber, c -> true, cards -> {
+                Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyNumber, true, cards -> {
                     Collections.reverse(cards);
                     for (AbstractCard copy : cards) {
                         AbstractCard c = copyMap.get(copy);
