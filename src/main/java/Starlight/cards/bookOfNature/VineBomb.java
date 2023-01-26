@@ -1,7 +1,6 @@
 package Starlight.cards.bookOfNature;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BarbPower;
 import Starlight.powers.TanglePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
@@ -9,7 +8,6 @@ import Starlight.util.Wiz;
 import Starlight.vfx.AngledFlashAtkImgEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.cards.green.Skewer;
 import com.megacrit.cardcrawl.cards.green.Unload;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -27,7 +25,7 @@ public class VineBomb extends AbstractMagickCard {
     private static final int COST = 2;
     private static final int DMG = 8;
     private static final int UP_DMG = 2;
-    private static final int EFFECT = 1;
+    private static final int EFFECT = 3;
     private static final int UP_EFFECT = 1;
 
     public VineBomb() {
@@ -49,7 +47,7 @@ public class VineBomb extends AbstractMagickCard {
         });
     }
 
-    @Override
+    /*@Override
     public void calculateCardDamage(AbstractMonster mo) {
         int base = baseDamage;
         if (Wiz.adp().hasPower(BarbPower.POWER_ID)) {
@@ -69,7 +67,7 @@ public class VineBomb extends AbstractMagickCard {
         super.applyPowers();
         baseDamage = base;
         isDamageModified = baseDamage != damage;
-    }
+    }*/
 
     public void upp() {
         upgradeDamage(UP_DMG);
