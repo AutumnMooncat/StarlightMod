@@ -4,8 +4,10 @@ import Starlight.CustomAnimationListener;
 import Starlight.CustomSpriterAnimation;
 import Starlight.RandomChatterHelper;
 import Starlight.actions.SwapAction;
-import Starlight.cards.*;
-import Starlight.powers.TagTeamPower;
+import Starlight.cards.Ambush;
+import Starlight.cards.Defend;
+import Starlight.cards.Prepare;
+import Starlight.cards.Strike;
 import Starlight.relics.MagicWand;
 import Starlight.util.Wiz;
 import basemod.abstracts.CustomPlayer;
@@ -77,8 +79,8 @@ public class StarlightSisters extends CustomPlayer {
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo(NAMES[0], TEXT[0],
-                60,
-                60,
+                66,
+                66,
                 0,
                 99,
                 5, this, getStartingRelics(),
