@@ -43,6 +43,12 @@ public class DramaticCloak extends AbstractEasyRelic {
     }
 
     @Override
+    public void onVictory() {
+        stopPulse();
+        grayscale = true;
+    }
+
+    @Override
     public void onUseCard(AbstractCard targetCard, UseCardAction useCardAction) {
         if (!grayscale && targetCard.type == AbstractCard.CardType.ATTACK) {
             useCardAction.exhaustCard = true;
