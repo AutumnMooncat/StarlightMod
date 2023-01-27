@@ -7,11 +7,15 @@ import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.DamageModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.purple.FearNoEvil;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -36,7 +40,11 @@ public class Dark extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new LethalDamageAction(m, new DamageInfo(p, damage, damageType), AbstractGameAction.AttackEffect.POISON, mon -> Wiz.att(new GainEnergyAction(magicNumber))));
+        Wiz.atb(new LethalDamageAction(m, new DamageInfo(p, damage, damageType), AbstractGameAction.AttackEffect.POISON, mon -> {
+            Wiz.att(new GainEnergyAction(magicNumber));
+            Wiz.att(new VFXAction(p, new ShockWaveEffect(mon.hb.cX, mon.hb.cY, Settings.PURPLE_RELIC_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 0.3F));
+            Wiz.att(new SFXAction("ATTACK_PIERCING_WAIL"));
+        }));
     }
 
     public void upp() {
