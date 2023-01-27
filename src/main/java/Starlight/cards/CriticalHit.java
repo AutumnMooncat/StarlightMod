@@ -2,12 +2,8 @@ package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.util.CardArtRoller;
-import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.purple.JustLucky;
 import com.megacrit.cardcrawl.cards.tempCards.Smite;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -40,22 +36,22 @@ public class CriticalHit extends AbstractEasyCard {
 
     @Override
     public void applyPowers() {
+        int base = baseDamage;
         super.applyPowers();
-        int delta = damage - baseDamage;
-        damage += delta;
-        if (damage < 0) {
-            damage = 0;
-        }
+        baseDamage = damage;
+        super.applyPowers();
+        baseDamage = base;
+        isDamageModified = baseDamage != damage;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
+        int base = baseDamage;
         super.calculateCardDamage(mo);
-        int delta = damage - baseDamage;
-        damage += delta;
-        if (damage < 0) {
-            damage = 0;
-        }
+        baseDamage = damage;
+        super.calculateCardDamage(mo);
+        baseDamage = base;
+        isDamageModified = baseDamage != damage;
     }
 
     public void upp() {
