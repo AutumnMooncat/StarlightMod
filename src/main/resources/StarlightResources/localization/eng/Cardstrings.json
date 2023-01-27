@@ -543,7 +543,7 @@
   },
   "${ModID}:BlindSide": {
     "NAME": "Blind Side",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Jinx. NL Ignores Block."
+    "DESCRIPTION": "Deal !D! damage twice. NL Ignores Block."
   },
   "${ModID}:SoulSteal": {
     "NAME": "Soul Steal",

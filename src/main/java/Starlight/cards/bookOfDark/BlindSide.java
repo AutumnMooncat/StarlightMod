@@ -1,13 +1,9 @@
 package Starlight.cards.bookOfDark;
 
-import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.damageMods.JinxWallopDamage;
 import Starlight.damageMods.PiercingDamage;
-import Starlight.powers.JinxPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
-import Starlight.util.Wiz;
 import com.evacipated.cardcrawl.mod.stslib.damagemods.DamageModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.green.SneakyStrike;
@@ -32,20 +28,21 @@ public class BlindSide extends AbstractMagickCard {
     public BlindSide() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = EFFECT;
+        //baseMagicNumber = magicNumber = EFFECT;
         DamageModifierManager.addModifier(this, new PiercingDamage());
         tags.add(CustomTags.STARLIGHT_DARK);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
-        Wiz.applyToEnemy(m, new JinxPower(m, magicNumber));
+        //Wiz.applyToEnemy(m, new JinxPower(m, magicNumber));
         //Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
     }
 
     public void upp() {
         upgradeDamage(UP_DMG);
-        upgradeMagicNumber(UP_EFFECT);
+        //upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
