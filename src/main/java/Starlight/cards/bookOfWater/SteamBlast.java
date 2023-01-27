@@ -46,6 +46,7 @@ public class SteamBlast extends AbstractMagickCard {
     public void applyPowers() {
         super.applyPowers();
         info = damage * (Wiz.adp().hand.size()-1);
+        baseInfo = baseDamage * (Wiz.adp().hand.size()-1);
         isInfoModified = isDamageModified;
     }
 
@@ -53,6 +54,7 @@ public class SteamBlast extends AbstractMagickCard {
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
         info = damage * (Wiz.adp().hand.size()-1);
+        baseInfo = baseDamage * (Wiz.adp().hand.size()-1);
         isInfoModified = isDamageModified;
     }
 
