@@ -474,7 +474,7 @@
   },
   "${ModID}:Absorb": {
     "NAME": "Absorb",
-    "DESCRIPTION": "Deal !D! damage. NL Heal !M! HP. NL If the enemy is starlight:Tangled, it loses !M! Strength."
+    "DESCRIPTION": "Gain Block equal to your starlight:Barbs. NL Deal !D! damage to ALL enemies.{@@}{!Location!|0= NL (Gain !B! Block)}"
   },
   "${ModID}:Harvest": {
     "NAME": "Harvest",
