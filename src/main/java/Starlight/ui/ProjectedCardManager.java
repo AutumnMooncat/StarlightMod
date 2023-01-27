@@ -7,9 +7,8 @@ import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
-import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -69,7 +68,7 @@ public class ProjectedCardManager {
     }
 
     public static void playCards() {
-        Wiz.atb(new AbstractGameAction() {
+        /*Wiz.atb(new AbstractGameAction() {
             @Override
             public void update() {
                 for (AbstractCard card : cards.group) {
@@ -82,8 +81,26 @@ public class ProjectedCardManager {
                 cards.clear();
                 this.isDone = true;
             }
-        });
+        });*/
+        for (AbstractCard card : cards.group) {
+            card.targetDrawScale = 0.75F;
+            card.applyPowers();
+            ProjectedCardField.projectedField.set(card, true);
+        }
+        renderQueue.group.addAll(cards.group);
+        cards.clear();
+        playNextCard();
+    }
 
+    public static void playNextCard() {
+        if (!renderQueue.isEmpty()) {
+            AbstractCard card = renderQueue.group.get(0);
+            if (card.target == AbstractCard.CardTarget.ENEMY && AbstractDungeon.getMonsters().monsters.stream().noneMatch(m -> !m.isDead && !m.escaped && !m.halfDead)) {
+                Wiz.atb(new UseCardAction(card, null));
+            } else {
+                Wiz.atb(new NewQueueCardAction(card, true, false, true));
+            }
+        }
     }
 
     public static void addCard(AbstractCard card) {
@@ -126,8 +143,9 @@ public class ProjectedCardManager {
             if (ProjectedCardField.projectedField.get(card)) {
                 ProjectedActionField.projectedField.set(__instance, true);
                 ProjectedCardField.projectedField.set(card, false);
+                renderQueue.removeCard(card);
+                playNextCard();
             }
-            renderQueue.removeCard(card);
         }
     }
 
@@ -191,6 +209,16 @@ public class ProjectedCardManager {
             public int[] Locate(CtBehavior ctBehavior) throws Exception {
                 Matcher m = new Matcher.FieldAccessMatcher(AbstractCard.class, "purgeOnUse");
                 return LineFinder.findInOrder(ctBehavior, m);
+            }
+        }
+    }
+
+    @SpirePatch2(clz = ClearCardQueueAction.class, method = "update")
+    public static class StopYeetingMyFuckingCards {
+        @SpirePostfixPatch
+        public static void addCardsBack() {
+            for (AbstractCard card : renderQueue.group) {
+                Wiz.atb(new NewQueueCardAction(card, true, false, true));
             }
         }
     }
