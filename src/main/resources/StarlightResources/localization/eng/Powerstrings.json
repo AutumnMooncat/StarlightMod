@@ -193,7 +193,7 @@
   },
   "${ModID}:PowerTripPower": {
     "NAME": "Moxie",
-    "DESCRIPTIONS": ["Whenever you #yExhaust a card, gain #b"," #yStrength."]
+    "DESCRIPTIONS": ["Whenever you deal unblocked attack damage, apply #b"," #yJinx."]
   },
   "${ModID}:StricturePower": {
     "NAME": "Stricture",

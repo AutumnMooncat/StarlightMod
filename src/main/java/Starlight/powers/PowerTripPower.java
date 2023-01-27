@@ -1,15 +1,12 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
-import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class PowerTripPower extends AbstractPower {
 
@@ -28,11 +25,18 @@ public class PowerTripPower extends AbstractPower {
         updateDescription();
     }
 
-    @Override
+    public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
+        if (damageAmount > 0 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
+            this.flash();
+            this.addToTop(new ApplyPowerAction(target, this.owner, new JinxPower(target, this.amount), this.amount, true));
+        }
+    }
+
+    /*@Override
     public void onExhaust(AbstractCard card) {
         flash();
         Wiz.atb(new ApplyPowerAction(owner, owner, new StrengthPower(owner, amount)));
-    }
+    }*/
 
     @Override
     public void updateDescription() {

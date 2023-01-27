@@ -518,8 +518,8 @@
   },
   "${ModID}:Moxie": {
     "NAME": "Moxie",
-    "DESCRIPTION": "Whenever you Exhaust a card, gain !M! Strength.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you Exhaust a card, gain !M! Strength."
+    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! starlight:Jinx.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever an Attack deals unblocked damage, apply !M! starlight:Jinx."
   },
   "${ModID}:KissOfDeath": {
     "NAME": "Kiss of Death",
