@@ -733,7 +733,7 @@
   },
   "${ModID}:DustToDust": {
     "NAME": "Dust to Dust",
-    "DESCRIPTION": "Exhaust any number of cards in your hand. Apply !M! starlight:Ruin to ALL enemies for each card Exhausted. Exhaust."
+    "DESCRIPTION": "{@@}Apply !M! starlight:Ruin. NL starlight:Ruin persists for !Starlight:M2! more turn{!Starlight:M2!|>1=s} on this enemy."
   },
   "${ModID}:Blink": {
     "NAME": "Blink",

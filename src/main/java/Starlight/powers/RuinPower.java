@@ -39,7 +39,11 @@ public class RuinPower extends AbstractPower implements HealthBarRenderPower {
     public void atEndOfRound() {
         flash();
         Wiz.atb(new DamageAction(owner, new DamageInfo(source, amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
-        Wiz.atb(new RemoveSpecificPowerAction(owner, owner, this));
+        if (owner.hasPower(DustToDustPower.POWER_ID)) {
+            owner.getPower(DustToDustPower.POWER_ID).flash();
+        } else {
+            Wiz.atb(new RemoveSpecificPowerAction(owner, owner, this));
+        }
     }
 
     @Override

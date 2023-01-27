@@ -235,6 +235,10 @@
     "NAME": "Pulse",
     "DESCRIPTIONS": ["At the start of your turn, reduce the cost of #b"," random card in your hand by 1 this combat."," random cards in your hand by 1 this combat."]
   },
+  "${ModID}:DustToDustPower": {
+    "NAME": "Dust to Dust",
+    "DESCRIPTIONS": ["#yRuin persists for #b"," additional turn."," additional turns."]
+  },
 
 
 
