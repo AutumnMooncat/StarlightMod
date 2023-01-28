@@ -26,7 +26,7 @@ public class FrostArrow extends AbstractMagickCard implements OnEnterDrawPileCar
     private static final int UP_DMG = 1;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
-    
+
     public FrostArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
