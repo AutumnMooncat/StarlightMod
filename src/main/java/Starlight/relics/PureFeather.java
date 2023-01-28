@@ -33,12 +33,14 @@ public class PureFeather extends AbstractEasyRelic {
 
     public void atBattleStart() {
         grayscale = false;
+        beginLongPulse();
     }
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (!card.purgeOnUse && !grayscale && !ProjectedCardManager.ProjectedActionField.projectedField.get(action)) {
             grayscale = true;
+            stopPulse();
             this.flash();
             AbstractCard tmp = card.makeSameInstanceOf();
             AbstractDungeon.player.limbo.addToBottom(tmp);
