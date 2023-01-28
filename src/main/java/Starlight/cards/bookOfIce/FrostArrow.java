@@ -1,8 +1,6 @@
 package Starlight.cards.bookOfIce;
 
-import Starlight.actions.MoveFromDrawToHandAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.cards.interfaces.OnEnterDrawPileCard;
 import Starlight.powers.ChillPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
@@ -14,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class FrostArrow extends AbstractMagickCard implements OnEnterDrawPileCard {
+public class FrostArrow extends AbstractMagickCard {
     public final static String ID = makeID(FrostArrow.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -44,11 +42,6 @@ public class FrostArrow extends AbstractMagickCard implements OnEnterDrawPileCar
     public void upp() {
         upgradeDamage(UP_DMG);
         upgradeMagicNumber(UP_EFFECT);
-    }
-
-    @Override
-    public void onEnter() {
-        Wiz.att(new MoveFromDrawToHandAction(this));
     }
 
     @Override
