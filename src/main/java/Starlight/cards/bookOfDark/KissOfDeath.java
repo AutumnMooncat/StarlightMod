@@ -8,12 +8,10 @@ import Starlight.vfx.AngledFlashAtkImgEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.green.Backstab;
-import com.megacrit.cardcrawl.cards.green.SneakyStrike;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import static Starlight.TheStarlightMod.makeID;
@@ -26,9 +24,9 @@ public class KissOfDeath extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
-    private static final int DMG = 6;
+    private static final int DMG = 5;
     private static final int UP_DMG = 2;
-    private static final int EFFECT = 6;
+    private static final int EFFECT = 5;
     private static final int UP_EFFECT = 2;
 
     private int magicLastFrame;
