@@ -2,20 +2,17 @@ package Starlight.cards.bookOfIce;
 
 import Starlight.actions.DamageFollowupAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.ChillPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.blue.BeamCell;
-import com.megacrit.cardcrawl.cards.blue.Blizzard;
-import com.megacrit.cardcrawl.cards.red.Shockwave;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.SmallLaserEffect;
 
 import static Starlight.TheStarlightMod.makeID;
@@ -38,7 +35,6 @@ public class IceBeam extends AbstractMagickCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_ICE);
-        tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -49,7 +45,7 @@ public class IceBeam extends AbstractMagickCard {
                 if (i > 0) {
                     m.tint.color.set(Color.CYAN.cpy());
                     m.tint.changeColor(Color.WHITE.cpy());
-                    Wiz.applyToEnemy(m, new ChillPower(m, magicNumber));
+                    Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
                 }
             }));
         }

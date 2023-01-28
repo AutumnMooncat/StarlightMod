@@ -297,7 +297,7 @@
   },
   "${ModID}:IceBeam": {
     "NAME": "Ice Beam",
-    "DESCRIPTION": "Deal !D! damage. NL If this deals unblocked damage, apply !M! starlight:Chill."
+    "DESCRIPTION": "Deal !D! damage. NL If this deals unblocked damage, apply !M! Weak."
   },
   "${ModID}:SlushBall": {
     "NAME": "Slush Ball",
