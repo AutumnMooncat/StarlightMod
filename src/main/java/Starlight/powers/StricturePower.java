@@ -6,6 +6,7 @@ import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -49,7 +50,8 @@ public class StricturePower extends AbstractPower implements HealthBarRenderPowe
     }
 
     public void doEffect() {
-        Wiz.att(new LoseHPAction(owner, source, amount, AbstractGameAction.AttackEffect.FIRE));
+        //Wiz.att(new LoseHPAction(owner, source, amount, AbstractGameAction.AttackEffect.FIRE));
+        Wiz.att(new DamageAction(owner, new DamageInfo(source, amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE, true));
     }
 
     @Override
