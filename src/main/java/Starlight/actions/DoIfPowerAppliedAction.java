@@ -3,6 +3,7 @@ package Starlight.actions;
 import Starlight.patches.WasPowerActuallyAppliedPatches;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class DoIfPowerAppliedAction extends AbstractGameAction {
     ApplyPowerAction powerAction;
@@ -19,8 +20,20 @@ public class DoIfPowerAppliedAction extends AbstractGameAction {
         this.negatedAction = negatedAction;
     }
 
+    public DoIfPowerAppliedAction(AbstractPower power, AbstractGameAction appliedAction) {
+        this (WasPowerActuallyAppliedPatches.ActionField.accompanyingAction.get(power), appliedAction);
+    }
+
+    public DoIfPowerAppliedAction(AbstractPower power, AbstractGameAction appliedAction, AbstractGameAction negatedAction) {
+        this (WasPowerActuallyAppliedPatches.ActionField.accompanyingAction.get(power), appliedAction, negatedAction);
+    }
+
     @Override
     public void update() {
+        if (powerAction == null) {
+            this.isDone = true;
+            return;
+        }
         if (WasPowerActuallyAppliedPatches.AppliedField.actuallyApplied.get(powerAction)) {
             if (appliedAction != null) {
                 this.addToTop(appliedAction);
