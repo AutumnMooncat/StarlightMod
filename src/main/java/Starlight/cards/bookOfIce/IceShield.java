@@ -1,15 +1,13 @@
 package Starlight.cards.bookOfIce;
 
-import Starlight.cards.Anticipate;
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.powers.ChillPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.blue.Chill;
-import com.megacrit.cardcrawl.cards.blue.Coolheaded;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -31,11 +29,12 @@ public class IceShield extends AbstractMagickCard {
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_ICE);
+        tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
+        Wiz.applyToEnemy(m, new ChillPower(m, magicNumber));
     }
 
     public void upp() {

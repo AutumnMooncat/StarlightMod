@@ -305,7 +305,7 @@
   },
   "${ModID}:IceShield": {
     "NAME": "Frozen Shield",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak."
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! starlight:Chill."
   },
   "${ModID}:Reflection": {
     "NAME": "Reflection",
