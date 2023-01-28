@@ -1,12 +1,10 @@
 package Starlight.cards.bookOfIce;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.FrostburnPower;
 import Starlight.powers.HailPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.cards.blue.MultiCast;
 import com.megacrit.cardcrawl.cards.red.FeelNoPain;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -16,12 +14,12 @@ import static Starlight.TheStarlightMod.makeID;
 public class Hail extends AbstractMagickCard {
     public final static String ID = makeID(Hail.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
     private static final int COST = 1;
-    private static final int AMOUNT = 2;
+    private static final int AMOUNT = 3;
     private static final int UP_AMOUNT = 1;
 
     public Hail() {

@@ -321,7 +321,7 @@
   },
   "${ModID}:Hail": {
     "NAME": "Hail",
-    "DESCRIPTION": "At the end of your turn, gain !M! Block and deal !M! damage to ALL enemies."
+    "DESCRIPTION": "Whenever you apply a debuff, deal !M! damage to ALL enemies."
   },
   "${ModID}:Mist": {
     "NAME": "Mist",

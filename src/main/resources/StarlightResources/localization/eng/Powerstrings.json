@@ -114,7 +114,7 @@
   },
   "${ModID}:HailPower": {
     "NAME": "Hail",
-    "DESCRIPTIONS": ["At the end of your turn, gain #b"," #yBlock and deal #b"," damage to ALL enemies."]
+    "DESCRIPTIONS": ["Whenever you apply a debuff, deal #b"," damage to ALL enemies."]
   },
   "${ModID}:VulcanizePower": {
     "NAME": "Vulcanize",
