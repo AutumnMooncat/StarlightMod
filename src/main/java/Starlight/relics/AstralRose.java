@@ -2,6 +2,7 @@ package Starlight.relics;
 
 import Starlight.actions.ProjectTopCardAction;
 import Starlight.characters.StarlightSisters;
+import Starlight.relics.interfaces.PostEndTurnPowerRelic;
 import Starlight.util.Wiz;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -18,7 +19,7 @@ import java.util.HashMap;
 
 import static Starlight.TheStarlightMod.makeID;
 
-public class AstralRose extends AbstractEasyRelic {
+public class AstralRose extends AbstractEasyRelic implements PostEndTurnPowerRelic {
     public static final String ID = makeID(AstralRose.class.getSimpleName());
 
     HashMap<String, Integer> stats = new HashMap<>();
@@ -30,24 +31,6 @@ public class AstralRose extends AbstractEasyRelic {
     public AstralRose() {
         super(ID, RelicTier.BOSS, LandingSound.MAGICAL, StarlightSisters.Enums.METEORITE_PURPLE_COLOR);
         resetStats();
-    }
-
-    @Override
-    public void onPlayerEndTurn() {
-        if (Wiz.adp().drawPile.group.stream().anyMatch(c -> c.cost != -2)) {
-            flash();
-            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new ProjectTopCardAction(1, new AbstractGameAction() {
-                @Override
-                public void update() {
-                    for (AbstractCard c : ProjectTopCardAction.projectedCards) {
-                        stats.put(CARDS_STAT, stats.get(CARDS_STAT) + 1);
-                        stats.put(ENERGY_SAVED_STAT, stats.get(ENERGY_SAVED_STAT) + c.costForTurn);
-                    }
-                    this.isDone = true;
-                }
-            }));
-        }
     }
 
     public String getStatsDescription() {
@@ -99,5 +82,23 @@ public class AstralRose extends AbstractEasyRelic {
         AstralRose newRelic = new AstralRose();
         newRelic.stats = this.stats;
         return newRelic;
+    }
+
+    @Override
+    public void postEndTurn() {
+        if (Wiz.adp().drawPile.group.stream().anyMatch(c -> c.cost != -2)) {
+            flash();
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            addToBot(new ProjectTopCardAction(1, new AbstractGameAction() {
+                @Override
+                public void update() {
+                    for (AbstractCard c : ProjectTopCardAction.projectedCards) {
+                        stats.put(CARDS_STAT, stats.get(CARDS_STAT) + 1);
+                        stats.put(ENERGY_SAVED_STAT, stats.get(ENERGY_SAVED_STAT) + c.costForTurn);
+                    }
+                    this.isDone = true;
+                }
+            }));
+        }
     }
 }
