@@ -333,7 +333,7 @@
   },
   "${ModID}:Frostburn": {
     "NAME": "Frostburn",
-    "DESCRIPTION": "Whenever you apply starlight:Chill, apply {!M!|1=an equal amount of|@=!M! times that much} starlight:Burn.{@@}"
+    "DESCRIPTION": "Whenever you apply starlight:Chill, apply !M! starlight:Burn."
   },
   "${ModID}:Refrigerate": {
     "NAME": "Refrigerate",

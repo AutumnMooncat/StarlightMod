@@ -110,7 +110,7 @@
   },
   "${ModID}:FrostburnPower": {
     "NAME": "Frostburn",
-    "DESCRIPTIONS": ["Whenever you apply #yChill, apply an equal amount of #yBurn.","Whenever you apply #yChill, apply #b"," times as much #yBurn."]
+    "DESCRIPTIONS": ["Whenever you apply #yChill, apply #b"," #yBurn."]
   },
   "${ModID}:HailPower": {
     "NAME": "Hail",

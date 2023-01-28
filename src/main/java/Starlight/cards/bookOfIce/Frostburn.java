@@ -2,7 +2,6 @@ package Starlight.cards.bookOfIce;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.FrostburnPower;
-import Starlight.powers.SanctuaryPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
@@ -15,13 +14,14 @@ import static Starlight.TheStarlightMod.makeID;
 public class Frostburn extends AbstractMagickCard {
     public final static String ID = makeID(Frostburn.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
     private static final int COST = 1;
     private static final int UP_COST = 0;
-    private static final int EFFECT = 1;
+    private static final int EFFECT = 3;
+    private static final int UP_EFFECT = 1;
 
     public Frostburn() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -34,7 +34,8 @@ public class Frostburn extends AbstractMagickCard {
     }
 
     public void upp() {
-        upgradeBaseCost(UP_COST);
+        //upgradeBaseCost(UP_COST);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
