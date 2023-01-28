@@ -30,7 +30,7 @@ public class DustToDust extends AbstractMagickCard {
         baseMagicNumber = magicNumber = EFFECT;
         baseSecondMagic = secondMagic = TURNS;
         tags.add(CustomTags.STARLIGHT_TIME);
-        exhaust = true;
+        //exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
