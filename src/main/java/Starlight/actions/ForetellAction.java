@@ -104,17 +104,9 @@ public class ForetellAction extends AbstractGameAction {
                     cards.clear(); // Remove from selection, so they don't get added back to hand
                 }));
             } else {
-                HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
-                ArrayList<AbstractCard> selection = new ArrayList<>();
-                for (AbstractCard c : validCards) {
-                    AbstractCard copy = c.makeStatEquivalentCopy();
-                    copyMap.put(copy, c);
-                    selection.add(copy);
-                }
-                Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyNumber, true, cards -> {
+                Wiz.att(new BetterSelectCardsCenteredAction(validCards, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyNumber, true, cards -> {
                     Collections.reverse(cards);
-                    for (AbstractCard copy : cards) {
-                        AbstractCard c = copyMap.get(copy);
+                    for (AbstractCard c : cards) {
                         cardGroup.removeCard(c);
                         cardGroup.moveToDeck(c, false);
                         foretoldCards.add(c);

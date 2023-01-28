@@ -75,16 +75,8 @@ public class ProjectCardsInDiscardAction extends AbstractGameAction {
             if (amount > validCards.size()) {
                 amount = validCards.size();
             }
-            HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
-            ArrayList<AbstractCard> selection = new ArrayList<>();
-            for (AbstractCard c : validCards) {
-                AbstractCard copy = c.makeStatEquivalentCopy();
-                copyMap.put(copy, c);
-                selection.add(copy);
-            }
-            Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyAmount, true, cards -> {
-                for (AbstractCard copy : cards) {
-                    AbstractCard c = copyMap.get(copy);
+            Wiz.att(new BetterSelectCardsCenteredAction(validCards, this.amount, amount == 1 ? TEXT[1] : TEXT[2] + amount + TEXT[3], anyAmount, true, cards -> {
+                for (AbstractCard c : cards) {
                     if (AbstractDungeon.player.hoveredCard == c) {
                         AbstractDungeon.player.releaseCard();
                     }

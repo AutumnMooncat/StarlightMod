@@ -88,13 +88,6 @@ public class ExhaustByPredAction extends AbstractGameAction {
                     }
                 }));
             } else {
-                HashMap<AbstractCard, AbstractCard> copyMap = new HashMap<>();
-                ArrayList<AbstractCard> selection = new ArrayList<>();
-                for (AbstractCard c : validCards) {
-                    AbstractCard copy = c.makeStatEquivalentCopy();
-                    copyMap.put(copy, c);
-                    selection.add(copy);
-                }
                 String displayText;
                 if (anyNumber) {
                     if (amount == 1) {
@@ -110,9 +103,8 @@ public class ExhaustByPredAction extends AbstractGameAction {
                     }
                 }
                 //Pre-filtered so just pass c -> true
-                Wiz.att(new BetterSelectCardsCenteredAction(selection, this.amount, displayText, anyNumber, c -> true, cards -> {
-                    for (AbstractCard copy : cards) {
-                        AbstractCard c = copyMap.get(copy);
+                Wiz.att(new BetterSelectCardsCenteredAction(validCards, this.amount, displayText, anyNumber, c -> true, cards -> {
+                    for (AbstractCard c : cards) {
                         cardGroup.moveToExhaustPile(c);
                         exhaustedCards.add(c);
                     }
