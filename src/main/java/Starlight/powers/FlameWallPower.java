@@ -23,7 +23,7 @@ public class FlameWallPower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.type = PowerType.BUFF;
-        this.loadRegion("firebreathing");
+        this.loadRegion("flameBarrier");
         updateDescription();
     }
 
