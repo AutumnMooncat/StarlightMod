@@ -293,7 +293,7 @@
 
   "${ModID}:FrostArrow": {
     "NAME": "Frost Arrow",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever this card enters your draw pile, move it to your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! starlight:Chill."
   },
   "${ModID}:IceBeam": {
     "NAME": "Ice Beam",
