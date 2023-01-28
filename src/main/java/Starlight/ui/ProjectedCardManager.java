@@ -7,7 +7,7 @@ import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -95,11 +95,7 @@ public class ProjectedCardManager {
     public static void playNextCard() {
         if (!renderQueue.isEmpty()) {
             AbstractCard card = renderQueue.group.get(0);
-            if (card.target == AbstractCard.CardTarget.ENEMY && AbstractDungeon.getMonsters().monsters.stream().noneMatch(m -> !m.isDead && !m.escaped && !m.halfDead)) {
-                Wiz.atb(new UseCardAction(card, null));
-            } else {
-                Wiz.atb(new NewQueueCardAction(card, true, false, true));
-            }
+            Wiz.atb(new NewQueueCardAction(card, true, false, true));
         }
     }
 
@@ -213,12 +209,24 @@ public class ProjectedCardManager {
         }
     }
 
-    @SpirePatch2(clz = ClearCardQueueAction.class, method = "update")
-    public static class StopYeetingMyFuckingCards {
-        @SpirePostfixPatch
-        public static void addCardsBack() {
-            for (AbstractCard card : renderQueue.group) {
-                Wiz.atb(new NewQueueCardAction(card, true, false, true));
+    @SpirePatch2(clz = GameActionManager.class, method = "getNextAction")
+    public static class DontYeetProjectedCards {
+        @SpireInsertPatch(locator = Locator.class)
+        public static SpireReturn<?> addCardsBack(GameActionManager __instance) {
+            AbstractCard c = __instance.cardQueue.get(0).card;
+            if (c != null && ProjectedCardField.projectedField.get(c)) {
+                c.dontTriggerOnUseCard = true;
+                Wiz.atb(new UseCardAction(c, null));
+                return SpireReturn.Return();
+            }
+            return SpireReturn.Continue();
+        }
+
+        public static class Locator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+                Matcher m = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "limbo");
+                return LineFinder.findAllInOrder(ctBehavior, m);
             }
         }
     }
