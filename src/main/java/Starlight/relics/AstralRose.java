@@ -89,7 +89,7 @@ public class AstralRose extends AbstractEasyRelic implements PostEndTurnPowerRel
         if (Wiz.adp().drawPile.group.stream().anyMatch(c -> c.cost != -2)) {
             flash();
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new ProjectTopCardAction(1, new AbstractGameAction() {
+            addToBot(new ProjectTopCardAction(1, true, new AbstractGameAction() {
                 @Override
                 public void update() {
                     for (AbstractCard c : ProjectTopCardAction.projectedCards) {

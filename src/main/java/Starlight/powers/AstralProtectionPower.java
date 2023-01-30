@@ -1,10 +1,8 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
-import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.interfaces.OnProjectPower;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -35,7 +33,7 @@ public class AstralProtectionPower extends AbstractPower implements OnProjectPow
     }
 
     @Override
-    public void onProject(AbstractCard card) {
+    public void onProject(AbstractCard card, boolean isEndTurn) {
         flash();
         Wiz.atb(new GainBlockAction(owner, owner, amount));
     }

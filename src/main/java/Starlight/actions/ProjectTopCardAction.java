@@ -7,23 +7,27 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.stream.Collectors;
 
 public class ProjectTopCardAction extends AbstractGameAction {
-    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("Project")).TEXT;
     public static final ArrayList<AbstractCard> projectedCards = new ArrayList<>();
-    private AbstractGameAction followUpAction;
+    private final AbstractGameAction followUpAction;
+    private final boolean isEndTurn;
 
     public ProjectTopCardAction(int amount) {
-        this(amount, null);
+        this(amount, false, null);
     }
 
     public ProjectTopCardAction(int amount, AbstractGameAction followUpAction) {
+        this(amount, false, followUpAction);
+    }
+
+    public ProjectTopCardAction(int amount, boolean isEndTurn, AbstractGameAction followUpAction) {
         this.amount = amount;
         this.followUpAction = followUpAction;
+        this.isEndTurn = isEndTurn;
     }
 
     @Override
@@ -46,7 +50,7 @@ public class ProjectTopCardAction extends AbstractGameAction {
             cards.add(validCards.get(i));
         }
         for (AbstractCard c : cards) {
-            ProjectedCardManager.addCard(c);
+            ProjectedCardManager.addCard(c, true, isEndTurn);
             Wiz.adp().drawPile.removeCard(c);
             projectedCards.add(c);
         }

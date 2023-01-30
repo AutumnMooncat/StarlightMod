@@ -100,10 +100,14 @@ public class ProjectedCardManager {
     }
 
     public static void addCard(AbstractCard card) {
-        addCard(card, true);
+        addCard(card, true, false);
     }
 
     public static void addCard(AbstractCard card, boolean playSFX) {
+        addCard(card, playSFX, false);
+    }
+
+    public static void addCard(AbstractCard card, boolean playSFX, boolean isEndTurn) {
         card.targetAngle = 0f;
         card.beginGlowing();
         cards.addToTop(card);
@@ -112,7 +116,7 @@ public class ProjectedCardManager {
         }
         for (AbstractPower p : Wiz.adp().powers) {
             if (p instanceof OnProjectPower) {
-                ((OnProjectPower) p).onProject(card);
+                ((OnProjectPower) p).onProject(card, isEndTurn);
             }
         }
         if (playSFX) {

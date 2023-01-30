@@ -1,17 +1,21 @@
 package Starlight.actions;
 
-import Starlight.TheStarlightMod;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 public class ProjectSpecificCardAction extends AbstractGameAction {
-    private AbstractCard card;
+    private final AbstractCard card;
+    private final boolean isEndTurn;
 
     public ProjectSpecificCardAction(AbstractCard card) {
+        this(card, false);
+    }
+
+    public ProjectSpecificCardAction(AbstractCard card, boolean isEndTurn) {
         this.card = card;
+        this.isEndTurn = isEndTurn;
     }
 
     @Override
@@ -20,7 +24,7 @@ public class ProjectSpecificCardAction extends AbstractGameAction {
             this.isDone = true;
             return;
         }
-        ProjectedCardManager.addCard(card);
+        ProjectedCardManager.addCard(card, true, isEndTurn);
         if (Wiz.adp().drawPile.contains(card)) {
             Wiz.adp().drawPile.removeCard(card);
         }

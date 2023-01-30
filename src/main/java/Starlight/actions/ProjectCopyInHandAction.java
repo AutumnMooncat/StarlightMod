@@ -7,18 +7,18 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandActio
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ProjectCopyInHandAction extends AbstractGameAction {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("Project")).TEXT;
     public static final ArrayList<AbstractCard> projectedCards = new ArrayList<>();
-    private AbstractGameAction followUpAction;
-    private Predicate<AbstractCard> filter;
+    private final AbstractGameAction followUpAction;
+    private final Predicate<AbstractCard> filter;
+
+    private boolean isEndTurn;
 
     public ProjectCopyInHandAction(int amount) {
         this(amount, c -> true, null);
@@ -32,6 +32,11 @@ public class ProjectCopyInHandAction extends AbstractGameAction {
         this.amount = amount;
         this.followUpAction = followUpAction;
         this.filter = filter;
+    }
+
+    public ProjectCopyInHandAction(int amount, boolean isEndTurn, Predicate<AbstractCard> filter, AbstractGameAction followUpAction) {
+        this(amount, filter, followUpAction);
+        this.isEndTurn = isEndTurn;
     }
 
     @Override
@@ -59,7 +64,7 @@ public class ProjectCopyInHandAction extends AbstractGameAction {
                 AbstractDungeon.actionManager.removeFromQueue(c);
                 c.unhover();
                 c.untip();*/
-                ProjectedCardManager.addCard(copy);
+                ProjectedCardManager.addCard(copy, true, isEndTurn);
                 projectedCards.add(copy);
             }
             if (this.followUpAction != null) {
@@ -69,7 +74,7 @@ public class ProjectCopyInHandAction extends AbstractGameAction {
             Wiz.att(new SelectCardsInHandAction(this.amount, TEXT[7], validCards::contains, cards -> {
                 for (AbstractCard c : cards) {
                     AbstractCard copy = c.makeStatEquivalentCopy();
-                    ProjectedCardManager.addCard(copy);
+                    ProjectedCardManager.addCard(copy, true, isEndTurn);
                     projectedCards.add(copy);
                 }
                 if (this.followUpAction != null) {

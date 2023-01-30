@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -17,8 +16,9 @@ public class ProjectCardsInDiscardAction extends AbstractGameAction {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("Project")).TEXT;
     public static final ArrayList<AbstractCard> projectedCards = new ArrayList<>();
     private final AbstractGameAction followUpAction;
-    private Predicate<AbstractCard> filter;
-    private boolean anyAmount;
+    private final Predicate<AbstractCard> filter;
+    private final boolean anyAmount;
+    private boolean isEndTurn;
 
     public ProjectCardsInDiscardAction(int amount) {
         this(amount, null);
@@ -37,6 +37,11 @@ public class ProjectCardsInDiscardAction extends AbstractGameAction {
         this.followUpAction = followUpAction;
         this.filter = filter;
         this.anyAmount = anyAmount;
+    }
+
+    public ProjectCardsInDiscardAction(int amount, boolean anyAmount, boolean isEndTurn, Predicate<AbstractCard> filter, AbstractGameAction followUpAction) {
+        this(amount, anyAmount, filter, followUpAction);
+        this.isEndTurn = isEndTurn;
     }
 
     @Override
@@ -64,7 +69,7 @@ public class ProjectCardsInDiscardAction extends AbstractGameAction {
                 c.unhover();
                 c.untip();
                 //c.stopGlowing();
-                ProjectedCardManager.addCard(c);
+                ProjectedCardManager.addCard(c, true, isEndTurn);
                 Wiz.adp().hand.removeCard(c);
                 projectedCards.add(c);
             }
@@ -87,7 +92,7 @@ public class ProjectCardsInDiscardAction extends AbstractGameAction {
                     c.lighten(false);
                     //c.stopGlowing();
                     Wiz.adp().discardPile.group.remove(c);
-                    ProjectedCardManager.addCard(c);
+                    ProjectedCardManager.addCard(c, true, isEndTurn);
                     projectedCards.add(c);
                 }
                 if (this.followUpAction != null) {

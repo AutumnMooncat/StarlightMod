@@ -28,7 +28,7 @@ public class ThoughtbloomPower extends AbstractPower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
-            Wiz.atb(new ProjectCardsInHandAction(amount, true, c -> true, null));
+            Wiz.atb(new ProjectCardsInHandAction(amount, true, true, c -> true, null));
         }
     }
 

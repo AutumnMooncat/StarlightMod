@@ -174,7 +174,7 @@
   },
   "${ModID}:VoidWandererPower": {
     "NAME": "Void Wanderer",
-    "DESCRIPTIONS": ["Whenever you #yProject a card, draw #b"," card."," cards."]
+    "DESCRIPTIONS": ["Whenever you #yProject a card during your turn, draw #b"," card."," cards."]
   },
   "${ModID}:ConservePower": {
     "NAME": "Replenish",

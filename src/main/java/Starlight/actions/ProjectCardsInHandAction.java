@@ -3,14 +3,12 @@ package Starlight.actions;
 import Starlight.TheStarlightMod;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.Wiz;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -18,8 +16,9 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(TheStarlightMod.makeID("Project")).TEXT;
     public static final ArrayList<AbstractCard> projectedCards = new ArrayList<>();
     private final AbstractGameAction followUpAction;
-    private Predicate<AbstractCard> filter;
-    private boolean anyAmount;
+    private final Predicate<AbstractCard> filter;
+    private final boolean anyAmount;
+    private boolean isEndTurn;
 
     public ProjectCardsInHandAction(int amount) {
         this(amount, null);
@@ -38,6 +37,11 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
         this.followUpAction = followUpAction;
         this.filter = filter;
         this.anyAmount = anyAmount;
+    }
+
+    public ProjectCardsInHandAction(int amount, boolean anyAmount, boolean isEndTurn, Predicate<AbstractCard> filter, AbstractGameAction followUpAction) {
+        this(amount, anyAmount, filter, followUpAction);
+        this.isEndTurn = isEndTurn;
     }
 
     @Override
@@ -65,7 +69,7 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
                 c.unhover();
                 c.untip();
                 //c.stopGlowing();
-                ProjectedCardManager.addCard(c);
+                ProjectedCardManager.addCard(c, true, isEndTurn);
                 Wiz.adp().hand.removeCard(c);
                 projectedCards.add(c);
             }
@@ -87,7 +91,7 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
                     c.untip();
                     //c.stopGlowing();
                     //Wiz.adp().hand.group.remove(c);
-                    ProjectedCardManager.addCard(c);
+                    ProjectedCardManager.addCard(c, true, isEndTurn);
                     projectedCards.add(c);
                 }
                 cards.clear(); // Remove from selection, so they don't get added back to hand

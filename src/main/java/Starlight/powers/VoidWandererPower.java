@@ -4,9 +4,7 @@ import Starlight.TheStarlightMod;
 import Starlight.powers.interfaces.OnProjectPower;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -45,8 +43,10 @@ public class VoidWandererPower extends AbstractPower implements OnProjectPower {
     }
 
     @Override
-    public void onProject(AbstractCard card) {
-        flash();
-        Wiz.att(new DrawCardAction(amount));
+    public void onProject(AbstractCard card, boolean isEndTurn) {
+        if (!isEndTurn) {
+            flash();
+            Wiz.att(new DrawCardAction(amount));
+        }
     }
 }
