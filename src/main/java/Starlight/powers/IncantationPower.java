@@ -4,13 +4,8 @@ import Starlight.TheStarlightMod;
 import Starlight.cardmods.EtherealMod;
 import Starlight.cardmods.ExhaustMod;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.interfaces.OnForetellPower;
-import Starlight.powers.interfaces.OnTagTeamPower;
 import Starlight.util.Wiz;
 import basemod.helpers.CardModifierManager;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,7 +17,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-public class IncantationPower extends AbstractPower implements OnForetellPower {
+public class IncantationPower extends AbstractPower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(IncantationPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -65,12 +60,5 @@ public class IncantationPower extends AbstractPower implements OnForetellPower {
         } else {
             this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
         }
-    }
-
-    @Override
-    public void onForetell(AbstractCard card) {
-        flash();
-        //Wiz.atb(new GainEnergyAction(amount));
-        Wiz.atb(new ApplyPowerAction(owner, owner, new SpellPower(owner, amount)));
     }
 }
