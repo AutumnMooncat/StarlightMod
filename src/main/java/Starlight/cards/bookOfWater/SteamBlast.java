@@ -36,7 +36,7 @@ public class SteamBlast extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new VFXAction(new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal)));
-        Wiz.atb(new DamageAction(m, new DamageInfo(p, info, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE, true));
+        Wiz.atb(new DamageAction(m, new DamageInfo(p, damage * countCards(), damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE, true));
         /*if (m.hasPower(WetPower.POWER_ID)) {
             Wiz.applyToEnemy(m, new BurnPower(m, p, m.getPower(WetPower.POWER_ID).amount));
         }*/
@@ -45,17 +45,21 @@ public class SteamBlast extends AbstractMagickCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        info = damage * (Wiz.adp().hand.size()-1);
-        baseInfo = baseDamage * (Wiz.adp().hand.size()-1);
-        isInfoModified = isDamageModified;
+        info = damage * countCards();
+        baseInfo = baseDamage * countCards();
+        isInfoModified = info != baseInfo;
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
         super.calculateCardDamage(mo);
-        info = damage * (Wiz.adp().hand.size()-1);
-        baseInfo = baseDamage * (Wiz.adp().hand.size()-1);
-        isInfoModified = isDamageModified;
+        info = damage * countCards();
+        baseInfo = baseDamage * countCards();
+        isInfoModified = info != baseInfo;
+    }
+
+    private int countCards() {
+        return (int) Wiz.adp().hand.group.stream().filter(c -> c != this).count();
     }
 
     public void upp() {
