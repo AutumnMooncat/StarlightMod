@@ -1,23 +1,15 @@
 package Starlight.cards.bookOfSpace;
 
 import Starlight.actions.ProjectSpecificCardAction;
-import Starlight.cardmods.ExhaustMod;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.cards.interfaces.OnProjectCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.blue.MeteorStrike;
 import com.megacrit.cardcrawl.cards.green.Skewer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -43,6 +35,7 @@ public class OrbitalArrow extends AbstractMagickCard {
         baseDamage = damage = DMG;
         tags.add(CustomTags.STARLIGHT_SPACE);
         tags.add(CustomTags.STARLIGHT_PROJECTS);
+        tags.add(CustomTags.STARLIGHT_ARROW);
         if (projected) {
             setProjected();
         }
