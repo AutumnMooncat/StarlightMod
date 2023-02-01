@@ -70,7 +70,7 @@ public class ForetellAction extends AbstractGameAction {
             return;
         }
 
-        if (validCards.size() == 1) {
+        if (validCards.size() == 1 && !anyNumber) {
             //Collections.reverse(validCards);
             for (AbstractCard card : validCards) {
                 cardGroup.removeCard(card);
