@@ -70,7 +70,7 @@ public class ProjectCardsInDiscardAction extends AbstractGameAction {
                 c.untip();
                 //c.stopGlowing();
                 ProjectedCardManager.addCard(c, true, isEndTurn);
-                Wiz.adp().hand.removeCard(c);
+                Wiz.adp().discardPile.removeCard(c);
                 projectedCards.add(c);
             }
             if (this.followUpAction != null) {
