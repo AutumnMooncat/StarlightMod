@@ -42,7 +42,6 @@ public class TwinFormPower extends AbstractPower {
             ++this.cardsProjectedThisTurn;
             this.flash();
             AbstractCard tmp = card.makeSameInstanceOf();
-            AbstractDungeon.player.limbo.addToBottom(tmp);
             tmp.current_x = card.current_x;
             tmp.current_y = card.current_y;
             tmp.target_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
