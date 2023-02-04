@@ -45,12 +45,17 @@ public class JinxMod extends AbstractAugment implements DynvarCarrier {
 
     @Override
     public boolean validCard(AbstractCard card) {
-        return TheStarlightMod.enableChimeraCrossover && card.cost != -2 && card.baseDamage > 1 && cardCheck(card, c -> usesEnemyTargeting(c)) && !(card instanceof BlindSide);
+        return card.cost != -2 && card.baseDamage > 1 && cardCheck(card, c -> usesEnemyTargeting(c)) && !(card instanceof BlindSide);
     }
 
     @Override
-    public String modifyName(String cardName, AbstractCard card) {
-        return TEXT[0] + cardName + TEXT[1];
+    public String getPrefix() {
+        return TEXT[0];
+    }
+
+    @Override
+    public String getSufix() {
+        return TEXT[1];
     }
 
     @Override

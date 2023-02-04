@@ -35,13 +35,17 @@ public class ForetellMod extends AbstractAugment {
 
     @Override
     public boolean validCard(AbstractCard card) {
-        return TheStarlightMod.enableChimeraCrossover && card.cost != -2 && card.baseBlock > 1 && card.type == AbstractCard.CardType.SKILL;
+        return card.cost != -2 && card.baseBlock > 1 && card.type == AbstractCard.CardType.SKILL;
     }
 
     @Override
-    public String modifyName(String cardName, AbstractCard card) {
-        String[] nameParts = removeUpgradeText(cardName);
-        return TEXT[0] + nameParts[0] + TEXT[1] + nameParts[1];
+    public String getPrefix() {
+        return TEXT[0];
+    }
+
+    @Override
+    public String getSufix() {
+        return TEXT[1];
     }
 
     @Override

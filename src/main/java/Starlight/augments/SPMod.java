@@ -55,12 +55,17 @@ public class SPMod extends AbstractAugment implements DynvarCarrier {
 
     @Override
     public boolean validCard(AbstractCard card) {
-        return TheStarlightMod.enableChimeraCrossover && card.cost != -2 && (card.baseDamage > 1 || card.baseBlock > 1) && (Wiz.adp() instanceof StarlightSisters || Wiz.adp().masterDeck.group.stream().anyMatch(c -> c instanceof AbstractMagickCard));
+        return card.cost != -2 && (card.baseDamage > 1 || card.baseBlock > 1) && (Wiz.adp() instanceof StarlightSisters || Wiz.adp().masterDeck.group.stream().anyMatch(c -> c instanceof AbstractMagickCard));
     }
 
     @Override
-    public String modifyName(String cardName, AbstractCard card) {
-        return TEXT[0] + cardName + TEXT[1];
+    public String getPrefix() {
+        return TEXT[0];
+    }
+
+    @Override
+    public String getSufix() {
+        return TEXT[1];
     }
 
     @Override
