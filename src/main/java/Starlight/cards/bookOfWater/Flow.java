@@ -19,15 +19,15 @@ public class Flow extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 0;
-    private static final int DMG = 6;
-    private static final int UP_DMG = 3;
+    private static final int COST = 1;
+    private static final int BLOCK = 7;
+    private static final int UP_BLOCK = 2;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
     public Flow() {
         super(ID, COST, TYPE, RARITY, TARGET);
-        //baseDamage = damage = DMG;
+        baseBlock = block = BLOCK;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_WATER);
         tags.add(CustomTags.STARLIGHT_SWAPS);
@@ -39,7 +39,7 @@ public class Flow extends AbstractMagickCard {
     }
 
     public void upp() {
-        //upgradeDamage(UP_DMG);
+        upgradeBlock(UP_BLOCK);
         upgradeMagicNumber(UP_EFFECT);
     }
 

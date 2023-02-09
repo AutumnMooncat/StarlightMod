@@ -272,7 +272,7 @@
   },
   "${ModID}:Flow": {
     "NAME": "Flow",
-    "DESCRIPTION": "Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}.{@@}"
   },
   "${ModID}:Riptide": {
     "NAME": "Riptide",
