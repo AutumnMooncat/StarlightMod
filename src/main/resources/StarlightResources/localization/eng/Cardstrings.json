@@ -100,6 +100,10 @@
     "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Increase the starlight:Secondary effects of starlight:Magick cards by !M!.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
+  "${ModID}:ManaBurst": {
+    "NAME": "Mana Burst",
+    "DESCRIPTION": "Costs 1 less [E] NL for each starlight:Magick card played this turn. NL Deal !D! damage !M! times."
+  },
   "${ModID}:ManaConversion": {
     "NAME": "Mana Conversion",
     "DESCRIPTION": "Whenever you gain Energy, gain !M! starlight:SP.",
