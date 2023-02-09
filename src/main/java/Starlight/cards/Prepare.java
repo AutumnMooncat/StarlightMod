@@ -1,8 +1,6 @@
 package Starlight.cards;
 
-import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.characters.StarlightSisters;
 import Starlight.powers.SpellPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
@@ -36,9 +34,6 @@ public class Prepare extends AbstractEasyCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
         Wiz.applyToSelf(new SpellPower(p, magicNumber));
-        if (p instanceof StarlightSisters) {
-            Wiz.atb(new SwapAction());
-        }
     }
 
     public void upp() {

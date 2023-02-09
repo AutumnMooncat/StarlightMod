@@ -1,11 +1,8 @@
 package Starlight.cards;
 
-import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.characters.StarlightSisters;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
-import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.purple.InnerPeace;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -32,20 +29,11 @@ public class Serendipity extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        if (p instanceof StarlightSisters) {
-            Wiz.atb(new SwapAction());
-        }
-        //Wiz.applyToSelf(new NextTurnBlockPower(p, block));
     }
 
     public void upp() {
         upgradeBlock(UP_BLK);
     }
-
-    /*@Override
-    public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new NextTurnBlockPower(p, block));
-    }*/
 
     @Override
     public String cardArtCopy() {

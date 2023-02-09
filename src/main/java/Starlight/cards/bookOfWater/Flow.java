@@ -1,8 +1,6 @@
 package Starlight.cards.bookOfWater;
 
-import Starlight.actions.SwapAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.characters.StarlightSisters;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
@@ -36,17 +34,8 @@ public class Flow extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        /*Wiz.atb(new FlowAction(cards -> {
-            if (!cards.isEmpty()) {
-                Wiz.applyToSelfTop(new DrawCardNextTurnPower(Wiz.adp(), cards.size()));
-            }
-        }));*/
         Wiz.atb(new DrawCardAction(magicNumber));
         Wiz.atb(new DiscardAction(p, p, magicNumber, false));
-        if (p instanceof StarlightSisters) {
-            Wiz.atb(new SwapAction());
-        }
     }
 
     public void upp() {
