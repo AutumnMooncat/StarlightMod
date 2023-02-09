@@ -53,7 +53,7 @@
   },
   "${ModID}:DizzyStrike": {
     "NAME": "Dizzy Strike",
-    "DESCRIPTION": "Deal !D! damage to a random enemy twice.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times."
   },
   "${ModID}:Doomsday": {
     "NAME": "Doomsday",
