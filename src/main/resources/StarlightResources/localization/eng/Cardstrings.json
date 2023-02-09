@@ -119,7 +119,7 @@
   },
   "${ModID}:Prepare": {
     "NAME": "Prepare",
-    "DESCRIPTION": "{@@}Gain !B! Block. NL Gain !M! starlight:SP.{!Starlight:IsSisters!|1= NL starlight:Swap.}"
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! starlight:SP."
   },
   "${ModID}:Quicksilver": {
     "NAME": "Quicksilver",
@@ -140,7 +140,7 @@
   },
   "${ModID}:Serendipity": {
     "NAME": "Serendipity",
-    "DESCRIPTION": "Retain. NL Gain !B! Block.{!Starlight:IsSisters!|1= NL starlight:Swap.}{@@}"
+    "DESCRIPTION": "Retain. NL Gain !B! Block."
   },
   "${ModID}:Skyfall": {
     "NAME": "Skyfall",
@@ -198,10 +198,6 @@
   "${ModID}:Thoughtbloom": {
     "NAME": "Thoughtbloom",
     "DESCRIPTION": "At the end of your turn, starlight:Project up to !M! card{!M!|>1=s} in your hand.{@@}"
-  },
-  "${ModID}:Thrash": {
-    "NAME": "Thrash",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Whenever you starlight:Swap, increase this card's damage by !M! this combat."
   },
   "${ModID}:Transcribe": {
     "NAME": "Transcribe",
