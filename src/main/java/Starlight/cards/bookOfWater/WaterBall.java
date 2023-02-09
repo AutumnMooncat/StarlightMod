@@ -20,8 +20,8 @@ public class WaterBall extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 1;
-    private static final int DMG = 9;
+    private static final int COST = 0;
+    private static final int DMG = 6;
     private static final int UP_DMG = 3;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
@@ -35,7 +35,6 @@ public class WaterBall extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        //Wiz.applyToEnemy(m, new WetPower(m, magicNumber));
         Wiz.atb(new DrawCardAction(magicNumber));
         Wiz.atb(new DiscardAction(p, p, magicNumber, false));
     }
