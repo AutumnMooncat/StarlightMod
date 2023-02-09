@@ -12,8 +12,8 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <SlayTheSpire.version>12-22-2020</SlayTheSpire.version>
-        <ModTheSpire.version>3.20.0</ModTheSpire.version>
+        <SlayTheSpire.version>12-18-2022</SlayTheSpire.version>
+        <ModTheSpire.version>3.30.3</ModTheSpire.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <ModID>Starlight</ModID>
 
@@ -67,7 +67,7 @@
         <dependency>
             <groupId>cardaugments</groupId>
             <artifactId>CardAugments</artifactId>
-            <version>0.0.6</version>
+            <version>0.2.0</version>
             <scope>system</scope>
             <systemPath>${Steam.path}/common/SlayTheSpire/mods/CardAugments.jar</systemPath>
         </dependency>
