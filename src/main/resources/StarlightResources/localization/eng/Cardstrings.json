@@ -78,10 +78,6 @@
     "DESCRIPTION": "starlight:Resonant !Starlight:M2! NL Increases Block gained from cards by !M!.",
     "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
-  "${ModID}:Gank": {
-    "NAME": "Gank",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL At the start of your turn, return this from the discard pile to your hand."
-  },
   "${ModID}:Grit": {
     "NAME": "Grit",
     "DESCRIPTION": "Play a random card in your draw pile and Exhaust it. NL Exhaust."
