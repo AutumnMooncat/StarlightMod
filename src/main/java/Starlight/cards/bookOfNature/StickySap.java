@@ -26,13 +26,11 @@ public class StickySap extends AbstractMagickCard {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
         selfRetain = true;
-        exhaust = true;
         tags.add(CustomTags.STARLIGHT_NATURE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToEnemy(m, new TanglePower(m, magicNumber));
-        //Wiz.applyToEnemy(m, new WetPower(m, magicNumber));
     }
 
     public void upp() {
