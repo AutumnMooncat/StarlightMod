@@ -32,9 +32,7 @@ public class Culminate extends AbstractEasyCard implements InHandCard {
         selfRetain = true;
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        //Wiz.atb(new BoostValuesInHandAction(magicNumber, c -> c.type == CardType.ATTACK));
-    }
+    public void use(AbstractPlayer p, AbstractMonster m) {}
 
     @Override
     public float atDamageGive(float dmg, DamageInfo.DamageType type, AbstractCreature target, AbstractCard card) {
@@ -66,7 +64,7 @@ public class Culminate extends AbstractEasyCard implements InHandCard {
     public void resetAttributes() {
         int current = secondMagic;
         super.resetAttributes();
-        if (current > 0) {
+        if (Wiz.adp().hand.contains(this) && current > 0) {
             secondMagic = current;
             isSecondMagicModified = secondMagic != baseSecondMagic;
         }

@@ -29,15 +29,9 @@ public class Fortify extends AbstractEasyCard implements InHandCard {
         baseSecondMagic = secondMagic = USES;
         baseMagicNumber = magicNumber = EFFECT;
         selfRetain = true;
-        //CardModifierManager.addModifier(this, new ResonantMod(true));
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        /*for (int i = 0 ; i < magicNumber ; i++) {
-            blck();
-        }*/
-        //Wiz.atb(new DrawCardAction(magicNumber));
-    }
+    public void use(AbstractPlayer p, AbstractMonster m) {}
 
     @Override
     public float onModifyBlock(float blk, AbstractCard card) {
@@ -62,7 +56,6 @@ public class Fortify extends AbstractEasyCard implements InHandCard {
     }
 
     public void upp() {
-        //upgradeBlock(UP_BLK);
         upgradeMagicNumber(UP_EFFECT);
     }
 
@@ -70,16 +63,11 @@ public class Fortify extends AbstractEasyCard implements InHandCard {
     public void resetAttributes() {
         int current = secondMagic;
         super.resetAttributes();
-        if (current > 0) {
+        if (Wiz.adp().hand.contains(this) && current > 0) {
             secondMagic = current;
             isSecondMagicModified = secondMagic != baseSecondMagic;
         }
     }
-
-    /*@Override
-    public void onTagTrigger(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new DrawCardAction(magicNumber));
-    }*/
 
     @Override
     public String cardArtCopy() {

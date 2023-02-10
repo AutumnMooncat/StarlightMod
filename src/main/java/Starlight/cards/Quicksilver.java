@@ -7,11 +7,8 @@ import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.blue.Aggregate;
 import com.megacrit.cardcrawl.cards.purple.Collect;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static Starlight.TheStarlightMod.makeID;
@@ -63,7 +60,7 @@ public class Quicksilver extends AbstractEasyCard implements InHandCard {
     public void resetAttributes() {
         int current = secondMagic;
         super.resetAttributes();
-        if (current > 0) {
+        if (Wiz.adp().hand.contains(this) && current > 0) {
             secondMagic = current;
             isSecondMagicModified = secondMagic != baseSecondMagic;
         }

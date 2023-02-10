@@ -64,7 +64,7 @@ public class MagickConduit extends AbstractEasyCard implements InHandCard {
     public void resetAttributes() {
         int current = secondMagic;
         super.resetAttributes();
-        if (current > 0) {
+        if (Wiz.adp().hand.contains(this) && current > 0) {
             secondMagic = current;
             isSecondMagicModified = secondMagic != baseSecondMagic;
         }
