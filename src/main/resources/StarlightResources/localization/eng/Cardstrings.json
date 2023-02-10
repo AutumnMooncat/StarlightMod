@@ -700,7 +700,7 @@
   },
   "${ModID}:BlastFromThePast": {
     "NAME": "Blast from the Past",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever this card enters your draw pile, ALL enemies lose !M! HP."
+    "DESCRIPTION": "Deal !D! damage. NL Whenever this card enters your draw pile, apply !M! starlight:Ruin to ALL enemies."
   },
   "${ModID}:Omen": {
     "NAME": "Omen",

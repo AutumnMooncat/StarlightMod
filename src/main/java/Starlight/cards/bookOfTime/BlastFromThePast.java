@@ -2,14 +2,13 @@ package Starlight.cards.bookOfTime;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.cards.interfaces.OnEnterDrawPileCard;
+import Starlight.powers.RuinPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.purple.SashWhip;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,9 +24,9 @@ public class BlastFromThePast extends AbstractMagickCard implements OnEnterDrawP
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
-    private static final int DMG = 4;
+    private static final int DMG = 5;
     private static final int UP_DMG = 2;
-    private static final int EFFECT = 4;
+    private static final int EFFECT = 5;
     private static final int UP_EFFECT = 2;
 
     public BlastFromThePast() {
@@ -60,6 +59,7 @@ public class BlastFromThePast extends AbstractMagickCard implements OnEnterDrawP
     public void onEnter() {
         Wiz.atb(new SFXAction("ORB_DARK_EVOKE", 0.05F));
         Wiz.atb(new VFXAction(new ShowCardBrieflyEffect(this.makeStatEquivalentCopy())));
-        Wiz.atb(new DamageAllEnemiesAction(Wiz.adp(), DamageInfo.createDamageMatrix(magicNumber, true), DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new RuinPower(mon, Wiz.adp(), magicNumber)));
+        //Wiz.atb(new DamageAllEnemiesAction(Wiz.adp(), DamageInfo.createDamageMatrix(magicNumber, true), DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 }

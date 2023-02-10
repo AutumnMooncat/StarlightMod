@@ -1,7 +1,7 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.cards.bookOfTime.BlastFromThePast;
 import Starlight.cards.interfaces.InHandCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
@@ -32,19 +32,7 @@ public class MagickConduit extends AbstractEasyCard implements InHandCard {
         selfRetain = true;
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        /*Wiz.atb(new AbstractGameAction() {
-            @Override
-            public void update() {
-                int cards = (int) Wiz.adp().drawPile.group.stream().filter(c -> c instanceof AbstractMagickCard).count();
-                if (cards > 0) {
-                    Wiz.applyToSelfTop(new SpellPower(p, magicNumber * cards));
-                    Wiz.att(new SFXAction("ORB_PLASMA_CHANNEL", 0.1f));
-                }
-                this.isDone = true;
-            }
-        });*/
-    }
+    public void use(AbstractPlayer p, AbstractMonster m) {}
 
     @Override
     public float modifyMagicMagic(float magic, AbstractCard card) {
@@ -53,7 +41,7 @@ public class MagickConduit extends AbstractEasyCard implements InHandCard {
 
     @Override
     public void onCardUsed(AbstractCard card) {
-        if (Wiz.isMagic(card) && card.baseMagicNumber > 0 && secondMagic > 0) {
+        if (!(card instanceof BlastFromThePast) && Wiz.isMagic(card) && card.baseMagicNumber > 0 && secondMagic > 0) {
             secondMagic--;
             isSecondMagicModified = baseSecondMagic != secondMagic;
             flash();
