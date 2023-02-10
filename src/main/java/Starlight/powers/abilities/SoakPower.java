@@ -65,7 +65,6 @@ public class SoakPower extends AbstractPower implements OnManualDiscardPower {
         }
     }
 
-    //TODO - Add rendering back for cards that discard.
     /*@Override
     public boolean shouldRender(AbstractCard card) {
         return isActive() && card.type == AbstractCard.CardType.ATTACK && !applied && AbstractDungeon.getMonsters().monsters.stream().anyMatch(m -> !m.isDeadOrEscaped() && m.hasPower(WetPower.POWER_ID));
