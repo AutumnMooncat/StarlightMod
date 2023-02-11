@@ -328,8 +328,8 @@
     "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Chill to ALL enemies X times. NL Exhaust."
   },
   "${ModID}:Frostburn": {
-    "NAME": "Frostburn",
-    "DESCRIPTION": "Whenever you apply starlight:Chill, apply !M! starlight:Burn."
+    "NAME": "Frostbite",
+    "DESCRIPTION": "{@@}Deal {!M!|0=0%|1=25%|2=50%|3=75%|4=100%|5=125%|6-150%|7=175%|8=200%|>8=a lot} more damage to enemies with starlight:Chill.{!Starlight:M2!|>0= NL Apply !Starlight:M2! starlight:Chill to ALL enemies.}"
   },
   "${ModID}:Refrigerate": {
     "NAME": "Refrigerate",

@@ -109,8 +109,8 @@
     "DESCRIPTIONS": ["Whenever you play an Attack, gain #b"," #yBarbs."]
   },
   "${ModID}:FrostburnPower": {
-    "NAME": "Frostburn",
-    "DESCRIPTIONS": ["Whenever you apply #yChill, apply #b"," #yBurn."]
+    "NAME": "Frostbite",
+    "DESCRIPTIONS": ["Attacks deal #b","% more damage to #yChilled enemies."]
   },
   "${ModID}:HailPower": {
     "NAME": "Hail",
