@@ -1,6 +1,7 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
+import Starlight.actions.BurnDamageAction;
 import Starlight.util.Wiz;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
@@ -40,10 +41,11 @@ public class BurnPower extends AbstractPower implements HealthBarRenderPower {
         updateDescription();
     }
 
+    //TODO damage action always modified tint and causes some Hexaghost jank, try rebuilding Poison Action to as to not flash attack and tint if HP is <= 0?
     public void atStartOfTurn() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            Wiz.atb(new DamageAction(owner, new DamageInfo(source, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            Wiz.atb(new BurnDamageAction(owner, source, amount, AbstractGameAction.AttackEffect.FIRE));
         }
     }
 

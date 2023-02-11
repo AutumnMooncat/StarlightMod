@@ -1,6 +1,7 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
+import Starlight.actions.RuinLoseHPAction;
 import Starlight.util.Wiz;
 import Starlight.vfx.BurnToAshEffect;
 import com.badlogic.gdx.graphics.Color;
@@ -38,7 +39,7 @@ public class RuinPower extends AbstractPower implements HealthBarRenderPower {
     @Override
     public void atEndOfRound() {
         flash();
-        Wiz.atb(new DamageAction(owner, new DamageInfo(source, amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
+        Wiz.atb(new RuinLoseHPAction(owner, source, amount, AbstractGameAction.AttackEffect.FIRE));
         if (owner.hasPower(DustToDustPower.POWER_ID)) {
             owner.getPower(DustToDustPower.POWER_ID).flash();
         } else {
