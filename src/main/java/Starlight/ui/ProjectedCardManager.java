@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.red.PerfectedStrike;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -235,6 +236,15 @@ public class ProjectedCardManager {
             for (AbstractCard card : ProjectedCardManager.renderQueue.group) {
                 ProjectedCardFields.interruptedField.set(card, true);
             }
+        }
+    }
+
+    @SpirePatch2(clz = PerfectedStrike.class, method = "countCards")
+    public static class CountProjectedCardsPlz {
+        @SpirePostfixPatch
+        public static int getCount(int __result, PerfectedStrike __instance) {
+            int projectedStrikes = (int)(ProjectedCardManager.cards.group.stream().filter(c -> c.hasTag(AbstractCard.CardTags.STRIKE)).count() + ProjectedCardManager.renderQueue.group.stream().filter(c -> c.hasTag(AbstractCard.CardTags.STRIKE)).count());
+            return __result + projectedStrikes;
         }
     }
 }
