@@ -2,14 +2,15 @@ package Starlight.powers;
 
 import Starlight.TheStarlightMod;
 import Starlight.util.Wiz;
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class PulsePower extends AbstractPower {
 
@@ -31,55 +32,33 @@ public class PulsePower extends AbstractPower {
 
     @Override
     public void atStartOfTurnPostDraw() {
-        flash();
         Wiz.atb(new AbstractGameAction() {
             @Override
             public void update() {
+                flash();
+                boolean sfx = false;
                 for (int i = 0 ; i < PulsePower.this.amount ; i++) {
-                    boolean betterPossible = false;
-                    boolean possible = false;
-                    for (AbstractCard c : Wiz.adp().hand.group) {
-                        if (c.costForTurn > 0) {
-                            betterPossible = true;
-                        } else if (c.cost > 0) {
-                            possible = true;
-                        }
-                    }
-
-                    if (betterPossible || possible) {
-                        findAndModifyCard(betterPossible);
+                    AbstractCard card = Wiz.getRandomItem(Wiz.adp().hand.group.stream().filter(c -> c.cost > 0 && c.costForTurn > 0 && !c.freeToPlayOnce).collect(Collectors.toCollection(ArrayList::new)));
+                    if (card != null) {
+                        card.freeToPlayOnce = true;
+                        sfx = true;
                     }
                 }
-                CardCrawlGame.sound.playA("ATTACK_WHIFF_1", -0.6F);
-                CardCrawlGame.sound.playA("ORB_LIGHTNING_CHANNEL", 0.6F);
+                if (sfx) {
+                    CardCrawlGame.sound.playA("ATTACK_WHIFF_1", -0.6F);
+                    CardCrawlGame.sound.playA("ORB_LIGHTNING_CHANNEL", 0.6F);
+                }
                 this.isDone = true;
             }
         });
     }
 
-    private void findAndModifyCard(boolean better) {
-        AbstractCard c = Wiz.adp().hand.getRandomCard(AbstractDungeon.cardRandomRng);
-        if (better) {
-            if (c.costForTurn > 0) {
-                c.modifyCostForCombat(-1);
-                c.superFlash(Color.GOLD.cpy());
-            } else {
-                this.findAndModifyCard(true);
-            }
-        } else if (c.cost > 0) {
-            c.modifyCostForCombat(-1);
-            c.superFlash(Color.GOLD.cpy());
-        } else {
-            this.findAndModifyCard(false);
-        }
-    }
-
     @Override
     public void updateDescription() {
         if (amount == 1) {
-            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+            this.description = DESCRIPTIONS[0];
         } else {
-            this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
+            this.description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
         }
     }
 

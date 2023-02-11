@@ -233,7 +233,7 @@
   },
   "${ModID}:PulsePower": {
     "NAME": "Pulse",
-    "DESCRIPTIONS": ["At the start of your turn, reduce the cost of #b"," random card in your hand by 1 this combat."," random cards in your hand by 1 this combat."]
+    "DESCRIPTIONS": ["At the start of your turn, a random card in your hand costs 0 until played","At the start of your turn, #b"," random cards in your hand cost 0 until played."]
   },
   "${ModID}:DustToDustPower": {
     "NAME": "Dust to Dust",

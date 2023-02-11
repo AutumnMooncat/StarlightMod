@@ -712,7 +712,7 @@
   },
   "${ModID}:Pulse": {
     "NAME": "Pulse",
-    "DESCRIPTION": "{@@}At the start of your turn, reduce the cost of !M! random card{!M!|>1=s} in your hand by 1 this combat."
+    "DESCRIPTION": "{@@}At the start of your turn, !M! random card{!M!|>1=s} in your hand cost{!M!|1=s} 0 until played."
   },
   "${ModID}:Epitaph": {
     "NAME": "Epitaph",
