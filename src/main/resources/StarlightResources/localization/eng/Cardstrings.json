@@ -433,7 +433,7 @@
   },
   "${ModID}:SolarBlade": {
     "NAME": "Solar Blade",
-    "DESCRIPTION": "Retain. NL Deal !D! damage. NL If this deals unblocked damage, apply !M! starlight:Burn. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL Apply !M! Vulnerable. NL Exhaust."
   },
   "${ModID}:SolarCharge": {
     "NAME": "Solar Charge",
