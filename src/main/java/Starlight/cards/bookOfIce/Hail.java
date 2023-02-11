@@ -18,9 +18,9 @@ public class Hail extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 1;
-    private static final int AMOUNT = 3;
-    private static final int UP_AMOUNT = 1;
+    private static final int COST = 2;
+    private static final int AMOUNT = 7;
+    private static final int UP_AMOUNT = 3;
 
     public Hail() {
         super(ID, COST, TYPE, RARITY, TARGET);
