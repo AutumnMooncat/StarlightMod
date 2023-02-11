@@ -70,7 +70,7 @@ public class ProjectMod extends AbstractAugment {
 
     @Override
     public AugmentRarity getModRarity() {
-        return AugmentRarity.UNCOMMON;
+        return AugmentRarity.RARE;
     }
 
     @Override
