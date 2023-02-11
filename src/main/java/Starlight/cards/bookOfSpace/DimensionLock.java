@@ -2,15 +2,14 @@ package Starlight.cards.bookOfSpace;
 
 import Starlight.actions.ProjectTopCardAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.AstralProtectionPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.cards.blue.Buffer;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.green.BulletTime;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.NoDrawPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -21,7 +20,7 @@ public class DimensionLock extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
     private static final int EFFECT = 3;
     private static final int UP_EFFECT = 1;
 
@@ -34,8 +33,18 @@ public class DimensionLock extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new ProjectTopCardAction(magicNumber));
-        Wiz.applyToSelf(new NoDrawPower(p));
+        Wiz.atb(new ProjectTopCardAction(magicNumber, new AbstractGameAction() {
+            @Override
+            public void update() {
+                for (AbstractCard card : ProjectTopCardAction.projectedCards) {
+                    if (card.canUpgrade()) {
+                        card.upgrade();
+                    }
+                }
+                this.isDone = true;
+            }
+        }));
+        //Wiz.applyToSelf(new NoDrawPower(p));
     }
 
     public void upp() {

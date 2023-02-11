@@ -676,7 +676,7 @@
   },
   "${ModID}:DimensionLock": {
     "NAME": "Dimension Lock",
-    "DESCRIPTION": "starlight:Project the top !M! playable cards of your draw pile. NL You cannot draw additional cards this turn. NL Exhaust."
+    "DESCRIPTION": "starlight:Project and Upgrade the top !M! playable cards of your draw pile. NL Exhaust."
   },
 
 
