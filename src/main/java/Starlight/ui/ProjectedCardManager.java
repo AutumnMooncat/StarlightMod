@@ -68,24 +68,10 @@ public class ProjectedCardManager {
     }
 
     public static void playCards() {
-        /*Wiz.atb(new AbstractGameAction() {
-            @Override
-            public void update() {
-                for (AbstractCard card : cards.group) {
-                    card.targetDrawScale = 0.75F;
-                    card.applyPowers();
-                    ProjectedCardField.projectedField.set(card, true);
-                    Wiz.atb(new NewQueueCardAction(card, true, false, true));
-                }
-                renderQueue.group.addAll(cards.group);
-                cards.clear();
-                this.isDone = true;
-            }
-        });*/
         for (AbstractCard card : cards.group) {
             card.targetDrawScale = 0.75F;
             card.applyPowers();
-            ProjectedCardField.projectedField.set(card, true);
+            ProjectedCardFields.projectedField.set(card, true);
         }
         renderQueue.group.addAll(cards.group);
         cards.clear();
@@ -95,7 +81,12 @@ public class ProjectedCardManager {
     public static void playNextCard() {
         if (!renderQueue.isEmpty()) {
             AbstractCard card = renderQueue.group.get(0);
-            Wiz.atb(new NewQueueCardAction(card, true, false, true));
+            if (!ProjectedCardFields.interruptedField.get(card)) {
+                Wiz.atb(new NewQueueCardAction(card, true, false, true));
+            } else {
+                card.dontTriggerOnUseCard = true;
+                Wiz.atb(new UseCardAction(card, null));
+            }
         }
     }
 
@@ -127,8 +118,9 @@ public class ProjectedCardManager {
     }
 
     @SpirePatch2(clz = AbstractCard.class, method = SpirePatch.CLASS)
-    public static class ProjectedCardField {
+    public static class ProjectedCardFields {
         public static SpireField<Boolean> projectedField = new SpireField<>(() -> false);
+        public static SpireField<Boolean> interruptedField = new SpireField<>(() -> false);
     }
 
     @SpirePatch2(clz = UseCardAction.class, method = SpirePatch.CLASS)
@@ -140,9 +132,10 @@ public class ProjectedCardManager {
     public static class InheritProjectedField {
         @SpirePrefixPatch
         public static void pushProjected(UseCardAction __instance, AbstractCard card) {
-            if (ProjectedCardField.projectedField.get(card)) {
+            if (ProjectedCardFields.projectedField.get(card)) {
                 ProjectedActionField.projectedField.set(__instance, true);
-                ProjectedCardField.projectedField.set(card, false);
+                ProjectedCardFields.projectedField.set(card, false);
+                ProjectedCardFields.interruptedField.set(card, false);
                 renderQueue.removeCard(card);
                 playNextCard();
             }
@@ -218,7 +211,7 @@ public class ProjectedCardManager {
         @SpireInsertPatch(locator = Locator.class)
         public static SpireReturn<?> addCardsBack(GameActionManager __instance) {
             AbstractCard c = __instance.cardQueue.get(0).card;
-            if (c != null && ProjectedCardField.projectedField.get(c)) {
+            if (c != null && ProjectedCardFields.projectedField.get(c)) {
                 c.dontTriggerOnUseCard = true;
                 Wiz.atb(new UseCardAction(c, null));
                 return SpireReturn.Return();
@@ -231,6 +224,16 @@ public class ProjectedCardManager {
             public int[] Locate(CtBehavior ctBehavior) throws Exception {
                 Matcher m = new Matcher.FieldAccessMatcher(AbstractPlayer.class, "limbo");
                 return LineFinder.findAllInOrder(ctBehavior, m);
+            }
+        }
+    }
+
+    @SpirePatch2(clz = GameActionManager.class, method = "callEndTurnEarlySequence")
+    public static class InterruptCardsPlz {
+        @SpirePostfixPatch
+        public static void setField() {
+            for (AbstractCard card : ProjectedCardManager.renderQueue.group) {
+                ProjectedCardFields.interruptedField.set(card, true);
             }
         }
     }
