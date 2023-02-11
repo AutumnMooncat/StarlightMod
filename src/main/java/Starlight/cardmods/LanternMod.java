@@ -1,7 +1,6 @@
 package Starlight.cardmods;
 
 import Starlight.actions.RemoveCardModfierAction;
-import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -38,7 +37,7 @@ public class LanternMod extends AbstractCardModifier {
             }
             s.append(TEXT[2]);
         } else {
-            s.append(" ").append(amount).append(TEXT[2]);
+            s.append(" ").append(amount).append(" [E]").append(TEXT[2]);
         }
         return rawDescription + s;
     }
