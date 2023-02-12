@@ -1,5 +1,6 @@
 package Starlight.ui;
 
+import Starlight.actions.InterruptCardAction;
 import Starlight.cards.interfaces.OnProjectCard;
 import Starlight.patches.CardCounterPatches;
 import Starlight.powers.interfaces.OnProjectPower;
@@ -85,8 +86,7 @@ public class ProjectedCardManager {
             if (!ProjectedCardFields.interruptedField.get(card)) {
                 Wiz.atb(new NewQueueCardAction(card, true, false, true));
             } else {
-                card.dontTriggerOnUseCard = true;
-                Wiz.atb(new UseCardAction(card, null));
+                Wiz.atb(new InterruptCardAction(card));
             }
         }
     }
@@ -213,8 +213,7 @@ public class ProjectedCardManager {
         public static SpireReturn<?> addCardsBack(GameActionManager __instance) {
             AbstractCard c = __instance.cardQueue.get(0).card;
             if (c != null && ProjectedCardFields.projectedField.get(c)) {
-                c.dontTriggerOnUseCard = true;
-                Wiz.atb(new UseCardAction(c, null));
+                Wiz.atb(new InterruptCardAction(c));
                 return SpireReturn.Return();
             }
             return SpireReturn.Continue();
@@ -242,7 +241,7 @@ public class ProjectedCardManager {
     @SpirePatch2(clz = PerfectedStrike.class, method = "countCards")
     public static class CountProjectedCardsPlz {
         @SpirePostfixPatch
-        public static int getCount(int __result, PerfectedStrike __instance) {
+        public static int getCount(int __result) {
             int projectedStrikes = (int)(ProjectedCardManager.cards.group.stream().filter(c -> c.hasTag(AbstractCard.CardTags.STRIKE)).count() + ProjectedCardManager.renderQueue.group.stream().filter(c -> c.hasTag(AbstractCard.CardTags.STRIKE)).count());
             return __result + projectedStrikes;
         }
