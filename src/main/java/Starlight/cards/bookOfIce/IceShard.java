@@ -23,6 +23,7 @@ public class IceShard extends AbstractMagickCard {
     private static final int DMG = 7;
     private static final int UP_DMG = 3;
     private static final int EFFECT = 1;
+    private static final int UP_EFFECT = 1;
 
     public IceShard() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -40,6 +41,7 @@ public class IceShard extends AbstractMagickCard {
 
     public void upp() {
         upgradeDamage(UP_DMG);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
