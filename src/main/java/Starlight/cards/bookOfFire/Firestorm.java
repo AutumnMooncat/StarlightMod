@@ -2,11 +2,9 @@ package Starlight.cards.bookOfFire;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.FirestormPower;
-import Starlight.powers.VulcanizePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.cards.blue.BeamCell;
 import com.megacrit.cardcrawl.cards.red.Combust;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

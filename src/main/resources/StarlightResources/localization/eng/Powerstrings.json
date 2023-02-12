@@ -122,7 +122,7 @@
   },
   "${ModID}:FirestormPower": {
     "NAME": "Firestorm",
-    "DESCRIPTIONS": ["Whenever you apply #yBurn, deal #b"," damage to ALL enemies."]
+    "DESCRIPTIONS": ["Whenever you apply #yBurn, gain #b"," #yVigor."]
   },
   "${ModID}:MaelstromPower": {
     "NAME": "Maelstrom",

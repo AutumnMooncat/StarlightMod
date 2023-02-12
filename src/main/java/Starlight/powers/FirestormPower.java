@@ -1,14 +1,14 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
+import Starlight.actions.DoIfPowerAppliedAction;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class FirestormPower extends AbstractPower {
 
@@ -31,15 +31,9 @@ public class FirestormPower extends AbstractPower {
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (source == this.owner && target != this.owner && power instanceof BurnPower) {
             flash();
-            this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+            Wiz.att(new DoIfPowerAppliedAction(power, new ApplyPowerAction(owner, owner, new VigorPower(owner, this.amount))));
         }
     }
-
-/*    @Override
-    public void atStartOfTurnPostDraw() {
-        flash();
-        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new BurnPower(mon, owner, amount)));
-    }*/
 
     @Override
     public void updateDescription() {
