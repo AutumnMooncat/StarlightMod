@@ -34,6 +34,7 @@ public class Flow extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        blck();
         Wiz.atb(new DrawCardAction(magicNumber));
         Wiz.atb(new DiscardAction(p, p, magicNumber, false));
     }
