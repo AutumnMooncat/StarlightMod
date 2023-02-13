@@ -2,7 +2,7 @@
 
 This mod currently adds a new playable character, The Sisters.
 
-Alongside them is a huge draft of 155 cards, 11 Relics, and 5 Potions. While I do not yet know of any incompatibilities, please let me know if you find any.
+Alongside them is a huge draft of 165 cards, 11 Relics, and 5 Potions. While I do not yet know of any incompatibilities, please let me know if you find any.
 
 Character, relic, and other assets are from Disgaea and are property of Nippon Ichi Software.
 
@@ -15,7 +15,7 @@ _**Magicks:**_
 Magick cards are a new classification of card that many other mechanics interact with. Magick is not a new type, but something that the card types you are familiar with can be, for instance, a Magick Attack vs a regular Attack.
 
 _**Spellbooks:**_
-At the character select screen, the sisters each get to choose a spellbook. These spellbooks provide passive effects that will be active while that sister is in front, as well as dictate your starting deck and the cards you will see in a draft. This mod contains 50 cards which will appear in every run, and 7 spellbooks each containing 15 Magick cards. The 2 chosen books will then be combined with the base 50 cards for the run, resulting in 80 possible cards to see. Each spellbook specializes in a certain archetype, so you can mix and match books to create different strategies to suit your play style. 
+At the character select screen, the sisters each get to choose a spellbook. These spellbooks dictate your starting deck and the cards you will see in a draft. This mod contains 45 cards which will appear in every run, and 8 spellbooks each containing 15 Magick cards. The 2 chosen books will then be combined with the base 45 cards for the run, resulting in 75 possible cards to see. Each spellbook specializes in a certain archetype, so you can mix and match books to create different strategies to suit your play style. 
 
 _**Projection:**_
 Projection offers the sisters a new way to play cards, offering a tradeoff between targeted immediate effects, and randomly targeted delayed effects that cost no Energy. Projected cards render above the sisters in the order in which they will be played, and at the start of their next turn, all projected cards are sequentially played at no cost. This comes with the downside of being unable to select targets, much like cards played by Mayhem, but allows you to play cards you otherwise wouldn't have the Energy for.
