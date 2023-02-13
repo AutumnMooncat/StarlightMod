@@ -2,7 +2,7 @@
 
 This mod currently adds a new playable character, The Sisters.
 
-Alongside them is a huge draft of 155 cards, 11 Relics, and 5 Potions. While I do not yet know of any incompatibilities, please let me know if you find any.
+Alongside them is a huge draft of 165 cards, 11 Relics, and 5 Potions. While I do not yet know of any incompatibilities, please let me know if you find any.
 
 Character, relic, and other assets are from Disgaea and are property of Nippon Ichi Software.
 
