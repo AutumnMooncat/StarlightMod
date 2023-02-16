@@ -39,12 +39,10 @@ public class FreezeDry extends AbstractMagickCard {
 
     @Override
     public void calculateCardDamage(AbstractMonster mo) {
-        int base = baseDamage;
-        if (mo.hasPower(WeakPower.POWER_ID)) {
-            baseDamage *= 2;
-        }
         super.calculateCardDamage(mo);
-        baseDamage = base;
+        if (mo.hasPower(WeakPower.POWER_ID)) {
+            damage *= 2;
+        }
         isDamageModified = baseDamage != damage;
     }
 
