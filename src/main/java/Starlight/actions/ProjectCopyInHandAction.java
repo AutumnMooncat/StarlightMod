@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.SelectCardsInHandActio
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;
@@ -42,6 +43,9 @@ public class ProjectCopyInHandAction extends AbstractGameAction {
     @Override
     public void update() {
         projectedCards.clear();
+        if (AbstractDungeon.getCurrRoom().isBattleEnding() || amount == 0) {
+            this.isDone = true;
+        }
         if (Wiz.adp().hand.isEmpty()) {
             if (this.followUpAction != null) {
                 this.addToTop(this.followUpAction);

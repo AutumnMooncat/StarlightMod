@@ -47,6 +47,9 @@ public class ProjectCardsInHandAction extends AbstractGameAction {
     @Override
     public void update() {
         projectedCards.clear();
+        if (AbstractDungeon.getCurrRoom().isBattleEnding() || amount == 0) {
+            this.isDone = true;
+        }
         if (Wiz.adp().hand.isEmpty()) {
             if (this.followUpAction != null) {
                 this.addToTop(this.followUpAction);
