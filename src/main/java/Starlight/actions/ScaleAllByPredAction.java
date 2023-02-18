@@ -34,6 +34,7 @@ public class ScaleAllByPredAction extends AbstractGameAction {
         cards.addAll(Wiz.adp().hand.group);
         cards.addAll(Wiz.adp().discardPile.group);
         cards.addAll(ProjectedCardManager.cards.group);
+        cards.addAll(ProjectedCardManager.renderQueue.group);
 
         for (AbstractCard c : cards) {
             if (pred.test(c)) {
