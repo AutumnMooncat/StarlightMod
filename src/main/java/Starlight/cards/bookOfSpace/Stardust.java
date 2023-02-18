@@ -64,7 +64,7 @@ public class Stardust extends AbstractMagickCard {
     @Override
     protected void applyPowersToBlock() {
         int base = baseBlock;
-        baseBlock += magicNumber * ProjectedCardManager.cards.size();
+        baseBlock += magicNumber * (ProjectedCardManager.cards.size() + ProjectedCardManager.renderQueue.size());
         super.applyPowersToBlock();
         baseBlock = base;
         isBlockModified = baseBlock != block;
