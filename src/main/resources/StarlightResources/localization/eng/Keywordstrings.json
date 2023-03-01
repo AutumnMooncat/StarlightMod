@@ -8,13 +8,6 @@
     "DESCRIPTION": "Effect triggers if you have manually swapped characters this turn."
   },
   {
-    "PROPER_NAME": "Swap",
-    "NAMES": [
-      "swap"
-    ],
-    "DESCRIPTION": "Switch the active character."
-  },
-  {
     "PROPER_NAME": "Projected",
     "NAMES": [
       "project",
@@ -56,14 +49,6 @@
     "DESCRIPTION": "When you obtain #b10 #yProvidence, #yMagick cards are twice as effective for #b1 turn."
   },
   {
-    "PROPER_NAME": "Crumple",
-    "NAMES": [
-      "crumple",
-      "crumpled"
-    ],
-    "DESCRIPTION": "Crumpled creatures take additional damage from #yAttacks this turn."
-  },
-  {
     "PROPER_NAME": "Jinx",
     "NAMES": [
       "jinx",
@@ -86,54 +71,6 @@
     "DESCRIPTION": "When you play this card, #yProject a copy of it."
   },
   {
-    "PROPER_NAME": "Tag",
-    "NAMES": [
-      "attack tag",
-      "skill tag",
-      "attack_tag",
-      "skill_tag",
-      "tag"
-    ],
-    "DESCRIPTION": "Effect triggers if the last card played matches the specified type."
-  },
-  {
-    "PROPER_NAME": "Primrose",
-    "NAMES": [
-      "primrose",
-      "primrose's"
-    ],
-    "DESCRIPTION": "Effect triggers if Primrose is in front."
-  },
-  {
-    "PROPER_NAME": "Luna",
-    "NAMES": [
-      "luna",
-      "luna's"
-    ],
-    "DESCRIPTION": "Effect triggers if Luna is in front."
-  },
-  {
-    "PROPER_NAME": "Fisticuffs",
-    "NAMES": [
-      "fisticuffs"
-    ],
-    "DESCRIPTION": "#yPrimrose #yAbility - Gain #b1 Block per level when playing an #yAttack."
-  },
-  {
-    "PROPER_NAME": "Temperance",
-    "NAMES": [
-      "temperance"
-    ],
-    "DESCRIPTION": "#yLuna #yAbility - Gain #b1 #ySP per level when playing an #ySkill."
-  },
-  {
-    "PROPER_NAME": "Ability",
-    "NAMES": [
-      "ability"
-    ],
-    "DESCRIPTION": "Abilities are upgradeable passive effects."
-  },
-  {
     "PROPER_NAME": "Exhaust",
     "NAMES": [
       "exhausting"
@@ -141,37 +78,11 @@
     "DESCRIPTION": "Removed until end of combat."
   },
   {
-    "PROPER_NAME": "Envision",
-    "NAMES": [
-      "envision",
-      "envisioned"
-    ],
-    "DESCRIPTION": "Determine the next X cards you will draw. You may add Envisioned cards to your hand at the cost of drawing less cards next turn."
-  },
-  {
     "PROPER_NAME": "Resonant",
     "NAMES": [
-      "resonant",
-      "envisioned"
+      "resonant"
     ],
     "DESCRIPTION": "Resonant cards are unplayable Retaining cards that confer an effect while in hand. When their uses hit 0, they are automatically discarded and reset."
-  },
-  {
-    "PROPER_NAME": "Star Shard",
-    "NAMES": [
-      "star shard",
-      "star shards",
-      "star_shard",
-      "star_shards"
-    ],
-    "DESCRIPTION": "Star Shards are Resonant cards which Retain and Exhaust."
-  },
-  {
-    "PROPER_NAME": "Grit",
-    "NAMES": [
-      "grit"
-    ],
-    "DESCRIPTION": "Grit is a status card that plays and Exhausts other cards."
   },
   {
     "PROPER_NAME": "Secondary",
@@ -179,13 +90,6 @@
       "secondary"
     ],
     "DESCRIPTION": "Secondary effects are the non-damage and non-Block effects of a card."
-  },
-  {
-    "PROPER_NAME": "Wet",
-    "NAMES": [
-      "wet"
-    ],
-    "DESCRIPTION": "Wet creatures provide Block when attacked. Each turn, Wet is halved."
   },
   {
     "PROPER_NAME": "Burn",
@@ -209,14 +113,6 @@
       "tangled"
     ],
     "DESCRIPTION": "Tangled creatures deal #b10% less damage with Attacks per stack this turn."
-  },
-  {
-    "PROPER_NAME": "Mud",
-    "NAMES": [
-      "mud",
-      "muddy"
-    ],
-    "DESCRIPTION": "Muddy creatures deal less damage with Attacks. Each turn, Mud is halved."
   },
   {
     "PROPER_NAME": "Barbs",
