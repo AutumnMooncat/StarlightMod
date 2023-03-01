@@ -24,7 +24,7 @@
   },
   "${ModID}:Augury": {
     "NAME": "Augury",
-    "DESCRIPTION": "Deal !D! damage. NL starlight:Foretell and Upgrade a card in your discard pile."
+    "DESCRIPTION": "Deal !D! damage. NL starlight:Foretell and Upgrade a card from your discard pile."
   },
   "${ModID}:Balance": {
     "NAME": "Balance",
@@ -128,7 +128,7 @@
   },
   "${ModID}:RealityPassage": {
     "NAME": "Reality Passage",
-    "DESCRIPTION": "Gain !M! starlight:Providence. NL starlight:Foretell any number of cards in your discard pile. NL Exhaust."
+    "DESCRIPTION": "Gain !M! starlight:Providence. NL starlight:Foretell any number of cards from your discard pile. NL Exhaust."
   },
   "${ModID}:Refresh": {
     "NAME": "Refresh",
@@ -193,7 +193,7 @@
   },
   "${ModID}:ThePlot": {
     "NAME": "The Plot",
-    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL starlight:Foretell a card in your hand. It costs 0 until played."
+    "DESCRIPTION": "{@@}Draw !M! card{!M!|>1=s}. NL starlight:Foretell a card from your hand. NL It costs 0 until played."
   },
   "${ModID}:Thoughtbloom": {
     "NAME": "Thoughtbloom",
@@ -588,7 +588,7 @@
   },
   "${ModID}:DivineSense": {
     "NAME": "Divine Sense",
-    "DESCRIPTION": "starlight:Foretell !M! cards in your discard pile. They cost 0 until played. NL Exhaust."
+    "DESCRIPTION": "starlight:Foretell !M! cards from your discard pile. NL They cost 0 until played. NL Exhaust."
   },
   "${ModID}:Blessing": {
     "NAME": "Blessing",
@@ -631,7 +631,7 @@
   },
   "${ModID}:Nebula": {
     "NAME": "Nebula",
-    "DESCRIPTION": "Gain !B! Block. NL starlight:Foretell !M! card{!M!|>1=s} in your discard pile.{@@}"
+    "DESCRIPTION": "Gain !B! Block. NL starlight:Foretell !M! card{!M!|>1=s} from your discard pile.{@@}"
   },
   "${ModID}:StellarArray": {
     "NAME": "Stellar Array",
@@ -651,7 +651,7 @@
   },
   "${ModID}:SolGate": {
     "NAME": "Sol Gate",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL starlight:Foretell !M! card{!M!|>1=s}{@@} in your discard pile."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL starlight:Foretell !M! card{!M!|>1=s}{@@} from your discard pile."
   },
   "${ModID}:Gravity": {
     "NAME": "Gravity",
