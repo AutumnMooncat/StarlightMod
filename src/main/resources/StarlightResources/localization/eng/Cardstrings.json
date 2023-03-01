@@ -329,7 +329,7 @@
   },
   "${ModID}:Frostburn": {
     "NAME": "Frostbite",
-    "DESCRIPTION": "{@@}Deal {!M!|0=0%|1=25%|2=50%|3=75%|4=100%|5=125%|6-150%|7=175%|8=200%|>8=a lot} more damage to enemies with starlight:Chill.{!Starlight:M2!|>0= NL Apply !Starlight:M2! starlight:Chill to ALL enemies.}"
+    "DESCRIPTION": "{@@}starlight:Chill increases damage taken from Attacks by an additional {!M!|0=0%|1=30%|2=60%|3=90%|4=120%|5=150%|6-180%|7=210%|8=240%|9=270%|10=300%|>10=a lot}."
   },
   "${ModID}:Refrigerate": {
     "NAME": "Refrigerate",

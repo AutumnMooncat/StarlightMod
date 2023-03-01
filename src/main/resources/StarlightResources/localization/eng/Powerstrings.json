@@ -90,7 +90,7 @@
   },
   "${ModID}:ChillPower": {
     "NAME": "Chill",
-    "DESCRIPTIONS": ["Deals #b20% less damage with #yAttacks for #b"," turn."," turns."]
+    "DESCRIPTIONS": ["Deals #b20% less damage with #yAttacks and takes #b","% more damage from #yAttacks for #b"," turn."," turns."]
   },
   "${ModID}:BubbleShieldPower": {
     "NAME": "Bubble Shield",
@@ -108,9 +108,9 @@
     "NAME": "Bloom",
     "DESCRIPTIONS": ["Whenever you play an Attack, gain #b"," #yBarbs."]
   },
-  "${ModID}:FrostburnPower": {
+  "${ModID}:FrostbitePower": {
     "NAME": "Frostbite",
-    "DESCRIPTIONS": ["Attacks deal #b","% more damage to #yChilled enemies."]
+    "DESCRIPTIONS": ["#yChill increases damage taken from #yAttacks by an additional #b","%."]
   },
   "${ModID}:HailPower": {
     "NAME": "Hail",

@@ -105,7 +105,7 @@
       "chill",
       "chilled"
     ],
-    "DESCRIPTION": "Chilled creatures deal #b20% less damage with Attacks."
+    "DESCRIPTION": "Chilled creatures deal #b20% less damage with Attacks and take #b20% more damage from Attacks."
   },
   {
     "PROPER_NAME": "Tangled",

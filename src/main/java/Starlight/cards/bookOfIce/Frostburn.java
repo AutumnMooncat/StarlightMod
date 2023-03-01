@@ -1,8 +1,7 @@
 package Starlight.cards.bookOfIce;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.ChillPower;
-import Starlight.powers.FrostburnPower;
+import Starlight.powers.FrostbitePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
@@ -28,21 +27,15 @@ public class Frostburn extends AbstractMagickCard {
     public Frostburn() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseMagicNumber = magicNumber = EFFECT;
-        baseSecondMagic = secondMagic = 0;
         tags.add(CustomTags.STARLIGHT_ICE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new FrostburnPower(p, magicNumber));
-        if (secondMagic > 0) {
-            Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new ChillPower(mon, secondMagic)));
-        }
+        Wiz.applyToSelf(new FrostbitePower(p, magicNumber));
     }
 
     public void upp() {
-        //upgradeBaseCost(UP_COST);
-        //upgradeMagicNumber(UP_EFFECT);
-        upgradeSecondMagic(CHILL);
+        upgradeBaseCost(UP_COST);
     }
 
     @Override
