@@ -16,5 +16,8 @@
   },
   "${ModID}:JinxMod": {
     "TEXT": ["Hexing ", "", " NL Apply %s starlight:Jinx."]
+  },
+  "${ModID}:BurnMod": {
+    "TEXT": ["Burning ", "", " NL Apply %s starlight:Burn."]
   }
 }
