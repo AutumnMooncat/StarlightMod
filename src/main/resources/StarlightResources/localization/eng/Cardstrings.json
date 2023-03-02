@@ -19,8 +19,8 @@
   },
   "${ModID}:Ascend": {
     "NAME": "Ascend",
-    "DESCRIPTION": "starlight:Project an Attack card in your hand, and a copy of it for the next X turns. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "starlight:Project an Attack or Skill card in your hand, and a copy of it for the next X turns. NL Exhaust."
+    "DESCRIPTION": "starlight:Project an Attack or Skill card in your hand, and a copy of it. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "starlight:Project an Attack or Skill card in your hand, and a copy of it."
   },
   "${ModID}:Augury": {
     "NAME": "Augury",
