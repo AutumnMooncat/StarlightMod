@@ -1,8 +1,6 @@
 package Starlight.cards.bookOfIce;
 
-import Starlight.actions.EasyXCostAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.ChillPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
@@ -10,6 +8,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.blue.ColdSnap;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,7 +17,6 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
 
 import static Starlight.TheStarlightMod.makeID;
-import static Starlight.util.Wiz.atb;
 
 public class Blizzard extends AbstractMagickCard {
     public final static String ID = makeID(Blizzard.class.getSimpleName());
@@ -27,8 +25,8 @@ public class Blizzard extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = -1;
-    private static final int DMG = 7;
+    private static final int COST = 1;
+    private static final int DMG = 8;
     private static final int UP_DMG = 3;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
@@ -39,23 +37,18 @@ public class Blizzard extends AbstractMagickCard {
         baseMagicNumber = magicNumber = EFFECT;
         isMultiDamage = true;
         tags.add(CustomTags.STARLIGHT_ICE);
-        tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
-        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new EasyXCostAction(this, (effect, params) -> {
-            for (int i = 0 ; i < effect ; i++) {
-                Wiz.forAllMonstersLiving(mon -> Wiz.att(new ApplyPowerAction(mon, p, new ChillPower(mon, magicNumber), magicNumber, true)));
-                Wiz.att(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
-                Wiz.att(new VFXAction(new BlizzardEffect(damage * effect, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.5F));
-            }
-            return true;
-        }));
+        Wiz.atb(new SFXAction("APPEAR"));
+        Wiz.atb(new VFXAction(new BlizzardEffect(damage, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.5F));
+        Wiz.atb(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
+        Wiz.forAllMonstersLiving(mon -> Wiz.atb(new ApplyPowerAction(mon, p, new WeakPower(mon, magicNumber, false), magicNumber, true)));
     }
 
     public void upp() {
         upgradeDamage(UP_DMG);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
