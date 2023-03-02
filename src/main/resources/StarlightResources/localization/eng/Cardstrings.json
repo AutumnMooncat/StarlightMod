@@ -567,7 +567,7 @@
   },
   "${ModID}:DivineSpears": {
     "NAME": "Divine Spears",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! starlight:Providence."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Gain !M! starlight:Providence."
   },
   "${ModID}:LightArrow": {
     "NAME": "Light Arrow",

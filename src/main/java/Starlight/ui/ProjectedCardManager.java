@@ -138,8 +138,15 @@ public class ProjectedCardManager {
                 ProjectedCardFields.projectedField.set(card, false);
                 ProjectedCardFields.interruptedField.set(card, false);
                 renderQueue.removeCard(card);
-                playNextCard();
             }
+        }
+    }
+
+    @SpirePatch2(clz = UseCardAction.class, method = "update")
+    public static class DoNextCard {
+        @SpirePostfixPatch
+        public static void doNextProjectedCard() {
+            playNextCard();
         }
     }
 
