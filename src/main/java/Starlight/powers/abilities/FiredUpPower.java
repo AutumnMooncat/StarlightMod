@@ -3,15 +3,11 @@ package Starlight.powers.abilities;
 import Starlight.TheStarlightMod;
 import Starlight.characters.StarlightSisters;
 import Starlight.powers.BurnPower;
-import Starlight.powers.ChillPower;
-import Starlight.powers.FrostburnPower;
 import Starlight.powers.VulcanizePower;
 import Starlight.powers.interfaces.RenderOnCardPower;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -65,8 +61,6 @@ public class FiredUpPower extends AbstractPower implements RenderOnCardPower {
 
     public static boolean appliesBurn(AbstractCard card) {
         if (card.tags.contains(CustomTags.STARLIGHT_APPLIES_BURN)) {
-            return true;
-        } else if (card.tags.contains(CustomTags.STARLIGHT_APPLIES_CHILL) && Wiz.adp().hasPower(FrostburnPower.POWER_ID)) {
             return true;
         } else if (card.type == AbstractCard.CardType.ATTACK && Wiz.adp().hasPower(VulcanizePower.POWER_ID)) {
             return true;
