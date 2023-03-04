@@ -197,7 +197,7 @@
   },
   "${ModID}:StricturePower": {
     "NAME": "Stricture",
-    "DESCRIPTIONS": ["Whenever this creature attacks, it loses #b"," HP."]
+    "DESCRIPTIONS": ["Whenever this creature receives #yStricture, it loses #b"," HP."]
   },
   "${ModID}:ProjectCopyPower": {
     "NAME": "Ascended Copy",

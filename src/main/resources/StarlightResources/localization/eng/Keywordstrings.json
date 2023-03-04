@@ -149,7 +149,7 @@
     "NAMES": [
       "stricture"
     ],
-    "DESCRIPTION": "A creature with a Stricture loses HP whenever they attack."
+    "DESCRIPTION": "Whenever you apply Stricture, the enemy loses HP equal to their Stricture."
   },
   {
     "PROPER_NAME": "Ruin",
