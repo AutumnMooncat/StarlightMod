@@ -1,20 +1,14 @@
 package Starlight.cards.bookOfLight;
 
-import Starlight.actions.CleansePowerAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.BurnPower;
 import Starlight.powers.StricturePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.purple.Crescendo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.SanctityEffect;
 
 import static Starlight.TheStarlightMod.makeID;
@@ -28,26 +22,26 @@ public class SacredFlame extends AbstractMagickCard {
 
     private static final int COST = 1;
     private static final int EFFECT = 3;
-    private static final int UP_EFFECT = 2;
-    private static final int CLEANSE = 1;
-    private static final int UP_CLEANSE = 1;
+    private static final int UP_EFFECT = 1;
+    private static final int BLOCK = 5;
+    private static final int UP_BLOCK = 3;
 
     public SacredFlame() {
         super(ID, COST, TYPE, RARITY, TARGET);
+        baseBlock = block = BLOCK;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_LIGHT);
-        tags.add(CustomTags.STARLIGHT_APPLIES_BURN);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new VFXAction(new SanctityEffect(m.hb.cX, m.hb.cY)));
-        Wiz.applyToEnemy(m, new BurnPower(m, p, magicNumber));
+        blck();
         Wiz.applyToEnemy(m, new StricturePower(m, p, magicNumber));
     }
 
     public void upp() {
+        upgradeBlock(UP_BLOCK);
         upgradeMagicNumber(UP_EFFECT);
-        //upgradeSecondMagic(UP_WEAK);
     }
 
     @Override

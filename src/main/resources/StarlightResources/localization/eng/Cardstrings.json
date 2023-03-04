@@ -563,7 +563,7 @@
   },
   "${ModID}:SacredFlame": {
     "NAME": "Sacred Flame",
-    "DESCRIPTION": "Apply !M! starlight:Burn. NL Apply !M! starlight:Stricture."
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! starlight:Stricture."
   },
   "${ModID}:DivineSpears": {
     "NAME": "Divine Spears",
