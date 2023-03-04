@@ -5,6 +5,7 @@ import Starlight.powers.StricturePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.colorless.Blind;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -20,8 +21,8 @@ public class Geas extends AbstractMagickCard {
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;
-    private static final int EFFECT = 3;
-    private static final int UP_EFFECT = 2;
+    private static final int EFFECT = 4;
+    private static final int UP_EFFECT = 1;
     private static final int WEAK = 1;
     private static final int UP_WEAK = 1;
 
@@ -33,13 +34,14 @@ public class Geas extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        Wiz.atb(new SFXAction("POWER_SHACKLE", 0.05F));
         Wiz.applyToEnemy(m, new WeakPower(m, secondMagic, false));
         Wiz.applyToEnemy(m, new StricturePower(m, p, magicNumber));
     }
 
     public void upp() {
         upgradeMagicNumber(UP_EFFECT);
-        //upgradeSecondMagic(UP_WEAK);
+        upgradeSecondMagic(UP_WEAK);
     }
 
     @Override
