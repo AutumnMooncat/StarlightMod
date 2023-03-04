@@ -1,6 +1,5 @@
 package Starlight.cards.bookOfLight;
 
-import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BlessingPower;
 import Starlight.util.CustomTags;
@@ -14,7 +13,7 @@ import static Starlight.TheStarlightMod.makeID;
 public class Blessing extends AbstractMagickCard {
     public final static String ID = makeID(Blessing.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
