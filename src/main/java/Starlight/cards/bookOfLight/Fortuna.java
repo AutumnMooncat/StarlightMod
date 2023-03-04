@@ -1,6 +1,5 @@
 package Starlight.cards.bookOfLight;
 
-import Starlight.cards.abstracts.AbstractEasyCard;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.FortunaPower;
 import Starlight.util.CustomTags;
@@ -14,11 +13,11 @@ import static Starlight.TheStarlightMod.makeID;
 public class Fortuna extends AbstractMagickCard {
     public final static String ID = makeID(Fortuna.class.getSimpleName());
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
