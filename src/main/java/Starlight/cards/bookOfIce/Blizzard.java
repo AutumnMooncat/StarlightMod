@@ -1,6 +1,7 @@
 package Starlight.cards.bookOfIce;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
+import Starlight.powers.ChillPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
@@ -13,7 +14,6 @@ import com.megacrit.cardcrawl.cards.blue.ColdSnap;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
 
 import static Starlight.TheStarlightMod.makeID;
@@ -25,11 +25,11 @@ public class Blizzard extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 1;
-    private static final int DMG = 8;
-    private static final int UP_DMG = 3;
-    private static final int EFFECT = 1;
-    private static final int UP_EFFECT = 1;
+    private static final int COST = 3;
+    private static final int DMG = 24;
+    private static final int UP_DMG = 8;
+    private static final int EFFECT = 3;
+    private static final int UP_EFFECT = 2;
 
     public Blizzard() {
         super(ID, COST, TYPE, RARITY, TARGET);
@@ -37,13 +37,15 @@ public class Blizzard extends AbstractMagickCard {
         baseMagicNumber = magicNumber = EFFECT;
         isMultiDamage = true;
         tags.add(CustomTags.STARLIGHT_ICE);
+        tags.add(CustomTags.STARLIGHT_APPLIES_CHILL);
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new SFXAction("APPEAR"));
         Wiz.atb(new VFXAction(new BlizzardEffect(damage, AbstractDungeon.getMonsters().shouldFlipVfx()), 0.5F));
         Wiz.atb(new DamageAllEnemiesAction(p, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE, true));
-        Wiz.forAllMonstersLiving(mon -> Wiz.atb(new ApplyPowerAction(mon, p, new WeakPower(mon, magicNumber, false), magicNumber, true)));
+        Wiz.forAllMonstersLiving(mon -> Wiz.atb(new ApplyPowerAction(mon, p, new ChillPower(mon, magicNumber), magicNumber, true)));
     }
 
     public void upp() {

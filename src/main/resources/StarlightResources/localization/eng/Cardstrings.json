@@ -325,7 +325,7 @@
   },
   "${ModID}:Blizzard": {
     "NAME": "Blizzard",
-    "DESCRIPTION": "Deal !D! damage and apply !M! Weak to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Chill to ALL enemies. NL Exhaust."
   },
   "${ModID}:Frostburn": {
     "NAME": "Frostbite",
