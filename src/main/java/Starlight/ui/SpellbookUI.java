@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -52,11 +53,16 @@ public class SpellbookUI {
         primPanel.layoutBooks();
         lunaPanel.layoutBooks();
 
-        if (TheStarlightMod.primroseBookIndex > primPanel.books.size() || TheStarlightMod.primroseBookIndex == TheStarlightMod.lunaBookIndex) {
-            TheStarlightMod.primroseBookIndex = TheStarlightMod.lunaBookIndex == 1 ? 0 : 1;
-        }
-        if (TheStarlightMod.lunaBookIndex > lunaPanel.books.size()) {
-            TheStarlightMod.lunaBookIndex = TheStarlightMod.primroseBookIndex == 0 ? 1 : 0;
+        if (TheStarlightMod.primroseBookIndex >= primPanel.books.size() || TheStarlightMod.primroseBookIndex < 0 || TheStarlightMod.primroseBookIndex == TheStarlightMod.lunaBookIndex || TheStarlightMod.lunaBookIndex >= lunaPanel.books.size() || TheStarlightMod.lunaBookIndex < 0) {
+            TheStarlightMod.primroseBookIndex = 1;
+            TheStarlightMod.lunaBookIndex = 0;
+            try {
+                TheStarlightMod.starlightConfig.setInt(TheStarlightMod.PRIMROSE_BOOK_INDEX, TheStarlightMod.primroseBookIndex);
+                TheStarlightMod.starlightConfig.setInt(TheStarlightMod.LUNA_BOOK_INDEX, TheStarlightMod.lunaBookIndex);
+                TheStarlightMod.starlightConfig.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         primPanel.books.get(TheStarlightMod.primroseBookIndex).selected = true;
