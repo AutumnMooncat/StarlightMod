@@ -609,7 +609,7 @@
   },
   "${ModID}:LightOfRuin": {
     "NAME": "Light of Ruin",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to starlight:Providence gained this combat."
+    "DESCRIPTION": "Deal !D! damage and apply !M! starlight:Stricture to ALL enemies. NL Exhaust."
   },
 
 
