@@ -1,6 +1,5 @@
 package Starlight.cards.bookOfDark;
 
-import Starlight.actions.ExhaustByPredAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
@@ -8,15 +7,12 @@ import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.blue.Equilibrium;
 import com.megacrit.cardcrawl.cards.curses.CurseOfTheBell;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
 
 import static Starlight.TheStarlightMod.makeID;
@@ -47,9 +43,6 @@ public class MalevolentMelody extends AbstractMagickCard {
             Wiz.atb(new SFXAction("BELL", (float) (-0.3f - (Math.pow(0.9f, i) * i * 0.1f)), true));
             Wiz.atb(new VFXAction(p, new ShockWaveEffect(p.hb.cX, p.hb.cY, Settings.PURPLE_RELIC_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 0.3F));
             Wiz.atb(new DamageAllEnemiesAction(p, DamageInfo.createDamageMatrix(magicNumber, true), DamageInfo.DamageType.HP_LOSS, AbstractGameAction.AttackEffect.POISON));
-            /*Wiz.forAllMonstersLiving(mon -> {
-                Wiz.atb(new LoseHPAction(mon, p, magicNumber));
-            });*/
         }
     }
 

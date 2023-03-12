@@ -1,14 +1,12 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.ui.ProjectedCardManager;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.green.Skewer;
-import com.megacrit.cardcrawl.cards.purple.EmptyFist;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -34,7 +32,6 @@ public class ArcaneArrow extends AbstractEasyCard {
         baseDamage = damage = DMG;
         baseMagicNumber = magicNumber = magicLastFrame = EFFECT;
         tags.add(CustomTags.STARLIGHT_ARROW);
-        //CardModifierManager.addModifier(this, new ResonantMod(true));
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

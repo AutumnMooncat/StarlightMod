@@ -34,10 +34,6 @@ public class JinxPower extends AbstractPower implements MonsterOnPlayerEndTurnPo
         return damage;
     }
 
-    /*public void atEndOfRound() {
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
-    }*/
-
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
