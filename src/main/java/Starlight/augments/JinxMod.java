@@ -54,7 +54,7 @@ public class JinxMod extends AbstractAugment implements DynvarCarrier {
     }
 
     @Override
-    public String getSufix() {
+    public String getSuffix() {
         return TEXT[1];
     }
 
