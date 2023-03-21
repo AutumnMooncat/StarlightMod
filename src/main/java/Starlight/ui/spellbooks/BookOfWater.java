@@ -18,7 +18,7 @@ public class BookOfWater extends ClickableSpellbook {
     private static final int AMOUNT = 1;
 
     public BookOfWater(boolean prim) {
-        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookWater.png"), TEXT[0], TEXT[1], new AbstractAbilityCard(new SoakPower(null, AMOUNT, prim)) {});
+        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookWater.png"), TEXT[0], TEXT[1]);
     }
 
     @Override

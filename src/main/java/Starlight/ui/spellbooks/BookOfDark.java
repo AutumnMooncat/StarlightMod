@@ -19,7 +19,7 @@ public class BookOfDark extends ClickableSpellbook {
     private static final int AMOUNT = 1;
 
     public BookOfDark(boolean prim) {
-        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookDark.png"), TEXT[0], TEXT[1], new AbstractAbilityCard(new BlackMagicPower(null, prim)) {});
+        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookDark.png"), TEXT[0], TEXT[1]);
     }
 
     @Override

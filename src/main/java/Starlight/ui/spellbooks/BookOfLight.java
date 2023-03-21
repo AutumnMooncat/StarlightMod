@@ -18,7 +18,7 @@ public class BookOfLight extends ClickableSpellbook {
     private static final int AMOUNT = 1;
 
     public BookOfLight(boolean prim) {
-        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookLight.png"), TEXT[0], TEXT[1], new AbstractAbilityCard(new CovenantPower(null, AMOUNT, prim)) {});
+        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookLight.png"), TEXT[0], TEXT[1]);
     }
 
     @Override

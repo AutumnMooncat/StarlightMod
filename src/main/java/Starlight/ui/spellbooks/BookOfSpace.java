@@ -2,10 +2,8 @@ package Starlight.ui.spellbooks;
 
 import Starlight.TheStarlightMod;
 import Starlight.cards.abstracts.AbstractAbilityCard;
-import Starlight.cards.bookOfNature.VineWrap;
 import Starlight.cards.bookOfSpace.Eclipse;
 import Starlight.powers.abilities.EquinoxPower;
-import Starlight.powers.abilities.ThornyVinesPower;
 import Starlight.util.CustomTags;
 import Starlight.util.TexLoader;
 import Starlight.util.Wiz;
@@ -18,7 +16,7 @@ public class BookOfSpace extends ClickableSpellbook {
     private static final int AMOUNT = 2;
 
     public BookOfSpace(boolean prim) {
-        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookSpace.png"), TEXT[0], TEXT[1], new AbstractAbilityCard(new EquinoxPower(null, AMOUNT, prim)) {});
+        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookSpace.png"), TEXT[0], TEXT[1]);
     }
 
     @Override

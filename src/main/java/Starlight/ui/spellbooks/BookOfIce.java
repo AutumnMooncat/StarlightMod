@@ -16,7 +16,7 @@ public class BookOfIce extends ClickableSpellbook {
     private static final int AMOUNT = 1;
 
     public BookOfIce(boolean prim) {
-        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookIce.png"), TEXT[0], TEXT[1], new AbstractAbilityCard(new SnowCloakPower(null, AMOUNT, prim)) {});
+        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookIce.png"), TEXT[0], TEXT[1]);
     }
 
     @Override

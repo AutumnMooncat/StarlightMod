@@ -16,7 +16,7 @@ public class BookOfFire extends ClickableSpellbook {
     public static final int AMOUNT = 2;
 
     public BookOfFire(boolean prim) {
-        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookFire.png"), TEXT[0], TEXT[1], new AbstractAbilityCard(new FiredUpPower(null, AMOUNT, prim)) {});
+        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookFire.png"), TEXT[0], TEXT[1]);
     }
 
     @Override

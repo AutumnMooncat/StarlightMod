@@ -1,7 +1,6 @@
 package Starlight.ui.spellbooks;
 
 import Starlight.TheStarlightMod;
-import Starlight.cards.abstracts.AbstractAbilityCard;
 import Starlight.cards.bookOfNature.VineWrap;
 import Starlight.powers.abilities.ThornyVinesPower;
 import Starlight.util.CustomTags;
@@ -16,7 +15,7 @@ public class BookOfNature extends ClickableSpellbook {
     private static final int AMOUNT = 5;
 
     public BookOfNature(boolean prim) {
-        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookNature.png"), TEXT[0], TEXT[1], new AbstractAbilityCard(new ThornyVinesPower(null, AMOUNT, prim)) {});
+        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookNature.png"), TEXT[0], TEXT[1]);
     }
 
     @Override

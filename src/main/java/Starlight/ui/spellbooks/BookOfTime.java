@@ -16,7 +16,7 @@ public class BookOfTime extends ClickableSpellbook {
     private static final int AMOUNT = 3;
 
     public BookOfTime(boolean prim) {
-        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookTime.png"), TEXT[0], TEXT[1], new AbstractAbilityCard(new FrameSkipPower(null, AMOUNT, prim)) {});
+        super(TexLoader.getTextureAsAtlasRegion(TheStarlightMod.modID + "Resources/images/books/BookTime.png"), TEXT[0], TEXT[1]);
     }
 
     @Override
