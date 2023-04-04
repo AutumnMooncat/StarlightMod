@@ -45,7 +45,7 @@ public class JinxMod extends AbstractAugment implements DynvarCarrier {
 
     @Override
     public boolean validCard(AbstractCard card) {
-        return card.cost != -2 && card.baseDamage > 1 && cardCheck(card, c -> usesEnemyTargeting(c)) && !(card instanceof BlindSide);
+        return card.cost != -2 && card.baseDamage > 1 && cardCheck(card, c -> usesEnemyTargeting()) && !(card instanceof BlindSide);
     }
 
     @Override

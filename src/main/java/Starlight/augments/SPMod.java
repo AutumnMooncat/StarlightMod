@@ -55,7 +55,7 @@ public class SPMod extends AbstractAugment implements DynvarCarrier {
 
     @Override
     public boolean validCard(AbstractCard card) {
-        return card.cost != -2 && (card.baseDamage > 1 || card.baseBlock > 1) && (Wiz.adp() instanceof StarlightSisters || Wiz.adp().masterDeck.group.stream().anyMatch(c -> c instanceof AbstractMagickCard));
+        return card.cost != -2 && (card.baseDamage > 1 || card.baseBlock > 1) && characterCheck(p -> p instanceof StarlightSisters || p.masterDeck.group.stream().anyMatch(c -> c instanceof AbstractMagickCard));
     }
 
     @Override
