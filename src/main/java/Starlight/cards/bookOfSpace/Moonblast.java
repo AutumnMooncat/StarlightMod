@@ -39,8 +39,8 @@ public class Moonblast extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY, i -> {
-            Wiz.att(new VFXAction(new WallopEffect(i, m.hb.cX, m.hb.cY)));
+        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY, t -> {
+            Wiz.att(new VFXAction(new WallopEffect(t.lastDamageTaken, t.hb.cX, t.hb.cY)));
         }));
         Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
         Wiz.atb(new DrawCardAction(magicNumber));

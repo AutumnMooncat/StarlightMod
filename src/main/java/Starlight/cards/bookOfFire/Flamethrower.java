@@ -51,9 +51,9 @@ public class Flamethrower extends AbstractMagickCard {
         Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX, m.hb.cY - 20f * Settings.scale, AbstractGameAction.AttackEffect.FIRE, true), 0.2f));
         Wiz.atb(new SFXAction("ATTACK_FIRE"));
         Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX - 20f * Settings.scale, m.hb.cY, AbstractGameAction.AttackEffect.FIRE, true), 0.0f));
-        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE, i -> {
-            if (i > 0) {
-                Wiz.applyToEnemy(m, new BurnPower(m, p, i));
+        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE, t -> {
+            if (t.lastDamageTaken > 0) {
+                Wiz.applyToEnemy(m, new BurnPower(t, p, t.lastDamageTaken));
             }
         }));
     }

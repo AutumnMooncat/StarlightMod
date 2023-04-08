@@ -43,9 +43,9 @@ public class Epitaph extends AbstractMagickCard {
             this.addToBot(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY, Color.GOLD.cpy())));
             this.addToBot(new WaitAction(0.8F));
         }
-        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, i -> {
-            if (i > 0) {
-                Wiz.applyToEnemyTop(m, new RuinPower(m, p, i));
+        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, t -> {
+            if (t.lastDamageTaken > 0) {
+                Wiz.applyToEnemyTop(m, new RuinPower(t, p, t.lastDamageTaken));
             }
         }));
     }

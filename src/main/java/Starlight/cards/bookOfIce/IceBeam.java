@@ -41,11 +41,11 @@ public class IceBeam extends AbstractMagickCard {
         if (m != null) {
             Wiz.atb(new SFXAction("ORB_FROST_CHANNEL", 0.2f));
             Wiz.atb(new VFXAction(new SmallLaserEffect(p.hb.cX, p.hb.cY, m.hb.cX, m.hb.cY)));
-            Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), i -> {
-                if (i > 0) {
-                    m.tint.color.set(Color.CYAN.cpy());
-                    m.tint.changeColor(Color.WHITE.cpy());
-                    Wiz.applyToEnemy(m, new WeakPower(m, magicNumber, false));
+            Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), t -> {
+                if (t.lastDamageTaken > 0 && t instanceof AbstractMonster) {
+                    t.tint.color.set(Color.CYAN.cpy());
+                    t.tint.changeColor(Color.WHITE.cpy());
+                    Wiz.applyToEnemy((AbstractMonster) t, new WeakPower(t, magicNumber, false));
                 }
             }));
         }

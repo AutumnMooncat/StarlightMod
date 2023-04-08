@@ -1,28 +1,25 @@
 package Starlight.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.WallopEffect;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 import java.util.function.Consumer;
 
 public class DamageFollowupAction extends AbstractGameAction {
     private final DamageInfo info;
-    private final Consumer<Integer> followup;
+    private final Consumer<AbstractCreature> followup;
     private final AttackEffect fx;
 
-    public DamageFollowupAction(AbstractCreature target, DamageInfo info, Consumer<Integer> followup) {
+    public DamageFollowupAction(AbstractCreature target, DamageInfo info, Consumer<AbstractCreature> followup) {
         this(target, info, AttackEffect.NONE, followup);
     }
 
-    public DamageFollowupAction(AbstractCreature target, DamageInfo info, AttackEffect fx, Consumer<Integer> followup) {
+    public DamageFollowupAction(AbstractCreature target, DamageInfo info, AttackEffect fx, Consumer<AbstractCreature> followup) {
         this.info = info;
         this.setValues(target, info);
         this.actionType = ActionType.DAMAGE;
@@ -44,7 +41,7 @@ public class DamageFollowupAction extends AbstractGameAction {
                 }
 
                 this.target.damage(this.info);
-                followup.accept(target.lastDamageTaken);
+                followup.accept(target);
 
                 if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                     AbstractDungeon.actionManager.clearPostCombatActions();

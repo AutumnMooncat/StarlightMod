@@ -1,7 +1,6 @@
 package Starlight.cards.bookOfFire;
 
 import Starlight.actions.DamageFollowupAction;
-import Starlight.actions.ScaleAllByPredAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
@@ -9,7 +8,6 @@ import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.blue.Consume;
-import com.megacrit.cardcrawl.cards.red.SearingBlow;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
@@ -34,9 +32,9 @@ public class Ember extends AbstractMagickCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE, i -> {
-            if (i > 0) {
-                Wiz.applyToSelfTop(new VigorPower(p, i));
+        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE, t -> {
+            if (t.lastDamageTaken > 0) {
+                Wiz.applyToSelfTop(new VigorPower(p, t.lastDamageTaken));
             }
         }));
     }
