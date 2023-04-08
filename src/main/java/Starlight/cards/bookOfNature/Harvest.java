@@ -12,10 +12,8 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.blue.Scrape;
-import com.megacrit.cardcrawl.cards.colorless.DarkShackles;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.RipAndTearEffect;
 
 import static Starlight.TheStarlightMod.makeID;
@@ -43,9 +41,9 @@ public class Harvest extends AbstractMagickCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new VFXAction(new RipAndTearEffect(m.hb.cX, m.hb.cY, Color.GREEN, Color.GOLD)));
         Wiz.atb(new VFXAction(new RipAndTearEffect(m.hb.cX, m.hb.cY, Color.GREEN, Color.GOLD)));
-        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, i -> {
-            if (i > 0 && m.hasPower(TanglePower.POWER_ID)) {
-                Wiz.att(new GainBlockAction(p, i));
+        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, t -> {
+            if (t.lastDamageTaken > 0 && t.hasPower(TanglePower.POWER_ID)) {
+                Wiz.att(new GainBlockAction(p, t.lastDamageTaken));
             }
         }));
         /*dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
