@@ -1,5 +1,6 @@
 package Starlight.cards.bookOfWater;
 
+import Starlight.actions.ScaleAllByPredAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
@@ -20,7 +21,7 @@ public class Scald extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
-    private static final int DMG = 4;
+    private static final int DMG = 3;
     private static final int UP_DMG = 2;
     private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
@@ -35,12 +36,13 @@ public class Scald extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.atb(new ModifyDamageAction(uuid, magicNumber));
+        Wiz.atb(new ScaleAllByPredAction(this, magicNumber, ScaleAllByPredAction.StatBoost.DAMAGE, c -> c instanceof Scald));
+        //Wiz.atb(new ModifyDamageAction(uuid, magicNumber));
         //Wiz.applyToEnemy(m, new BurnPower(m, p, magicNumber));
     }
 
     public void upp() {
-        upgradeDamage(UP_DMG);
+        //upgradeDamage(UP_DMG);
         upgradeMagicNumber(UP_EFFECT);
     }
 

@@ -235,7 +235,7 @@
   },
   "${ModID}:Scald": {
     "NAME": "Scald",
-    "DESCRIPTION": "Deal !D! damage. NL Increase this card's damage by !M! this combat."
+    "DESCRIPTION": "Deal !D! damage. NL Increase the damage of ALL Scald cards by !M! this combat."
   },
   "${ModID}:BubbleShield": {
     "NAME": "Bubble Shield",
