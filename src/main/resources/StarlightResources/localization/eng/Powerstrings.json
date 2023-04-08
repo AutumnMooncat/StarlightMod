@@ -126,7 +126,7 @@
   },
   "${ModID}:MaelstromPower": {
     "NAME": "Maelstrom",
-    "DESCRIPTIONS": ["Whenever you discard a card during your turn, gain #b"," #yBlock."]
+    "DESCRIPTIONS": ["Whenever you play a cost #b0 card, deal #b"," damage to a random enemy."]
   },
   "${ModID}:WhirlpoolPower": {
     "NAME": "Whirlpool",

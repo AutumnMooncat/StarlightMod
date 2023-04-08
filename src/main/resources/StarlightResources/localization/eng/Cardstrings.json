@@ -251,7 +251,7 @@
   },
   "${ModID}:Maelstrom": {
     "NAME": "Maelstrom",
-    "DESCRIPTION": "Whenever you discard a card during your turn, gain !M! Block."
+    "DESCRIPTION": "Whenever you play a cost 0 card, deal !M! damage to a random enemy."
   },
   "${ModID}:SteamBlast": {
     "NAME": "Steam Blast",

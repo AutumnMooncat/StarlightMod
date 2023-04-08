@@ -1,15 +1,25 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
+import Starlight.actions.DamageRandomEnemyActionFollowup;
 import Starlight.powers.interfaces.OnManualDiscardPower;
 import Starlight.util.Wiz;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
-public class MaelstromPower extends AbstractPower implements OnManualDiscardPower {
+public class MaelstromPower extends AbstractPower {
 
     public static final String POWER_ID = TheStarlightMod.makeID(MaelstromPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -26,20 +36,26 @@ public class MaelstromPower extends AbstractPower implements OnManualDiscardPowe
         updateDescription();
     }
 
-/*    @Override
-    public void atStartOfTurnPostDraw() {
-        flash();
-        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new WetPower(mon, amount)));
-    }*/
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.costForTurn == 0 || (card.freeToPlayOnce && card.cost != -1)) {
+            Wiz.atb(new DamageRandomEnemyActionFollowup(new DamageInfo(owner, amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.NONE, target -> {
+                if (target != null) {
+                    Wiz.att(new VFXAction(new LightningEffect(target.drawX, target.drawY), 0.05F));
+                    Wiz.att(new SFXAction("THUNDERCLAP", 0.05F));
+                }
+            }));
+        }
+    }
 
     @Override
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
-    @Override
+    /*@Override
     public void onManualDiscard() {
         flash();
         Wiz.atb(new GainBlockAction(owner, owner, amount));
-    }
+    }*/
 }
