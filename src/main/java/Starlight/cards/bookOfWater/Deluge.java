@@ -6,7 +6,6 @@ import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.purple.Brilliance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -82,38 +81,6 @@ public class Deluge extends AbstractMagickCard {
             calculateCardDamage(mo);
         }
     }
-
-/*    @Override
-    public void triggerOnManualDiscard() {
-        Wiz.atb(new NewQueueCardAction(this, true, false, true));
-        //AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, false));
-        Wiz.adp().discardPile.removeCard(this);
-    }*/
-
-    /*@Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        magicLastFrame = magicNumber;
-        int base = baseDamage;
-        baseDamage += (getWet(mo) * magicNumber);
-        super.calculateCardDamage(mo);
-        baseDamage = base;
-        isDamageModified = damage != baseDamage;
-        if (magicLastFrame != magicNumber) {
-            magicLastFrame = magicNumber;
-            calculateCardDamage(mo);
-        }
-        if (magicLastFrame != magicNumber) {
-            magicLastFrame = magicNumber;
-            applyPowers();
-        }
-    }
-
-    private int getWet(AbstractCreature c) {
-        if (c.hasPower(WetPower.POWER_ID)) {
-            return c.getPower(WetPower.POWER_ID).amount;
-        }
-        return 0;
-    }*/
 
     public void upp() {
         //upgradeDamage(UP_DMG);
