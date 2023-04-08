@@ -22,8 +22,8 @@ public class Eruption extends AbstractMagickCard {
     private static final int COST = 2;
     private static final int DMG = 15;
     private static final int UP_DMG = 5;
-    private static final int EFFECT = 3;
-    private static final int UP_EFFECT = 1;
+    private static final int EFFECT = 6;
+    private static final int UP_EFFECT = 2;
 
     public Eruption() {
         super(ID, COST, TYPE, RARITY, TARGET);
