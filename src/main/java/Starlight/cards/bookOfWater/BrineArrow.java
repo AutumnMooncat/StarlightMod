@@ -1,13 +1,14 @@
 package Starlight.cards.bookOfWater;
 
+import Starlight.actions.DamageFollowupAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.unique.GainEnergyIfDiscardAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.green.Skewer;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -22,44 +23,31 @@ public class BrineArrow extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 7;
-    private static final int UP_DMG = 3;
-    private static final int EFFECT = 1;
+    private static final int DMG = 8;
+    private static final int UP_DMG = 4;
+    private static final int EFFECT = 2;
 
     public BrineArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        //baseMagicNumber = magicNumber = EFFECT;
+        baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_WATER);
         tags.add(CustomTags.STARLIGHT_ARROW);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        //Wiz.atb(new GainEnergyIfDiscardAction(magicNumber));
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        if (GameActionManager.totalDiscardedThisTurn > 0) {
-            this.damage *= 2;
-        }
-        this.isDamageModified = baseDamage != damage;
-    }
-
-    @Override
-    public void calculateCardDamage(AbstractMonster mo) {
-        super.calculateCardDamage(mo);
-        if (GameActionManager.totalDiscardedThisTurn > 0) {
-            this.damage *= 2;
-        }
-        this.isDamageModified = baseDamage != damage;
+        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT, t -> {
+            AbstractCard c = Wiz.secondLastCardPlayed();
+            if (c != null && (c.costForTurn == 0 || (c.freeToPlayOnce && c.cost != -1))) {
+                Wiz.att(new DrawCardAction(magicNumber));
+            }
+        }));
     }
 
     public void triggerOnGlowCheck() {
         this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (GameActionManager.totalDiscardedThisTurn > 0) {
+        AbstractCard c = Wiz.lastCardPlayed();
+        if (c != null && (c.costForTurn == 0 || (c.freeToPlayOnce && c.cost != -1))) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
