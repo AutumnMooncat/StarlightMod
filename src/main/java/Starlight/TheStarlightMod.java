@@ -1,5 +1,6 @@
 package Starlight;
 
+import Starlight.cards.bookOfWater.Deluge;
 import Starlight.cards.cardvars.Info;
 import Starlight.cards.cardvars.SecondDamage;
 import Starlight.cards.cardvars.SecondMagicNumber;
@@ -322,6 +323,17 @@ public class TheStarlightMod implements
             /*if (!CardCrawlGame.isInARun() || Wiz.adp() instanceof StarlightSisters) {
                 return 1;
             }*/
+            return 0;
+        });
+        DynamicTextBlocks.registerCustomCheck(Deluge.ID, card -> {
+            if (CardCrawlGame.isInARun() && Wiz.adp() != null) {
+                if (Wiz.adp().hand.contains(card)) {
+                    if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() == 1) {
+                        return 1;
+                    }
+                    return 2;
+                }
+            }
             return 0;
         });
         CardBorderGlowManager.addGlowInfo(new CardBorderGlowManager.GlowInfo() {
