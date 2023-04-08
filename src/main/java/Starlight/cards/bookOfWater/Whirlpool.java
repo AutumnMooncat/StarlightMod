@@ -21,8 +21,8 @@ public class Whirlpool extends AbstractMagickCard {
     private static final CardType TYPE = CardType.POWER;
 
     private static final int COST = 2;
-    private static final int EFFECT = 5;
-    private static final int UP_EFFECT = 2;
+    private static final int EFFECT = 2;
+    private static final int UP_EFFECT = 1;
 
     public Whirlpool() {
         super(ID, COST, TYPE, RARITY, TARGET);

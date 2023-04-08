@@ -130,7 +130,7 @@
   },
   "${ModID}:WhirlpoolPower": {
     "NAME": "Whirlpool",
-    "DESCRIPTIONS": ["Whenever you discard a card during your turn, deal #b"," damage to ALL enemies."]
+    "DESCRIPTIONS": ["Whenever a card is discarded, deal #b"," damage to ALL enemies."]
   },
   "${ModID}:PosturingPower": {
     "NAME": "Posturing",
