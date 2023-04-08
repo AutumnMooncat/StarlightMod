@@ -16,5 +16,8 @@
   },
   "${ModID}:EternalMod": {
     "EXTENDED_DESCRIPTION": ["starlight:Eternal. NL "]
+  },
+  "${ModID}:FirstDrawDiscardMod": {
+    "EXTENDED_DESCRIPTION": [" NL Discard this card the first time it is drawn each combat."]
   }
 }

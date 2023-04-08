@@ -223,7 +223,7 @@
 
   "${ModID}:WaterBall": {
     "NAME": "Water Ball",
-    "DESCRIPTION": "{@@}Deal !D! damage. NL Draw !M! card{!M!|>1=s}. NL Discard !M! card{!M!|>1=s}."
+    "DESCRIPTION": "Deal !D! damage."
   },
   "${ModID}:BrineArrow": {
     "NAME": "Brine Arrow",

@@ -1,12 +1,11 @@
 package Starlight.cards.bookOfWater;
 
+import Starlight.cardmods.FirstDrawDiscardMod;
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
-import Starlight.util.Wiz;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.purple.DeceiveReality;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -21,22 +20,22 @@ public class WaterBall extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
-    private static final int DMG = 6;
-    private static final int UP_DMG = 3;
-    private static final int EFFECT = 1;
+    private static final int DMG = 12;
+    private static final int UP_DMG = 4;
+    private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
     public WaterBall() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        baseMagicNumber = magicNumber = EFFECT;
+        //baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_WATER);
+        CardModifierManager.addModifier(this, new FirstDrawDiscardMod());
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        Wiz.atb(new DrawCardAction(magicNumber));
-        Wiz.atb(new DiscardAction(p, p, magicNumber, false));
+        //Wiz.atb(new ApplyPowerActionWithFollowup(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber)), new ApplyPowerAction(m, p, new GainStrengthPower(m, magicNumber))));
     }
 
     public void upp() {
