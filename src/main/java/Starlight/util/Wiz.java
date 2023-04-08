@@ -215,7 +215,7 @@ public class Wiz {
     }
 
     public static AbstractCard secondLastCardPlayed() {
-        if (isInCombat() && cardsPlayedThisCombat().size() > 2) {
+        if (isInCombat() && cardsPlayedThisCombat().size() >= 2) {
             return cardsPlayedThisCombat().get(cardsPlayedThisCombat().size()-2);
         }
         return null;
