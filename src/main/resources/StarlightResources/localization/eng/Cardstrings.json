@@ -239,7 +239,7 @@
   },
   "${ModID}:BubbleShield": {
     "NAME": "Bubble Shield",
-    "DESCRIPTION": "Innate. NL Gain !B! Block. NL Gain !M! Artifact. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, draw !M! additional card{!M!|>1=s}{@@}."
   },
   "${ModID}:MuddyWaters": {
     "NAME": "Muddy Waters",

@@ -7,7 +7,7 @@ import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.blue.BootSequence;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -18,10 +18,10 @@ public class BubbleShield extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST= 1;
-    private static final int BLK = 7;
-    private static final int UP_BLK = 3;
-    private static final int EFFECT = 1;
+    private static final int COST= 2;
+    private static final int BLK = 13;
+    private static final int UP_BLK = 4;
+    private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
     public BubbleShield() {
@@ -35,10 +35,7 @@ public class BubbleShield extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         blck();
-        Wiz.applyToSelf(new ArtifactPower(p, magicNumber));
-        //Wiz.atb(new ModifyBlockAction(uuid, magicNumber));
-        //Wiz.atb(new DrawCardAction(magicNumber));
-        //Wiz.applyToSelf(new BubbleShieldPower(p, magicNumber));
+        Wiz.applyToSelf(new DrawCardNextTurnPower(p, magicNumber));
     }
 
     public void upp() {
