@@ -247,7 +247,7 @@
   },
   "${ModID}:Deluge": {
     "NAME": "Deluge",
-    "DESCRIPTION": "Deal !D! damage. NL If this card is discarded from your hand, play it instead."
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each card played this turn.{!Starlight:Deluge!|1= NL (Played !Starlight:I! card)|2= NL (Played !Starlight:I! cards)}{@@}"
   },
   "${ModID}:Maelstrom": {
     "NAME": "Maelstrom",

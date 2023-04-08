@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.purple.Brilliance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
@@ -23,10 +24,10 @@ public class Deluge extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
 
-    private static final int COST = 1;
-    private static final int DMG = 11;
-    private static final int UP_DMG = 4;
-    private static final int EFFECT = 3;
+    private static final int COST = 0;
+    private static final int DMG = 6;
+    private static final int UP_DMG = 2;
+    private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
 
     private int magicLastFrame;
@@ -34,7 +35,8 @@ public class Deluge extends AbstractMagickCard {
     public Deluge() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
-        //baseMagicNumber = magicNumber = EFFECT;
+        baseMagicNumber = magicNumber = EFFECT;
+        baseInfo = info = 0;
         tags.add(CustomTags.STARLIGHT_WATER);
         //exhaust = true;
     }
@@ -46,15 +48,47 @@ public class Deluge extends AbstractMagickCard {
         Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX, m.hb.cY + 66f * Settings.scale, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true), 0.15f));
         Wiz.atb(new SFXAction("BLUNT_FAST"));
         Wiz.atb(new VFXAction(new FlashAtkImgEffect(m.hb.cX, m.hb.cY + 33f * Settings.scale, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true), 0.15f));
+        //The actual call on play counts this card too, which we don't want
+        damage -= magicNumber;
         dmg(m, AbstractGameAction.AttackEffect.BLUNT_HEAVY);
     }
 
     @Override
+    public void applyPowers() {
+        baseInfo = info = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        magicLastFrame = magicNumber;
+        int base = baseDamage;
+        baseDamage += (info * magicNumber);
+        super.applyPowers();
+        baseDamage = base;
+        isDamageModified = damage != baseDamage;
+        if (magicLastFrame != magicNumber) {
+            magicLastFrame = magicNumber;
+            applyPowers();
+        }
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        baseInfo = info = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        magicLastFrame = magicNumber;
+        int base = baseDamage;
+        baseDamage += (info * magicNumber);
+        super.calculateCardDamage(mo);
+        baseDamage = base;
+        isDamageModified = damage != baseDamage;
+        if (magicLastFrame != magicNumber) {
+            magicLastFrame = magicNumber;
+            calculateCardDamage(mo);
+        }
+    }
+
+/*    @Override
     public void triggerOnManualDiscard() {
         Wiz.atb(new NewQueueCardAction(this, true, false, true));
         //AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, false));
         Wiz.adp().discardPile.removeCard(this);
-    }
+    }*/
 
     /*@Override
     public void calculateCardDamage(AbstractMonster mo) {
@@ -82,8 +116,8 @@ public class Deluge extends AbstractMagickCard {
     }*/
 
     public void upp() {
-        upgradeDamage(UP_DMG);
-        //upgradeMagicNumber(UP_EFFECT);
+        //upgradeDamage(UP_DMG);
+        upgradeMagicNumber(UP_EFFECT);
         //exhaust = false;
         //uDesc();
     }
