@@ -29,8 +29,6 @@ public class BubbleShield extends AbstractMagickCard {
         baseBlock = block = BLK;
         baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_WATER);
-        isInnate = true;
-        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
