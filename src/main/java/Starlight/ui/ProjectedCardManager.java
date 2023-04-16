@@ -134,6 +134,7 @@ public class ProjectedCardManager {
         @SpirePrefixPatch
         public static void pushProjected(UseCardAction __instance, AbstractCard card) {
             if (ProjectedCardFields.projectedField.get(card)) {
+                ProjectedCardManager.renderQueue.removeCard(card);
                 ProjectedActionField.projectedField.set(__instance, true);
                 ProjectedCardFields.projectedField.set(card, false);
                 ProjectedCardFields.interruptedField.set(card, false);

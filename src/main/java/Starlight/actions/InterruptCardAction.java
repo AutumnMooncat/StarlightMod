@@ -18,6 +18,7 @@ public class InterruptCardAction extends AbstractGameAction {
     public void update() {
         if (duration == DUR) {
             Wiz.adp().hand.moveToDiscardPile(card);
+            ProjectedCardManager.renderQueue.removeCard(card);
             ProjectedCardManager.ProjectedCardFields.projectedField.set(card, false);
             ProjectedCardManager.ProjectedCardFields.interruptedField.set(card, false);
         }
