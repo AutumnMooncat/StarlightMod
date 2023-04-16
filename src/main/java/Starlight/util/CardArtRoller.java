@@ -178,6 +178,13 @@ public class CardArtRoller {
             t.flip(false, true);
             FrameBuffer fb = ImageHelper.createBuffer(250, 190);
             OrthographicCamera og = new OrthographicCamera(250, 190);
+            if (needsUpscale(c, artCard)) {
+                og.zoom = 0.9f;
+                if (c.type == AbstractCard.CardType.SKILL && artCard.type == AbstractCard.CardType.ATTACK) {
+                    og.translate(0, -10);
+                }
+                og.update();
+            }
             SpriteBatch sb = new SpriteBatch();
             sb.setProjectionMatrix(og.combined);
             ImageHelper.beginBuffer(fb);
@@ -185,9 +192,10 @@ public class CardArtRoller {
             sb.setColor(HSLC);
             sb.begin();
             sb.draw(t, -t.packedWidth/2f, -t.packedHeight/2f + (artCard.type == AbstractCard.CardType.POWER ? 3 : 0)); // -125, -95
-            if (needsMask(c, artCard)) {
+            if (needsMask(c, artCard) || needsUpscale(c, artCard)) {
                 sb.setBlendFunction(GL_DST_COLOR, GL_ZERO);
                 Texture mask = getMask(c);
+                sb.setProjectionMatrix(new OrthographicCamera(250, 190).combined);
                 sb.draw(mask, -125, -95, -125, -95, 250, 190, 1, 1, 0, 0, 0, mask.getWidth(), mask.getHeight(), false, true);
             }
             sb.end();
@@ -201,10 +209,18 @@ public class CardArtRoller {
     public static Texture getPortraitTexture(AbstractCard c) {
         ReskinInfo r = infos.get(c.cardID);
         Color HSLC = new Color(r.H, r.S, r.L, r.C);
-        TextureAtlas.AtlasRegion t = new TextureAtlas.AtlasRegion(TexLoader.getTexture("images/1024Portraits/" + CardLibrary.getCard(r.origCardID).assetUrl + ".png"), 0, 0, 500, 380);
+        AbstractCard artCard = CardLibrary.getCard(r.origCardID);
+        TextureAtlas.AtlasRegion t = new TextureAtlas.AtlasRegion(TexLoader.getTexture("images/1024Portraits/" + artCard.assetUrl + ".png"), 0, 0, 500, 380);
         t.flip(false, true);
         FrameBuffer fb = ImageHelper.createBuffer(500, 380);
         OrthographicCamera og = new OrthographicCamera(500, 380);
+        if (needsUpscale(c, artCard)) {
+            og.zoom = 0.9f;
+            if (c.type == AbstractCard.CardType.SKILL && artCard.type == AbstractCard.CardType.ATTACK) {
+                og.translate(0, -20);
+            }
+            og.update();
+        }
         SpriteBatch sb = new SpriteBatch();
         sb.setProjectionMatrix(og.combined);
         ImageHelper.beginBuffer(fb);
@@ -212,9 +228,10 @@ public class CardArtRoller {
         sb.setColor(HSLC);
         sb.begin();
         sb.draw(t, -250, -190);
-        if (needsMask(c, CardLibrary.getCard(r.origCardID))) {
+        if (needsMask(c, artCard) || needsUpscale(c, artCard)) {
             sb.setBlendFunction(GL_DST_COLOR, GL_ZERO);
             Texture mask = getMask(c);
+            sb.setProjectionMatrix(new OrthographicCamera(500, 380).combined);
             sb.draw(mask, -250, -190, -250, -190, 500, 380, 1, 1, 0, 0, 0, mask.getWidth(), mask.getHeight(), false, true);
         }
         sb.end();
