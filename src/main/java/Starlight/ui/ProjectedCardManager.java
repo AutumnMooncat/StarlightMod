@@ -82,7 +82,7 @@ public class ProjectedCardManager {
 
     public static void playNextCard() {
         if (!renderQueue.isEmpty()) {
-            AbstractCard card = renderQueue.group.remove(0);
+            AbstractCard card = renderQueue.group.get(0);
             if (!ProjectedCardFields.interruptedField.get(card)) {
                 Wiz.atb(new NewQueueCardAction(card, true, false, true));
             } else {
@@ -134,7 +134,6 @@ public class ProjectedCardManager {
         @SpirePrefixPatch
         public static void pushProjected(UseCardAction __instance, AbstractCard card) {
             if (ProjectedCardFields.projectedField.get(card)) {
-                ProjectedCardManager.renderQueue.removeCard(card);
                 ProjectedActionField.projectedField.set(__instance, true);
                 ProjectedCardFields.projectedField.set(card, false);
                 ProjectedCardFields.interruptedField.set(card, false);
@@ -145,7 +144,8 @@ public class ProjectedCardManager {
     @SpirePatch2(clz = UseCardAction.class, method = "update")
     public static class DoNextCard {
         @SpirePostfixPatch
-        public static void doNextProjectedCard() {
+        public static void doNextProjectedCard(AbstractCard ___targetCard) {
+            ProjectedCardManager.renderQueue.removeCard(___targetCard);
             playNextCard();
         }
     }
