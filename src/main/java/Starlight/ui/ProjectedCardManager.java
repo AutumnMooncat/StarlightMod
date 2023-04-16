@@ -82,7 +82,7 @@ public class ProjectedCardManager {
 
     public static void playNextCard() {
         if (!renderQueue.isEmpty()) {
-            AbstractCard card = renderQueue.group.get(0);
+            AbstractCard card = renderQueue.group.remove(0);
             if (!ProjectedCardFields.interruptedField.get(card)) {
                 Wiz.atb(new NewQueueCardAction(card, true, false, true));
             } else {
@@ -137,7 +137,6 @@ public class ProjectedCardManager {
                 ProjectedActionField.projectedField.set(__instance, true);
                 ProjectedCardFields.projectedField.set(card, false);
                 ProjectedCardFields.interruptedField.set(card, false);
-                renderQueue.removeCard(card);
             }
         }
     }
