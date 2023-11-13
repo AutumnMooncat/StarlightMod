@@ -729,7 +729,7 @@
   },
   "${ModID}:DustToDust": {
     "NAME": "Dust to Dust",
-    "DESCRIPTION": "{@@}Apply !M! starlight:Ruin. NL starlight:Ruin persists for !Starlight:M2! more turn{!Starlight:M2!|>1=s} on this enemy."
+    "DESCRIPTION": "{@@}Apply !M! starlight:Ruin. NL ALL starlight:Ruin persists for !Starlight:M2! additional turn{!Starlight:M2!|>1=s}."
   },
   "${ModID}:Blink": {
     "NAME": "Blink",
