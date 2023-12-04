@@ -29,7 +29,7 @@ public class FirestormPower extends AbstractPower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (source == this.owner && target != this.owner && power instanceof BurnPower) {
+        if (source == this.owner && target != this.owner && power.type == PowerType.DEBUFF) {
             flash();
             Wiz.att(new DoIfPowerAppliedAction(power, new ApplyPowerAction(owner, owner, new VigorPower(owner, this.amount))));
         }

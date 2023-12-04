@@ -381,7 +381,7 @@
   },
   "${ModID}:Firestorm": {
     "NAME": "Firestorm",
-    "DESCRIPTION": "Whenever you apply starlight:Burn, gain !M! Vigor."
+    "DESCRIPTION": "Whenever you apply a debuff to an enemy, gain !M! Vigor."
   },
   "${ModID}:Eruption": {
     "NAME": "Eruption",
