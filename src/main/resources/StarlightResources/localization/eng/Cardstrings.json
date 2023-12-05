@@ -466,7 +466,7 @@
   },
   "${ModID}:Spores": {
     "NAME": "Spores",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable to ALL enemies."
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to ALL enemies."
   },
   "${ModID}:Absorb": {
     "NAME": "Absorb",
