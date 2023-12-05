@@ -442,7 +442,7 @@
   },
   "${ModID}:Entangle": {
     "NAME": "Entangle",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! starlight:Tangled."
+    "DESCRIPTION": "Apply !M! starlight:Tangled."
   },
   "${ModID}:VineBomb": {
     "NAME": "Vine Bomb",
