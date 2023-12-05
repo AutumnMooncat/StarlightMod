@@ -425,7 +425,7 @@
   },
   "${ModID}:ThornArrow": {
     "NAME": "Thorn Arrow",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to your starlight:Barbs."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! starlight:Barbs."
   },
   "${ModID}:StickySap": {
     "NAME": "Sticky Sap",

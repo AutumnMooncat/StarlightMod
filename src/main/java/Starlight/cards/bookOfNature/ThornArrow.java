@@ -22,19 +22,23 @@ public class ThornArrow extends AbstractMagickCard {
     private static final int COST = 0;
     private static final int DMG = 4;
     private static final int UP_DMG = 2;
+    private static final int EFFECT = 2;
+    private static final int UP_EFFECT = 1;
 
     public ThornArrow() {
         super(ID, COST, TYPE, RARITY, TARGET);
         baseDamage = damage = DMG;
+        baseMagicNumber = magicNumber = EFFECT;
         tags.add(CustomTags.STARLIGHT_NATURE);
         tags.add(CustomTags.STARLIGHT_ARROW);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        Wiz.applyToSelf(new BarbPower(p, magicNumber));
     }
 
-    @Override
+    /*@Override
     public void calculateCardDamage(AbstractMonster mo) {
         int base = baseDamage;
         if (Wiz.adp().hasPower(BarbPower.POWER_ID)) {
@@ -54,10 +58,11 @@ public class ThornArrow extends AbstractMagickCard {
         super.applyPowers();
         baseDamage = base;
         isDamageModified = baseDamage != damage;
-    }
+    }*/
 
     public void upp() {
         upgradeDamage(UP_DMG);
+        upgradeMagicNumber(UP_EFFECT);
     }
 
     @Override
