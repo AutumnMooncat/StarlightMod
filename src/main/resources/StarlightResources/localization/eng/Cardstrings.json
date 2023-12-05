@@ -474,7 +474,7 @@
   },
   "${ModID}:Harvest": {
     "NAME": "Harvest",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy is starlight:Tangled, gain Block equal to unblocked damage dealt."
+    "DESCRIPTION": "Remove all Block from the enemy. NL Gain that much Block. NL Deal !D! damage."
   },
   "${ModID}:Overgrowth": {
     "NAME": "Overgrowth",
