@@ -450,7 +450,7 @@
   },
   "${ModID}:Sanctuary": {
     "NAME": "Sanctuary",
-    "DESCRIPTION": "Whenever you apply starlight:Tangled, gain !M! starlight:Barbs."
+    "DESCRIPTION": "Whenever you apply a debuff to an enemy, gain !M! starlight:Barbs."
   },
   "${ModID}:ToxicBarbs": {
     "NAME": "Toxic Barbs",

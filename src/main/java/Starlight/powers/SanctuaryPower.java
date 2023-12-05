@@ -28,7 +28,7 @@ public class SanctuaryPower extends AbstractPower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (source == this.owner && target != this.owner && power instanceof TanglePower) {
+        if (source == this.owner && target != this.owner && power.type == PowerType.DEBUFF) {
             flash();
             Wiz.att(new DoIfPowerAppliedAction(power, new ApplyPowerAction(Wiz.adp(), Wiz.adp(), new BarbPower(Wiz.adp(), amount))));
         }
