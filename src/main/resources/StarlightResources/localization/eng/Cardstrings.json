@@ -429,7 +429,7 @@
   },
   "${ModID}:StickySap": {
     "NAME": "Sticky Sap",
-    "DESCRIPTION": "Retain. NL Apply !M! starlight:Tangled."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Apply !M! starlight:Tangled."
   },
   "${ModID}:SolarBlade": {
     "NAME": "Solar Blade",
