@@ -478,7 +478,7 @@
   },
   "${ModID}:Overgrowth": {
     "NAME": "Overgrowth",
-    "DESCRIPTION": "Gain !M! starlight:Barbs. NL Apply !Starlight:M2! Weak to ALL enemies."
+    "DESCRIPTION": "Gain !M! starlight:Barbs. NL Prevent the next {@@}{!Starlight:M2!|1=time|>1=!Starlight:M2! times} you would lose starlight:Barbs."
   },
 
 

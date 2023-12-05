@@ -320,5 +320,10 @@
   "${ModID}:EphemeralPower": {
     "NAME": "Ephemeral",
     "DESCRIPTIONS": ["Whenever #yLuna #yExhausts a card, ALL enemies lose #b"," #yHP.","#r(Inactive) NL "]
+  },
+  "${ModID}:OvergrowthPower": {
+    "NAME": "Overgrowth",
+    "DESCRIPTIONS": ["Prevent the next time you would lose #yBarbs.",
+      "Prevent the next #b"," times you would lose #yBarbs."]
   }
 }

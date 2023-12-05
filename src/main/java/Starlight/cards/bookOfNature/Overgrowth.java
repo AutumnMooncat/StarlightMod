@@ -2,15 +2,13 @@ package Starlight.cards.bookOfNature;
 
 import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.powers.BarbPower;
+import Starlight.powers.OvergrowthPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.cards.blue.GeneticAlgorithm;
-import com.megacrit.cardcrawl.cards.green.StormOfSteel;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static Starlight.TheStarlightMod.makeID;
 
@@ -21,9 +19,9 @@ public class Overgrowth extends AbstractMagickCard {
     private static final CardTarget TARGET = CardTarget.ALL;
     private static final CardType TYPE = CardType.SKILL;
 
-    private static final int COST = 1;
-    private static final int EFFECT = 7;
-    private static final int UP_EFFECT = 3;
+    private static final int COST = 2;
+    private static final int EFFECT = 8;
+    private static final int UP_EFFECT = 2;
     private static final int WEAK = 1;
     private static final int UP_WEAK = 1;
 
@@ -36,12 +34,13 @@ public class Overgrowth extends AbstractMagickCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.applyToSelf(new BarbPower(p, magicNumber));
-        Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new WeakPower(mon, secondMagic, false)));
+        //Wiz.forAllMonstersLiving(mon -> Wiz.applyToEnemy(mon, new WeakPower(mon, secondMagic, false)));
+        Wiz.applyToSelf(new OvergrowthPower(p, secondMagic));
     }
 
     public void upp() {
         upgradeMagicNumber(UP_EFFECT);
-        upgradeSecondMagic(UP_WEAK);
+        //upgradeSecondMagic(UP_WEAK);
     }
 
     @Override

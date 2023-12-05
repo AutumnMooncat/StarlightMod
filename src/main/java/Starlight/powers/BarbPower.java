@@ -1,21 +1,16 @@
 package Starlight.powers;
 
 import Starlight.TheStarlightMod;
-import Starlight.util.Wiz;
 import Starlight.vfx.BarbExplodeEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class BarbPower extends AbstractPower {
 
@@ -37,7 +32,11 @@ public class BarbPower extends AbstractPower {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
             this.flash();
-            this.addToTop(new RemoveSpecificPowerAction(owner, owner, this));
+            if (owner.hasPower(OvergrowthPower.POWER_ID)) {
+                owner.getPower(OvergrowthPower.POWER_ID).onSpecificTrigger();
+            } else {
+                this.addToTop(new RemoveSpecificPowerAction(owner, owner, this));
+            }
             this.addToTop(new DamageAllEnemiesAction(owner, DamageInfo.createDamageMatrix(amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
             this.addToTop(new VFXAction(new BarbExplodeEffect()));
         }
