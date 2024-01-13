@@ -24,9 +24,9 @@ public class SolarBlade extends AbstractMagickCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 0;
-    private static final int DMG = 10;
+    private static final int DMG = 14;
     private static final int UP_DMG = 4;
-    private static final int EFFECT = 1;
+    private static final int EFFECT = 2;
     private static final int UP_EFFECT = 1;
 
     public SolarBlade() {

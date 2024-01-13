@@ -1,7 +1,6 @@
 package Starlight.cards;
 
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.abstracts.AbstractMagickCard;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -22,7 +21,7 @@ public class Imperil extends AbstractEasyCard {
     private static final CardType TYPE = CardType.ATTACK;
 
     private static final int COST = 1;
-    private static final int DMG = 6;
+    private static final int DMG = 5;
     private static final int UP_DMG = 2;
     private static final int EFFECT = 1;
     private static final int UP_EFFECT = 1;
@@ -43,7 +42,7 @@ public class Imperil extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeDamage(UP_DMG);
+        //upgradeDamage(UP_DMG);
         upgradeMagicNumber(UP_EFFECT);
     }
 

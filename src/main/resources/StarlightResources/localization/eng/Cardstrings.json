@@ -381,7 +381,7 @@
   },
   "${ModID}:Firestorm": {
     "NAME": "Firestorm",
-    "DESCRIPTION": "Whenever you apply starlight:Burn, gain !M! Vigor."
+    "DESCRIPTION": "Whenever you apply a debuff to an enemy, gain !M! Vigor."
   },
   "${ModID}:Eruption": {
     "NAME": "Eruption",
@@ -425,11 +425,11 @@
   },
   "${ModID}:ThornArrow": {
     "NAME": "Thorn Arrow",
-    "DESCRIPTION": "Deal !D! damage. NL Deals additional damage equal to your starlight:Barbs."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! starlight:Barbs."
   },
   "${ModID}:StickySap": {
     "NAME": "Sticky Sap",
-    "DESCRIPTION": "Retain. NL Apply !M! starlight:Tangled."
+    "DESCRIPTION": "Retain. NL Gain !B! Block. NL Apply !M! starlight:Tangled."
   },
   "${ModID}:SolarBlade": {
     "NAME": "Solar Blade",
@@ -442,7 +442,7 @@
   },
   "${ModID}:Entangle": {
     "NAME": "Entangle",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! starlight:Tangled."
+    "DESCRIPTION": "Apply !M! starlight:Tangled."
   },
   "${ModID}:VineBomb": {
     "NAME": "Vine Bomb",
@@ -450,7 +450,7 @@
   },
   "${ModID}:Sanctuary": {
     "NAME": "Sanctuary",
-    "DESCRIPTION": "Whenever you apply starlight:Tangled, gain !M! starlight:Barbs."
+    "DESCRIPTION": "Whenever you apply a debuff to an enemy, gain !M! starlight:Barbs."
   },
   "${ModID}:ToxicBarbs": {
     "NAME": "Toxic Barbs",
@@ -466,7 +466,7 @@
   },
   "${ModID}:Spores": {
     "NAME": "Spores",
-    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Vulnerable to ALL enemies."
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to ALL enemies."
   },
   "${ModID}:Absorb": {
     "NAME": "Absorb",
@@ -474,11 +474,11 @@
   },
   "${ModID}:Harvest": {
     "NAME": "Harvest",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy is starlight:Tangled, gain Block equal to unblocked damage dealt."
+    "DESCRIPTION": "Remove all Block from the enemy. NL Gain that much Block. NL Deal !D! damage."
   },
   "${ModID}:Overgrowth": {
     "NAME": "Overgrowth",
-    "DESCRIPTION": "Gain !M! starlight:Barbs. NL Apply !Starlight:M2! Weak to ALL enemies."
+    "DESCRIPTION": "Gain !M! starlight:Barbs. NL Prevent the next {@@}{!Starlight:M2!|1=time|>1=!Starlight:M2! times} you would lose starlight:Barbs."
   },
 
 
@@ -729,7 +729,7 @@
   },
   "${ModID}:DustToDust": {
     "NAME": "Dust to Dust",
-    "DESCRIPTION": "{@@}Apply !M! starlight:Ruin. NL starlight:Ruin persists for !Starlight:M2! more turn{!Starlight:M2!|>1=s} on this enemy."
+    "DESCRIPTION": "{@@}Apply !M! starlight:Ruin. NL ALL starlight:Ruin persists for !Starlight:M2! additional turn{!Starlight:M2!|>1=s}."
   },
   "${ModID}:Blink": {
     "NAME": "Blink",

@@ -20,8 +20,8 @@ public class AstralProtection extends AbstractMagickCard {
 
     private static final int COST = 1;
     private static final int UP_COST = 0;
-    private static final int EFFECT = 4;
-    private static final int UP_EFFECT = 2;
+    private static final int EFFECT = 3;
+    private static final int UP_EFFECT = 1;
 
     public AstralProtection() {
         super(ID, COST, TYPE, RARITY, TARGET);

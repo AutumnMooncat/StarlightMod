@@ -47,7 +47,7 @@ public class DustToDust extends AbstractMagickCard {
             }
         }));*/
         Wiz.applyToEnemy(m, new RuinPower(m, p, magicNumber));
-        Wiz.applyToEnemy(m, new DustToDustPower(m, secondMagic));
+        Wiz.applyToSelf(new DustToDustPower(p, secondMagic));
     }
 
     public void upp() {

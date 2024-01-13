@@ -102,7 +102,7 @@
   },
   "${ModID}:SanctuaryPower": {
     "NAME": "Sanctuary",
-    "DESCRIPTIONS": ["Whenever you apply #yTangled, gain #b"," #yBarbs."]
+    "DESCRIPTIONS": ["Whenever you apply a debuff to an enemy, gain #b"," #yBarbs."]
   },
   "${ModID}:BloomPower": {
     "NAME": "Bloom",
@@ -122,7 +122,7 @@
   },
   "${ModID}:FirestormPower": {
     "NAME": "Firestorm",
-    "DESCRIPTIONS": ["Whenever you apply #yBurn, gain #b"," #yVigor."]
+    "DESCRIPTIONS": ["Whenever you apply a debuff to an enemy, gain #b"," #yVigor."]
   },
   "${ModID}:MaelstromPower": {
     "NAME": "Maelstrom",
@@ -320,5 +320,10 @@
   "${ModID}:EphemeralPower": {
     "NAME": "Ephemeral",
     "DESCRIPTIONS": ["Whenever #yLuna #yExhausts a card, ALL enemies lose #b"," #yHP.","#r(Inactive) NL "]
+  },
+  "${ModID}:OvergrowthPower": {
+    "NAME": "Overgrowth",
+    "DESCRIPTIONS": ["Prevent the next time you would lose #yBarbs.",
+      "Prevent the next #b"," times you would lose #yBarbs."]
   }
 }

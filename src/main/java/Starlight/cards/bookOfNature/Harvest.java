@@ -1,8 +1,7 @@
 package Starlight.cards.bookOfNature;
 
-import Starlight.actions.DamageFollowupAction;
+import Starlight.actions.ImmediateRemoveAllBlockAction;
 import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.TanglePower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.CustomTags;
 import Starlight.util.Wiz;
@@ -10,7 +9,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.blue.Scrape;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -41,11 +39,16 @@ public class Harvest extends AbstractMagickCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Wiz.atb(new VFXAction(new RipAndTearEffect(m.hb.cX, m.hb.cY, Color.GREEN, Color.GOLD)));
         Wiz.atb(new VFXAction(new RipAndTearEffect(m.hb.cX, m.hb.cY, Color.GREEN, Color.GOLD)));
-        Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, t -> {
-            if (t.lastDamageTaken > 0 && t.hasPower(TanglePower.POWER_ID)) {
+        if (m.currentBlock > 0) {
+            Wiz.atb(new ImmediateRemoveAllBlockAction(m, p));
+            Wiz.atb(new GainBlockAction(p, p, m.currentBlock, true));
+        }
+        dmg(m, AbstractGameAction.AttackEffect.NONE);
+        /*Wiz.atb(new DamageFollowupAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE, t -> {
+            if (t.lastDamageTaken > 0) {
                 Wiz.att(new GainBlockAction(p, t.lastDamageTaken));
             }
-        }));
+        }));*/
         /*dmg(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
         if (m.hasPower(TanglePower.POWER_ID)) {
             Wiz.applyToEnemy(m, new StrengthPower(m, -magicNumber));

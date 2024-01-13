@@ -2,9 +2,9 @@
   "modid": "${ModID}",
   "name": "${project.name}",
   "author_list": [
-    "Mistress Alison"
+    "Mistress Autumn"
   ],
-  "credits": "Beat Testing - Pandemonium, Sand Tag | ProTemplate - Vex",
+  "credits": "Beta Testing - Pandemonium, Sand Tag | ProTemplate - Vex",
   "description": "${project.description}",
   "version": "${project.version}",
   "sts_version": "${SlayTheSpire.version}",
