@@ -672,7 +672,7 @@
   },
   "${ModID}:Meteor": {
     "NAME": "Meteor",
-    "DESCRIPTION": "Deal !D! damage. NL Deals double damage if starlight:Projected."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Deals double damage if starlight:Projected."
   },
   "${ModID}:DimensionLock": {
     "NAME": "Dimension Lock",
