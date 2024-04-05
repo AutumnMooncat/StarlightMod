@@ -11,7 +11,7 @@
   },
   "${ModID}:Anticipate": {
     "NAME": "Anticipate",
-    "DESCRIPTION": "{@@}Gain !M! starlight:SP. NL Draw and Upgrade !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}Draw and Upgrade !M! card{!M!|>1=s}."
   },
   "${ModID}:ArcaneArrow": {
     "NAME": "Arcane Arrow",
