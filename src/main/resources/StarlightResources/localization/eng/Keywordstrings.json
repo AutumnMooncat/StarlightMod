@@ -30,7 +30,7 @@
       "magick",
       "magicks"
     ],
-    "DESCRIPTION": "Magick Attacks and Skills additionally scale their damage and Block with #ySpell #yPower."
+    "DESCRIPTION": "Magick Attacks and Skills additionally scale their damage and #yBlock with #ySpell #yPower."
   },
   {
     "PROPER_NAME": "Foretell",
