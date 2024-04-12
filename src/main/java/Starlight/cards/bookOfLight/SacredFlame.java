@@ -17,7 +17,7 @@ public class SacredFlame extends AbstractMagickCard {
     public final static String ID = makeID(SacredFlame.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.SELF_AND_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 1;

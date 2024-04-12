@@ -1,16 +1,11 @@
 package Starlight.cards;
 
-import Starlight.actions.ForetellAction;
 import Starlight.cards.abstracts.AbstractEasyCard;
-import Starlight.cards.abstracts.AbstractMagickCard;
-import Starlight.powers.SpellPower;
 import Starlight.util.CardArtRoller;
 import Starlight.util.Wiz;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.purple.Evaluate;
 import com.megacrit.cardcrawl.cards.purple.Vigilance;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -34,7 +29,7 @@ public class Anticipate extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Wiz.applyToSelf(new SpellPower(p, magicNumber));
+        //Wiz.applyToSelf(new SpellPower(p, magicNumber));
         Wiz.atb(new DrawCardAction(magicNumber, new AbstractGameAction() {
             @Override
             public void update() {
