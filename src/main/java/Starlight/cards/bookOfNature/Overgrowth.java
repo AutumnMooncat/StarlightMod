@@ -21,7 +21,7 @@ public class Overgrowth extends AbstractMagickCard {
 
     private static final int COST = 2;
     private static final int EFFECT = 8;
-    private static final int UP_EFFECT = 2;
+    private static final int UP_EFFECT = 3;
     private static final int WEAK = 1;
     private static final int UP_WEAK = 1;
 
