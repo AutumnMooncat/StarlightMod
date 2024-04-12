@@ -16,7 +16,7 @@ public class Overgrowth extends AbstractMagickCard {
     public final static String ID = makeID(Overgrowth.class.getSimpleName());
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ALL;
+    private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
 
     private static final int COST = 2;
