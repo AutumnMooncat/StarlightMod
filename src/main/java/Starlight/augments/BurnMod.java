@@ -3,6 +3,7 @@ package Starlight.augments;
 import CardAugments.cardmods.AbstractAugment;
 import CardAugments.cardmods.DynvarCarrier;
 import Starlight.TheStarlightMod;
+import Starlight.powers.BurnPower;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -68,7 +69,7 @@ public class BurnMod extends AbstractAugment implements DynvarCarrier {
 
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new PoisonPower(target, AbstractDungeon.player, getBaseVal(card))));
+        addToBot(new ApplyPowerAction(target, AbstractDungeon.player, new BurnPower(target, AbstractDungeon.player, getBaseVal(card))));
     }
 
     @Override
